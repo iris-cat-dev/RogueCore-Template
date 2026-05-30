@@ -46,3 +46,5 @@ Content/__ExternalActors__
 Content/__ExternalObjects__
 Saved
 DerivedDataCache
+
+__pycache__

@@ -4,6 +4,7 @@
 #include "VanitySlotCharacter.generated.h"
 
 class UPlayerCharacterID;
+
 USTRUCT(BlueprintType)
 struct FVanitySlotCharacter {
     GENERATED_BODY()
@@ -13,3 +14,4 @@ public:
     
     ROGUECORE_API FVanitySlotCharacter();
 };
+

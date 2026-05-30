@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Kismet/BlueprintFunctionLibrary.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
 #include "ValidationFunctionLibrary.generated.h"
 
 UCLASS(Blueprintable)
@@ -8,7 +8,9 @@ class ROGUECORE_API UValidationFunctionLibrary : public UBlueprintFunctionLibrar
     GENERATED_BODY()
 public:
     UValidationFunctionLibrary();
+
     UFUNCTION(BlueprintCallable)
     static void SetSelectedAssets(TArray<FString> Paths);
     
 };
+

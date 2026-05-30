@@ -1,10 +1,10 @@
 #include "ItemsBar.h"
 
 UItemsBar::UItemsBar() {
-    this->DefaultItemWidget = NULL;
+    this->DefaultItemWidget = nullptr;
     this->bShowSupplyItem = false;
-    this->SupplyIcon = NULL;
-    this->SelectedIcon = NULL;
+    this->SupplyIcon = nullptr;
+    this->SelectedIcon = nullptr;
 }
 
 

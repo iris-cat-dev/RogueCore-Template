@@ -1,8 +1,8 @@
 #include "BobbingComponent.h"
 
 UBobbingComponent::UBobbingComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->External = NULL;
-    this->OwnerActor = NULL;
+    this->External = nullptr;
+    this->OwnerActor = nullptr;
     this->DoOrientationChecks = false;
     this->BobSpeed = 0.00f;
     this->BobSize = 0.00f;

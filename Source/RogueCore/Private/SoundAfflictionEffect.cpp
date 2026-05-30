@@ -1,8 +1,8 @@
 #include "SoundAfflictionEffect.h"
 
 USoundAfflictionEffect::USoundAfflictionEffect() {
-    this->BeginSound = NULL;
-    this->EndSound = NULL;
+    this->BeginSound = nullptr;
+    this->EndSound = nullptr;
     this->Attach = false;
     this->FadeOnLoopEndDuration = 0.25f;
 }

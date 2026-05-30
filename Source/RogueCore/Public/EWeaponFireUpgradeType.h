@@ -13,3 +13,4 @@ enum class EWeaponFireUpgradeType : uint8 {
     MinSpreadWhileSprinting,
     MaxSpread,
 };
+

@@ -8,16 +8,20 @@
 
 class AFSDPlayerState;
 class AItem;
+
 UCLASS(Blueprintable, EditInlineNew, MinimalAPI)
 class UPickaxeUpgrade : public UStandardItemUpgrade {
     GENERATED_BODY()
-    
-
 public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EPickaxeUpgradeType upgradeType;
     
+public:
     UPickaxeUpgrade();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FUpgradeValues GetUpgradedValue(TSubclassOf<AItem> Item, AFSDPlayerState* Player, EPickaxeUpgradeType NewUpgradeType);
+    
 };
+

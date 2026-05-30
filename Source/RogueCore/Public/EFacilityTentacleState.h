@@ -9,3 +9,4 @@ enum class EFacilityTentacleState : uint8 {
     Melee,
     Ranged,
 };
+

@@ -7,35 +7,58 @@ class ALineCutterProjectile;
 class AProjectileBase;
 class UItemUpgrade;
 class UProjectileLauncherComponent;
+
 UCLASS(Blueprintable)
 class ALineCutter : public AAmmoDrivenWeapon {
     GENERATED_BODY()
-    
-
 public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool StopUsingReversesProjectile;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool RotateProjectileUntillStop;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool ExplodeLastProjectileOnNextFireAttempt;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<UItemUpgrade*> upgrades;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_LastProjectile, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<ALineCutterProjectile> LastProjectile;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float MinExplosiveGoodbyeActivationTimme;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UProjectileLauncherComponent* LauncherComponent;
+    
+public:
     ALineCutter(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
+
+protected:
+    UFUNCTION(BlueprintCallable, Reliable, Server)
     void Server_StopRotatingProjectile();
-    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
+    
+    UFUNCTION(BlueprintCallable, Reliable, Server)
     void Server_ReverseLastProjectile();
-    UFUNCTION(BlueprintCallable, Server, Unreliable, WithValidation)
+    
+public:
+    UFUNCTION(BlueprintCallable, Server, Unreliable)
     void Server_DestroyOldProjectile();
+    
+protected:
     UFUNCTION(BlueprintCallable)
     void OnRep_LastProjectile() const;
+    
+    UFUNCTION(BlueprintCallable)
     void OnProjectileLaunched(AProjectileBase* Projectile);
+    
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnFireWhileLastProjectileAlive(ALineCutterProjectile* Projectile);
+    
 };
+

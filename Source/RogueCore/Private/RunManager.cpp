@@ -1,9 +1,7 @@
 #include "RunManager.h"
 #include "BXEAmmoUnlockManager.h"
-#include "BXEDamageUnlockManager.h"
 #include "BXELogicUnlockManager.h"
 #include "BXENegotiationManager.h"
-#include "FSDEventsHandler.h"
 #include "ReadyUpManager.h"
 #include "VoteManager.h"
 
@@ -11,13 +9,11 @@ URunManager::URunManager() {
     this->NegotiationManager = CreateDefaultSubobject<UBXENegotiationManager>(TEXT("NegotiationManager"));
     this->ReadyUpManager = CreateDefaultSubobject<UReadyUpManager>(TEXT("ReadyUpManager"));
     this->VoteManager = CreateDefaultSubobject<UVoteManager>(TEXT("VoteManager"));
-    this->RunHistoryManager = NULL;
+    this->RunHistoryManager = nullptr;
     this->LogicUnlockManager = CreateDefaultSubobject<UBXELogicUnlockManager>(TEXT("LogicUnlockManager"));
-    this->DamageUnlockManager = CreateDefaultSubobject<UBXEDamageUnlockManager>(TEXT("DamageUnlockManager"));
     this->AmmoUnlockManager = CreateDefaultSubobject<UBXEAmmoUnlockManager>(TEXT("AmmoUnlockManager"));
-    this->EventsHandler = CreateDefaultSubobject<UFSDEventsHandler>(TEXT("EventsHandler"));
-    this->GameStateComponent = NULL;
-    this->ActiveRun = NULL;
+    this->GameStateComponent = nullptr;
+    this->ActiveRun = nullptr;
     this->CurrentCaveDepth = 0.00f;
     this->ObjectiveRewardRegistered = 0;
 }
@@ -25,10 +21,13 @@ URunManager::URunManager() {
 void URunManager::StartRun(const FRunCreationParameters& Parameters) {
 }
 
-void URunManager::SetRiskVectorsInBugReporter() {
+void URunManager::RemoveLevelUpBlocker(AActor* blocker) {
 }
 
-void URunManager::RemoveLevelUpBlocker(AActor* blocker) {
+void URunManager::RemoveAllAdditionalRiskVectors() {
+}
+
+void URunManager::RemoveAdditionalRiskVector(URiskVector* RiskVector) {
 }
 
 void URunManager::PotentExpeniteDispensed() {
@@ -44,13 +43,19 @@ bool URunManager::MoveToNextStage() {
     return false;
 }
 
+void URunManager::MoveToLastStage(const int32 Offset) {
+}
+
 void URunManager::MissionShout(UObject* WorldContext, EMissionShoutID InShoutID) const {
+}
+
+void URunManager::MarkRiftBossFightOver() {
 }
 
 void URunManager::MarkActiveStageComplete() {
 }
 
-bool URunManager::IsStageComplete(int32 BranchIndex) const {
+bool URunManager::IsStageComplete(int32 branchIndex) const {
     return false;
 }
 
@@ -101,10 +106,6 @@ bool URunManager::HasPendingArtifactUpgrade() const {
     return false;
 }
 
-int32 URunManager::GetXPToChipConversionRate() const {
-    return 0;
-}
-
 float URunManager::GetWaveIntervalMultiplier() const {
     return 0.0f;
 }
@@ -128,7 +129,7 @@ FString URunManager::GetStageSeedString() const {
     return TEXT("");
 }
 
-FText URunManager::GetStageName(int32 BranchIndex) const {
+FText URunManager::GetStageName(int32 branchIndex) const {
     return FText::GetEmpty();
 }
 
@@ -185,14 +186,6 @@ int32 URunManager::GetNumberOfCompletedStages() const {
     return 0;
 }
 
-int32 URunManager::GetNumberOfClaimableChips() const {
-    return 0;
-}
-
-int32 URunManager::GetNumberOfChips() const {
-    return 0;
-}
-
 float URunManager::GetNextLevelXP() const {
     return 0.0f;
 }
@@ -236,7 +229,7 @@ float URunManager::GetCurrentLevelProgress() const {
     return 0.0f;
 }
 
-UBiome* URunManager::GetBiomeFromStageID(int32 StageID) const {
+UBiome* URunManager::GetBiomeFromStageID(int32 stageID) const {
     return NULL;
 }
 
@@ -248,6 +241,10 @@ int32 URunManager::GetArtifactsCollected() const {
     return 0;
 }
 
+int32 URunManager::GetActiveStageIndex() const {
+    return 0;
+}
+
 UStageTemplateDifficulty* URunManager::GetActiveStageDifficulty() const {
     return NULL;
 }
@@ -256,19 +253,31 @@ UStage* URunManager::GetActiveStage() const {
     return NULL;
 }
 
+ERunType URunManager::GetActiveRunType() const {
+    return ERunType::Default;
+}
+
 URunTemplate* URunManager::GetActiveRunTemplate() const {
     return NULL;
+}
+
+FString URunManager::GetActiveRunString() const {
+    return TEXT("");
 }
 
 FText URunManager::GetActiveRunName() const {
     return FText::GetEmpty();
 }
 
-URun* URunManager::GetActiveRun() const {
-    return NULL;
+FGuid URunManager::GetActiveRunId() const {
+    return FGuid{};
 }
 
-UBiome* URunManager::GetActiveBiome() const {
+ERunDepth URunManager::GetActiveRunDepth() const {
+    return ERunDepth::None;
+}
+
+URun* URunManager::GetActiveRun() const {
     return NULL;
 }
 
@@ -278,10 +287,6 @@ void URunManager::GetAccumulatedObjectiveXP(int32& perPrimary) const {
 void URunManager::ClearRun() {
 }
 
-int32 URunManager::ClaimAllClaimableChips() {
-    return 0;
-}
-
 void URunManager::CheatPrintStages() {
 }
 
@@ -289,7 +294,7 @@ bool URunManager::Cheat_DroneApplyUnlock(UBXEUnlockBase* InUnlock) {
     return false;
 }
 
-void URunManager::BeginNegotiation(UUnlockCollectionTag* InCollectionTag, int32 Seed) {
+void URunManager::BeginNegotiation(UUnlockCollectionTag* InCollectionTag, int32 OverrideSeed) {
 }
 
 void URunManager::ArtifactDispensed() {
@@ -304,11 +309,7 @@ void URunManager::AddReward() {
 void URunManager::AddLevelUpBlocker(AActor* blocker) {
 }
 
-int32 URunManager::AddChips(int32 InAmount) {
-    return 0;
-}
-
-void URunManager::AddAdditionalRiskVector(URiskVector* RiskVector) {
+void URunManager::AddAdditionalRiskVector(URiskVector* RiskVector, const bool IsActiveInSingleStage, const int32 StageIndexToActivate) {
 }
 
 

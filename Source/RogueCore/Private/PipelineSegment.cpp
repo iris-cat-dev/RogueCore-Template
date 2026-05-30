@@ -1,20 +1,21 @@
 #include "PipelineSegment.h"
-#include "Components/SkeletalMeshComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SkeletalMeshComponent -FallbackName=SkeletalMeshComponent
 #include "Components/SplineComponent.h"
 #include "Components/SplineMeshComponent.h"
-#include "Components/StaticMeshComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=StaticMeshComponent -FallbackName=StaticMeshComponent
 #include "DroneUseComponent.h"
 #include "Net/UnrealNetwork.h"
 #include "PathfinderSplineSegmentCollisionComponent.h"
 #include "SimpleHealthComponent.h"
 #include "SingleUsableComponent.h"
+#include "Components/SplineMeshComponent.h"
 
 APipelineSegment::APipelineSegment(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->StaticMeshUnassembled = NULL;
-    this->StaticMeshAssembled = NULL;
-    this->StaticMeshFinal = NULL;
+    this->StaticMeshUnassembled = nullptr;
+    this->StaticMeshAssembled = nullptr;
+    this->StaticMeshFinal = nullptr;
     this->CarvingTraceType = TraceTypeQuery1;
-    this->NumberMaterial = NULL;
+    this->NumberMaterial = nullptr;
     this->RepairSegmentUsable = CreateDefaultSubobject<USingleUsableComponent>(TEXT("RepairSegmentUsable"));
     this->ActivateSegmentUsable = CreateDefaultSubobject<USingleUsableComponent>(TEXT("ActivateSegmentUsable"));
     this->DroneUsable = CreateDefaultSubobject<UDroneUseComponent>(TEXT("DroneUseComponent"));

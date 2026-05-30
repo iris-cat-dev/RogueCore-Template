@@ -6,3 +6,4 @@ UENUM(BlueprintType)
 enum class EBasicPistol : uint8 {
     ConsecutiveHitsDamageBonus,
 };
+

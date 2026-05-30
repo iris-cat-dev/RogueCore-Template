@@ -8,13 +8,13 @@ UTerrainMaterial::UTerrainMaterial() {
     this->ExplosionProof = false;
     this->MeltsInFire = false;
     this->PlatformDissolvable = false;
-    this->ResourceData = NULL;
+    this->ResourceData = nullptr;
     this->HitsNeededToMine = 2;
     this->PickAxeDigSize = 105.00f;
     this->RemoveDebrisOnFirstHit = true;
-    this->ShoutLookAt = NULL;
-    this->ShoutOnDig = NULL;
-    this->TerrainType = NULL;
+    this->ShoutLookAt = nullptr;
+    this->ShoutOnDig = nullptr;
+    this->TerrainType = nullptr;
     this->Precious = false;
 }
 

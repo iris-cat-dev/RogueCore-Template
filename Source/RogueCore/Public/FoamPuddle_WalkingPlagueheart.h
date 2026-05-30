@@ -11,4 +11,6 @@ public:
     float FoamCleanRadius;
     
     AFoamPuddle_WalkingPlagueheart(const FObjectInitializer& ObjectInitializer);
+
 };
+

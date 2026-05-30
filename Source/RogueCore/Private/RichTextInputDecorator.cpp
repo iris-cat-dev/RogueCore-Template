@@ -1,7 +1,7 @@
 #include "RichTextInputDecorator.h"
 
 URichTextInputDecorator::URichTextInputDecorator() {
-    this->DecoratorWidgetClass = NULL;
+    this->DecoratorWidgetClass = nullptr;
 }
 
 

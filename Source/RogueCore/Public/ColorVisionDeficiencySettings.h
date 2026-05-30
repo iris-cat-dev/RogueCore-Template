@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/UnrealType.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=EColorVisionDeficiency -FallbackName=EColorVisionDeficiency
 #include "ColorVisionDeficiencySettings.generated.h"
 
 USTRUCT(BlueprintType)
@@ -10,6 +10,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EColorVisionDeficiency Type;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float Severity;
+    
     ROGUECORE_API FColorVisionDeficiencySettings();
 };
+

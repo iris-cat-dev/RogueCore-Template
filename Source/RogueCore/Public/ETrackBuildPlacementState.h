@@ -8,3 +8,4 @@ enum class ETrackBuildPlacementState : uint8 {
     BeingPlaced,
     Finished,
 };
+

@@ -4,6 +4,7 @@
 #include "InfluenceMap.generated.h"
 
 class UObject;
+
 USTRUCT(BlueprintType)
 struct FInfluenceMap {
     GENERATED_BODY()
@@ -13,3 +14,4 @@ public:
     
     ROGUECORE_API FInfluenceMap();
 };
+

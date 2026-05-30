@@ -5,6 +5,7 @@
 class UStageComplexity;
 class UStageDuration;
 class UStageTemplate;
+
 USTRUCT(BlueprintType)
 struct FRequiredMissionItem {
     GENERATED_BODY()
@@ -12,8 +13,15 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UStageTemplate* MissionTemplate;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UStageComplexity* Complexity;
-    UStageDuration* Duration;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UStageDuration* duration;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool CanHaveMutators;
+    
     ROGUECORE_API FRequiredMissionItem();
 };
+

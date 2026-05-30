@@ -8,4 +8,6 @@ class UBXEPersonalRewardUsableComponent : public USingleUsableComponent {
     GENERATED_BODY()
 public:
     UBXEPersonalRewardUsableComponent(const FObjectInitializer& ObjectInitializer);
+
 };
+

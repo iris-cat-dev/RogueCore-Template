@@ -4,6 +4,7 @@
 
 class AActor;
 class UMaterialInstanceDynamic;
+
 USTRUCT(BlueprintType)
 struct FRagdollItem {
     GENERATED_BODY()
@@ -11,7 +12,12 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     AActor* Actor;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<UMaterialInstanceDynamic*> Materials;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     UMaterialInstanceDynamic* DropshadowMaterial;
+    
     ROGUECORE_API FRagdollItem();
 };
+

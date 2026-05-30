@@ -8,3 +8,4 @@ enum class EPawnAttitude : uint8 {
     Neutral,
     Hostile,
 };
+

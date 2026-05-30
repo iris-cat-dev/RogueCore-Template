@@ -1,7 +1,7 @@
 #include "SeasonalEventEntry.h"
 
 FSeasonalEventEntry::FSeasonalEventEntry() {
-    this->SpecialEvent = NULL;
+    this->SpecialEvent = nullptr;
     this->RequiredMainCampaignProgress = 0;
 }
 

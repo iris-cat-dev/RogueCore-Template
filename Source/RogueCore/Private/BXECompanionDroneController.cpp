@@ -1,10 +1,10 @@
 #include "BXECompanionDroneController.h"
 
 ABXECompanionDroneController::ABXECompanionDroneController(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->ElevatorClass = NULL;
-    this->ArtifactResource = NULL;
-    this->PotentExpeniteResource = NULL;
-    this->Behaviour = NULL;
+    this->ElevatorClass = nullptr;
+    this->ArtifactResource = nullptr;
+    this->PotentExpeniteResource = nullptr;
+    this->Behaviour = nullptr;
     this->DroneCallCooldown = 5.00f;
     this->LandingDistance = 1000.00f;
     this->MinUpdateTargetInterval = 0.00f;
@@ -13,8 +13,12 @@ ABXECompanionDroneController::ABXECompanionDroneController(const FObjectInitiali
     this->PotentExpeniteProcessingTime = 5.00f;
     this->SaluteDelay = 0.50f;
     this->TakeoffTime = 2.00f;
+    this->LandingStuckTimeout = 5.00f;
     this->StoreRewards = true;
-    this->ShoutCalling = NULL;
+    this->ShoutCalling = nullptr;
+}
+
+void ABXECompanionDroneController::StartManualNegotiation() {
 }
 
 void ABXECompanionDroneController::Salute() {
@@ -36,7 +40,7 @@ void ABXECompanionDroneController::OnUsed() {
 void ABXECompanionDroneController::OnStoppedUsing() {
 }
 
-void ABXECompanionDroneController::OnResourceDeposited(UResourceData* Resource, float amount) {
+void ABXECompanionDroneController::OnResourceDeposited(UResourceData* Resource, float Amount) {
 }
 
 void ABXECompanionDroneController::OnNegotiationStarted() {
@@ -51,7 +55,7 @@ void ABXECompanionDroneController::OnMessage(FName Name) {
 void ABXECompanionDroneController::OnMatchStarted() {
 }
 
-void ABXECompanionDroneController::OnGameStateCountDownStarted(const FText& CountdownText) {
+void ABXECompanionDroneController::OnGameStateCountDownStarted(const FText& countdownText) {
 }
 
 void ABXECompanionDroneController::OnGameStateCountDownEnded() {
@@ -70,6 +74,9 @@ void ABXECompanionDroneController::OnDroneCalled(FVector Location, APlayerCharac
 }
 
 void ABXECompanionDroneController::OnDeposit(APlayerCharacter* Player) {
+}
+
+void ABXECompanionDroneController::ForceLandedFallback() {
 }
 
 void ABXECompanionDroneController::ElevatorUsed(ATeamElevator* Elevator) {

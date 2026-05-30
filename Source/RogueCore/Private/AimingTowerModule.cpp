@@ -3,7 +3,7 @@
 
 AAimingTowerModule::AAimingTowerModule(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->ArmorPlates.AddDefaulted(3);
-    this->Target = NULL;
+    this->Target = nullptr;
     this->BurstTime = 0.00f;
     this->AttackTime = 0.00f;
     this->BurstSize = 0;

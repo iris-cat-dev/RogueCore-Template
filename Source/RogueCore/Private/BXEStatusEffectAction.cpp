@@ -1,7 +1,7 @@
 #include "BXEStatusEffectAction.h"
 
 UBXEStatusEffectAction::UBXEStatusEffectAction() {
-    this->StatusEffect = NULL;
+    this->StatusEffect = nullptr;
 }
 
 

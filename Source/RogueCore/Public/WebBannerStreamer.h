@@ -6,6 +6,7 @@
 
 class UObject;
 class UWebBannerStreamer;
+
 UCLASS(Blueprintable)
 class UWebBannerStreamer : public UBlueprintAsyncActionBase {
     GENERATED_BODY()
@@ -13,8 +14,13 @@ public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnHttpRequestCompleted success;
     
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnHttpRequestCompleted Failed;
+    
     UWebBannerStreamer();
+
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static UWebBannerStreamer* DownloadConfig(UObject* WorldContextObject);
+    
 };
+

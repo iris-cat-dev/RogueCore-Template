@@ -45,7 +45,7 @@ bool UFSDWidgetBlueprintLibrary::SetHorizontalSlot(UWidget* Widget, FSlateChildS
 void UFSDWidgetBlueprintLibrary::SetChildrenVisibility(UPanelWidget* Panel, ESlateVisibility Visibility, int32 StartIndex, TSubclassOf<UUserWidget> OptionalClassFilter) {
 }
 
-void UFSDWidgetBlueprintLibrary::SelectVisibility(UWidget* Widget, ESlateVisibility InFalse, ESlateVisibility InTrue, const bool Value, bool& IsVisible, bool& VisibilityChanged, ESlateVisibility& NewVisibility) {
+void UFSDWidgetBlueprintLibrary::SelectVisibility(UWidget* Widget, const ESlateVisibility FALSE, const ESlateVisibility TRUE, const bool Value, bool& IsVisible, bool& VisibilityChanged, ESlateVisibility& NewVisibility) {
 }
 
 void UFSDWidgetBlueprintLibrary::ScrubAnimation(UObject* WorldContext, UWidgetAnimation* InAnimation, float Progress01) {
@@ -63,7 +63,7 @@ void UFSDWidgetBlueprintLibrary::ResetAnimationToStartTime(UUserWidget* Widget, 
 void UFSDWidgetBlueprintLibrary::ResetAnimationToEndTime(UUserWidget* Widget, UWidgetAnimation* Animation) {
 }
 
-void UFSDWidgetBlueprintLibrary::PrintStrings(UObject* WorldContextObject, const TArray<FString>& InStrings, bool bPrintToScreen, bool bPrintToLog, FLinearColor TextColor, float Duration) {
+void UFSDWidgetBlueprintLibrary::PrintStrings(UObject* WorldContextObject, const TArray<FString>& InStrings, bool bPrintToScreen, bool bPrintToLog, FLinearColor TextColor, float duration) {
 }
 
 FString UFSDWidgetBlueprintLibrary::MidIgnoringWhiteSpace(const FString& Source, int32 Index, int32 count) {
@@ -102,6 +102,10 @@ bool UFSDWidgetBlueprintLibrary::IsWhiteSpace(const FString& Source) {
 }
 
 bool UFSDWidgetBlueprintLibrary::IsHUDVisible(UObject* WorldContextObject) {
+    return false;
+}
+
+bool UFSDWidgetBlueprintLibrary::IsDesignTime(UUserWidget* InUserWidget) {
     return false;
 }
 
@@ -189,7 +193,7 @@ TArray<UUserWidget*> UFSDWidgetBlueprintLibrary::CreateOrReuseChildrenWithCallba
     return TArray<UUserWidget*>();
 }
 
-TArray<UUserWidget*> UFSDWidgetBlueprintLibrary::CreateOrReuseChildren(UPanelWidget* Panel, int32 count, TSubclassOf<UUserWidget> WidgetClass) {
+TArray<UUserWidget*> UFSDWidgetBlueprintLibrary::CreateOrReuseChildren(UPanelWidget* Panel, int32 count, TSubclassOf<UUserWidget> WidgetClass, bool ClearPanel) {
     return TArray<UUserWidget*>();
 }
 

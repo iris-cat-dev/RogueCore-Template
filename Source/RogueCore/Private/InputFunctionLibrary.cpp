@@ -3,13 +3,6 @@
 UInputFunctionLibrary::UInputFunctionLibrary() {
 }
 
-void UInputFunctionLibrary::SetMouseSmoothingOn(bool smoothingOn) {
-}
-
-bool UInputFunctionLibrary::IsMouseSmoothingOn() {
-    return false;
-}
-
 bool UInputFunctionLibrary::IsMouseEventAction(const FPointerEvent& MouseEvent, const FName& ActionName, bool IgnoreCustomBindings) {
     return false;
 }
@@ -46,7 +39,7 @@ bool UInputFunctionLibrary::GetActionMapping(FName InActionName, bool InGamepadK
     return false;
 }
 
-bool UInputFunctionLibrary::FindInputDisplay(const APlayerController* PlayerController, FName InputName, EFSDInputSource InputSource, int32 LayoutIndex, FInputDisplay& OutInputDisplay) {
+bool UInputFunctionLibrary::FindInputDisplay(const FName InputName, const EFSDInputSource InputSource, const int32 Axis, FInputDisplay& OutInputDisplay) {
     return false;
 }
 

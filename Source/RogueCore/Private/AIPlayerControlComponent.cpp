@@ -11,12 +11,12 @@ UAIPlayerControlComponent::UAIPlayerControlComponent(const FObjectInitializer& O
     this->AccelerationOnSlopeMultiplier = 1.50f;
     this->DecelerationOnSlopeMultiplier = 1.30f;
     this->InitialConnectionBlendTime = 0.30f;
-    this->GetOnMontageAI = NULL;
-    this->GetOnMontagePlayer = NULL;
-    this->LetGoMontageAI = NULL;
-    this->LetGoMontagePlayer = NULL;
-    this->GetOnShout = NULL;
-    this->LetGoShout = NULL;
+    this->GetOnMontageAI = nullptr;
+    this->GetOnMontagePlayer = nullptr;
+    this->LetGoMontageAI = nullptr;
+    this->LetGoMontagePlayer = nullptr;
+    this->GetOnShout = nullptr;
+    this->LetGoShout = nullptr;
     this->usable = CreateDefaultSubobject<UControlEnemyUsable>(TEXT("usable"));
 }
 

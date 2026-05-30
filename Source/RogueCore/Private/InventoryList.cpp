@@ -2,9 +2,9 @@
 #include "Templates/SubclassOf.h"
 
 UInventoryList::UInventoryList() {
-    this->LaserPointerItem = NULL;
-    this->TerrainScannerItem = NULL;
-    this->ResupplyItem = NULL;
+    this->LaserPointerItem = nullptr;
+    this->TerrainScannerItem = nullptr;
+    this->ResupplyItem = nullptr;
 }
 
 UItemID* UInventoryList::GetPreviousUnlockedItem(UObject* WorldContextObject, EItemCategory Category, UItemID* currentItem) const {

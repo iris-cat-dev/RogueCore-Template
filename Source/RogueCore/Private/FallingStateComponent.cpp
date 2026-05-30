@@ -3,14 +3,14 @@
 
 UFallingStateComponent::UFallingStateComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->StateId = 3;
-    this->FallingDamageClass = NULL;
+    this->FallingDamageClass = nullptr;
     this->LightLandingBufferSize = 0.00f;
     this->HeavyLandingBufferSize = 0.00f;
-    this->LightLandingSound = NULL;
-    this->HeavyLandingSound = NULL;
-    this->HeavyLandingSTE = NULL;
-    this->LightLandingShake = NULL;
-    this->HeavyLandingShake = NULL;
+    this->LightLandingSound = nullptr;
+    this->HeavyLandingSound = nullptr;
+    this->HeavyLandingSTE = nullptr;
+    this->LightLandingShake = nullptr;
+    this->HeavyLandingShake = nullptr;
     this->FallDamageStartVelocity = 1000.00f;
     this->FallDamageModifier = 0.10f;
     this->AutoClimbMinDelay = 1.00f;
@@ -21,13 +21,13 @@ UFallingStateComponent::UFallingStateComponent(const FObjectInitializer& ObjectI
     this->MinInputDotProduct = 0.00f;
     this->JumpZVelocity = 0.00f;
     this->DebugAutoClimb = false;
-    this->FallingShout = NULL;
+    this->FallingShout = nullptr;
     this->ShoutAfterDistance = 500.00f;
-    this->ClimbUseSettings = NULL;
+    this->ClimbUseSettings = nullptr;
     this->HoverBootAirFriction = 5.00f;
     this->HoverBootAirControl = 0.00f;
     this->HoverBootGravityScale = 0.05f;
-    this->ShoutHoverBootsBegin = NULL;
+    this->ShoutHoverBootsBegin = nullptr;
     this->HoverBootActivateDuration = 0.25f;
     this->bHoverBootsActive = false;
     this->HoverBootMaxDuration = 0.50f;
@@ -36,7 +36,7 @@ UFallingStateComponent::UFallingStateComponent(const FObjectInitializer& ObjectI
 }
 
 
-void UFallingStateComponent::Server_TakeFallDamage_Implementation(float amount) {
+void UFallingStateComponent::Server_TakeFallDamage_Implementation(float Amount) {
 }
 
 void UFallingStateComponent::Server_SetJumpPressed_Implementation(bool Pressed) {

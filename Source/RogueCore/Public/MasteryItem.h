@@ -3,6 +3,7 @@
 #include "MasteryItem.generated.h"
 
 class UUnlockReward;
+
 USTRUCT(BlueprintType)
 struct FMasteryItem {
     GENERATED_BODY()
@@ -12,5 +13,7 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     TArray<UUnlockReward*> Unlocks;
+    
     ROGUECORE_API FMasteryItem();
 };
+

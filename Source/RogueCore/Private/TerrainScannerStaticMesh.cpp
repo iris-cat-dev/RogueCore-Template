@@ -14,6 +14,9 @@ UTerrainScannerStaticMesh::UTerrainScannerStaticMesh(const FObjectInitializer& O
 void UTerrainScannerStaticMesh::SetVisibleOnScanner(bool InShowOnScanner) {
 }
 
+void UTerrainScannerStaticMesh::SetUseFogOfWar(bool InUseFogOfWar) {
+}
+
 void UTerrainScannerStaticMesh::RegisterWithSubsystem() {
 }
 

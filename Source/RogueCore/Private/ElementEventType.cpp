@@ -1,10 +1,10 @@
 #include "ElementEventType.h"
 
 UElementEventType::UElementEventType() {
-    this->OnActivateSoundCue = NULL;
-    this->OnDeactivateSoundCue = NULL;
-    this->OnActivateParticleSystem = NULL;
-    this->OnDeactivateParticleSystem = NULL;
+    this->OnActivateSoundCue = nullptr;
+    this->OnDeactivateSoundCue = nullptr;
+    this->OnActivateParticleSystem = nullptr;
+    this->OnDeactivateParticleSystem = nullptr;
     this->DamageBonus = 0.00f;
     this->PlayerOverrideSetup = false;
 }

@@ -12,3 +12,4 @@ public:
     ROGUECORE_API FMusicHandle();
 };
 FORCEINLINE uint32 GetTypeHash(const FMusicHandle) { return 0; }
+

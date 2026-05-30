@@ -1,7 +1,7 @@
 #include "RangeElementCondition.h"
 
 URangeElementCondition::URangeElementCondition() {
-    this->ElementType = NULL;
+    this->ElementType = nullptr;
 }
 
 

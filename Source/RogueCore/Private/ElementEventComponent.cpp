@@ -1,9 +1,9 @@
 #include "ElementEventComponent.h"
 
 UElementEventComponent::UElementEventComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->EventType = NULL;
-    this->TriggeredByElementType = NULL;
-    this->Source = NULL;
+    this->EventType = nullptr;
+    this->TriggeredByElementType = nullptr;
+    this->Source = nullptr;
 }
 
 bool UElementEventComponent::FindEventState(FElementEventState& EventState) {

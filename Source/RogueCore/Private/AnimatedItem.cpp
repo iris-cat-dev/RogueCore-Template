@@ -1,23 +1,23 @@
 #include "AnimatedItem.h"
-#include "Components/SceneComponent.h"
-#include "Components/SkeletalMeshComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SkeletalMeshComponent -FallbackName=SkeletalMeshComponent
 #include "FirstPersonSkeletalMeshComponent.h"
 #include "SkinnableComponent.h"
 
 AAnimatedItem::AAnimatedItem(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("Root"));
+    //this->RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("Root"));
     this->Skinnable = CreateDefaultSubobject<USkinnableComponent>(TEXT("Skinnable"));
-    this->FPAnimInstance = NULL;
-    this->TPAnimInstance = NULL;
+    this->FPAnimInstance = nullptr;
+    this->TPAnimInstance = nullptr;
     this->FPMesh = CreateDefaultSubobject<UFirstPersonSkeletalMeshComponent>(TEXT("FPMesh"));
     this->TPMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("TPMesh"));
-    this->FP_EquipAnimation = NULL;
-    this->FP_IdleAnimation = NULL;
-    this->TP_EquipAnimation = NULL;
-    this->TP_IdleAnimation = NULL;
+    this->FP_EquipAnimation = nullptr;
+    this->FP_IdleAnimation = nullptr;
+    this->TP_EquipAnimation = nullptr;
+    this->TP_IdleAnimation = nullptr;
     this->EquipDuration = 0.25f;
-    this->CharacterAnimationSet = NULL;
-    this->UpperBodyCharacterAnimationSet = NULL;
+    this->CharacterAnimationSet = nullptr;
+    this->UpperBodyCharacterAnimationSet = nullptr;
     this->UnHideOnEquip = true;
     this->HideOnUnequip = true;
     this->FPMesh->SetupAttachment(RootComponent);

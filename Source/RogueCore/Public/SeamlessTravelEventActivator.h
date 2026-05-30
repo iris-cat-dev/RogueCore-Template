@@ -1,16 +1,20 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Components/ActorComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
 #include "SeamlessTravelEventActivator.generated.h"
 
 class USeamlessTravelEventKey;
+
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class ROGUECORE_API USeamlessTravelEventActivator : public UActorComponent {
     GENERATED_BODY()
-    
 public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USeamlessTravelEventKey* EventKey;
     
+public:
     USeamlessTravelEventActivator(const FObjectInitializer& ObjectInitializer);
+
 };
+

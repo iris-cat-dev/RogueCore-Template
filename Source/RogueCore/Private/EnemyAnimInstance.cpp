@@ -1,17 +1,14 @@
 #include "EnemyAnimInstance.h"
 
-UEnemyAnimInstance::UEnemyAnimInstance(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+UEnemyAnimInstance::UEnemyAnimInstance() {
     this->IsAttacking = false;
     this->IKBlend = 0.00f;
     this->IKEnabled = false;
     this->IsAlive = true;
-    this->RandomStartPosition = 0.67f;
-    this->HealthComponent = NULL;
-    this->IKComponent = NULL;
-    this->PoseCorrectionComponent = NULL;
-}
-
-UEnemyAnimInstance::UEnemyAnimInstance() : UEnemyAnimInstance(FObjectInitializer::Get()) {
+    this->RandomStartPosition = 0.93f;
+    this->HealthComponent = nullptr;
+    this->IKComponent = nullptr;
+    this->PoseCorrectionComponent = nullptr;
 }
 
 bool UEnemyAnimInstance::IsSlotPlayingAnyAnimation(FName SlotNodeName) const {

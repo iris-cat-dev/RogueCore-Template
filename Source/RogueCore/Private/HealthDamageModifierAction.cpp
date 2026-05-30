@@ -1,7 +1,7 @@
 #include "HealthDamageModifierAction.h"
 
 UHealthDamageModifierAction::UHealthDamageModifierAction() {
-    this->Modifier = NULL;
+    this->Modifier = nullptr;
 }
 
 

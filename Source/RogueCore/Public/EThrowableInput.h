@@ -7,3 +7,4 @@ enum class EThrowableInput : uint8 {
     LeftButton,
     RightButton,
 };
+

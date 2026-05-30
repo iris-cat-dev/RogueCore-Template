@@ -1,7 +1,9 @@
 #include "UnlockableItemData.h"
 
 FUnlockableItemData::FUnlockableItemData() {
-    this->ItemID = NULL;
+    this->ItemID = nullptr;
     this->DamageIndex = 0;
+    this->Unlock = FBXEUnlockInstance();
+    this->SelectedSlot = FItemSlotIndex();
 }
 

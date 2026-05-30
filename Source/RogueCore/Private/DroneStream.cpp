@@ -1,6 +1,6 @@
 #include "DroneStream.h"
 #include "Components/CapsuleComponent.h"
-#include "Components/SceneComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
 
 ADroneStream::ADroneStream(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("Root"));

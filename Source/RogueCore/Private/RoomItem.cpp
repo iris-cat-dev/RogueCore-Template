@@ -1,6 +1,8 @@
 #include "RoomItem.h"
 
 FRoomItem::FRoomItem() {
-    this->Spawnable = NULL;
+    this->Spawnable = nullptr;
+    this->Location = FVector::ZeroVector;
+    this->Rotation = FRotator_NoQuantize();
 }
 

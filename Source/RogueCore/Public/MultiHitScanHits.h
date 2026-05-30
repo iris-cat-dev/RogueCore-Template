@@ -5,6 +5,7 @@
 
 class UFSDPhysicalMaterial;
 class UPrimitiveComponent;
+
 USTRUCT(BlueprintType)
 struct FMultiHitScanHits {
     GENERATED_BODY()
@@ -14,6 +15,10 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
     TArray<UPrimitiveComponent*> Components;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<UFSDPhysicalMaterial*> PhysicalMaterials;
+    
     ROGUECORE_API FMultiHitScanHits();
 };
+

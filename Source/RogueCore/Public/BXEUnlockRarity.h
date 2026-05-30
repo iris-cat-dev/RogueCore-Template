@@ -1,24 +1,34 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EBXEOverclockType.h"
+#include "EUnlockRarityType.h"
 #include "SavablePrimaryDataAsset.h"
 #include "BXEUnlockRarity.generated.h"
 
 class URarityConditionBase;
 class UUnlockVisualSettings;
+
 UCLASS(Blueprintable)
 class UBXEUnlockRarity : public USavablePrimaryDataAsset {
     GENERATED_BODY()
 public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    int32 WeaponAttributes;
+    EUnlockRarityType RarityType;
     
-    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
-    EBXEOverclockType OverclockType;
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FText Title;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UUnlockVisualSettings* VisualSettings;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     TArray<URarityConditionBase*> SelectionConditions;
- 
-    FString RarityTitle;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 AttributeCount;
+    
+public:
     UBXEUnlockRarity();
+
 };
+

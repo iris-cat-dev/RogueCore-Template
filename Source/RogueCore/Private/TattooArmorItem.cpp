@@ -1,7 +1,7 @@
 #include "TattooArmorItem.h"
 
 FTattooArmorItem::FTattooArmorItem() {
-    this->Tattoo = NULL;
+    this->Tattoo = nullptr;
     this->IsLeftArm = false;
     this->FlipTexture = false;
 }

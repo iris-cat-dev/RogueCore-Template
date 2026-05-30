@@ -1,5 +1,5 @@
 #include "AFlyingBug.h"
-#include "Perception/AIPerceptionComponent.h"
+#include "Perception/PawnSensingComponent.h"
 #include "Components/AudioComponent.h"
 #include "Components/SphereComponent.h"
 #include "EnemyComponent.h"
@@ -11,7 +11,29 @@
 #include "PawnStatsComponent.h"
 
 AAFlyingBug::AAFlyingBug(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-
+    this->bNetLoadOnClient = false;
+    this->EnemyComponent = CreateDefaultSubobject<UEnemyComponent>(TEXT("Enemy"));
+    this->PawnStats = CreateDefaultSubobject<UPawnStatsComponent>(TEXT("PawnStats"));
+    this->Outline = CreateDefaultSubobject<UOutlineComponent>(TEXT("Outline"));
+    this->Senses = CreateDefaultSubobject<UPawnSensingComponent>(TEXT("Sensing"));
+    this->Alert = CreateDefaultSubobject<UPawnAlertComponent>(TEXT("Alert"));
+    this->ExplosionSphere = CreateDefaultSubobject<USphereComponent>(TEXT("ExplosionSphere"));
+    this->WingSoundComponent = CreateDefaultSubobject<UAudioComponent>(TEXT("WingSound"));
+    this->FrozenImpact = CreateDefaultSubobject<UFrozenPawnImpactComponent>(TEXT("FrozenImpact"));
+    this->HitReactions = CreateDefaultSubobject<UHitReactionComponent>(TEXT("HitReactions"));
+    this->RotateTarget = nullptr;
+    this->ChatterSound = nullptr;
+    this->DistanceForAttackMode = 0.00f;
+    this->MinChatterDelay = 0.00f;
+    this->MaxChatterDelay = 0.00f;
+    this->AttackModeRotationSpeed = 0.00f;
+    this->UsesAttackStance = true;
+    this->SetLifeTime = true;
+    this->AttackStance = false;
+    this->LookStraight = false;
+    this->UseDefaultRagdoll = true;
+    this->ExplosionSphere->SetupAttachment(mesh);
+    this->WingSoundComponent->SetupAttachment(mesh);
 }
 
 

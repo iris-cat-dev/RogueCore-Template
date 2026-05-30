@@ -8,4 +8,6 @@ class UDoubleDrillAggregator : public UCapacityBasedItemAggregator {
     GENERATED_BODY()
 public:
     UDoubleDrillAggregator(const FObjectInitializer& ObjectInitializer);
+
 };
+

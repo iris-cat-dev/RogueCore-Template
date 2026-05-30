@@ -1,7 +1,7 @@
 #include "IntelChallengeNeutralizeEnemy.h"
 
 UIntelChallengeNeutralizeEnemy::UIntelChallengeNeutralizeEnemy() {
-    this->RequiredEnemy = NULL;
+    this->RequiredEnemy = nullptr;
     this->RequiredAmount = 1;
 }
 

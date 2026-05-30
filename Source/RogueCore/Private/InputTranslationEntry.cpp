@@ -3,5 +3,6 @@
 FInputTranslationEntry::FInputTranslationEntry() {
     this->Interaction = EInputInteraction::Press;
     this->Axis = 0;
+    this->InputName = FName();
 }
 

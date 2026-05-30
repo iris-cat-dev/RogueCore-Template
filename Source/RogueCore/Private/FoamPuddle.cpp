@@ -1,5 +1,5 @@
 #include "FoamPuddle.h"
-#include "Components/SceneComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
 #include "NiagaraComponent.h"
 #include "Net/UnrealNetwork.h"
 
@@ -8,13 +8,13 @@ AFoamPuddle::AFoamPuddle(const FObjectInitializer& ObjectInitializer) : Super(Ob
     this->Root = (USceneComponent*)RootComponent;
     this->PuddleRoot = CreateDefaultSubobject<USceneComponent>(TEXT("PuddleRoot"));
     this->NS_Foam = CreateDefaultSubobject<UNiagaraComponent>(TEXT("NS_Vacuum_FP"));
-    this->PickupSound = NULL;
+    this->PickupSound = nullptr;
     this->PickupSoundCooldown = 0.50f;
-    this->PickupFilledSound = NULL;
+    this->PickupFilledSound = nullptr;
     this->PickupFilledCooldown = 0.50f;
-    this->VacuumedSound = NULL;
+    this->VacuumedSound = nullptr;
     this->VacuumedCooldown = 0.50f;
-    this->VacuumedSoundFilled = NULL;
+    this->VacuumedSoundFilled = nullptr;
     this->VacuumedSoundFilledCooldown = 0.50f;
     this->InitialDebrisRadius = 75.00f;
     this->TotalRadiusGrowth = 100.00f;
@@ -23,7 +23,7 @@ AFoamPuddle::AFoamPuddle(const FObjectInitializer& ObjectInitializer) : Super(Ob
     this->ScaleTimeVacuuming = 1.00f;
     this->Speed = 0.00f;
     this->State = EVacuumState::EFalling;
-    this->VacuumSource = NULL;
+    this->VacuumSource = nullptr;
     this->MaxSoapPiles = 100;
     this->UsesLocalSpace = false;
     this->NS_Foam->SetupAttachment(PuddleRoot);

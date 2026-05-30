@@ -6,10 +6,10 @@
 AGrapplingHookGun::AGrapplingHookGun(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->CoolDownAggregator = CreateDefaultSubobject<UCoolDownItemAggregator>(TEXT("CoolDownAggregator"));
     this->MaxDistance = 2000.00f;
-    this->FPReloadAnim = NULL;
-    this->TPReloadAnim = NULL;
-    this->FPGunslingAnim = NULL;
-    this->TPGunslingAnim = NULL;
+    this->FPReloadAnim = nullptr;
+    this->TPReloadAnim = nullptr;
+    this->FPGunslingAnim = nullptr;
+    this->TPGunslingAnim = nullptr;
     this->MaxSpeed = 1500.00f;
     this->MaxSpeedReleaseModifier = 0.50f;
     this->WindUpTime = 0.40f;

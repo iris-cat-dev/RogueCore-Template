@@ -4,16 +4,20 @@
 #include "VeinMutator.generated.h"
 
 class UVeinResourceData;
+
 UCLASS(Blueprintable, EditInlineNew)
 class ROGUECORE_API UVeinMutator : public UMutator {
     GENERATED_BODY()
-    
-
 public:
-
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UVeinResourceData* VeinResource;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float Modifier;
+    
+public:
     UVeinMutator();
+
 };
+

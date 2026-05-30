@@ -10,7 +10,12 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ETerrainPlacementRoomFilter RoomFilter;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<int32> RoomIndicesFilter;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float LimitHeightFromRoomRadius;
+    
     ROGUECORE_API FRoomFilterParams();
 };
+

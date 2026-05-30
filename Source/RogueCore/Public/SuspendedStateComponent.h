@@ -8,4 +8,6 @@ class USuspendedStateComponent : public UCharacterStateComponent {
     GENERATED_BODY()
 public:
     USuspendedStateComponent(const FObjectInitializer& ObjectInitializer);
+
 };
+

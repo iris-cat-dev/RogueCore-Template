@@ -4,6 +4,7 @@
 #include "ElementEventCondition.generated.h"
 
 class UElementEventType;
+
 UCLASS(Blueprintable, EditInlineNew)
 class UElementEventCondition : public UDamageCondition {
     GENERATED_BODY()
@@ -12,4 +13,6 @@ public:
     UElementEventType* Event;
     
     UElementEventCondition();
+
 };
+

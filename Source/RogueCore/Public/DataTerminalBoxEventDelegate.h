@@ -3,3 +3,4 @@
 #include "DataTerminalBoxEventDelegate.generated.h"
 
 UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDataTerminalBoxEvent, int32, BoxIndex);
+

@@ -4,6 +4,7 @@
 #include "ExplosiveBarrelEvent.generated.h"
 
 class UDamageComponent;
+
 UCLASS(Blueprintable)
 class AExplosiveBarrelEvent : public AGameEvent {
     GENERATED_BODY()
@@ -12,4 +13,6 @@ public:
     UDamageComponent* EndDamage;
     
     AExplosiveBarrelEvent(const FObjectInitializer& ObjectInitializer);
+
 };
+

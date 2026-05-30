@@ -2,7 +2,7 @@
 #include "Templates/SubclassOf.h"
 
 UWeaponHitCounterUpgrade::UWeaponHitCounterUpgrade() {
-    this->ComponentClass = NULL;
+    this->ComponentClass = nullptr;
 }
 
 FUpgradeValues UWeaponHitCounterUpgrade::GetUpgradedValue(AFSDPlayerState* Player, TSubclassOf<AActor> Item, TSubclassOf<UWeaponHitCounterComponent> NewComponentClass) {

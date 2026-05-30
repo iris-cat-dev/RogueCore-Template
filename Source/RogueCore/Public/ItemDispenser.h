@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameFramework/Actor.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
 #include "EInputKeys.h"
 #include "ItemDispenserDelegateDelegate.h"
 #include "Templates/SubclassOf.h"
@@ -10,48 +10,86 @@ class ACarriableItem;
 class APlayerCharacter;
 class UInstantUsable;
 class USceneComponent;
+
 UCLASS(Blueprintable)
 class AItemDispenser : public AActor {
     GENERATED_BODY()
-    
-
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USceneComponent* Root;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UInstantUsable* usable;
+    
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FItemDispenserDelegate OnItemSpawned;
+    
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FItemDispenserDelegate OnItemTaken;
- 
+    
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<AActor*> ItemHistory;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<ACarriableItem> itemClass;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, ReplicatedUsing=OnRep_SpawnedItem, meta=(AllowPrivateAccess=true))
     AActor* spawnedItem;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float ItemSpawnTime;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float InitialItemSpawnTime;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, ReplicatedUsing=OnRep_IsOpen, meta=(AllowPrivateAccess=true))
     bool IsOpen;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool KillItemsOnDestuction;
+    
+public:
     AItemDispenser(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+
+protected:
     UFUNCTION(BlueprintCallable)
     void SpawnItem();
+    
+public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void Open();
+    
+protected:
+    UFUNCTION(BlueprintCallable)
     void OnUsed(APlayerCharacter* User, EInputKeys Key);
-    UFUNCTION()
+    
+    UFUNCTION(BlueprintCallable)
     void OnRep_SpawnedItem(AActor* OldItem);
-    UFUNCTION()
+    
+    UFUNCTION(BlueprintCallable)
     void OnRep_IsOpen();
+    
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnPickedUpItem(AActor* Item);
+    
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnOpenChanged(bool NewOpen);
+    
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnItemSpawnedEvent(AActor* Item);
+    
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool HasItem() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     AActor* GetItem() const;
+    
+    UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void Close();
+    
 };
+

@@ -1,10 +1,10 @@
 #include "VeinResourceData.h"
 
 UVeinResourceData::UVeinResourceData() {
-    this->TerrainMaterial = NULL;
+    this->TerrainMaterial = nullptr;
     this->UnitsPerLenth = 10.00f;
     this->ScaleToResourceDistribution = true;
-    this->ResourceCreator = NULL;
+    this->ResourceCreator = nullptr;
 }
 
 UTerrainMaterial* UVeinResourceData::GetTerrainMaterial() const {

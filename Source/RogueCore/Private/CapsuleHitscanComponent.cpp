@@ -1,7 +1,7 @@
 #include "CapsuleHitscanComponent.h"
 
 UCapsuleHitscanComponent::UCapsuleHitscanComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->DamageEnhancer = NULL;
+    this->DamageEnhancer = nullptr;
     this->Range = 1000.00f;
     this->Width = 300.00f;
     this->ShowPhysMatImpact = true;

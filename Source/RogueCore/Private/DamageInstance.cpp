@@ -2,8 +2,8 @@
 
 FDamageInstance::FDamageInstance() {
     this->DamageVector = EDamageVector::Ranged;
-    this->DamageType = NULL;
-    this->DamageImpulse = NULL;
+    this->DamageType = nullptr;
+    this->DamageImpulse = nullptr;
     this->Damage = 0.00f;
     this->StaggerChance = 0.00f;
     this->StaggerDuration = 0.00f;
@@ -25,5 +25,7 @@ FDamageInstance::FDamageInstance() {
     this->NotifyListeners = false;
     this->DynamicBonusesEnabled = false;
     this->CanCrit = false;
+    this->FriendlyFireTag = FGameplayTag();
+    this->ElementParams = FElementParams();
 }
 

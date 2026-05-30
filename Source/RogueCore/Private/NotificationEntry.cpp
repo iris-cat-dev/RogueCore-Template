@@ -1,6 +1,7 @@
 #include "NotificationEntry.h"
 
 FNotificationEntry::FNotificationEntry() {
-    this->ObjectInstance = NULL;
+    this->ObjectInstance = nullptr;
+    this->WindowClass = nullptr;
 }
 

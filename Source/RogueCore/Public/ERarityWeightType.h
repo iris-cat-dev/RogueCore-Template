@@ -13,3 +13,4 @@ enum class ERarityWeightType : uint8 {
     Jumble,
     WeaponsWorkbench,
 };
+

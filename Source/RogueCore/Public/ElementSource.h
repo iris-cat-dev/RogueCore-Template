@@ -10,6 +10,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float Value;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EElementSourceIntensity Intensity;
+    
     ROGUECORE_API FElementSource();
 };
+

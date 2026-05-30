@@ -1,6 +1,6 @@
 #include "GatlingHotShellsBonus.h"
 
-UGatlingHotShellsBonus::UGatlingHotShellsBonus() : Super() {
+UGatlingHotShellsBonus::UGatlingHotShellsBonus() {
 }
 
 

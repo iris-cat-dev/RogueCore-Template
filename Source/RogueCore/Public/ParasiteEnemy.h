@@ -10,24 +10,39 @@ class USceneComponent;
 class USkeletalMeshComponent;
 class USoundBase;
 class UStaticMeshComponent;
+
 UCLASS(Blueprintable)
 class AParasiteEnemy : public AEnemyPawn {
     GENERATED_BODY()
-    
-
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USceneComponent* Root;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USkeletalMeshComponent* mesh;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UStaticMeshComponent* Tentacles1;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UStaticMeshComponent* Tentacles2;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UOutlineComponent* Outline;
- 
+    
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UFXSystemAsset* deathParticles;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USoundBase* deathSound;
+    
+public:
     AParasiteEnemy(const FObjectInitializer& ObjectInitializer);
+
+protected:
     UFUNCTION(BlueprintCallable)
     void OnSelfDeath(UHealthComponentBase* aHealthComponent);
+    
 };
+

@@ -10,3 +10,4 @@ enum class EItemPreviewStatus : uint8 {
     PreviewReduced,
     UpgradedAndPreviewReduced,
 };
+

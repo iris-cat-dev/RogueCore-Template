@@ -9,8 +9,15 @@ class USoloDroneUnlockAction : public UBXEUnlockAction {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FString Name;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EBoscoUpgrades Type;
     
-    float amount;
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float Amount;
+    
     USoloDroneUnlockAction();
+
 };
+

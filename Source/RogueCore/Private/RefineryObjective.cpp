@@ -4,8 +4,8 @@
 
 URefineryObjective::URefineryObjective(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->RefineryState = ERefineryState::Landing;
-    this->RefineryPlacement = NULL;
-    this->RawMaterialPlacement = NULL;
+    this->RefineryPlacement = nullptr;
+    this->RawMaterialPlacement = nullptr;
     this->RawMaterialCount = 3;
     this->bMissionCompleted = false;
     this->bIsFinalBattle = false;

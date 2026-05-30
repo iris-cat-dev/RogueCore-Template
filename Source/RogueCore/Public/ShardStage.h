@@ -3,6 +3,7 @@
 #include "ShardStage.generated.h"
 
 class UStaticMesh;
+
 USTRUCT(BlueprintType)
 struct FShardStage {
     GENERATED_BODY()
@@ -12,3 +13,4 @@ public:
     
     ROGUECORE_API FShardStage();
 };
+

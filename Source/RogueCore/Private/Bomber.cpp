@@ -10,12 +10,12 @@ ABomber::ABomber(const FObjectInitializer& ObjectInitializer) : Super(ObjectInit
     this->AcidEmitterRight = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("GooEmitterRight"));
     this->AcidEmitterLeftNS = CreateDefaultSubobject<UNiagaraComponent>(TEXT("GooEmitterLeftNS"));
     this->AcidEmitterRightNS = CreateDefaultSubobject<UNiagaraComponent>(TEXT("GooEmitterRightNS"));
-    this->AcidProjectile = NULL;
-    this->deathParticles = NULL;
-    this->deathSound = NULL;
-    this->DeathPanicSound = NULL;
-    this->BleedParticles = NULL;
-    this->BladderDestroyedNoise = NULL;
+    this->AcidProjectile = nullptr;
+    this->deathParticles = nullptr;
+    this->deathSound = nullptr;
+    this->DeathPanicSound = nullptr;
+    this->BleedParticles = nullptr;
+    this->BladderDestroyedNoise = nullptr;
     this->RagdollForceModifier = 0.00f;
     this->DeathYRotationSpeed = 0.00f;
     this->DeathXRotationSpeed = 0.00f;
@@ -54,7 +54,7 @@ void ABomber::OnRep_Death() {
 void ABomber::OnRagdollHitGround(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit) {
 }
 
-void ABomber::OnBladderDamage(float amount) {
+void ABomber::OnBladderDamage(float Amount) {
 }
 
 void ABomber::OnArmorDestroyed(FName Name) {

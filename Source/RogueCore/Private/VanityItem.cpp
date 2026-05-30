@@ -1,9 +1,9 @@
 #include "VanityItem.h"
 
 UVanityItem::UVanityItem() {
-    this->Aquisition = NULL;
-    this->EventSourceAsset = NULL;
-    this->IconGenerationCameraKey = NULL;
+    this->Aquisition = nullptr;
+    this->EventSourceAsset = nullptr;
+    this->IconGenerationCameraKey = nullptr;
 }
 
 bool UVanityItem::RemoveFromOwned(UObject* WorldContext) {

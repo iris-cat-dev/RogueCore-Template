@@ -10,4 +10,6 @@ public:
     DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnCompleted);
     
     UTickableActionBase();
+
 };
+

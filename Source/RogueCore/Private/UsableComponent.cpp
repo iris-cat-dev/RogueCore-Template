@@ -1,7 +1,7 @@
 #include "UsableComponent.h"
 
 UUsableComponent::UUsableComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->ShoutBegin = NULL;
+    this->ShoutBegin = nullptr;
     this->ResetOnFail = false;
     this->SwitchToUsingState = true;
 }

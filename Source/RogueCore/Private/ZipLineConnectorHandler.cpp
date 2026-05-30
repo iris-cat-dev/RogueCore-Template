@@ -1,6 +1,7 @@
 #include "ZipLineConnectorHandler.h"
 
 FZipLineConnectorHandler::FZipLineConnectorHandler() {
-    this->Connector = NULL;
+    this->Connector = nullptr;
+    this->ConnectorClass = nullptr;
 }
 

@@ -1,8 +1,8 @@
 #include "StageTemplate.h"
 
 UStageTemplate::UStageTemplate() {
-    this->StageIcon = NULL;
-    this->StageIconSmall = NULL;
+    this->StageIcon = nullptr;
+    this->StageIconSmall = nullptr;
     this->StageTypeIndex = 0;
 }
 
@@ -18,11 +18,7 @@ UTexture2D* UStageTemplate::GetStageImageLarge() const {
     return NULL;
 }
 
-UTexture2D* UStageTemplate::GetStageButtonImage() const {
-    return NULL;
-}
-
-FObjectiveMissionIcon UStageTemplate::GetPrimaryObjectiveIconFromAsset(UStageTemplate* Mission, bool getSmallVersion) {
+FObjectiveMissionIcon UStageTemplate::GetPrimaryObjectiveIconFromAsset(UStageTemplate* mission, bool getSmallVersion) {
     return FObjectiveMissionIcon{};
 }
 

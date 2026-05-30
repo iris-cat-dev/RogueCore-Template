@@ -3,6 +3,7 @@
 #include "GMMutatorItem.generated.h"
 
 class UMutator;
+
 USTRUCT(BlueprintType)
 struct FGMMutatorItem {
     GENERATED_BODY()
@@ -12,3 +13,4 @@ public:
     
     ROGUECORE_API FGMMutatorItem();
 };
+

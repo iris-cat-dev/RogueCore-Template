@@ -1,7 +1,7 @@
 #include "NetworkConnectionInfo.h"
 
 FNetworkConnectionInfo::FNetworkConnectionInfo() {
-    this->PlayerController = NULL;
+    this->PlayerController = nullptr;
     this->PacketLossIn = 0.00f;
     this->PacketLossOut = 0.00f;
     this->Ping = 0.00f;

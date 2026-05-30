@@ -10,3 +10,4 @@ enum class EInventoryItemUpgradeType : uint8 {
     ManualCooldownDelay,
     ManualHeatPerUse,
 };
+

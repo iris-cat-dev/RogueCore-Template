@@ -1,6 +1,6 @@
 #include "GuntowerLineProjectile.h"
 #include "Particles/ParticleSystemComponent.h"
-#include "Components/SceneComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
 #include "NiagaraComponent.h"
 #include "DamageComponent.h"
 
@@ -12,8 +12,8 @@ AGuntowerLineProjectile::AGuntowerLineProjectile(const FObjectInitializer& Objec
     this->BeamParticlesNS = CreateDefaultSubobject<UNiagaraComponent>(TEXT("BeamParticlesNS"));
     this->PlatformDissolveRadius = 150.00f;
     this->PlatformDissolveSqueeze = 3.00f;
-    this->HitParticles = NULL;
-    this->HitParticlesNS = NULL;
+    this->HitParticles = nullptr;
+    this->HitParticlesNS = nullptr;
     this->TimeBetweenLineChecks = 0.00f;
     this->BeamParticles->SetupAttachment(RootComponent);
     this->BeamParticlesNS->SetupAttachment(RootComponent);

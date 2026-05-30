@@ -7,3 +7,4 @@ enum class ESteamServerJoinStatus : uint8 {
     Open,
     PasswordRequired,
 };
+

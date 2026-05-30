@@ -7,14 +7,19 @@
 UCLASS(Blueprintable, NonTransient)
 class UGliderBeastAnimInstance : public UEnemyAnimInstance {
     GENERATED_BODY()
-    
-
 public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float SyncAnimLength;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FGliderAnimSync AnimSync;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     bool IsFrozen;
-    UGliderBeastAnimInstance(const FObjectInitializer& ObjectInitializer);
+    
+public:
+    UGliderBeastAnimInstance();
+
 };
+

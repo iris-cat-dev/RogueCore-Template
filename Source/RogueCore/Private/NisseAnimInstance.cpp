@@ -1,6 +1,6 @@
 #include "NisseAnimInstance.h"
 
-UNisseAnimInstance::UNisseAnimInstance(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+UNisseAnimInstance::UNisseAnimInstance() {
     this->State = ENisseState::Idle;
 }
 

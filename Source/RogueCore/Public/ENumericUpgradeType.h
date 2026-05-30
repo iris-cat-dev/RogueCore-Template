@@ -11,3 +11,4 @@ enum class ENumericUpgradeType : uint8 {
     TEst,
     Num,
 };
+

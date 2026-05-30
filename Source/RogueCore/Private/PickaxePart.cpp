@@ -1,8 +1,8 @@
 #include "PickaxePart.h"
 
 UPickaxePart::UPickaxePart() {
-    this->Aquisition = NULL;
-    this->Item = NULL;
+    this->Aquisition = nullptr;
+    this->Item = nullptr;
 }
 
 bool UPickaxePart::GetUnlockedFromStart() const {

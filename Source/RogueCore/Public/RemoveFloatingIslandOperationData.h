@@ -11,3 +11,4 @@ public:
     
     ROGUECORE_API FRemoveFloatingIslandOperationData();
 };
+

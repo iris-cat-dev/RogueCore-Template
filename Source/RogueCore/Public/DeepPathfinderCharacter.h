@@ -1,10 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
 #include "VisualLogger/VisualLoggerDebugSnapshotInterface.h"
 #include "FSDPawn.h"
 #include "StaggerParams.h"
 #include "TriggerAI.h"
+#include "VisualLogger/VisualLoggerDebugSnapshotInterface.h"
 #include "DeepPathfinderCharacter.generated.h"
 
 class UAIPlayerControlComponent;
@@ -28,7 +29,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName CenterMassSocketName;
     
-public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UDeepPatherFinderCharacterAfflictionComponent* Affliction;
     
@@ -48,7 +49,7 @@ public:
     float StaggerImunityWindow;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TSet<UObject*> InStaggerImmunitySources;
+    TSet<UObject*> StaggerImmunitySources;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool StaggerPauseLogic;
@@ -95,7 +96,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetHidden(bool shouldHide);
     
-public:
+protected:
     UFUNCTION(BlueprintCallable)
     void OnPausedMovementElapsed();
     
@@ -103,7 +104,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnControlledByPlayer(bool IsControlled, bool IsLocallyControlled);
     
-public:
+protected:
     UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void Multicast_SetActorRotation(const FRotator& Rotator);
     

@@ -3,7 +3,7 @@
 
 ADefenseEvent::ADefenseEvent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->DefendDuration = 60.00f;
-    this->DefendWidget = NULL;
+    this->DefendWidget = nullptr;
     this->Progress = 0.00f;
 }
 

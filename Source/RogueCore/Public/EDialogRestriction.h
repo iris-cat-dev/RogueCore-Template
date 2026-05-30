@@ -8,3 +8,4 @@ enum class EDialogRestriction : uint8 {
     SinglePlayerOnly,
     MultiPlayerOnly,
 };
+

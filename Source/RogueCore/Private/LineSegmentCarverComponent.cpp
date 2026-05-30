@@ -6,9 +6,9 @@ ULineSegmentCarverComponent::ULineSegmentCarverComponent(const FObjectInitialize
     this->Layer = 0;
     this->Cielingheight = 10000.00f;
     this->FloorDepth = 0.00f;
-    this->CeilingNoiseOverride = NULL;
-    this->WallNoiseOverride = NULL;
-    this->FloorNoiseOverride = NULL;
+    this->CeilingNoiseOverride = nullptr;
+    this->WallNoiseOverride = nullptr;
+    this->FloorNoiseOverride = nullptr;
     this->UseDetailNoise = true;
 }
 

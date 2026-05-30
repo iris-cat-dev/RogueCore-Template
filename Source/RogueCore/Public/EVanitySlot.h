@@ -13,5 +13,7 @@ enum class EVanitySlot : uint8 {
     Eyebrows,
     Sideburns,
     ArmorMaterial,
+    HeadAccessory,
     Count,
 };
+

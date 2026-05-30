@@ -8,4 +8,6 @@ class UMockStatusEffectItem : public UStatusEffectItem {
     GENERATED_BODY()
 public:
     UMockStatusEffectItem();
+
 };
+

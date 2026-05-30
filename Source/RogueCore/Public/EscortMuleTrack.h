@@ -1,25 +1,37 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameFramework/Actor.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
+#include "GameplayTagContainer.h"
+#include "GameplayTagAssetInterface.h"
 #include "GameplayTagContainer.h"
 #include "EscortMuleTrack.generated.h"
 
 UCLASS(Abstract, Blueprintable)
-class AEscortMuleTrack : public AActor {
+class AEscortMuleTrack : public AActor, public IGameplayTagAssetInterface {
     GENERATED_BODY()
-    
-
 public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FGameplayTagContainer GameplayTags;
-
- 
-
+    
+public:
     AEscortMuleTrack(const FObjectInitializer& ObjectInitializer);
+
+    UFUNCTION(BlueprintCallable)
+    virtual void GetOwnedGameplayTags(FGameplayTagContainer& TagContainer) const override {}
     // Fix for true pure virtual functions not being implemented
     UFUNCTION(BlueprintCallable)
-    bool HasMatchingGameplayTag(FGameplayTag TagToCheck) const;
-    bool HasAnyMatchingGameplayTags(const FGameplayTagContainer& TagContainer) const;
-    bool HasAllMatchingGameplayTags(const FGameplayTagContainer& TagContainer) const;
-    FGameplayTagContainer BP_GetOwnedGameplayTags() const;
+    virtual bool HasMatchingGameplayTag(FGameplayTag TagToCheck) const override {return false;}
+    
+    UFUNCTION(BlueprintCallable)
+    virtual bool HasAnyMatchingGameplayTags(const FGameplayTagContainer& TagContainer) const override{return false;}
+    
+    UFUNCTION(BlueprintCallable)
+    virtual bool HasAllMatchingGameplayTags(const FGameplayTagContainer& TagContainer) const override{return false;}
+    
+protected:
+    UFUNCTION(BlueprintCallable)
+    virtual FGameplayTagContainer BP_GetOwnedGameplayTags() const override { return FGameplayTagContainer{};}
+    
 };
+

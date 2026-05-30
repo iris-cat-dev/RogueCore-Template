@@ -1,7 +1,7 @@
 #include "PlatformComponent.h"
 
 FPlatformComponent::FPlatformComponent() {
-    this->ComponentClass = NULL;
+    this->ComponentClass = nullptr;
     this->Criteria = EPlatformComponentCriteria::All;
 }
 

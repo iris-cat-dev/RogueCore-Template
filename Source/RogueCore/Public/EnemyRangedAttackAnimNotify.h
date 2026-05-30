@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Runtime/Engine/Classes/Animation/AnimNotifies/AnimNotify.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=AnimNotify -FallbackName=AnimNotify
 #include "EnemyRangedAttackAnimNotify.generated.h"
 
 UCLASS(Blueprintable, CollapseCategories)
@@ -8,4 +8,6 @@ class UEnemyRangedAttackAnimNotify : public UAnimNotify {
     GENERATED_BODY()
 public:
     UEnemyRangedAttackAnimNotify();
+
 };
+

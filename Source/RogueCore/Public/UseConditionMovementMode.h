@@ -11,6 +11,10 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool Invert;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FMovementModeCombo> MovementModes;
+    
     UUseConditionMovementMode();
+
 };
+

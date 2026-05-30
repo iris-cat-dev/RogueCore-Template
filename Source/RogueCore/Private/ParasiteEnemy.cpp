@@ -1,7 +1,7 @@
 #include "ParasiteEnemy.h"
-#include "Components/SceneComponent.h"
-#include "Components/SkeletalMeshComponent.h"
-#include "Components/StaticMeshComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SkeletalMeshComponent -FallbackName=SkeletalMeshComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=StaticMeshComponent -FallbackName=StaticMeshComponent
 #include "OutlineComponent.h"
 
 AParasiteEnemy::AParasiteEnemy(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
@@ -11,8 +11,8 @@ AParasiteEnemy::AParasiteEnemy(const FObjectInitializer& ObjectInitializer) : Su
     this->Tentacles1 = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Tentacles1"));
     this->Tentacles2 = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Tentacles2"));
     this->Outline = CreateDefaultSubobject<UOutlineComponent>(TEXT("Outline"));
-    this->deathParticles = NULL;
-    this->deathSound = NULL;
+    this->deathParticles = nullptr;
+    this->deathSound = nullptr;
     this->Tentacles1->SetupAttachment(mesh);
     this->Tentacles2->SetupAttachment(mesh);
     this->mesh->SetupAttachment(RootComponent);

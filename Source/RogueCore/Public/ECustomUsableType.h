@@ -8,3 +8,4 @@ enum class ECustomUsableType : uint8 {
     ClearOnUseReleased,
     ClearManually,
 };
+

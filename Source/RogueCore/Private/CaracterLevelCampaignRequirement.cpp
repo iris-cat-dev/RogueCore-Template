@@ -1,7 +1,7 @@
 #include "CaracterLevelCampaignRequirement.h"
 
 UCaracterLevelCampaignRequirement::UCaracterLevelCampaignRequirement() {
-    this->characterID = NULL;
+    this->characterID = nullptr;
     this->LevelRequirement = 0;
 }
 

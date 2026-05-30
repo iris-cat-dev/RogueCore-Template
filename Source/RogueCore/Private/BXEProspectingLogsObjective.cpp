@@ -2,8 +2,8 @@
 #include "Net/UnrealNetwork.h"
 
 UBXEProspectingLogsObjective::UBXEProspectingLogsObjective(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->SpawnedReward = NULL;
-    this->RewardSpawner = NULL;
+    this->SpawnedReward = nullptr;
+    this->RewardSpawner = nullptr;
     this->NumToSpawn = 5;
     this->HasPickedUp = 0;
 }

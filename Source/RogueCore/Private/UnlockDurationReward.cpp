@@ -1,7 +1,7 @@
 #include "UnlockDurationReward.h"
 
 UUnlockDurationReward::UUnlockDurationReward() {
-    this->Duration = NULL;
+    this->duration = nullptr;
 }
 
 

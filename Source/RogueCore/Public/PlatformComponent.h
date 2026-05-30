@@ -5,6 +5,7 @@
 #include "PlatformComponent.generated.h"
 
 class UActorComponent;
+
 USTRUCT(BlueprintType)
 struct FPlatformComponent {
     GENERATED_BODY()
@@ -12,6 +13,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UActorComponent> ComponentClass;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EPlatformComponentCriteria Criteria;
+    
     ROGUECORE_API FPlatformComponent();
 };
+

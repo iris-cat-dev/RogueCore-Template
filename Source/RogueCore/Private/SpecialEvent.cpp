@@ -2,7 +2,7 @@
 
 USpecialEvent::USpecialEvent() {
     this->Weight = 1.00f;
-    this->EventSpawner = NULL;
+    this->EventSpawner = nullptr;
 }
 
 

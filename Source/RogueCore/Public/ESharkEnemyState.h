@@ -10,3 +10,4 @@ enum class ESharkEnemyState : uint8 {
     Vulnerable,
     Dive,
 };
+

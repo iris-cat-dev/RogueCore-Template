@@ -3,6 +3,7 @@
 #include "AssetsToLoadSettings.generated.h"
 
 class AActor;
+
 USTRUCT(BlueprintType)
 struct FAssetsToLoadSettings {
     GENERATED_BODY()
@@ -12,3 +13,4 @@ public:
     
     ROGUECORE_API FAssetsToLoadSettings();
 };
+

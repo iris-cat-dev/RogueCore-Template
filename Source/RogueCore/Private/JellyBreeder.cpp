@@ -2,16 +2,16 @@
 #include "Net/UnrealNetwork.h"
 
 AJellyBreeder::AJellyBreeder(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->EggSpawnAnimation = NULL;
-    this->EggParticles = NULL;
-    this->EggSound = NULL;
-    this->EnemyToSpawn = NULL;
-    this->EggClass = NULL;
+    this->EggSpawnAnimation = nullptr;
+    this->EggParticles = nullptr;
+    this->EggSound = nullptr;
+    this->EnemyToSpawn = nullptr;
+    this->EggClass = nullptr;
     this->TimeBetweenBursts = 0.00f;
     this->TimeBetweenEggs = 0.00f;
     this->CloseToSpawnEggTime = 0.00f;
-    this->WeakPointMaterial = NULL;
-    this->UnWeakPointMaterial = NULL;
+    this->WeakPointMaterial = nullptr;
+    this->UnWeakPointMaterial = nullptr;
     this->EggBurstSize = 3;
     this->MaxJellies = 25;
     this->MultiplierOnHighPlayerCount = 1.00f;

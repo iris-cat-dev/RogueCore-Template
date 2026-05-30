@@ -10,3 +10,4 @@ enum class ECoreCrusherState : uint8 {
     Broken,
     Done,
 };
+

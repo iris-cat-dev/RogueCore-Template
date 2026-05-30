@@ -1,7 +1,6 @@
 #include "EnemyShowroomController.h"
 
 UEnemyShowroomController::UEnemyShowroomController(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->EnemyInstance = NULL;
 }
 
 

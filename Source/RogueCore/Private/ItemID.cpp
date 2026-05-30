@@ -2,7 +2,7 @@
 #include "Templates/SubclassOf.h"
 
 UItemID::UItemID() {
-    this->ItemOwner = NULL;
+    this->ItemOwner = nullptr;
     this->ItemCategory = EItemCategory::None;
 }
 

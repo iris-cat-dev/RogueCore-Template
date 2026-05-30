@@ -2,6 +2,8 @@
 
 FCSGBuildOperationData::FCSGBuildOperationData() {
     this->OperationNumber = 0;
-    this->CSGModel = NULL;
+    this->CSGModel = nullptr;
+    this->CarverSettings = FCSGOptions();
+    this->Transform = FMatrixWithExactSync();
 }
 

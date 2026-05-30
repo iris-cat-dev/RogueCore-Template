@@ -2,12 +2,12 @@
 
 UInfectedStateComponent::UInfectedStateComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->StateId = 18;
-    this->AudioFreeOfInfection = NULL;
-    this->InfectedPhysicalMaterial = NULL;
-    this->DwarfFleshMaterial = NULL;
-    this->InfectedAffliction = NULL;
-    this->InfectedMontage = NULL;
-    this->InfectedAndBreakingFreeMontage = NULL;
+    this->AudioFreeOfInfection = nullptr;
+    this->InfectedPhysicalMaterial = nullptr;
+    this->DwarfFleshMaterial = nullptr;
+    this->InfectedAffliction = nullptr;
+    this->InfectedMontage = nullptr;
+    this->InfectedAndBreakingFreeMontage = nullptr;
     this->BreakingFreeMontageDuration = 0.75f;
     this->HoldToBreakTime = 0.25f;
 }

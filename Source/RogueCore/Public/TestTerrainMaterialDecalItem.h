@@ -4,6 +4,7 @@
 #include "TestTerrainMaterialDecalItem.generated.h"
 
 class UTerrainMaterial;
+
 USTRUCT(BlueprintType)
 struct FTestTerrainMaterialDecalItem {
     GENERATED_BODY()
@@ -11,6 +12,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UTerrainMaterial*> Materials;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FDecalData> Decals;
+    
     ROGUECORE_API FTestTerrainMaterialDecalItem();
 };
+

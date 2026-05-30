@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameFramework/Actor.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
 #include "SpawnTrigger.generated.h"
 
 UCLASS(Blueprintable)
@@ -11,4 +11,6 @@ public:
     FName Message;
     
     ASpawnTrigger(const FObjectInitializer& ObjectInitializer);
+
 };
+

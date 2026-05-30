@@ -3,6 +3,7 @@
 #include "UnassignedReward.generated.h"
 
 class UReward;
+
 USTRUCT(BlueprintType)
 struct FUnassignedReward {
     GENERATED_BODY()
@@ -12,5 +13,7 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 Index;
+    
     ROGUECORE_API FUnassignedReward();
 };
+

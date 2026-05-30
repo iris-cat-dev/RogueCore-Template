@@ -6,13 +6,16 @@
 UCLASS(Blueprintable, NonTransient)
 class ROGUECORE_API UTallboyAnimInstance : public USpiderAnimInstance {
     GENERATED_BODY()
-    
-
 public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool IsAiming;
+    
+public:
+    UTallboyAnimInstance();
 
-    UTallboyAnimInstance(const FObjectInitializer& ObjectInitializer);
     UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetUpperBodyBlend() const;
+    
 };
+

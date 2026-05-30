@@ -8,4 +8,6 @@ class UCreditsResourceData : public UResourceData {
     GENERATED_BODY()
 public:
     UCreditsResourceData();
+
 };
+

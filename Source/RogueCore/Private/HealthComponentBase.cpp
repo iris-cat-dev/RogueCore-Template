@@ -1,6 +1,7 @@
 #include "HealthComponentBase.h"
 
 UHealthComponentBase::UHealthComponentBase(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->FriendlyFireModifier = 1.00f;
     this->ShowLaserPointMarkerWhenDead = false;
     this->canTakeDamage = true;
     this->PassthroughTemperatureDamage = false;
@@ -24,6 +25,10 @@ void UHealthComponentBase::SetCanTakeDamage(bool NewCanTakeDamage) {
 void UHealthComponentBase::Kill(AActor* DamageCauser) {
 }
 
+bool UHealthComponentBase::IsInvulnerable() const {
+    return false;
+}
+
 bool UHealthComponentBase::IsDead() const {
     return false;
 }
@@ -32,7 +37,7 @@ bool UHealthComponentBase::IsAlive() const {
     return false;
 }
 
-float UHealthComponentBase::Heal(float amount) {
+float UHealthComponentBase::Heal(float Amount) {
     return 0.0f;
 }
 

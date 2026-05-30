@@ -8,4 +8,6 @@ class ROGUECORE_API UContainsNameStrategy : public USimpleNameStrategy {
     GENERATED_BODY()
 public:
     UContainsNameStrategy();
+
 };
+

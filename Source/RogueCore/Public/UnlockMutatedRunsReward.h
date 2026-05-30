@@ -8,4 +8,6 @@ class UUnlockMutatedRunsReward : public UReward {
     GENERATED_BODY()
 public:
     UUnlockMutatedRunsReward();
+
 };
+

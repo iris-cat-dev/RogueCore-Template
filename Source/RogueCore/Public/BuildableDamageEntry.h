@@ -3,6 +3,7 @@
 #include "BuildableDamageEntry.generated.h"
 
 class AActor;
+
 USTRUCT(BlueprintType)
 struct FBuildableDamageEntry {
     GENERATED_BODY()
@@ -12,3 +13,4 @@ public:
     
     ROGUECORE_API FBuildableDamageEntry();
 };
+

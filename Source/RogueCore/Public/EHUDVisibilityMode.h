@@ -8,3 +8,4 @@ enum class EHUDVisibilityMode : uint8 {
     Dynamic,
     Hidden,
 };
+

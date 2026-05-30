@@ -10,6 +10,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<FGeneratedInfluenceSet> InfluenceSets;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     bool IsValid;
+    
     ROGUECORE_API FGeneratedInfluenceSets();
 };
+

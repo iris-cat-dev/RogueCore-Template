@@ -1,7 +1,7 @@
 #include "PLSResource.h"
 
 FPLSResource::FPLSResource() {
-    this->Resource = NULL;
+    this->Resource = nullptr;
     this->AmountToGenerate = 0.00f;
 }
 

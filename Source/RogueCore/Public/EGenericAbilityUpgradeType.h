@@ -7,3 +7,4 @@ enum class EGenericAbilityUpgradeType : uint8 {
     ExtraCharges,
     AbilityRecharge,
 };
+

@@ -1,9 +1,9 @@
 #include "BXEUnlockInstance.h"
 
 FBXEUnlockInstance::FBXEUnlockInstance() {
-    this->Unlock = NULL;
-    this->UsedRarity = NULL;
+    this->Unlock = nullptr;
+    this->UsedRarity = nullptr;
     this->CanBePickedMultipleTimes = false;
-    this->PreviousActor = NULL;
+    this->PreviousActor = nullptr;
 }
 

@@ -8,4 +8,6 @@ class UBXEObjective : public UObjective {
     GENERATED_BODY()
 public:
     UBXEObjective(const FObjectInitializer& ObjectInitializer);
+
 };
+

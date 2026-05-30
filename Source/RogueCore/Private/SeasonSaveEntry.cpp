@@ -9,5 +9,7 @@ FSeasonSaveEntry::FSeasonSaveEntry() {
     this->PlagueHeartsUsed = 0;
     this->TimePlayedAtSeasonStart = 0.00f;
     this->ChallengesCompletedAtSeasonStart = 0.00f;
+    this->LastNewChallengeGiven = FDateTime();
+    this->LastChallengeReroll = FDateTime();
 }
 

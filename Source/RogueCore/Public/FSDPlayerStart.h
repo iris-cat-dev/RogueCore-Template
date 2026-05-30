@@ -1,10 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameFramework/Actor.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
 #include "FSDPlayerStart.generated.h"
 
 class AFSDPlayerController;
 class UPlayerCharacterID;
+
 UCLASS(Blueprintable)
 class AFSDPlayerStart : public AActor {
     GENERATED_BODY()
@@ -13,6 +14,12 @@ public:
     UPlayerCharacterID* PrefferedClassID;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    AFSDPlayerController* usedBy;
+    AFSDPlayerController* UsedBy;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool IsDropPodLandingSkipSpot;
+    
     AFSDPlayerStart(const FObjectInitializer& ObjectInitializer);
+
 };
+

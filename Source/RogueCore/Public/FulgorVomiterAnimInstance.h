@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
 #include "EnemyAnimInstance.h"
 #include "FulgorVomiterAnimInstance.generated.h"
 
@@ -11,7 +11,13 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool IsExtended;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool IsAiming;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FVector2D AimDirection;
-    UFulgorVomiterAnimInstance(const FObjectInitializer& ObjectInitializer);
+    
+    UFulgorVomiterAnimInstance();
+
 };
+

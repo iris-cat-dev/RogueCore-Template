@@ -8,18 +8,32 @@ class UBiome;
 class UMissionDNA;
 class UPrimaryMutator;
 class URunTemplate;
+
 USTRUCT(BlueprintType)
 struct FStageSeedParameters {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    int32 ActiveSeed;
+    int32 RunSeed;
     
-    ERunDepth ActiveDepth;
-    URunTemplate* ActiveRun;
-    UBiome* ActiveBiome;
-    TSubclassOf<UMissionDNA> ActiveDNA;
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    ERunDepth RunDepth;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    URunTemplate* RunTemplate;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UBiome* RunBiome;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TSubclassOf<UMissionDNA> RunDNA;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPrimaryMutator* RunMutator;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 ActiveStage;
-    UPrimaryMutator* ActiveMutator;
+    
     ROGUECORE_API FStageSeedParameters();
 };
+

@@ -6,4 +6,6 @@ UENUM(BlueprintType)
 enum class EStaticSpawnPointType : uint8 {
     Small,
     Large,
+    Tiny,
 };
+

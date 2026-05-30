@@ -2,7 +2,7 @@
 #include "Net/UnrealNetwork.h"
 
 ARadialFireModule::ARadialFireModule(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->ProjectileClass = NULL;
+    this->ProjectileClass = nullptr;
     this->RotationSpeedTurret = 0.00f;
     this->DelayBetweenShots = 0.00f;
     this->IsAttacking = false;

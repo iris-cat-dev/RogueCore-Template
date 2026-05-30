@@ -10,3 +10,4 @@ enum class EMicroMissileLauncherUpgrades : uint8 {
     ShotDirectionHorizontalDegreeOffset,
     ShotDirectionVerticleDegreeOffset,
 };
+

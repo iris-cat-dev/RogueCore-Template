@@ -8,4 +8,6 @@ class UPlayEffectsTask : public ULineSpikeTaskBase {
     GENERATED_BODY()
 public:
     UPlayEffectsTask();
+
 };
+

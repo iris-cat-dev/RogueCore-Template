@@ -1,5 +1,5 @@
 #include "PipelineFinish.h"
-#include "Components/SceneComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
 #include "Net/UnrealNetwork.h"
 #include "SingleUsableComponent.h"
 #include "TrackBuilderConnectPoint.h"
@@ -8,8 +8,8 @@ APipelineFinish::APipelineFinish(const FObjectInitializer& ObjectInitializer) : 
     this->RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("DefaultSceneRoot"));
     this->PipelineEndConnection = CreateDefaultSubobject<UTrackBuilderConnectPoint>(TEXT("TrackEndConnection"));
     this->UsableOrderExtractor = CreateDefaultSubobject<USingleUsableComponent>(TEXT("UsableOrderExtractor"));
-    this->ExtractPodClass = NULL;
-    this->ExtractorPod = NULL;
+    this->ExtractPodClass = nullptr;
+    this->ExtractorPod = nullptr;
     this->bPipelineCompleted = false;
     this->PipelineEndConnection->SetupAttachment(RootComponent);
 }

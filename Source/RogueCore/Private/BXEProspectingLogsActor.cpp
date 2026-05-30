@@ -1,7 +1,7 @@
 #include "BXEProspectingLogsActor.h"
 
 ABXEProspectingLogsActor::ABXEProspectingLogsActor(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->Objective = NULL;
+    this->Objective = nullptr;
 }
 
 void ABXEProspectingLogsActor::LogFound() {

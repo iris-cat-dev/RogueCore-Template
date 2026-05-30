@@ -10,3 +10,4 @@ enum class EObjectiveState : uint8 {
     Started,
     Completed,
 };
+

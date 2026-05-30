@@ -3,6 +3,7 @@
 #include "GDElementTypes.generated.h"
 
 class UElementType;
+
 USTRUCT(BlueprintType)
 struct FGDElementTypes {
     GENERATED_BODY()
@@ -12,3 +13,4 @@ public:
     
     ROGUECORE_API FGDElementTypes();
 };
+

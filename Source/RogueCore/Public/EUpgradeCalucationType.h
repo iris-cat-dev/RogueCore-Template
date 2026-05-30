@@ -7,3 +7,4 @@ enum class EUpgradeCalucationType : uint8 {
     Additive,
     Multiplicative,
 };
+

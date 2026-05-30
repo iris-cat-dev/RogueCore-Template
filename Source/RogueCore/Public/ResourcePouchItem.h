@@ -3,6 +3,7 @@
 #include "ResourcePouchItem.generated.h"
 
 class UResourceData;
+
 USTRUCT(BlueprintType)
 struct FResourcePouchItem {
     GENERATED_BODY()
@@ -12,3 +13,4 @@ public:
     
     ROGUECORE_API FResourcePouchItem();
 };
+

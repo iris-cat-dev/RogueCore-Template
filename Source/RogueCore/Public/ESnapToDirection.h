@@ -9,3 +9,4 @@ enum class ESnapToDirection : int32 {
     Left,
     Right,
 };
+

@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Styling/SlateBrush.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=SlateBrush -FallbackName=SlateBrush
 #include "Blueprint/UserWidget.h"
 #include "RichIconWidget.generated.h"
 
@@ -11,7 +11,13 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSlateBrush IconBrush;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FText IconToolTipText;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bEmbedToolTipText;
+    
     URichIconWidget();
+
 };
+

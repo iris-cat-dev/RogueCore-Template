@@ -8,4 +8,6 @@ class URepairableUsable : public UInstantUsable {
     GENERATED_BODY()
 public:
     URepairableUsable(const FObjectInitializer& ObjectInitializer);
+
 };
+

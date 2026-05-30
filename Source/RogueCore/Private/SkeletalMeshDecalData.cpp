@@ -2,7 +2,9 @@
 
 FSkeletalMeshDecalData::FSkeletalMeshDecalData() {
     this->Radius = 0.00f;
-    this->DiffuseTex = NULL;
-    this->NormalMapTex = NULL;
+    this->DiffuseTex = nullptr;
+    this->NormalMapTex = nullptr;
+    this->Color = FLinearColor::White;
+    this->Emissive = FLinearColor::White;
 }
 

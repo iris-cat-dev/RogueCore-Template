@@ -15,6 +15,10 @@ TArray<UWeaponTagBase*> UBXEFunctionLibrary::GetUnlockInstanceWeaponTags(const F
     return TArray<UWeaponTagBase*>();
 }
 
+FText UBXEFunctionLibrary::GetUnlockInstanceFunctionalDescription(const FBXEUnlockInstance& UnlockInstance) {
+    return FText::GetEmpty();
+}
+
 FText UBXEFunctionLibrary::GetUnlockInstanceDescription(const FBXEUnlockInstance& UnlockInstance) {
     return FText::GetEmpty();
 }
@@ -41,6 +45,10 @@ UBXESettings* UBXEFunctionLibrary::GetBXESettings() {
 
 UBXEProgressionSettings* UBXEFunctionLibrary::GetBXEProgressionSettings() {
     return NULL;
+}
+
+TArray<UBXEUnlockBase*> UBXEFunctionLibrary::GetAllItemUnlocksForAllPlayers(const UObject* WorldContext) {
+    return TArray<UBXEUnlockBase*>();
 }
 
 void UBXEFunctionLibrary::ContainsWeaponTags(const TArray<UWeaponTagBase*>& Source, const TArray<UWeaponTagBase*>& Other, bool& hasAnyMatch, int32& numberOfMatches) {

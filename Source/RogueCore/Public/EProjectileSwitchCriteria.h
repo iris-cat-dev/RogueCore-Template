@@ -10,3 +10,4 @@ enum class EProjectileSwitchCriteria : uint8 {
     HeatBelow,
     CycleButtonSecondsHeld,
 };
+

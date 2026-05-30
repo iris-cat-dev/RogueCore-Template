@@ -2,14 +2,14 @@
 #include "Net/UnrealNetwork.h"
 
 USplineHookAttack::USplineHookAttack(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->Spline = NULL;
-    this->HeadMesh = NULL;
-    this->TailMesh = NULL;
-    this->HitReacts = NULL;
-    this->GrabLight = NULL;
-    this->GrabbedIndicationSound = NULL;
-    this->HeadAnimation = NULL;
-    this->Damage = NULL;
+    this->Spline = nullptr;
+    this->HeadMesh = nullptr;
+    this->TailMesh = nullptr;
+    this->HitReacts = nullptr;
+    this->GrabLight = nullptr;
+    this->GrabbedIndicationSound = nullptr;
+    this->HeadAnimation = nullptr;
+    this->Damage = nullptr;
     this->ForwardPlacement = 100.00f;
     this->DesiredLaunchAngle = 45.00f;
     this->MaxAngledForce = 2000.00f;

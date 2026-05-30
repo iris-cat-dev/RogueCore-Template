@@ -1,5 +1,5 @@
 #include "TreasureBeacon.h"
-#include "Components/SceneComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
 #include "Net/UnrealNetwork.h"
 #include "TerrainPlacementComponent.h"
 
@@ -7,18 +7,18 @@ ATreasureBeacon::ATreasureBeacon(const FObjectInitializer& ObjectInitializer) : 
     this->RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("RootComp"));
     this->RootComp = (USceneComponent*)RootComponent;
     this->terrainPlacement = CreateDefaultSubobject<UTerrainPlacementComponent>(TEXT("terrainPlacement"));
-    this->TreasurePositioning = NULL;
-    this->DebrisPartsPositioning = NULL;
-    this->AvoidCostCurve = NULL;
-    this->AvoidCostCurveDebris = NULL;
+    this->TreasurePositioning = nullptr;
+    this->DebrisPartsPositioning = nullptr;
+    this->AvoidCostCurve = nullptr;
+    this->AvoidCostCurveDebris = nullptr;
     this->MaxRange = 2000.00f;
     this->MinRange = 1000.00f;
     this->DebrisSpawnRange = 1000.00f;
-    this->DebrisPartClass = NULL;
+    this->DebrisPartClass = nullptr;
     this->DebrisPartsToSpawn = 4;
     this->MaxSpawnLocationTries = 10;
-    this->TreasureClass = NULL;
-    this->TreasureInstance = NULL;
+    this->TreasureClass = nullptr;
+    this->TreasureInstance = nullptr;
     this->terrainPlacement->SetupAttachment(RootComponent);
 }
 

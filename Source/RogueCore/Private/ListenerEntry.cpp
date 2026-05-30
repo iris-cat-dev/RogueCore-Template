@@ -1,6 +1,6 @@
 #include "ListenerEntry.h"
 
 FListenerEntry::FListenerEntry() {
-    this->Component = NULL;
+    this->Component = nullptr;
 }
 

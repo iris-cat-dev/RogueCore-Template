@@ -2,8 +2,8 @@
 #include "Net/UnrealNetwork.h"
 
 UPawnAfflictionComponent::UPawnAfflictionComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->FrozenEffect = NULL;
-    this->BurningEffect = NULL;
+    this->FrozenEffect = nullptr;
+    this->BurningEffect = nullptr;
     this->EffectSize = EFrozenBitsSize::Medium;
     this->FrozenBitsMinDistance = 0.00f;
     this->BaseEffectScale = 1.00f;

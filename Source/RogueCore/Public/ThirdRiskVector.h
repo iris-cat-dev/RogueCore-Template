@@ -8,4 +8,6 @@ class UThirdRiskVector : public UReward {
     GENERATED_BODY()
 public:
     UThirdRiskVector();
+
 };
+

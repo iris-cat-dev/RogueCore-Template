@@ -10,6 +10,10 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float MobileEncounterScale;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float StationaryEncounterScale;
+    
     UEncounterOverrideMutator();
+
 };
+

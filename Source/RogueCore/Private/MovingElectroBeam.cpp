@@ -2,8 +2,8 @@
 #include "Net/UnrealNetwork.h"
 
 AMovingElectroBeam::AMovingElectroBeam(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->Source = NULL;
-    this->Target = NULL;
+    this->Source = nullptr;
+    this->Target = nullptr;
     this->Range = 0.00f;
     this->UpdateRate = 0.04f;
 }

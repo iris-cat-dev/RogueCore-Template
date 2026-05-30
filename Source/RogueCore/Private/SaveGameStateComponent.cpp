@@ -2,8 +2,7 @@
 #include "Net/UnrealNetwork.h"
 
 USaveGameStateComponent::USaveGameStateComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->Credits = 0;
-    this->VictoryPose = NULL;
+    this->VictoryPose = nullptr;
 }
 
 void USaveGameStateComponent::SetCampaign() {
@@ -12,13 +11,13 @@ void USaveGameStateComponent::SetCampaign() {
 void USaveGameStateComponent::Server_SetVictoryPose_Implementation(UVictoryPose* Pose) {
 }
 
+void USaveGameStateComponent::Server_SetResourcesSave_Implementation(const FResourcesSave& InSave) {
+}
+
 void USaveGameStateComponent::Server_SetPlayerProgress_Implementation(const FPlayerProgress& Progress) {
 }
 
-void USaveGameStateComponent::Server_SetLoadout_Implementation(const FItemLoadout& Loadout, const TArray<FItemUpgradeSelection>& weaponLoadouts) {
-}
-
-void USaveGameStateComponent::Server_SetCredits_Implementation(const int32 amount) {
+void USaveGameStateComponent::Server_SetLoadout_Implementation(const FItemLoadout& Loadout, const FReplicatedItemUpgrades& upgrades) {
 }
 
 void USaveGameStateComponent::Server_SetCharacterStats_Implementation(const TArray<FCharacterProgress>& Stats) {
@@ -27,16 +26,13 @@ void USaveGameStateComponent::Server_SetCharacterStats_Implementation(const TArr
 void USaveGameStateComponent::Server_SetActiveCampaignMission_Implementation(FActiveCampaingMission Data) {
 }
 
-void USaveGameStateComponent::RefreshLoadoutFromSave_Implementation(UPlayerCharacterID* characterID) {
+void USaveGameStateComponent::RefreshLoadoutFromSave(UPlayerCharacterID* characterID) {
 }
 
 void USaveGameStateComponent::OnRep_PlayerProgress() {
 }
 
 void USaveGameStateComponent::OnRep_ItemUpgradeSelections() {
-}
-
-void USaveGameStateComponent::OnRep_Credits() {
 }
 
 void USaveGameStateComponent::OnRep_CharacterStats() {
@@ -50,13 +46,24 @@ UStage* USaveGameStateComponent::GetActiveCampaignMission() const {
     return NULL;
 }
 
+void USaveGameStateComponent::ClaimAndNotifyAscensionRewards() {
+}
+
+bool USaveGameStateComponent::CanAfford(const UResourceData* Resource, const float Price) const {
+    return false;
+}
+
+int32 USaveGameStateComponent::AscendSelectedCharacter() {
+    return 0;
+}
+
 void USaveGameStateComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const {
     Super::GetLifetimeReplicatedProps(OutLifetimeProps);
     
-    DOREPLIFETIME(USaveGameStateComponent, Credits);
+    DOREPLIFETIME(USaveGameStateComponent, ReplicatedResourcesSave);
     DOREPLIFETIME(USaveGameStateComponent, VictoryPose);
     DOREPLIFETIME(USaveGameStateComponent, ActiveCampaignMission);
-    DOREPLIFETIME(USaveGameStateComponent, ItemUpgradeSelections);
+    DOREPLIFETIME(USaveGameStateComponent, ReplicatedItemUpgrades);
     DOREPLIFETIME(USaveGameStateComponent, PlayerProgress);
     DOREPLIFETIME(USaveGameStateComponent, CharacterStats);
 }

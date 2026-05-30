@@ -8,3 +8,4 @@ enum class EProjectileAttackRotationType : int32 {
     NoTarget_Socket,
     Always_Socket,
 };
+

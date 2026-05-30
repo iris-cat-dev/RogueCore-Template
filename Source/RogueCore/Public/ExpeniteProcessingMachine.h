@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameFramework/Actor.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
 #include "ExpeniteProcessingMachine.generated.h"
 
 UCLASS(Blueprintable)
@@ -8,4 +8,6 @@ class AExpeniteProcessingMachine : public AActor {
     GENERATED_BODY()
 public:
     AExpeniteProcessingMachine(const FObjectInitializer& ObjectInitializer);
+
 };
+

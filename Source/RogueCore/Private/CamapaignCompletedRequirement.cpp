@@ -1,7 +1,7 @@
 #include "CamapaignCompletedRequirement.h"
 
 UCamapaignCompletedRequirement::UCamapaignCompletedRequirement() {
-    this->Campaign = NULL;
+    this->Campaign = nullptr;
     this->InverseRequirement = false;
 }
 

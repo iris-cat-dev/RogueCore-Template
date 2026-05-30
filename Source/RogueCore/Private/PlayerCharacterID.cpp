@@ -2,7 +2,7 @@
 #include "Templates/SubclassOf.h"
 
 UPlayerCharacterID::UPlayerCharacterID() {
-    this->CharacterData = NULL;
+    this->CharacterData = nullptr;
 }
 
 bool UPlayerCharacterID::HasValidCharacterData() const {

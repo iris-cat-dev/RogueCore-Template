@@ -5,12 +5,12 @@ UItemPlacerAggregator::UItemPlacerAggregator(const FObjectInitializer& ObjectIni
     this->MaxOffsetZ = 0.00f;
     this->MinOffsetZ = -200.00f;
     this->ItemHeight = 100.00f;
-    this->ShoutOnPlaced = NULL;
-    this->MarkerType = NULL;
+    this->ShoutOnPlaced = nullptr;
+    this->MarkerType = nullptr;
     this->CanOnlyPlaceOnTerrain = false;
     this->InvalidAroundSize = 250.00f;
-    this->PlacementMarker = NULL;
-    this->Item = NULL;
+    this->PlacementMarker = nullptr;
+    this->Item = nullptr;
     this->bIsPlacementActive = false;
     this->bIsMarkerHidden = false;
     this->bIsMarkerValid = false;

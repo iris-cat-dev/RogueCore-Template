@@ -4,11 +4,11 @@
 AProspectorRobot::AProspectorRobot(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->WorkingArmSpeed = 5.00f;
     this->EnginePowerMultiplier = 1.00f;
-    this->Target = NULL;
+    this->Target = nullptr;
     this->HeadResponsiveness = 1.00f;
     this->HeadSearchSpeed = 1.00f;
     this->HeadSearchMaxAngle = 90.00f;
-    this->EngineMaterial = NULL;
+    this->EngineMaterial = nullptr;
     this->ProspectorState = EProspectorRobotState::Searching;
 }
 

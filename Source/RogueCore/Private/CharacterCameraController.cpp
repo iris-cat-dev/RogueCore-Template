@@ -5,8 +5,8 @@ UCharacterCameraController::UCharacterCameraController(const FObjectInitializer&
     this->StartFOV = 0.00f;
     this->targetFov = 0.00f;
     this->TargetFOVSpeed = 0.00f;
-    this->Character = NULL;
-    this->Camera = NULL;
+    this->Character = nullptr;
+    this->Camera = nullptr;
 }
 
 void UCharacterCameraController::ResetFOV(float FadeSpeed) {

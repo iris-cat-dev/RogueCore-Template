@@ -1,7 +1,7 @@
 #include "EnhancementReward.h"
 
 UEnhancementReward::UEnhancementReward() {
-    this->Perk = NULL;
+    this->Perk = nullptr;
 }
 
 UPerkAsset* UEnhancementReward::GetPerk() const {

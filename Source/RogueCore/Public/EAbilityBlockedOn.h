@@ -8,3 +8,4 @@ enum class EAbilityBlockedOn : uint8 {
     OtherOfEqualAbility,
     OtherTeamAbility,
 };
+

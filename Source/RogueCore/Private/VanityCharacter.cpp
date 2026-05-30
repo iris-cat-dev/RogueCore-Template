@@ -1,33 +1,38 @@
 #include "VanityCharacter.h"
-#include "Components/ChildActorComponent.h"
-#include "Components/SceneComponent.h"
-#include "Components/SkeletalMeshComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ChildActorComponent -FallbackName=ChildActorComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SkeletalMeshComponent -FallbackName=SkeletalMeshComponent
 
 AVanityCharacter::AVanityCharacter(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("Root"));
-    this->ChildActorComponent = CreateDefaultSubobject<UChildActorComponent>(TEXT("ItemInstance"));
-    this->Animation = NULL;
-    this->skinColor = NULL;
-    this->BeardColor = NULL;
-    this->DynamicBeardColor = NULL;
-    this->Head = NULL;
-    this->EyeBrows = NULL;
-    this->Sideburns = NULL;
-    this->Moustache = NULL;
-    this->Beard = NULL;
-    this->Armor = NULL;
+    this->Animation = nullptr;
+    this->skinColor = nullptr;
+    this->BeardColor = nullptr;
+    this->DynamicBeardColor = nullptr;
+    this->DefaultHairColor = nullptr;
+    this->Head = nullptr;
+    this->HeadAccessory = nullptr;
+    this->EyeBrows = nullptr;
+    this->Sideburns = nullptr;
+    this->Moustache = nullptr;
+    this->Beard = nullptr;
     this->ArmorMeshType = EArmorMeshType::None;
-    this->ArmorColor = NULL;
-    this->UndersuitColor = NULL;
+    this->Armor = nullptr;
+    this->ArmorColor = nullptr;
+    this->ApplyArmorPaintToUndersuit = false;
+    this->ApplyArmorPaintToGauntlets = false;
+    this->DefaultUndersuitMaterial = nullptr;
+    this->DefaultArmorMaterial = nullptr;
+    this->DefaultGauntletMaterial = nullptr;
+    this->itemClass = nullptr;
+    this->Framework = nullptr;
+    this->Paintjob = nullptr;
+    this->ChildActorComponent = CreateDefaultSubobject<UChildActorComponent>(TEXT("ItemInstance"));
     this->mesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("CharacterMesh0"));
-    this->BodyMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("BodyMesh"));
-    this->DefaultHairColor = NULL;
-    this->DefaultArmorMaterial = NULL;
-    this->DefaultUndersuitMaterial = NULL;
-    this->itemClass = NULL;
-    this->Framework = NULL;
-    this->Paintjob = NULL;
-    this->BodyMesh->SetupAttachment(RootComponent);
+    this->GauntletLeftMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("GauntletLeftMesh"));
+    this->GauntletRightMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("GauntletRightMesh"));
+    this->GauntletLeftMesh->SetupAttachment(mesh);
+    this->GauntletRightMesh->SetupAttachment(mesh);
     this->mesh->SetupAttachment(RootComponent);
 }
 

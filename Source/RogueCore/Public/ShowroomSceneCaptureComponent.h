@@ -4,6 +4,7 @@
 #include "ShowroomSceneCaptureComponent.generated.h"
 
 class UShowroomCameraKey;
+
 UCLASS(Blueprintable, EditInlineNew, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class UShowroomSceneCaptureComponent : public USceneCaptureComponent2D {
     GENERATED_BODY()
@@ -12,4 +13,6 @@ public:
     UShowroomCameraKey* CameraKey;
     
     UShowroomSceneCaptureComponent(const FObjectInitializer& ObjectInitializer);
+
 };
+

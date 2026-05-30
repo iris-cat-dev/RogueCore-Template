@@ -6,3 +6,4 @@ UENUM(BlueprintType)
 enum class EFlaregunProjectileUpgrades : uint8 {
     Duration,
 };
+

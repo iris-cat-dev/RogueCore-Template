@@ -9,6 +9,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FString> TerrainLogs;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 StartIndexOffset;
+    
     ROGUECORE_API FTestGenerationPacket();
 };
+

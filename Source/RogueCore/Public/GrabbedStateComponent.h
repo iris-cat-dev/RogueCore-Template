@@ -8,4 +8,6 @@ class UGrabbedStateComponent : public UCharacterStateComponent {
     GENERATED_BODY()
 public:
     UGrabbedStateComponent(const FObjectInitializer& ObjectInitializer);
+
 };
+

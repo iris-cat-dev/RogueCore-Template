@@ -26,7 +26,7 @@ bool UDamageFunctionLibrary::IsBurnDeath(UDamageClass* DamageClass, const TArray
     return false;
 }
 
-FVector UDamageFunctionLibrary::GetForceFromDamageImpulse(const AActor*& Target, const FDamageData& DamageData) {
+FVector UDamageFunctionLibrary::GetForceFromDamageImpulse(const AActor* Target, const FDamageData& DamageData) {
     return FVector{};
 }
 
@@ -34,12 +34,16 @@ UDamageImpulse* UDamageFunctionLibrary::GetDamageImpulse(const FDamageData& Dama
     return NULL;
 }
 
-int32 UDamageFunctionLibrary::FindClosestBoneIndex(const USkeletalMeshComponent*& mesh, const FVector& Location, ULimbDismembermentList* dismembermentList, float MaxDistance) {
+int32 UDamageFunctionLibrary::FindClosestBoneIndex(const USkeletalMeshComponent* mesh, const FVector& Location, ULimbDismembermentList* dismembermentList, float MaxDistance) {
     return 0;
 }
 
-FName UDamageFunctionLibrary::FindClosestBone(const USkeletalMeshComponent*& mesh, const FVector& Location, ULimbDismembermentList* dismembermentList, float MaxDistance) {
+FName UDamageFunctionLibrary::FindClosestBone(const USkeletalMeshComponent* mesh, const FVector& Location, ULimbDismembermentList* dismembermentList, float MaxDistance) {
     return NAME_None;
+}
+
+AItem* UDamageFunctionLibrary::FindCharacterOwnedItem(AActor* InDamageCauser) {
+    return NULL;
 }
 
 bool UDamageFunctionLibrary::AnyListenerDataHasDamageTypes(const TArray<FDamageListenerData>& Data, const TArray<UDamageClass*>& DamageClasses) {

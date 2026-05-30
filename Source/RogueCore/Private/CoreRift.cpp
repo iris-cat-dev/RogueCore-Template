@@ -1,5 +1,5 @@
 #include "CoreRift.h"
-#include "Components/SceneComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
 #include "Components/SplineComponent.h"
 #include "Net/UnrealNetwork.h"
 #include "TerrainPlacementComponent.h"
@@ -12,8 +12,8 @@ ACoreRift::ACoreRift(const FObjectInitializer& ObjectInitializer) : Super(Object
     this->SpikeMeshes.AddDefaulted(3);
     this->SpikeLocationSpline = CreateDefaultSubobject<USplineComponent>(TEXT("SpikelocationComponent"));
     this->terrainPlacement = CreateDefaultSubobject<UTerrainPlacementComponent>(TEXT("Placement"));
-    this->ScaleCurve = NULL;
-    this->AlphaCurve = NULL;
+    this->ScaleCurve = nullptr;
+    this->AlphaCurve = nullptr;
     this->ScaleUpInitialDelay = 0.00f;
     this->ScaleUpTime = 5.00f;
     this->BonesToSpawn = 50;
@@ -22,6 +22,12 @@ ACoreRift::ACoreRift(const FObjectInitializer& ObjectInitializer) : Super(Object
     this->InstancedSpikesRoot->SetupAttachment(RootComponent);
     this->SpikeLocationSpline->SetupAttachment(InstancedSpikesRoot);
     this->terrainPlacement->SetupAttachment(RootComponent);
+}
+
+void ACoreRift::SpawnSpikes() {
+}
+
+void ACoreRift::ScaleUp() {
 }
 
 void ACoreRift::OnRep_Seed() {

@@ -3,6 +3,7 @@
 #include "UpgradeFilterData.generated.h"
 
 class UItemUpgrade;
+
 USTRUCT(BlueprintType)
 struct FUpgradeFilterData {
     GENERATED_BODY()
@@ -12,3 +13,4 @@ public:
     
     ROGUECORE_API FUpgradeFilterData();
 };
+

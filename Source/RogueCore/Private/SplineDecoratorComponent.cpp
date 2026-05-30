@@ -6,7 +6,7 @@ USplineDecoratorComponent::USplineDecoratorComponent(const FObjectInitializer& O
     this->EndIndex = 0;
     this->bUpdateContinuously = false;
     this->DistanceProgress = 1.00f;
-    this->SplineComponent = NULL;
+    this->SplineComponent = nullptr;
     this->Phase = 0.00f;
 }
 

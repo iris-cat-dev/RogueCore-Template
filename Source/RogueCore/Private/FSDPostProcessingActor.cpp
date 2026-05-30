@@ -2,7 +2,7 @@
 
 AFSDPostProcessingActor::AFSDPostProcessingActor(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->PostProcessingType = EPostProcessingType::GameWorld;
-    this->PostProcessComponent = NULL;
+    this->PostProcessComponent = nullptr;
 }
 
 void AFSDPostProcessingActor::UnapplyPostProcessingBlendablesByType(UObject* WorldContext, EPostProcessingType Type) {

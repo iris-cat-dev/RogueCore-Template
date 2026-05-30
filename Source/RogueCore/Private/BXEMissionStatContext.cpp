@@ -1,7 +1,7 @@
 #include "BXEMissionStatContext.h"
 
 FBXEMissionStatContext::FBXEMissionStatContext() {
-    this->Run = NULL;
-    this->StartingWeapon = NULL;
+    this->Run = nullptr;
+    this->StartingWeapon = nullptr;
 }
 

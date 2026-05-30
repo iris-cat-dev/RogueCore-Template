@@ -8,3 +8,4 @@ enum class ELaserPointerMarkerType : uint8 {
     Secondary,
     Count,
 };
+

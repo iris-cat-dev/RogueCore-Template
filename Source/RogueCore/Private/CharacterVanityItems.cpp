@@ -1,8 +1,8 @@
 #include "CharacterVanityItems.h"
 
 UCharacterVanityItems::UCharacterVanityItems() {
-    this->HeadType = NULL;
-    this->OwningCharacter = NULL;
+    this->HeadType = nullptr;
+    this->OwningCharacter = nullptr;
 }
 
 void UCharacterVanityItems::SortVanityItems(UObject* WorldContextObject, UPlayerCharacterID* characterID, TArray<UVanityItem*>& VanityItems) {

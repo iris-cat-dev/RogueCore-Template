@@ -5,8 +5,8 @@
 AFSDRefinery::AFSDRefinery(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->UsableStartRefining = CreateDefaultSubobject<USingleUsableComponent>(TEXT("UsableStartRefining"));
     this->UsableLaunchRocket = CreateDefaultSubobject<USingleUsableComponent>(TEXT("UsableLaunchRocket"));
-    this->LaunchRocketButtonPressedShout = NULL;
-    this->BuilderItem = NULL;
+    this->LaunchRocketButtonPressedShout = nullptr;
+    this->BuilderItem = nullptr;
     this->RefiningTotalDuration = 120.00f;
     this->PipelineBreakTimePenaltyPerAdditionalPlayers = 5.00f;
     this->SegmentBreakDownPenaltyPerAdditionalPlayers = 1;

@@ -1,7 +1,7 @@
 #include "PlayersNegotiationSphere.h"
 
 UPlayersNegotiationSphere::UPlayersNegotiationSphere(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->TrackingEffect = NULL;
+    this->TrackingEffect = nullptr;
     this->ChargeupTime = 0.00f;
     this->IsTracking = false;
 }

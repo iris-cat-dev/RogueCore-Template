@@ -7,3 +7,4 @@ enum class EFlyingBugDeathAnimationCategory : uint8 {
     NoAnimation,
     IdleOnDeath,
 };
+

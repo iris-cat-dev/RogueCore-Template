@@ -4,14 +4,17 @@
 
 class APlayerCharacter;
 class USphereComponent;
+
 USTRUCT(BlueprintType)
 struct FPushPoint {
     GENERATED_BODY()
 public:
-    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Instanced, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USphereComponent* collider;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     APlayerCharacter* Character;
+    
     ROGUECORE_API FPushPoint();
 };
+

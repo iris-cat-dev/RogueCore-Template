@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "BehaviorTree/BTDecorator.h"
-#include "BehaviorTree/BehaviorTreeTypes.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=AIModule -ObjectName=BlackboardKeySelector -FallbackName=BlackboardKeySelector
 #include "BTDecorator_IsUnderCeiling.generated.h"
 
 UCLASS(Blueprintable)
@@ -11,9 +11,19 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName ProjectileAttackName;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName SocketName;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float Acceptance;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool DrawDebug;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FBlackboardKeySelector TargetKey;
+    
     UBTDecorator_IsUnderCeiling();
+
 };
+

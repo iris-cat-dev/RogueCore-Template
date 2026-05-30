@@ -2,22 +2,22 @@
 #include "Net/UnrealNetwork.h"
 
 UJetBootsMovementComponent::UJetBootsMovementComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->Settings = NULL;
-    this->UseAudioComponent = NULL;
-    this->OverHeatAudioComponent = NULL;
-    this->DeactivatedAudioComponent = NULL;
-    this->TP_UseAudioComponent = NULL;
-    this->TP_OverHeatAudioComponent = NULL;
-    this->TP_DeactivatedAudioComponent = NULL;
+    this->Settings = nullptr;
+    this->UseAudioComponent = nullptr;
+    this->OverHeatAudioComponent = nullptr;
+    this->DeactivatedAudioComponent = nullptr;
+    this->TP_UseAudioComponent = nullptr;
+    this->TP_OverHeatAudioComponent = nullptr;
+    this->TP_DeactivatedAudioComponent = nullptr;
     this->FootSocketNameLeft = TEXT("Dwarf_LegLHeelSocket");
     this->FootSocketNameRight = TEXT("Dwarf_LegRHeelSocket");
-    this->FootAttachMesh = NULL;
-    this->LFootAttachMeshComponent = NULL;
-    this->RFootAttachMeshComponent = NULL;
-    this->LeftFootParticles = NULL;
-    this->RightFootParticles = NULL;
-    this->FPFootParticles = NULL;
-    this->Character = NULL;
+    this->FootAttachMesh = nullptr;
+    this->LFootAttachMeshComponent = nullptr;
+    this->RFootAttachMeshComponent = nullptr;
+    this->LeftFootParticles = nullptr;
+    this->RightFootParticles = nullptr;
+    this->FPFootParticles = nullptr;
+    this->Character = nullptr;
     this->FromJumpDelay = 0.35f;
     this->FromTerrainStartDelay = 0.20f;
     this->OverHeatAtPercent = 0.98f;
@@ -31,22 +31,10 @@ UJetBootsMovementComponent::UJetBootsMovementComponent(const FObjectInitializer&
 void UJetBootsMovementComponent::Server_SetOverheated_Implementation(bool Current) {
 }
 
-bool UJetBootsMovementComponent::Server_SetOverheated_Validate(bool Current) {
-    return true;
-}
-
 void UJetBootsMovementComponent::Server_SetIsUsing_Implementation(bool Current, bool Last, bool NewIsFromTakeOff) {
 }
 
-bool UJetBootsMovementComponent::Server_SetIsUsing_Validate(bool Current, bool Last, bool NewIsFromTakeOff) {
-    return true;
-}
-
 void UJetBootsMovementComponent::Server_SetCurrentJetFuel_Implementation(float Current) {
-}
-
-bool UJetBootsMovementComponent::Server_SetCurrentJetFuel_Validate(float Current) {
-    return true;
 }
 
 void UJetBootsMovementComponent::RemoveJetBoots() {
@@ -77,7 +65,7 @@ void UJetBootsMovementComponent::OnPlayerCharacterHit(UPrimitiveComponent* HitCo
 void UJetBootsMovementComponent::OnJumpReleased() {
 }
 
-void UJetBootsMovementComponent::OnJumpPressed() {
+void UJetBootsMovementComponent::OnJumpPressed(APlayerCharacter* InPlayer) {
 }
 
 void UJetBootsMovementComponent::OnCameraModeChanged(ECharacterCameraMode newCameraMode, ECharacterCameraMode OldCameraMode) {

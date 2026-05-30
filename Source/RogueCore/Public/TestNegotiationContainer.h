@@ -8,7 +8,8 @@ struct FTestNegotiationContainer {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TArray<FTestUnlocksContainer> negotiations;
+    TArray<FTestUnlocksContainer> Negotiations;
     
     ROGUECORE_API FTestNegotiationContainer();
 };
+

@@ -5,29 +5,47 @@
 
 class UDestructibleSubHealthComponent;
 class USceneComponent;
+
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class UDestructibleSubHealthComponent : public USubHealthComponent {
     GENERATED_BODY()
-    
-
 public:
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSubHealthDestroyed, UDestructibleSubHealthComponent*, subHealth);
     
- 
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float MaxHealth;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float RadialDamageResistance;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool AllowInderectDamage;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, ReplicatedUsing=OnRep_Damage, meta=(AllowPrivateAccess=true))
     float Damage;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USceneComponent* ArmorComponent;
+    
+public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSubHealthDestroyed OnDestroyed;
+    
     UDestructibleSubHealthComponent(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+
     UFUNCTION(BlueprintCallable)
     void ResetHealth();
-    UFUNCTION()
+    
+protected:
+    UFUNCTION(BlueprintCallable)
     void OnRep_Damage(float oldDamage);
+    
+public:
+    UFUNCTION(BlueprintCallable)
+    void ApplyDamage(const int32 NewDamage);
+    
 };
+

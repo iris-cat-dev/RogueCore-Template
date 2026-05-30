@@ -1,7 +1,7 @@
 #include "EquippedActorData.h"
 
 FEquippedActorData::FEquippedActorData() {
-    this->Actor = NULL;
+    this->Actor = nullptr;
     this->IsExternalActor = false;
 }
 

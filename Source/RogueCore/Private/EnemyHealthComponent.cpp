@@ -14,7 +14,7 @@ float UEnemyHealthComponent::GetMaxHealth() const {
     return 0.0f;
 }
 
-float UEnemyHealthComponent::GetEnemyDamageResistanceScaling() {
+float UEnemyHealthComponent::GetEnemyDamageResistanceScaling() const {
     return 0.0f;
 }
 

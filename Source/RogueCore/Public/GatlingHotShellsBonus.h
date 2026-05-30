@@ -8,4 +8,6 @@ class UGatlingHotShellsBonus : public UDamageConversionBonus {
     GENERATED_BODY()
 public:
     UGatlingHotShellsBonus();
+
 };
+

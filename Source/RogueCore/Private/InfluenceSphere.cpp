@@ -1,7 +1,7 @@
 #include "InfluenceSphere.h"
 
 FInfluenceSphere::FInfluenceSphere() {
-    this->Influencer = NULL;
+    this->Influencer = nullptr;
     this->Radius = 0.00f;
 }
 

@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "AttachChangeSigDelegate.h"
 #include "FSDPhysicsActor.h"
 #include "OnCarriableDepositedDelegate.h"
@@ -9,23 +9,42 @@
 
 class AActor;
 class APlayerCharacter;
+
 UCLASS(Abstract, Blueprintable)
 class ACarriableItem : public AFSDPhysicsActor, public IThrowable {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAttachChangeSig OnAttachedChangeDelegate;
-
+    
+protected:
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnCarriableDeposited OnCarriableDeposited;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool StrictDeposit;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool IsDopositable;
+    
+public:
     ACarriableItem(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void Throw(FVector Force);
+    
+protected:
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void Receive_OnDeposited(APlayerCharacter* fromPlayer, AActor* toActor);
+    
+public:
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnAttachChanged(bool Attached);
+    
     UFUNCTION(BlueprintCallable)
     void AttachChanged(bool Attached, const FVector& PrevScale);
+    
+
     // Fix for true pure virtual functions not being implemented
 };
+

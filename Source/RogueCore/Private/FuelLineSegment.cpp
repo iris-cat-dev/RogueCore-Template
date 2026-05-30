@@ -1,8 +1,8 @@
 #include "FuelLineSegment.h"
-#include "Components/SceneComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
 #include "Components/SplineComponent.h"
 #include "Components/SplineMeshComponent.h"
-#include "Components/StaticMeshComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=StaticMeshComponent -FallbackName=StaticMeshComponent
 #include "SimpleHealthComponent.h"
 
 AFuelLineSegment::AFuelLineSegment(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {

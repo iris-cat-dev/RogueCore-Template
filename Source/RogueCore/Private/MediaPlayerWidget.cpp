@@ -1,26 +1,22 @@
 #include "MediaPlayerWidget.h"
 
 UMediaPlayerWidget::UMediaPlayerWidget() : UUserWidget(FObjectInitializer::Get()) {
-    this->MediaSource = NULL;
-    this->MediaTexture = NULL;
-    this->MediaSoundClass = NULL;
+    this->MediaTexture = nullptr;
+    this->VolumeCategory = EVolumeType::Master;
     this->VolumeMultiplier = 1.00f;
     this->PlayerState = EMediaPlayerState::Stopped;
-    this->OutputImage = NULL;
+    this->OutputImage = nullptr;
 }
 
 void UMediaPlayerWidget::Stop() {
 }
 
-
 bool UMediaPlayerWidget::Play() {
     return false;
 }
 
-void UMediaPlayerWidget::Callback_MediaPlayResumed() {
-}
-
-void UMediaPlayerWidget::Callback_MediaOpened(const FString& URL) {
+EMediaPlayerState UMediaPlayerWidget::GetPlayerState() const {
+    return EMediaPlayerState::Stopped;
 }
 
 void UMediaPlayerWidget::Callback_MediaEndReached() {

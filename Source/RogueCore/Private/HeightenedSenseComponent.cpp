@@ -1,7 +1,7 @@
 #include "HeightenedSenseComponent.h"
 
 UHeightenedSenseComponent::UHeightenedSenseComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->HeightenSenseAffliction = NULL;
+    this->HeightenSenseAffliction = nullptr;
     this->AlertDistance = 2000.00f;
     this->bAfflictionActivated = false;
 }

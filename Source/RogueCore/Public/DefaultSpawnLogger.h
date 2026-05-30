@@ -8,4 +8,6 @@ class UDefaultSpawnLogger : public USpawnLogger {
     GENERATED_BODY()
 public:
     UDefaultSpawnLogger();
+
 };
+

@@ -2,7 +2,7 @@
 #include "Net/UnrealNetwork.h"
 
 UCappedResource::UCappedResource() {
-    this->Data = NULL;
+    this->Data = nullptr;
     this->CurrentAmount = 0.00f;
     this->MaxAmount = 50.00f;
     this->TotalCollected = 0.00f;
@@ -13,7 +13,7 @@ float UCappedResource::TransferAll(UCappedResource* Receiver) {
     return 0.0f;
 }
 
-float UCappedResource::Transfer(float amount, UCappedResource* Receiver) {
+float UCappedResource::Transfer(float Amount, UCappedResource* Receiver) {
     return 0.0f;
 }
 
@@ -51,11 +51,11 @@ float UCappedResource::GetCapacityPct() const {
     return 0.0f;
 }
 
-float UCappedResource::Deduct(float amount) {
+float UCappedResource::Deduct(float Amount) {
     return 0.0f;
 }
 
-float UCappedResource::Add(float amount) {
+float UCappedResource::Add(float Amount) {
     return 0.0f;
 }
 

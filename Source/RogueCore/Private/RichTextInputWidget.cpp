@@ -2,7 +2,8 @@
 
 URichTextInputWidget::URichTextInputWidget() : UUserWidget(FObjectInitializer::Get()) {
     this->InputSource = EFSDInputSource::None;
-    this->RichTextBlock = NULL;
+    this->InputAxis = 0;
+    this->RichTextBlock = nullptr;
 }
 
 void URichTextInputWidget::ScaleTextBlockToHeight(UTextBlock* InTextBlock, float LineHeight) {

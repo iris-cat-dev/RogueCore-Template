@@ -9,8 +9,11 @@ class ROGUECORE_API ATallboyEnemy : public AEnemyDeepPathfinderCharacter, public
     GENERATED_BODY()
 public:
     ATallboyEnemy(const FObjectInitializer& ObjectInitializer);
+
+
     // Fix for true pure virtual functions not being implemented
     UFUNCTION(BlueprintCallable)
-    float GetAttackDamageModifier() const override PURE_VIRTUAL(GetAttackDamageModifier, return 0.0f;);
+    virtual float GetAttackDamageModifier() const override PURE_VIRTUAL(GetAttackDamageModifier, return 0.0f;);
     
 };
+

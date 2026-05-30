@@ -1,20 +1,26 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Components/ActorComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
 #include "PerkLogic.generated.h"
 
 class APlayerCharacter;
+
 UCLASS(Abstract, Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class ROGUECORE_API UPerkLogic : public UActorComponent {
     GENERATED_BODY()
 public:
     UPerkLogic(const FObjectInitializer& ObjectInitializer);
- 
+
+protected:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void StartLogic(int32 Rank);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     APlayerCharacter* GetCharacter() const;
+    
+public:
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     FText GetAdditionalText(int32 Rank) const;
+    
 };
+

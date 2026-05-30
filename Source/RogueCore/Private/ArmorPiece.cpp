@@ -4,9 +4,9 @@
 
 AArmorPiece::AArmorPiece(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->Upgradable = CreateDefaultSubobject<UUpgradableGearComponent>(TEXT("Upgradable"));
-    this->LoadoutProxy = NULL;
-    this->ItemID = NULL;
-    this->WeaponPreviewClass = NULL;
+    this->LoadoutProxy = nullptr;
+    this->ItemID = nullptr;
+    this->WeaponPreviewClass = nullptr;
 }
 
 TSubclassOf<AActor> AArmorPiece::GetWeaponViewClass() const {

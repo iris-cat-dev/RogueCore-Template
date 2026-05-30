@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-
-#include "Components/ActorComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Transform -FallbackName=Transform
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
 #include "GameplayTagContainer.h"
 #include "EnemyDestroyedSignatureDelegate.h"
 #include "EnemySpawnedDelegateDelegate.h"
@@ -32,7 +32,7 @@ public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FEnemySpawnedSignature OnEnemySpawned;
     
-public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
     USpawnEffectsComponent* SpawnEffects;
     
@@ -75,7 +75,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FGameplayTag CritterTag;
     
-public:
+private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     AProceduralSetup* ProceduralSetup;
     
@@ -115,7 +115,7 @@ public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void PromoteToCritical(APawn* Pawn);
     
-public:
+private:
     UFUNCTION(BlueprintCallable)
     void OnMatchStarted();
     
@@ -132,7 +132,7 @@ public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable, BlueprintPure)
     TArray<APawn*> FindEnemiesByClass(TSubclassOf<APawn> PawnClass, bool isSwarmerEnemy) const;
     
-public:
+private:
     UFUNCTION(BlueprintCallable)
     void EnemyDestroyed(AActor* Actor);
     

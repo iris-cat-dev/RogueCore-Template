@@ -8,3 +8,4 @@ enum class EArmorUpgradeType : uint8 {
     RegenRate,
     ReviveInvulnerability,
 };
+

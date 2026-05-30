@@ -8,3 +8,4 @@ enum class ETargetStateDamageBonusType : uint8 {
     Staggered,
     ElementEventActive,
 };
+

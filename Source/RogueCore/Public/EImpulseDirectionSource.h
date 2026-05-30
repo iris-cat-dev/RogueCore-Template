@@ -10,3 +10,4 @@ enum class EImpulseDirectionSource : uint8 {
     TargetUp,
     TargetRandomOnPlane,
 };
+

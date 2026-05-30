@@ -8,4 +8,6 @@ class UElementTypeElectrocution : public UElementType {
     GENERATED_BODY()
 public:
     UElementTypeElectrocution();
+
 };
+

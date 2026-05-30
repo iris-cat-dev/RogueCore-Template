@@ -8,7 +8,7 @@ UOxygenComponent::UOxygenComponent(const FObjectInitializer& ObjectInitializer) 
     this->NetworkedOxygen = 100;
     this->IsReplenishingOxygen = false;
     this->OxygenDepletionPersecond = 1.00f;
-    this->NoOxygenStatusEffect = NULL;
+    this->NoOxygenStatusEffect = nullptr;
 }
 
 void UOxygenComponent::RegisterOxygenEvent(FOxygenTriggerDelegate OxygenCallback, float oxygenLevel, bool triggerOnOxygenLoss) {

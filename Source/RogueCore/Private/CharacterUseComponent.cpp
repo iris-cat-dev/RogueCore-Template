@@ -3,8 +3,8 @@
 
 UCharacterUseComponent::UCharacterUseComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->UseDistance = 150.00f;
-    this->LastBeginUseUsable = NULL;
-    this->HoveringUsable = NULL;
+    this->LastBeginUseUsable = nullptr;
+    this->HoveringUsable = nullptr;
 }
 
 void UCharacterUseComponent::Server_SetState_Implementation(const FCharacterUseState& NewState) {
@@ -55,10 +55,6 @@ UUsableComponentBase* UCharacterUseComponent::GetActiveUsable() const {
 }
 
 void UCharacterUseComponent::Client_OnUsedBy_Implementation(UUsableComponent* InUsable, EInputKeys Key) {
-}
-
-bool UCharacterUseComponent::CheckPlayerHasPermission(UUsableComponentBase* usable) {
-    return false;
 }
 
 void UCharacterUseComponent::All_UseEnded_Implementation(const FCharacterUseState& oldState) {

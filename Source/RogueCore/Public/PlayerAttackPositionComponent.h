@@ -6,15 +6,22 @@
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class UPlayerAttackPositionComponent : public UAttackerPositioningComponent {
     GENERATED_BODY()
-    
 public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float OnZiplineFlyingModifier;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float OnZiplineWalkingModifier;
+    
+public:
     UPlayerAttackPositionComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void SetGameplayModifier(float Modifier);
+    
     UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetGameplayModifier() const;
+    
 };
+

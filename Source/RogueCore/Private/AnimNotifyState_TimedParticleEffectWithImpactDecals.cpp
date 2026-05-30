@@ -1,7 +1,7 @@
 #include "AnimNotifyState_TimedParticleEffectWithImpactDecals.h"
 
 UAnimNotifyState_TimedParticleEffectWithImpactDecals::UAnimNotifyState_TimedParticleEffectWithImpactDecals() {
-    this->DecalMaterial = NULL;
+    this->DecalMaterial = nullptr;
     this->DecalSize = 50.00f;
     this->FadeStartDelay = 1.00f;
     this->FadeDuration = 1.00f;

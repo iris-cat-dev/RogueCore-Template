@@ -8,3 +8,4 @@ enum class EAfflictionSocket : uint8 {
     Feet,
     Camera,
 };
+

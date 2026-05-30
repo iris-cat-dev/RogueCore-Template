@@ -1,7 +1,7 @@
 #include "DebrisInfluence.h"
 
 FDebrisInfluence::FDebrisInfluence() {
-    this->CaveInfluencer = NULL;
+    this->CaveInfluencer = nullptr;
     this->Radius = 0.00f;
 }
 

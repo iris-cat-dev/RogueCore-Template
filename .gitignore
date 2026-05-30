@@ -20,7 +20,6 @@
 # Compiled Dynamic libraries
 *.so
 *.dylib
-*.dll
 
 # Fortran module files
 *.mod
@@ -40,7 +39,6 @@
 # debug information files
 *.dwo
 
-Binaries
 Intermediate
 .DS_Store
 .vs

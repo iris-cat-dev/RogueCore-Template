@@ -1,9 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Components/ActorComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
 #include "ByKeyEditorComponent.generated.h"
 
 class UEnemyDescriptor;
+
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class ROGUECORE_API UByKeyEditorComponent : public UActorComponent {
     GENERATED_BODY()
@@ -12,4 +13,6 @@ public:
     UEnemyDescriptor* Enemy;
     
     UByKeyEditorComponent(const FObjectInitializer& ObjectInitializer);
+
 };
+

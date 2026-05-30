@@ -3,6 +3,7 @@
 #include "BiomeFeatures.generated.h"
 
 class UMinersManualData;
+
 USTRUCT(BlueprintType)
 struct FBiomeFeatures {
     GENERATED_BODY()
@@ -12,3 +13,4 @@ public:
     
     ROGUECORE_API FBiomeFeatures();
 };
+

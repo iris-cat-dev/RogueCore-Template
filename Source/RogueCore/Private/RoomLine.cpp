@@ -1,9 +1,9 @@
 #include "RoomLine.h"
 
 FRoomLine::FRoomLine() {
-    this->WallNoiseOverride = NULL;
-    this->CeilingNoiseOverride = NULL;
-    this->FloorNoiseOverride = NULL;
+    this->WallNoiseOverride = nullptr;
+    this->CeilingNoiseOverride = nullptr;
+    this->FloorNoiseOverride = nullptr;
     this->UseDetailNoise = false;
 }
 

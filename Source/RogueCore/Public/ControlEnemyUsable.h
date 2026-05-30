@@ -8,4 +8,6 @@ class UControlEnemyUsable : public UInstantUsable {
     GENERATED_BODY()
 public:
     UControlEnemyUsable(const FObjectInitializer& ObjectInitializer);
+
 };
+

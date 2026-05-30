@@ -9,7 +9,12 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString SeasonExpirationTimeSteam;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString SeasonExpirationTimeSony;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString SeasonExpirationTimeGDK;
+    
     ROGUECORE_API FFSDSeasonExpiryResponse();
 };
+

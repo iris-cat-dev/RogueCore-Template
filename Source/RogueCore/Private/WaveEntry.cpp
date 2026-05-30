@@ -2,5 +2,6 @@
 
 FWaveEntry::FWaveEntry() {
     this->Weight = 0.00f;
+    this->WaveController = nullptr;
 }
 

@@ -8,3 +8,4 @@ enum class EGooGunFireMode : uint8 {
     Charge,
     Burst,
 };
+

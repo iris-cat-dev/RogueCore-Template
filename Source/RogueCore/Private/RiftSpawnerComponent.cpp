@@ -2,8 +2,8 @@
 #include "Net/UnrealNetwork.h"
 
 URiftSpawnerComponent::URiftSpawnerComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->RiftClass = NULL;
-    this->Positioning = NULL;
+    this->RiftClass = nullptr;
+    this->Positioning = nullptr;
     this->SpawnInterval = 0.00f;
     this->SpawnDeviation = 0.00f;
     this->InitialSpawnDelay = 0.00f;

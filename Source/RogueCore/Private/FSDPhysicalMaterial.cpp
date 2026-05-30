@@ -7,30 +7,30 @@ UFSDPhysicalMaterial::UFSDPhysicalMaterial() {
     this->MaxAccelerationScale = 1.00f;
     this->RepulsePlayer = false;
     this->RepulsePlayerRandomDegreeOffset = 0.00f;
-    this->RepulsePlayerSound = NULL;
-    this->RepulsePlayerParticle = NULL;
-    this->ImpactParticles = NULL;
+    this->RepulsePlayerSound = nullptr;
+    this->RepulsePlayerParticle = nullptr;
+    this->ImpactParticles = nullptr;
     this->ImpactParticleScale = 1.00f;
-    this->ImpactMaterialOverride = NULL;
-    this->ImpactSound = NULL;
+    this->ImpactMaterialOverride = nullptr;
+    this->ImpactSound = nullptr;
     this->ImpactSoundFPVolumeScale = 1.00f;
-    this->ImpactSoundFPAttenuation = NULL;
-    this->MeleeImpactSound = NULL;
+    this->ImpactSoundFPAttenuation = nullptr;
+    this->MeleeImpactSound = nullptr;
     this->UseImpactDecalOverrides = false;
     this->ImpactDecals.AddDefaulted(3);
-    this->FirstPersonDamageIndicatorSound = NULL;
+    this->FirstPersonDamageIndicatorSound = nullptr;
     this->IsWeakPoint = false;
     this->IsSubhealthCollider = false;
     this->DamageMultiplier = 1.00f;
-    this->FootStepParticle = NULL;
-    this->FootstepMaterialOverride = NULL;
-    this->FootStepSound = NULL;
+    this->FootStepParticle = nullptr;
+    this->FootstepMaterialOverride = nullptr;
+    this->FootStepSound = nullptr;
     this->ExtraFallVelocity = 0.00f;
-    this->FallImpactEffect = NULL;
-    this->FallImpactSound = NULL;
+    this->FallImpactEffect = nullptr;
+    this->FallImpactSound = nullptr;
     this->AlwaysPenetrate = false;
     this->OneSidedPenetrate = false;
-    this->ReactiveTerrain = NULL;
+    this->ReactiveTerrain = nullptr;
 }
 
 UNiagaraComponent* UFSDPhysicalMaterial::SpawnImpactParticlesFromHit(UObject* WorldContextObject, const FHitResult& HitResult) {

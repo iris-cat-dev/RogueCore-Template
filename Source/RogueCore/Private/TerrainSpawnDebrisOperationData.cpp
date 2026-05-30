@@ -3,6 +3,7 @@
 FTerrainSpawnDebrisOperationData::FTerrainSpawnDebrisOperationData() {
     this->OperationNumber = 0;
     this->Radius = 0.00f;
-    this->Debris = NULL;
+    this->Debris = nullptr;
+    this->Pos = FVector::ZeroVector;
 }
 

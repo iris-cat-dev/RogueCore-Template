@@ -1,6 +1,6 @@
 #include "TowerModuleBase.h"
-#include "Components/SceneComponent.h"
-#include "Components/SkeletalMeshComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SkeletalMeshComponent -FallbackName=SkeletalMeshComponent
 #include "EnemyHealthComponent.h"
 #include "Net/UnrealNetwork.h"
 
@@ -10,9 +10,9 @@ ATowerModuleBase::ATowerModuleBase(const FObjectInitializer& ObjectInitializer) 
     this->ModuleMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("mesh"));
     this->ArmorPlates.AddDefaulted(3);
     this->Health = CreateDefaultSubobject<UEnemyHealthComponent>(TEXT("Heath"));
-    this->DestroyedMesh = NULL;
-    this->deathSound = NULL;
-    this->deathParticles = NULL;
+    this->DestroyedMesh = nullptr;
+    this->deathSound = nullptr;
+    this->deathParticles = nullptr;
     this->ArmorLaunchPower = 100.00f;
     this->HideArmorTime = 0.00f;
     this->ModuleRotationSpeed = 0.00f;
@@ -34,7 +34,6 @@ void ATowerModuleBase::HideArmorPlates() {
 void ATowerModuleBase::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const {
     Super::GetLifetimeReplicatedProps(OutLifetimeProps);
     
-    DOREPLIFETIME(ATowerModuleBase, ModuleRotation);
     DOREPLIFETIME(ATowerModuleBase, State);
 }
 

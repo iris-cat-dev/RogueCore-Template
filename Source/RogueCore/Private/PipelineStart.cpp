@@ -9,8 +9,8 @@ APipelineStart::APipelineStart(const FObjectInitializer& ObjectInitializer) : Su
     this->PipelineID = 0;
     this->PipelineStartUsable = CreateDefaultSubobject<UTrackBuilderUsable>(TEXT("PipelineStartUsable"));
     this->BuildState = EPipelineBuildState::NotStarted;
-    this->PipelineFinish = NULL;
-    this->Refinery = NULL;
+    this->PipelineFinish = nullptr;
+    this->Refinery = nullptr;
 }
 
 

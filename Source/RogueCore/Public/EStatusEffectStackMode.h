@@ -8,3 +8,4 @@ enum class EStatusEffectStackMode : uint8 {
     HasLessStacksThan,
     HasMoreStacksThan,
 };
+

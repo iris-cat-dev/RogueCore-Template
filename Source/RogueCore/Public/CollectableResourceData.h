@@ -9,30 +9,44 @@ class AProceduralSetup;
 class UCollectableResourceCreator;
 class UDebrisBase;
 class UDebrisPositioning;
+
 UCLASS(Blueprintable)
 class UCollectableResourceData : public UResourceData {
     GENERATED_BODY()
-
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool ScaleToRoomResourceMultiplier;
-
+    
+protected:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UCollectableResourceCreator* ResourceCreator;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UDebrisPositioning* Positioning;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float Rarity;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float InfluenceRadius;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<TSoftObjectPtr<UDebrisBase>> Debris;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool UseTerrainPlacement;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<TSoftClassPtr<AActor>> CollectableClasses;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TArray<TSubclassOf<AActor>> CollectableClassesLoaded;
+    
+public:
     UCollectableResourceData();
 
     UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetDesiredAmount(AProceduralSetup* pls) const;
-
- 
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
-    UCollectableResourceCreator* ResourceCreator;
-
-    UDebrisPositioning* Positioning;
-    float Rarity;
-    float InfluenceRadius;
-    TArray<TSoftObjectPtr<UDebrisBase>> Debris;
-    bool UseTerrainPlacement;
-    TArray<TSoftClassPtr<AActor>> CollectableClasses;
-
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    TArray<TSubclassOf<AActor>> CollectableClassesLoaded;
+    
 };
+

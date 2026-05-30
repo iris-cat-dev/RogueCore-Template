@@ -7,3 +7,4 @@ enum class EStageType : uint8 {
     Cave,
     SafeRoom,
 };
+

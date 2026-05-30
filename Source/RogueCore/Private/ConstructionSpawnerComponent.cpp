@@ -1,7 +1,7 @@
 #include "ConstructionSpawnerComponent.h"
 
 UConstructionSpawnerComponent::UConstructionSpawnerComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->PostConstructionSpawnDataAsset = NULL;
+    this->PostConstructionSpawnDataAsset = nullptr;
     this->LogSpawning = true;
     this->PrintSpawning = true;
 }

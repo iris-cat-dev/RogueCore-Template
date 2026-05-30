@@ -5,5 +5,6 @@ FExposableFloat::FExposableFloat() {
     this->Exposed = false;
     this->MinValue = 0.00f;
     this->MaxValue = 0.00f;
+    this->Description = FText::GetEmpty();
 }
 

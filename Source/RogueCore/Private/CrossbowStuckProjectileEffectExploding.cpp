@@ -1,8 +1,8 @@
 #include "CrossbowStuckProjectileEffectExploding.h"
 
 UCrossbowStuckProjectileEffectExploding::UCrossbowStuckProjectileEffectExploding(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->ChemicalSoundCue = NULL;
-    this->ChemicalAudioComponent = NULL;
+    this->ChemicalSoundCue = nullptr;
+    this->ChemicalAudioComponent = nullptr;
     this->ChemicalReactionDelay = 5.00f;
 }
 

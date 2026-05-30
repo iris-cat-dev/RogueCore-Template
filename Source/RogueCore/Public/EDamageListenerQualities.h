@@ -13,3 +13,4 @@ enum class EDamageListenerQualities : uint8 {
     OnRadialOverlap,
     OnKilledTarget,
 };
+

@@ -1,8 +1,5 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "TXLoadout.h"
-#include "TXPlayerData.h"
-#include "TXPlayerStat.h"
 #include "TXPlayerInfo.generated.h"
 
 USTRUCT(BlueprintType)
@@ -10,13 +7,32 @@ struct FTXPlayerInfo {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    int32 current_health;
+    int32 player_rank;
     
-    int32 max_health;
-    int32 current_armor;
-    int32 max_armor;
-    FTXPlayerData player_data;
-    FTXLoadout Loadout;
-    TArray<FTXPlayerStat> player_stats;
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 intel_points;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FString intel_state;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FString played_class;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 class_level;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 class_promotions;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 total_promotions;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 merit;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<FString> Enhancements;
+    
     ROGUECORE_API FTXPlayerInfo();
 };
+

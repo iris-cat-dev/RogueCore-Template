@@ -8,4 +8,6 @@ class UNetworkedRadarPointComponent : public URadarPointComponent {
     GENERATED_BODY()
 public:
     UNetworkedRadarPointComponent(const FObjectInitializer& ObjectInitializer);
+
 };
+

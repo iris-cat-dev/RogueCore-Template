@@ -7,11 +7,13 @@
 UCLASS(Blueprintable, EditInlineNew)
 class UGameModeAvailabilityCondition : public UBXEUnlockConditionBase {
     GENERATED_BODY()
-    
-
 public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EGameModeAvailability GameModeAvailability;
     
+public:
     UGameModeAvailabilityCondition();
+
 };
+

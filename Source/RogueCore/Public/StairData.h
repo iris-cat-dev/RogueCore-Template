@@ -9,6 +9,9 @@ public:
     UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     int8 Version;
     
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     int8 Segments;
+    
     ROGUECORE_API FStairData();
 };
+

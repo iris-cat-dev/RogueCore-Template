@@ -2,7 +2,7 @@
 #include "Net/UnrealNetwork.h"
 
 UAbilityComponent::UAbilityComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->AbilityData = NULL;
+    this->AbilityData = nullptr;
     this->CoolDownTime = 120.00f;
     this->EffectTime = 10.00f;
     this->CooldownTimer = -1.00f;
@@ -11,14 +11,19 @@ UAbilityComponent::UAbilityComponent(const FObjectInitializer& ObjectInitializer
     this->UseCost = 1;
     this->charges = 0;
     this->MaxCharges = 1;
+    this->TempCharges = 0;
     this->AbilityBlockedOn = EAbilityBlockedOn::Unique;
     this->ActivationType = EAbilityActivationType::OnRelease;
     this->DeactivationType = EAbilityDeactivationType::OnDuration;
-    this->FullyChargedShout = NULL;
+    this->FullyChargedShout = nullptr;
     this->IsEffectActive = false;
     this->AnyTeamAbilityActive = false;
     this->AnyAbilityOfThisTypeActive = false;
     this->CanActivateWhenDead = false;
+}
+
+AAbilityItem* UAbilityComponent::TryGetAbilityItem() const {
+    return NULL;
 }
 
 void UAbilityComponent::SetRegenBlocked(bool IsBlocked) {
@@ -53,6 +58,10 @@ bool UAbilityComponent::GetIsEffectActive() const {
     return false;
 }
 
+float UAbilityComponent::GetCoolDownRemainingPct() const {
+    return 0.0f;
+}
+
 int32 UAbilityComponent::GetCharges() const {
     return 0;
 }
@@ -74,13 +83,16 @@ void UAbilityComponent::DecreaseCurrentCooldownByPercent(const float InPercent) 
 void UAbilityComponent::DeactivateAbility() {
 }
 
-void UAbilityComponent::ConsumeCharge(int32 amount) {
+void UAbilityComponent::ConsumeCharge(int32 Amount) {
 }
 
 void UAbilityComponent::Client_DecreaseCurrentCooldownBySeconds_Implementation(const float InSeconds) {
 }
 
 void UAbilityComponent::Client_DecreaseCurrentCooldownByPercent_Implementation(const float InPercent) {
+}
+
+void UAbilityComponent::AddCharges(int32 Amount) {
 }
 
 void UAbilityComponent::ActivateAbility(bool ReleaseToDeactivate) {

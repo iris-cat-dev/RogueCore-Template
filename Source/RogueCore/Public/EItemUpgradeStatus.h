@@ -10,3 +10,4 @@ enum class EItemUpgradeStatus : uint8 {
     Owned,
     Equipped,
 };
+

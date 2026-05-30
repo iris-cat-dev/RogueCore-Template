@@ -4,14 +4,14 @@
 UReloadSentryUsableComponent::UReloadSentryUsableComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->OutOfAmmoText = FText::FromString(TEXT("Out of Ammo"));
     this->AmmoFullText = FText::FromString(TEXT("Ammo Full"));
-    this->AudioOutOfAmmo = NULL;
-    this->AudioReloading = NULL;
-    this->ReloadingAudioComponent = NULL;
+    this->AudioOutOfAmmo = nullptr;
+    this->AudioReloading = nullptr;
+    this->ReloadingAudioComponent = nullptr;
     this->usable = true;
     this->bReloading = false;
-    this->ReloadAudioComponent = NULL;
+    this->ReloadAudioComponent = nullptr;
     this->AmmoPerSec = 1.00f;
-    this->SentryGun = NULL;
+    this->SentryGun = nullptr;
 }
 
 void UReloadSentryUsableComponent::SetOwningPlayerCharacter(APlayerCharacter* Player) {

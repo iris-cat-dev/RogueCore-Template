@@ -10,3 +10,4 @@ enum class EBoscoAbillityTargetPreference : uint8 {
     ClosestEnemy,
     TargetLocation,
 };
+

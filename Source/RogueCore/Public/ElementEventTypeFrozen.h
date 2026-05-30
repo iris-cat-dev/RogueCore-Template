@@ -8,4 +8,6 @@ class UElementEventTypeFrozen : public UElementEventTypeBase {
     GENERATED_BODY()
 public:
     UElementEventTypeFrozen();
+
 };
+

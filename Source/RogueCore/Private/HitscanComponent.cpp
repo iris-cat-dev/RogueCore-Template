@@ -9,9 +9,27 @@ UHitscanComponent::UHitscanComponent(const FObjectInitializer& ObjectInitializer
     this->GeneralImpactAudioVolume = 1.00f;
     this->ImpactDelay = 0.02f;
     this->OnlyUseImpactEffects = false;
-    this->ImpactParticles = NULL;
-    this->ImpactSound = NULL;
+    this->ImpactParticles = nullptr;
+    this->ImpactSound = nullptr;
     this->IgnoreAlwaysPenetrate = false;
+}
+
+void UHitscanComponent::Server_ShowRicochetHit_Terrain_Implementation(FVector_NetQuantize Origin, FVector_NetQuantize Location, FVector_NetQuantizeNormal Normal, uint8 MaterialID, UFSDPhysicalMaterial* PhysMaterial) {
+}
+
+void UHitscanComponent::Server_ShowRicochetHit_Destructible_Implementation(FVector_NetQuantize Origin, FVector_NetQuantize Location, FVector_NetQuantizeNormal Normal, UPrimitiveComponent* Target, UFSDPhysicalMaterial* PhysMaterial, uint8 BoneIndex) {
+}
+
+void UHitscanComponent::Server_ShowRicochetHit_Implementation(FVector_NetQuantize Origin, FVector_NetQuantize Location, FVector_NetQuantizeNormal Normal, bool SpawnDecal, UFSDPhysicalMaterial* PhysMaterial) {
+}
+
+void UHitscanComponent::Server_ShowHit_Terrain_Implementation(FVector_NetQuantize Location, FVector_NetQuantizeNormal Normal, uint8 MaterialID, UFSDPhysicalMaterial* PhysMaterial) {
+}
+
+void UHitscanComponent::Server_ShowHit_Destructible_Implementation(FVector_NetQuantize Location, FVector_NetQuantizeNormal Normal, UPrimitiveComponent* Target, UFSDPhysicalMaterial* PhysMaterial, uint8 BoneIndex) {
+}
+
+void UHitscanComponent::Server_ShowHit_Implementation(FVector_NetQuantize Location, FVector_NetQuantizeNormal Normal, bool SpawnDecal, UFSDPhysicalMaterial* PhysMaterial) {
 }
 
 void UHitscanComponent::Server_RegisterRicochetHit_Terrain_Implementation(FVector_NetQuantize Origin, FVector_NetQuantize Location, FVector_NetQuantizeNormal Normal, UFSDPhysicalMaterial* PhysMaterial, int32 ClipCount) {

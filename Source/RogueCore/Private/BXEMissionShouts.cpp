@@ -1,6 +1,6 @@
 #include "BXEMissionShouts.h"
 
 FBXEMissionShouts::FBXEMissionShouts() {
-    this->FirstStageStarted = NULL;
+    this->FirstStageStarted = nullptr;
 }
 

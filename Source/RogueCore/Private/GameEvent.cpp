@@ -1,6 +1,6 @@
 #include "GameEvent.h"
-#include "Components/ChildActorComponent.h"
-#include "Components/SceneComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ChildActorComponent -FallbackName=ChildActorComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
 #include "Net/UnrealNetwork.h"
 #include "Templates/SubclassOf.h"
 
@@ -11,9 +11,9 @@ AGameEvent::AGameEvent(const FObjectInitializer& ObjectInitializer) : Super(Obje
     this->RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("Root"));
     this->bGameEventSetup = false;
     this->StartEventObject = CreateDefaultSubobject<UChildActorComponent>(TEXT("StartEventObject"));
-    this->EventTriggeredShout = NULL;
-    this->EventFinishedShout = NULL;
-    this->EventFailedShout = NULL;
+    this->EventTriggeredShout = nullptr;
+    this->EventFinishedShout = nullptr;
+    this->EventFailedShout = nullptr;
     this->EventTriggeredShoutDelay = 0.00f;
     this->EventFinishedShoutDelay = 0.00f;
     this->StageProgress = 0.00f;

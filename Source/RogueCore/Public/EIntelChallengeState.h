@@ -9,3 +9,4 @@ enum class EIntelChallengeState : uint8 {
     Claimable,
     Complete,
 };
+

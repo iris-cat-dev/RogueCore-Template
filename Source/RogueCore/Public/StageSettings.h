@@ -1,9 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Engine/DataAsset.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
 #include "StageSettings.generated.h"
 
 class UStageNameBank;
+
 UCLASS(Blueprintable)
 class UStageSettings : public UDataAsset {
     GENERATED_BODY()
@@ -12,4 +13,6 @@ public:
     UStageNameBank* StageNames;
     
     UStageSettings();
+
 };
+

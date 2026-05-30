@@ -1,7 +1,7 @@
 #include "InstancedStatusEffectTriggerComponent.h"
 
 UInstancedStatusEffectTriggerComponent::UInstancedStatusEffectTriggerComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->collider = NULL;
+    this->collider = nullptr;
     this->RemoveStatusEffectOnEndOverlap = true;
 }
 

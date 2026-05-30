@@ -19,3 +19,4 @@ enum class EMinersManualSinglePage : uint8 {
     Assignments,
     Navigation,
 };
+

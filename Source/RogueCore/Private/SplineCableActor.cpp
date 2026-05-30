@@ -1,5 +1,5 @@
 #include "SplineCableActor.h"
-#include "Components/SceneComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
 #include "Components/SplineComponent.h"
 #include "Net/UnrealNetwork.h"
 
@@ -16,7 +16,7 @@ ASplineCableActor::ASplineCableActor(const FObjectInitializer& ObjectInitializer
     this->CarveSurfaceOffset = 0.40f;
     this->MaxAllowedPathDistance = -1.00f;
     this->MaterialIndex = 1;
-    this->CableMeshInstance = NULL;
+    this->CableMeshInstance = nullptr;
     this->bConnected = false;
     this->ClearPointsWhenDone = true;
     this->PathSplineComponent->SetupAttachment(RootComponent);

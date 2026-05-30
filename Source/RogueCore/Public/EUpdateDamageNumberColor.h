@@ -9,3 +9,4 @@ enum class EUpdateDamageNumberColor : uint8 {
     EAlways,
     EAlwaysNormalHit,
 };
+

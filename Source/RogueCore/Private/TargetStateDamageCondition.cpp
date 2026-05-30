@@ -2,7 +2,7 @@
 
 UTargetStateDamageCondition::UTargetStateDamageCondition() {
     this->TargetState = ETargetStateDamageBonusType::Fleeing;
-    this->EventType = NULL;
+    this->EventType = nullptr;
 }
 
 

@@ -3,7 +3,7 @@
 
 APlagueSoaperItem::APlagueSoaperItem(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->projectileLauncher = CreateDefaultSubobject<UProjectileLauncherComponent>(TEXT("projectileLauncher"));
-    this->ProjectileClass = NULL;
+    this->ProjectileClass = nullptr;
 }
 
 void APlagueSoaperItem::OnWeaponFired(const FVector& Location) {

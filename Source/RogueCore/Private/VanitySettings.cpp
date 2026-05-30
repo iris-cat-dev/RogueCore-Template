@@ -1,8 +1,7 @@
 #include "VanitySettings.h"
 
 UVanitySettings::UVanitySettings() {
-    this->MedbayArmorItem = NULL;
-    this->AlwaysLockedDLC = NULL;
+    this->AlwaysLockedDLC = nullptr;
 }
 
 bool UVanitySettings::HasNewVanityNotification(UObject* WorldContextObject, EVanitySlot Slot, UPlayerCharacterID* characterID) {

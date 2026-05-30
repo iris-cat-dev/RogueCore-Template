@@ -1,24 +1,38 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Animation/AnimInstance.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=AnimInstance -FallbackName=AnimInstance
 #include "AmmoDrivenWeaponAnimInstance.generated.h"
 
 class AAmmoDrivenWeapon;
+
 UCLASS(Blueprintable, NonTransient)
 class UAmmoDrivenWeaponAnimInstance : public UAnimInstance {
     GENERATED_BODY()
-    
-
 public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     AAmmoDrivenWeapon* Weapon;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     bool IsFiring;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     float ClipFullPercentage;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     bool overheated;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     float temperature;
+    
+public:
     UAmmoDrivenWeaponAnimInstance();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsFull() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsEmpty() const;
+    
 };
+

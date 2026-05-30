@@ -2,7 +2,7 @@
 
 UMakeAttackableStatusEffectItem::UMakeAttackableStatusEffectItem() {
     this->AttackCostModifier = 0.50f;
-    this->ComponentClass = NULL;
+    this->ComponentClass = nullptr;
 }
 
 

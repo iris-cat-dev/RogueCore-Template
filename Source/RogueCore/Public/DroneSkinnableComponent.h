@@ -8,4 +8,6 @@ class UDroneSkinnableComponent : public USkinnableComponent {
     GENERATED_BODY()
 public:
     UDroneSkinnableComponent(const FObjectInitializer& ObjectInitializer);
+
 };
+

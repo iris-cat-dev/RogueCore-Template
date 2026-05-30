@@ -2,12 +2,12 @@
 
 UDamageHitCountEffect::UDamageHitCountEffect() {
     this->DamagePerHit = 1.00f;
-    this->DamageClass = NULL;
-    this->DamageParticle = NULL;
-    this->DamageSound = NULL;
+    this->DamageClass = nullptr;
+    this->DamageParticle = nullptr;
+    this->DamageSound = nullptr;
     this->DeadBugWalkingTargetMarking = false;
     this->ExtraDamageForCalculatingDBW = 0.00f;
-    this->DeadBugWalkingSTE = NULL;
+    this->DeadBugWalkingSTE = nullptr;
 }
 
 

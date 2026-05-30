@@ -1,12 +1,12 @@
 #include "MissionShouts.h"
 
 FMissionShouts::FMissionShouts() {
-    this->AfterDropPodExit = NULL;
-    this->OnExitPodDescending = NULL;
-    this->OnExitPodArrived = NULL;
-    this->OnCompletion = NULL;
-    this->OnCompletion_OneOfMultiple = NULL;
-    this->OnAllReturnObjectivesCompleted = NULL;
-    this->OnDeepDiveExitPodDescending = NULL;
+    this->AfterDropPodExit = nullptr;
+    this->OnExitPodDescending = nullptr;
+    this->OnExitPodArrived = nullptr;
+    this->OnCompletion = nullptr;
+    this->OnCompletion_OneOfMultiple = nullptr;
+    this->OnAllReturnObjectivesCompleted = nullptr;
+    this->OnDeepDiveExitPodDescending = nullptr;
 }
 

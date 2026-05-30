@@ -9,7 +9,9 @@ class AEventRewardDispenser : public AGenericRewardDispenser {
     GENERATED_BODY()
 public:
     AEventRewardDispenser(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void SetSelectedReward(FRewardDispenserReward InReward);
     
 };
+

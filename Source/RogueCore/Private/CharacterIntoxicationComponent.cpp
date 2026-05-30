@@ -2,7 +2,7 @@
 #include "Net/UnrealNetwork.h"
 
 UCharacterIntoxicationComponent::UCharacterIntoxicationComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->Character = NULL;
+    this->Character = nullptr;
     this->CurrentState = EIntoxicationState::NotIntoxicated;
     this->IntoxicationLerpSpeed = 100.00f;
     this->TimeDrunk = 0.00f;

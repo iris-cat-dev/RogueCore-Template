@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-
-
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Box -FallbackName=Box
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Matrix -FallbackName=Matrix
 #include "CSGBakedChildInstanceProperties.h"
 #include "CSGBase.h"
 #include "DeepCSGFloatTree.h"

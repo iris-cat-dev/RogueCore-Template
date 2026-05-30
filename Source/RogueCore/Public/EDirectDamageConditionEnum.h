@@ -7,3 +7,4 @@ enum class EDirectDamageConditionEnum : uint8 {
     Direct,
     Radial,
 };
+

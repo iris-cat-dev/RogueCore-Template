@@ -10,7 +10,7 @@ AConvertedRobotController::AConvertedRobotController(const FObjectInitializer& O
     this->WaitAfterSpecial = 0.00f;
     this->MinSpecialAttackCooldown = 0.00f;
     this->MaxSpecialAttackCooldown = 0.00f;
-    this->BehaviourTree = NULL;
+    this->BehaviourTree = nullptr;
     this->UpdateTargetInterval = 0.00f;
     this->PowerDownAfterSeconds = -1.00f;
 }

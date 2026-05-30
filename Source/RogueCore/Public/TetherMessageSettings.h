@@ -8,3 +8,4 @@ struct FTetherMessageSettings {
 public:
     ROGUECORE_API FTetherMessageSettings();
 };
+

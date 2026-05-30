@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Components/SceneComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
 #include "FragileDebrisCleaner.generated.h"
 
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
@@ -11,4 +11,6 @@ public:
     float CleanRadius;
     
     UFragileDebrisCleaner(const FObjectInitializer& ObjectInitializer);
+
 };
+

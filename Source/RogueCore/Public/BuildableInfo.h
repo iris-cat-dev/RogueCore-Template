@@ -8,3 +8,4 @@ struct FBuildableInfo {
 public:
     ROGUECORE_API FBuildableInfo();
 };
+

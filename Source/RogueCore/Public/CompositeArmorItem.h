@@ -3,6 +3,7 @@
 #include "CompositeArmorItem.generated.h"
 
 class UPrimitiveComponent;
+
 USTRUCT(BlueprintType)
 struct FCompositeArmorItem {
     GENERATED_BODY()
@@ -12,7 +13,13 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     float Health;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     bool OverrideAffectedByArmorBreak;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     bool MyAffectedByAmorBreak;
+    
     ROGUECORE_API FCompositeArmorItem();
 };
+

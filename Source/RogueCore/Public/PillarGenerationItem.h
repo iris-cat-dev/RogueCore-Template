@@ -4,6 +4,7 @@
 #include "PillarGenerationItem.generated.h"
 
 class UPillarGenerationComponent;
+
 UCLASS(Blueprintable)
 class APillarGenerationItem : public AGenerationItem {
     GENERATED_BODY()
@@ -12,4 +13,6 @@ public:
     UPillarGenerationComponent* PillarComponent;
     
     APillarGenerationItem(const FObjectInitializer& ObjectInitializer);
+
 };
+

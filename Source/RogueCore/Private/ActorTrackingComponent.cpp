@@ -1,7 +1,7 @@
 #include "ActorTrackingComponent.h"
 
 UActorTrackingComponent::UActorTrackingComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->WidgetType = NULL;
+    this->WidgetType = nullptr;
     this->VisibleOnHoldTAB = true;
     this->VisibleFromStart = false;
     this->bIconHidden = false;

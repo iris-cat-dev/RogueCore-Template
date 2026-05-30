@@ -9,12 +9,12 @@ AGatlingGun::AGatlingGun(const FObjectInitializer& ObjectInitializer) : Super(Ob
     this->BarrelProximityDamageLength = 200.00f;
     this->TimeBetweenProximityDamageTicks = 0.50f;
     this->DamageMultiplierAtMaxStabilization = 1.00f;
-    this->HotShellsTracerParticles = NULL;
-    this->HeatRemovedOnKill = 0.00f;
+    this->HotShellsTracerParticles = nullptr;
+    this->HeatRemovedOnKill = -1.00f;
     this->CriticalOverheatEnabled = false;
     this->HotShellsOn = false;
     this->HotShellsTemperatureRequired = 200.00f;
-    this->BarrelProximityDamage = NULL;
+    this->BarrelProximityDamage = nullptr;
     this->HitscanComponent = CreateDefaultSubobject<UHitscanComponent>(TEXT("HitscanComponent"));
 }
 
@@ -27,7 +27,7 @@ void AGatlingGun::OnRep_HotShellsTracerOn() {
 void AGatlingGun::OnGatlingTemperatureChanged(float temperature, bool IsOverheated) {
 }
 
-void AGatlingGun::OnEnemyKilled(AActor* Target, UFSDPhysicalMaterial* PhysMat, bool wasDirectHit) {
+void AGatlingGun::OnDamageEventTrigger(const TArray<FDamageListenerData>& listenerData, const FDamageParams& Params, const FDamageInfo& Damage, int32 eventInfo) {
 }
 
 void AGatlingGun::Client_RemoveHeat_Implementation() {

@@ -3,6 +3,7 @@
 #include "ActorTemplateSequenceArray.generated.h"
 
 class UTemplateSequence;
+
 USTRUCT(BlueprintType)
 struct FActorTemplateSequenceArray {
     GENERATED_BODY()
@@ -12,3 +13,4 @@ public:
     
     ROGUECORE_API FActorTemplateSequenceArray();
 };
+

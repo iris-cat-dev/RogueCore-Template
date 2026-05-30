@@ -1,7 +1,7 @@
 #include "ElementTypeSettings.h"
 
 UElementTypeSettings::UElementTypeSettings() {
-    this->Icon = NULL;
+    this->Icon = nullptr;
     this->ShowOnEnemyHealthBar = true;
 }
 

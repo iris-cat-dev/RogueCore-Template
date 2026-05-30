@@ -14,7 +14,16 @@ void ACoreTentacle::SetSwayTarget(const FCoreTentacleSwayTarget& Target, const b
 void ACoreTentacle::SetMovementTarget(const FCoreTentacleMovementTarget& Target) {
 }
 
+void ACoreTentacle::ReleasedActor(AActor* Actor, bool FullGrabElasped) {
+}
+
+void ACoreTentacle::ReleaseBind() {
+}
+
 void ACoreTentacle::OnRep_MovementTarget() {
+}
+
+void ACoreTentacle::GrabbedActor(AActor* Actor) {
 }
 
 ECoreTentacleState ACoreTentacle::GetTentacleState() const {
@@ -27,6 +36,9 @@ FCoreTentacleMovementTarget ACoreTentacle::GetMovementTarget() const {
 
 bool ACoreTentacle::FindBurrowEntrancePoint(UDebrisPositioning* Debris, const FVector& AroundPoint, float SearchRadius, float BurrowDepth, FVector& OutLocation) const {
     return false;
+}
+
+void ACoreTentacle::Client_ReleaseBind_Implementation() {
 }
 
 void ACoreTentacle::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const {

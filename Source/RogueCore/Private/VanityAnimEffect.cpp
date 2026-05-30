@@ -1,7 +1,8 @@
 #include "VanityAnimEffect.h"
 
 FVanityAnimEffect::FVanityAnimEffect() {
-    this->Effect = NULL;
+    this->effect = nullptr;
     this->StartDelay = 0.00f;
+    this->AttachSocket = FName();
 }
 

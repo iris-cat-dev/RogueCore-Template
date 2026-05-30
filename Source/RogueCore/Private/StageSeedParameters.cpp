@@ -1,12 +1,12 @@
 #include "StageSeedParameters.h"
 
 FStageSeedParameters::FStageSeedParameters() {
-    this->ActiveSeed = 0;
-    this->ActiveDepth = ERunDepth::None;
-    this->ActiveRun = NULL;
-    this->ActiveBiome = NULL;
-    this->ActiveDNA = NULL;
+    this->RunSeed = 0;
+    this->RunDepth = ERunDepth::None;
+    this->RunTemplate = nullptr;
+    this->RunBiome = nullptr;
+    this->RunDNA = nullptr;
+    this->RunMutator = nullptr;
     this->ActiveStage = 0;
-    this->ActiveMutator = NULL;
 }
 

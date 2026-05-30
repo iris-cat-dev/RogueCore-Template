@@ -2,6 +2,6 @@
 
 FDeathTypeData::FDeathTypeData() {
     this->DeathType = EDeathType::Alive;
-    this->Causer = NULL;
+    this->Causer = nullptr;
 }
 

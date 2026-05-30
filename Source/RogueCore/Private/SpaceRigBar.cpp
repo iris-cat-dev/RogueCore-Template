@@ -1,6 +1,6 @@
 #include "SpaceRigBar.h"
 #include "Components/BoxComponent.h"
-#include "Components/SceneComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
 #include "InstantUsable.h"
 #include "Net/UnrealNetwork.h"
 
@@ -11,9 +11,9 @@ ASpaceRigBar::ASpaceRigBar(const FObjectInitializer& ObjectInitializer) : Super(
     this->RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("Root Component"));
     this->BarUsable = CreateDefaultSubobject<UInstantUsable>(TEXT("BarUsable"));
     this->BarUsableCollider = CreateDefaultSubobject<UBoxComponent>(TEXT("BarUsableColiider"));
-    this->BarMenuWidget = NULL;
+    this->BarMenuWidget = nullptr;
     this->DrinkServingLocations.AddDefaulted(4);
-    this->DrinkableSpecial = NULL;
+    this->DrinkableSpecial = nullptr;
     this->BarUsableCollider->SetupAttachment(RootComponent);
 }
 
@@ -31,7 +31,7 @@ float ASpaceRigBar::PlayNegativeAnim_Implementation() {
 }
 
 
-void ASpaceRigBar::PayTip(APlayerCharacter* Character, int32 Credits) {
+void ASpaceRigBar::PayTip(APlayerCharacter* Character, int32 credits) {
 }
 
 void ASpaceRigBar::OnRep_DrinkableSpecial() {

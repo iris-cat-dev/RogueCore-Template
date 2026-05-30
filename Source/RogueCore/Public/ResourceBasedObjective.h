@@ -8,4 +8,6 @@ class UResourceBasedObjective : public UObjective {
     GENERATED_BODY()
 public:
     UResourceBasedObjective(const FObjectInitializer& ObjectInitializer);
+
 };
+

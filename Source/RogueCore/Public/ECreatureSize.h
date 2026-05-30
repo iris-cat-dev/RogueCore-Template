@@ -10,3 +10,4 @@ enum class ECreatureSize : int32 {
     Large,
     Huge,
 };
+

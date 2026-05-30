@@ -13,7 +13,7 @@ UAmmoRegenComponent::UAmmoRegenComponent(const FObjectInitializer& ObjectInitial
 void UAmmoRegenComponent::StartRecharge() {
 }
 
-void UAmmoRegenComponent::OnWeaponOverHeated() {
+void UAmmoRegenComponent::OnWeaponOverHeated(AItem* Item) {
 }
 
 void UAmmoRegenComponent::OnWeaponFired() {

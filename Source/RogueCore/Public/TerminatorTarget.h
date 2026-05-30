@@ -4,6 +4,7 @@
 #include "TerminatorTarget.generated.h"
 
 class AActor;
+
 USTRUCT(BlueprintType)
 struct FTerminatorTarget : public FTentacleTarget {
     GENERATED_BODY()
@@ -13,3 +14,4 @@ public:
     
     ROGUECORE_API FTerminatorTarget();
 };
+

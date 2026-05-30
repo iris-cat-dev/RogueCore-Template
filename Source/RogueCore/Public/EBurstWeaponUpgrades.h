@@ -7,3 +7,4 @@ enum class EBurstWeaponUpgrades : uint8 {
     FullBurstHitBonusDamage,
     FullBurstStaggerDuraion,
 };
+

@@ -1,7 +1,7 @@
 #include "AccessRequirementComponent.h"
 
 UAccessRequirementComponent::UAccessRequirementComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->AccessCondition = NULL;
+    this->AccessCondition = nullptr;
 }
 
 UAccessCondition* UAccessRequirementComponent::GetAccessCondition() const {

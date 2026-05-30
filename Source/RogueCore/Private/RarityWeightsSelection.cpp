@@ -1,6 +1,6 @@
 #include "RarityWeightsSelection.h"
 
 FRarityWeightsSelection::FRarityWeightsSelection() {
-    this->DefaultRarityWeights = NULL;
+    this->DefaultRarityWeights = nullptr;
 }
 

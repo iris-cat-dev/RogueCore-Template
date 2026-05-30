@@ -2,5 +2,6 @@
 
 FCSGLayers::FCSGLayers() {
     this->Offset = 0.00f;
+    this->Above = FBinaryTerrainMaterialCombiner();
 }
 

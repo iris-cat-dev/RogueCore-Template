@@ -8,3 +8,4 @@ struct FDamageComponentEntry {
 public:
     ROGUECORE_API FDamageComponentEntry();
 };
+

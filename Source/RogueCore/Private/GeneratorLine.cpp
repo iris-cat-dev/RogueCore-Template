@@ -1,5 +1,5 @@
 #include "GeneratorLine.h"
-#include "Components/SceneComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
 #include "Components/SplineComponent.h"
 #include "Net/UnrealNetwork.h"
 #include "SplineDecoratorComponent.h"
@@ -12,7 +12,7 @@ AGeneratorLine::AGeneratorLine(const FObjectInitializer& ObjectInitializer) : Su
     this->RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("DefaultSceneRoot"));
     this->SplineComponent = CreateDefaultSubobject<USplineComponent>(TEXT("SplineComponent"));
     this->SplineDecorator = CreateDefaultSubobject<USplineDecoratorComponent>(TEXT("SplineDecorator"));
-    this->MeshInstance = NULL;
+    this->MeshInstance = nullptr;
     this->HeightOffsetMin = -100.00f;
     this->HeightOffsetMax = 100.00f;
     this->MaxSegmentLength = 1000.00f;

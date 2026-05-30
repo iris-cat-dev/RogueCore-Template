@@ -1,7 +1,7 @@
 #include "InstancedMeshOnSpline.h"
 
 UInstancedMeshOnSpline::UInstancedMeshOnSpline(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->Spline = NULL;
+    this->Spline = nullptr;
     this->NumInstances = 8;
     this->Speed = 1.00f;
     this->VerticalOffset = 0.00f;

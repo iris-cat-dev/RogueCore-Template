@@ -6,7 +6,7 @@ ASpawnLordAdEnemy::ASpawnLordAdEnemy(const FObjectInitializer& ObjectInitializer
     this->IsDocked = false;
     this->IsHomeless = false;
     this->Grabber = CreateDefaultSubobject<UGrabberComponent>(TEXT("Grabber"));
-    this->boss = NULL;
+    this->Boss = nullptr;
 }
 
 void ASpawnLordAdEnemy::Undock() {

@@ -2,16 +2,17 @@
 #include "Net/UnrealNetwork.h"
 
 UCarveChargeComponent::UCarveChargeComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->Damage = NULL;
-    this->BumpSound = NULL;
+    this->Damage = nullptr;
+    this->BumpSound = nullptr;
     this->IsTelegraphing = false;
     this->isCharging = false;
     this->IsStoppingEarly = false;
-    this->TelegraphSound = NULL;
-    this->BumpCollider = NULL;
-    this->CarveLocation = NULL;
+    this->TelegraphSound = nullptr;
+    this->IsTelegraphStaggerImmune = true;
+    this->BumpCollider = nullptr;
+    this->CarveLocation = nullptr;
     this->CurrentSpeed = 0.00f;
-    this->Target = NULL;
+    this->Target = nullptr;
     this->ChargeSpeed = 0.00f;
     this->CarveRadius = 0.00f;
     this->CarveFrequency = 0.00f;
@@ -23,7 +24,7 @@ void UCarveChargeComponent::Unpause() {
 void UCarveChargeComponent::RamPlayer(APlayerCharacter* Player) {
 }
 
-void UCarveChargeComponent::RamEnemy(AEnemyDeepPathfinderCharacter* Enemy) {
+void UCarveChargeComponent::RamOther(UHealthComponentBase* Health) {
 }
 
 void UCarveChargeComponent::Pause() {

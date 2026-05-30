@@ -5,7 +5,7 @@ USpreadDamageComponent::USpreadDamageComponent(const FObjectInitializer& ObjectI
     this->SpreadDamageMultiplier = 1.00f;
 }
 
-void USpreadDamageComponent::DamagedActor(AActor* Target, float amount) {
+void USpreadDamageComponent::DamagedActor(AActor* Target, float Amount) {
 }
 
 

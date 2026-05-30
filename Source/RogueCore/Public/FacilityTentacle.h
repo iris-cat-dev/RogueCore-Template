@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "EFacilityTentacleState.h"
 #include "TentacleBase.h"
 #include "TentacleTarget.h"
@@ -10,34 +10,53 @@
 class UAnimMontage;
 class UDebrisPositioning;
 class USkeletalMeshComponent;
+
 UCLASS(Blueprintable)
 class ROGUECORE_API AFacilityTentacle : public ATentacleBase, public ITriggerAI {
     GENERATED_BODY()
-
 public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float SwaySpeed;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     bool Extended;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UAnimMontage*> HitReactions;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, ReplicatedUsing=OnRep_TentacleState, meta=(AllowPrivateAccess=true))
     EFacilityTentacleState TentacleState;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
     USkeletalMeshComponent* HeadMesh;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_DesiredTarget, meta=(AllowPrivateAccess=true))
     FTentacleTarget DesiredTarget;
+    
+public:
     AFacilityTentacle(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+
+protected:
     UFUNCTION(BlueprintCallable)
-    void PlayHitReaction(float amount);
+    void PlayHitReaction(float Amount);
+    
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnStateChanged(EFacilityTentacleState NewState);
-    UFUNCTION()
+    
+    UFUNCTION(BlueprintCallable)
     void OnRep_TentacleState();
-    UFUNCTION()
+    
+    UFUNCTION(BlueprintCallable)
     void OnRep_DesiredTarget();
+    
+public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     bool FindBurrowLocation(UDebrisPositioning* Debris, const FVector& Origin, float Radius, FVector& OutLocation);
+    
+
     // Fix for true pure virtual functions not being implemented
 };
+

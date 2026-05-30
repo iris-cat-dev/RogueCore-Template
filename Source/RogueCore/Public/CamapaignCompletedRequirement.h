@@ -5,17 +5,20 @@
 #include "CamapaignCompletedRequirement.generated.h"
 
 class UCampaign;
+
 UCLASS(Blueprintable, EditInlineNew)
 class ROGUECORE_API UCamapaignCompletedRequirement : public UCampaignRequirement {
     GENERATED_BODY()
-    
-
+public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UCampaign> Campaign;
-
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool InverseRequirement;
-
+    
+public:
     UCamapaignCompletedRequirement();
 
 };
+

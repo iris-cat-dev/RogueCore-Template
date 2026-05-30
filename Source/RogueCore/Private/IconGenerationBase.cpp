@@ -1,10 +1,12 @@
 #include "IconGenerationBase.h"
-#include "Components/SceneComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
 
 AIconGenerationBase::AIconGenerationBase(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("Root"));
-    this->ActiveCaptureComponent = NULL;
-    this->DownScaleMaterial = NULL;
+    this->ActiveCaptureComponent = nullptr;
+    this->DownScaleMaterial = nullptr;
+    this->MeshRoot = CreateDefaultSubobject<USceneComponent>(TEXT("MeshRoot"));
+    this->MeshRoot->SetupAttachment(RootComponent);
 }
 
 

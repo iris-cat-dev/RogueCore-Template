@@ -5,14 +5,28 @@ AFitnessGym::AFitnessGym(const FObjectInitializer& ObjectInitializer) : Super(Ob
     this->bReplicates = true;
     const FProperty* p_RemoteRole = GetClass()->FindPropertyByName("RemoteRole");
     (*p_RemoteRole->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(this)) = ROLE_SimulatedProxy;
-    this->Bartender = NULL;
+    this->Bartender = nullptr;
+    this->InitalizedQuestData = false;
     this->GymCreditPerSet = 0;
-    this->RepPerSet = 0;
-    this->RepsRemaining = 0;
-    this->SetsRemaining = 0;
+    this->CurrentDrinkQuest = nullptr;
+}
+
+void AFitnessGym::UpdateSets() {
+}
+
+void AFitnessGym::UpdateRepsPerSet() {
+}
+
+void AFitnessGym::UpdateCalories() {
+}
+
+void AFitnessGym::UnlockBeer_Implementation(UObject* WorldContext, UDrinkableDataAsset* DrinkData) {
 }
 
 void AFitnessGym::StopCharacterFromHoveringActivities(APlayerCharacter* Character) {
+}
+
+void AFitnessGym::SetQuest(UDrinkableDataAsset* DrinkQuest) {
 }
 
 
@@ -25,29 +39,29 @@ void AFitnessGym::SetBartender(AOmegaBartender* aBartender) {
 void AFitnessGym::SetActivities(TArray<ABaseFitnessActivity*> NewActivities) {
 }
 
-void AFitnessGym::OnRep_SetsRemainingChanged(int32 Old) {
+void AFitnessGym::RemoveUntilCorrectSize(TArray<int32>& Array, int32 DesiredSize) {
 }
 
-void AFitnessGym::OnRep_RepPerSet() {
+void AFitnessGym::OnRep_CurrentDrinkQuest() {
 }
 
 void AFitnessGym::NewGoal(const int32 SetGoal, const int32 RepsPerSet) {
 }
 
-int32 AFitnessGym::GetSetsRemaining() const {
-    return 0;
+EExerciseDifficulty AFitnessGym::GetWhichDifficultyToPickFrom(EExerciseDifficulty BaseDifficulty, FBarQuestData Data) {
+    return EExerciseDifficulty::PickDifficulty;
 }
 
-int32 AFitnessGym::GetRepsRemaining() const {
-    return 0;
-}
-
-int32 AFitnessGym::GetRepPerSet() const {
-    return 0;
+UBarQuestObjective* AFitnessGym::GetRandomObjectiveFromList(const TArray<UBarQuestObjective*>& List) {
+    return NULL;
 }
 
 TArray<AGymDisplay*> AFitnessGym::GetGymMonitors() {
     return TArray<AGymDisplay*>();
+}
+
+int32 AFitnessGym::GetDesiredQuestObjectiveNum() {
+    return 0;
 }
 
 void AFitnessGym::GetAcitivityIcons(TArray<UTexture2D*>& outTextures, TArray<int32>& outIDs) const {
@@ -57,6 +71,20 @@ int32 AFitnessGym::GetAcitivityAmount() const {
     return 0;
 }
 
+UBarQuestObjective* AFitnessGym::FetchRandomQuestObjective(const FBarQuestData& Quest, EExerciseDifficulty Difficulty) {
+    return NULL;
+}
+
+void AFitnessGym::CreateExercisePlan() {
+}
+
+bool AFitnessGym::CheckIfQuestComplete() {
+    return false;
+}
+
+void AFitnessGym::Cheat_CompleteCurrentQuest() {
+}
+
 bool AFitnessGym::CanPlayerStartActivity(APlayerCharacter* Player) {
     return false;
 }
@@ -64,11 +92,14 @@ bool AFitnessGym::CanPlayerStartActivity(APlayerCharacter* Player) {
 void AFitnessGym::AllowCharacterToHoverActivities(APlayerCharacter* Character) {
 }
 
+void AFitnessGym::All_UpdateQuestUI_Implementation(UResourceData* Data, int32 NewSetsRemaining) {
+}
+
 void AFitnessGym::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const {
     Super::GetLifetimeReplicatedProps(OutLifetimeProps);
     
-    DOREPLIFETIME(AFitnessGym, RepPerSet);
-    DOREPLIFETIME(AFitnessGym, SetsRemaining);
+    DOREPLIFETIME(AFitnessGym, QuestObjectives);
+    DOREPLIFETIME(AFitnessGym, CurrentDrinkQuest);
 }
 
 

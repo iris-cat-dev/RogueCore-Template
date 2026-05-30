@@ -10,3 +10,4 @@ enum class EItemAimSetup : uint8 {
     OneHandedDual,
     TwoHanded,
 };
+

@@ -8,3 +8,4 @@ enum class ERicochetBehavior : uint8 {
     PawnsOnly,
     NotPawns,
 };
+

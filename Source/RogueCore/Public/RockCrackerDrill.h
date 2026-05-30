@@ -4,6 +4,7 @@
 #include "RockCrackerDrill.generated.h"
 
 class USingleUsableComponent;
+
 UCLASS(Blueprintable)
 class ARockCrackerDrill : public AFuelLineEndPoint {
     GENERATED_BODY()
@@ -12,8 +13,12 @@ public:
     USingleUsableComponent* ConstructUsable;
     
     ARockCrackerDrill(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void SetIsDrilling(bool isDrilling);
+    
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetIsDrilling() const;
+    
 };
+

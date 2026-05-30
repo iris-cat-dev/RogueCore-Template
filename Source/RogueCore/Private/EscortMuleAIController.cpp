@@ -3,7 +3,7 @@
 AEscortMuleAIController::AEscortMuleAIController(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->PathIndex = 0;
     this->CurrentRoom = 0;
-    this->EscortObj = NULL;
+    this->EscortObj = nullptr;
     this->TunnelStartIndex = 0;
     this->TunnelEndIndex = 0;
 }

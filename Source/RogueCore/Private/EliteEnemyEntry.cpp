@@ -2,7 +2,7 @@
 
 FEliteEnemyEntry::FEliteEnemyEntry() {
     this->HeroChance = 0.00f;
-    this->StatusEffect = NULL;
+    this->StatusEffect = nullptr;
     this->OverrideHealthScaling = false;
     this->HealthScalingOverride = EEnemyHealthScaling::SmallEnemy;
 }

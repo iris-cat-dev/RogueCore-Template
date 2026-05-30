@@ -11,6 +11,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<FScanPath> Path;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FReflectiveHitscanHit FinalHit;
+    
     ROGUECORE_API FReflectionTraceResult();
 };
+

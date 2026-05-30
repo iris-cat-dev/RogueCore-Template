@@ -1,14 +1,12 @@
 #include "WeaponHitCounterComponent.h"
 
 UWeaponHitCounterComponent::UWeaponHitCounterComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->HitEffect = NULL;
+    this->HitEffect = nullptr;
     this->RequiresWeakpointHit = false;
+    this->DamageListenerProfile = 0;
 }
 
 void UWeaponHitCounterComponent::Server_OnReloading_Implementation() {
-}
-
-void UWeaponHitCounterComponent::OnTargetDamaged(UHealthComponentBase* Health, float amount, UPrimitiveComponent* HitComponent, UFSDPhysicalMaterial* PhysicalMaterial) {
 }
 
 void UWeaponHitCounterComponent::OnStoppedUsing() {

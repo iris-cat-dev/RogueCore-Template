@@ -8,3 +8,4 @@ struct FSmartSpawnEntry {
 public:
     ROGUECORE_API FSmartSpawnEntry();
 };
+

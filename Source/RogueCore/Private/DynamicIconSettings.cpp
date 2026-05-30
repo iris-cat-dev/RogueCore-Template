@@ -1,19 +1,19 @@
 #include "DynamicIconSettings.h"
 
 UDynamicIconSettings::UDynamicIconSettings() {
-    this->TextureDynamicIcon = NULL;
-    this->TwoFacetDynamicIcon = NULL;
-    this->TwoFacetDynamicIconTex1 = NULL;
-    this->TwoFacetDynamicIconTex2 = NULL;
-    this->TwoFacetDynamicIconTex1Tex2 = NULL;
-    this->TriFacetDynamicIcon = NULL;
-    this->TriFacetDynamicIconTex1 = NULL;
-    this->TriFacetDynamicIconTex1Tex2 = NULL;
-    this->TriFacetDynamicIconTex1Tex3 = NULL;
-    this->TriFacetDynamicIconTex1Tex2Tex3 = NULL;
-    this->TriFacetDynamicIconTex2 = NULL;
-    this->TriFacetDynamicIconTex2Tex3 = NULL;
-    this->TriFacetDynamicIconTex3 = NULL;
+    this->TextureDynamicIcon = nullptr;
+    this->TwoFacetDynamicIcon = nullptr;
+    this->TwoFacetDynamicIconTex1 = nullptr;
+    this->TwoFacetDynamicIconTex2 = nullptr;
+    this->TwoFacetDynamicIconTex1Tex2 = nullptr;
+    this->TriFacetDynamicIcon = nullptr;
+    this->TriFacetDynamicIconTex1 = nullptr;
+    this->TriFacetDynamicIconTex1Tex2 = nullptr;
+    this->TriFacetDynamicIconTex1Tex3 = nullptr;
+    this->TriFacetDynamicIconTex1Tex2Tex3 = nullptr;
+    this->TriFacetDynamicIconTex2 = nullptr;
+    this->TriFacetDynamicIconTex2Tex3 = nullptr;
+    this->TriFacetDynamicIconTex3 = nullptr;
 }
 
 

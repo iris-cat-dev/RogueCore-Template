@@ -10,11 +10,12 @@
 class UCampaign;
 class UMissionStat;
 class UObject;
+
 UCLASS(Blueprintable)
 class ROGUECORE_API UDifficultySetting : public USavableDataAsset {
     GENERATED_BODY()
-    
 public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FText DifficultyName;
     
@@ -133,9 +134,10 @@ public:
     UDifficultySetting();
 
     UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContext"))
-    bool IsUnlocked(UObject* WorldContext) const;
+    bool IsUnLocked(UObject* WorldContext) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetDifficultyIndex() const;
     
 };
+

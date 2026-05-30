@@ -3,11 +3,11 @@
 
 UTrackMovementStateComponent::UTrackMovementStateComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->StateId = 16;
-    this->AudioStartComponent = NULL;
-    this->AudioDuringComponent = NULL;
-    this->AudioStopComponent = NULL;
+    this->AudioStartComponent = nullptr;
+    this->AudioDuringComponent = nullptr;
+    this->AudioStopComponent = nullptr;
     this->AudioOnFadeOut = 0.10f;
-    this->StateUpdateShout = NULL;
+    this->StateUpdateShout = nullptr;
     this->StateUpdateShoutFrequencySecsMin = 5.00f;
     this->StateUpdateShoutFrequencySecsMax = 20.00f;
     this->AudioDuringSlidingSpeedParam = 0.00f;
@@ -21,20 +21,20 @@ UTrackMovementStateComponent::UTrackMovementStateComponent(const FObjectInitiali
     this->DecelerationOnSlopeMultiplier = 1.30f;
     this->StoppingDeceleration = 4000.00f;
     this->StoppingDistance = 100.00f;
-    this->Connector = NULL;
+    this->Connector = nullptr;
     this->ExitMode = EExitTrackMode::None;
 }
 
 void UTrackMovementStateComponent::ServerExitMode_Implementation(EExitTrackMode eMode) {
 }
 
-void UTrackMovementStateComponent::ServerAddTemporaryAcceration_Implementation(float Acceleration, float Duration) {
+void UTrackMovementStateComponent::ServerAddTemporaryAcceration_Implementation(float Acceleration, float duration) {
 }
 
 void UTrackMovementStateComponent::OnRep_TrackMovementdata(FPipelineMovementData& oldState) {
 }
 
-void UTrackMovementStateComponent::JumpPressed() {
+void UTrackMovementStateComponent::JumpPressed(APlayerCharacter* InPlayer) {
 }
 
 void UTrackMovementStateComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const {

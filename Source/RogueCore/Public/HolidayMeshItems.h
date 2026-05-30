@@ -3,6 +3,7 @@
 #include "HolidayMeshItems.generated.h"
 
 class USkeletalMeshComponent;
+
 USTRUCT(BlueprintType)
 struct FHolidayMeshItems {
     GENERATED_BODY()
@@ -12,3 +13,4 @@ public:
     
     ROGUECORE_API FHolidayMeshItems();
 };
+

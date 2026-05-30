@@ -15,12 +15,16 @@ TArray<AActor*> UTerrainPlacementLibrary::PlaceTerrainActorsInSpawnPointsInSpher
     return TArray<AActor*>();
 }
 
-TArray<AActor*> UTerrainPlacementLibrary::PlaceTerrainActorsInSpawnPointsInRooms(AProceduralSetup* ProceduralSetup, const FTerrainPlacementActor Actor, const EStaticSpawnPointSelectionType PointType, const FTerrainPlacementRoomFilter Room) {
+TArray<AActor*> UTerrainPlacementLibrary::PlaceTerrainActorsInSpawnPointsInRooms(AProceduralSetup* ProceduralSetup, const FTerrainPlacementActor Actor, const FStaticSpawnPointSelection Selection, const FTerrainPlacementRoomFilter Room) {
     return TArray<AActor*>();
 }
 
 TArray<AActor*> UTerrainPlacementLibrary::PlaceTerrainActorsInRooms(AProceduralSetup* ProceduralSetup, const FTerrainPlacementSpawnActors& Actors, const FTerrainPlacementSpawnRooms& Rooms, const FTerrainPlacementLocationRequirements LocationRequirements, const FTerrainPlacementDistanceRequirements DistanceRequirements, const FTerrainPlacementPathRequirements PathRequirements) {
     return TArray<AActor*>();
+}
+
+bool UTerrainPlacementLibrary::IsPointInsideTerrain(const UObject* WorldContext, const FVector PointToCheck) {
+    return false;
 }
 
 TArray<FTransform> UTerrainPlacementLibrary::ComputeTerrainPlacementsInSphere(AProceduralSetup* ProceduralSetup, const FTerrainPlacementSpawnActors& Actors, const FTerrainPlacementSpawnSphere& Sphere, const FTerrainPlacementLocationRequirements& LocationRequirements, const FTerrainPlacementDistanceRequirements& DistanceRequirements, const FTerrainPlacementPathRequirements& PathRequirements) {

@@ -14,3 +14,4 @@ enum class EPerkName : uint8 {
     HeightenedSenses,
     HoverBoots,
 };
+

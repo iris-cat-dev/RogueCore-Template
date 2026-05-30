@@ -4,6 +4,7 @@
 #include "NetDamagePartition.generated.h"
 
 class UDamageClass;
+
 USTRUCT(BlueprintType)
 struct FNetDamagePartition {
     GENERATED_BODY()
@@ -11,9 +12,12 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EDamageVector DamageVector;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UDamageClass* Type;
-    float amount;
-    float FearChance;
-    float StaggerChance;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float Amount;
+    
     ROGUECORE_API FNetDamagePartition();
 };
+

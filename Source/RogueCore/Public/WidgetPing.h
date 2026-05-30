@@ -3,6 +3,7 @@
 #include "WidgetPing.generated.h"
 
 class UWidget;
+
 USTRUCT(BlueprintType)
 struct FWidgetPing {
     GENERATED_BODY()
@@ -12,3 +13,4 @@ public:
     
     ROGUECORE_API FWidgetPing();
 };
+

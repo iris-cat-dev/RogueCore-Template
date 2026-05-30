@@ -1,5 +1,5 @@
 #include "EscortMule.h"
-#include "Components/SkeletalMeshComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SkeletalMeshComponent -FallbackName=SkeletalMeshComponent
 #include "DeepPathfinderSceneComponent.h"
 #include "FriendlyHealthComponent.h"
 #include "Net/UnrealNetwork.h"
@@ -13,7 +13,7 @@ AEscortMule::AEscortMule(const FObjectInitializer& ObjectInitializer) : Super(Ob
     this->ObjectInfo = CreateDefaultSubobject<USimpleObjectInfoComponent>(TEXT("ObjectInfo"));
     this->ResourceBank = CreateDefaultSubobject<URestrictedResourceBank>(TEXT("RestrictedResourceBank"));
     this->State = EEscortMissionState::InGarage;
-    this->EscortObjective = NULL;
+    this->EscortObjective = nullptr;
     this->SpeedModifier = 1.00f;
     this->mesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("mesh"));
     this->OutlineComponent = CreateDefaultSubobject<UOutlineComponent>(TEXT("OutlineComponent"));
@@ -26,7 +26,7 @@ AEscortMule::AEscortMule(const FObjectInitializer& ObjectInitializer) : Super(Ob
     this->mesh->SetupAttachment(RootComponent);
 }
 
-bool AEscortMule::TryHeal(APlayerCharacter* User, float amount) {
+bool AEscortMule::TryHeal(APlayerCharacter* User, float Amount) {
     return false;
 }
 
@@ -59,17 +59,6 @@ void AEscortMule::OnRep_MovementState() {
 void AEscortMule::OnRep_ExtractorSlots() {
 }
 
-void AEscortMule::OnRep_IsCarvingTunnel() {
-}
-
-void AEscortMule::OnObjectiveStateChanged(EEscortMissionState oldState) {
-}
-
-void AEscortMule::OnExtractorSlotChanged(const FEscortMuleExtractorSlot& Slot, int32 Index) {
-}
-
-void AEscortMule::OnExtractorDetached(AExtractorItem* Item) {
-}
 
 
 

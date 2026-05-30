@@ -2,7 +2,9 @@
 
 FInputDisplay::FInputDisplay() {
     this->Interaction = EInputInteraction::Press;
-    this->Icon = NULL;
+    this->Icon = nullptr;
     this->IconTintable = false;
+    this->InputText = FText::GetEmpty();
+    this->TextTint = FLinearColor::White;
 }
 

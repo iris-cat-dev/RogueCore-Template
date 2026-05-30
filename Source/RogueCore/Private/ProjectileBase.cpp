@@ -3,11 +3,35 @@
 #include "Net/UnrealNetwork.h"
 
 AProjectileBase::AProjectileBase(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-
+    this->bReplicates = true;
+    const FProperty* p_RemoteRole = GetClass()->FindPropertyByName("RemoteRole");
+    (*p_RemoteRole->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(this)) = ROLE_SimulatedProxy;
+    this->RootComponent = CreateDefaultSubobject<UShapeComponent>(TEXT("SphereComponent"));
+    this->ImpactDamage = nullptr;
+    this->CollisionComponent = static_cast<UShapeComponent*>(RootComponent);
+    this->WhizbySound = nullptr;
+    this->LifeSpan = 60.00f;
+    this->VelocityMultiplier = 1.00f;
+    this->WhizByCooldown = 0.30f;
+    this->WhizByStartDistance = 500.00f;
+    this->GravityMultiplier = 1.00f;
+    this->DestroyedByBarrier = true;
+    this->SeparateTerrainImpactCheck = false;
+    this->EOnImpactBehaviour = EOnProjectileImpactBehaviourEnum::ClientAuthoritative;
+    this->IsSpawnedFromWeapon = false;
+    this->AffectedByDifficultySpeedModifier = false;
+    this->SetInitialSpeedToMaxSpeed = false;
+    this->AutoDisableCollisionOnImpact = true;
+    this->Exploded = false;
+    this->DoOnImpact = false;
+    this->DoOnImpact2 = false;
+    this->DoOnImpact3 = false;
+    this->DoOnSpawnVar = false;
+    this->IsDorment = false;
 }
 
 UTerrainMaterial* AProjectileBase::TryGetTerrainMaterial() const {
-    return NULL;
+    return nullptr;
 }
 
 void AProjectileBase::StopMovement() {

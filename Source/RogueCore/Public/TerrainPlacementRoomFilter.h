@@ -10,6 +10,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ETerrainPlacementRoomFilter Type;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<int32> Rooms;
+    
     ROGUECORE_API FTerrainPlacementRoomFilter();
 };
+

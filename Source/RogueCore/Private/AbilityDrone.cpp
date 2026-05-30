@@ -7,15 +7,15 @@ AAbilityDrone::AAbilityDrone(const FObjectInitializer& ObjectInitializer) : Supe
     this->MovementAudio = CreateDefaultSubobject<UAudioComponent>(TEXT("MoveAudio"));
     this->DamageNumberAggregator = CreateDefaultSubobject<UDamageNumberAggregator>(TEXT("DamageNumberAggregator"));
     this->ShotCounter = 0;
-    this->BehaviourTree = NULL;
-    this->ProjectileClass = NULL;
+    this->BehaviourTree = nullptr;
+    this->ProjectileClass = nullptr;
     this->AttackRange = 1000.00f;
     this->AttackInterval = 1.00f;
     this->AllowAutomaticRevive = false;
-    this->BurstSize = 3;
+    this->BurstSize = 5;
     this->State = EAbilityDroneState::Disabled;
     this->ReviveSearchRange = 2000.00f;
-    this->RevivePerk = NULL;
+    this->RevivePerk = nullptr;
     this->MovementAudio->SetupAttachment(RootComponent);
 }
 
@@ -51,7 +51,7 @@ void AAbilityDrone::All_TeleportDrone_Implementation(FVector Location, FRotator 
 
 void AAbilityDrone::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const {
     Super::GetLifetimeReplicatedProps(OutLifetimeProps);
-
+    
     DOREPLIFETIME(AAbilityDrone, TeleportLocation);
     DOREPLIFETIME(AAbilityDrone, ShotCounter);
     DOREPLIFETIME(AAbilityDrone, State);

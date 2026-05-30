@@ -7,3 +7,4 @@ enum class EPawnStatType : uint8 {
     Multiplicative,
     Additive,
 };
+

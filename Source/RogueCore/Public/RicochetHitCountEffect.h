@@ -8,4 +8,6 @@ class URicochetHitCountEffect : public UWeaponHitCountEffect {
     GENERATED_BODY()
 public:
     URicochetHitCountEffect();
+
 };
+

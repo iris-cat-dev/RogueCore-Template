@@ -3,6 +3,7 @@
 #include "TerminatorTalkMaterial.generated.h"
 
 class UMaterialInstanceDynamic;
+
 USTRUCT(BlueprintType)
 struct FTerminatorTalkMaterial {
     GENERATED_BODY()
@@ -12,6 +13,10 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float BasePower;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float AmplitudeMultiplier;
+    
     ROGUECORE_API FTerminatorTalkMaterial();
 };
+

@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "BehaviorTree/Decorators/BTDecorator_BlackboardBase.h"
-#include "BehaviorTree/BehaviorTreeTypes.h"
-#include "UObject/UnrealType.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=AIModule -ObjectName=BlackboardKeySelector -FallbackName=BlackboardKeySelector
+//CROSS-MODULE INCLUDE V2: -ModuleName=AIModule -ObjectName=FAIDistanceType -FallbackName=FAIDistanceType
 #include "BTDecorator_InRangeBB.generated.h"
 
 UCLASS(Blueprintable)
@@ -12,7 +12,13 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FBlackboardKeySelector MinRangeKey;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FBlackboardKeySelector MaxRangeKey;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAIDistanceType GeometricDistanceType;
+    
     UBTDecorator_InRangeBB();
+
 };
+

@@ -1,8 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Components/ActorComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=LatentActionInfo -FallbackName=LatentActionInfo
 #include "DelegateDelegate.h"
 #include "NormalWaveSpawnedDelegate.h"
+#include "RiftSpawnOverrides.h"
 #include "Templates/SubclassOf.h"
 #include "WaveEntry.h"
 #include "EnemyWaveManager.generated.h"
@@ -24,7 +27,7 @@ public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FDelegate OnEndWaveTriggered;
     
-public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftClassPtr<UEnemyWaveController> AlwaysRunningWave;
     
@@ -56,10 +59,19 @@ public:
     bool NormalWavesEnabled;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TArray<TSoftClassPtr<UObject>> RiftClasses;
+    TSoftClassPtr<ACorespawnRift> RiftClass;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TSoftClassPtr<ACorespawnRift> FallbackRiftClass;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float RiftSpawnDistance;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float RiftOptimalSpawnDistance;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float RiftMinSpawnDistance;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<ACorespawnRift*> SpawnedRifts;
@@ -73,7 +85,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool RiftsArePermanentAndAlwaysActive;
     
-public:
+private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     AFSDGameMode* GameMode;
     
@@ -104,6 +116,12 @@ public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void SpawnScriptedWave();
     
+    UFUNCTION(BlueprintCallable, meta=(Latent, LatentInfo="LatentInfo"))
+    void SpawnRifts_Async(FLatentActionInfo LatentInfo, const FVector& InQueryLocation, const FRiftSpawnOverrides Overrides);
+    
+    UFUNCTION(BlueprintCallable)
+    TArray<FVector> SpawnRifts(const FVector& InQueryLocation, const FRiftSpawnOverrides Overrides);
+    
     UFUNCTION(BlueprintCallable)
     void SetAllWavesAreBlocked(const bool allWavesAreBlocked);
     
@@ -119,7 +137,7 @@ public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void PopDisableNormalWaves(UObject* Owner);
     
-public:
+private:
     UFUNCTION(BlueprintCallable)
     void OnMatchEnded();
     

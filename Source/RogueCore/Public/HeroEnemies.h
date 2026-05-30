@@ -7,17 +7,24 @@
 
 class APawn;
 class UEnemyDescriptor;
+
 UCLASS(Abstract, Blueprintable)
 class UHeroEnemies : public UStageLogic {
     GENERATED_BODY()
-    
-
 public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FGameplayTagQuery AllowedQuery;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<UEnemyDescriptor*, FEliteEnemyEntry> Entries;
+    
+public:
     UHeroEnemies();
+
+protected:
     UFUNCTION(BlueprintCallable)
     void OnEnemySpawned(APawn* Enemy, UEnemyDescriptor* descriptor);
+    
 };
+

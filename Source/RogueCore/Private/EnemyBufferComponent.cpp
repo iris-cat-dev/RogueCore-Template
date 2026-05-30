@@ -2,8 +2,8 @@
 #include "Net/UnrealNetwork.h"
 
 UEnemyBufferComponent::UEnemyBufferComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->StatusEffect = NULL;
-    this->Particles = NULL;
+    this->StatusEffect = nullptr;
+    this->Particles = nullptr;
     this->ParticleTangentSize = 60.00f;
     this->BuffRadius = 500.00f;
     this->MaxBuffedTargets = 5;

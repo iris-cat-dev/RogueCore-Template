@@ -1,7 +1,7 @@
 #include "BiomeEnemyEntry.h"
 
 FBiomeEnemyEntry::FBiomeEnemyEntry() {
-    this->Enemy = NULL;
+    this->Enemy = nullptr;
     this->IsDistruptive = false;
 }
 

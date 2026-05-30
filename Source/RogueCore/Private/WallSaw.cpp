@@ -2,10 +2,10 @@
 #include "Net/UnrealNetwork.h"
 
 AWallSaw::AWallSaw(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->HitCapsule = NULL;
+    this->HitCapsule = nullptr;
     this->SpeedCof = 500.00f;
-    this->VelOverTime = NULL;
-    this->GroundParticles = NULL;
+    this->VelOverTime = nullptr;
+    this->GroundParticles = nullptr;
     this->PopWeakpointRadius = 100.00f;
     this->PlayerHitRangeFromCenter = 100.00f;
 }

@@ -3,6 +3,7 @@
 #include "WidgetFade.generated.h"
 
 class UUserWidget;
+
 USTRUCT(BlueprintType)
 struct FWidgetFade {
     GENERATED_BODY()
@@ -12,3 +13,4 @@ public:
     
     ROGUECORE_API FWidgetFade();
 };
+

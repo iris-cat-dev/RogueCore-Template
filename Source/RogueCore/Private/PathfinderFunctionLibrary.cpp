@@ -7,7 +7,7 @@ FVector UPathfinderFunctionLibrary::SnapToGrid(UObject* WorldContextObject, cons
     return FVector{};
 }
 
-bool UPathfinderFunctionLibrary::IsPathfinderReady(UObject* WorldContextObject) {
+bool UPathfinderFunctionLibrary::IsPathfinderReady(const UObject* WorldContextObject) {
     return false;
 }
 

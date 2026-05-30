@@ -3,10 +3,10 @@
 
 UFlatDamageUpgrade::UFlatDamageUpgrade() {
     this->Damage = 0.00f;
-    this->DamageClass = NULL;
-    this->RequiredClass = NULL;
+    this->DamageClass = nullptr;
+    this->RequiredClass = nullptr;
     this->MergeWithOtherFlatDamageUpgrades = true;
-    this->Condition = NULL;
+    this->Condition = nullptr;
 }
 
 FUpgradeValues UFlatDamageUpgrade::GetUpgradedValue(TSubclassOf<AActor> Item, AFSDPlayerState* Player, UDamageClass* NewDamageClass) {

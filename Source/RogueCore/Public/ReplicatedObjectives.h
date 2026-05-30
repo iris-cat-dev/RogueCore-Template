@@ -3,6 +3,7 @@
 #include "ReplicatedObjectives.generated.h"
 
 class UObjective;
+
 USTRUCT(BlueprintType)
 struct FReplicatedObjectives {
     GENERATED_BODY()
@@ -12,5 +13,7 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
     TArray<UObjective*> Objectives;
+    
     ROGUECORE_API FReplicatedObjectives();
 };
+

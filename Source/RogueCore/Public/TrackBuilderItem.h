@@ -1,6 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Transform -FallbackName=Transform
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "AnimatedItem.h"
 #include "EPlaceableObstructionType.h"
 #include "PlaceableInterface.h"
@@ -11,44 +12,74 @@ class ATrackBuilderSegment;
 class UCrosshairAggregator;
 class UTrackBuilderConnectPoint;
 class UTrackBuilderUsable;
+
 UCLASS(Abstract, Blueprintable)
 class ROGUECORE_API ATrackBuilderItem : public AAnimatedItem, public IPlaceableInterface {
     GENERATED_BODY()
-    
-
 public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UCrosshairAggregator* CrosshairAggregator;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EPlaceableObstructionType ObstructionType;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FVector ObstructionLocation;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FVector GroundNormal;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<ATrackBuilderSegment> DefaultSegmentType;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, ReplicatedUsing=OnRep_NextSegment, meta=(AllowPrivateAccess=true))
     ATrackBuilderSegment* NextSegment;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, Transient, meta=(AllowPrivateAccess=true))
     bool bIsPlacingSegment;
+    
+public:
     ATrackBuilderItem(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+
     UFUNCTION(BlueprintCallable)
     void UpdatePlacement(const FTransform& InTransform, UTrackBuilderConnectPoint* InConnectPoint, bool bPlacementValid, bool InUpdateServer);
+    
+protected:
     UFUNCTION(BlueprintCallable, Server, Unreliable)
     void ServerUpdatePlacement(const FTransform& InTransform, const bool bPlacementValid, UTrackBuilderConnectPoint* InConnectPoint);
+    
     UFUNCTION(BlueprintCallable, Reliable, Server)
     void ServerFinishPlacement(const FTransform& FinalLocation, UTrackBuilderConnectPoint* ConnectPoint);
-    UFUNCTION(Reliable, Server)
+    
+    UFUNCTION(BlueprintCallable, Reliable, Server)
     void ServerCancelPlacement();
-    UFUNCTION(Reliable, Server)
+    
+    UFUNCTION(BlueprintCallable, Reliable, Server)
     void ServerBeginPlaceSegment(UTrackBuilderUsable* InUsable);
+    
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveBeginPlaceSegment();
-    UFUNCTION()
+    
+    UFUNCTION(BlueprintCallable)
     void OnRep_NextSegment();
+    
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     TSubclassOf<ATrackBuilderSegment> GetSegmentType() const;
+    
+    UFUNCTION(BlueprintCallable)
     void FinishPlacement(const FTransform& FinalLocation, UTrackBuilderConnectPoint* ConnectPoint);
+    
+    UFUNCTION(BlueprintCallable)
     void CancelPlacement();
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FVector AdjustInitialLocation(const FVector& Location) const;
+    
+
     // Fix for true pure virtual functions not being implemented
 };
+

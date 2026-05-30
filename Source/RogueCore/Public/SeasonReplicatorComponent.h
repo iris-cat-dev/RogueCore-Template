@@ -1,15 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Components/ActorComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
 #include "SeasonReplicatorComponent.generated.h"
 
 class USeasonEventData;
+
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class USeasonReplicatorComponent : public UActorComponent {
     GENERATED_BODY()
 public:
     USeasonReplicatorComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void CompleteSeasonEvent(USeasonEventData* InEvent);
     
 };
+

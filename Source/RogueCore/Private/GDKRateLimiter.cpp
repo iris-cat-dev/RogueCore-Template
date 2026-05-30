@@ -1,7 +1,7 @@
 #include "GDKRateLimiter.h"
 
 UGDKRateLimiter::UGDKRateLimiter() {
-    this->Handler = NULL;
+    this->Handler = nullptr;
 }
 
 

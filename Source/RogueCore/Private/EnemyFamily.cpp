@@ -1,7 +1,7 @@
 #include "EnemyFamily.h"
 
 UEnemyFamily::UEnemyFamily() {
-    this->Icon = NULL;
+    this->Icon = nullptr;
 }
 
 

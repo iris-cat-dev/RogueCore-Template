@@ -4,11 +4,13 @@ FPlaceActorParams::FPlaceActorParams() {
     this->NumToSpawn = 0;
     this->NumToSpawnMin = 0;
     this->NumAllowedChecks = 0;
-    this->SpawnedActorClass = NULL;
-    this->setup = NULL;
-    this->DebrisPositioning = NULL;
-    this->AvoidCostCurve = NULL;
+    this->SpawnedActorClass = nullptr;
+    this->setup = nullptr;
+    this->DebrisPositioning = nullptr;
+    this->AvoidCostCurve = nullptr;
     this->ChanceToUseStaticSpawnPoints = 0.00f;
-    this->StaticSpawnPointType = EStaticSpawnPointSelectionType::Any;
+    this->DistanceParams = FDistanceParam();
+    this->RoomFilterParams = FRoomFilterParams();
+    this->StaticSpawnPointSelection = FStaticSpawnPointSelection();
 }
 

@@ -11,6 +11,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FParsedCharacterDamageData ParsedDamageData;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FParsedCharacterBuildData ParsedBuildData;
+    
     FParsedRunHistoryCharacterData();
 };
+

@@ -8,3 +8,4 @@ enum class EConsoleGraphicsMode : uint8 {
     Performance,
     Performance120,
 };
+

@@ -1,7 +1,7 @@
 #include "RandomFiringGuntowerModule.h"
 #include "Components/AudioComponent.h"
 #include "Particles/ParticleSystemComponent.h"
-#include "Components/StaticMeshComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=StaticMeshComponent -FallbackName=StaticMeshComponent
 #include "NiagaraComponent.h"
 #include "DamageComponent.h"
 #include "Net/UnrealNetwork.h"
@@ -19,7 +19,7 @@ ARandomFiringGuntowerModule::ARandomFiringGuntowerModule(const FObjectInitialize
     this->FrontBottomLaserMuzzleNS = CreateDefaultSubobject<UNiagaraComponent>(TEXT("FrontBottomMuzzleEffectNS"));
     this->BackTopLaserMuzzleNS = CreateDefaultSubobject<UNiagaraComponent>(TEXT("BackMuzzleEffectNS"));
     this->BackBottomLaserMuzzleNS = CreateDefaultSubobject<UNiagaraComponent>(TEXT("BackBottimMuzzleEffectNS"));
-    this->LaserImpact = NULL;
+    this->LaserImpact = nullptr;
     this->LaserSound = CreateDefaultSubobject<UAudioComponent>(TEXT("LaserSound"));
     this->Damage = CreateDefaultSubobject<UDamageComponent>(TEXT("Damage"));
     this->BoneSpaceTurretMaxYaw = 0.00f;

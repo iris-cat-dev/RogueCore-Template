@@ -1,7 +1,7 @@
 #include "RarityWeightItem.h"
 
 FRarityWeightItem::FRarityWeightItem() {
-    this->Rarity = NULL;
+    this->Rarity = nullptr;
     this->LevelWeight = 0.00f;
 }
 

@@ -8,4 +8,6 @@ class UBuriedStateComponent : public UCharacterStateComponent {
     GENERATED_BODY()
 public:
     UBuriedStateComponent(const FObjectInitializer& ObjectInitializer);
+
 };
+

@@ -9,3 +9,4 @@ enum class ESteamSearchRegion : uint8 {
     Far,
     World,
 };
+

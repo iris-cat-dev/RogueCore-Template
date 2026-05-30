@@ -3,6 +3,7 @@
 #include "GDDamageClasses.generated.h"
 
 class UDamageClass;
+
 USTRUCT(BlueprintType)
 struct FGDDamageClasses {
     GENERATED_BODY()
@@ -12,6 +13,10 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UDamageClass* Corrosive;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UDamageClass*> Burning;
+    
     ROGUECORE_API FGDDamageClasses();
 };
+

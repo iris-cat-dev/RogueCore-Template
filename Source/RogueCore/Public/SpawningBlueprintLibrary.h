@@ -1,7 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-
-#include "Kismet/BlueprintFunctionLibrary.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Transform -FallbackName=Transform
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
 #include "DeepPathFinderSize.h"
 #include "EnemySpawnedDelegateDelegate.h"
 #include "SpawningBlueprintLibrary.generated.h"
@@ -9,7 +10,6 @@
 class UEnemyDescriptor;
 class UEnemyGroupDescriptor;
 class UObject;
-
 
 UCLASS(Blueprintable)
 class ROGUECORE_API USpawningBlueprintLibrary : public UBlueprintFunctionLibrary {
@@ -25,6 +25,9 @@ public:
     
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static void SpawnEnemyGroupDescriptor(UObject* WorldContextObject, UEnemyGroupDescriptor* descriptor, float Difficulty, FVector Location, bool Alert, DeepPathFinderSize pfSize);
+    
+    UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable, meta=(WorldContext="WorldContextObject"))
+    static void SpawnEnemyAtTransform(UObject* WorldContextObject, UEnemyDescriptor* EnemyDescriptor, FTransform Transform, const FEnemySpawnedDelegate& Callback, bool Alert, bool scaleToDifficulty, bool spawnFX, DeepPathFinderSize pfSize);
     
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static void SpawnEnemiesFromRCPool(UObject* WorldContextObject, float Difficulty, const TArray<FVector>& Locations, bool Alert, bool isConstantPreassure, bool backFillWithConstantPressure);
@@ -49,6 +52,9 @@ public:
     
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static void SpawnEnemiesAcrossLocations(UObject* WorldContextObject, UEnemyDescriptor* EnemyDescriptor, int32 count, TArray<FVector> Locations, bool Alert, bool scaleToDifficulty, DeepPathFinderSize pfSize);
+    
+    UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
+    static FTransform SnapToTerrain_AlignXWithNormal(UObject* WorldContextObject, const FVector& InLocation);
     
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
     static TArray<FVector> GetSpawnPointsInRange(UObject* WorldContextObject, float distanceToPlayers, int32 spawnPointCount, DeepPathFinderSize pfSize);

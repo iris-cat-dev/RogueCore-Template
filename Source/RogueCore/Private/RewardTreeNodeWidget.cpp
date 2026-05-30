@@ -5,14 +5,20 @@ URewardTreeNodeWidget::URewardTreeNodeWidget() : UUserWidget(FObjectInitializer:
     this->NodeID = -1;
     this->Cost = 1;
     this->bIsClickable = false;
-    this->Reward = NULL;
+    this->Reward = nullptr;
     this->bIsPlaceholder = false;
     this->IsEditing = false;
     this->bIsBought = false;
-    this->DefaultReward = NULL;
+    this->DefaultReward = nullptr;
 }
 
 void URewardTreeNodeWidget::ShowDetailsText_Implementation(bool InShow) {
+}
+
+void URewardTreeNodeWidget::SetSelectedEditor_Implementation(bool inIsSelected) {
+}
+
+void URewardTreeNodeWidget::SetIsEditing_Implementation(bool inIsEditing) {
 }
 
 void URewardTreeNodeWidget::SetIsBought(bool inIsBought) {

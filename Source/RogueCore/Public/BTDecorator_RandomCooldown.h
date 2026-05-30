@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "BehaviorTree/BTDecorator.h"
-#include "BehaviorTree/BehaviorTreeTypes.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=AIModule -ObjectName=BlackboardKeySelector -FallbackName=BlackboardKeySelector
 #include "RandRange.h"
 #include "BTDecorator_RandomCooldown.generated.h"
 
@@ -12,6 +12,10 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FRandRange CoolDownTime;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FBlackboardKeySelector CooldownTimeModifier;
+    
     UBTDecorator_RandomCooldown();
+
 };
+

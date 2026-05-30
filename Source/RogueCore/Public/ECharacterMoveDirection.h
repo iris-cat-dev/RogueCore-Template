@@ -10,3 +10,4 @@ enum class ECharacterMoveDirection : uint8 {
     Right,
     Back,
 };
+

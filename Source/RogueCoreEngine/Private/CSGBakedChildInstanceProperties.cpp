@@ -1,7 +1,7 @@
 #include "CSGBakedChildInstanceProperties.h"
 
 FCSGBakedChildInstanceProperties::FCSGBakedChildInstanceProperties() {
-    this->BakedCSG = NULL;
+    this->BakedCSG = nullptr;
     this->VariantIndex = 0;
 }
 

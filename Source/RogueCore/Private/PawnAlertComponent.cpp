@@ -4,6 +4,8 @@ UPawnAlertComponent::UPawnAlertComponent(const FObjectInitializer& ObjectInitial
     this->AutoAlertAI = true;
     this->ShouldAlertNearby = false;
     this->AlertRadius = 1000.00f;
+    this->AlertBySight = true;
+    this->AlertByDamage = true;
 }
 
 void UPawnAlertComponent::StopAutoAlerting() {

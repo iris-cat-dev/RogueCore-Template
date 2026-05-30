@@ -1,6 +1,6 @@
 #include "BoomerAnimInstance.h"
 
-UBoomerAnimInstance::UBoomerAnimInstance(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+UBoomerAnimInstance::UBoomerAnimInstance() {
     this->IsJumping = false;
 }
 

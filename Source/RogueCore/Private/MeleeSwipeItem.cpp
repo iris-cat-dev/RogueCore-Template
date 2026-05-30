@@ -3,15 +3,16 @@
 
 AMeleeSwipeItem::AMeleeSwipeItem(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->SlicerSounds = CreateDefaultSubobject<UAudioComponent>(TEXT("SlicerSound"));
-    this->CarveMesh = NULL;
-    this->MagmaMaterial = NULL;
-    this->HitEffect = NULL;
-    this->BeamEffect = NULL;
-    this->ImpactSound = NULL;
-    this->SwipeHitConfirmSond = NULL;
-    this->FP_AttackAnim = NULL;
-    this->TP_AttackAnim = NULL;
-    this->Damage = NULL;
+    this->CarveMesh = nullptr;
+    this->MagmaMaterial = nullptr;
+    this->HitEffect = nullptr;
+    this->BeamEffect = nullptr;
+    this->ImpactSound = nullptr;
+    this->SwipeHitConfirmSond = nullptr;
+    this->FP_AttackAnim = nullptr;
+    this->TP_AttackAnim = nullptr;
+    this->Damage = nullptr;
+    this->RangeUpgradeKey = nullptr;
     this->MinRange = 0.00f;
     this->MaxRange = 0.00f;
     this->Width = 100.00f;
@@ -20,6 +21,7 @@ AMeleeSwipeItem::AMeleeSwipeItem(const FObjectInitializer& ObjectInitializer) : 
     this->VerticalOffset = 0.00f;
     this->VerticalCarveOffset = 0.00f;
     this->ShowDebugBox = false;
+    this->ShowDebugDugTime = 3.00f;
     this->RequireFullyEquipped = true;
 }
 

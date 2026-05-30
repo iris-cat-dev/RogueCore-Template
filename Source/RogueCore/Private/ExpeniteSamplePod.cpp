@@ -4,7 +4,7 @@
 AExpeniteSamplePod::AExpeniteSamplePod(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->ServerReturnProgress = 0.00f;
     this->ReturnDelay = 0.00f;
-    this->ReturnCurve = NULL;
+    this->ReturnCurve = nullptr;
     this->TargetReturnTime = 0.00f;
 }
 

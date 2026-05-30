@@ -1,8 +1,8 @@
 #include "CSGSDFInstance.h"
 
 UCSGSDFInstance::UCSGSDFInstance() {
-    this->CSGSDFInstanceRoot = NULL;
-    this->CurrentBakeConfig = NULL;
+    this->CSGSDFInstanceRoot = nullptr;
+    this->CurrentBakeConfig = nullptr;
 }
 
 

@@ -7,5 +7,6 @@ FGliderAnimSync::FGliderAnimSync() {
     this->RightLeftBlendBool = false;
     this->VerticalAddBlend = 0.00f;
     this->HorizontalAddBlend = 0.00f;
+    this->VelocityPercent = FVector::ZeroVector;
 }
 

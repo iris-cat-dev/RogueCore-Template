@@ -1,7 +1,7 @@
 #include "ExpeniteObjective.h"
 
 FExpeniteObjective::FExpeniteObjective() {
-    this->Objective = NULL;
+    this->Objective = nullptr;
     this->Weight = 0.00f;
 }
 

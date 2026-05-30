@@ -1,7 +1,7 @@
 #include "CharacterUseState.h"
 
 FCharacterUseState::FCharacterUseState() {
-    this->ActiveUsable = NULL;
+    this->ActiveUsable = nullptr;
     this->Key = EInputKeys::Use;
     this->UseId = 0;
 }

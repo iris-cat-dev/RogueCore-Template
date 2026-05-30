@@ -4,15 +4,17 @@
 #include "DamageBonusBaseUpgrade.generated.h"
 
 class UDamageCondition;
+
 UCLASS(Abstract, Blueprintable, EditInlineNew, MinimalAPI)
 class UDamageBonusBaseUpgrade : public UItemUpgrade {
     GENERATED_BODY()
-    
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    bool UseBaseDamage;
-    
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UDamageCondition* Condition;
+    
+public:
     UDamageBonusBaseUpgrade();
+
 };
+

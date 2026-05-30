@@ -7,3 +7,4 @@ enum class ETerrainPlacementBoxType : uint8 {
     NoTerrain,
     Terrain,
 };
+

@@ -1,11 +1,11 @@
 #include "Schematic.h"
 
 USchematic::USchematic() {
-    this->Category = NULL;
-    this->PricingTier = NULL;
-    this->Rarity = NULL;
-    this->UsedByCharacter = NULL;
-    this->Item = NULL;
+    this->Category = nullptr;
+    this->PricingTier = nullptr;
+    this->Rarity = nullptr;
+    this->UsedByCharacter = nullptr;
+    this->Item = nullptr;
     this->CostIsLocked = false;
 }
 

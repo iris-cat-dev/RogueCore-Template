@@ -8,3 +8,4 @@ enum class EAsyncPersistence : uint8 {
     Level,
     Permanent,
 };
+

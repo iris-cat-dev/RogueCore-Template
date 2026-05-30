@@ -11,3 +11,4 @@ enum class EDamageNumberHitType : uint8 {
     BreakableArmor,
     UnbreakableArmor,
 };
+

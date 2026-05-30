@@ -8,4 +8,6 @@ class UPawnBurningUniqueAfflictionEffect : public UAfflictionEffect {
     GENERATED_BODY()
 public:
     UPawnBurningUniqueAfflictionEffect();
+
 };
+

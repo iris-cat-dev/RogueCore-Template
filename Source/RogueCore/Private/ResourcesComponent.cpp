@@ -48,7 +48,7 @@ TArray<UCappedResource*> UResourcesComponent::GetAllResources() const {
     return TArray<UCappedResource*>();
 }
 
-float UResourcesComponent::AddResource(UResourceData* InData, float amount) {
+float UResourcesComponent::AddResource(UResourceData* InData, float Amount) {
     return 0.0f;
 }
 

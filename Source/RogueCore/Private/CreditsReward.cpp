@@ -1,6 +1,7 @@
 #include "CreditsReward.h"
 
 FCreditsReward::FCreditsReward() {
-    this->amount = 0;
+    this->Amount = 0;
+    this->Description = FText::GetEmpty();
 }
 

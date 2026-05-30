@@ -9,3 +9,4 @@ enum class EActivityType : uint8 {
     Tutorial,
     None,
 };
+

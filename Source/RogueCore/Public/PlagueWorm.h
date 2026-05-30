@@ -8,4 +8,6 @@ class ROGUECORE_API APlagueWorm : public AEnemyDeepPathfinderCharacter {
     GENERATED_BODY()
 public:
     APlagueWorm(const FObjectInitializer& ObjectInitializer);
+
 };
+

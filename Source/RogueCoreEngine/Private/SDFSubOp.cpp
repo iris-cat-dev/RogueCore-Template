@@ -1,8 +1,8 @@
 #include "SDFSubOp.h"
 
 USDFSubOp::USDFSubOp() {
-    this->A = NULL;
-    this->B = NULL;
+    this->A = nullptr;
+    this->B = nullptr;
 }
 
 

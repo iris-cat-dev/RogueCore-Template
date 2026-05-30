@@ -14,15 +14,15 @@ ACryosprayItem::ACryosprayItem(const FObjectInitializer& ObjectInitializer) : Su
     this->StickyFlames = CreateDefaultSubobject<UStickyFlameSpawner>(TEXT("StickyFlames"));
     this->AoEColdDamageComponent = CreateDefaultSubobject<UDamageComponent>(TEXT("AoEDamageComponent"));
     this->VelocityAudio = CreateDefaultSubobject<UMotionAudioController>(TEXT("MotionAudio"));
-    this->FlameParticleComponent = NULL;
+    this->FlameParticleComponent = nullptr;
     this->PressurizedProjectileEnabled = false;
     this->PressurizedProjectileDelay = 1.00f;
     this->PressurizeProjectileFullCost = 25;
-    this->ChargeupParticles = NULL;
-    this->ChargeupParticleInstance = NULL;
+    this->ChargeupParticles = nullptr;
+    this->ChargeupParticleInstance = nullptr;
     this->DecalDelay = 0.20f;
-    this->ImpactParticles = NULL;
-    this->ImpactParticleInstance = NULL;
+    this->ImpactParticles = nullptr;
+    this->ImpactParticleInstance = nullptr;
     this->DamageSphereRadius = 25.00f;
     this->MaxFlameDistance = 5000.00f;
     this->FlameGrowthPerSecond = 1000.00f;
@@ -57,7 +57,7 @@ void ACryosprayItem::Server_PreLaunchProjectile_Implementation() {
 }
 
 
-void ACryosprayItem::OnTargetDamaged(UHealthComponentBase* Health, float amount, UPrimitiveComponent* HitComponent, UFSDPhysicalMaterial* PhysicalMaterial) {
+void ACryosprayItem::OnTargetDamaged(UHealthComponentBase* Health, float Amount, UPrimitiveComponent* HitComponent, UFSDPhysicalMaterial* PhysicalMaterial) {
 }
 
 void ACryosprayItem::OnRep_IsCharging(bool OldValue) {

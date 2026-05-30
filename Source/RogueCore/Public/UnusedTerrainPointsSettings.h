@@ -1,6 +1,5 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EStaticSpawnPointSelectionType.h"
 #include "UnusedTerrainPointsSettings.generated.h"
 
 USTRUCT(BlueprintType)
@@ -10,7 +9,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 PointsPerOwner;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool AddTerrainPlacementBlockers;
-    EStaticSpawnPointSelectionType PointType;
+    
     ROGUECORE_API FUnusedTerrainPointsSettings();
 };
+

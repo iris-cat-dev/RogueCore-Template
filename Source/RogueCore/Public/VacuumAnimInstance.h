@@ -8,4 +8,6 @@ class UVacuumAnimInstance : public UCleanupToolAnimInstance {
     GENERATED_BODY()
 public:
     UVacuumAnimInstance();
+
 };
+

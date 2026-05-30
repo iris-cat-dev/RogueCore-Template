@@ -1,6 +1,6 @@
 #include "AfflictionEntriesArray.h"
 
 FAfflictionEntriesArray::FAfflictionEntriesArray() {
-    this->Owner = NULL;
+    this->Owner = nullptr;
 }
 

@@ -7,11 +7,13 @@
 UCLASS(Blueprintable)
 class UOutlineAfflictionEffect : public UAfflictionEffect {
     GENERATED_BODY()
-    
-
 public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EOutline Outline;
     
+public:
     UOutlineAfflictionEffect();
+
 };
+

@@ -1,6 +1,7 @@
 #include "VanityEventSource.h"
 
 FVanityEventSource::FVanityEventSource() {
-    this->EventIcon = NULL;
+    this->EventIcon = nullptr;
+    this->EventName = FText::GetEmpty();
 }
 

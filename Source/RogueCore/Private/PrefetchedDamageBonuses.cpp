@@ -1,7 +1,7 @@
 #include "PrefetchedDamageBonuses.h"
 
 UPrefetchedDamageBonuses::UPrefetchedDamageBonuses(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->DamageAsset = NULL;
+    this->DamageAsset = nullptr;
 }
 
 FPrefetchedDamageBonusResult UPrefetchedDamageBonuses::GetResult() const {

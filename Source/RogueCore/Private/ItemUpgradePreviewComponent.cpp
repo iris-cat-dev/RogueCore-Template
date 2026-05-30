@@ -1,7 +1,7 @@
 #include "ItemUpgradePreviewComponent.h"
 
 UItemUpgradePreviewComponent::UItemUpgradePreviewComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->PreviewUpgrade = NULL;
+    this->PreviewUpgrade = nullptr;
 }
 
 void UItemUpgradePreviewComponent::SetPreviewUpgrade(UItemUpgrade* InUpgrade) {

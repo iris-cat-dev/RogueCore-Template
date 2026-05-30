@@ -8,7 +8,7 @@ ARecallableSentryGunItem::ARecallableSentryGunItem(const FObjectInitializer& Obj
     this->RecallHoldDuration = 1.00f;
     this->AmmoCapacity = CreateDefaultSubobject<UCapacityHoldingItemAggregator>(TEXT("AmmoCapacity"));
     this->ItemPlacer = CreateDefaultSubobject<UItemPlacerAggregator>(TEXT("ItemPlacer"));
-    this->LoadoutClass = NULL;
+    this->LoadoutClass = nullptr;
     this->SupplyStatusWeight = 1.00f;
     this->SentryAngleRestriction = 0.00f;
     this->bIsUpgraded = false;

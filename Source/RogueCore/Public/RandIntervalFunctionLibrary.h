@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-
-#include "Kismet/BlueprintFunctionLibrary.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=RandomStream -FallbackName=RandomStream
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
 #include "RandIntegerValue.h"
 #include "RandInterval.h"
 #include "RandIntervalFunctionLibrary.generated.h"
@@ -11,8 +11,12 @@ class URandIntervalFunctionLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     URandIntervalFunctionLibrary();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static float GetFloatValue(const FRandInterval& RandInterval);
     
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static int32 GenerateValue(const TArray<FRandIntegerValue>& Values, FRandomStream& Stream);
+    
 };
+

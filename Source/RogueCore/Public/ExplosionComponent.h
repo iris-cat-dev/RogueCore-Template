@@ -8,4 +8,6 @@ class UExplosionComponent : public UExplosionBaseComponent {
     GENERATED_BODY()
 public:
     UExplosionComponent(const FObjectInitializer& ObjectInitializer);
+
 };
+

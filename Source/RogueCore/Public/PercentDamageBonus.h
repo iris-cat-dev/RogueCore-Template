@@ -6,11 +6,16 @@
 UCLASS(Blueprintable, EditInlineNew)
 class UPercentDamageBonus : public UDamageBonusBase {
     GENERATED_BODY()
-    
-
 public:
+protected:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FString Name;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float PercentBonus;
     
+public:
     UPercentDamageBonus();
+
 };
+

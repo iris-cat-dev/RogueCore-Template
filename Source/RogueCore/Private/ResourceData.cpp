@@ -1,11 +1,9 @@
 #include "ResourceData.h"
 
 UResourceData::UResourceData() {
-    this->Icon = NULL;
-    this->BuyingPrice = 150;
-    this->SellingPrice = 15;
-    this->MinedMissionStat = NULL;
-    this->CappedResourceTypeOverride = NULL;
+    this->Icon = nullptr;
+    this->MinedMissionStat = nullptr;
+    this->CappedResourceTypeOverride = nullptr;
     this->IsCraftingMaterial = false;
     this->IsTradable = true;
     this->ForceShowOnEndScreen = false;
@@ -18,7 +16,11 @@ UResourceData::UResourceData() {
     this->CreditValue = 0;
     this->XPValue = 1;
     this->SeasonXPMultiplier = -1.00f;
-    this->AppliesReclaimerPointsMultiplier = false;
+    this->ReclaimerPointsMultiplier = 0.00f;
+}
+
+float UResourceData::SetOwnedAmount(const UObject* WorldContextObject, float Amount) {
+    return 0.0f;
 }
 
 float UResourceData::GetOwnedAmount(const UObject* WorldContextObject) const {
@@ -29,11 +31,11 @@ bool UResourceData::GetIsTradableCraftingMaterial() const {
     return false;
 }
 
-float UResourceData::DeductOwnedAmount(const UObject* WorldContextObject, float amount) const {
+float UResourceData::DeductOwnedAmount(const UObject* WorldContextObject, float Amount) {
     return 0.0f;
 }
 
-float UResourceData::AddOwnedAmount(const UObject* WorldContextObject, float amount) const {
+float UResourceData::AddOwnedAmount(const UObject* WorldContextObject, float Amount) {
     return 0.0f;
 }
 

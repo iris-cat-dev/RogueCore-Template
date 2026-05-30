@@ -3,8 +3,8 @@
 
 AAimingFacilityTurret::AAimingFacilityTurret(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->IsLockedOn = false;
-    this->aimIndicator = NULL;
-    this->aimIndicatorLock = NULL;
+    this->aimIndicator = nullptr;
+    this->aimIndicatorLock = nullptr;
     this->LockOnTime = 0.50f;
     this->BurstInterval = 0.50f;
     this->FireInterval = 0.10f;

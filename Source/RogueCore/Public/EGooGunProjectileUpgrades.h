@@ -7,3 +7,4 @@ enum class EGooGunProjectileUpgrades : uint8 {
     PuddleLifeSpan,
     FragmentCount,
 };
+

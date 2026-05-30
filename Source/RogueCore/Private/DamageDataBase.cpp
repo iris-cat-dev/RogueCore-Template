@@ -1,10 +1,12 @@
 #include "DamageDataBase.h"
 
 FDamageDataBase::FDamageDataBase() {
-    this->PhysMaterial = NULL;
+    this->PhysMaterial = nullptr;
     this->BoneIndex = 0;
-    this->DamageImpulseOverride = NULL;
+    this->DamageImpulseOverride = nullptr;
     this->IsRadial = false;
     this->CritLevel = 0;
+    this->Component = nullptr;
+    this->HitLocation = FVector::ZeroVector;
 }
 

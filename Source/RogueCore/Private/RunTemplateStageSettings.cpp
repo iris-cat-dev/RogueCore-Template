@@ -1,8 +1,10 @@
 #include "RunTemplateStageSettings.h"
 
 FRunTemplateStageSettings::FRunTemplateStageSettings() {
-    this->ForcedTemplate = NULL;
-    this->ForcedDNA = NULL;
-    this->ForcedBiome = NULL;
+    this->ForcedTemplate = nullptr;
+    this->ForcedDNA = nullptr;
+    this->ForcedBiome = nullptr;
+    this->ForcedPLS = nullptr;
+    this->DebrisActor = nullptr;
 }
 

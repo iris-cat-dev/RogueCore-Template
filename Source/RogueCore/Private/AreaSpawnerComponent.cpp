@@ -1,7 +1,7 @@
 #include "AreaSpawnerComponent.h"
 
 UAreaSpawnerComponent::UAreaSpawnerComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->ActorToSpawn = NULL;
+    this->ActorToSpawn = nullptr;
     this->PathfinderSize = DeepPathFinderSize::Small;
     this->ChanceToSpawn = 1.00f;
 }

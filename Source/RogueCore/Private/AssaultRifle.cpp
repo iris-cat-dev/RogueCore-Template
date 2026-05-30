@@ -3,7 +3,7 @@
 AAssaultRifle::AAssaultRifle(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->KillsResetAccuracyDuration = 0.00f;
     this->KillsTriggersStatusEffect = false;
-    this->KillTriggeredStatusEffect = NULL;
+    this->KillTriggeredStatusEffect = nullptr;
 }
 
 void AAssaultRifle::OnTimerElapsed() {

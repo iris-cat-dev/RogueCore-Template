@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "VoronoiProperties.generated.h"
 
 USTRUCT(BlueprintType)
@@ -8,19 +8,20 @@ struct FVoronoiProperties {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FVector HalfSize = FVector::ZeroVector;
-
+    FVector HalfSize;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    int32 NumPoints = 0;
-
+    int32 NumPoints;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    int32 Seed = 0;
-
+    int32 Seed;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float Distance = 0.0f;
-
+    float Distance;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    bool Inverted = false;
-
+    bool Inverted;
+    
+    ROGUECOREENGINE_API FVoronoiProperties();
 };
 

@@ -1,6 +1,6 @@
 #include "ResourcePouchItem.h"
 
 FResourcePouchItem::FResourcePouchItem() {
-    this->Resource = NULL;
+    this->Resource = nullptr;
 }
 

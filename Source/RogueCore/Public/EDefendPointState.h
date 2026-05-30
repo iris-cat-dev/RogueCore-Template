@@ -9,3 +9,4 @@ enum class EDefendPointState : uint8 {
     Completed,
     Failed,
 };
+

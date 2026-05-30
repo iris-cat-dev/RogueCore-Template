@@ -4,7 +4,7 @@
 AShredder::AShredder(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->FoldoutRange = 0.00f;
     this->SpinRange = 0.00f;
-    this->CurrentTarget = NULL;
+    this->CurrentTarget = nullptr;
 }
 
 void AShredder::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const {

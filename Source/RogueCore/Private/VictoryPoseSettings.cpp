@@ -1,8 +1,8 @@
 #include "VictoryPoseSettings.h"
 
 UVictoryPoseSettings::UVictoryPoseSettings() {
-    this->GenericVictoryPoseIcon = NULL;
-    this->RandomVictoryPose = NULL;
+    this->GenericVictoryPoseIcon = nullptr;
+    this->RandomVictoryPose = nullptr;
 }
 
 TArray<UVictoryPose*> UVictoryPoseSettings::GetVictoryPoses() const {

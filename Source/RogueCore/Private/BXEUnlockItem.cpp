@@ -1,12 +1,18 @@
 #include "BXEUnlockItem.h"
 
 UBXEUnlockItem::UBXEUnlockItem() {
-    this->ItemID = NULL;
-    this->DisplayText = FText::FromString(TEXT("Unlock {item}"));
-    this->IsStartingWeapon = false;
+    this->ItemID = nullptr;
 }
 
 FText UBXEUnlockItem::GetItemName() const {
+    return FText::GetEmpty();
+}
+
+FText UBXEUnlockItem::GetItemFunctionalDescription() const {
+    return FText::GetEmpty();
+}
+
+FText UBXEUnlockItem::GetItemDescription() const {
     return FText::GetEmpty();
 }
 

@@ -1,6 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Transform -FallbackName=Transform
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "DelegateDelegate.h"
 #include "Objective.h"
 #include "Templates/SubclassOf.h"
@@ -15,53 +16,103 @@ class UDebrisBase;
 class UDebrisPositioning;
 class UGemResourceData;
 class URepairableComponent;
+
 UCLASS(Abstract, Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class ROGUECORE_API USalvageObjective : public UObjective {
     GENERATED_BODY()
-    
-
 public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 SalvageActorCount;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UGemResourceData* LegResource;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 LegCountPerActor;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float LegDistanceToActor;
+    
     UPROPERTY(BlueprintAssignable, BlueprintCallable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FDelegate OnDisableLegSpheres;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UDebrisPositioning* Positioning;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<TSoftObjectPtr<UDebrisBase>> Debris;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftClassPtr<AMiniMule> SalvageActor;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftClassPtr<ADropPod> DamagedPodClass;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UDebrisPositioning* DamagedPodPositioning;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float DamagedPodMinDistanceToDropZone;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     ADropPod* DamagedPod;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, ReplicatedUsing=OnRep_ActorsToSalvage, meta=(AllowPrivateAccess=true))
     int32 ActorsToSalvage;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, ReplicatedUsing=OnRep_ActorsSalvaged, meta=(AllowPrivateAccess=true))
     int32 ActorsSalvaged;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 RepairPoints;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, ReplicatedUsing=OnRep_PointsRepaired, meta=(AllowPrivateAccess=true))
     int32 PointsRepaired;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float MinSalvageActorDistanceToLandingZone;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool HasMuleReturnedToPod;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<AMiniMule*> AllSalvageActors;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<AMiniMule*> SalvagedActors;
+    
+public:
     USalvageObjective(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void PointRepaired();
+    
+protected:
     UFUNCTION(BlueprintCallable)
     void OnRep_PointsRepaired();
-    UFUNCTION()
+    
+    UFUNCTION(BlueprintCallable)
     void OnRep_ActorsToSalvage(int32 prevAmount);
-    UFUNCTION()
+    
+    UFUNCTION(BlueprintCallable)
     void OnRep_ActorsSalvaged(int32 prevAmount);
+    
+    UFUNCTION(BlueprintCallable)
     void OnActorRepaired(URepairableComponent* Repairable);
+    
+public:
+    UFUNCTION(BlueprintCallable)
     static FTransform FindRepairPointLocation(AProceduralSetup* setup, const FVector& podLocation, float Radius, float maxVerticalDistance, UDebrisPositioning* DebrisPositioning, TSubclassOf<AActor> terrainPlacement, const TArray<FVector>& LocationsToAvoid, UCurveFloat* AvoidCostCurve);
+    
+    UFUNCTION(BlueprintCallable)
     static FTransform FindDamagedMiningPodLocation(AProceduralSetup* setup, UDebrisPositioning* DebrisPositioning, TSubclassOf<AActor> terrainPlacement, float blockDistFromLandingZone);
+    
+protected:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void AllActorsSalvaged();
+    
 };
+

@@ -14,3 +14,4 @@ enum class EItemCategory : uint8 {
     MiningTool = 64,
     Armor = 128,
 };
+

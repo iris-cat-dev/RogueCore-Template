@@ -7,8 +7,8 @@ APlagueControlActor::APlagueControlActor(const FObjectInitializer& ObjectInitial
     this->RootComponent = CreateDefaultSubobject<UNiagaraComponent>(TEXT("DebrisLight"));
     this->DebrisLightSystem = (UNiagaraComponent*)RootComponent;
     this->CallWeaponPodUsable = CreateDefaultSubobject<UPlagueUsable>(TEXT("usable"));
-    this->TargetPlagueMaterial = NULL;
-    this->CleanupPodItem = NULL;
+    this->TargetPlagueMaterial = nullptr;
+    this->CleanupPodItem = nullptr;
     this->MinTimeBetweenWeaponPods = 180.00f;
     this->MinDistBetweenPods = 1500.00f;
     this->MaxDistFromCenter = 1500.00f;

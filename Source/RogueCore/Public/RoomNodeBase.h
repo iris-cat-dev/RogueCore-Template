@@ -8,3 +8,4 @@ struct FRoomNodeBase {
 public:
     ROGUECORE_API FRoomNodeBase();
 };
+

@@ -1,6 +1,6 @@
 #include "AvoidActorEntry.h"
 
 FAvoidActorEntry::FAvoidActorEntry() {
-    this->Actor = NULL;
+    this->Actor = nullptr;
 }
 

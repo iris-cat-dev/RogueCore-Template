@@ -1,8 +1,6 @@
 #include "SpiderLobberAnimInstance.h"
 
-USpiderLobberAnimInstance::USpiderLobberAnimInstance(const FObjectInitializer& ObjectInitializer)
-    : Super(ObjectInitializer)
-{
+USpiderLobberAnimInstance::USpiderLobberAnimInstance() {
     this->LiquidInBumEaseInExp = 2.00f;
     this->LiquidInBumTimeToMax = 5.00f;
     this->LiquidInBumTimeToMaxShort = 0.70f;

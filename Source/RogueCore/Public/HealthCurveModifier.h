@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Curves/CurveFloat.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=RuntimeFloatCurve -FallbackName=RuntimeFloatCurve
 #include "HealthModifier.h"
 #include "HealthCurveModifier.generated.h"
 
@@ -12,4 +12,6 @@ public:
     FRuntimeFloatCurve Curve;
     
     UHealthCurveModifier();
+
 };
+

@@ -8,4 +8,6 @@ class URandomLoadoutBuff : public UTemporaryBuff {
     GENERATED_BODY()
 public:
     URandomLoadoutBuff();
+
 };
+

@@ -1,13 +1,26 @@
 #include "BarSubSystem.h"
 
 UBarSubSystem::UBarSubSystem() {
-    this->Bartender = NULL;
+    this->Bartender = nullptr;
+    this->Bound = false;
 }
 
 void UBarSubSystem::SetBartender(AOmegaBartender* aBartender) {
 }
 
-bool UBarSubSystem::HasEnoughCurrency(const UObject* WorldContextObject, UResourceData* Currency, int32 amount) {
+void UBarSubSystem::PlayerLoggedOut(AFSDPlayerState* PState) {
+}
+
+void UBarSubSystem::PlayerLoggedIn(AFSDPlayerController* Controller) {
+}
+
+void UBarSubSystem::LocalPlayerExitGymArea() {
+}
+
+void UBarSubSystem::LocalPlayerEnteredGymArea() {
+}
+
+bool UBarSubSystem::HasEnoughCurrency(const UObject* WorldContextObject, UResourceData* Currency, int32 Amount) {
     return false;
 }
 
@@ -27,6 +40,14 @@ int32 UBarSubSystem::GetCollectiveResourceIndex(const UObject* WorldContextObjec
     return 0;
 }
 
+int32 UBarSubSystem::GetCalories(const UObject* WorldContextObject) {
+    return 0;
+}
+
+float UBarSubSystem::GetBeerCost(const UObject* WorldContextObject, UDrinkableDataAsset* Drink) {
+    return 0.0f;
+}
+
 AOmegaBartender* UBarSubSystem::GetBartender() const {
     return NULL;
 }
@@ -39,14 +60,14 @@ TArray<int32> UBarSubSystem::GetAllGymCurrencyAmount(const UObject* WorldContext
     return TArray<int32>();
 }
 
-bool UBarSubSystem::DeductCurrency(const UObject* WorldContextObject, UDrinkableDataAsset* Data) {
-    return false;
+float UBarSubSystem::GetAdjustedCostForPlayerCount(const UObject* WorldContextObject, const float baseCost) {
+    return 0.0f;
 }
 
-void UBarSubSystem::AddInternalCurrency(const UObject* WorldContextObject, UResourceData* Data, int32 amount) {
+void UBarSubSystem::AddInternalCurrency(const UObject* WorldContextObject, UResourceData* Data, int32 Amount) {
 }
 
-void UBarSubSystem::AddCurrency(const UObject* WorldContextObject, UResourceData* Currency, int32 amount) {
+void UBarSubSystem::AddCurrency(const UObject* WorldContextObject, UResourceData* Currency, int32 Amount) {
 }
 
 

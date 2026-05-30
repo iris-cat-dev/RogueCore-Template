@@ -8,4 +8,6 @@ class UFSDAudioComponent : public UAudioComponent {
     GENERATED_BODY()
 public:
     UFSDAudioComponent(const FObjectInitializer& ObjectInitializer);
+
 };
+

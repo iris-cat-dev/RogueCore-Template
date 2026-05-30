@@ -1,36 +1,40 @@
 #pragma once
 #include "CoreMinimal.h"
-
-#include "UObject/Object.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "GameplayTagContainer.h"
 #include "AssetsToLoadSettings.h"
+#include "BioBoosterDeckSettings.h"
+#include "DeploymentSlotRequirement.h"
 #include "EPerkName.h"
 #include "GDAudio.h"
-#include "GDCharacterRetirement.h"
+#include "GDCharacterAscension.h"
 #include "GDDamageClasses.h"
 #include "GDDifficulty.h"
 #include "GDElementTypes.h"
 #include "GDGameStatsTracking.h"
 #include "GDItemCategoryIDs.h"
-#include "GDMilestones.h"
 #include "GDMissionStats.h"
 #include "GDResources.h"
 #include "GDStats.h"
+#include "GDTasks.h"
 #include "GDTerrainTypes.h"
 #include "GVisibilityGroups.h"
 #include "PerkSettings.h"
-#include "RetirementCostItem.h"
 #include "Templates/SubclassOf.h"
 #include "GameData.generated.h"
 
 class APlayerCharacter;
 class UAbilitySettings;
 class UAccessCondition;
-class UAchievementList;
+class UAchievementSettings;
 class UAfflictionSettings;
-class UAsyncManager;
+class UAscensionRewardsSettings;
 class UBXESettings;
+class UBioBoosterDeck;
 class UCharacterSettings;
+class UCommunicationSettingsAsset;
+class UCosmeticSheet;
 class UDailyDealSettings;
 class UDamageNumberSettings;
 class UDamageSettings;
@@ -41,6 +45,7 @@ class UDynamicIconSettings;
 class UEffectSettings;
 class UEncounterSettings;
 class UEnemySettings;
+class UEntitlementSettings;
 class UFSDEventCollection;
 class UFSDTagSettings;
 class UFSDTutorialSettings;
@@ -48,6 +53,7 @@ class UForginSettings;
 class UGameActivitySettings;
 class UGameAnimationSettings;
 class UHUDVisibilityGroup;
+class UHUDVisibilitySettings;
 class UInstancedNiagaraSettings;
 class UIntelSettings;
 class UInventoryList;
@@ -56,16 +62,15 @@ class UItemSkinSettings;
 class UKPISettings;
 class UKeyBindingSettings;
 class ULegacySettings;
-class UMilestoneAsset;
 class UMinersManual;
 class UMissionStat;
+class UOpsComTaskAsset;
 class UPerkAsset;
 class UPerkSettingsAsset;
 class UPickaxeSettings;
 class UPlanetZoneSetup;
 class UPlayerCharacterID;
 class UProceduralSettings;
-class UPromotionRewardsSettings;
 class URewardTreeSettings;
 class USaveGameSettings;
 class USchematicSettings;
@@ -87,12 +92,12 @@ class ROGUECORE_API UGameData : public UObject {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FGVisibilityGroups VisibilityGroups;
+    UHUDVisibilitySettings* HUDVisibilitySettings;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    UPromotionRewardsSettings* PromotionRewardsSettings;
+    UAscensionRewardsSettings* AscensionRewardsSettings;
     
-public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UKPISettings* KPI_Settings;
     
@@ -244,13 +249,16 @@ public:
     UStatusEffectSettings* StatusEffects;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FGDCharacterRetirement Retirement;
+    FGDCharacterAscension Ascension;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FBioBoosterDeckSettings BioBoosterDeckSettings;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UCharacterSettings* CharacterSettings;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    UAchievementList* Achievements;
+    UAchievementSettings* AchievementSettings;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UStageSettings* StageSettings;
@@ -268,29 +276,41 @@ public:
     UPlayerCharacterID* DefaultCharacterID;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UCosmeticSheet* CosmeticSheet1;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FGameplayTag XBoxExcludeRoomTag;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAssetsToLoadSettings AssetsToLoad;
     
-public:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UEntitlementSettings* EntitlementSettings;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UCommunicationSettingsAsset* CommunicationSettingsAsset;
+    
+private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TMap<FGuid, UAccessCondition*> AccessConditions;
     
 public:
     UGameData();
 
-    UFUNCTION(BlueprintCallable)
-    void LoadDefaultAssetsBlocking(UAsyncManager* AsyncManager);
-    
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsCheatConsolesEnabled() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    TArray<UPlayerCharacterID*> GetRankedHeroIDs() const;
+    FGVisibilityGroups GetVisibilityGroups() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    FGDTasks GetTaskData() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FText GetPlayerRankName(int32 Rank) const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    TArray<UPlayerCharacterID*> GetPlayerCharacterIds() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     UPlayerCharacterID* GetPlayerCharacterID(const FGuid& ID) const;
@@ -305,7 +325,7 @@ public:
     FGDMissionStats GetMissionStats() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    FGDMilestones GetMileStonesData() const;
+    int32 GetMaxNumberOfDeployments() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     UInventoryList* GetInventoryList() const;
@@ -317,26 +337,31 @@ public:
     int32 GetDifficultyIndex(UDifficultySetting* NewDifficulty) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    FDeploymentSlotRequirement GetDeploymentSlotCost(int32 InSlotIndex) const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UPlayerCharacterID* GetDefaultCharacterID() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     TSubclassOf<APlayerCharacter> GetDefaultCharacter() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContext"))
-    FRetirementCostItem GetCharacterRetirementCost(UObject* WorldContext, UPlayerCharacterID* ID) const;
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool GetDefaultBioBoosterDecks(const UPlayerCharacterID* InCharacter, TArray<UBioBoosterDeck*>& OutDecks) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    TArray<UHUDVisibilityGroup*> GetAllVisibilityGroups() const;
+    int32 GetAscensionMeritCost(const int32 TimesAscended) const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    TArray<UHUDVisibilityGroup*> GetAllVisibilityGroups(bool InSorted) const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    TArray<UOpsComTaskAsset*> GetAllTasks() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<UMissionStat*> GetAllMissionStats() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    TArray<UMilestoneAsset*> GetAllMilestones() const;
-    
-    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<UMissionStat*> GetAllInfirmaryStats() const;
     
 };
-
 

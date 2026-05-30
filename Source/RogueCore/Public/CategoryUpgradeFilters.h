@@ -4,6 +4,7 @@
 #include "CategoryUpgradeFilters.generated.h"
 
 class UItemUpgradeCategory;
+
 UCLASS(Blueprintable, EditInlineNew)
 class UCategoryUpgradeFilters : public UItemUpgradeFilter {
     GENERATED_BODY()
@@ -12,4 +13,6 @@ public:
     TArray<UItemUpgradeCategory*> Blacklist;
     
     UCategoryUpgradeFilters();
+
 };
+

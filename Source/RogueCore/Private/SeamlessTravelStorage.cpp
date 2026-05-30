@@ -1,17 +1,30 @@
 #include "SeamlessTravelStorage.h"
 
 USeamlessTravelStorage::USeamlessTravelStorage() {
-    this->ChosenDifficulty = NULL;
+    this->ChosenDifficulty = nullptr;
     this->MissionTime = 0.00f;
 }
 
-void USeamlessTravelStorage::UnStoreActor(AActor* Actor) {
+void USeamlessTravelStorage::UnStoreActorForSeamlessTravel(AActor* Actor) {
 }
 
-void USeamlessTravelStorage::StoreActor(AActor* Actor) {
+void USeamlessTravelStorage::StoreActorForSeamlessTravel(AActor* Actor) {
 }
 
-void USeamlessTravelStorage::ClearGameStateSeamlessTravelStorage() {
+TArray<APlayerCharacter*> USeamlessTravelStorage::GetStoredCharacters() const {
+    return TArray<APlayerCharacter*>();
+}
+
+void USeamlessTravelStorage::ClearStageState() {
+}
+
+void USeamlessTravelStorage::ClearPersistentState() {
+}
+
+void USeamlessTravelStorage::ClearCharacterState() {
+}
+
+void USeamlessTravelStorage::ClearAllState() {
 }
 
 

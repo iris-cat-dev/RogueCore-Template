@@ -13,3 +13,4 @@ enum class ESentryGunUpgradeType : uint8 {
     RotationSpeed,
     BurstCooldown,
 };
+

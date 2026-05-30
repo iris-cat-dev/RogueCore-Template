@@ -4,7 +4,7 @@
 
 ASpawnLordEnemy::ASpawnLordEnemy(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->DestructibleSubHealthHead = CreateDefaultSubobject<UDestructibleSubHealthComponent>(TEXT("DestructibleSubHealthHead"));
-    this->AdED = NULL;
+    this->AdED = nullptr;
     this->HealingStateTime = 20.00f;
     this->SpawnLordState = ESpawnLordState::Idle;
     this->HasBossfightStarted = false;

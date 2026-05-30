@@ -1,7 +1,8 @@
 #include "VoteParticipantComponent.h"
 
 UVoteParticipantComponent::UVoteParticipantComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->VoteWidget = NULL;
+    this->VoteWidget = nullptr;
+    this->MyVoteIndex = -1;
 }
 
 void UVoteParticipantComponent::Server_Vote_Implementation(int32 InVoteIndex) {

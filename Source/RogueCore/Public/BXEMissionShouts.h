@@ -3,6 +3,7 @@
 #include "BXEMissionShouts.generated.h"
 
 class UDialogDataAsset;
+
 USTRUCT(BlueprintType)
 struct FBXEMissionShouts {
     GENERATED_BODY()
@@ -12,3 +13,4 @@ public:
     
     ROGUECORE_API FBXEMissionShouts();
 };
+

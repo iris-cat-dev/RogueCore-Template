@@ -1,21 +1,21 @@
 #include "DetPackItem.h"
-#include "Components/SkeletalMeshComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SkeletalMeshComponent -FallbackName=SkeletalMeshComponent
 #include "CapacityHoldingItemAggregator.h"
 #include "FirstPersonSkeletalMeshComponent.h"
 #include "Net/UnrealNetwork.h"
 
 ADetPackItem::ADetPackItem(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->DetPackClass = NULL;
-    this->LoadoutProxy = NULL;
-    this->FPThrowMontage = NULL;
-    this->TPThrowMontage = NULL;
-    this->FP_DetonateAnim = NULL;
-    this->WPN_DetonateAnim = NULL;
-    this->FP_EquipDetonatorAnimation = NULL;
-    this->WPN_EquipDetonatorAnimation = NULL;
+    this->DetPackClass = nullptr;
+    this->LoadoutProxy = nullptr;
+    this->FPThrowMontage = nullptr;
+    this->TPThrowMontage = nullptr;
+    this->FP_DetonateAnim = nullptr;
+    this->WPN_DetonateAnim = nullptr;
+    this->FP_EquipDetonatorAnimation = nullptr;
+    this->WPN_EquipDetonatorAnimation = nullptr;
     this->DetonatorFPMesh = CreateDefaultSubobject<UFirstPersonSkeletalMeshComponent>(TEXT("DetonatorFPMesh"));
     this->DetonatorTPMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("DetonatorTPMesh"));
-    this->DetonatorTriggerForceFeedback = NULL;
+    this->DetonatorTriggerForceFeedback = nullptr;
     this->Capacity = CreateDefaultSubobject<UCapacityHoldingItemAggregator>(TEXT("Aggregator"));
     this->SupplyStatusWeight = 1.00f;
     this->ThrowVelocity = 0.00f;
@@ -25,8 +25,8 @@ ADetPackItem::ADetPackItem(const FObjectInitializer& ObjectInitializer) : Super(
     this->CooldownAfterDetonation = 2.00f;
     this->ThrowDelay = 0.00f;
     this->ThrowZOffset = 0.00f;
-    this->ShoutDetPackPlaced = NULL;
-    this->ShoutOutOfAmmo = NULL;
+    this->ShoutDetPackPlaced = nullptr;
+    this->ShoutOutOfAmmo = nullptr;
     this->CooldownLeft = 0.00f;
     this->IsDetonatorOut = false;
     this->HasThrownPack = false;

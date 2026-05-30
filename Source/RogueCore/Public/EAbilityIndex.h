@@ -8,3 +8,4 @@ enum class EAbilityIndex : uint8 {
     EPrimary,
     ESecondary,
 };
+

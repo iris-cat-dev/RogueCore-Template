@@ -4,13 +4,17 @@
 #include "TracerUpgradeElement.generated.h"
 
 class UFXSystemAsset;
+
 UCLASS(Blueprintable, EditInlineNew)
 class UTracerUpgradeElement : public UItemUpgradeElement {
     GENERATED_BODY()
-    
 public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftObjectPtr<UFXSystemAsset> Tracer;
     
+public:
     UTracerUpgradeElement();
+
 };
+

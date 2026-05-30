@@ -1,12 +1,22 @@
 #include "GooGunPuddle.h"
-#include "Components/SceneComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
 #include "Components/SphereComponent.h"
 #include "Net/UnrealNetwork.h"
 #include "SimpleHealthComponent.h"
 #include "Templates/SubclassOf.h"
 
 AGooGunPuddle::AGooGunPuddle(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-
+    this->bReplicates = true;
+    const FProperty* p_RemoteRole = GetClass()->FindPropertyByName("RemoteRole");
+    (*p_RemoteRole->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(this)) = ROLE_SimulatedProxy;
+    this->RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("RootComponent"));
+    this->SphereTrigger = CreateDefaultSubobject<USphereComponent>(TEXT("SphereTrigger"));
+    this->SimpleHealth = CreateDefaultSubobject<USimpleHealthComponent>(TEXT("SimpleHealth"));
+    this->SpawnSound = nullptr;
+    this->ActiveStatusEffectTriggersMask = 0;
+    this->Lifetime = 0.00f;
+    this->CollisionOnClients = false;
+    this->SphereTrigger->SetupAttachment(RootComponent);
 }
 
 void AGooGunPuddle::SetStatusEffect(TSubclassOf<UStatusEffect> NewStatusEffect) {

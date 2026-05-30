@@ -4,7 +4,7 @@
 UDefenseObjective::UDefenseObjective(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->DefensePoints = 3;
     this->PointsDefended = 0;
-    this->DebrisPositioning = NULL;
+    this->DebrisPositioning = nullptr;
 }
 
 void UDefenseObjective::PointDefended() {

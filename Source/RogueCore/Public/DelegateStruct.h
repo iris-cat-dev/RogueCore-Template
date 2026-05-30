@@ -8,3 +8,4 @@ struct FDelegateStruct {
 public:
     ROGUECORE_API FDelegateStruct();
 };
+

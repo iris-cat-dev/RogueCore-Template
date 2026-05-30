@@ -2,16 +2,16 @@
 
 UPlayerMovementComponent::UPlayerMovementComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->DebugFastMove = false;
-    this->SlidingOnIceSound = NULL;
+    this->SlidingOnIceSound = nullptr;
     this->LedgeClimbZVelocity = 0.00f;
     this->MovementPenalty = 1.00f;
-    this->Character = NULL;
+    this->Character = nullptr;
 }
 
-void UPlayerMovementComponent::RemoveGravityModifier(AActor* SourceActor) {
+void UPlayerMovementComponent::RemoveGravityModifier(UObject* sourceObject) {
 }
 
-void UPlayerMovementComponent::AddGravityModifier(AActor* SourceActor, float Effect) {
+void UPlayerMovementComponent::AddGravityModifier(UObject* sourceObject, float effect) {
 }
 
 

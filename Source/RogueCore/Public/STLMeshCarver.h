@@ -1,7 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-
-#include "UObject/Object.h"
+#include "DeepCSGFloatTree.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Box -FallbackName=Box
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "DeepCSGFloatTree.h"
 #include "STLMeshCarver.generated.h"
 
@@ -12,7 +14,13 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FBox AABB;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FDeepCSGFloatTree BSPTree;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FVector> Vertices;
+    
     USTLMeshCarver();
+
 };
+

@@ -7,3 +7,4 @@ enum class EVoteOptionActionType : uint8 {
     NEGATIVE,
     POSITIVE,
 };
+

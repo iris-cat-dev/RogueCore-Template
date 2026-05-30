@@ -2,8 +2,7 @@
 #include "Templates/SubclassOf.h"
 
 UWindowManager::UWindowManager(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->AudioWindowOpen = NULL;
-    this->ResolutionDownscaleActive = false;
+    this->AudioWindowOpen = nullptr;
 }
 
 void UWindowManager::SetSingletonWidgetVisibility(TSubclassOf<UUserWidget> WidgetClass, ESlateVisibility Visibility) {
@@ -33,7 +32,7 @@ UWindowWidget* UWindowManager::OpenSingleUseWindow(TSubclassOf<UWindowWidget> Wi
 void UWindowManager::OnPossessedPawnChanged(APawn* OldPawn, APawn* NewPawn) {
 }
 
-bool UWindowManager::IsWindowOpen(UWindowWidget* Window) const {
+bool UWindowManager::IsWindowOpen(const UWindowWidget* Window) const {
     return false;
 }
 
@@ -55,6 +54,9 @@ UWindowWidget* UWindowManager::CreateWindowFromSoftClass(TSoftClassPtr<UWindowWi
 
 UWindowWidget* UWindowManager::CreateWindowFromClass(TSubclassOf<UWindowWidget> WindowClass, int32 ZOrder) {
     return NULL;
+}
+
+void UWindowManager::CloseWindowClass(TSubclassOf<UWindowWidget> InWindowClass, bool InAllInstances) {
 }
 
 void UWindowManager::CloseWindow(UWindowWidget* Window) {

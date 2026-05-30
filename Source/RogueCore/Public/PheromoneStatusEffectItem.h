@@ -8,4 +8,6 @@ class UPheromoneStatusEffectItem : public UStatusEffectItem {
     GENERATED_BODY()
 public:
     UPheromoneStatusEffectItem();
+
 };
+

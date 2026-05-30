@@ -9,8 +9,12 @@ struct FBXEPlayerData {
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, NotReplicated, meta=(AllowPrivateAccess=true))
     bool bInitialized;
-
+    
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FBXEUnlockRecord> UnlockRecords;
+    
+public:
     ROGUECORE_API FBXEPlayerData();
 };
+

@@ -1,6 +1,6 @@
 #include "TimerRewinderGhost.h"
-#include "Components/SceneComponent.h"
-#include "Components/SkeletalMeshComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SkeletalMeshComponent -FallbackName=SkeletalMeshComponent
 
 ATimerRewinderGhost::ATimerRewinderGhost(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->bReplicates = true;
@@ -9,8 +9,8 @@ ATimerRewinderGhost::ATimerRewinderGhost(const FObjectInitializer& ObjectInitial
     this->RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("Root"));
     this->Root = (USceneComponent*)RootComponent;
     this->CharacterMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("CharacterMesh"));
-    this->HologramMaterial = NULL;
-    this->HologramAnimation = NULL;
+    this->HologramMaterial = nullptr;
+    this->HologramAnimation = nullptr;
     this->CharacterMesh->SetupAttachment(RootComponent);
 }
 

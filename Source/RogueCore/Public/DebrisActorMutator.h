@@ -4,6 +4,7 @@
 #include "DebrisActorMutator.generated.h"
 
 class ADebrisDataActor;
+
 UCLASS(Blueprintable, EditInlineNew)
 class UDebrisActorMutator : public UMutator {
     GENERATED_BODY()
@@ -12,4 +13,6 @@ public:
     TSoftClassPtr<ADebrisDataActor> DebrisActor;
     
     UDebrisActorMutator();
+
 };
+

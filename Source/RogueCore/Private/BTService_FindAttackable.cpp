@@ -9,7 +9,7 @@ UBTService_FindAttackable::UBTService_FindAttackable() {
     this->IsFlying = false;
     this->CanShoot = false;
     this->TargetingRange = 3500.00f;
-    this->CurrentRegisteredTarget = NULL;
+    this->CurrentRegisteredTarget = nullptr;
 }
 
 

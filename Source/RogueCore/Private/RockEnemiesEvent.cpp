@@ -1,15 +1,15 @@
 #include "RockEnemiesEvent.h"
-#include "Components/SkeletalMeshComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SkeletalMeshComponent -FallbackName=SkeletalMeshComponent
 
 ARockEnemiesEvent::ARockEnemiesEvent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->PowerUpClass = NULL;
+    this->PowerUpClass = nullptr;
     this->PowerUpGenerationTime = 10.00f;
     this->mesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("mesh"));
-    this->MuzzleEffect = NULL;
+    this->MuzzleEffect = nullptr;
     this->PowerUpsPerGeneration = 1;
     this->GruntPointsAward = 1;
     this->TankPointsAward = 2;
-    this->RockEnemies = NULL;
+    this->RockEnemies = nullptr;
     this->mesh->SetupAttachment(RootComponent);
 }
 

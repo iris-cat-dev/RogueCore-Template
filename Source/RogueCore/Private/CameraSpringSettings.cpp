@@ -8,5 +8,8 @@ FCameraSpringSettings::FCameraSpringSettings() {
     this->ShowDebug = false;
     this->LastSpeedZ = 0.00f;
     this->bSpringInitialized = false;
+    this->SpringExtend = FVector2D::ZeroVector;
+    this->LastLocation = FVector::ZeroVector;
+    this->StartSpringLocation = FVector::ZeroVector;
 }
 

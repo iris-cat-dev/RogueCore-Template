@@ -8,3 +8,4 @@ struct FRiftBeam {
 public:
     ROGUECORE_API FRiftBeam();
 };
+

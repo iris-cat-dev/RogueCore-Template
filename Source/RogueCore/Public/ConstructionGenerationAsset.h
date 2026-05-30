@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-
-#include "Engine/DataAsset.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=RandomStream -FallbackName=RandomStream
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
 #include "GameplayTagContainer.h"
 #include "ConstructionGenerationGroup.h"
 #include "ConstructionItem.h"
@@ -15,6 +15,9 @@ public:
     TArray<FConstructionItem> Constructions;
     
     UConstructionGenerationAsset();
+
     UFUNCTION(BlueprintCallable)
     FConstructionGenerationGroup CreateConstructionGroup(int32 InBudget, const FGameplayTagQuery& InQuery, UPARAM(Ref) FRandomStream& InRandomStream);
+    
 };
+

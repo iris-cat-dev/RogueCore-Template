@@ -1,8 +1,9 @@
 #include "CharacterViewInfo.h"
 
 FCharacterViewInfo::FCharacterViewInfo() {
-    this->CharacterClass = NULL;
+    this->CharacterClass = nullptr;
     this->SurvivedInPod = false;
-    this->VictoryPose = NULL;
+    this->VictoryPose = nullptr;
+    this->EquippedVanity = FEquippedVanity();
 }
 

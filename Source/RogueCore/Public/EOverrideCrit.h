@@ -8,3 +8,4 @@ enum class EOverrideCrit : uint8 {
     ForceCrit,
     ForceNormal,
 };
+

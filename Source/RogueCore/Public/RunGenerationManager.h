@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Subsystems/GameInstanceSubsystem.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=GameInstanceSubsystem -FallbackName=GameInstanceSubsystem
 #include "GeneratedRunGroup.h"
 #include "GeneratedRunsForBiome.h"
 #include "RunGenerationManager.generated.h"
@@ -28,3 +28,4 @@ public:
     TArray<FGeneratedRunsForBiome> GenerateRuns(const int32 Seed);
     
 };
+

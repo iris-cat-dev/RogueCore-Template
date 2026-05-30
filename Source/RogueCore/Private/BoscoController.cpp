@@ -1,10 +1,10 @@
 #include "BoscoController.h"
 
 ABoscoController::ABoscoController(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->BehaviourTree = NULL;
+    this->BehaviourTree = nullptr;
     this->CheckOutOfTheWayInterval = 0.00f;
     this->DistCountAsSameHit = 10.00f;
-    this->HearthstoneCrystalMaterial = NULL;
+    this->HearthstoneCrystalMaterial = nullptr;
     this->SearchForEnemiesInterval = 0.00f;
     this->SaluteDelay = 0.00f;
     this->SaluteCooldown = 0.00f;
@@ -15,8 +15,8 @@ ABoscoController::ABoscoController(const FObjectInitializer& ObjectInitializer) 
     this->DistanceCountedAsClose = 2000.00f;
     this->ReviveHealthPercentage = 0.40f;
     this->ArmorOnRevivePercentage = 0.00f;
-    this->CurrentUse = NULL;
-    this->TryingToPickItem = NULL;
+    this->CurrentUse = nullptr;
+    this->TryingToPickItem = nullptr;
 }
 
 void ABoscoController::ReviveTarget() {
@@ -26,6 +26,9 @@ void ABoscoController::ResetToFollowState() {
 }
 
 void ABoscoController::RegisterPlayer(APlayerCharacter* aPlayerCharacter) {
+}
+
+void ABoscoController::PlayerChangedState(ECharacterState State) {
 }
 
 void ABoscoController::PickupItem() {
@@ -55,7 +58,7 @@ void ABoscoController::OnJobFinished() {
 void ABoscoController::OnEscortTargetDied(UHealthComponentBase* Health) {
 }
 
-void ABoscoController::OnCarriedUsed(APlayerCharacter* usedBy, EInputKeys Key) {
+void ABoscoController::OnCarriedUsed(APlayerCharacter* UsedBy, EInputKeys Key) {
 }
 
 FVector ABoscoController::GetPointNearPlayers() const {

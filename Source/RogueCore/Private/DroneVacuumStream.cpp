@@ -1,5 +1,5 @@
 #include "DroneVacuumStream.h"
-#include "Components/SceneComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
 
 ADroneVacuumStream::ADroneVacuumStream(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->VacuumPoint = CreateDefaultSubobject<USceneComponent>(TEXT("VacuumSource"));

@@ -2,7 +2,7 @@
 
 UScalingMeshAfflictionEffect::UScalingMeshAfflictionEffect() {
     this->AfflictionType = EFrozenAfflictionType::Frozen;
-    this->MaterialOverride = NULL;
+    this->MaterialOverride = nullptr;
 }
 
 

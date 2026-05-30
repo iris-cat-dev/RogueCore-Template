@@ -1,7 +1,7 @@
 #include "UnlockDifficultyReward.h"
 
 UUnlockDifficultyReward::UUnlockDifficultyReward() {
-    this->Difficulty = NULL;
+    this->Difficulty = nullptr;
 }
 
 

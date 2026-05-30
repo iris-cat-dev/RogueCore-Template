@@ -8,4 +8,6 @@ class UEnemyPawnAfflictionComponent : public UPawnAfflictionComponent {
     GENERATED_BODY()
 public:
     UEnemyPawnAfflictionComponent(const FObjectInitializer& ObjectInitializer);
+
 };
+

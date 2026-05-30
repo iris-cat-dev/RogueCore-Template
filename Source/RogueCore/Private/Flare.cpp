@@ -11,13 +11,14 @@ AFlare::AFlare(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitia
     this->InitialAngularImpulseRandomScale = 3.00f;
     this->MaxFlares = 3;
     this->ProductionTime = 15.00f;
-    this->Duration = 0.00f;
+    this->duration = 0.00f;
     this->IsFlareOn = true;
-    this->DamageCauser = NULL;
-    this->WeaponPreviewClass = NULL;
-    this->LoadoutItem = NULL;
-    this->ItemID = NULL;
-    this->ImpactGroundSound = NULL;
+    this->IsInfiniteLight = false;
+    this->DamageCauser = nullptr;
+    this->WeaponPreviewClass = nullptr;
+    this->LoadoutItem = nullptr;
+    this->ItemID = nullptr;
+    this->ImpactGroundSound = nullptr;
 }
 
 void AFlare::StartLightFunction(ULightComponent* mainLight, TArray<ULightComponent*> spotLights, UCurveFloat* flutterCurve, UCurveFloat* fadeInCurve) {
@@ -55,8 +56,9 @@ void AFlare::ActorWasHit(AActor* SelfActor, AActor* OtherActor, FVector NormalIm
 void AFlare::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const {
     Super::GetLifetimeReplicatedProps(OutLifetimeProps);
     
-    DOREPLIFETIME(AFlare, Duration);
+    DOREPLIFETIME(AFlare, duration);
     DOREPLIFETIME(AFlare, IsFlareOn);
+    DOREPLIFETIME(AFlare, IsInfiniteLight);
 }
 
 

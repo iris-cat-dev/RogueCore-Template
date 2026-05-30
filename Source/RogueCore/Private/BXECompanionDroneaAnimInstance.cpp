@@ -14,6 +14,8 @@ UBXECompanionDroneaAnimInstance::UBXECompanionDroneaAnimInstance() {
     this->Depositable = false;
     this->HasArtifact = false;
     this->HasPotentExpenite = false;
+    this->HasProcessedArtifact = false;
+    this->HasProcessedPotent = false;
 }
 
 

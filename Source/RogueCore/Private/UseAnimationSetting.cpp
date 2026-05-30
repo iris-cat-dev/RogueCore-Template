@@ -1,12 +1,12 @@
 #include "UseAnimationSetting.h"
 
 UUseAnimationSetting::UUseAnimationSetting() {
-    this->BeginFP = NULL;
-    this->EndFP = NULL;
-    this->BeginTP = NULL;
-    this->EndTP = NULL;
-    this->CompletedFP = NULL;
-    this->CompletedTP = NULL;
+    this->BeginFP = nullptr;
+    this->EndFP = nullptr;
+    this->BeginTP = nullptr;
+    this->EndTP = nullptr;
+    this->CompletedFP = nullptr;
+    this->CompletedTP = nullptr;
     this->IsManuallyControlled = false;
     this->BlockUseWhileActive = false;
     this->BlockUseWhileActiveDuration = 0.00f;

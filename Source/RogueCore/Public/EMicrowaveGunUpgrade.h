@@ -16,3 +16,4 @@ enum class EMicrowaveGunUpgrade : uint8 {
     EGammaContaminationZone,
     ETemperatureAmplifier,
 };
+

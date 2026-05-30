@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Kismet/BlueprintFunctionLibrary.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
 #include "CraftingCost.h"
 #include "CraftingCostLibrary.generated.h"
 
@@ -9,7 +9,9 @@ class ROGUECORE_API UCraftingCostLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UCraftingCostLibrary();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FCraftingCost ConvertResourcesToFashionite(TArray<FCraftingCost> InResources);
     
 };
+

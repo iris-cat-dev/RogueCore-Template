@@ -1,9 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-
-#include "Components/SplineComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Box -FallbackName=Box
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector4 -FallbackName=Vector4
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SplineCurves -FallbackName=SplineCurves
 #include "CSGWarped.h"
 #include "SplineWarpProperties.h"
+#include "Components/SplineComponent.h"
 #include "CSGSplineWarp.generated.h"
 
 UCLASS(Blueprintable)

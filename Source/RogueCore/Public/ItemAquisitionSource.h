@@ -11,6 +11,10 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<ETreasureType> TreasureTypes;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FText SourceDepletedMessage;
+    
     UItemAquisitionSource();
+
 };
+

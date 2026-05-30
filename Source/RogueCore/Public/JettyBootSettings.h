@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Engine/DataAsset.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
 #include "JettyBootSetting.h"
 #include "JettyBootSettings.generated.h"
 
@@ -12,6 +12,9 @@ public:
     TArray<FJettyBootSetting> LevelSettings;
     
     UJettyBootSettings();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FJettyBootSetting GetLevelSetting(int32 inLevel) const;
+    
 };
+

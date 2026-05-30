@@ -2,20 +2,20 @@
 #include "Templates/SubclassOf.h"
 
 UEnemyDescriptor::UEnemyDescriptor() {
-    this->EnemyID = NULL;
-    this->VeteranScaling = NULL;
-    this->VeteranClass = NULL;
+    this->EnemyID = nullptr;
+    this->VeteranScaling = nullptr;
+    this->VeteranClass = nullptr;
     this->EnemySignificance = EEnemySignificance::Swarmer;
     this->UsesSpawnEffects = true;
     this->CreatureSize = ECreatureSize::Tiny;
     this->UsePositioningInGameplay = false;
-    this->PositioningAsset = NULL;
-    this->CustomPositioning = NULL;
-    this->CaveInfluencer = NULL;
+    this->PositioningAsset = nullptr;
+    this->CustomPositioning = nullptr;
+    this->CaveInfluencer = nullptr;
     this->PlaceInGroupsOf = 1;
     this->PlaceInGroupRadius = 0.00f;
     this->InfluencerRange = 1000.00f;
-    this->PlacementCarver = NULL;
+    this->PlacementCarver = nullptr;
     this->PathfinderType = DeepPathFinderType::Walk;
     this->SpawnAtUprightLocation = false;
     this->SpawnSpread = 300.00f;

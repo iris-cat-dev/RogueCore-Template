@@ -2,9 +2,9 @@
 #include "Net/UnrealNetwork.h"
 
 UActorStateComponent::UActorStateComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->CurrentState = NULL;
-    this->NextState = NULL;
-    this->MasterState = NULL;
+    this->CurrentState = nullptr;
+    this->NextState = nullptr;
+    this->MasterState = nullptr;
     this->StateActiveTime = 0.00f;
 }
 

@@ -3,6 +3,9 @@
 UUIFunctionLibrary::UUIFunctionLibrary() {
 }
 
+void UUIFunctionLibrary::UpdateCoolDownProgressStyle(FCoolDownProgressStyle& inRef, float Progress, UObject* progressOwner, APlayerCharacter* Character) {
+}
+
 void UUIFunctionLibrary::StartBugReporter() {
 }
 
@@ -24,7 +27,7 @@ int32 UUIFunctionLibrary::GetLoadoutIcon(UObject* WorldContextObject, UPlayerCha
     return 0;
 }
 
-TArray<FText> UUIFunctionLibrary::FormatNewsTexts(TArray<FText> texts, int32 RandomSeed, UNewsTextLists* wordList, UStageNameBank* MissionNameBank) {
+TArray<FText> UUIFunctionLibrary::FormatNewsTexts(TArray<FText> texts, int32 RandomSeed, UNewsTextLists* wordList, UStageNameBank* missionNameBank) {
     return TArray<FText>();
 }
 

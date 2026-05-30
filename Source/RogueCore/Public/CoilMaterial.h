@@ -3,6 +3,7 @@
 #include "CoilMaterial.generated.h"
 
 class UMaterialInstanceDynamic;
+
 USTRUCT(BlueprintType)
 struct FCoilMaterial {
     GENERATED_BODY()
@@ -12,3 +13,4 @@ public:
     
     ROGUECORE_API FCoilMaterial();
 };
+

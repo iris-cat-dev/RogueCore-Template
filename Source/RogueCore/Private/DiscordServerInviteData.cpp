@@ -3,5 +3,7 @@
 FDiscordServerInviteData::FDiscordServerInviteData() {
     this->approximate_presence_count = 0;
     this->approximate_member_count = 0;
+    this->code = FString();
+    this->guild = FDiscordServerInviteGuildData();
 }
 

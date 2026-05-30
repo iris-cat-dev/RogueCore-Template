@@ -7,16 +7,19 @@
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class UUsableAggregator : public UItemAggregator {
     GENERATED_BODY()
-    
-
 public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAggregatorVisibilityChangedDelegate OnVisibilityChanged;
     
- 
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FText UsingText;
+    
+public:
     UUsableAggregator(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     float GetProgress();
+    
 };
+

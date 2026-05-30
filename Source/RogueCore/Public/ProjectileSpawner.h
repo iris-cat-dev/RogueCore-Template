@@ -1,13 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/Interface.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Interface -FallbackName=Interface
 #include "ProjectileSpawner.generated.h"
 
 UINTERFACE()
-class ROGUECORE_API UProjectileSpawner : public UInterface {
-	GENERATED_BODY()
+class UProjectileSpawner : public UInterface {
+    GENERATED_BODY()
 };
-class ROGUECORE_API IProjectileSpawner : public IInterface {
-	GENERATED_BODY()
+
+class IProjectileSpawner : public IInterface {
+    GENERATED_BODY()
 public:
 };
+

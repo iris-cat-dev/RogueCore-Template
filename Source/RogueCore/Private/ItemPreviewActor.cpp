@@ -2,11 +2,11 @@
 #include "Templates/SubclassOf.h"
 
 AItemPreviewActor::AItemPreviewActor(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->CurrentSkinColor = NULL;
-    this->CurrentSkinMesh = NULL;
-    this->itemClass = NULL;
-    this->CameraKey_Normal = NULL;
-    this->CameraKey_CloseUp = NULL;
+    this->CurrentSkinColor = nullptr;
+    this->CurrentSkinMesh = nullptr;
+    this->itemClass = nullptr;
+    this->CameraKey_Normal = nullptr;
+    this->CameraKey_CloseUp = nullptr;
 }
 
 void AItemPreviewActor::SkinItem(USkinEffect* Skin) {

@@ -4,4 +4,6 @@
 
 class UPlayerCharacterID;
 class UVictoryPose;
+
 UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FCollectedVictoryPoseEvent, UVictoryPose*, Pose, UPlayerCharacterID*, characterID);
+

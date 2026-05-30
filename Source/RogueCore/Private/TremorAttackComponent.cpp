@@ -3,14 +3,14 @@
 
 UTremorAttackComponent::UTremorAttackComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->IsAttackActive = false;
-    this->CollisionComponent = NULL;
-    this->ParticlesComponent = NULL;
+    this->CollisionComponent = nullptr;
+    this->ParticlesComponent = nullptr;
     this->InitialParticlesDelay = 0.38f;
     this->PostParticleDelay = 0.00f;
     this->TargetMaxDistanceFromGround = 100.00f;
     this->TimeBetweenDamageTicks = 0.50f;
     this->LaunchForce = 200.00f;
-    this->Duration = 3.00f;
+    this->duration = 3.00f;
 }
 
 void UTremorAttackComponent::StopParticles() {

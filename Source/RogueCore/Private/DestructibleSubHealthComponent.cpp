@@ -6,13 +6,16 @@ UDestructibleSubHealthComponent::UDestructibleSubHealthComponent(const FObjectIn
     this->RadialDamageResistance = 0.00f;
     this->AllowInderectDamage = false;
     this->Damage = 0.00f;
-    this->ArmorComponent = NULL;
+    this->ArmorComponent = nullptr;
 }
 
 void UDestructibleSubHealthComponent::ResetHealth() {
 }
 
 void UDestructibleSubHealthComponent::OnRep_Damage(float oldDamage) {
+}
+
+void UDestructibleSubHealthComponent::ApplyDamage(const int32 NewDamage) {
 }
 
 void UDestructibleSubHealthComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const {

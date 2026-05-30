@@ -2,7 +2,7 @@
 
 UPlayerAfflictionOverlayWidget::UPlayerAfflictionOverlayWidget() : UUserWidget(FObjectInitializer::Get()) {
     this->bOverlayActive = false;
-    this->Overlay = NULL;
+    this->Overlay = nullptr;
 }
 
 

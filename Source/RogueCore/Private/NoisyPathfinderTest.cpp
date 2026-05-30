@@ -7,14 +7,14 @@ ANoisyPathfinderTest::ANoisyPathfinderTest(const FObjectInitializer& ObjectIniti
     this->ZPenaltyScale = 0.10f;
     this->DistancePenaltyScale = 10.00f;
     this->RandomPenaltyScale = 1500.00f;
-    this->TunnelSettings = NULL;
-    this->TunnelParameters = NULL;
+    this->TunnelSettings = nullptr;
+    this->TunnelParameters = nullptr;
     this->StepSize = 1;
     this->Realtime = false;
     this->CarvePath = false;
     this->CanDiagonal = false;
-    this->FloodFillSettings = NULL;
-    this->CSGWorld = NULL;
+    this->FloodFillSettings = nullptr;
+    this->CSGWorld = nullptr;
 }
 
 

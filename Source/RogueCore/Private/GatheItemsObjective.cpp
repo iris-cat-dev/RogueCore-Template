@@ -5,10 +5,10 @@ UGatheItemsObjective::UGatheItemsObjective(const FObjectInitializer& ObjectIniti
     this->ItemsRequired = 0;
     this->ItemsSpawnedModifier = 1.50f;
     this->ItemsCollected = 0;
-    this->ItemResource = NULL;
+    this->ItemResource = nullptr;
 }
 
-void UGatheItemsObjective::OnResourceChanged(UCappedResource* CappedResource, float amount) {
+void UGatheItemsObjective::OnResourceChanged(UCappedResource* CappedResource, float Amount) {
 }
 
 void UGatheItemsObjective::OnRep_ItemsCollected(int32 prevAmount) {

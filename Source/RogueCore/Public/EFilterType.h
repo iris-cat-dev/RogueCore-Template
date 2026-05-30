@@ -7,3 +7,4 @@ enum class EFilterType : int32 {
     Exclude,
     Include,
 };
+

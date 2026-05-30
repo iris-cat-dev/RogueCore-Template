@@ -3,6 +3,7 @@
 #include "ItemSkinOwners.generated.h"
 
 class UItemID;
+
 USTRUCT(BlueprintType)
 struct FItemSkinOwners {
     GENERATED_BODY()
@@ -12,3 +13,4 @@ public:
     
     ROGUECORE_API FItemSkinOwners();
 };
+

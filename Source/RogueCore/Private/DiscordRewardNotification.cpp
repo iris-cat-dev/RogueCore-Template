@@ -1,6 +1,9 @@
 #include "DiscordRewardNotification.h"
 
 FDiscordRewardNotification::FDiscordRewardNotification() {
-    this->Icon = NULL;
+    this->Icon = nullptr;
+    this->Text = FText::GetEmpty();
+    this->IconColor = FLinearColor::White;
+    this->ID = FString();
 }
 

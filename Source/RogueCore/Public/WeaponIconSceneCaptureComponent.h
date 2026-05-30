@@ -4,6 +4,7 @@
 #include "WeaponIconSceneCaptureComponent.generated.h"
 
 class UIconGenerationCameraKey;
+
 UCLASS(Blueprintable, EditInlineNew, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class UWeaponIconSceneCaptureComponent : public USceneCaptureComponent2D {
     GENERATED_BODY()
@@ -12,4 +13,6 @@ public:
     UIconGenerationCameraKey* CameraKey;
     
     UWeaponIconSceneCaptureComponent(const FObjectInitializer& ObjectInitializer);
+
 };
+

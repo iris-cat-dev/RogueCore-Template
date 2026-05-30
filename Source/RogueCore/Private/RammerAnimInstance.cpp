@@ -1,9 +1,7 @@
 #include "RammerAnimInstance.h"
 
-URammerAnimInstance::URammerAnimInstance(const FObjectInitializer& ObjectInitializer)
-    : Super(ObjectInitializer)
-{
-    this->CachedChargeComponent = NULL;
+URammerAnimInstance::URammerAnimInstance() {
+    this->CachedChargeComponent = nullptr;
     this->Acceleration = 0.00f;
     this->InterpolatedAcceleration = 0.00f;
     this->AccelerationInterpolationWeight = 0.10f;
@@ -14,6 +12,7 @@ URammerAnimInstance::URammerAnimInstance(const FObjectInitializer& ObjectInitial
     this->VerticalAngularChargeSpeed = 0.00f;
     this->HasCarvedRecently = false;
     this->IsStoppingEarly = false;
+    this->IsInBomberRun = false;
 }
 
 

@@ -9,3 +9,4 @@ enum class ESpiderDeathAnimationCategory : uint8 {
     Cook,
     Burn,
 };
+

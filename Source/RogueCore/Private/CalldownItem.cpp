@@ -1,11 +1,11 @@
 #include "CalldownItem.h"
 
 ACalldownItem::ACalldownItem(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->ItemPlacerClass = NULL;
-    this->SupplyPodClass = NULL;
-    this->ResouceRequired = NULL;
-    this->ResupplyBeacon = NULL;
-    this->ItemPlacerInstance = NULL;
+    this->ItemPlacerClass = nullptr;
+    this->SupplyPodClass = nullptr;
+    this->ResouceRequired = nullptr;
+    this->ResupplyBeacon = nullptr;
+    this->ItemPlacerInstance = nullptr;
     this->CoolDown = 0.00f;
     this->CooldownRemaining = 0.00f;
 }

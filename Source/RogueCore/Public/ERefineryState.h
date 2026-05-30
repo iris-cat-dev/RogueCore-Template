@@ -12,3 +12,4 @@ enum class ERefineryState : uint8 {
     RefiningComplete,
     RocketLaunched,
 };
+

@@ -1,7 +1,6 @@
 #include "FlyingBugAnimInstance.h"
 
-UFlyingBugAnimInstance::UFlyingBugAnimInstance(const FObjectInitializer& ObjectInitializer)
-    : Super(ObjectInitializer) {
+UFlyingBugAnimInstance::UFlyingBugAnimInstance() {
     this->IsInAttackMode = false;
     this->IsStaggered = false;
     this->DeathAnimationCategory = EFlyingBugDeathAnimationCategory::NoAnimation;

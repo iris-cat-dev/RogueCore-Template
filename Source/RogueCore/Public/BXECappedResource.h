@@ -8,4 +8,6 @@ class UBXECappedResource : public UCappedResource {
     GENERATED_BODY()
 public:
     UBXECappedResource();
+
 };
+

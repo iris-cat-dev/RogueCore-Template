@@ -7,3 +7,4 @@ enum class EResourceFilterType : uint8 {
     BlackList,
     WhiteList,
 };
+

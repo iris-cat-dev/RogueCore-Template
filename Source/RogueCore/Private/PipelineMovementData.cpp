@@ -6,5 +6,6 @@ FPipelineMovementData::FPipelineMovementData() {
     this->Speed = 0.00f;
     this->UpToSpeed = false;
     this->Acceleration = 0.00f;
+    this->PipelineSegment = nullptr;
 }
 

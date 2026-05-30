@@ -7,10 +7,14 @@ USTRUCT(BlueprintType)
 struct FAchievementSave {
     GENERATED_BODY()
 public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FString> OfflineAchievedAchievements;
-
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FAchievementSaveEntry> AchievementEntries;
+    
+public:
     ROGUECORE_API FAchievementSave();
- 
 };
+

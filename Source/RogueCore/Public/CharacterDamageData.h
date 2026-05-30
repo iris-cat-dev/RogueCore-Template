@@ -8,8 +8,14 @@ struct ROGUECORE_API FCharacterDamageData {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 PlayerId;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FActorDamageCollection> EnemyDamage;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FActorDamageCollection> PlayerDamage;
+    
     FCharacterDamageData();
 };
+

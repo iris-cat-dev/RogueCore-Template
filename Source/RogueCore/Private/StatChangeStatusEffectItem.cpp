@@ -1,7 +1,8 @@
 #include "StatChangeStatusEffectItem.h"
 
 UStatChangeStatusEffectItem::UStatChangeStatusEffectItem() {
-    this->Stat = NULL;
+    this->Stat = nullptr;
+    this->StatDisplayTransform = EItemUpgradeNumberTransformType::None;
     this->StatChange = 0.00f;
     this->AffectedByResistances = false;
 }

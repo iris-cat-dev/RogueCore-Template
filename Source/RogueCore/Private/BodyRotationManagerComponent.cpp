@@ -4,7 +4,7 @@ UBodyRotationManagerComponent::UBodyRotationManagerComponent(const FObjectInitia
     this->LerpSpeed = 0.40f;
 }
 
-void UBodyRotationManagerComponent::ApplyKnockBack(float Force, float Duration, const FVector& Direction) {
+void UBodyRotationManagerComponent::ApplyKnockBack(float Force, float duration, const FVector& Direction) {
 }
 
 

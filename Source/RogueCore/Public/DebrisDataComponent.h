@@ -4,6 +4,7 @@
 #include "DebrisDataComponent.generated.h"
 
 class UDebrisBase;
+
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class UDebrisDataComponent : public UDebrisActorComponent {
     GENERATED_BODY()
@@ -12,4 +13,6 @@ public:
     UDebrisBase* Debris;
     
     UDebrisDataComponent(const FObjectInitializer& ObjectInitializer);
+
 };
+

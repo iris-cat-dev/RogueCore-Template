@@ -6,6 +6,7 @@
 class UDialogDataAsset;
 class USoundCue;
 class UUserWidget;
+
 USTRUCT(BlueprintType)
 struct FClaimableRewardView {
     GENERATED_BODY()
@@ -13,10 +14,21 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UDialogDataAsset* MissionControlSpeak;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftClassPtr<UUserWidget> BackgroundWidgetClass;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftObjectPtr<USoundCue> FanfareAudio;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float MoveInRewardsDelay;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FClaimableRewardEntry> RewardDisplays;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FText ClaimButtonText;
+    
     ROGUECORE_API FClaimableRewardView();
 };
+

@@ -1,25 +1,34 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Components/ActorComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
 #include "DamageSigDelegate.h"
 #include "HealthDamageTracker.generated.h"
 
 class UHealthComponentBase;
+
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class UHealthDamageTracker : public UActorComponent {
     GENERATED_BODY()
-
 public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FDamageSig OnTrackedPercentageReachedEvent;
     
- 
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float TiggerOnPercentage;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
     UHealthComponentBase* Health;
+    
+public:
     UHealthDamageTracker(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void ResetTrackedDamage();
-    void OnDamageTaken(float amount);
+    
+protected:
+    UFUNCTION(BlueprintCallable)
+    void OnDamageTaken(float Amount);
+    
 };
+

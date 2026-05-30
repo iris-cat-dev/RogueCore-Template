@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "FakeMoveState.generated.h"
 
 USTRUCT(BlueprintType)
@@ -8,9 +8,14 @@ struct FFakeMoveState {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    FVector Pos1 = FVector::ZeroVector;
+    FVector Pos1;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FVector Pos2;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FVector Vel;
-
+    
+    ROGUECORE_API FFakeMoveState();
 };
+

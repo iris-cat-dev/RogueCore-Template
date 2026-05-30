@@ -3,3 +3,4 @@
 #include "PathBeginDelegate.generated.h"
 
 UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPathBegin);
+

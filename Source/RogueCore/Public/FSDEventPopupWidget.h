@@ -4,6 +4,7 @@
 #include "FSDEventPopupWidget.generated.h"
 
 class UFSDEvent;
+
 UCLASS(Abstract, Blueprintable, EditInlineNew)
 class UFSDEventPopupWidget : public UWindowWidget {
     GENERATED_BODY()
@@ -12,4 +13,6 @@ public:
     UFSDEvent* FSDEvent;
     
     UFSDEventPopupWidget();
+
 };
+

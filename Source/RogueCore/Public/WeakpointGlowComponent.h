@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Components/ActorComponent.h"
-#include "Curves/CurveFloat.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=RuntimeFloatCurve -FallbackName=RuntimeFloatCurve
 #include "DamageData.h"
 #include "EWeakpointGlowMode.h"
 #include "WeakpointChannel.h"
@@ -12,32 +12,66 @@ class UFSDPhysicalMaterial;
 class UHealthComponentBase;
 class UMeshComponent;
 class USkeletalMeshComponent;
+
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class UWeakpointGlowComponent : public UActorComponent {
     GENERATED_BODY()
-    
 public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName EmissiveParam;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<FWeakpointChannel> Channels;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FRuntimeFloatCurve WeakpointHitCurve;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float CurveMultiplier;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EWeakpointGlowMode Mode;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UFSDPhysicalMaterial* WeakPointMaterial;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool AddFirstChannelAutomatically;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 ReplaceMatIndex;
+    
+public:
     UWeakpointGlowComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     bool StopLoopingGlow(int32 aGlowID, bool aFade);
-    void ShowBodypartHit(float amount, float BaseAmount, const FDamageData& DamageData);
-    void SetUpWeakPointGlowOnMeshByBone(const USkeletalMeshComponent*& mesh, int32 MaterialIndex, FName bone, UHealthComponentBase* HealthComponent);
+    
+protected:
+    UFUNCTION(BlueprintCallable)
+    void ShowBodypartHit(float Amount, float BaseAmount, const FDamageData& DamageData);
+    
+public:
+    UFUNCTION(BlueprintCallable)
+    void SetUpWeakPointGlowOnMeshByBone(const USkeletalMeshComponent* mesh, int32 MaterialIndex, FName bone, UHealthComponentBase* HealthComponent);
+    
+    UFUNCTION(BlueprintCallable)
     int32 SetUpWeakPointGlowOnMesh(UMeshComponent* mesh, int32 MaterialIndex, UFSDPhysicalMaterial* PhysicalMaterial, UHealthComponentBase* HealthComponent);
+    
+    UFUNCTION(BlueprintCallable)
     void SetChannelEnabled(bool Enabled, int32 Channel);
+    
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void EnableWeakpointRegistration(bool Enabled);
+    
+protected:
     UFUNCTION(BlueprintCallable, NetMulticast, Unreliable)
     void All_ShowWeakPointHit(uint8 Channel);
+    
+public:
+    UFUNCTION(BlueprintCallable)
     void AddWeakpointGlow(bool loopIndefinitely, float LoopTime, UCurveFloat* GrowCurve, UCurveFloat* FadeCurve, int32 UniqueID, int32 Channel);
+    
 };
+

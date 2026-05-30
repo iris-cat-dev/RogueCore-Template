@@ -1,13 +1,13 @@
 #include "PawnAffliction.h"
 
 UPawnAffliction::UPawnAffliction() {
-    this->Icon = NULL;
+    this->Icon = nullptr;
     this->bShowPlayerIcon = true;
     this->bShowOnEnemyHealthbar = true;
-    this->AfflictionOverlay = NULL;
-    this->PlayerShoutOnBegin = NULL;
-    this->StartSoundForLocalPlayer = NULL;
-    this->StopSoundForLocalPlayer = NULL;
+    this->AfflictionOverlay = nullptr;
+    this->PlayerShoutOnBegin = nullptr;
+    this->StartSoundForLocalPlayer = nullptr;
+    this->StopSoundForLocalPlayer = nullptr;
 }
 
 

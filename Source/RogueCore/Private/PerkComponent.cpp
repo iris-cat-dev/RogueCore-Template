@@ -17,7 +17,7 @@ void UPerkComponent::SetPerkBlocked(const UPerkAsset* Perk, const bool IsBlocked
 void UPerkComponent::SetMaximumUses(const UPerkAsset* Perk, const int32 NewMaximumUses) {
 }
 
-void UPerkComponent::SetEnhancementPerks(const TArray<UPerkAsset*>& NewEnhancementPerks) {
+void UPerkComponent::SetEnhancements(const TArray<UPerkAsset*>& NewEnhancements) {
 }
 
 void UPerkComponent::SetCooldown(const UPerkAsset* Perk, const float NewCooldown) {
@@ -71,7 +71,7 @@ int32 UPerkComponent::GetMaximumUses(const UPerkAsset* Perk) const {
     return 0;
 }
 
-TArray<UPerkAsset*> UPerkComponent::GetEnhancementPerks() const {
+TArray<UPerkAsset*> UPerkComponent::GetEnhancements() const {
     return TArray<UPerkAsset*>();
 }
 
@@ -110,7 +110,7 @@ void UPerkComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLi
     Super::GetLifetimeReplicatedProps(OutLifetimeProps);
     
     DOREPLIFETIME(UPerkComponent, ClassPerks);
-    DOREPLIFETIME(UPerkComponent, EnhancementPerks);
+    DOREPLIFETIME(UPerkComponent, Enhancements);
     DOREPLIFETIME(UPerkComponent, CustomPerks);
     DOREPLIFETIME(UPerkComponent, ActivePerks);
 }

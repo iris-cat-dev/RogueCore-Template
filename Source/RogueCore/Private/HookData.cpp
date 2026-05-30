@@ -2,5 +2,6 @@
 
 FHookData::FHookData() {
     this->IsExtending = false;
+    this->TargetLocation = FVector::ZeroVector;
 }
 

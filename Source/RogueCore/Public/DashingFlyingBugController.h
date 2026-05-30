@@ -8,4 +8,6 @@ class ADashingFlyingBugController : public AFSDFlyingBugController {
     GENERATED_BODY()
 public:
     ADashingFlyingBugController(const FObjectInitializer& ObjectInitializer);
+
 };
+

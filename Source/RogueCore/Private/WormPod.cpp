@@ -1,6 +1,6 @@
 #include "WormPod.h"
-#include "Components/SceneComponent.h"
-#include "Components/SkeletalMeshComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SkeletalMeshComponent -FallbackName=SkeletalMeshComponent
 #include "Net/UnrealNetwork.h"
 #include "SimpleHealthComponent.h"
 
@@ -11,14 +11,14 @@ AWormPod::AWormPod(const FObjectInitializer& ObjectInitializer) : Super(ObjectIn
     this->PodMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("PodMesh"));
     this->Health = CreateDefaultSubobject<USimpleHealthComponent>(TEXT("Health"));
     this->Grown = false;
-    this->GrowthAnimation = NULL;
-    this->PopAnimation = NULL;
-    this->CarcasActor = NULL;
-    this->WormDescriptor = NULL;
-    this->PopParticles = NULL;
-    this->deathParticles = NULL;
-    this->PopSound = NULL;
-    this->deathSound = NULL;
+    this->GrowthAnimation = nullptr;
+    this->PopAnimation = nullptr;
+    this->CarcasActor = nullptr;
+    this->WormDescriptor = nullptr;
+    this->PopParticles = nullptr;
+    this->deathParticles = nullptr;
+    this->PopSound = nullptr;
+    this->deathSound = nullptr;
     this->ParentDeathDelay = 1.00f;
     this->DeathDelayVariance = 0.50f;
     this->WormCount = 1;

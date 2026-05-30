@@ -1,6 +1,6 @@
 #include "SpiderAnimInstance.h"
 
-USpiderAnimInstance::USpiderAnimInstance(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+USpiderAnimInstance::USpiderAnimInstance() {
     this->Speed = 0.00f;
     this->WalkCycleSpeed = 200.00f;
     this->StartMovingSpeed = 50.00f;
@@ -36,8 +36,8 @@ USpiderAnimInstance::USpiderAnimInstance(const FObjectInitializer& ObjectInitial
     this->IsStaggered = false;
     this->StaggerStrength = 1.00f;
     this->IsAirborne = false;
-    this->FootStepParticle = NULL;
-    this->FootStepSound = NULL;
+    this->FootStepParticle = nullptr;
+    this->FootStepSound = nullptr;
     this->FootStepParticleCullDistance = 1000.00f;
     this->RandomWalkCycleIndex = 0;
     this->RandomIdleCycle = 0;
@@ -50,13 +50,16 @@ USpiderAnimInstance::USpiderAnimInstance(const FObjectInitializer& ObjectInitial
     this->WalkToTurnLeft = false;
     this->ExclusiveTurnStateMode = false;
     this->IsInFakePhysics = false;
-    this->SpawnMontage = NULL;
+    this->SpawnMontage = nullptr;
+    this->ShouldPlaySpawnMontage = false;
+    this->HasCompletedSpawnAnimation = false;
     this->DeathAnimationCategory = ESpiderDeathAnimationCategory::NoAnimation;
     this->AimHorizontal = 0.00f;
     this->AimVertical = 0.00f;
 }
 
-USpiderAnimInstance::USpiderAnimInstance() : USpiderAnimInstance(FObjectInitializer::Get()) {
+bool USpiderAnimInstance::ShouldPlaySpawnAnimation() const {
+    return false;
 }
 
 void USpiderAnimInstance::SetMeshScale(float NewScale) {
@@ -66,7 +69,7 @@ void USpiderAnimInstance::SetDeathAnimationCategory(ESpiderDeathAnimationCategor
 }
 
 
-void USpiderAnimInstance::PlayForcedCycle(float Duration) {
+void USpiderAnimInstance::PlayForcedCycle(float duration) {
 }
 
 void USpiderAnimInstance::OnMontageFinished(UAnimMontage* Montage, bool wasInterrupted) {
@@ -109,6 +112,10 @@ bool USpiderAnimInstance::IsNotAirborne() const {
 }
 
 bool USpiderAnimInstance::IsMovingOrTurning() const {
+    return false;
+}
+
+bool USpiderAnimInstance::HasSpawnAnimationCompleted() const {
     return false;
 }
 

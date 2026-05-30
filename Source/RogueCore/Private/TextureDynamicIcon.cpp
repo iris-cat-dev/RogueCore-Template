@@ -1,7 +1,7 @@
 #include "TextureDynamicIcon.h"
 
 UTextureDynamicIcon::UTextureDynamicIcon() {
-    this->PreviewInstance = NULL;
+    this->PreviewInstance = nullptr;
 }
 
 void UTextureDynamicIcon::UpdatePreview() {

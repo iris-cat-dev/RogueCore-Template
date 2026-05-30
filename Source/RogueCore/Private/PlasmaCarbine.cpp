@@ -5,12 +5,14 @@ APlasmaCarbine::APlasmaCarbine(const FObjectInitializer& ObjectInitializer) : Su
     this->RemoveShieldOnOverheat = false;
     this->RemoveShieldOnReload = false;
     this->HeatEffectsThreshold = 50.00f;
-    this->FP_CharacterOverheatEndMontage = NULL;
-    this->TP_CharacterOverheatEndMontage = NULL;
-    this->WPN_ItemOverheatEndMontage = NULL;
-    this->FP_CharacterReloadEndMontage = NULL;
-    this->TP_CharacterReloadEndMontage = NULL;
-    this->WPN_ItemReloadEndMontage = NULL;
+    this->FP_CharacterOverheatEndMontage = nullptr;
+    this->TP_CharacterOverheatEndMontage = nullptr;
+    this->WPN_ItemOverheatEndMontage = nullptr;
+    this->FP_CharacterReloadEndMontage = nullptr;
+    this->TP_CharacterReloadEndMontage = nullptr;
+    this->WPN_ItemReloadEndMontage = nullptr;
+    this->OverheatCharacterEndMontage = nullptr;
+    this->OverheatItemEndMontage = nullptr;
 }
 
 void APlasmaCarbine::ApplyShieldDamage_Implementation() {

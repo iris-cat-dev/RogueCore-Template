@@ -1,7 +1,7 @@
 #include "GeneratedRunsForBiome.h"
 
 FGeneratedRunsForBiome::FGeneratedRunsForBiome() {
-    this->Biome = NULL;
-    this->PlanetZone = NULL;
+    this->Biome = nullptr;
+    this->PlanetZone = nullptr;
 }
 

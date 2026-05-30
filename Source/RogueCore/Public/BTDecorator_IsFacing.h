@@ -6,12 +6,13 @@
 UCLASS(Blueprintable)
 class UBTDecorator_IsFacing : public UBTDecorator_BlackboardBase {
     GENERATED_BODY()
-    
-
 public:
-
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float MaxAngle;
     
+public:
     UBTDecorator_IsFacing();
+
 };
+

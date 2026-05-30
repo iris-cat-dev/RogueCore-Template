@@ -7,3 +7,4 @@ enum class EKeyBindingSlot : uint8 {
     Primary,
     Secondary,
 };
+

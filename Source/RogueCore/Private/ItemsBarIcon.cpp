@@ -2,9 +2,9 @@
 
 UItemsBarIcon::UItemsBarIcon() : UUserWidget(FObjectInitializer::Get()) {
     this->Selected = false;
-    this->ItemBar = NULL;
-    this->Character = NULL;
-    this->Item = NULL;
+    this->ItemBar = nullptr;
+    this->Character = nullptr;
+    this->Item = nullptr;
     this->Index = 0;
 }
 

@@ -5,5 +5,6 @@ FPlayerControllerLevelEndState::FPlayerControllerLevelEndState() {
     this->IsMissionAborted = false;
     this->IsAllDwarvesDown = false;
     this->NumberOfCompletedStages = 0;
+    this->RandomSeedForEndSequence = 0;
 }
 

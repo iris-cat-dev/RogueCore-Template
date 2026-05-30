@@ -11,27 +11,41 @@ class UEnemyHealthComponent;
 class UMaterialInterface;
 class UMeshComponent;
 class USkeletalMeshComponent;
+
 UCLASS(Blueprintable)
 class AEnemyDeepPathfinderCharacter : public ADeepPathfinderCharacter, public INetMontageAble {
     GENERATED_BODY()
-    
-
 public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UEnemyHealthComponent* HealthComponent;
-
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, ReplicatedUsing=OnRep_QueuedMontage, meta=(AllowPrivateAccess=true))
     FQueuedMontage QueuedMontage;
-
- 
+    
+public:
     AEnemyDeepPathfinderCharacter(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+
     UFUNCTION(BlueprintCallable, BlueprintPure=false)
     void SwitchToDynamicBaseShader(UMaterialInterface* baseShader, UMeshComponent* MeshComponent) const;
+    
+protected:
     UFUNCTION(BlueprintCallable)
     void OnRep_QueuedMontage();
+    
+
     // Fix for true pure virtual functions not being implemented
-    float QueueMontage(UAnimMontage* Montage) override PURE_VIRTUAL(QueueMontage, return 0.0f;);
-    USkeletalMeshComponent* GetSkeletalMesh() const override PURE_VIRTUAL(GetSkeletalMesh, return NULL;);
-    UAnimInstance* GetAnimInstance() const override PURE_VIRTUAL(GetAnimInstance, return NULL;);
+public:
+    UFUNCTION(BlueprintCallable)
+    virtual float QueueMontage(UAnimMontage* Montage) override PURE_VIRTUAL(QueueMontage, return 0.0f;);
+    
+    UFUNCTION(BlueprintCallable)
+    virtual USkeletalMeshComponent* GetSkeletalMesh() const override PURE_VIRTUAL(GetSkeletalMesh, return NULL;);
+    
+    UFUNCTION(BlueprintCallable)
+    virtual UAnimInstance* GetAnimInstance() const override PURE_VIRTUAL(GetAnimInstance, return NULL;);
+    
 };
+

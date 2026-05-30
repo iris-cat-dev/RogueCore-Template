@@ -5,6 +5,6 @@
 UENUM(BlueprintType)
 enum class EMediaPlayerState : uint8 {
     Stopped,
-    Opening,
     Playing,
 };
+

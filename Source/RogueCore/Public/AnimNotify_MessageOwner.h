@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Runtime/Engine/Classes/Animation/AnimNotifies/AnimNotify.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=AnimNotify -FallbackName=AnimNotify
 #include "AnimNotify_MessageOwner.generated.h"
 
 UCLASS(Blueprintable, CollapseCategories, MinimalAPI)
@@ -11,4 +11,6 @@ public:
     FName Message;
     
     UAnimNotify_MessageOwner();
+
 };
+

@@ -8,7 +8,12 @@ class UTemphealthBonus : public UDamageBonusBase {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float amount;
+    FString Name;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float Amount;
     
     UTemphealthBonus();
+
 };
+

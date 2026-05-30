@@ -13,3 +13,4 @@ enum class EEscortHammeState : uint8 {
     Complete,
     NUM,
 };
+

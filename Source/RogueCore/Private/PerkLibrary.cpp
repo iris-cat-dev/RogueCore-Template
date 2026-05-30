@@ -52,7 +52,7 @@ TArray<UPerkAsset*> UPerkLibrary::GetActivePerks(const AActor* Character) {
     return TArray<UPerkAsset*>();
 }
 
-TArray<UPerkAsset*> UPerkLibrary::GetActiveEnhancementPerks(const AActor* Character) {
+TArray<UPerkAsset*> UPerkLibrary::GetActiveEnhancements(const AActor* Character) {
     return TArray<UPerkAsset*>();
 }
 

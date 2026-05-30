@@ -1,7 +1,7 @@
 #include "RestrictedResourceBank.h"
 
 URestrictedResourceBank::URestrictedResourceBank(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->RequiredResource = NULL;
+    this->RequiredResource = nullptr;
 }
 
 

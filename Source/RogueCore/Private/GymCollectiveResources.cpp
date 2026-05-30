@@ -1,6 +1,6 @@
 #include "GymCollectiveResources.h"
 
 FGymCollectiveResources::FGymCollectiveResources() {
-    this->Resource = NULL;
+    this->Resource = nullptr;
 }
 

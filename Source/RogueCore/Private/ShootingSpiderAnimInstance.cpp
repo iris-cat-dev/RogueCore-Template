@@ -1,8 +1,6 @@
 #include "ShootingSpiderAnimInstance.h"
 
-UShootingSpiderAnimInstance::UShootingSpiderAnimInstance(const FObjectInitializer& ObjectInitializer)
-    : Super(ObjectInitializer)
-{
+UShootingSpiderAnimInstance::UShootingSpiderAnimInstance() {
     this->LookAtBlend = 0.00f;
     this->CheckCurve = true;
 }

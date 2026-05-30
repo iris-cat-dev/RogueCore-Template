@@ -8,17 +8,24 @@
 class APawn;
 class UEnemyDescriptor;
 class UStatusEffect;
+
 UCLASS(Blueprintable)
 class UStatusEffectMissionBP : public UStageLogic {
     GENERATED_BODY()
-    
-
 public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FGameplayTagQuery EnemyQuery;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UStatusEffect> StatusEffect;
+    
+public:
     UStatusEffectMissionBP();
+
+protected:
     UFUNCTION(BlueprintCallable)
     void OnEnemySpawned(APawn* Pawn, UEnemyDescriptor* descriptor);
+    
 };
+

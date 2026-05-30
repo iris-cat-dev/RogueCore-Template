@@ -1,5 +1,5 @@
 #include "DroppableOutpost.h"
-#include "Components/SceneComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
 #include "AutoCarverComponent.h"
 #include "Net/UnrealNetwork.h"
 #include "Templates/SubclassOf.h"
@@ -11,7 +11,7 @@ ADroppableOutpost::ADroppableOutpost(const FObjectInitializer& ObjectInitializer
     this->RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("RootComponent"));
     this->DropHeight = 3500.00f;
     this->AutoCarver = CreateDefaultSubobject<UAutoCarverComponent>(TEXT("AutoCarver"));
-    this->DepartCurve = NULL;
+    this->DepartCurve = nullptr;
     this->CarverRotationSpeed = 100.00f;
     this->DepartureTime = -1.00f;
     this->State = EDroppableOutpostState::WaitingToDrop;

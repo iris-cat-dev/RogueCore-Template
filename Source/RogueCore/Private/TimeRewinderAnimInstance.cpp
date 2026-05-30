@@ -12,10 +12,4 @@ UTimeRewinderAnimInstance::UTimeRewinderAnimInstance() {
 void UTimeRewinderAnimInstance::Tick() {
 }
 
-void UTimeRewinderAnimInstance::OnUnequipped() {
-}
-
-void UTimeRewinderAnimInstance::OnEquipped() {
-}
-
 

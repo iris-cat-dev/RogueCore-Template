@@ -1,6 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Transform -FallbackName=Transform
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "DelegateDelegate.h"
 #include "EEscortExtractorState.h"
 #include "EEscortMissionState.h"
@@ -24,116 +25,154 @@ class UOutlineComponent;
 class URestrictedResourceBank;
 class USimpleObjectInfoComponent;
 class USkeletalMeshComponent;
+
 UCLASS(Blueprintable)
 class ROGUECORE_API AEscortMule : public AFSDPawn, public ITriggerAI {
     GENERATED_BODY()
-    
-
 public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FMuleActivatedSignature OnMuleActivated;
-
+    
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSpeedChangedSignature OnSpeedChanged;
-
+    
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FIntDelegate OnFullCanistersChanged;
-
+    
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FGaragePathSignature OnExitGaragePathSet;
-
+    
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FFloatDelegate Cheat_SetMuleSpeed;
-
+    
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FDelegate Cheat_JumpToNextPhase;
-
+    
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UFriendlyHealthComponent* HealthComponent;
-
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USimpleObjectInfoComponent* ObjectInfo;
-
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     URestrictedResourceBank* ResourceBank;
-
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FTransform TargetTransform;
-
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FTransform PreviousTransform;
-
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, ReplicatedUsing=OnObjectiveStateChanged, meta=(AllowPrivateAccess=true))
     EEscortMissionState State;
-
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UEscortObjective* EscortObjective;
-
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, ReplicatedUsing=OnRep_MovementState, meta=(AllowPrivateAccess=true))
     FEscortMuleMovementState MovementState;
-
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, ReplicatedUsing=OnRep_SpeedModifier, meta=(AllowPrivateAccess=true))
     float SpeedModifier;
-
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USkeletalMeshComponent* mesh;
-
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UOutlineComponent* OutlineComponent;
-
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float HealPerTickNormal;
-
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float HealPerTickUnderAttack;
-
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, Transient, meta=(AllowPrivateAccess=true))
     bool CannisterVisible_Left;
-
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, Transient, meta=(AllowPrivateAccess=true))
     bool CannisterVisible_Right;
-
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, meta=(AllowPrivateAccess=true))
     FVector NextStop;
-
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_IsCarvingTunnel, meta=(AllowPrivateAccess=true))
     bool IsCarvingTunnel;
-
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, meta=(AllowPrivateAccess=true))
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     int32 FullCanisters;
-
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_ExtractorSlots, meta=(AllowPrivateAccess=true))
     TArray<FEscortMuleExtractorSlot> ExtractorSlots;
-
- 
+    
+public:
     AEscortMule(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+
+protected:
     UFUNCTION(BlueprintCallable)
-    bool TryHeal(APlayerCharacter* User, float amount);
+    bool TryHeal(APlayerCharacter* User, float Amount);
+    
+public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void SetTargetTransform(FTransform InTransform);
+    
+    UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void SetSpeedModifier(float inSpeedModifier);
+    
+    UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void SetFullExtracterAttached(UInstantUsable* usable);
+    
+    UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void SetExtractorDetached(UInstantUsable* usable);
+    
+    UFUNCTION(BlueprintCallable)
     void SetExitGaragePath(const TArray<FVector> Path);
+    
+    UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void ResetExtractors();
+    
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void PathIsReady();
-    UFUNCTION()
+    
+protected:
+    UFUNCTION(BlueprintCallable)
     void OnRep_SpeedModifier();
-    UFUNCTION()
+    
+    UFUNCTION(BlueprintCallable)
     void OnRep_MovementState();
-    UFUNCTION()
+    
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnRep_IsCarvingTunnel();
-    UFUNCTION()
+    
+    UFUNCTION(BlueprintCallable)
     void OnRep_ExtractorSlots();
-    UFUNCTION()
+    
+public:
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnObjectiveStateChanged(EEscortMissionState oldState);
+    
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnExtractorSlotChanged(const FEscortMuleExtractorSlot& Slot, int32 Index);
+    
+protected:
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnExtractorDetached(AExtractorItem* Item);
+    
+public:
+    UFUNCTION(BlueprintCallable)
     void ObjectiveStateChange(EEscortMissionState NewState);
+    
     UFUNCTION(BlueprintCallable, BlueprintPure)
     EEscortExtractorState GetExtractorState(UInstantUsable* usable) const;
+    
+protected:
+    UFUNCTION(BlueprintCallable)
     void ActivateMule();
+    
+
     // Fix for true pure virtual functions not being implemented
 };
+

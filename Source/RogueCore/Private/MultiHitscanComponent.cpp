@@ -6,6 +6,9 @@ UMultiHitscanComponent::UMultiHitscanComponent(const FObjectInitializer& ObjectI
     this->CountMultiHits = false;
 }
 
+void UMultiHitscanComponent::Server_ShowHit_Implementation(const FMultiHitScanHits& hitResults) {
+}
+
 void UMultiHitscanComponent::Server_RegisterHit_Implementation(const FMultiHitScanHits& hitResults, int32 Clip) {
 }
 

@@ -1,7 +1,7 @@
 #include "PlanetShowroomController.h"
 
 UPlanetShowroomController::UPlanetShowroomController(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->PlanetInstance = NULL;
+    this->PlanetInstance = nullptr;
     this->DragSmoothingSpeed = 2.00f;
     this->PointTargetSmoothingSpeed = 3.00f;
     this->AccumulatedDeltaPitch = 0.00f;

@@ -1,7 +1,7 @@
 #include "IntelChallengeUseAccessCondition.h"
 
 UIntelChallengeUseAccessCondition::UIntelChallengeUseAccessCondition() {
-    this->RequiredAccess = NULL;
+    this->RequiredAccess = nullptr;
     this->RequiredUseAmount = 1;
 }
 

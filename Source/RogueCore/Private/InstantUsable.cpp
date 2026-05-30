@@ -4,7 +4,7 @@
 UInstantUsable::UInstantUsable(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->SwitchToUsingState = false;
     this->bShowUsingUI = true;
-    this->AudioCompletedUse = NULL;
+    this->AudioCompletedUse = nullptr;
     this->UseDelayedAudio = false;
     this->AudioDelay = 0.00f;
     this->RefreshDelayOnNewUse = true;

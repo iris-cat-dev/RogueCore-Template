@@ -1,7 +1,7 @@
 #include "NotificationSubSystem.h"
 
 UNotificationSubSystem::UNotificationSubSystem() {
-    this->CampaignNotification = NULL;
+    this->CampaignNotification = nullptr;
 }
 
 bool UNotificationSubSystem::GetNextSpaceRigNotification(FSpaceRigNotification& NextNotification) {

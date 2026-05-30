@@ -1,7 +1,7 @@
 #include "ShoutStatusEffectItem.h"
 
 UShoutStatusEffectItem::UShoutStatusEffectItem() {
-    this->BeginShout = NULL;
+    this->BeginShout = nullptr;
 }
 
 

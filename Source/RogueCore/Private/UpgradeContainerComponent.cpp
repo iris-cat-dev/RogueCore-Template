@@ -16,12 +16,14 @@ UUpgradeContainerComponent::UUpgradeContainerComponent(const FObjectInitializer&
     this->NumericalDamageUpgrades[11] = 0.00f;
     this->NumericalDamageUpgrades[12] = 0.00f;
     this->NumericalDamageUpgrades[13] = 0.00f;
-    this->NumericalDamageUpgrades[14] = 0.00f;
     this->NumericalUpgrades[0] = 0.00f;
     this->NumericalUpgrades[1] = 0.00f;
     this->NumericalUpgrades[2] = 0.00f;
     this->NumericalUpgrades[3] = 0.00f;
     this->NumericalUpgrades[4] = 0.00f;
+}
+
+void UUpgradeContainerComponent::RemoveMiscUpgrade(AActor* Target, UMiscUpgradeKey* Key, float Value) {
 }
 
 void UUpgradeContainerComponent::RemoveFloatUpgrade(AActor* Target, EDamageUpgrade upgradeType, float Value) {
@@ -31,6 +33,13 @@ void UUpgradeContainerComponent::RemoveDynamicUpgrade(AActor* Target, UDamageBon
 }
 
 void UUpgradeContainerComponent::RemoveDamageParamBonus(AActor* Target, UDamageParamBonus* DamageBonus) {
+}
+
+float UUpgradeContainerComponent::GetMiscUpgradeValue(AActor* Target, UMiscUpgradeKey* Key) {
+    return 0.0f;
+}
+
+void UUpgradeContainerComponent::ChangeMiscUpgrade(AActor* Target, UMiscUpgradeKey* Key, float Value) {
 }
 
 void UUpgradeContainerComponent::AddFloatUpgrade(AActor* Target, EDamageUpgrade upgradeType, float Value) {
@@ -45,6 +54,7 @@ void UUpgradeContainerComponent::AddDamageParamBonus(AActor* Target, UDamagePara
 void UUpgradeContainerComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const {
     Super::GetLifetimeReplicatedProps(OutLifetimeProps);
     
+    DOREPLIFETIME(UUpgradeContainerComponent, MiscUpgrades);
     DOREPLIFETIME(UUpgradeContainerComponent, DamageBonusUpgrades);
     DOREPLIFETIME(UUpgradeContainerComponent, DamageParamBonuses);
     DOREPLIFETIME(UUpgradeContainerComponent, NumericalDamageUpgrades);

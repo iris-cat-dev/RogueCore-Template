@@ -8,3 +8,4 @@ struct FDataTerminalDeviousDataType {
 public:
     ROGUECORE_API FDataTerminalDeviousDataType();
 };
+

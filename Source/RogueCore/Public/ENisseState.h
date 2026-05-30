@@ -9,3 +9,4 @@ enum class ENisseState : uint8 {
     Running,
     Frozen,
 };
+

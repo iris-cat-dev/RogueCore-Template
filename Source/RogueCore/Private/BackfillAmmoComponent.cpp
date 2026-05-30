@@ -2,7 +2,7 @@
 
 UBackfillAmmoComponent::UBackfillAmmoComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->BreakOnFire = 0.00f;
-    this->amount = 1;
+    this->Amount = 1;
 }
 
 void UBackfillAmmoComponent::OnWeaponFired() {

@@ -9,3 +9,4 @@ enum class EIntelObjectiveState : uint8 {
     Active,
     Complete,
 };
+

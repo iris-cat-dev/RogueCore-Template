@@ -4,6 +4,7 @@
 #include "AfflictionEntry.generated.h"
 
 class UPawnAffliction;
+
 USTRUCT(BlueprintType)
 struct FAfflictionEntry : public FFastArraySerializerItem {
     GENERATED_BODY()
@@ -13,3 +14,4 @@ public:
     
     ROGUECORE_API FAfflictionEntry();
 };
+

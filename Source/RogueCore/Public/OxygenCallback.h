@@ -12,3 +12,4 @@ public:
     
     ROGUECORE_API FOxygenCallback();
 };
+

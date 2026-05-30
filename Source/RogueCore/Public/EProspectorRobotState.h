@@ -9,3 +9,4 @@ enum class EProspectorRobotState : uint8 {
     Sampling,
     Fleeing,
 };
+

@@ -3,6 +3,7 @@
 #include "DebrisWhenCarving.generated.h"
 
 class UDebrisInstances;
+
 USTRUCT(BlueprintType)
 struct FDebrisWhenCarving {
     GENERATED_BODY()
@@ -12,3 +13,4 @@ public:
     
     ROGUECORE_API FDebrisWhenCarving();
 };
+

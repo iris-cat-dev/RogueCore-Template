@@ -16,18 +16,6 @@ void UBXEGameStateComponent::OnRep_RunStatistics() {
 void UBXEGameStateComponent::OnRep_RunState() {
 }
 
-void UBXEGameStateComponent::OnFadeOutCompleted() {
-}
-
-void UBXEGameStateComponent::FadeOutAllPlayersInSloMotion() {
-}
-
-void UBXEGameStateComponent::All_FadeOutLocalPlayer_Implementation() {
-}
-
-void UBXEGameStateComponent::All_FadeInLocalPlayer_Implementation() {
-}
-
 void UBXEGameStateComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const {
     Super::GetLifetimeReplicatedProps(OutLifetimeProps);
     

@@ -8,4 +8,6 @@ class UFalseDamageCondition : public UDamageCondition {
     GENERATED_BODY()
 public:
     UFalseDamageCondition();
+
 };
+

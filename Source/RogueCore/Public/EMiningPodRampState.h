@@ -9,3 +9,4 @@ enum class EMiningPodRampState : uint8 {
     Open,
     Closing,
 };
+

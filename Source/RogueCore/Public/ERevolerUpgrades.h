@@ -6,3 +6,4 @@ UENUM(BlueprintType)
 enum class ERevolerUpgrades : uint8 {
     OnKillFearFactor,
 };
+

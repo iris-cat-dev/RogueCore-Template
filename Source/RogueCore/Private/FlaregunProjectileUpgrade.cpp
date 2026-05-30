@@ -3,7 +3,7 @@
 
 UFlaregunProjectileUpgrade::UFlaregunProjectileUpgrade() {
     this->upgradeType = EFlaregunProjectileUpgrades::Duration;
-    this->ProjectileClass = NULL;
+    this->ProjectileClass = nullptr;
 }
 
 FUpgradeValues UFlaregunProjectileUpgrade::GetUpgradedValue(TSubclassOf<AActor> Item, TSubclassOf<AActor> upgradedItem, AFSDPlayerState* Player, EFlaregunProjectileUpgrades NewUpgradeType) {

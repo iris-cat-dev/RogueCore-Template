@@ -6,3 +6,4 @@ UENUM(BlueprintType)
 enum class EMultiHitscanUpgradeType : uint8 {
     BulletsPerShot,
 };
+

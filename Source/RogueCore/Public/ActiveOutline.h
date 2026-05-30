@@ -8,3 +8,4 @@ struct FActiveOutline {
 public:
     ROGUECORE_API FActiveOutline();
 };
+

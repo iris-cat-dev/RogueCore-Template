@@ -8,4 +8,6 @@ class UBeastMasterUseSphere : public USphereComponent {
     GENERATED_BODY()
 public:
     UBeastMasterUseSphere(const FObjectInitializer& ObjectInitializer);
+
 };
+

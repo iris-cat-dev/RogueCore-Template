@@ -7,3 +7,4 @@ enum class EDamageBonusApplicationType : uint8 {
     OnTarget,
     OnEquippedItems,
 };
+

@@ -8,3 +8,4 @@ struct FFormationID {
 public:
     ROGUECORE_API FFormationID();
 };
+

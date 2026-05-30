@@ -8,4 +8,6 @@ class UDecorationSplineComponent : public USplineComponent {
     GENERATED_BODY()
 public:
     UDecorationSplineComponent(const FObjectInitializer& ObjectInitializer);
+
 };
+

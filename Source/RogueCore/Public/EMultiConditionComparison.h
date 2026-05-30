@@ -7,3 +7,4 @@ enum class EMultiConditionComparison : uint8 {
     Or,
     And,
 };
+

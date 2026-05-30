@@ -6,11 +6,12 @@
 USTRUCT(BlueprintType)
 struct FGeneratedInstantCarvers {
     GENERATED_BODY()
-    
-
 public:
+private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<FLevelCarverPass> LevelCarverPasses;
     
+public:
     ROGUECORE_API FGeneratedInstantCarvers();
 };
+

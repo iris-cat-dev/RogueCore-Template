@@ -7,3 +7,4 @@ enum class ECriticalItemPass : uint8 {
     LargePass,
     SmallPass,
 };
+

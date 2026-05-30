@@ -1,8 +1,6 @@
 #include "SharkAnimInstance.h"
 
-USharkAnimInstance::USharkAnimInstance(const FObjectInitializer& ObjectInitializer)
-    : Super(ObjectInitializer)
-{
+USharkAnimInstance::USharkAnimInstance() {
     this->SharkState = ESharkEnemyState::Idle;
     this->IsCloseToGround = false;
     this->AttackConnected = false;

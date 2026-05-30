@@ -1,7 +1,7 @@
 #include "SawedOffShotgun.h"
 
 ASawedOffShotgun::ASawedOffShotgun(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->ShockwaveDamage = NULL;
+    this->ShockwaveDamage = nullptr;
     this->FearFactorOnFire = 0.00f;
     this->FearFactorOnFireRadius = 500.00f;
     this->ShotgunJumpEnabled = false;

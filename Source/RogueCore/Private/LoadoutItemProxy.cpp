@@ -2,7 +2,7 @@
 #include "Templates/SubclassOf.h"
 
 ALoadoutItemProxy::ALoadoutItemProxy(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->AnimationSet = NULL;
+    this->AnimationSet = nullptr;
 }
 
 TSubclassOf<AItem> ALoadoutItemProxy::GetLoadoutItemFromClass(TSubclassOf<AActor> ActorClass) {

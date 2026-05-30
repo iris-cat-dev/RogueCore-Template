@@ -6,11 +6,13 @@
 UCLASS(Blueprintable, EditInlineNew)
 class USeasonTokenReward : public UReward {
     GENERATED_BODY()
-    
-
 public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    int32 amount;
+    int32 Amount;
     
+public:
     USeasonTokenReward();
+
 };
+

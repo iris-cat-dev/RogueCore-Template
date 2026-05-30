@@ -2,7 +2,7 @@
 
 UPerkEffectComponent::UPerkEffectComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->FloatValue = 0.00f;
-    this->PlayerCharacter = NULL;
+    this->PlayerCharacter = nullptr;
 }
 
 

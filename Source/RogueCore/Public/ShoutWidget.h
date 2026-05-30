@@ -4,18 +4,27 @@
 #include "ShoutWidget.generated.h"
 
 class APlayerCharacter;
+
 UCLASS(Abstract, Blueprintable, EditInlineNew)
 class UShoutWidget : public UUserWidget {
     GENERATED_BODY()
-    
-
 public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<APlayerCharacter> Sender;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FText Text;
-    float Duration;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    float duration;
+    
+public:
     UShoutWidget();
+
+protected:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnShout();
+    
 };
+

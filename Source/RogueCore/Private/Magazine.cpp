@@ -1,7 +1,7 @@
 #include "Magazine.h"
 
 AMagazine::AMagazine(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->ImpactGroundSound = NULL;
+    this->ImpactGroundSound = nullptr;
 }
 
 

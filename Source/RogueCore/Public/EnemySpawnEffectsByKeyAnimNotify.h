@@ -1,19 +1,26 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Runtime/Engine/Classes/Animation/AnimNotifies/AnimNotify.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=AnimNotify -FallbackName=AnimNotify
 #include "EnemySpawnEffectsByKeyAnimNotify.generated.h"
 
 class UEnemySpawnEffectsKey;
+
 UCLASS(Blueprintable, CollapseCategories, MinimalAPI)
 class UEnemySpawnEffectsByKeyAnimNotify : public UAnimNotify {
     GENERATED_BODY()
-    
-
 public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UEnemySpawnEffectsKey* EffectKey;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 Attached: 1;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName SocketName;
+    
+public:
     UEnemySpawnEffectsByKeyAnimNotify();
+
 };
+

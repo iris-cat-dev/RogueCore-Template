@@ -1,6 +1,7 @@
 #include "ItemRefundResourceItem.h"
 
 FItemRefundResourceItem::FItemRefundResourceItem() {
-    this->amount = 0.00f;
+    this->Amount = 0.00f;
+    this->Name = FString();
 }
 

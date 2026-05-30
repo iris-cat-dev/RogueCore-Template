@@ -1,6 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=LinearColor -FallbackName=LinearColor
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "CarriableChangedDelegateDelegate.h"
 #include "EItemCategory.h"
 #include "FlareProductionDelegateDelegate.h"
@@ -76,7 +77,7 @@ public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, DuplicateTransient, EditAnywhere, meta=(AllowPrivateAccess=true))
     FCarriableChangedDelegate OnCarriableChangedEvent;
     
-public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UInventoryList* InventoryList;
     
@@ -155,15 +156,21 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_ItemSlots, meta=(AllowPrivateAccess=true))
     TArray<FItemSlot> ItemSlots;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool SpawnAmmoBagOnInit;
+    
 public:
     UInventoryComponent(const FObjectInitializer& ObjectInitializer);
 
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
 
     UFUNCTION(BlueprintCallable)
+    void ThrowItem(FVector Force, bool PlayMontage);
+    
+    UFUNCTION(BlueprintCallable)
     void SwapItems(AItem* A, AItem* B);
     
-public:
+protected:
     UFUNCTION(BlueprintCallable, Reliable, Server)
     void Server_ThrowItem(AActor* Item, FVector Force, bool PlayMontage);
     
@@ -174,7 +181,7 @@ public:
     UFUNCTION(BlueprintCallable, Reliable, Server)
     void Server_SwapItems(AItem* A, AItem* B);
     
-public:
+protected:
     UFUNCTION(BlueprintCallable, Reliable, Server)
     void Server_SetSlotItemId(FItemSlotIndex Slot, FInventoryId ID);
     
@@ -194,7 +201,7 @@ public:
     UFUNCTION(BlueprintCallable)
     AItem* PickupItem(TSubclassOf<AItem> itemClass);
     
-public:
+protected:
     UFUNCTION(BlueprintCallable)
     void OnRep_ItemSlots();
     
@@ -211,8 +218,11 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool HasDrink() const;
     
-    UFUNCTION(BlueprintCallable)
-    AItem* GetSlotItem(const FItemSlotIndex& Slot);
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    AItem* GetSlotItem(const FItemSlotIndex& Slot) const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    static int32 GetSlotCount();
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     ARecallableSentryGunItem* GetRecallableSentryGunItem() const;
@@ -236,10 +246,19 @@ public:
     AItem* GetFirstItem() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    TArray<int32> GetEquippedSlotIndices(bool InIncludeGrenades, bool InIncludeAmmoBags) const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UItemID* GetEquippedItemID() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     AItem* GetEquippedItem() const;
     
-    UFUNCTION(BlueprintCallable)
-    AItem* GetCurrentItemInSlot(int32 SlotIndex);
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    AItem* GetCurrentItemInSlot(int32 SlotIndex) const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UItemID* GetCurrentItemIDInSlot(int32 SlotIndex) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     AActor* GetCarriedItem() const;
@@ -262,7 +281,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void DropPickedupItem();
     
-public:
+protected:
     UFUNCTION(BlueprintCallable, Client, Reliable)
     void Client_SetSlotItemId(FItemSlotIndex Slot, FInventoryId ID);
     
@@ -273,7 +292,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void AnimationNotify1();
     
-public:
+protected:
     UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void All_PlayThrowMontage(AActor* Item);
     
@@ -285,5 +304,4 @@ public:
     void AddItemClass(TSubclassOf<AItem> itemClass);
     
 };
-
 

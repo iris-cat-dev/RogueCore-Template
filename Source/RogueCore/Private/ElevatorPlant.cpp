@@ -5,20 +5,20 @@ AElevatorPlant::AElevatorPlant(const FObjectInitializer& ObjectInitializer) : Su
     this->bReplicates = true;
     const FProperty* p_RemoteRole = GetClass()->FindPropertyByName("RemoteRole");
     (*p_RemoteRole->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(this)) = ROLE_SimulatedProxy;
-    this->MovingSoundComponent = NULL;
-    this->GrabSound = NULL;
+    this->MovingSoundComponent = nullptr;
+    this->GrabSound = nullptr;
     this->BaseTangentLength = 0.00f;
-    this->CSplineMesh = NULL;
-    this->CVineBase = NULL;
-    this->CVineLeaf = NULL;
+    this->CSplineMesh = nullptr;
+    this->CVineBase = nullptr;
+    this->CVineLeaf = nullptr;
     this->InitialBaseTangentLength = 0.00f;
     this->LeafLocationNoiseSize = 0.00f;
     this->VineMovementAlpha = 0.50f;
     this->IsMoving = false;
     this->IsOpen = false;
     this->Extend = false;
-    this->DipOffsetCurve = NULL;
-    this->LocationLerpCurve = NULL;
+    this->DipOffsetCurve = nullptr;
+    this->LocationLerpCurve = nullptr;
 }
 
 void AElevatorPlant::SetLeafNoiseRotator(const FRotator& aRotator) {

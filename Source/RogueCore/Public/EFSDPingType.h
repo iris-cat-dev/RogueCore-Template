@@ -7,3 +7,4 @@ enum class EFSDPingType : uint8 {
     EaseOut,
     Bounce,
 };
+

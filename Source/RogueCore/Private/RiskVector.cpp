@@ -1,12 +1,12 @@
 #include "RiskVector.h"
 
 URiskVector::URiskVector() {
-    this->OptionalExtraObjective = NULL;
+    this->OptionalExtraObjective = nullptr;
     this->DoubleWarning = true;
     this->ShowInUserInterface = true;
-    this->Icon = NULL;
-    this->CampaignIcon = NULL;
-    this->Header = NULL;
+    this->Icon = nullptr;
+    this->CampaignIcon = nullptr;
+    this->Header = nullptr;
     this->VoteOptionActionType = EVoteOptionActionType::NEGATIVE;
     this->bVoteRepeatable = false;
     this->bRunPersistent = true;

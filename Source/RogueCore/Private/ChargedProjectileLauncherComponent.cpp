@@ -2,8 +2,8 @@
 #include "Templates/SubclassOf.h"
 
 UChargedProjectileLauncherComponent::UChargedProjectileLauncherComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->NormalProjectileClass = NULL;
-    this->ChargedProjectileClass = NULL;
+    this->NormalProjectileClass = nullptr;
+    this->ChargedProjectileClass = nullptr;
     this->ProjectileChangeChargeValue = 1.00f;
 }
 

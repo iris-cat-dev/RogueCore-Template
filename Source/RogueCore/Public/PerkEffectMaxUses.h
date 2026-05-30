@@ -8,4 +8,6 @@ class UPerkEffectMaxUses : public UPerkEffect {
     GENERATED_BODY()
 public:
     UPerkEffectMaxUses();
+
 };
+

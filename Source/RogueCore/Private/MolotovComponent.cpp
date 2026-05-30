@@ -1,8 +1,8 @@
 #include "MolotovComponent.h"
 
 UMolotovComponent::UMolotovComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->Positioning = NULL;
-    this->BurningFlamesClass = NULL;
+    this->Positioning = nullptr;
+    this->BurningFlamesClass = nullptr;
     this->Radius = 500.00f;
 }
 

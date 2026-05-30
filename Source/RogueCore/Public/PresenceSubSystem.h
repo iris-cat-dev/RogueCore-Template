@@ -1,9 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Subsystems/GameInstanceSubsystem.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=GameInstanceSubsystem -FallbackName=GameInstanceSubsystem
 #include "PresenceSubSystem.generated.h"
 
 class UDiscordWrapper;
+
 UCLASS(Blueprintable)
 class UPresenceSubSystem : public UGameInstanceSubsystem {
     GENERATED_BODY()
@@ -12,4 +13,6 @@ public:
     UDiscordWrapper* DiscordWI;
     
     UPresenceSubSystem();
+
 };
+

@@ -8,3 +8,4 @@ enum EAllyQuerySorting {
     DistanceSorted,
     Random,
 };
+

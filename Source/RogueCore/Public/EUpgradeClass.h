@@ -12,3 +12,4 @@ enum class EUpgradeClass : uint8 {
     Pickaxe,
     Class_Bosco = 10,
 };
+

@@ -8,4 +8,6 @@ class UJettyBootsArcadeWidget : public UUserWidget {
     GENERATED_BODY()
 public:
     UJettyBootsArcadeWidget();
+
 };
+

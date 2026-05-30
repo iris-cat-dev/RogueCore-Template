@@ -12,4 +12,6 @@ public:
     EDamageUpgrade Type;
     
     UPerkEffectNumericDamageUpgrade();
+
 };
+

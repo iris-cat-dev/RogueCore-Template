@@ -2,20 +2,21 @@
 #include "CoreMinimal.h"
 #include "RewindWeaponState.generated.h"
 
-class AItem; 
+class AItem;
 
 USTRUCT(BlueprintType)
-struct ROGUECORE_API FRewindWeaponState {
+struct FRewindWeaponState {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    AItem* Weapon; 
-
+    AItem* Weapon;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 Clip;
-
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 Reserve;
-
-    FRewindWeaponState();
+    
+    ROGUECORE_API FRewindWeaponState();
 };
+

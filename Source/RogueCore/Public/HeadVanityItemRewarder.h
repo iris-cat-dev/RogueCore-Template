@@ -8,4 +8,6 @@ class UHeadVanityItemRewarder : public UVanityItemRewarder {
     GENERATED_BODY()
 public:
     UHeadVanityItemRewarder(const FObjectInitializer& ObjectInitializer);
+
 };
+

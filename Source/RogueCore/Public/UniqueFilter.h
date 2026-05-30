@@ -8,4 +8,6 @@ class UUniqueFilter : public UItemUpgradeFilter {
     GENERATED_BODY()
 public:
     UUniqueFilter();
+
 };
+

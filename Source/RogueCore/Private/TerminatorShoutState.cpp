@@ -6,5 +6,6 @@ FTerminatorShoutState::FTerminatorShoutState() {
     this->MinRandomShoutDelay = 0.00f;
     this->Interruptable = false;
     this->PreventSubsequentDuplicate = false;
+    this->Name = FName();
 }
 

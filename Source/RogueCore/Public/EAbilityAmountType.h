@@ -4,7 +4,7 @@
 
 UENUM(BlueprintType)
 enum class EAbilityAmountType : uint8 {
-    Damage,
     Size,
     Lifetime,
 };
+

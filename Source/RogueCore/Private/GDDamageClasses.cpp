@@ -1,6 +1,6 @@
 #include "GDDamageClasses.h"
 
 FGDDamageClasses::FGDDamageClasses() {
-    this->Corrosive = NULL;
+    this->Corrosive = nullptr;
 }
 

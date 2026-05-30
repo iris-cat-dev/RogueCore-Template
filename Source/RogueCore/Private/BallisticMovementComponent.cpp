@@ -11,7 +11,7 @@ UBallisticMovementComponent::UBallisticMovementComponent(const FObjectInitialize
     this->LandingDelay = 0.00f;
     this->bIsMoveActive = false;
     this->AnticipatedTotalAirborneTime = 0.00f;
-    this->Pitch = 0.00f;
+    this->pitch = 0.00f;
 }
 
 void UBallisticMovementComponent::StartMovement_Implementation(FVector InLaunchVelocity, FRotator InTargetRotator, float InFlightTime) {
@@ -38,7 +38,7 @@ void UBallisticMovementComponent::GetLifetimeReplicatedProps(TArray<FLifetimePro
     DOREPLIFETIME(UBallisticMovementComponent, LaunchVelocity);
     DOREPLIFETIME(UBallisticMovementComponent, TargetRotation);
     DOREPLIFETIME(UBallisticMovementComponent, AnticipatedTotalAirborneTime);
-    DOREPLIFETIME(UBallisticMovementComponent, Pitch);
+    DOREPLIFETIME(UBallisticMovementComponent, pitch);
 }
 
 

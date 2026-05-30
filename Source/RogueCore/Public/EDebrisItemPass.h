@@ -5,9 +5,11 @@
 UENUM(BlueprintType)
 enum class EDebrisItemPass : uint8 {
     PrePlacement,
-    Plague,
+    CriticalLarge,
     DebrisLarge,
     Dirt,
     Main,
     PostDebris,
+    Decoration,
 };
+

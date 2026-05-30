@@ -1,7 +1,7 @@
 #include "MicroMissileLauncherAnimInstance.h"
 
 UMicroMissileLauncherAnimInstance::UMicroMissileLauncherAnimInstance() {
-    this->Weapon = NULL;
+    this->Weapon = nullptr;
 }
 
 void UMicroMissileLauncherAnimInstance::OnMontageEndedInternal(UAnimMontage* Montage, bool interrupted) {

@@ -4,6 +4,7 @@
 #include "HealthDamageModifierAction.generated.h"
 
 class UHealthModifier;
+
 UCLASS(Blueprintable, EditInlineNew)
 class UHealthDamageModifierAction : public UBXEUnlockAction {
     GENERATED_BODY()
@@ -12,4 +13,6 @@ public:
     UHealthModifier* Modifier;
     
     UHealthDamageModifierAction();
+
 };
+

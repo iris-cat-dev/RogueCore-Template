@@ -9,5 +9,6 @@ FRoomNode::FRoomNode() {
     this->ResourceMultiplier = 0.00f;
     this->CanBeUsedForRoomBasedDistribution = false;
     this->WeightedResourceAmount = 0.00f;
+    this->position = FVector3f::ZeroVector;
 }
 

@@ -7,9 +7,11 @@ USTRUCT(BlueprintType)
 struct FBXEMissionStats {
     GENERATED_BODY()
 public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FBXEMissionStatRecord> Records;
-
+    
+public:
     ROGUECORE_API FBXEMissionStats();
- 
 };
+

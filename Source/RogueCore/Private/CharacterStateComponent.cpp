@@ -2,11 +2,11 @@
 
 UCharacterStateComponent::UCharacterStateComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->StateId = 0;
-    this->Character = NULL;
-    this->EnterStateShout = NULL;
-    this->ExitStateShout = NULL;
-    this->AttentionShout = NULL;
-    this->PlayerMovement = NULL;
+    this->Character = nullptr;
+    this->EnterStateShout = nullptr;
+    this->ExitStateShout = nullptr;
+    this->AttentionShout = nullptr;
+    this->PlayerMovement = nullptr;
 }
 
 

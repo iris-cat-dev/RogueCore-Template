@@ -1,8 +1,8 @@
 #include "DebrisLocationFinder.h"
 
 ADebrisLocationFinder::ADebrisLocationFinder(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->Positioning = NULL;
-    this->terrainPlacement = NULL;
+    this->Positioning = nullptr;
+    this->terrainPlacement = nullptr;
     this->MinRadius = 0.00f;
     this->MaxRadius = 3000.00f;
     this->MaxExtraRadius = 6000.00f;

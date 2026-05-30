@@ -8,4 +8,6 @@ enum class EChatSenderType : uint8 {
     DeluxUser,
     Developer,
     Streamer,
+    Translator,
 };
+

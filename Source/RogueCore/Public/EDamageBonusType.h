@@ -7,3 +7,4 @@ enum class EDamageBonusType : uint8 {
     Add,
     Mutliply,
 };
+

@@ -9,8 +9,9 @@ UGymActivityStats::UGymActivityStats() {
     this->MontagePlayRateDifficultyIncrease = 0.00f;
     this->MaxMontagePlayRate = -1.00f;
     this->MaxLives = 3;
-    this->DifficultyIncreaseInterval = 1;
+    this->DifficultyIncreaseInterval = 1.00f;
     this->TotalReps = -1;
+    this->CaloriesPerRep = 1;
 }
 
 

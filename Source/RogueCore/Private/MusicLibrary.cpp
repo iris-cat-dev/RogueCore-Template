@@ -1,7 +1,7 @@
 #include "MusicLibrary.h"
 
 UMusicLibrary::UMusicLibrary() {
-    this->Category = NULL;
+    this->Category = nullptr;
 }
 
 

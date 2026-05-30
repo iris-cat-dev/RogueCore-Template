@@ -5,10 +5,10 @@ UGatherGemsObjective::UGatherGemsObjective(const FObjectInitializer& ObjectIniti
     this->GemsRequired = 0;
     this->GemsSpawnedModifier = 1.50f;
     this->GemsCollected = 0;
-    this->GemResource = NULL;
+    this->GemResource = nullptr;
 }
 
-void UGatherGemsObjective::OnResourceChanged(UCappedResource* CappedResource, float amount) {
+void UGatherGemsObjective::OnResourceChanged(UCappedResource* CappedResource, float Amount) {
 }
 
 void UGatherGemsObjective::OnRep_GemsCollected(int32 prevAmount) {

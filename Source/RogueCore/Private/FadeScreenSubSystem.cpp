@@ -1,31 +1,45 @@
 #include "FadeScreenSubSystem.h"
 
 UFadeScreenSubSystem::UFadeScreenSubSystem() {
+    this->GameInstance = nullptr;
 }
 
-bool UFadeScreenSubSystem::IsScreenFadingToBlack(UObject* WorldContext) {
+void UFadeScreenSubSystem::WaitForLoadingScreenToFinish(const FLatentActionInfo LatentInfo, const UObject* WorldContext) {
+}
+
+void UFadeScreenSubSystem::WaitForFade(const FLatentActionInfo LatentInfo, const UObject* WorldContext, const EFadeScreenType FadeType) {
+}
+
+bool UFadeScreenSubSystem::IsScreenFadingToBlack(const UObject* WorldContext) {
     return false;
 }
 
-bool UFadeScreenSubSystem::IsScreenFadingFromBlack(UObject* WorldContext) {
+bool UFadeScreenSubSystem::IsScreenFadingFromBlack(const UObject* WorldContext) {
     return false;
 }
 
-bool UFadeScreenSubSystem::IsScreenFading(UObject* WorldContext) {
+bool UFadeScreenSubSystem::IsScreenFading(const UObject* WorldContext) {
     return false;
 }
 
-float UFadeScreenSubSystem::GetCurrentFadeAmount() const {
+void UFadeScreenSubSystem::FadeScreenToBlackWithWait(const FLatentActionInfo LatentInfo, UObject* WorldContext, float FadeTime, float Delay, bool ResetExistingFades, bool CapFramerate, bool FadeWorldOnly, UTexture* LoadingImage) {
+}
+
+void UFadeScreenSubSystem::FadeScreenToBlackInstantly(const UObject* WorldContext, bool FadeWorldOnly) {
+}
+
+float UFadeScreenSubSystem::FadeScreenToBlack(const UObject* WorldContext, float FadeTime, float Delay, bool ResetExistingFades, bool CapFramerate, bool FadeWorldOnly, UTexture* FadingImage) {
     return 0.0f;
 }
 
-void UFadeScreenSubSystem::FadeScreenToBlack(UObject* WorldContext, float FadeTime, float Delay, bool ResetExistingFades, bool CapFramerate, bool FadeWorldOnly, bool ToSpaceRig, UTexture* LoadingImage) {
+void UFadeScreenSubSystem::FadeScreenFromBlackWithWait(const FLatentActionInfo LatentInfo, UObject* WorldContext, float FadeTime, float Delay, bool ResetExistingFades, bool CapFramerate, bool FadeWorldOnly, UTexture* LoadingImage) {
 }
 
-void UFadeScreenSubSystem::FadeScreenFromBlack(UObject* WorldContext, float FadeTime, float Delay, bool ResetExistingFades, bool CapFramerate, bool FadeWorldOnly, bool ToSpaceRig) {
+void UFadeScreenSubSystem::FadeScreenFromBlackInstantly(const UObject* WorldContext, bool FadeWorldOnly) {
 }
 
-void UFadeScreenSubSystem::BlackoutScreen(UObject* WorldContext, bool FadeWorldOnly) {
+float UFadeScreenSubSystem::FadeScreenFromBlack(const UObject* WorldContext, float FadeTime, float Delay, bool ResetExistingFades, bool CapFramerate, bool FadeWorldOnly, UTexture* FadingImage) {
+    return 0.0f;
 }
 
 

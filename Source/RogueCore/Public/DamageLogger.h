@@ -5,11 +5,12 @@
 USTRUCT(BlueprintType)
 struct FDamageLogger {
     GENERATED_BODY()
-    
 public:
-
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool LoggerEnabled;
     
+public:
     ROGUECORE_API FDamageLogger();
 };
+

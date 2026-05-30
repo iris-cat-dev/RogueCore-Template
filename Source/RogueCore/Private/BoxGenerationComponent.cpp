@@ -4,7 +4,7 @@ UBoxGenerationComponent::UBoxGenerationComponent(const FObjectInitializer& Objec
     this->IsCarver = false;
     this->NoiseRange = 0.00f;
     this->visible = true;
-    this->Noise = NULL;
+    this->Noise = nullptr;
 }
 
 

@@ -4,6 +4,7 @@
 #include "CharacterUseState.generated.h"
 
 class UUsableComponentBase;
+
 USTRUCT(BlueprintType)
 struct FCharacterUseState {
     GENERATED_BODY()
@@ -13,6 +14,10 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     EInputKeys Key;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     int32 UseId;
+    
     ROGUECORE_API FCharacterUseState();
 };
+

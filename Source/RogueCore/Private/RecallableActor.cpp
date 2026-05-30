@@ -5,13 +5,20 @@ ARecallableActor::ARecallableActor(const FObjectInitializer& ObjectInitializer) 
     this->AcceptanceRadius = 50.00f;
     this->AutoRecallDistance = 0.00f;
     this->RelocateLandingHeight = 300.00f;
-    this->RelocationMarkerType = NULL;
+    this->RelocationMarkerType = nullptr;
     this->State = ERecallableActorState::Idle;
     this->RelocateLanded = false;
     this->bInitialized = false;
 }
 
 void ARecallableActor::SetRecallTarget_Implementation(AActor* NewTarget) {
+}
+
+void ARecallableActor::Relocate_Implementation(FVector NewLocation, FRotator NewRotation) {
+}
+
+
+void ARecallableActor::Recall_Implementation() {
 }
 
 

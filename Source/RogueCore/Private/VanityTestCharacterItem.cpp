@@ -1,7 +1,7 @@
 #include "VanityTestCharacterItem.h"
 
 FVanityTestCharacterItem::FVanityTestCharacterItem() {
-    this->mesh = NULL;
-    this->AnimBP = NULL;
+    this->mesh = nullptr;
+    this->AnimBP = nullptr;
 }
 

@@ -1,12 +1,12 @@
 #include "BiomeNoiseItem.h"
 
 FBiomeNoiseItem::FBiomeNoiseItem() {
-    this->CeilingNoise = NULL;
-    this->CeilingDetailNoise = NULL;
-    this->WallNoise = NULL;
-    this->WallDetailNoise = NULL;
-    this->FloorNoise = NULL;
-    this->FloorDetailNoise = NULL;
+    this->CeilingNoise = nullptr;
+    this->CeilingDetailNoise = nullptr;
+    this->WallNoise = nullptr;
+    this->WallDetailNoise = nullptr;
+    this->FloorNoise = nullptr;
+    this->FloorDetailNoise = nullptr;
     this->Weight = 0.00f;
 }
 

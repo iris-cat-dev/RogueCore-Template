@@ -6,11 +6,13 @@
 UCLASS(Blueprintable)
 class URareCritterDescriptor : public UBaseCritterDescriptor {
     GENERATED_BODY()
-    
-
 public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float Rarity;
     
+public:
     URareCritterDescriptor();
+
 };
+

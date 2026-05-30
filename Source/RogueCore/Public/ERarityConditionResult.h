@@ -8,3 +8,4 @@ enum class ERarityConditionResult : uint8 {
     Deny,
     Failure,
 };
+

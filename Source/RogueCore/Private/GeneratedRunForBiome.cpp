@@ -1,12 +1,12 @@
 #include "GeneratedRunForBiome.h"
 
 FGeneratedRunForBiome::FGeneratedRunForBiome() {
-    this->Biome = NULL;
-    this->PlanetZone = NULL;
-    this->Mutator = NULL;
+    this->Biome = nullptr;
+    this->PlanetZone = nullptr;
+    this->Mutator = nullptr;
     this->RunDepth = ERunDepth::None;
-    this->DNA = NULL;
-    this->Run = NULL;
+    this->DNA = nullptr;
+    this->Run = nullptr;
     this->RunSeed = 0;
 }
 

@@ -1,18 +1,27 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameFramework/Pawn.h"
-#include "Runtime/Engine/Classes/Animation/AnimNotifies/AnimNotifyState.h"
+#include "Animation/AnimNotifies/AnimNotifyState.h"
 #include "AnimNotifyState_SoundMix.generated.h"
 
+class USoundControlBusMix;
 class USoundMix;
+
 UCLASS(Blueprintable, CollapseCategories, EditInlineNew, MinimalAPI)
 class UAnimNotifyState_SoundMix : public UAnimNotifyState {
     GENERATED_BODY()
-    
 public:
+private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USoundMix* SoundMix;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    USoundControlBusMix* ControlBusMix;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float MaxDistance;
+    
+public:
     UAnimNotifyState_SoundMix();
+
 };
+

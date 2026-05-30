@@ -1,13 +1,13 @@
 #include "TetherStation.h"
-#include "Components/SceneComponent.h"
-#include "Components/SkeletalMeshComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SkeletalMeshComponent -FallbackName=SkeletalMeshComponent
 #include "Net/UnrealNetwork.h"
 
 ATetherStation::ATetherStation(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("SceneRoot"));
     this->SceneRoot = (USceneComponent*)RootComponent;
     this->BaseMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("BaseMesh"));
-    this->FacilityGeneratorLineType = NULL;
+    this->FacilityGeneratorLineType = nullptr;
     this->AreGeneratorsReady = false;
     this->FacilityActive = false;
     this->BaseMesh->SetupAttachment(RootComponent);

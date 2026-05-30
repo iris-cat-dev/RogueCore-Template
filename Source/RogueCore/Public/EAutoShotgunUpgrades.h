@@ -8,3 +8,4 @@ enum class EAutoShotgunUpgrades : uint8 {
     RateOfFireAndAutoMatic,
     CQCBuffOnKill,
 };
+

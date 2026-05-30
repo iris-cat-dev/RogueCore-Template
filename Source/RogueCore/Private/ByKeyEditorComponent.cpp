@@ -1,7 +1,7 @@
 #include "ByKeyEditorComponent.h"
 
 UByKeyEditorComponent::UByKeyEditorComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->Enemy = NULL;
+    this->Enemy = nullptr;
 }
 
 

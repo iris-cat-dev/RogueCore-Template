@@ -1,8 +1,8 @@
 #include "PlaceParametersSimple.h"
 
 FPlaceParametersSimple::FPlaceParametersSimple() {
-    this->PlacementClass = NULL;
-    this->PlacingCharacter = NULL;
+    this->PlacementClass = nullptr;
+    this->PlacingCharacter = nullptr;
     this->ForwardPlaceDistance = 0.00f;
 }
 

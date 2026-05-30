@@ -1,7 +1,7 @@
 #include "FSDEventPopupWidget.h"
 
 UFSDEventPopupWidget::UFSDEventPopupWidget() {
-    this->FSDEvent = NULL;
+    this->FSDEvent = nullptr;
 }
 
 

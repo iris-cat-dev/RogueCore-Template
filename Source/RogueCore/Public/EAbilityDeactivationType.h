@@ -10,3 +10,4 @@ enum class EAbilityDeactivationType : uint8 {
     OnAnimationFinished,
     Custom,
 };
+

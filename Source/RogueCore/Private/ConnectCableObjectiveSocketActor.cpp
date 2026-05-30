@@ -1,7 +1,7 @@
 #include "ConnectCableObjectiveSocketActor.h"
-#include "Components/ChildActorComponent.h"
-#include "Components/SceneComponent.h"
-#include "Components/StaticMeshComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ChildActorComponent -FallbackName=ChildActorComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=StaticMeshComponent -FallbackName=StaticMeshComponent
 #include "Net/UnrealNetwork.h"
 
 AConnectCableObjectiveSocketActor::AConnectCableObjectiveSocketActor(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {

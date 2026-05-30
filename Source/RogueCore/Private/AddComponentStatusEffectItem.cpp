@@ -1,7 +1,7 @@
 #include "AddComponentStatusEffectItem.h"
 
 UAddComponentStatusEffectItem::UAddComponentStatusEffectItem() {
-    this->ComponentClass = NULL;
+    this->ComponentClass = nullptr;
 }
 
 

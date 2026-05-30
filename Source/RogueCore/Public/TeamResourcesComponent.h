@@ -8,4 +8,6 @@ class UTeamResourcesComponent : public UResourcesComponent {
     GENERATED_BODY()
 public:
     UTeamResourcesComponent(const FObjectInitializer& ObjectInitializer);
+
 };
+

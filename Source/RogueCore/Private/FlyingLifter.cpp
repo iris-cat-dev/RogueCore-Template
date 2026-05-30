@@ -1,7 +1,7 @@
 #include "FlyingLifter.h"
 #include "Components/AudioComponent.h"
 #include "Components/CapsuleComponent.h"
-#include "Runtime/Engine/Classes/Components/PointLightComponent.h"
+#include "Components/PointLightComponent.h"
 #include "GrabberComponent.h"
 #include "InDangerComponent.h"
 #include "Net/UnrealNetwork.h"
@@ -24,8 +24,8 @@ AFlyingLifter::AFlyingLifter(const FObjectInitializer& ObjectInitializer) : Supe
     this->FleeSpeed = 0.00f;
     this->FleeAcceleration = 0.00f;
     this->CarryCooldown = 12.00f;
-    this->FleeSound = NULL;
-    this->FleeAnimation = NULL;
+    this->FleeSound = nullptr;
+    this->FleeAnimation = nullptr;
     this->ParalyzeOnGrab = true;
     this->ExtraUpForce = 10.00f;
     this->ScreamDistance = 1000.00f;

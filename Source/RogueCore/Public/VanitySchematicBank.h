@@ -6,6 +6,7 @@
 
 class USchematicCategory;
 class UVanityItem;
+
 UCLASS(Blueprintable)
 class ROGUECORE_API UVanitySchematicBank : public USchematicBankBase {
     GENERATED_BODY()
@@ -13,8 +14,13 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USchematicCategory* SchematicCategory;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<UVanityItem*, FSchematicBankItem> VanityItems;
+    
     UVanitySchematicBank();
+
     UFUNCTION(BlueprintCallable)
     void AppendItems(TArray<UVanityItem*>& toArray) const;
+    
 };
+

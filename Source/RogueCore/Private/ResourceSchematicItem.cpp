@@ -1,8 +1,8 @@
 #include "ResourceSchematicItem.h"
 
 UResourceSchematicItem::UResourceSchematicItem() {
-    this->Credits = 0;
-    this->Resource = NULL;
+    this->credits = 0;
+    this->Resource = nullptr;
     this->ResourceAmount = 0;
 }
 

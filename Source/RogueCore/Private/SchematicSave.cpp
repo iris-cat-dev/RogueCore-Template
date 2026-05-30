@@ -3,5 +3,6 @@
 FSchematicSave::FSchematicSave() {
     this->bFirstSchematicMessageShown = false;
     this->SkinFixupCounter = 0;
+    this->PendingReward = FGuid();
 }
 

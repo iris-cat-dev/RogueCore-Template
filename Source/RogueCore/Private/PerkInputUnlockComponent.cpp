@@ -2,8 +2,8 @@
 
 UPerkInputUnlockComponent::UPerkInputUnlockComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->PerkQuickUseIndex = 1;
-    this->Perk = NULL;
-    this->PlayerInputComponent = NULL;
+    this->Perk = nullptr;
+    this->PlayerInputComponent = nullptr;
 }
 
 void UPerkInputUnlockComponent::UnbindPerkInputActions() {

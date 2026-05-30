@@ -8,7 +8,12 @@ class URecoverAmmoBonus : public UDamageBonusBase {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    int32 amount;
+    FString Name;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 Amount;
     
     URecoverAmmoBonus();
+
 };
+

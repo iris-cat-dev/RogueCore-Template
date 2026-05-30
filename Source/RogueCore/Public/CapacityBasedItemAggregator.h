@@ -10,26 +10,49 @@
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class UCapacityBasedItemAggregator : public UItemAggregator {
     GENERATED_BODY()
-    
-
 public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAmountChangedSignature OnCurrentAmountChanged;
     
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAmountChangedSignature OnMaxAmountChanged;
+    
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAmountChangedSignature OnClipAndTotalChanged;
+    
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FReloadTimeLeftSignature OnReloadTimeChanged;
+    
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FReloadCompleteSignature OnReloadComplete;
+    
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FReloadStartedSignature OnReloadStarted;
+    
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAmountChangedSignature OnMaxAmmoCapacityChanged;
- 
+    
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FAmountChangedSignature OnClipCapacityChanged;
+    
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool showClipCount;
+    
+public:
     UCapacityBasedItemAggregator(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void ReloadStarted();
+    
+    UFUNCTION(BlueprintCallable)
     void ReloadComplete();
+    
     UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetMaxAmount() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetCurrentAmount() const;
+    
 };
+

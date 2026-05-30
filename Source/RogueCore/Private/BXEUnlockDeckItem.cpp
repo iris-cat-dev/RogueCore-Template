@@ -1,7 +1,7 @@
 #include "BXEUnlockDeckItem.h"
 
 FBXEUnlockDeckItem::FBXEUnlockDeckItem() {
-    this->Unlock = NULL;
-    this->amount = 0.00f;
+    this->Unlock = nullptr;
+    this->Amount = 0.00f;
 }
 

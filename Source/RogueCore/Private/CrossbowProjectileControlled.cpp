@@ -1,8 +1,8 @@
 #include "CrossbowProjectileControlled.h"
 
 UCrossbowProjectileControlled::UCrossbowProjectileControlled(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->HomingTarget = NULL;
-    this->CastedOwner = NULL;
+    this->HomingTarget = nullptr;
+    this->CastedOwner = nullptr;
 }
 
 void UCrossbowProjectileControlled::UpdateHomingTarget() {

@@ -2,5 +2,6 @@
 
 FSDFSphereProperties::FSDFSphereProperties() {
     this->Radius = 0.00f;
+    this->RadiusOverrideName = FName();
 }
 

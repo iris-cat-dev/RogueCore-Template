@@ -2,7 +2,7 @@
 #include "Net/UnrealNetwork.h"
 
 UProspectorObjective::UProspectorObjective(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->DebrisPositioning = NULL;
+    this->DebrisPositioning = nullptr;
 }
 
 void UProspectorObjective::OnRep_ActiveProspector() {

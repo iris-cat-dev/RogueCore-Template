@@ -11,7 +11,7 @@ AGameStats::AGameStats(const FObjectInitializer& ObjectInitializer) : Super(Obje
     this->TotalEnemiesKilled = 0;
 }
 
-void AGameStats::OnPlayerMinedGold(UCappedResource* Resource, float amount) {
+void AGameStats::OnPlayerMinedGold(UCappedResource* Resource, float Amount) {
 }
 
 void AGameStats::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const {

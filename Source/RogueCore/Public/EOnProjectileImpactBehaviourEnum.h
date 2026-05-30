@@ -9,3 +9,4 @@ enum class EOnProjectileImpactBehaviourEnum : int32 {
     CallOnPredictAndConfirmed,
     ClientAuthoritative,
 };
+

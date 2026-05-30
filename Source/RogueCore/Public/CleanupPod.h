@@ -6,17 +6,22 @@
 
 class UObjective;
 class USphereComponent;
+
 UCLASS(Blueprintable)
 class ACleanupPod : public ARessuplyPod {
     GENERATED_BODY()
 public:
-    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Instanced, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USphereComponent* RemovePlagueCollision;
     
     ACleanupPod(const FObjectInitializer& ObjectInitializer);
- 
+
+protected:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnObjectiveChanged(UObjective* Objective);
+    
     UFUNCTION(BlueprintCallable)
     void ChangedState(ARessuplyPod* InPod, ERessuplyPodState InState);
+    
 };
+

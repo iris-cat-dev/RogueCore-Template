@@ -1,11 +1,18 @@
 #include "HeroInfo.h"
 
 FHeroInfo::FHeroInfo() {
-    this->HeroIcon = NULL;
-    this->CharacterSelectorIcon = NULL;
-    this->SmallHeroIcon = NULL;
-    this->SmallSimpleHeroIcon = NULL;
-    this->SmallSimpleHeroIconDropShadow = NULL;
-    this->HeroFullSizeImage = NULL;
+    this->HeroIcon = nullptr;
+    this->CharacterSelectorIcon = nullptr;
+    this->SmallHeroIcon = nullptr;
+    this->SmallSimpleHeroIcon = nullptr;
+    this->SmallSimpleHeroIconDropShadow = nullptr;
+    this->HeroFullSizeImage = nullptr;
+    this->AbilityIcon = nullptr;
+    this->ClassAnimationSet = nullptr;
+    this->MedbayVanityItem = nullptr;
+    this->HeroName = FText::GetEmpty();
+    this->HeroColor = FLinearColor::White;
+    this->HeroShortDescription = FText::GetEmpty();
+    this->HeroLongDescription = FText::GetEmpty();
 }
 

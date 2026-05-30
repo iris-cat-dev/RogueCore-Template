@@ -8,3 +8,4 @@ struct FSpawnRarityModifierItem {
 public:
     ROGUECORE_API FSpawnRarityModifierItem();
 };
+

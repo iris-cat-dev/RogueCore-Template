@@ -4,6 +4,7 @@
 
 class UDebrisInstances;
 class UDebrisMesh;
+
 USTRUCT(BlueprintType)
 struct FRuntimeSpawnedDebris {
     GENERATED_BODY()
@@ -13,5 +14,7 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UDebrisMesh* DebrisMesh;
+    
     ROGUECORE_API FRuntimeSpawnedDebris();
 };
+

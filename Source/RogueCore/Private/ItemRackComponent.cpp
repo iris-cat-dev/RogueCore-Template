@@ -2,11 +2,11 @@
 #include "Net/UnrealNetwork.h"
 
 UItemRackComponent::UItemRackComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->UsableComponent = NULL;
-    this->AttachToComponent = NULL;
+    this->UsableComponent = nullptr;
+    this->AttachToComponent = nullptr;
     this->AttachToSocket = false;
     this->RackKey = -1;
-    this->Item = NULL;
+    this->Item = nullptr;
 }
 
 void UItemRackComponent::RackItem(AActor* NewItem, APlayerCharacter* Character) {

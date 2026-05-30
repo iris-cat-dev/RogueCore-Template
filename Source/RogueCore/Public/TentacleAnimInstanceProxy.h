@@ -9,3 +9,4 @@ struct FTentacleAnimInstanceProxy : public FAnimInstanceProxy {
 public:
     ROGUECORE_API FTentacleAnimInstanceProxy();
 };
+

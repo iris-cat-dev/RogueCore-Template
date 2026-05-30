@@ -10,3 +10,4 @@ enum class ECaretakerSpawnType : uint8 {
     Shredders,
     Turrets,
 };
+

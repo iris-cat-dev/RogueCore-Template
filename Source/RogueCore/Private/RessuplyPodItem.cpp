@@ -2,10 +2,10 @@
 #include "Net/UnrealNetwork.h"
 
 ARessuplyPodItem::ARessuplyPodItem(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->ResupplyBeacon = NULL;
-    this->ItemPlacerClass = NULL;
-    this->ItemPlacerInstance = NULL;
-    this->SupplyPodClass = NULL;
+    this->ResupplyBeacon = nullptr;
+    this->ItemPlacerClass = nullptr;
+    this->ItemPlacerInstance = nullptr;
+    this->SupplyPodClass = nullptr;
     this->ResourceCost = 0;
     this->CoolDown = 0.00f;
     this->Used = false;

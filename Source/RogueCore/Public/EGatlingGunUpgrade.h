@@ -9,3 +9,4 @@ enum class EGatlingGunUpgrade : uint8 {
     CriticalOverheat,
     BarrelProximityDamage,
 };
+

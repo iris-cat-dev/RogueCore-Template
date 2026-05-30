@@ -5,7 +5,7 @@
 APlaceableItem::APlaceableItem(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->Capacity = CreateDefaultSubobject<UCapacityHoldingItemAggregator>(TEXT("Aggregater"));
     this->ItemPlacer = CreateDefaultSubobject<UItemPlacerAggregator>(TEXT("ItemPlacer"));
-    this->PlacableClass = NULL;
+    this->PlacableClass = nullptr;
 }
 
 void APlaceableItem::Server_SpawnItem_Implementation(FVector Location) {

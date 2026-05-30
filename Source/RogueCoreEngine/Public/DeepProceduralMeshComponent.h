@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Components/MeshComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=MeshComponent -FallbackName=MeshComponent
 #include "DeepProceduralMeshComponent.generated.h"
 
 class UBodySetup;

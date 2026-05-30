@@ -18,3 +18,4 @@ enum class EArmorSetArms : uint8 {
     RightHand,
     RightHandAttach,
 };
+

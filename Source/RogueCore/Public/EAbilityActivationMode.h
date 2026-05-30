@@ -4,7 +4,7 @@
 
 UENUM(BlueprintType)
 enum class EAbilityActivationMode : uint8 {
-    Contextual,
     Toggle,
     Hold,
 };
+

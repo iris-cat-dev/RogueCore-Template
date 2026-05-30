@@ -1,9 +1,9 @@
 #include "ObjectiveWidget.h"
 
 UObjectiveWidget::UObjectiveWidget() : UUserWidget(FObjectInitializer::Get()) {
-    this->MissionObjective = NULL;
+    this->MissionObjective = nullptr;
     this->bIsPrimaryObjective = false;
-    this->ObjectiveCounterIcon = NULL;
+    this->ObjectiveCounterIcon = nullptr;
     this->bObjectiveCompleted = false;
 }
 

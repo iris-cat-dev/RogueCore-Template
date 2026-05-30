@@ -1,7 +1,7 @@
 #include "RotateToFace.h"
 
 URotateToFace::URotateToFace(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->Target = NULL;
+    this->Target = nullptr;
     this->Face = 1;
 }
 

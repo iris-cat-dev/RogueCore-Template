@@ -7,3 +7,4 @@ enum class EMoveType : uint8 {
     EaseIn,
     EaseOut,
 };
+

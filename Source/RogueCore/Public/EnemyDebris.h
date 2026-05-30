@@ -3,6 +3,7 @@
 #include "EnemyDebris.generated.h"
 
 class UDebrisBase;
+
 USTRUCT(BlueprintType)
 struct FEnemyDebris {
     GENERATED_BODY()
@@ -12,5 +13,7 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     TArray<UDebrisBase*> Debris;
+    
     ROGUECORE_API FEnemyDebris();
 };
+

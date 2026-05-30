@@ -4,6 +4,9 @@
 UHackingUsableComponent::UHackingUsableComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
 
+void UHackingUsableComponent::SetIsHacked(const bool NewHacked) {
+}
+
 void UHackingUsableComponent::OnRep_HackingState(const FHackingUsableState& oldState) {
 }
 

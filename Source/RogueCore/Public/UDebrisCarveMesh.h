@@ -3,6 +3,7 @@
 #include "UDebrisCarveMesh.generated.h"
 
 class UStaticMesh;
+
 USTRUCT(BlueprintType)
 struct FUDebrisCarveMesh {
     GENERATED_BODY()
@@ -10,6 +11,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UStaticMesh* mesh;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float Probablity;
+    
     ROGUECORE_API FUDebrisCarveMesh();
 };
+

@@ -2,9 +2,11 @@
 
 UBXEUnlockBase::UBXEUnlockBase() {
     this->UnlockUsesRandomRarity = false;
-    this->ShoutNegotiationSelected = NULL;
-    this->DefaultRarity = NULL;
-    this->VisualSettingsOverride = NULL;
+    this->ShoutNegotiationSelected = nullptr;
+    this->DefaultRarity = nullptr;
+    this->VisualSettingsOverride = nullptr;
+    this->AttributeCollection = nullptr;
+    this->AdditionalAttributeAmount = 0;
     this->UnlockType = EUnlockType::Upgrade;
     this->LogicStatus = EProductionStatus::Prototype;
     this->ParticleStatus = EProductionStatus::Unknown;
@@ -16,7 +18,7 @@ UUnlockVisualSettings* UBXEUnlockBase::GetVisualSettings(UBXEUnlockRarity* InRar
 }
 
 EUnlockType UBXEUnlockBase::GetUnlockType() const {
-    return EUnlockType::Upgrade;
+    return EUnlockType::None;
 }
 
 FText UBXEUnlockBase::GetTitle() const {
@@ -31,8 +33,16 @@ TSoftObjectPtr<UTexture2D> UBXEUnlockBase::GetIcon() const {
     return NULL;
 }
 
+FText UBXEUnlockBase::GetFunctionalDescription() const {
+    return FText::GetEmpty();
+}
+
 FText UBXEUnlockBase::GetDescription() const {
     return FText::GetEmpty();
+}
+
+UBXEUnlockAttributeWeightPool* UBXEUnlockBase::GetAttributeCollection() {
+    return NULL;
 }
 
 

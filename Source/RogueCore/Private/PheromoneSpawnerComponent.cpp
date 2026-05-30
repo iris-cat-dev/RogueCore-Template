@@ -2,7 +2,7 @@
 
 UPheromoneSpawnerComponent::UPheromoneSpawnerComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->AttackPositioningCostModifier = 2.00f;
-    this->Enemy = NULL;
+    this->Enemy = nullptr;
 }
 
 

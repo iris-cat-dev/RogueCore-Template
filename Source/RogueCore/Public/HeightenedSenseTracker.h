@@ -6,6 +6,7 @@ class AActor;
 class IAttackingPointInterface;
 class UAttackingPointInterface;
 class UHealthComponentBase;
+
 USTRUCT(BlueprintType)
 struct FHeightenedSenseTracker {
     GENERATED_BODY()
@@ -15,6 +16,10 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<UHealthComponentBase> HealthComponent;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TScriptInterface<IAttackingPointInterface> AttackingPoint;
+    
     ROGUECORE_API FHeightenedSenseTracker();
 };
+

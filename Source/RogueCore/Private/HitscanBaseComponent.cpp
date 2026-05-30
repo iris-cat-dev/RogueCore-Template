@@ -1,8 +1,8 @@
 #include "HitscanBaseComponent.h"
 
 UHitscanBaseComponent::UHitscanBaseComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->DamageComponent = NULL;
-    this->Damage = NULL;
+    this->DamageComponent = nullptr;
+    this->Damage = nullptr;
     this->UseDamageComponent = true;
     this->MaxPenetrations = 0;
     this->ImpactDecalSize = EImpactDecalSize::Small;

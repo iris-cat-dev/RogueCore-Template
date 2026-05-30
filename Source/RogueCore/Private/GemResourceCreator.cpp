@@ -1,7 +1,7 @@
 #include "GemResourceCreator.h"
 
 UGemResourceCreator::UGemResourceCreator() {
-    this->ResourceData = NULL;
+    this->ResourceData = nullptr;
     this->CheckIfFreeSpaceAbove = false;
     this->SearchSize = 25;
 }

@@ -1,7 +1,7 @@
 #include "EffectState.h"
 
 FEffectState::FEffectState() {
-    this->Actor = NULL;
+    this->Actor = nullptr;
     this->EffectsActive = false;
 }
 

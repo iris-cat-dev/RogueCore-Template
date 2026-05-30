@@ -16,7 +16,7 @@ void UBXEPlayerStateComponent::Server_ReadyUp_SetIsReady_Implementation() {
 void UBXEPlayerStateComponent::Server_ApplyUnlocksToPlayer_Implementation(const TArray<FBXEUnlockInstance>& inUnlocks, const FItemSlotIndex InSlot) {
 }
 
-void UBXEPlayerStateComponent::Server_AddWeaponAttributeToSlot_Implementation(FItemSlotIndex InSlot, UItemUpgrade* InAttribute, AActor* PreviousActor) {
+void UBXEPlayerStateComponent::Server_AddAttributeToUnlockInstance_Implementation(const FBXEUnlockInstance& InInstance, UBXEAttributeUnlock* InAttribute, AActor* PreviousActor) {
 }
 
 void UBXEPlayerStateComponent::OnRep_StartLoadOut(const FBXEStartLoadout& OldLoadout) {
@@ -25,7 +25,8 @@ void UBXEPlayerStateComponent::OnRep_StartLoadOut(const FBXEStartLoadout& OldLoa
 void UBXEPlayerStateComponent::OnRep_PlayerData(const FBXEPlayerData& OldData) {
 }
 
-void UBXEPlayerStateComponent::OnBXESaveChanged(const FBXESave& InSave) {
+int32 UBXEPlayerStateComponent::GetUnlockInstanceCount(UObject* WorldContext, const FBXEUnlockInstance& InUnlock) const {
+    return 0;
 }
 
 FBXEUnlockInstance UBXEPlayerStateComponent::GetUnlockInSlot(FItemSlotIndex InSlot) const {
@@ -52,7 +53,7 @@ TArray<FBXEUnlockInstance> UBXEPlayerStateComponent::GetAllUnlocksInSlot(FItemSl
     return TArray<FBXEUnlockInstance>();
 }
 
-void UBXEPlayerStateComponent::Client_ReceiveLevelUp_Implementation(int32 inLevel, const TArray<UBXEUnlockBase*>& inUnlocks) {
+void UBXEPlayerStateComponent::Client_ReceiveLevelUp_Implementation(int32 inLevel, const TArray<UBXEUnlockBase*>& inUnlocks, const TArray<UBXEUnlockRarity*>& InUnlockRarities) {
 }
 
 void UBXEPlayerStateComponent::Client_ReadyUp_SetState_Implementation(const FReadyUpState& InState) {
@@ -67,7 +68,7 @@ void UBXEPlayerStateComponent::Cheat_RemoveUnlockFromPlayer_Implementation(UBXEU
 void UBXEPlayerStateComponent::Cheat_PrintOutBXEStats() {
 }
 
-void UBXEPlayerStateComponent::Cheat_LevelUp() {
+void UBXEPlayerStateComponent::Cheat_LevelUp_Implementation() {
 }
 
 TArray<UBXEUnlockBase*> UBXEPlayerStateComponent::Cheat_GatherUnlocksForSlot(FItemSlotIndex InSlot) {
@@ -78,16 +79,13 @@ TArray<UBXEUnlockCollection*> UBXEPlayerStateComponent::Cheat_GatherNegotiationC
     return TArray<UBXEUnlockCollection*>();
 }
 
-void UBXEPlayerStateComponent::Cheat_ApplyUnlockToSoloDrone_Implementation(UBXEUnlockBase* InUnlock, FItemSlotIndex InSlot, const TArray<UItemUpgrade*>& Attributes) {
-}
-
-void UBXEPlayerStateComponent::Cheat_ApplyUnlockToPlayer_Implementation(UBXEUnlockBase* InUnlock, FItemSlotIndex InSlot, const TArray<UItemUpgrade*>& Attributes) {
+void UBXEPlayerStateComponent::Cheat_ApplyUnlockToPlayer_Implementation(UBXEUnlockBase* InUnlock, FItemSlotIndex InSlot, const TArray<UBXEAttributeUnlock*>& Attributes) {
 }
 
 void UBXEPlayerStateComponent::Cheat_AddXP_Player_Implementation(int32 InXP) {
 }
 
-void UBXEPlayerStateComponent::Cheat_AddXP(int32 InXP) {
+void UBXEPlayerStateComponent::Cheat_AddXP_Implementation(int32 InXP) {
 }
 
 void UBXEPlayerStateComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const {

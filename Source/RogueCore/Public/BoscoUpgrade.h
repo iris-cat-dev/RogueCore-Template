@@ -8,16 +8,20 @@
 
 class AActor;
 class AFSDPlayerState;
+
 UCLASS(Blueprintable, EditInlineNew, MinimalAPI)
 class UBoscoUpgrade : public UStandardItemUpgrade {
     GENERATED_BODY()
-    
-
 public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EBoscoUpgrades upgradeType;
     
+public:
     UBoscoUpgrade();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FUpgradeValues GetUpgradedValue(AFSDPlayerState* Player, TSubclassOf<AActor> Item, EBoscoUpgrades NewUpgradeType);
+    
 };
+

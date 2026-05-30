@@ -2,6 +2,7 @@
 
 FBinaryMatPatterns::FBinaryMatPatterns() {
     this->PatternType = EPattern::Specific;
-    this->PatternMaterial = NULL;
+    this->PatternMaterial = nullptr;
+    this->ReplaceWith = FBinaryMatProperties();
 }
 

@@ -1,22 +1,27 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Components/ActorComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
 #include "GravityChangedComponent.generated.h"
 
 class UPrimitiveComponent;
+
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class UGravityChangedComponent : public UActorComponent {
     GENERATED_BODY()
-    
-
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bAwakeOnGravityChanged;
     
- 
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
     TArray<UPrimitiveComponent*> PrimitiveComponents;
+    
+public:
     UGravityChangedComponent(const FObjectInitializer& ObjectInitializer);
+
+protected:
     UFUNCTION(BlueprintCallable)
     void OnGravityChanged(float Gravity, float change);
+    
 };
+

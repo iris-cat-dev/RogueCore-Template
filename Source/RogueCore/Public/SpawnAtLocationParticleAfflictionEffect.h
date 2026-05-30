@@ -7,10 +7,13 @@
 UCLASS(Blueprintable)
 class USpawnAtLocationParticleAfflictionEffect : public UAfflictionEffect {
     GENERATED_BODY()
-
 public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FScaledEffect ScaledParticleEffect;
     
+public:
     USpawnAtLocationParticleAfflictionEffect();
+
 };
+

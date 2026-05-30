@@ -1,10 +1,10 @@
 #include "GlowPlant.h"
-#include "Components/StaticMeshComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=StaticMeshComponent -FallbackName=StaticMeshComponent
 
 AGlowPlant::AGlowPlant(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->RootComponent = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("mesh"));
     this->TrunkMesh = (UStaticMeshComponent*)RootComponent;
-    this->mainLight = NULL;
+    this->mainLight = nullptr;
     this->IntensityBase = 0.00f;
     this->RadiusBase = 0.00f;
     this->IntensityPerPart = 0.00f;

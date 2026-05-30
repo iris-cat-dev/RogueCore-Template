@@ -1,6 +1,6 @@
 #include "FulgorVomiterAnimInstance.h"
 
-UFulgorVomiterAnimInstance::UFulgorVomiterAnimInstance(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+UFulgorVomiterAnimInstance::UFulgorVomiterAnimInstance() {
     this->IsExtended = false;
     this->IsAiming = false;
 }

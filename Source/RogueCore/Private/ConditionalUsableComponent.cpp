@@ -15,6 +15,10 @@ void UConditionalUsableComponent::RemoveAllIgnored() {
 void UConditionalUsableComponent::RemoveAllAllowed() {
 }
 
+int32 UConditionalUsableComponent::GetAllowedNum() {
+    return 0;
+}
+
 void UConditionalUsableComponent::AddIgnored(AActor* ToIgnore) {
 }
 

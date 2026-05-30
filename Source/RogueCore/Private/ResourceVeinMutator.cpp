@@ -1,7 +1,7 @@
 #include "ResourceVeinMutator.h"
 
 UResourceVeinMutator::UResourceVeinMutator() {
-    this->Resource = NULL;
+    this->Resource = nullptr;
     this->VeinLengthMultiplier = 1.00f;
     this->RangeMultiplier = 1.00f;
     this->NoiseRangeMultiplier = 1.00f;

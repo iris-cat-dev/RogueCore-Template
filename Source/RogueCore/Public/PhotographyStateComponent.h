@@ -8,4 +8,6 @@ class UPhotographyStateComponent : public UCharacterStateComponent {
     GENERATED_BODY()
 public:
     UPhotographyStateComponent(const FObjectInitializer& ObjectInitializer);
+
 };
+

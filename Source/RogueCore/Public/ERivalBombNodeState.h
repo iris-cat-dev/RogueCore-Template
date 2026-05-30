@@ -10,3 +10,4 @@ enum class ERivalBombNodeState : uint8 {
     Completed,
     Failed,
 };
+

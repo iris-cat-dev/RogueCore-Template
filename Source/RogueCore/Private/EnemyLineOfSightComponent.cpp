@@ -1,7 +1,7 @@
 #include "EnemyLineOfSightComponent.h"
 
 UEnemyLineOfSightComponent::UEnemyLineOfSightComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->OwnerMesh = NULL;
+    this->OwnerMesh = nullptr;
     this->LoSInterval = 0.10f;
     this->LoSIntervalVariance = 0.10f;
     this->AutoSetupOwnerMesh = true;

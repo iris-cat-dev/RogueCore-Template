@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Components/ActorComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
 #include "CSGBuildOperationData.h"
 #include "CarveWithColliderOperationData.h"
 #include "CarveWithSTLMeshOperationData.h"
@@ -18,15 +18,21 @@ class ROGUECORE_API UTerrainLatejoinComponent : public UActorComponent {
     GENERATED_BODY()
 public:
     UTerrainLatejoinComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, Reliable, Server)
     void Server_TerrainLateJoinPartReceived();
     
     UFUNCTION(Client, Reliable)
     void Client_TerrainLateJoinVisibleChunks(const TArray<uint32>& VisibleChunks);
+    
     UFUNCTION(BlueprintCallable, Client, Reliable)
-    void Client_TerrainLateJoinPart(const TArray<FGrenadeExplodeOperationData>& Explosions, const TArray<FCarveWithColliderOperationData>& ColliderCarves, const TArray<FCarveWithSTLMeshOperationData>& MeshCarves, const TArray<FPickaxeDigOperationData>& PickAxe, const TArray<FRemoveFloatingIslandOperationData>& floating, const TArray<FDrillOperationData>& Drills, const TArray<FMeltOperationData>& Melts, const TArray<FSplineSegmentCarveOperationData>& Splines, const TArray<FCSGBuildOperationData>& CSGBuilds, const TArray<FTerrainSpawnDebrisOperationData>& SpawnDebris);
-    UFUNCTION(Client, Reliable)
+    void Client_TerrainLateJoinPart(const TArray<FGrenadeExplodeOperationData>& Explosions, const TArray<FCarveWithColliderOperationData>& ColliderCarves, const TArray<FCarveWithSTLMeshOperationData>& MeshCarves, const TArray<FPickaxeDigOperationData>& Pickaxe, const TArray<FRemoveFloatingIslandOperationData>& floating, const TArray<FDrillOperationData>& Drills, const TArray<FMeltOperationData>& Melts, const TArray<FSplineSegmentCarveOperationData>& Splines, const TArray<FCSGBuildOperationData>& CSGBuilds, const TArray<FTerrainSpawnDebrisOperationData>& SpawnDebris);
+    
+    UFUNCTION(BlueprintCallable, Client, Reliable)
     void Client_TerrainLateJoinDone();
-    UFUNCTION(Client, Reliable)
+    
+    UFUNCTION(BlueprintCallable, Client, Reliable)
     void Client_TerrainLateJoinDebris(const TArray<int32>& instanceComponentPairs);
+    
 };
+

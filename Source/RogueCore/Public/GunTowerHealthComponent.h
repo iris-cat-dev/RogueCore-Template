@@ -8,4 +8,6 @@ class UGunTowerHealthComponent : public UEnemyHealthComponent {
     GENERATED_BODY()
 public:
     UGunTowerHealthComponent(const FObjectInitializer& ObjectInitializer);
+
 };
+

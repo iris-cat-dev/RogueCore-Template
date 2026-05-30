@@ -7,12 +7,13 @@
 UCLASS(Abstract, Blueprintable, EditInlineNew)
 class UPerkActivationWidget : public UPerkHUDWidget {
     GENERATED_BODY()
-    
-
 public:
-
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EPerkHUDActivationLocation Location;
     
+public:
     UPerkActivationWidget();
+
 };
+

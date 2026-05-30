@@ -8,3 +8,4 @@ enum class EHealthbarType : uint8 {
     MainLife,
     Shield,
 };
+

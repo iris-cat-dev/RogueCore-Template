@@ -1,7 +1,7 @@
 #include "EnemyMaterialOverrideMutator.h"
 
 UEnemyMaterialOverrideMutator::UEnemyMaterialOverrideMutator() {
-    this->OverrideMaterial = NULL;
+    this->OverrideMaterial = nullptr;
 }
 
 

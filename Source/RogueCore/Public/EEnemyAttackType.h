@@ -10,3 +10,4 @@ enum class EEnemyAttackType : uint8 {
     Area,
     Move,
 };
+

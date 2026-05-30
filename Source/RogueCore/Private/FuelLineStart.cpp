@@ -1,6 +1,6 @@
 #include "FuelLineStart.h"
-#include "Components/SceneComponent.h"
-#include "Components/StaticMeshComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=StaticMeshComponent -FallbackName=StaticMeshComponent
 #include "FuelLineStartUsable.h"
 #include "Net/UnrealNetwork.h"
 #include "OutlineComponent.h"

@@ -12,14 +12,14 @@ AMicroMissileLauncher::AMicroMissileLauncher(const FObjectInitializer& ObjectIni
     this->FireMode = EMicroMissileLauncherFireMode::Normal;
     this->DisableHomingOnRelease = false;
     this->MaxHomingProjectiles = 0.00f;
-    this->WPN_Fire_Empty_Mag = NULL;
-    this->WPN_Fire_Level2 = NULL;
-    this->WPN_Fire_Level2_Empty_Mag = NULL;
-    this->WPN_Fire_Level3 = NULL;
-    this->WPN_Fire_Level3_Empty_Mag = NULL;
-    this->WPN_Mag_Feed = NULL;
-    this->WPN_Mag_And_Barrel_Feed = NULL;
-    this->ChargedMissileFireSound = NULL;
+    this->WPN_Fire_Empty_Mag = nullptr;
+    this->WPN_Fire_Level2 = nullptr;
+    this->WPN_Fire_Level2_Empty_Mag = nullptr;
+    this->WPN_Fire_Level3 = nullptr;
+    this->WPN_Fire_Level3_Empty_Mag = nullptr;
+    this->WPN_Mag_Feed = nullptr;
+    this->WPN_Mag_And_Barrel_Feed = nullptr;
+    this->ChargedMissileFireSound = nullptr;
     this->MML_ClipCount = 0;
 }
 

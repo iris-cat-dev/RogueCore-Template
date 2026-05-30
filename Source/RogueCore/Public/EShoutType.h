@@ -33,3 +33,4 @@ enum class EShoutType : uint8 {
     Drink,
     Workout,
 };
+

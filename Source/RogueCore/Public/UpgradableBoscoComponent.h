@@ -8,4 +8,6 @@ class UUpgradableBoscoComponent : public UUpgradableGearComponent {
     GENERATED_BODY()
 public:
     UUpgradableBoscoComponent(const FObjectInitializer& ObjectInitializer);
+
 };
+

@@ -3,6 +3,7 @@
 #include "CraftingCost.generated.h"
 
 class UResourceData;
+
 USTRUCT(BlueprintType)
 struct ROGUECORE_API FCraftingCost {
     GENERATED_BODY()
@@ -10,6 +11,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UResourceData* Resource;
     
-    float amount;
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float Amount;
+    
     FCraftingCost();
 };
+

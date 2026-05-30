@@ -1,64 +1,66 @@
 #include "AmmoDrivenWeapon.h"
 #include "AmmoDriveWeaponAggregator.h"
+#include "DamageListenerComponent.h"
 #include "Net/UnrealNetwork.h"
 #include "WeaponTagContainerComponent.h"
 
 AAmmoDrivenWeapon::AAmmoDrivenWeapon(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->WeaponTags = CreateDefaultSubobject<UWeaponTagContainerComponent>(TEXT("WeaponTags"));
-    this->WeaponFire = NULL;
+    this->DamageListener = CreateDefaultSubobject<UDamageListenerComponent>(TEXT("DamageListener"));
+    this->WeaponFire = nullptr;
     this->Aggregator = CreateDefaultSubobject<UAmmoDriveWeaponAggregator>(TEXT("Aggregator"));
     this->LoopFireAnimation = false;
     this->OverHeatOnNoAmmo = false;
     this->LoopFireAnimationBlendoutTime = 0.25f;
-    this->FP_FireAnimation = NULL;
-    this->TP_FireAnimation = NULL;
-    this->FP_ReloadAnimation = NULL;
-    this->FP_ReloadAnimation_Empty = NULL;
-    this->TP_ReloadAnimation = NULL;
-    this->TP_ReloadAnimation_Empty = NULL;
-    this->WPN_Fire = NULL;
-    this->WPN_FireLastBullet = NULL;
-    this->WPN_Reload = NULL;
-    this->WPN_ReloadEmpty = NULL;
-    this->WPN_Reload_TP = NULL;
-    this->MuzzleParticles = NULL;
-    this->TPMuzzleParticles = NULL;
+    this->FP_FireAnimation = nullptr;
+    this->TP_FireAnimation = nullptr;
+    this->FP_ReloadAnimation = nullptr;
+    this->FP_ReloadAnimation_Empty = nullptr;
+    this->TP_ReloadAnimation = nullptr;
+    this->TP_ReloadAnimation_Empty = nullptr;
+    this->WPN_Fire = nullptr;
+    this->WPN_FireLastBullet = nullptr;
+    this->WPN_Reload = nullptr;
+    this->WPN_ReloadEmpty = nullptr;
+    this->WPN_Reload_TP = nullptr;
+    this->MuzzleParticles = nullptr;
+    this->TPMuzzleParticles = nullptr;
     this->UseTriggeredMuzzleParticles = false;
-    this->CasingParticles = NULL;
+    this->CasingParticles = nullptr;
     this->UseTriggeredCasingParticleSystem = false;
-    this->MuzzleFlashLight = NULL;
-    this->FireSound = NULL;
-    this->RicochetSound = NULL;
-    this->RicochetParticle = NULL;
+    this->MuzzleFlashLight = nullptr;
+    this->FireSound = nullptr;
+    this->RicochetSound = nullptr;
+    this->RicochetParticle = nullptr;
     this->FireSoundDelayToTail = -1.00f;
-    this->FireSoundTail = NULL;
+    this->FireSoundTail = nullptr;
     this->IsFireSoundTail2D = false;
-    this->FireForceFeedbackEffect = NULL;
+    this->FireForceFeedbackEffect = nullptr;
     this->FireSoundFadeDuration = 0.20f;
-    this->ReloadSound = NULL;
+    this->ReloadSound = nullptr;
     this->BulletsRemainingForNearEmptySound = 0;
-    this->BulletsRemainingNearEmptyVolumeCurve = NULL;
+    this->BulletsRemainingNearEmptyVolumeCurve = nullptr;
     this->PlayNearEmptySoundsIn3D = false;
     this->PlayClipReachesZeroSoundsIn3D = true;
     this->PlayEmptySoundsIn3D = true;
-    this->NearEmptySound = NULL;
-    this->ClipReachesZeroSound = NULL;
-    this->DryFireSound = NULL;
-    this->ShoutShotFired = NULL;
-    this->ShoutOutOfAmmo = NULL;
-    this->ShoutReloading = NULL;
+    this->NearEmptySound = nullptr;
+    this->ClipReachesZeroSound = nullptr;
+    this->DryFireSound = nullptr;
+    this->ShoutShotFired = nullptr;
+    this->ShoutOutOfAmmo = nullptr;
+    this->ShoutReloading = nullptr;
     this->MaxAmmo = 0;
-    this->ClipSize = 0;
+    this->clipSize = 0;
     this->ShotCost = 1;
     this->RateOfFire = 0.00f;
     this->BurstCount = 0;
     this->BurstCycleTime = 20.00f;
     this->ReloadDuration = 0.00f;
-    this->ShouldInitAmmoAtBeginPlay = true;
+    this->CancelReloadOnShootTimeFromEnd = 0.00f;
     this->ManualHeatReductionAmmo = 0;
     this->FireInputBufferTime = 0.00f;
     this->AutoReloadDuration = 0.00f;
-    this->AutoReloadCompleteCue = NULL;
+    this->AutoReloadCompleteCue = nullptr;
     this->SupplyStatusWeight = 1.00f;
     this->CycleTimeLeft = 0.00f;
     this->UseCustomReloadDelay = false;
@@ -75,8 +77,8 @@ AAmmoDrivenWeapon::AAmmoDrivenWeapon(const FObjectInitializer& ObjectInitializer
     this->ManualHeatReductionOnReload = false;
     this->MaxManualHeatReductionCharges = 0;
     this->ManualHeatReductionValue = 0.00f;
-    this->CanManuallyReload = true;
     this->WeaponState = EAmmoWeaponState::Equipping;
+    this->MaxAngleForSuppressiveFire = 65.00f;
     this->HasRejoinedInitialized = false;
 }
 
@@ -84,7 +86,7 @@ AAmmoDrivenWeapon::AAmmoDrivenWeapon(const FObjectInitializer& ObjectInitializer
 void AAmmoDrivenWeapon::UpdateHoldToFire() {
 }
 
-void AAmmoDrivenWeapon::TransferAmmoToClip(int32 amount) {
+void AAmmoDrivenWeapon::TransferAmmoToClip(int32 Amount) {
 }
 
 void AAmmoDrivenWeapon::Server_UpdateClipCount_Implementation(const FAmmoValue& Val) {
@@ -94,6 +96,9 @@ void AAmmoDrivenWeapon::Server_UpdateAmmoCount_Implementation(const FAmmoValue& 
 }
 
 void AAmmoDrivenWeapon::Server_StopReload_Implementation(float blendOutTime) {
+}
+
+void AAmmoDrivenWeapon::Server_SetSlowedEnemiesOnScreen_Implementation(const TArray<TWeakObjectPtr<AFSDPawn>>& PawnsToSlow) {
 }
 
 void AAmmoDrivenWeapon::Server_ReloadWeapon_Implementation(bool isFullyEmpty) {
@@ -111,7 +116,7 @@ void AAmmoDrivenWeapon::Server_Gunsling_Implementation(uint8 Index) {
 void AAmmoDrivenWeapon::ResupplyToPercent(float percentage) {
 }
 
-void AAmmoDrivenWeapon::ResupplyAmmo(int32 amount) {
+void AAmmoDrivenWeapon::ResupplyAmmo(int32 Amount) {
 }
 
 
@@ -139,10 +144,10 @@ void AAmmoDrivenWeapon::OnRep_IsFiring() {
 void AAmmoDrivenWeapon::OnRep_ClipCount() {
 }
 
-void AAmmoDrivenWeapon::MoveAmmoFromReserve(int32 amount) {
+void AAmmoDrivenWeapon::MoveAmmoFromReserve(int32 Amount) {
 }
 
-void AAmmoDrivenWeapon::MoveAmmoBackToReserve(int32 amount) {
+void AAmmoDrivenWeapon::MoveAmmoBackToReserve(int32 Amount) {
 }
 
 bool AAmmoDrivenWeapon::IsClipFull() const {
@@ -150,9 +155,6 @@ bool AAmmoDrivenWeapon::IsClipFull() const {
 }
 
 void AAmmoDrivenWeapon::InstantlyReload() {
-}
-
-void AAmmoDrivenWeapon::InitAmmo() {
 }
 
 
@@ -166,6 +168,9 @@ void AAmmoDrivenWeapon::Client_ResupplyAmmo_Implementation(int32 count) {
 }
 
 void AAmmoDrivenWeapon::Client_RefillAmmo_Implementation(float percentage) {
+}
+
+void AAmmoDrivenWeapon::Client_InitAmmo_Implementation(int32 NewClipSize, int32 reserveCapacity) {
 }
 
 void AAmmoDrivenWeapon::All_StopReload_Implementation(float blendOutTime) {
@@ -186,13 +191,8 @@ void AAmmoDrivenWeapon::All_Gunsling_Implementation(uint8 Index) {
 void AAmmoDrivenWeapon::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const {
     Super::GetLifetimeReplicatedProps(OutLifetimeProps);
     
-    DOREPLIFETIME(AAmmoDrivenWeapon, FP_ReloadAnimation);
-    DOREPLIFETIME(AAmmoDrivenWeapon, FP_ReloadAnimation_Empty);
-    DOREPLIFETIME(AAmmoDrivenWeapon, TP_ReloadAnimation);
-    DOREPLIFETIME(AAmmoDrivenWeapon, WPN_Reload);
     DOREPLIFETIME(AAmmoDrivenWeapon, ReserveCount);
     DOREPLIFETIME(AAmmoDrivenWeapon, ClipCount);
-    DOREPLIFETIME(AAmmoDrivenWeapon, ShouldInitAmmoAtBeginPlay);
     DOREPLIFETIME(AAmmoDrivenWeapon, ManualHeatReductionAmmo);
     DOREPLIFETIME(AAmmoDrivenWeapon, IsFiring);
     DOREPLIFETIME(AAmmoDrivenWeapon, HasRejoinedInitialized);

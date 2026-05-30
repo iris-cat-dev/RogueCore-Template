@@ -3,16 +3,15 @@
 #include "Templates/SubclassOf.h"
 
 UObjective::UObjective(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->ObjectiveWidgetClass = NULL;
+    this->ObjectiveWidgetClass = nullptr;
     this->CompletionRewardInCredits = 0;
     this->CompletionRewardInXP = 0;
     this->ScaleObjectiveToMission = true;
-    this->bHasReturnObjective = false;
-    this->RequiredReturnObjectiveCompleted = false;
     this->ShowObjectiveInHUD = true;
-    this->ObjectiveCompletedStat = NULL;
+    this->ObjectiveCompletedStat = nullptr;
+    this->bCompletedStatIncremented = false;
     this->IsPrimaryObjective = -1;
-    this->bIsNeededForMissionCompletion = false;
+    this->bIsRequiredObjective = false;
     this->MissionScale = 1.00f;
 }
 
@@ -23,7 +22,7 @@ void UObjective::SignalObjectiveUpdated() {
 void UObjective::OnRep_IsPrimaryObjective() {
 }
 
-bool UObjective::IsTutorialObjective_Implementation() const {
+bool UObjective::IsRequiredObjective() const {
     return false;
 }
 
@@ -32,10 +31,6 @@ bool UObjective::IsPrimary() const {
 }
 
 bool UObjective::IsObjectiveResource_Implementation(UResourceData* InResource) const {
-    return false;
-}
-
-bool UObjective::IsNeededForMissionCompletion() const {
     return false;
 }
 
@@ -61,6 +56,10 @@ int32 UObjective::GetRewardXP() const {
 
 FCreditsReward UObjective::GetRewardCredits() const {
     return FCreditsReward{};
+}
+
+FUsableAccessDeniedInformation UObjective::GetRequiredObjectiveAccessDeniedInformation_Implementation() const {
+    return FUsableAccessDeniedInformation{};
 }
 
 TSubclassOf<UOptionalObjectiveWidget> UObjective::GetOptionalMissionWidget_Implementation() const {
@@ -107,7 +106,6 @@ void UObjective::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifeti
     Super::GetLifetimeReplicatedProps(OutLifetimeProps);
     
     DOREPLIFETIME(UObjective, IsPrimaryObjective);
-    DOREPLIFETIME(UObjective, bIsNeededForMissionCompletion);
 }
 
 

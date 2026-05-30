@@ -9,3 +9,4 @@ enum class EFlameThrowerUpgradeType : uint8 {
     AoEHeat,
     KilledTargetsExplodeChance,
 };
+

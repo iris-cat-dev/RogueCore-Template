@@ -8,3 +8,4 @@ enum class EAttackOrigin : uint8 {
     FromSocket,
     CenterOntarget,
 };
+

@@ -4,9 +4,10 @@ UDifficultyManager::UDifficultyManager(const FObjectInitializer& ObjectInitializ
     this->MinModifierEnemyCount = 0.30f;
     this->MinModifierAttackCooldown = 0.95f;
     this->MinModifierSpeed = 0.95f;
+    this->UseSoloSpawnCountIfLastManStanding = false;
     this->ForcedPlayerCount = -1;
-    this->GameMode = NULL;
-    this->GameState = NULL;
+    this->GameMode = nullptr;
+    this->GameState = nullptr;
 }
 
 UDifficultySetting* UDifficultyManager::SelectDifficulty(int32 Index) {

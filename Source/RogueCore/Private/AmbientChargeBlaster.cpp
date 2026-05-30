@@ -3,10 +3,10 @@
 
 AAmbientChargeBlaster::AAmbientChargeBlaster(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->ChargeProgressForOtherFireAnim = 0.90f;
-    this->OtherFireAnimFP = NULL;
-    this->OtherFireAnimTP = NULL;
-    this->ChargeRecoilCurve = NULL;
-    this->MuzzleParticlesWeak = NULL;
+    this->OtherFireAnimFP = nullptr;
+    this->OtherFireAnimTP = nullptr;
+    this->ChargeRecoilCurve = nullptr;
+    this->MuzzleParticlesWeak = nullptr;
     this->LauncherComponent = CreateDefaultSubobject<UChargedProjectileLauncherComponent>(TEXT("ProjectileLauncherComponent"));
 }
 

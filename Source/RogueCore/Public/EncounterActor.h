@@ -1,16 +1,19 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameFramework/Actor.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
 #include "EncounterActor.generated.h"
 
 class APawn;
+
 UCLASS(Blueprintable)
 class AEncounterActor : public AActor {
     GENERATED_BODY()
 public:
     AEncounterActor(const FObjectInitializer& ObjectInitializer);
- 
+
+protected:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void Receive_EncounterHasSpawned(APawn* spawnedPawn);
     
 };
+

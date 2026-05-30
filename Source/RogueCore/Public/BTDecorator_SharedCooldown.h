@@ -1,17 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "BehaviorTree/BTDecorator.h"
-#include "BehaviorTree/BehaviorTreeTypes.h"
-#include "RandRange.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=AIModule -ObjectName=BlackboardKeySelector -FallbackName=BlackboardKeySelector
+#include "BTDecorator_RangedCooldown.h"
 #include "BTDecorator_SharedCooldown.generated.h"
 
 UCLASS(Blueprintable)
-class UBTDecorator_SharedCooldown : public UBTDecorator {
+class UBTDecorator_SharedCooldown : public UBTDecorator_RangedCooldown {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FRandRange CoolDownTime;
-    
     FBlackboardKeySelector CooldownKey;
+    
     UBTDecorator_SharedCooldown();
+
 };
+

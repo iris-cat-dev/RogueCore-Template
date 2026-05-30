@@ -2,5 +2,6 @@
 
 FSpawnLogSubSection::FSpawnLogSubSection() {
     this->Expanded = false;
+    this->SectionHeader = FString();
 }
 

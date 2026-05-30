@@ -8,3 +8,4 @@ enum class EEscortExtractorState : uint8 {
     Taken,
     Full,
 };
+

@@ -2,7 +2,7 @@
 
 UDeepProceduralMeshComponent::UDeepProceduralMeshComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->bSelectable = false;
-    this->ProcMeshBodySetup = NULL;
+    this->ProcMeshBodySetup = nullptr;
 }
 
 UTerrainMaterialCore* UDeepProceduralMeshComponent::FindTerrainMaterialFromPhysicalMaterial(UPhysicalMaterial* Material) const {

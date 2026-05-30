@@ -1,9 +1,12 @@
 #include "BioBoosterInterfaceAudio.h"
 
 FBioBoosterInterfaceAudio::FBioBoosterInterfaceAudio() {
-    this->AudioSelectionStart = NULL;
-    this->AudioSelectionSuccess = NULL;
-    this->AudioSelectionFailed = NULL;
-    this->AudioSelectionProgress = NULL;
+    this->AudioSelectionStart = nullptr;
+    this->AudioSelectionSuccess = nullptr;
+    this->AudioSelectionFailed = nullptr;
+    this->AudioSelectionProgress = nullptr;
+    this->AudioRootComponent = nullptr;
+    this->AudioSelectionProgressParam = FName();
+    this->ProgressAudioComponent = nullptr;
 }
 

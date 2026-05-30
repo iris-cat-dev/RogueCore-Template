@@ -1,6 +1,6 @@
 #include "LMGGuntoweModule.h"
 #include "Components/AudioComponent.h"
-#include "Components/SceneComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
 #include "DamageComponent.h"
 #include "HitscanComponent.h"
 #include "Net/UnrealNetwork.h"
@@ -10,9 +10,9 @@ ALMGGuntoweModule::ALMGGuntoweModule(const FObjectInitializer& ObjectInitializer
     this->DamageComp = CreateDefaultSubobject<UDamageComponent>(TEXT("DMGComponent"));
     this->AimAtWhenNoTarget = CreateDefaultSubobject<USceneComponent>(TEXT("AimAtWhenNoTarget"));
     this->FireAudio = CreateDefaultSubobject<UAudioComponent>(TEXT("FiringAudioComponent"));
-    this->TracerEffect = NULL;
-    this->MuzzleEffect = NULL;
-    this->ShootTailSound = NULL;
+    this->TracerEffect = nullptr;
+    this->MuzzleEffect = nullptr;
+    this->ShootTailSound = nullptr;
     this->BurstSize = 8;
     this->MaxAimOffset = 300.00f;
     this->IdleAimRotationSpeed = 10.00f;

@@ -1,9 +1,9 @@
 #include "CSGPreviewScene.h"
 
 UCSGPreviewScene::UCSGPreviewScene() {
-    this->mesh = NULL;
+    this->mesh = nullptr;
     this->Seed = 0;
-    this->TerrainMaterial = NULL;
+    this->TerrainMaterial = nullptr;
 }
 
 

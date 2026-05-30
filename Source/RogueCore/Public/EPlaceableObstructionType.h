@@ -15,3 +15,4 @@ enum class EPlaceableObstructionType : uint8 {
     TooClose,
     Other,
 };
+

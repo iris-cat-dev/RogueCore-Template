@@ -2,7 +2,7 @@
 #include "Net/UnrealNetwork.h"
 
 UBXELogicUnlockComponent::UBXELogicUnlockComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->Character = NULL;
+    this->Character = nullptr;
     this->DamageListenerProfile = 0;
     this->TriggerBlueprintEvents = true;
 }
@@ -19,10 +19,6 @@ float UBXELogicUnlockComponent::GetTotalUpgradeValueMultiplied() const {
 
 float UBXELogicUnlockComponent::GetTotalUpgradeValue() const {
     return 0.0f;
-}
-
-int32 UBXELogicUnlockComponent::GetModifierValue_Implementation(float InAmount) const {
-    return 0;
 }
 
 float UBXELogicUnlockComponent::GetClampedUpgradeValue(float Previous) const {

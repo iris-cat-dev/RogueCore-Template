@@ -8,4 +8,6 @@ class AEnemyAIController : public AFSDAIController {
     GENERATED_BODY()
 public:
     AEnemyAIController(const FObjectInitializer& ObjectInitializer);
+
 };
+

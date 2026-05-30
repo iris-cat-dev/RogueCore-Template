@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/Object.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "BossFight.h"
 #include "BossFightInterface.h"
 #include "SimpleBossFight.generated.h"
@@ -13,5 +13,8 @@ public:
     FBossFight BossFight;
     
     USimpleBossFight();
+
+
     // Fix for true pure virtual functions not being implemented
 };
+

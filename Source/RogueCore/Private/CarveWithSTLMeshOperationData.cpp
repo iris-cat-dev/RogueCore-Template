@@ -2,10 +2,11 @@
 
 FCarveWithSTLMeshOperationData::FCarveWithSTLMeshOperationData() {
     this->OperationNumber = 0;
-    this->STLMeshCarver = NULL;
-    this->StaticMeshCarver = NULL;
-    this->Material = NULL;
+    this->STLMeshCarver = nullptr;
+    this->StaticMeshCarver = nullptr;
+    this->Material = nullptr;
     this->CarveFilter = ECarveFilterType::ReplaceAll;
     this->Precious = EPreciousMaterialOptions::TurnIntoGems;
+    this->Transform = FMatrixWithExactSync();
 }
 

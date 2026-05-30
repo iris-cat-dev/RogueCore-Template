@@ -11,6 +11,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EReadyUpStage Stage;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FReadyUpParticipant> Participants;
+    
     ROGUECORE_API FReadyUpState();
 };
+

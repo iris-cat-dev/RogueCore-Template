@@ -2,7 +2,7 @@
 #include "Templates/SubclassOf.h"
 
 UStatusEffectsComponent::UStatusEffectsComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->OwnerHealth = NULL;
+    this->OwnerHealth = nullptr;
     this->IgnoreAll = false;
 }
 

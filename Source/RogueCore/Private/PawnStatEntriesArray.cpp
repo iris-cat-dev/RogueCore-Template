@@ -1,6 +1,6 @@
 #include "PawnStatEntriesArray.h"
 
 FPawnStatEntriesArray::FPawnStatEntriesArray() {
-    this->Owner = NULL;
+    this->Owner = nullptr;
 }
 

@@ -3,6 +3,7 @@
 #include "GymCollectiveResources.generated.h"
 
 class UResourceData;
+
 USTRUCT(BlueprintType)
 struct FGymCollectiveResources {
     GENERATED_BODY()
@@ -12,3 +13,4 @@ public:
     
     ROGUECORE_API FGymCollectiveResources();
 };
+

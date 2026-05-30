@@ -19,3 +19,4 @@ enum class ELockOnWeaponUpgrades : uint8 {
     UseLockOnTargetStatusEffect,
     FearEnabled,
 };
+

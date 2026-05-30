@@ -8,4 +8,6 @@ class UWeaponTypeTag : public UWeaponTagBase {
     GENERATED_BODY()
 public:
     UWeaponTypeTag();
+
 };
+

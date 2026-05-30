@@ -13,15 +13,15 @@ ADoubleDrillItem::ADoubleDrillItem(const FObjectInitializer& ObjectInitializer) 
     this->WeaponTags = CreateDefaultSubobject<UWeaponTagContainerComponent>(TEXT("WeaponTagComp"));
     this->AudioComponent = CreateDefaultSubobject<UFSDAudioComponent>(TEXT("Audio"));
     this->Aggregator = CreateDefaultSubobject<UDoubleDrillAggregator>(TEXT("Aggregator"));
-    this->FPMineMontage = NULL;
-    this->TPMineMontage = NULL;
-    this->FPOverheat = NULL;
-    this->TPOverheat = NULL;
-    this->FPGunsling = NULL;
-    this->TPGunsling = NULL;
-    this->Damage = NULL;
-    this->DrillParticles = NULL;
-    this->DrillRumble = NULL;
+    this->FPMineMontage = nullptr;
+    this->TPMineMontage = nullptr;
+    this->FPOverheat = nullptr;
+    this->TPOverheat = nullptr;
+    this->FPGunsling = nullptr;
+    this->TPGunsling = nullptr;
+    this->Damage = nullptr;
+    this->DrillParticles = nullptr;
+    this->DrillRumble = nullptr;
     this->BlockParticlesScaleFP = 1.00f;
     this->BlockParticlesScaleTP = 1.00f;
     this->State = EDoubleDrillState::Equipping;
@@ -38,14 +38,14 @@ ADoubleDrillItem::ADoubleDrillItem(const FObjectInitializer& ObjectInitializer) 
     this->FriendlyDamageRadius = 20.00f;
     this->DamageRate = 3.00f;
     this->armorDamageMultiplier = 1.00f;
-    this->DamageClass = NULL;
+    this->DamageClass = nullptr;
     this->FriendlyFireModifier = 0.10f;
     this->MaxFuel = 0.00f;
     this->Fuel = 0.00f;
     this->FuelUsePerDig = 0.25f;
     this->FuelUsePerMelee = 0.15f;
     this->SupplyStatusWeight = 1.00f;
-    this->ShoutOutOfFuel = NULL;
+    this->ShoutOutOfFuel = nullptr;
     this->DrillParticlesDuration = 0.25f;
     this->IsMining = false;
     this->IsGunslinging = false;
@@ -66,7 +66,7 @@ void ADoubleDrillItem::Server_DoDamage_Implementation(const TArray<FDoubleDrillD
 void ADoubleDrillItem::Server_DigBlock_Implementation(FVector_NetQuantize Start, FVector_NetQuantize End) {
 }
 
-void ADoubleDrillItem::ResupplyAmount(float amount) {
+void ADoubleDrillItem::ResupplyAmount(float Amount) {
 }
 
 void ADoubleDrillItem::OnTargetKilled(AActor* Target, UFSDPhysicalMaterial* PhysMat, bool wasDirectHit) {
@@ -83,10 +83,13 @@ void ADoubleDrillItem::OnRep_IsGunslinging() {
 void ADoubleDrillItem::OnDrillParticlesTimerElapsed() {
 }
 
+void ADoubleDrillItem::OnCharacterStatsChanged(UPawnStat* Stat) {
+}
+
 void ADoubleDrillItem::Client_SetAmmoScalePercent_Implementation(float Percent) {
 }
 
-void ADoubleDrillItem::Client_ResupplyAmount_Implementation(float amount) {
+void ADoubleDrillItem::Client_ResupplyAmount_Implementation(float Amount) {
 }
 
 void ADoubleDrillItem::Client_Resupply_Implementation(float percentage) {

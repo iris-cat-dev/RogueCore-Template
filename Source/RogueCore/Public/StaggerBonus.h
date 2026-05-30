@@ -8,7 +8,12 @@ class UStaggerBonus : public UDamageBonusBase {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float Duration;
+    FString Name;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float duration;
     
     UStaggerBonus();
+
 };
+

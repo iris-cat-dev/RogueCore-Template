@@ -2,12 +2,17 @@
 #include "Templates/SubclassOf.h"
 
 UItemData::UItemData() {
-    this->ItemID = NULL;
-    this->IconLine = NULL;
-    this->IconBG = NULL;
-    this->IconDetailed = NULL;
+    this->ItemID = nullptr;
+    this->IconLine = nullptr;
+    this->IconBG = nullptr;
+    this->IconDetailed = nullptr;
+    this->FunctionalDescription = FText::FromString(TEXT("Write me"));
     this->CreditCost = 0;
     this->RequiredCharacterLevel = 0;
+}
+
+TSoftClassPtr<AShowroomItem> UItemData::GetShowroomItem() const {
+    return NULL;
 }
 
 TSoftObjectPtr<UTexture2D> UItemData::GetPreviewImageSoft() const {

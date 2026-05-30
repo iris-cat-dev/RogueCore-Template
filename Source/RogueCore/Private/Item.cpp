@@ -9,36 +9,37 @@ AItem::AItem(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitiali
     const FProperty* p_RemoteRole = GetClass()->FindPropertyByName("RemoteRole");
     (*p_RemoteRole->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(this)) = ROLE_SimulatedProxy;
     this->EnableDangerousSaveGameIDEditing = false;
-    this->ItemID = NULL;
-    this->Character = NULL;
+    this->ItemID = nullptr;
+    this->Character = nullptr;
     this->UpgradableItem = CreateDefaultSubobject<UUpgradableItemComponent>(TEXT("Upgradable"));
     this->AttachSocket = TEXT("Dwarf_HandR_AttachSocket");
     this->AttachRule = EAttachmentRule::SnapToTarget;
     this->DetachRule = EDetachmentRule::KeepWorld;
-    this->CameraShake = NULL;
+    this->CameraShake = nullptr;
     this->CameraShakeOnStartUsing = false;
     this->CameraShakeOnEquip = false;
-    this->HeatCurve = NULL;
+    this->HeatCurve = nullptr;
     this->ManualHeatPerUse = 0.00f;
     this->CooldownRate = 1.00f;
     this->ManualCooldownDelay = -1.00f;
     this->UnjamDuration = 8.00f;
     this->CurrentTemperature = 0.00f;
-    this->AudioTemperature = NULL;
+    this->AudioTemperature = nullptr;
     this->AudioTemperatureFadeout = 0.00f;
     this->TemperatureFloatParam = TEXT("temperature");
-    this->TemperatureAudioComponent = NULL;
+    this->TemperatureAudioComponent = nullptr;
     this->overheated = false;
-    this->ShoutOverheated = NULL;
+    this->ShoutOverheated = nullptr;
     this->bAimAssistEnabled = true;
     this->MovementRateWhileUsing = 1.00f;
     this->CanPlayLedgeClimbWhileUsing = true;
     this->CanInspectItem = true;
     this->CanSprintWithItem = true;
-    this->CustomIconWidget = NULL;
+    this->CustomIconWidget = nullptr;
     this->AdvancedVibrationSendLevel = 1.00f;
     this->IsEquipped = false;
     this->isUsing = false;
+    this->EquippedFromUnlock = nullptr;
 }
 
 void AItem::UpdateSkin() {
@@ -78,13 +79,17 @@ void AItem::Resupply(float percentage) {
 void AItem::OnRep_IsUsing(bool OldValue) {
 }
 
-void AItem::OnRep_Attributes() {
+void AItem::OnRep_Attributes(const TArray<UItemUpgrade*>& InPrevAttributes) {
 }
 
 void AItem::OnOwnerDestroyed(AActor* owningActor) {
 }
 
 void AItem::OnCharacterLevelUp(int32 inLevel, const TArray<UBXEUnlockBase*>& inUnlocks) {
+}
+
+bool AItem::IsWeapon() const {
+    return false;
 }
 
 bool AItem::IsLocallyControlled() const {
@@ -97,6 +102,10 @@ bool AItem::IsFirstPerson() const {
 
 TSubclassOf<AActor> AItem::GetWeaponViewClass() const {
     return NULL;
+}
+
+EUnlockType AItem::GetUnlockType() const {
+    return EUnlockType::None;
 }
 
 FItemLoadoutAnimations AItem::GetLoadoutAnimations() const {
@@ -146,6 +155,7 @@ void AItem::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimePro
     DOREPLIFETIME(AItem, Attributes);
     DOREPLIFETIME(AItem, overheated);
     DOREPLIFETIME(AItem, isUsing);
+    DOREPLIFETIME(AItem, EquippedFromUnlock);
 }
 
 

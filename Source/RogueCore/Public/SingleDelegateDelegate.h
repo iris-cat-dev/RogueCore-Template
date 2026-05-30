@@ -3,3 +3,4 @@
 #include "SingleDelegateDelegate.generated.h"
 
 UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE(FSingleDelegate);
+

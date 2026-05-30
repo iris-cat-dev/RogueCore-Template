@@ -8,4 +8,6 @@ class UDeadElementCondition : public UElementCondition {
     GENERATED_BODY()
 public:
     UDeadElementCondition();
+
 };
+

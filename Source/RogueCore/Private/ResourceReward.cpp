@@ -1,8 +1,8 @@
 #include "ResourceReward.h"
 
 UResourceReward::UResourceReward() {
-    this->Resource = NULL;
-    this->amount = 0;
+    this->Resource = nullptr;
+    this->Amount = 0;
 }
 
 

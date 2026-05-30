@@ -3,8 +3,8 @@
 #include "Templates/SubclassOf.h"
 
 UInventoryBase::UInventoryBase(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->LastEquippedActors[0] = NULL;
-    this->LastEquippedActors[1] = NULL;
+    this->LastEquippedActors[0] = nullptr;
+    this->LastEquippedActors[1] = nullptr;
 }
 
 void UInventoryBase::Server_SetEquippedActor_Implementation(const FEquippedActorData& Actor, bool CallClientDelayed) {
@@ -47,18 +47,10 @@ bool UInventoryBase::CanSelectActor(const AActor* Actor) const {
 
 void UInventoryBase::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const {
     Super::GetLifetimeReplicatedProps(OutLifetimeProps);
-
+    
     DOREPLIFETIME(UInventoryBase, ActorsSelectable);
     DOREPLIFETIME(UInventoryBase, ActorsNonSelectable);
     DOREPLIFETIME(UInventoryBase, ReplicatedEquippedActor);
-}
-
-bool UInventoryBase::Server_SetEquippedActor_Validate(const FEquippedActorData& Actor, bool CallClientDelayed) {
-    return true;
-}
-
-bool UInventoryBase::Server_EquipExternalActor_Validate(AActor* Actor) {
-    return true;
 }
 
 

@@ -3,6 +3,7 @@
 #include "RoomGeneratorGroupInstance.generated.h"
 
 class URoomGenerator;
+
 USTRUCT(BlueprintType)
 struct FRoomGeneratorGroupInstance {
     GENERATED_BODY()
@@ -12,3 +13,4 @@ public:
     
     ROGUECORE_API FRoomGeneratorGroupInstance();
 };
+

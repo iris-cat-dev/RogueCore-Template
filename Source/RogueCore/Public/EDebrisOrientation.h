@@ -9,3 +9,4 @@ enum class EDebrisOrientation : uint8 {
     AlignToSurfaceNormal,
     Fixed,
 };
+

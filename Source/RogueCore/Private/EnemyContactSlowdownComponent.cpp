@@ -1,7 +1,7 @@
 #include "EnemyContactSlowdownComponent.h"
 
 UEnemyContactSlowdownComponent::UEnemyContactSlowdownComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->StatusEffect = NULL;
+    this->StatusEffect = nullptr;
 }
 
 void UEnemyContactSlowdownComponent::OnEndOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex) {

@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Animation/AnimInstance.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=AnimInstance -FallbackName=AnimInstance
 #include "ECoreCrusherState.h"
 #include "CoreCrusherAnimInstance.generated.h"
 
@@ -11,6 +11,10 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     ECoreCrusherState CoreCrusherState;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     float BootingTimeLeft;
+    
     UCoreCrusherAnimInstance();
+
 };
+

@@ -10,3 +10,4 @@ enum class EAmmoWeaponState : uint8 {
     Reloading,
     BurstCycling,
 };
+

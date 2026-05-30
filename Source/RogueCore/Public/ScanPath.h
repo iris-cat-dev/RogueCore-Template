@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "ScanPath.generated.h"
 
 USTRUCT(BlueprintType)
@@ -8,8 +8,11 @@ struct FScanPath {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    FVector Start = FVector::ZeroVector;
+    FVector Start;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FVector End;
-
+    
+    ROGUECORE_API FScanPath();
 };
+

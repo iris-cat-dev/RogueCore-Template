@@ -10,3 +10,4 @@ enum class EExitTrackMode : uint8 {
     JumpInCamDir,
     JumpInTrackDir,
 };
+

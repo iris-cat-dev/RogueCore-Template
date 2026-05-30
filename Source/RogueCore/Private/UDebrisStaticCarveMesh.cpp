@@ -1,7 +1,7 @@
 #include "UDebrisStaticCarveMesh.h"
 
 FUDebrisStaticCarveMesh::FUDebrisStaticCarveMesh() {
-    this->mesh = NULL;
+    this->mesh = nullptr;
     this->Probablity = 0.00f;
 }
 

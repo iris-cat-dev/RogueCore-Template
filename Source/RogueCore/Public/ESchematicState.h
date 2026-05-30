@@ -8,3 +8,4 @@ enum class ESchematicState : uint8 {
     Owned,
     OwnedBuilt,
 };
+

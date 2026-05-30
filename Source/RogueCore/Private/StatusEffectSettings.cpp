@@ -1,8 +1,9 @@
 #include "StatusEffectSettings.h"
 
 UStatusEffectSettings::UStatusEffectSettings() {
-    this->EnemyOnFire = NULL;
-    this->frozen = NULL;
+    this->EnemyOnFire = nullptr;
+    this->frozen = nullptr;
+    this->SuppressedByFire = nullptr;
 }
 
 

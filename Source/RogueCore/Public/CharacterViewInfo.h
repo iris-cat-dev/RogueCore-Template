@@ -6,6 +6,7 @@
 
 class APlayerCharacter;
 class UVictoryPose;
+
 USTRUCT(BlueprintType)
 struct FCharacterViewInfo {
     GENERATED_BODY()
@@ -13,8 +14,15 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<APlayerCharacter> CharacterClass;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FEquippedVanity EquippedVanity;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool SurvivedInPod;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UVictoryPose* VictoryPose;
+    
     ROGUECORE_API FCharacterViewInfo();
 };
+

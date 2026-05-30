@@ -1,13 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/Interface.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Interface -FallbackName=Interface
 #include "SoftReferenceProvider.generated.h"
 
 UINTERFACE()
-class ROGUECORE_API USoftReferenceProvider : public UInterface {
-	GENERATED_BODY()
+class USoftReferenceProvider : public UInterface {
+    GENERATED_BODY()
 };
-class ROGUECORE_API ISoftReferenceProvider : public IInterface {
-	GENERATED_BODY()
+
+class ISoftReferenceProvider : public IInterface {
+    GENERATED_BODY()
 public:
 };
+

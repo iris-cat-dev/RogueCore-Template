@@ -7,7 +7,7 @@ FSeasonMissionResult::FSeasonMissionResult() {
     this->XPMultiplier = 0.00f;
     this->TokenGain = 0;
     this->LevelIncreased = false;
-    this->EndScreenImage = NULL;
-    this->EndScreenResourceIcon = NULL;
+    this->EndScreenImage = nullptr;
+    this->EndScreenResourceIcon = nullptr;
 }
 

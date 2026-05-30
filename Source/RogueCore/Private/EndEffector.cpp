@@ -6,5 +6,9 @@ FEndEffector::FEndEffector() {
     this->RotationAlpha = 0.00f;
     this->RotationDepth = 0;
     this->Pull = 0.00f;
+    this->EndBone = FName();
+    this->position = FVector::ZeroVector;
+    this->GroundCorrection = FVector::ZeroVector;
+    this->Rotation = FQuat::Identity;
 }
 

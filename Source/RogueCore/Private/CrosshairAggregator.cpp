@@ -1,10 +1,10 @@
 #include "CrosshairAggregator.h"
 
 UCrosshairAggregator::UCrosshairAggregator(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->CrosshairWidget = NULL;
-    this->CrossHairType = NULL;
-    this->CustomAmmoCounterWidget = NULL;
-    this->CustomAmmoCounterType = NULL;
+    this->CrosshairWidget = nullptr;
+    this->CrossHairType = nullptr;
+    this->CustomAmmoCounterWidget = nullptr;
+    this->CustomAmmoCounterType = nullptr;
 }
 
 void UCrosshairAggregator::SetCrosshair(UUserWidget* Widget) {

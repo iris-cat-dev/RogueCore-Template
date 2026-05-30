@@ -12,8 +12,7 @@ AMULE::AMULE(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitiali
 void AMULE::SetIsDown(bool NewIsDown) {
 }
 
-void AMULE::OnRep_IsDown() {
-}
+
 
 void AMULE::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const {
     Super::GetLifetimeReplicatedProps(OutLifetimeProps);

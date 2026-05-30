@@ -2,16 +2,19 @@
 #include "Templates/SubclassOf.h"
 
 UItemUpgrade::UItemUpgrade() {
-    this->SelectionFilter = NULL;
+    this->SelectionFilter = nullptr;
     this->Cost = 0;
     this->ModifierType = EWeaponOverviewModifierType::Additive;
     this->UseOldCost = false;
     this->UpgradeTier = EUpgradeTiers::Tier_1;
     this->upgradeClass = EUpgradeClass::Class_A;
-    this->Category = NULL;
+    this->Category = nullptr;
 }
 
 void UItemUpgrade::UnequipUpgrade(TSubclassOf<AActor> itemClass, AFSDPlayerState* PlayerState) {
+}
+
+void UItemUpgrade::RemoveFromItem(AActor* Item) const {
 }
 
 TArray<FItemUpgradeStatText> UItemUpgrade::GetUpgradeStatTexts() const {
@@ -22,8 +25,16 @@ FText UItemUpgrade::GetUpgradeName(UItemUpgrade* upgrade) {
     return FText::GetEmpty();
 }
 
+FText UItemUpgrade::GetUpgradeDescription(UItemUpgrade* upgrade) {
+    return FText::GetEmpty();
+}
+
 TArray<FCraftingCost> UItemUpgrade::GetUpgradeCost() const {
     return TArray<FCraftingCost>();
+}
+
+UItemUpgradeCategory* UItemUpgrade::GetUpgradeCategory() const {
+    return NULL;
 }
 
 FString UItemUpgrade::GetSourceName() {

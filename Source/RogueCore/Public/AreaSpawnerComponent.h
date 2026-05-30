@@ -1,25 +1,34 @@
 #pragma once
 #include "CoreMinimal.h"
-
-#include "Components/ActorComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
+#include "DeepPathFinderSize.h"
 #include "DeepPathFinderSize.h"
 #include "Templates/SubclassOf.h"
 #include "AreaSpawnerComponent.generated.h"
 
 class AActor;
 class APawn;
+
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class UAreaSpawnerComponent : public UActorComponent {
     GENERATED_BODY()
-    
-
 public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<AActor> ActorToSpawn;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     DeepPathFinderSize PathfinderSize;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float ChanceToSpawn;
+    
+public:
     UAreaSpawnerComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void SpawnInArea(const FVector& Origin, float Radius, float maxVerticalDistance, APawn* Instigator);
+    
 };
+

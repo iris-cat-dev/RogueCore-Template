@@ -2,6 +2,6 @@
 
 FEmptyBinaryMatProperties::FEmptyBinaryMatProperties() {
     this->Result = EEmptyBinaryComb::Unchanged;
-    this->Material = NULL;
+    this->Material = nullptr;
 }
 

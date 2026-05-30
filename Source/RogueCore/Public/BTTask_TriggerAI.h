@@ -6,12 +6,13 @@
 UCLASS(Blueprintable)
 class UBTTask_TriggerAI : public UBTTaskNode {
     GENERATED_BODY()
-    
-
 public:
-
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName TriggerName;
     
+public:
     UBTTask_TriggerAI();
+
 };
+

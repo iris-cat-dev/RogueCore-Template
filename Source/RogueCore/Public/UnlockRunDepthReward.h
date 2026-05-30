@@ -7,10 +7,13 @@
 UCLASS(Blueprintable, EditInlineNew)
 class UUnlockRunDepthReward : public UReward {
     GENERATED_BODY()
-    
 public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ERunDepth RunDepth;
     
+public:
     UUnlockRunDepthReward();
+
 };
+

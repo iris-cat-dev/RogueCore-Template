@@ -3,12 +3,12 @@
 
 URecallableProjectileComponent::URecallableProjectileComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->bAutoActivate = true;
-    this->UpdatedComponent = NULL;
-    this->usable = NULL;
-    this->RecallTarget = NULL;
+    this->UpdatedComponent = nullptr;
+    this->usable = nullptr;
+    this->RecallTarget = nullptr;
     this->RecallStartTime = 1.00f;
     this->RecallSpeed = 0.30f;
-    this->FPMeshComponent = NULL;
+    this->FPMeshComponent = nullptr;
     this->IsRecallable = false;
 }
 

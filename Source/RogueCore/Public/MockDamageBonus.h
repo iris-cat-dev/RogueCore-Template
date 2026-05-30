@@ -8,4 +8,6 @@ class UMockDamageBonus : public UDamageBonusBase {
     GENERATED_BODY()
 public:
     UMockDamageBonus();
+
 };
+

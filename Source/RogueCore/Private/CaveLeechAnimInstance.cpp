@@ -2,8 +2,8 @@
 
 UCaveLeechAnimInstance::UCaveLeechAnimInstance() {
     this->HeadOffset = 0.00f;
-    this->CaveLeech = NULL;
-    this->CaveLeechHead = NULL;
+    this->CaveLeech = nullptr;
+    this->CaveLeechHead = nullptr;
     this->bIdle = false;
     this->bTracking = false;
     this->bPulling = false;

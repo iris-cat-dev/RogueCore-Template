@@ -2,15 +2,17 @@
 #include "Net/UnrealNetwork.h"
 
 UCharacterVanityComponent::UCharacterVanityComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->ShownBeardColor = NULL;
-    this->ArmorMaterial = NULL;
-    this->UndersuitMaterial = NULL;
-    this->ArmorClothMaterial = NULL;
-    this->DynamicSkinMaterial = NULL;
+    this->ShownBeardColor = nullptr;
+    this->ArmorMaterial = nullptr;
+    this->UndersuitMaterial = nullptr;
+    this->GauntletMaterial = nullptr;
+    this->ArmorClothMaterial = nullptr;
+    this->DynamicSkinMaterial = nullptr;
     this->HeadVanityType = EHeadVanityType::HairOnly;
-    this->PreviewedItem = NULL;
-    this->PreviewedArmorMaterial = NULL;
-    this->SkinMaterial = NULL;
+    this->PreviewedItem = nullptr;
+    this->PreviewedArmorMaterial = nullptr;
+    this->SkinMaterial = nullptr;
+    this->GuantletsAreVisible = true;
 }
 
 void UCharacterVanityComponent::UpdateMeshes() {
@@ -25,7 +27,7 @@ void UCharacterVanityComponent::SetEquippedVanityInViewer(const FEquippedVanity&
 void UCharacterVanityComponent::SetDesireSleevelessArmor(UObject* WorldContextObject, UPlayerCharacterID* Character, bool inDesireSleeveless) {
 }
 
-void UCharacterVanityComponent::Server_SetEquippedVanity_Implementation(const FEquippedVanity& EquippedItems) {
+void UCharacterVanityComponent::Server_SetEquippedVanity_Implementation(const FEquippedVanity& equippedItems) {
 }
 
 void UCharacterVanityComponent::RemoveMedicalGown() {
@@ -39,11 +41,18 @@ bool UCharacterVanityComponent::Receive_GetDesireSleevelessArmor(UObject* WorldC
     return false;
 }
 
+void UCharacterVanityComponent::OnRep_GuantletsAreVisible() {
+}
+
 void UCharacterVanityComponent::OnRep_EquippedVanity() {
 }
 
 bool UCharacterVanityComponent::HasSpawnedInMedbay() const {
     return false;
+}
+
+UMaterialInterface* UCharacterVanityComponent::GetGauntletMaterial() const {
+    return NULL;
 }
 
 UVanityItem* UCharacterVanityComponent::GetEquippedVanityItem(EVanitySlot Slot, bool ignorePreviewItems) const {
@@ -77,6 +86,7 @@ void UCharacterVanityComponent::GetLifetimeReplicatedProps(TArray<FLifetimePrope
     Super::GetLifetimeReplicatedProps(OutLifetimeProps);
     
     DOREPLIFETIME(UCharacterVanityComponent, EquippedVanity);
+    DOREPLIFETIME(UCharacterVanityComponent, GuantletsAreVisible);
 }
 
 

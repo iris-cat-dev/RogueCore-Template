@@ -5,22 +5,22 @@ UEscortObjective::UEscortObjective(const FObjectInitializer& ObjectInitializer) 
     this->DidRescueDorettaHead = false;
     this->AreasToScan = 0;
     this->ScanCount = 0;
-    this->Positioning = NULL;
-    this->EscortMulePositioning = NULL;
-    this->CostDistanceCurve = NULL;
+    this->Positioning = nullptr;
+    this->EscortMulePositioning = nullptr;
+    this->CostDistanceCurve = nullptr;
     this->DebrisRadius = 1500.00f;
     this->AreasScanned = 0;
     this->State = EEscortMissionState::InGarage;
     this->FinalBattle = false;
-    this->FuelResource = NULL;
-    this->GemResource = NULL;
+    this->FuelResource = nullptr;
+    this->GemResource = nullptr;
     this->ServerShellProgress = 0.00f;
     this->SecondsToDestroyHeartstone = 120;
     this->FullCanistersRequired = 2;
     this->FullCanisters = 0;
     this->FuelResourceAmount = 100;
-    this->EscortMule = NULL;
-    this->EscortDestination = NULL;
+    this->EscortMule = nullptr;
+    this->EscortDestination = nullptr;
 }
 
 void UEscortObjective::SyncProgressTimer() {
@@ -45,7 +45,7 @@ void UEscortObjective::RegisterFuelCannister(AExtractorItem* extractor) {
 void UEscortObjective::RecordFailStage(bool muleDied, bool missionAborted) {
 }
 
-void UEscortObjective::OnResourceChanged(UCappedResource* CappedResource, float amount) {
+void UEscortObjective::OnResourceChanged(UCappedResource* CappedResource, float Amount) {
 }
 
 void UEscortObjective::OnRep_FullCanisters() {
@@ -67,7 +67,7 @@ void UEscortObjective::OnRep_AreasScanned(int32 prevAmount) {
 void UEscortObjective::OnHealthChanged(float Health) {
 }
 
-void UEscortObjective::OnFullCanistersChanged(int32 amount) {
+void UEscortObjective::OnFullCanistersChanged(int32 Amount) {
 }
 
 

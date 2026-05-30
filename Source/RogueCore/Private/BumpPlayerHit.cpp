@@ -1,6 +1,7 @@
 #include "BumpPlayerHit.h"
 
 FBumpPlayerHit::FBumpPlayerHit() {
-    this->Player = NULL;
+    this->Player = nullptr;
+    this->Force = FVector::ZeroVector;
 }
 

@@ -1,5 +1,5 @@
 #include "HangingFireCracker.h"
-#include "Components/SkeletalMeshComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SkeletalMeshComponent -FallbackName=SkeletalMeshComponent
 #include "NiagaraComponent.h"
 #include "FSDAudioComponent.h"
 #include "InstantUsable.h"
@@ -10,8 +10,8 @@ AHangingFireCracker::AHangingFireCracker(const FObjectInitializer& ObjectInitial
     this->SKMesh = (USkeletalMeshComponent*)RootComponent;
     this->MovingSparks = CreateDefaultSubobject<UNiagaraComponent>(TEXT("MovingSparks"));
     this->FuseSound = CreateDefaultSubobject<UFSDAudioComponent>(TEXT("FuseSound"));
-    this->CrackerExplosion = NULL;
-    this->CrackerExplosionCue = NULL;
+    this->CrackerExplosion = nullptr;
+    this->CrackerExplosionCue = nullptr;
     this->SparkSpeed = 20.00f;
     this->ExplodeRange = 40.00f;
     this->ExplodeImpulse = 100.00f;

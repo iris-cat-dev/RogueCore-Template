@@ -8,3 +8,4 @@ enum class ECellCategory : uint8 {
     Tunnel,
     ECellCategory_MAX = 255 UMETA(Hidden),
 };
+

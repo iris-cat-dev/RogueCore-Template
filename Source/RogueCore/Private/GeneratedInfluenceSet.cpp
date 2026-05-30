@@ -1,7 +1,7 @@
 #include "GeneratedInfluenceSet.h"
 
 FGeneratedInfluenceSet::FGeneratedInfluenceSet() {
-    this->CaveInfluencer = NULL;
+    this->CaveInfluencer = nullptr;
     this->NetworkID = 0;
 }
 

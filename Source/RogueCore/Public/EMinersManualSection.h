@@ -7,8 +7,11 @@ enum class EMinersManualSection : uint8 {
     FrontPage,
     Hints,
     Combat,
-    Creatures,
-    Biomes,
-    Missions,
-    Resources,
+    Opposition,
+    Gear,
+    Upgrades,
+    FacilityEncounter,
+    ExpeniteEvents,
+    Artifacts,
 };
+

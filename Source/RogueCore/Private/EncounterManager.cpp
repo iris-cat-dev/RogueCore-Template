@@ -2,8 +2,8 @@
 
 UEncounterManager::UEncounterManager(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->SpawnDistanceFromRoomBounds = 0.00f;
-    this->ProceduralSetup = NULL;
-    this->SpawnManager = NULL;
+    this->ProceduralSetup = nullptr;
+    this->SpawnManager = nullptr;
 }
 
 void UEncounterManager::ShowSpawnLocations() {

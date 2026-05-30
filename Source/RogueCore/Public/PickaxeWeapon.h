@@ -8,4 +8,6 @@ class APickaxeWeapon : public APickaxeItem {
     GENERATED_BODY()
 public:
     APickaxeWeapon(const FObjectInitializer& ObjectInitializer);
+
 };
+

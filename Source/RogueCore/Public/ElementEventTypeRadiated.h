@@ -8,4 +8,6 @@ class UElementEventTypeRadiated : public UElementEventTypeBase {
     GENERATED_BODY()
 public:
     UElementEventTypeRadiated();
+
 };
+

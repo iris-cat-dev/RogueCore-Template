@@ -3,7 +3,7 @@
 
 AShootingPlant::AShootingPlant(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->IsVisible = false;
-    this->Target = NULL;
+    this->Target = nullptr;
 }
 
 void AShootingPlant::SetTarget(AActor* NewTarget) {

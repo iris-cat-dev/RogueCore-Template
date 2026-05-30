@@ -23,3 +23,4 @@ enum class EArmorSetTorso : uint8 {
     RightFoot,
     RightToe,
 };
+

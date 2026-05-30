@@ -8,4 +8,6 @@ class ROGUECORE_API UFuelLineConnectPoint : public UTrackBuilderConnectPoint {
     GENERATED_BODY()
 public:
     UFuelLineConnectPoint(const FObjectInitializer& ObjectInitializer);
+
 };
+

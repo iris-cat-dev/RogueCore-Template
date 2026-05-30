@@ -1,6 +1,7 @@
 #include "TunnelSettingItem.h"
 
 FTunnelSettingItem::FTunnelSettingItem() {
-    this->SegmentSetting = NULL;
+    this->SegmentSetting = nullptr;
+    this->SegmentSize = FInt32Interval();
 }
 

@@ -14,3 +14,4 @@ enum class EEnemyDescriptorCheatClass : uint8 {
     Specials,
     Boss,
 };
+

@@ -1,6 +1,6 @@
 #include "ActiveStatusEffectBank.h"
 
 FActiveStatusEffectBank::FActiveStatusEffectBank() {
-    this->Key = NULL;
+    this->Key = nullptr;
 }
 

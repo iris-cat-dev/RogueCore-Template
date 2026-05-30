@@ -5,16 +5,23 @@
 #include "FrozenAfflictionEffect.generated.h"
 
 class UMaterialInterface;
+
 UCLASS(Abstract, Blueprintable)
 class UFrozenAfflictionEffect : public UAfflictionEffect {
     GENERATED_BODY()
-    
-
 public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EFrozenAfflictionType AfflictionType;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UMaterialInterface* MaterialOverride;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UMaterialInterface*> IceMaterials;
+    
+public:
     UFrozenAfflictionEffect();
+
 };
+

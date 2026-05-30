@@ -8,4 +8,6 @@ class UWeaponTechTag : public UWeaponTagBase {
     GENERATED_BODY()
 public:
     UWeaponTechTag();
+
 };
+

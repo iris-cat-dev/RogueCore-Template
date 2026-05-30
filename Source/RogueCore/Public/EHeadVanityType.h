@@ -10,3 +10,4 @@ enum class EHeadVanityType : uint8 {
     HairAndHeadGear,
     HairAndHeadGear_UseArmorMaterial,
 };
+

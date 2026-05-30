@@ -5,6 +5,8 @@ UEnemyControlStateComponent::UEnemyControlStateComponent(const FObjectInitialize
     this->StateId = 17;
     this->UseThirdPersonCam = true;
     this->ControlState = EEnemyControlState::Disconneced;
+    this->GetOnShout = nullptr;
+    this->OldPhysicsAsset = nullptr;
 }
 
 void UEnemyControlStateComponent::ServerExit_Implementation() {
@@ -21,7 +23,7 @@ void UEnemyControlStateComponent::OnEnemyCrashMontageEnded(UAnimMontage* Montage
 
 
 
-void UEnemyControlStateComponent::JumpPressed() {
+void UEnemyControlStateComponent::JumpPressed(APlayerCharacter* InPlayer) {
 }
 
 UAIPlayerControlComponent* UEnemyControlStateComponent::GetAiPlayerControlComponent() {

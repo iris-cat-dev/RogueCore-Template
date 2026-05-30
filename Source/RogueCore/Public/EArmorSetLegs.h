@@ -14,3 +14,4 @@ enum class EArmorSetLegs : uint8 {
     RightFoot,
     RightToe,
 };
+

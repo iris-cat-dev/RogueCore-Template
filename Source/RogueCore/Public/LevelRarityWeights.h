@@ -7,8 +7,11 @@ USTRUCT(BlueprintType)
 struct FLevelRarityWeights {
     GENERATED_BODY()
 public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FRarityWeightItem> RarityLevelItems;
     
+public:
     ROGUECORE_API FLevelRarityWeights();
 };
+

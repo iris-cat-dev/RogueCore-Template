@@ -3,6 +3,7 @@
 #include "Formation.generated.h"
 
 class UFormationData;
+
 USTRUCT(BlueprintType)
 struct FFormation {
     GENERATED_BODY()
@@ -12,3 +13,4 @@ public:
     
     ROGUECORE_API FFormation();
 };
+

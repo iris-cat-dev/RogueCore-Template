@@ -1,18 +1,21 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/Interface.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Interface -FallbackName=Interface
 #include "StatusAddedComponent.generated.h"
 
 class AActor;
 class UStatusEffect;
-UINTERFACE(Blueprintable)
-class ROGUECORE_API UStatusAddedComponent : public UInterface {
+
+UINTERFACE(Blueprintable, MinimalAPI)
+class UStatusAddedComponent : public UInterface {
     GENERATED_BODY()
 };
-class ROGUECORE_API IStatusAddedComponent : public IInterface {
+
+class IStatusAddedComponent : public IInterface {
     GENERATED_BODY()
 public:
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
-    void InitializeEffect(UStatusEffect* Effect, AActor* EffectOwner);
+    void InitializeEffect(UStatusEffect* effect, AActor* EffectOwner);
+    
 };
 

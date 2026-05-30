@@ -7,5 +7,7 @@ enum class EGymGamemode : uint8 {
     Meter,
     Run,
     Button,
+    ButtonSequence,
     None,
 };
+

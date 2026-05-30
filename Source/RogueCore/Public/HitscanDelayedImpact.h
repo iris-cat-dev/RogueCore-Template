@@ -3,6 +3,7 @@
 #include "HitscanDelayedImpact.generated.h"
 
 class UFSDPhysicalMaterial;
+
 USTRUCT(BlueprintType)
 struct FHitscanDelayedImpact {
     GENERATED_BODY()
@@ -12,3 +13,4 @@ public:
     
     ROGUECORE_API FHitscanDelayedImpact();
 };
+

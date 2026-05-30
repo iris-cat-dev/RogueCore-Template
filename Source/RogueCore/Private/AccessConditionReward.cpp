@@ -1,7 +1,7 @@
 #include "AccessConditionReward.h"
 
 UAccessConditionReward::UAccessConditionReward() {
-    this->AccessCondition = NULL;
+    this->AccessCondition = nullptr;
 }
 
 

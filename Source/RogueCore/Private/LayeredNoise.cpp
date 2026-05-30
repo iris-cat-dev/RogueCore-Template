@@ -1,7 +1,7 @@
 #include "LayeredNoise.h"
 
 FLayeredNoise::FLayeredNoise() {
-    this->Noise = NULL;
+    this->Noise = nullptr;
     this->Scale = 0.00f;
 }
 

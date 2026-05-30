@@ -3,4 +3,6 @@
 #include "ReleasedActorSigDelegate.generated.h"
 
 class AActor;
+
 UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FReleasedActorSig, AActor*, aGrabbedActor, bool, fullGrabElapsed);
+

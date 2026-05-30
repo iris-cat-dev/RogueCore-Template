@@ -8,4 +8,6 @@ class ROGUECORE_API UStoredState : public UCharacterStateComponent {
     GENERATED_BODY()
 public:
     UStoredState(const FObjectInitializer& ObjectInitializer);
+
 };
+

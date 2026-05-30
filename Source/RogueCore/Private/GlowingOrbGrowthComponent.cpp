@@ -2,6 +2,7 @@
 #include "Net/UnrealNetwork.h"
 
 UGlowingOrbGrowthComponent::UGlowingOrbGrowthComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->ConnectedParticle = nullptr;
     this->DamageMultiplier = 1.00f;
     this->GrowthProgress = 0.00f;
 }

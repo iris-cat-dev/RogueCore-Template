@@ -3,17 +3,17 @@
 #include "Net/UnrealNetwork.h"
 
 ATerminatorTentacle::ATerminatorTentacle(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->FlairAnimation = NULL;
+    this->FlairAnimation = nullptr;
     this->MinFlairAnimCooldown = 1.00f;
     this->MaxFlairAnimationCooldown = 2.00f;
     this->SwaySpeed = 50.00f;
     this->Extended = false;
     this->TentacleState = ETerminatorTentacleState::Idle;
-    this->HeadMesh = NULL;
+    this->HeadMesh = nullptr;
     this->GrabberComponent = CreateDefaultSubobject<UGrabberComponent>(TEXT("Grabber"));
 }
 
-void ATerminatorTentacle::PlayHitReaction(float amount) {
+void ATerminatorTentacle::PlayHitReaction(float Amount) {
 }
 
 

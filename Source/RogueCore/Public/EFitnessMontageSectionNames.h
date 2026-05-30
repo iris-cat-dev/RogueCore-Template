@@ -14,3 +14,4 @@ enum class EFitnessMontageSectionNames : uint8 {
     Fail,
     End,
 };
+

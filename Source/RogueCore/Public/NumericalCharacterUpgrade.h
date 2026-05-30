@@ -9,8 +9,15 @@ class UNumericalCharacterUpgrade : public UBXEUnlockAction {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float amount;
+    FString Name;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float Amount;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ENumericUpgradeType Type;
+    
     UNumericalCharacterUpgrade();
+
 };
+

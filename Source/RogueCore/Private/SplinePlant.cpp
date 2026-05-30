@@ -1,6 +1,6 @@
 #include "SplinePlant.h"
 #include "Components/AudioComponent.h"
-#include "Components/SceneComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
 #include "Components/SplineComponent.h"
 #include "Net/UnrealNetwork.h"
 
@@ -9,8 +9,8 @@ ASplinePlant::ASplinePlant(const FObjectInitializer& ObjectInitializer) : Super(
     this->PlantSpline = CreateDefaultSubobject<USplineComponent>(TEXT("PlantSpline"));
     this->PlantEndPoint = CreateDefaultSubobject<USceneComponent>(TEXT("PlantEndPoint"));
     this->AudioComponent = CreateDefaultSubobject<UAudioComponent>(TEXT("AudioComponent"));
-    this->AudioExtending = NULL;
-    this->AudioRetracting = NULL;
+    this->AudioExtending = nullptr;
+    this->AudioRetracting = nullptr;
     this->bEnabledSegmentCollision = false;
     this->CarveRadius = 60.00f;
     this->SegmentForwardAxis = ESplineMeshAxis::X;
@@ -19,8 +19,8 @@ ASplinePlant::ASplinePlant(const FObjectInitializer& ObjectInitializer) : Super(
     this->SegmentHeightScale = 1.00f;
     this->PreviewLengthPercent = 1.00f;
     this->PreviewSeed = 0;
-    this->SplineInstance = NULL;
-    this->SegmentMesh = NULL;
+    this->SplineInstance = nullptr;
+    this->SegmentMesh = nullptr;
     this->Seed = -1;
     this->AudioComponent->SetupAttachment(RootComponent);
     this->PlantSpline->SetupAttachment(RootComponent);

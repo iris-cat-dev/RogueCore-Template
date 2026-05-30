@@ -8,4 +8,6 @@ class ROGUECORE_API USchematicPricingTier : public UPricingTier {
     GENERATED_BODY()
 public:
     USchematicPricingTier();
+
 };
+

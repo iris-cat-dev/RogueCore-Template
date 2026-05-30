@@ -1,7 +1,7 @@
 #include "ConditionalDamageTagBonusUpgrade.h"
 
 UConditionalDamageTagBonusUpgrade::UConditionalDamageTagBonusUpgrade() {
-    this->Condition = NULL;
+    this->Condition = nullptr;
 }
 
 

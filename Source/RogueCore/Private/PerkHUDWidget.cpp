@@ -1,7 +1,7 @@
 #include "PerkHUDWidget.h"
 
 UPerkHUDWidget::UPerkHUDWidget() : UUserWidget(FObjectInitializer::Get()) {
-    this->PerkAsset = NULL;
+    this->PerkAsset = nullptr;
 }
 
 void UPerkHUDWidget::SetPerkAsset(UPerkAsset* InPerk) {

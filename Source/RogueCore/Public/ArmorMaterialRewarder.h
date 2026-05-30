@@ -8,4 +8,6 @@ class UArmorMaterialRewarder : public UVanityItemRewarder {
     GENERATED_BODY()
 public:
     UArmorMaterialRewarder(const FObjectInitializer& ObjectInitializer);
+
 };
+

@@ -8,3 +8,4 @@ enum class ECrossbowEffectApplication : uint8 {
     ToSpecial,
     ToAll,
 };
+

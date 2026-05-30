@@ -7,3 +7,4 @@ enum class EDamagebonusMode : uint8 {
     Numerical,
     Dynamic,
 };
+

@@ -2,7 +2,7 @@
 
 UFrozenAfflictionEffect::UFrozenAfflictionEffect() {
     this->AfflictionType = EFrozenAfflictionType::Frozen;
-    this->MaterialOverride = NULL;
+    this->MaterialOverride = nullptr;
 }
 
 

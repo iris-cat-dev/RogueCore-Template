@@ -4,4 +4,6 @@
 
 class APawn;
 class UEnemyDescriptor;
+
 UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FEnemySpawnedSignature, APawn*, Enemy, UEnemyDescriptor*, descriptor);
+

@@ -1,13 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/Interface.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Interface -FallbackName=Interface
 #include "ActorTrackingCheatInterface.generated.h"
 
 UINTERFACE()
-class ROGUECORE_API UActorTrackingCheatInterface : public UInterface {
-	GENERATED_BODY()
+class UActorTrackingCheatInterface : public UInterface {
+    GENERATED_BODY()
 };
-class ROGUECORE_API IActorTrackingCheatInterface : public IInterface {
-	GENERATED_BODY()
+
+class IActorTrackingCheatInterface : public IInterface {
+    GENERATED_BODY()
 public:
 };
+

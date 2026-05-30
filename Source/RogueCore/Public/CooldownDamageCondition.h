@@ -6,11 +6,16 @@
 UCLASS(Blueprintable, EditInlineNew)
 class UCooldownDamageCondition : public UDamageCondition {
     GENERATED_BODY()
+public:
+protected:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FString CooldownName;
     
-
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float CoolDown;
-
+    
+public:
     UCooldownDamageCondition();
 
 };
+

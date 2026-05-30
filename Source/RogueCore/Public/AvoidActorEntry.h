@@ -3,6 +3,7 @@
 #include "AvoidActorEntry.generated.h"
 
 class AActor;
+
 USTRUCT(BlueprintType)
 struct FAvoidActorEntry {
     GENERATED_BODY()
@@ -12,3 +13,4 @@ public:
     
     ROGUECORE_API FAvoidActorEntry();
 };
+

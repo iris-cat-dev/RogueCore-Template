@@ -1,11 +1,11 @@
 #include "TunnelSetting.h"
 
 UTunnelSetting::UTunnelSetting() {
-    this->PathfinderNoise = NULL;
-    this->BaseSegmentSetting = NULL;
-    this->TightBendSegmentSetting = NULL;
-    this->DirtSegmentSetting = NULL;
-    this->DirtOffsetSetting = NULL;
+    this->PathfinderNoise = nullptr;
+    this->BaseSegmentSetting = nullptr;
+    this->TightBendSegmentSetting = nullptr;
+    this->DirtSegmentSetting = nullptr;
+    this->DirtOffsetSetting = nullptr;
     this->Weight = 1.00f;
 }
 

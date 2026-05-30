@@ -15,7 +15,7 @@ AFSDPlayerState::AFSDPlayerState(const FObjectInitializer& ObjectInitializer) : 
     this->BXENegotiationParticipant = CreateDefaultSubobject<UBXENegotiationParticipantComponent>(TEXT("BXENegotiationParticipantComponent"));
     this->VoteParticipant = CreateDefaultSubobject<UVoteParticipantComponent>(TEXT("VoteParticipantComponent"));
     this->RunHistoryStateComponent = CreateDefaultSubobject<URunHistoryStateComponent>(TEXT("RunHistoryStateComponent"));
-    this->SelectedCharacter = NULL;
+    this->SelectedCharacter = nullptr;
     this->bIsServer = false;
     this->ShouldCopyProperties = false;
     this->gameOwnerStatus = 0;
@@ -23,21 +23,29 @@ AFSDPlayerState::AFSDPlayerState(const FObjectInitializer& ObjectInitializer) : 
     this->PlayerStatsComponent = CreateDefaultSubobject<UPlayerStatsComponent>(TEXT("PlayerStatsComponent"));
     this->RejoinState = CreateDefaultSubobject<UPlayerRejoinState>(TEXT("RejoinState"));
     this->SaveGameStateComponent = CreateDefaultSubobject<USaveGameStateComponent>(TEXT("SaveGameStateComponent"));
-    this->PlayerCharacter = NULL;
+    this->PlayerCharacter = nullptr;
     this->IsInMission = false;
     this->IsTalking = false;
     this->HasGeneratedLevel = false;
     this->HasSelectedCharacter = false;
-    this->PlayerSortId = 0;
-    this->PlayerResources = NULL;
+    this->PlayerResources = nullptr;
     this->SupplyAmmoStatus = 0;
     this->SupplyHealthStatus = 0;
+    this->bIsLateJoinComplete = false;
+    this->bHaveLateJoinedAfterStageTimerStart = false;
 }
+
 
 void AFSDPlayerState::SetSelectedCharacterID(UPlayerCharacterID* characterID) {
 }
 
 void AFSDPlayerState::SetSelectedCharacter(TSubclassOf<APlayerCharacter> newCharacter) {
+}
+
+void AFSDPlayerState::SetLateJoinComplete(const bool IsComplete) {
+}
+
+void AFSDPlayerState::SetHaveLateJoinedAfterStageTimerStart(const bool WasAfterTimer) {
 }
 
 void AFSDPlayerState::SetHasGeneratedLevel(bool hasgenerated) {
@@ -49,7 +57,7 @@ void AFSDPlayerState::SetCanOnlySpectate(bool canOnlySpectate) {
 void AFSDPlayerState::ServerSetSelectedCharacter_Implementation(TSubclassOf<APlayerCharacter> newCharacter) {
 }
 
-void AFSDPlayerState::ServerInitializePerks_Implementation(const TArray<UPerkAsset*>& ClassPerks, const TArray<UPerkAsset*>& EnhancementPerks) {
+void AFSDPlayerState::ServerInitializePerks_Implementation(const TArray<UPerkAsset*>& ClassPerks, const TArray<UPerkAsset*>& Enhancements) {
 }
 
 void AFSDPlayerState::Server_SetSupplyStatus_Implementation(uint8 StatusHealth, uint8 StatusAmmo) {
@@ -80,6 +88,18 @@ void AFSDPlayerState::OnRep_FractionLevelGenerated() {
 }
 
 
+bool AFSDPlayerState::IsSelectedCharacterMaxLevel() const {
+    return false;
+}
+
+bool AFSDPlayerState::IsLateJoinComplete() const {
+    return false;
+}
+
+bool AFSDPlayerState::HaveLateJoinedAfterStageTimerStart() const {
+    return false;
+}
+
 bool AFSDPlayerState::HasNormalOwnerStatus() const {
     return false;
 }
@@ -102,6 +122,10 @@ float AFSDPlayerState::GetSupplyHealthStatus() const {
 
 float AFSDPlayerState::GetSupplyAmmoStatus() const {
     return 0.0f;
+}
+
+int32 AFSDPlayerState::GetSelectedCharacterMaxLevel() const {
+    return 0;
 }
 
 int32 AFSDPlayerState::GetSelectedCharacterLevel() const {
@@ -144,8 +168,8 @@ AFSDPlayerController* AFSDPlayerState::GetFSDPlayerController() const {
     return NULL;
 }
 
-FChipsReward AFSDPlayerState::GetChipReward() const {
-    return FChipsReward{};
+FCurrencyRewardsForUI AFSDPlayerState::GetChipReward() const {
+    return FCurrencyRewardsForUI{};
 }
 
 EChatSenderType AFSDPlayerState::GetChatSenderType() const {
@@ -165,9 +189,11 @@ UBXENegotiationParticipantComponent* AFSDPlayerState::GetBXENegotiationParticipa
 }
 
 
+
+
 void AFSDPlayerState::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const {
     Super::GetLifetimeReplicatedProps(OutLifetimeProps);
-
+    
     DOREPLIFETIME(AFSDPlayerState, FractionLevelGenerated);
     DOREPLIFETIME(AFSDPlayerState, LevelGenerationState);
     DOREPLIFETIME(AFSDPlayerState, LatestEquipedVanity);
@@ -176,21 +202,10 @@ void AFSDPlayerState::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutL
     DOREPLIFETIME(AFSDPlayerState, gameOwnerStatus);
     DOREPLIFETIME(AFSDPlayerState, PlayerCharacter);
     DOREPLIFETIME(AFSDPlayerState, HasSelectedCharacter);
-    DOREPLIFETIME(AFSDPlayerState, PlayerSortId);
     DOREPLIFETIME(AFSDPlayerState, SupplyAmmoStatus);
     DOREPLIFETIME(AFSDPlayerState, SupplyHealthStatus);
-}
-
-bool AFSDPlayerState::Server_SetGameOwnerStatus_Validate(int32 NewGameOwnerStatus) {
-    return true;
-}
-
-bool AFSDPlayerState::Server_SetSupplyStatus_Validate(uint8 StatusHealth, uint8 StatusAmmo) {
-    return true;
-}
-
-bool AFSDPlayerState::ServerInitializePerks_Validate(const TArray<UPerkAsset*>& ClassPerks, const TArray<UPerkAsset*>& EnhancementPerks) {
-    return true;
+    DOREPLIFETIME(AFSDPlayerState, bIsLateJoinComplete);
+    DOREPLIFETIME(AFSDPlayerState, bHaveLateJoinedAfterStageTimerStart);
 }
 
 

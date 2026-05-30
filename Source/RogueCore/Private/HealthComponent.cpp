@@ -2,8 +2,8 @@
 #include "Net/UnrealNetwork.h"
 
 UHealthComponent::UHealthComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->LastDamageCauser = NULL;
-    this->PawnStats = NULL;
+    this->LastDamageCauser = nullptr;
+    this->PawnStats = nullptr;
     this->Damage = 0.00f;
     this->EnvironmentalDamageResistance = 1.00f;
     this->ShouldUseLargestSubhealthDamageTaken = false;
@@ -11,10 +11,7 @@ UHealthComponent::UHealthComponent(const FObjectInitializer& ObjectInitializer) 
     this->AffectedByGlobalWeakpointDamageMultiplier = true;
     this->UseDormancy = false;
     this->CanDamageThroughSegments = true;
-}
-
-float UHealthComponent::TakePercentDamage(float PercentOfMax, const FDamageData& DamageData) {
-    return 0.0f;
+    this->CanDieFromDamage = true;
 }
 
 void UHealthComponent::Server_ToggleGodMode_Implementation() {
@@ -29,7 +26,7 @@ void UHealthComponent::Resupply(float percentage) {
 void UHealthComponent::OnRep_Damage(float oldDamage) {
 }
 
-void UHealthComponent::HealArmor(float amount) {
+void UHealthComponent::HealArmor(float Amount) {
 }
 
 bool UHealthComponent::HasArmor() const {
@@ -75,10 +72,10 @@ float UHealthComponent::GetArmor() const {
     return 0.0f;
 }
 
-void UHealthComponent::Client_ReceivedHit_Implementation(float amount, const FDamageData& DamageData, bool anyHealthLost) {
+void UHealthComponent::Client_ReceivedHit_Implementation(float Amount, const FDamageData& DamageData, bool anyHealthLost) {
 }
 
-void UHealthComponent::AddTemporaryHealth(float amount) {
+void UHealthComponent::AddTemporaryHealth(float Amount) {
 }
 
 void UHealthComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const {

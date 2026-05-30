@@ -4,8 +4,8 @@
 UKillEnemiesObjective::UKillEnemiesObjective(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->EnemyCount = 0;
     this->ExtraEnemies = 0;
-    this->Positioning = NULL;
-    this->EnemyTarget = NULL;
+    this->Positioning = nullptr;
+    this->EnemyTarget = nullptr;
     this->EnemiesKilled = 0;
     this->EnemiesToKill = 0;
 }

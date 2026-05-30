@@ -2,5 +2,6 @@
 
 FGraplingGunState::FGraplingGunState() {
     this->IsGrapling = false;
+    this->TargetLocation = FVector::ZeroVector;
 }
 

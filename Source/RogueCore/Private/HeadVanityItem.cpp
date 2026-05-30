@@ -6,6 +6,7 @@ UHeadVanityItem::UHeadVanityItem() {
     this->HideSideburns = false;
     this->HideMoustache = false;
     this->HideBeard = false;
+    this->HideHeadAccessory = false;
     this->HideAll = false;
     this->RequiresSlimArmor = false;
     this->HideHead = false;

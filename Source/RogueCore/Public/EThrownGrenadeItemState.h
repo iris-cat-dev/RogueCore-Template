@@ -4,9 +4,10 @@
 
 UENUM()
 enum class EThrownGrenadeItemState : int32 {
-    NotEquipped,
-    Equipped,
+    NotAvailable,
+    Holding,
     Cooking,
     Throwing,
     WaitingToReturn,
 };
+

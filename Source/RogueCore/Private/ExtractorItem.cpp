@@ -1,16 +1,17 @@
 #include "ExtractorItem.h"
 #include "Components/BoxComponent.h"
 #include "Particles/ParticleSystemComponent.h"
-#include "Runtime/Engine/Classes/Components/PointLightComponent.h"
-#include "Components/SkeletalMeshComponent.h"
+#include "Components/PointLightComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SkeletalMeshComponent -FallbackName=SkeletalMeshComponent
 #include "NiagaraComponent.h"
 #include "FSDAudioComponent.h"
 #include "Net/UnrealNetwork.h"
 
-AExtractorItem::AExtractorItem(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer.SetDefaultSubobjectClass<UBoxComponent>(TEXT("Root"))) {
-    this->DroppedCollider = (UBoxComponent*)RootComponent;
+AExtractorItem::AExtractorItem(const FObjectInitializer& ObjectInitializer)
+: Super(ObjectInitializer.SetDefaultSubobjectClass<UBoxComponent>(TEXT("Root"))) {
+    this->DroppedCollider = static_cast<UBoxComponent*>(RootComponent);
     this->DroppedMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("DropppedMesh"));
-    this->FP_DrillParticles = NULL;
+    this->FP_DrillParticles = nullptr;
     this->AudioComponent = CreateDefaultSubobject<UFSDAudioComponent>(TEXT("Audio"));
     this->SurfaceLight = CreateDefaultSubobject<UPointLightComponent>(TEXT("SurfaceLight"));
     this->MeltingParticles = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("MeltingEffect"));
@@ -25,12 +26,12 @@ AExtractorItem::AExtractorItem(const FObjectInitializer& ObjectInitializer) : Su
     this->FPMuzzleInvalidParticlesNS = CreateDefaultSubobject<UNiagaraComponent>(TEXT("MuzzleInvalidParticlesNS"));
     this->TPMuzzleParticlesNS = CreateDefaultSubobject<UNiagaraComponent>(TEXT("TPMuzzleEffectNS"));
     this->TPMuzzleInvalidParticlesNS = CreateDefaultSubobject<UNiagaraComponent>(TEXT("TPMuzzleInvalidEffectNS"));
-    this->FPMineMontage = NULL;
-    this->TPMineMontage = NULL;
-    this->FPGunsling = NULL;
-    this->TPGunsling = NULL;
-    this->DrillParticles = NULL;
-    this->DrillRumble = NULL;
+    this->FPMineMontage = nullptr;
+    this->TPMineMontage = nullptr;
+    this->FPGunsling = nullptr;
+    this->TPGunsling = nullptr;
+    this->DrillParticles = nullptr;
+    this->DrillRumble = nullptr;
     this->BlockParticlesScaleFP = 1.00f;
     this->BlockParticlesScaleTP = 1.00f;
     this->State = EExtractorState::Attached;
@@ -39,17 +40,17 @@ AExtractorItem::AExtractorItem(const FObjectInitializer& ObjectInitializer) : Su
     this->CarveTerrainDistanceCheck = 2.00f;
     this->CurrentDrillSpeed = 0.00f;
     this->DrillParticlesDuration = 0.25f;
-    this->ExtractetMaterial = NULL;
+    this->ExtractetMaterial = nullptr;
     this->TimeBeforeInvalidShout = 2.00f;
-    this->InvalidSurfaceShout = NULL;
-    this->ShoutFull = NULL;
-    this->DigSound = NULL;
+    this->InvalidSurfaceShout = nullptr;
+    this->ShoutFull = nullptr;
+    this->DigSound = nullptr;
     this->IsMining = false;
     this->IsGunslinging = false;
     this->ReadyToExtract = false;
-    this->VacuumEffect = NULL;
-    this->ChunkSplatEffect = NULL;
-    this->ChunkSplatSound = NULL;
+    this->VacuumEffect = nullptr;
+    this->ChunkSplatEffect = nullptr;
+    this->ChunkSplatSound = nullptr;
     this->MaxDifference = 20.00f;
     this->MeltingTime = 0.65f;
     this->ChunkMultiplier = 1.00f;
@@ -114,7 +115,7 @@ bool AExtractorItem::IsFull() const {
 }
 
 UBoxComponent* AExtractorItem::GetRootCollider() const {
-    return NULL;
+    return nullptr;
 }
 
 void AExtractorItem::All_SimulateDigBlock_Implementation(FVector_NetQuantize position, bool spawnParticles, int32 Material) {
@@ -123,7 +124,7 @@ void AExtractorItem::All_SimulateDigBlock_Implementation(FVector_NetQuantize pos
 void AExtractorItem::All_ChunkSplat_Implementation(AResourceChunk* chunk) {
 }
 
-void AExtractorItem::AddResource(float amount) {
+void AExtractorItem::AddResource(float Amount) {
 }
 
 void AExtractorItem::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const {

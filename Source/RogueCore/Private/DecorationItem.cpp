@@ -3,6 +3,7 @@
 FDecorationItem::FDecorationItem() {
     this->MinSpawnAmount = 0;
     this->MaxSpawnAmount = 0;
-    this->Positioning = NULL;
+    this->Positioning = nullptr;
+    this->Decoration = nullptr;
 }
 

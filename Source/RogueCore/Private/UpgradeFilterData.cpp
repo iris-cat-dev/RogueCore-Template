@@ -1,6 +1,6 @@
 #include "UpgradeFilterData.h"
 
 FUpgradeFilterData::FUpgradeFilterData() {
-    this->UpgradeToApply = NULL;
+    this->UpgradeToApply = nullptr;
 }
 

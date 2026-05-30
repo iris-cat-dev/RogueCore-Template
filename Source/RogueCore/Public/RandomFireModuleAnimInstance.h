@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
 #include "GunTowerModuleAnimInstance.h"
 #include "RandomFireModuleAnimInstance.generated.h"
 
@@ -12,4 +12,6 @@ public:
     FRotator OtherLookatRotation;
     
     URandomFireModuleAnimInstance();
+
 };
+

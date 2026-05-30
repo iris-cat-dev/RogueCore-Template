@@ -4,13 +4,13 @@
 
 USalvageObjective::USalvageObjective(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->SalvageActorCount = 2;
-    this->LegResource = NULL;
+    this->LegResource = nullptr;
     this->LegCountPerActor = 25;
     this->LegDistanceToActor = 2000.00f;
-    this->Positioning = NULL;
-    this->DamagedPodPositioning = NULL;
+    this->Positioning = nullptr;
+    this->DamagedPodPositioning = nullptr;
     this->DamagedPodMinDistanceToDropZone = 2000.00f;
-    this->DamagedPod = NULL;
+    this->DamagedPod = nullptr;
     this->ActorsToSalvage = 0;
     this->ActorsSalvaged = 0;
     this->RepairPoints = 3;

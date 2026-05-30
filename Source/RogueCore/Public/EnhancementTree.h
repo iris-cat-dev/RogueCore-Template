@@ -8,4 +8,6 @@ class UEnhancementTree : public URewardTree {
     GENERATED_BODY()
 public:
     UEnhancementTree();
+
 };
+

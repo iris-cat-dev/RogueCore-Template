@@ -2,9 +2,9 @@
 #include "Net/UnrealNetwork.h"
 
 UPlayerBufferComponent::UPlayerBufferComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->StatusEffect = NULL;
-    this->ManualMeshReference = NULL;
-    this->Particles = NULL;
+    this->StatusEffect = nullptr;
+    this->ManualMeshReference = nullptr;
+    this->Particles = nullptr;
     this->ParticleTangentSize = 60.00f;
     this->BuffRadius = 500.00f;
     this->MaxBuffedTargets = 5;

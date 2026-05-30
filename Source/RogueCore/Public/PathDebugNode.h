@@ -8,3 +8,4 @@ struct FPathDebugNode {
 public:
     ROGUECORE_API FPathDebugNode();
 };
+

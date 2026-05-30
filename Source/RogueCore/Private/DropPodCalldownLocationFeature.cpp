@@ -1,7 +1,7 @@
 #include "DropPodCalldownLocationFeature.h"
 
 UDropPodCalldownLocationFeature::UDropPodCalldownLocationFeature() {
-    this->CalldownClass = NULL;
+    this->CalldownClass = nullptr;
 }
 
 

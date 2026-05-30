@@ -1,33 +1,32 @@
 #include "Biome.h"
-#include "Templates/SubclassOf.h"
 
 UBiome::UBiome() {
     this->BiomeIndex = 0;
     this->IsTutorialBiome = false;
     this->ExtraCaveSize = 0.00f;
-    this->RockMaterial = NULL;
-    this->DirtMaterial = NULL;
-    this->BurnedMaterialOverride = NULL;
-    this->MissionCompleted = NULL;
-    this->CeilingNoise = NULL;
-    this->CeilingDetailNoise = NULL;
-    this->WallNoise = NULL;
-    this->WallDetailNoise = NULL;
-    this->FloorNoise = NULL;
-    this->FloorDetailNoise = NULL;
-    this->PillarNoise = NULL;
-    this->PillarDetailNoise = NULL;
-    this->PillarSettings = NULL;
-    this->TunnelCeilingNoise = NULL;
-    this->TunnelWallNoise = NULL;
-    this->TunnelFloorNoise = NULL;
+    this->RockMaterial = nullptr;
+    this->DirtMaterial = nullptr;
+    this->BurnedMaterialOverride = nullptr;
+    this->CompletedStat = nullptr;
+    this->CeilingNoise = nullptr;
+    this->CeilingDetailNoise = nullptr;
+    this->WallNoise = nullptr;
+    this->WallDetailNoise = nullptr;
+    this->FloorNoise = nullptr;
+    this->FloorDetailNoise = nullptr;
+    this->PillarNoise = nullptr;
+    this->PillarDetailNoise = nullptr;
+    this->PillarSettings = nullptr;
+    this->TunnelCeilingNoise = nullptr;
+    this->TunnelWallNoise = nullptr;
+    this->TunnelFloorNoise = nullptr;
     this->Use3DAmbient = false;
     this->SmallCaveReverbVolume = 1.00f;
-    this->SmallCaveReverb = NULL;
+    this->SmallCaveReverb = nullptr;
     this->MediumCaveReverbVolume = 1.00f;
-    this->MediumCaveReverb = NULL;
+    this->MediumCaveReverb = nullptr;
     this->LargeCaveReverbVolume = 1.00f;
-    this->LargeCaveReverb = NULL;
+    this->LargeCaveReverb = nullptr;
     this->PlanetZoneSelectionWeight = 1.00f;
     this->FloorAndWallSmoothingDistance = 0.00f;
 }
@@ -71,10 +70,6 @@ UTexture2D* UBiome::GetBiomeMissionBar() const {
     return NULL;
 }
 
-TSubclassOf<UUserWidget> UBiome::GetBiomeMapWidget() const {
-    return NULL;
-}
-
 TArray<FSoftObjectPath> UBiome::GetBiomeMapAssetList() const {
     return TArray<FSoftObjectPath>();
 }
@@ -93,10 +88,6 @@ UTexture2D* UBiome::GetBiomeIconSimple() const {
 
 UTexture2D* UBiome::GetBiomeIcon() const {
     return NULL;
-}
-
-FString UBiome::GetBiomeAnalyticsIndex() const {
-    return TEXT("");
 }
 
 UFXSystemAsset* UBiome::GetAtmosphericParticles() const {

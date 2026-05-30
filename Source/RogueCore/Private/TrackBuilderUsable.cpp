@@ -2,9 +2,9 @@
 #include "Net/UnrealNetwork.h"
 
 UTrackBuilderUsable::UTrackBuilderUsable(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->BuilderItemType = NULL;
-    this->TrackStartComponent = NULL;
-    this->NextSegment = NULL;
+    this->BuilderItemType = nullptr;
+    this->TrackStartComponent = nullptr;
+    this->NextSegment = nullptr;
 }
 
 void UTrackBuilderUsable::OnRep_NextSegment() {

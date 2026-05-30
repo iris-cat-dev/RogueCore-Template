@@ -26,3 +26,4 @@ enum class EDamageType : uint8 {
     Piercing,
     RockPox,
 };
+

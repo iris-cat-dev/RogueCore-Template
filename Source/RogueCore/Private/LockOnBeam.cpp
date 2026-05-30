@@ -1,6 +1,7 @@
 #include "LockOnBeam.h"
-#include "Components/SceneComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
 #include "Components/SplineComponent.h"
+#include "Components/SplineMeshComponent.h"
 #include "Components/SplineMeshComponent.h"
 
 ALockOnBeam::ALockOnBeam(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
@@ -11,9 +12,9 @@ ALockOnBeam::ALockOnBeam(const FObjectInitializer& ObjectInitializer) : Super(Ob
     this->BeamMeshComponent03 = CreateDefaultSubobject<USplineMeshComponent>(TEXT("BeamMeshComponent03"));
     this->BlockedNodeComponent = CreateDefaultSubobject<USceneComponent>(TEXT("BlockedNodeComponent"));
     this->PreviewLocationComponent = CreateDefaultSubobject<USceneComponent>(TEXT("PreviewEndLocation"));
-    this->BeamMaterial = NULL;
-    this->BlockedBeamMaterial = NULL;
-    this->SeekerMaterial = NULL;
+    this->BeamMaterial = nullptr;
+    this->BlockedBeamMaterial = nullptr;
+    this->SeekerMaterial = nullptr;
     this->BeamThicknessScale = 1.00f;
     this->BeamMeshComponent01->SetupAttachment(BeamSpline);
     this->BeamMeshComponent02->SetupAttachment(BeamSpline);

@@ -11,3 +11,4 @@ enum class ETemperatureIntensity : uint8 {
     Heat2,
     Heat3,
 };
+

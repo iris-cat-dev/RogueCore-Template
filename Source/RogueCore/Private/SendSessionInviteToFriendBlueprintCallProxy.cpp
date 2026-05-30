@@ -1,10 +1,9 @@
 #include "SendSessionInviteToFriendBlueprintCallProxy.h"
 
 USendSessionInviteToFriendBlueprintCallProxy::USendSessionInviteToFriendBlueprintCallProxy() {
-    this->WorldContextObject = NULL;
 }
 
-USendSessionInviteToFriendBlueprintCallProxy* USendSessionInviteToFriendBlueprintCallProxy::SendSessionInviteToFriend(UObject* NewWorldContextObject, const FString& FriendId) {
+USendSessionInviteToFriendBlueprintCallProxy* USendSessionInviteToFriendBlueprintCallProxy::SendSessionInviteToFriend(UObject* WorldContextObject, const FString& FriendId) {
     return NULL;
 }
 

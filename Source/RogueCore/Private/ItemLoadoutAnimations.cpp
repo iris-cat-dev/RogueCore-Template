@@ -1,6 +1,6 @@
 #include "ItemLoadoutAnimations.h"
 
 FItemLoadoutAnimations::FItemLoadoutAnimations() {
-    this->Loadout = NULL;
+    this->Loadout = nullptr;
 }
 

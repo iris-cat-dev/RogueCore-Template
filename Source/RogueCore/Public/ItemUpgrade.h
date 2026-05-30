@@ -18,47 +18,108 @@ class UItemUpgradeCategory;
 class UItemUpgradeElement;
 class UItemUpgradeFilter;
 class UResourceData;
+
 UCLASS(Blueprintable, EditInlineNew)
 class ROGUECORE_API UItemUpgrade : public USavableDataAsset, public IRefundableInterface {
     GENERATED_BODY()
-    
-
 public:
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FItemUpgradeSignature, UItemUpgrade*, upgrade);
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FItemUpgradeSignature OnCrafted;
+    
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FItemUpgradeSignature OnEquipped;
+    
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FItemUpgradeSignature OnUnequipped;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UItemUpgradeFilter* SelectionFilter;
- 
+    
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FText Name;
-    FText Description;
+    FString DebugName;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FString DebugDescription;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 Cost;
-    FText GeneralIconType;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FString GeneralIconType;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EWeaponOverviewModifierType ModifierType;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool UseOldCost;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EUpgradeTiers UpgradeTier;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EUpgradeClass upgradeClass;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UItemUpgradeCategory* Category;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<UResourceData*, float> UpgradeCraftingCost;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UResourceData*> ResourceCost;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     TArray<UItemUpgradeElement*> Elements;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FItemUpgradeStatText> StatTexts;
+    
+public:
     UItemUpgrade();
+
     UFUNCTION(BlueprintCallable)
     void UnequipUpgrade(TSubclassOf<AActor> itemClass, AFSDPlayerState* PlayerState);
+    
+    UFUNCTION(BlueprintCallable)
+    void RemoveFromItem(AActor* Item) const;
+    
     UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<FItemUpgradeStatText> GetUpgradeStatTexts() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FText GetUpgradeName(UItemUpgrade* upgrade);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    static FText GetUpgradeDescription(UItemUpgrade* upgrade);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<FCraftingCost> GetUpgradeCost() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UItemUpgradeCategory* GetUpgradeCategory() const;
+    
+    UFUNCTION(BlueprintCallable)
     FString GetSourceName();
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetIsAmountPercentage() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FUpgradeValues GetGenericUpgradedValue(TSubclassOf<AActor> Item, AFSDPlayerState* Player, UItemUpgrade* NewUpgradeClass);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetCreditsCost() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetAmount() const;
+    
+    UFUNCTION(BlueprintCallable)
     void EquipUpgrade(TSubclassOf<AActor> itemClass, AFSDPlayerState* PlayerState);
+    
+
     // Fix for true pure virtual functions not being implemented
 };
+

@@ -2,5 +2,6 @@
 
 FReplicatedCharacterData::FReplicatedCharacterData() {
     this->bCanTakeDamage = false;
+    this->Target = nullptr;
 }
 

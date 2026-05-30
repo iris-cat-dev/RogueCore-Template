@@ -2,7 +2,7 @@
 
 USavableDataAsset::USavableDataAsset() {
     this->EnableDangerousSaveGameIDEditing = false;
-    this->BuildRestriction = NULL;
+    this->BuildRestriction = nullptr;
 }
 
 FGuid USavableDataAsset::GetSaveGameID() const {

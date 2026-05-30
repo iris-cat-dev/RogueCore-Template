@@ -1,6 +1,8 @@
 #include "PlayerDataStorage.h"
 
 FPlayerDataStorage::FPlayerDataStorage() {
-    this->Character = NULL;
+    this->Type = ESeamlessTravelStorageType::Travel;
+    this->Character = nullptr;
+    this->PlayerData = FBXEPlayerData();
 }
 

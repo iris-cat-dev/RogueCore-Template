@@ -4,3 +4,4 @@
 #include "DroneControllerDelegateDelegate.generated.h"
 
 UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDroneControllerDelegate, const FDroneControllerUseInfo&, Info);
+

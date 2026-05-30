@@ -3,11 +3,12 @@
 #include "EmitterConnection.generated.h"
 
 USTRUCT(BlueprintType)
-struct ROGUECORE_API FEmitterConnection {
+struct FEmitterConnection {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName VariableName;
-
-    FEmitterConnection();
+    
+    ROGUECORE_API FEmitterConnection();
 };
+

@@ -1,5 +1,5 @@
 #include "PlanetShowroomStage.h"
-#include "Components/SceneComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
 
 APlanetShowroomStage::APlanetShowroomStage(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->CameraZoomInPoint = CreateDefaultSubobject<USceneComponent>(TEXT("CameraZoomInPoint"));

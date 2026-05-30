@@ -5,6 +5,7 @@
 #include "BoscoProjectileAbillity.generated.h"
 
 class AProjectile;
+
 UCLASS(Blueprintable)
 class UBoscoProjectileAbillity : public UBoscoAbillity {
     GENERATED_BODY()
@@ -13,4 +14,6 @@ public:
     TSubclassOf<AProjectile> ProjectileClass;
     
     UBoscoProjectileAbillity();
+
 };
+

@@ -6,9 +6,11 @@ USTRUCT(BlueprintType)
 struct FLerpingPercent {
     GENERATED_BODY()
 public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     uint8 TargetPercent;
-
+    
+public:
     ROGUECORE_API FLerpingPercent();
- 
 };
+

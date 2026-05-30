@@ -3,6 +3,7 @@
 #include "AnimSequenceArray.generated.h"
 
 class UAnimSequence;
+
 USTRUCT(BlueprintType)
 struct FAnimSequenceArray {
     GENERATED_BODY()
@@ -12,3 +13,4 @@ public:
     
     ROGUECORE_API FAnimSequenceArray();
 };
+

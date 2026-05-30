@@ -1,14 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/Interface.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Interface -FallbackName=Interface
 #include "Minion.generated.h"
 
 UINTERFACE(MinimalAPI)
 class UMinion : public UInterface {
-	GENERATED_BODY()
+    GENERATED_BODY()
 };
 
 class IMinion : public IInterface {
-	GENERATED_BODY()
+    GENERATED_BODY()
 public:
 };
+

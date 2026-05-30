@@ -1,6 +1,8 @@
 #include "EasterBunnyAnimInstance.h"
 
-UEasterBunnyAnimInstance::UEasterBunnyAnimInstance(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+UEasterBunnyAnimInstance::UEasterBunnyAnimInstance() {
+    this->WindUpTurnSpeed = 10.00f;
+    this->WindUpTimer = 0.00f;
 }
 
 

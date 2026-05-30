@@ -5,5 +5,6 @@ FChallengeSaveInfo::FChallengeSaveInfo() {
     this->NumberOfWins = 0;
     this->XPCompleteGain = 0;
     this->TokenGain = 0;
+    this->ChallengeGuid = FGuid();
 }
 

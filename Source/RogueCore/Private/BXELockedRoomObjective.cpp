@@ -2,10 +2,10 @@
 #include "Net/UnrealNetwork.h"
 
 UBXELockedRoomObjective::UBXELockedRoomObjective(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->ObjectiveSpawner = NULL;
+    this->ObjectiveSpawner = nullptr;
     this->PercentOfPlayersForComplete = 100.00f;
     this->PlayersInRoom = 0;
-    this->LockedRoom = NULL;
+    this->LockedRoom = nullptr;
 }
 
 bool UBXELockedRoomObjective::SetPlayersInRoom(const int32& Num) {

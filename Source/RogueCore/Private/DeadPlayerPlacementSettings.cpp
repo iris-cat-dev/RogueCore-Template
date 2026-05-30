@@ -1,7 +1,7 @@
 #include "DeadPlayerPlacementSettings.h"
 
 FDeadPlayerPlacementSettings::FDeadPlayerPlacementSettings() {
-    this->FallbackPositioning = NULL;
+    this->FallbackPositioning = nullptr;
     this->FallbackPlaceInRoomIndex = 0;
 }
 

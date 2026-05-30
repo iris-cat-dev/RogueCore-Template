@@ -1,13 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/Interface.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Interface -FallbackName=Interface
 #include "MultiTargeter.generated.h"
 
 UINTERFACE()
-class ROGUECORE_API UMultiTargeter : public UInterface {
-	GENERATED_BODY()
+class UMultiTargeter : public UInterface {
+    GENERATED_BODY()
 };
-class ROGUECORE_API IMultiTargeter : public IInterface {
-	GENERATED_BODY()
+
+class IMultiTargeter : public IInterface {
+    GENERATED_BODY()
 public:
 };
+

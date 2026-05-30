@@ -8,4 +8,6 @@ class ABoxProjectile : public AProjectile {
     GENERATED_BODY()
 public:
     ABoxProjectile(const FObjectInitializer& ObjectInitializer);
+
 };
+

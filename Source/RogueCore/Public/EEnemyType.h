@@ -9,3 +9,4 @@ enum class EEnemyType : uint8 {
     GroundAndFlying,
     Stationary,
 };
+

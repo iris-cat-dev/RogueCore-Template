@@ -12,4 +12,6 @@ public:
     FIRandRange NumLoops;
     
     UBTDecorator_VariableLoop();
+
 };
+

@@ -1,7 +1,7 @@
 #include "UnlockComplexityReward.h"
 
 UUnlockComplexityReward::UUnlockComplexityReward() {
-    this->Complexity = NULL;
+    this->Complexity = nullptr;
 }
 
 

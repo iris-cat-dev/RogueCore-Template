@@ -1,7 +1,7 @@
 #include "BonusDamageUpgrade.h"
 
 UBonusDamageUpgrade::UBonusDamageUpgrade() {
-    this->DamageBonus = NULL;
+    this->DamageBonus = nullptr;
 }
 
 

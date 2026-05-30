@@ -1,7 +1,6 @@
 #include "TerminatorAnimInstance.h"
 
-UTerminatorAnimInstance::UTerminatorAnimInstance(const FObjectInitializer& ObjectInitializer)
-    : Super(ObjectInitializer) {
+UTerminatorAnimInstance::UTerminatorAnimInstance() {
     this->ForwardLean = 0.00f;
 }
 

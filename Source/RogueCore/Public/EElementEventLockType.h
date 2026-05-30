@@ -8,3 +8,4 @@ enum class EElementEventLockType : uint8 {
     UseEventDurationAsElementLock,
     LockUntilEventRemoved,
 };
+

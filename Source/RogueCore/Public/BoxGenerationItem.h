@@ -4,6 +4,7 @@
 #include "BoxGenerationItem.generated.h"
 
 class UBoxGenerationComponent;
+
 UCLASS(Blueprintable)
 class ABoxGenerationItem : public AGenerationItem {
     GENERATED_BODY()
@@ -12,4 +13,6 @@ public:
     UBoxGenerationComponent* BoxComponent;
     
     ABoxGenerationItem(const FObjectInitializer& ObjectInitializer);
+
 };
+

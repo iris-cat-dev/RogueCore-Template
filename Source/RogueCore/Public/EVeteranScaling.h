@@ -7,3 +7,4 @@ enum class EVeteranScaling : uint8 {
     NormalEnemy,
     LargeEnemy,
 };
+

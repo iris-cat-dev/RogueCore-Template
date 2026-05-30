@@ -5,13 +5,18 @@
 
 class USoundBase;
 class UTexture2D;
+
 UCLASS(Blueprintable, EditInlineNew)
 class ROGUECORE_API UHUDWarningWidget : public UFSDUserWidget {
     GENERATED_BODY()
 public:
     UHUDWarningWidget();
+
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void SetData(UTexture2D* Texture, USoundBase* PingSound);
     
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void Ping(bool DestroyAfterPing);
+    
 };
+

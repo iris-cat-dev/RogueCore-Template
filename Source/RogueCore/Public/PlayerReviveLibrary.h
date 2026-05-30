@@ -1,15 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Kismet/BlueprintFunctionLibrary.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
 #include "PlayerReviveLibrary.generated.h"
 
 class AActor;
+
 UCLASS(Blueprintable)
-class ROGUECORE_API UPlayerReviveLibrary : public UBlueprintFunctionLibrary {
+class UPlayerReviveLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UPlayerReviveLibrary();
+
     UFUNCTION(BlueprintCallable)
     static bool MoveActorToDeadPlayerFallbackPosition(AActor* ActorToMove);
     
 };
+

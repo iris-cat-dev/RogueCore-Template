@@ -2,7 +2,7 @@
 #include "Net/UnrealNetwork.h"
 
 UResourceObjective::UResourceObjective(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->Resource = NULL;
+    this->Resource = nullptr;
     this->ResourcesRequired = 0.00f;
     this->ResourcesCollected = 0.00f;
     this->ResourceBuffer = 0.50f;
@@ -10,7 +10,7 @@ UResourceObjective::UResourceObjective(const FObjectInitializer& ObjectInitializ
     this->CreditsRewardText = FText::FromString(TEXT("Morkite Collected"));
 }
 
-void UResourceObjective::OnResourceChanged(UCappedResource* CappedResource, float amount) {
+void UResourceObjective::OnResourceChanged(UCappedResource* CappedResource, float Amount) {
 }
 
 void UResourceObjective::OnRep_ResourcesCollected(float prevAmount) {

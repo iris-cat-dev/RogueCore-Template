@@ -1,9 +1,9 @@
 #include "BXEStartingWeapon.h"
 
 UBXEStartingWeapon::UBXEStartingWeapon() {
-    this->UnlockAsset = NULL;
-    this->UnlockChallenge = NULL;
-    this->LoadedItemID = NULL;
+    this->UnlockAsset = nullptr;
+    this->UnlockChallenge = nullptr;
+    this->LoadedItemID = nullptr;
 }
 
 FText UBXEStartingWeapon::GetWeaponName() const {

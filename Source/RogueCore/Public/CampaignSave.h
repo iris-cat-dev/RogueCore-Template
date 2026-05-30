@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
 #include "ActiveCampaignItem.h"
 #include "WeeklyCampaignItem.h"
 #include "CampaignSave.generated.h"
@@ -11,12 +11,24 @@ struct FCampaignSave {
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FActiveCampaignItem ActiveCampaign;
-
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FGuid> CompletedCampaigns;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 ActiveCampaignWeek;
-    ROGUECORE_API FCampaignSave();
- 
+    
+protected:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FWeeklyCampaignItem WeeklySave;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FWeeklyCampaignItem MaxtrixCoreHuntSave;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FWeeklyCampaignItem SeededRandomSave;
+    
+public:
+    ROGUECORE_API FCampaignSave();
 };
+

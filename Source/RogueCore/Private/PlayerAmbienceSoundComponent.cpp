@@ -1,7 +1,7 @@
 #include "PlayerAmbienceSoundComponent.h"
 
 UPlayerAmbienceSoundComponent::UPlayerAmbienceSoundComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->Character = NULL;
+    this->Character = nullptr;
     this->RangeFromPlayer = 1000.00f;
     this->IsEnabled = false;
 }

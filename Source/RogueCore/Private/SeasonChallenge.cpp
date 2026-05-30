@@ -5,7 +5,7 @@ USeasonChallenge::USeasonChallenge() {
     this->ChallengeWeight = 1.00f;
     this->bIsSpecialChallenge = false;
     this->MaxOccurences = 0;
-    this->ChallengeAfterMaxOccurences = NULL;
+    this->ChallengeAfterMaxOccurences = nullptr;
 }
 
 UTexture2D* USeasonChallenge::GetIconOutlined() {

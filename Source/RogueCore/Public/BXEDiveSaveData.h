@@ -7,7 +7,8 @@ struct FBXEDiveSaveData {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    bool IsUnlocked;
+    bool IsUnLocked;
     
     ROGUECORE_API FBXEDiveSaveData();
 };
+

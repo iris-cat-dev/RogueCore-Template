@@ -7,3 +7,4 @@ enum class EGymDisplayType : uint8 {
     TotalSets,
     HighScores,
 };
+

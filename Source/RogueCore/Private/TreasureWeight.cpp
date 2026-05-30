@@ -2,6 +2,6 @@
 
 FTreasureWeight::FTreasureWeight() {
     this->Weight = 0.00f;
-    this->RewarderClass = NULL;
+    this->RewarderClass = nullptr;
 }
 

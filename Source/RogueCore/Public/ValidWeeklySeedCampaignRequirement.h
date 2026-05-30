@@ -8,4 +8,6 @@ class ROGUECORE_API UValidWeeklySeedCampaignRequirement : public UCampaignRequir
     GENERATED_BODY()
 public:
     UValidWeeklySeedCampaignRequirement();
+
 };
+

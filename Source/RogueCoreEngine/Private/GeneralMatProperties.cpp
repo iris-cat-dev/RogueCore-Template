@@ -2,6 +2,6 @@
 
 FGeneralMatProperties::FGeneralMatProperties() {
     this->Result = EGeneralComb::Empty;
-    this->Material = NULL;
+    this->Material = nullptr;
 }
 

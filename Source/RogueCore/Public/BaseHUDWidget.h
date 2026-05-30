@@ -8,8 +8,10 @@ class UBaseHUDWidget : public UUserWidget {
     GENERATED_BODY()
 public:
     UBaseHUDWidget();
- 
+
+protected:
     UFUNCTION(BlueprintCallable)
     void UpdateVisibility();
     
 };
+

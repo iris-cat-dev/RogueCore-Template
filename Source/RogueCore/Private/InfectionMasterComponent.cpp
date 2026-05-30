@@ -2,7 +2,7 @@
 #include "Net/UnrealNetwork.h"
 
 UInfectionMasterComponent::UInfectionMasterComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->WeakpointPopSTE = NULL;
+    this->WeakpointPopSTE = nullptr;
     this->WeakpointPopSTERange = 300.00f;
     this->InfectionPoints = 3;
     this->ExtraInfectionPointsWithMorePlayers = false;
@@ -10,9 +10,9 @@ UInfectionMasterComponent::UInfectionMasterComponent(const FObjectInitializer& O
     this->InfectionScale = 1.00f;
     this->KillWhenAllPointsDestroyed = false;
     this->ScaleDownOnDeathTime = 3.00f;
-    this->BaseMat = NULL;
-    this->GlowMat = NULL;
-    this->HealthComponent = NULL;
+    this->BaseMat = nullptr;
+    this->GlowMat = nullptr;
+    this->HealthComponent = nullptr;
     this->RandomSeed = 0;
 }
 

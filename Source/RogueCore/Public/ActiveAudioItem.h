@@ -3,6 +3,7 @@
 #include "ActiveAudioItem.generated.h"
 
 class UAudioComponent;
+
 USTRUCT(BlueprintType)
 struct FActiveAudioItem {
     GENERATED_BODY()
@@ -12,5 +13,7 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     float FadeoutDuration;
+    
     ROGUECORE_API FActiveAudioItem();
 };
+

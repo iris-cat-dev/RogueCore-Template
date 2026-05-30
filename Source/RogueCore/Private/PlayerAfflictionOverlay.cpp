@@ -1,8 +1,8 @@
 #include "PlayerAfflictionOverlay.h"
 
 UPlayerAfflictionOverlay::UPlayerAfflictionOverlay() {
-    this->Texture = NULL;
-    this->WidgetOverride = NULL;
+    this->Texture = nullptr;
+    this->WidgetOverride = nullptr;
     this->ZOrder = 0;
 }
 

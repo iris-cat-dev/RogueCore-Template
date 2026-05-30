@@ -8,16 +8,20 @@
 
 class AFSDPlayerState;
 class AItem;
+
 UCLASS(Blueprintable, EditInlineNew, MinimalAPI)
 class UMicroMissileLauncherUpgrade : public UStandardItemUpgrade {
     GENERATED_BODY()
-    
-
 public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EMicroMissileLauncherUpgrades upgradeType;
     
+public:
     UMicroMissileLauncherUpgrade();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FUpgradeValues GetUpgradedValue(TSubclassOf<AItem> Item, AFSDPlayerState* Player, EMicroMissileLauncherUpgrades NewUpgradeType);
+    
 };
+

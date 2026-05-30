@@ -1,7 +1,7 @@
 #include "SeasonEvent.h"
 
 FSeasonEvent::FSeasonEvent() {
-    this->Event = NULL;
+    this->Event = nullptr;
     this->count = 0;
 }
 

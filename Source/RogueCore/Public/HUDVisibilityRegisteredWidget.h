@@ -3,6 +3,7 @@
 #include "HUDVisibilityRegisteredWidget.generated.h"
 
 class UWidget;
+
 USTRUCT(BlueprintType)
 struct FHUDVisibilityRegisteredWidget {
     GENERATED_BODY()
@@ -12,3 +13,4 @@ public:
     
     ROGUECORE_API FHUDVisibilityRegisteredWidget();
 };
+

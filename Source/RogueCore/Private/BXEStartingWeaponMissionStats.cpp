@@ -1,7 +1,7 @@
 #include "BXEStartingWeaponMissionStats.h"
 
 FBXEStartingWeaponMissionStats::FBXEStartingWeaponMissionStats() {
-    this->ReachedMidstation = NULL;
-    this->CompletedRun = NULL;
+    this->ReachedMidstation = nullptr;
+    this->CompletedRun = nullptr;
 }
 

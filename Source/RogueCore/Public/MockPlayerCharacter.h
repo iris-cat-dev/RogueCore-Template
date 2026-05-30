@@ -8,4 +8,6 @@ class AMockPlayerCharacter : public APlayerCharacter {
     GENERATED_BODY()
 public:
     AMockPlayerCharacter(const FObjectInitializer& ObjectInitializer);
+
 };
+

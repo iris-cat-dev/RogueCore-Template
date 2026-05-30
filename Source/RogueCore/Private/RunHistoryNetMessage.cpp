@@ -1,8 +1,8 @@
 #include "RunHistoryNetMessage.h"
 
 FRunHistoryNetMessage::FRunHistoryNetMessage() {
-    this->Sender = NULL;
-    this->TargetState = NULL;
+    this->Sender = nullptr;
+    this->TargetState = nullptr;
     this->DataSent = 0;
     this->Type = ERunHistoryNetMessageDataType::DamageData;
 }

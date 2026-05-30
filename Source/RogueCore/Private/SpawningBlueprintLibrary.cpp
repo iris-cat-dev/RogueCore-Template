@@ -12,6 +12,9 @@ void USpawningBlueprintLibrary::SpawnEnemyGroupDescriptorSpreadOut(UObject* Worl
 void USpawningBlueprintLibrary::SpawnEnemyGroupDescriptor(UObject* WorldContextObject, UEnemyGroupDescriptor* descriptor, float Difficulty, FVector Location, bool Alert, DeepPathFinderSize pfSize) {
 }
 
+void USpawningBlueprintLibrary::SpawnEnemyAtTransform(UObject* WorldContextObject, UEnemyDescriptor* EnemyDescriptor, FTransform Transform, const FEnemySpawnedDelegate& Callback, bool Alert, bool scaleToDifficulty, bool spawnFX, DeepPathFinderSize pfSize) {
+}
+
 void USpawningBlueprintLibrary::SpawnEnemiesFromRCPool(UObject* WorldContextObject, float Difficulty, const TArray<FVector>& Locations, bool Alert, bool isConstantPreassure, bool backFillWithConstantPressure) {
 }
 
@@ -34,6 +37,10 @@ void USpawningBlueprintLibrary::SpawnEnemiesAtEachLocation(UObject* WorldContext
 }
 
 void USpawningBlueprintLibrary::SpawnEnemiesAcrossLocations(UObject* WorldContextObject, UEnemyDescriptor* EnemyDescriptor, int32 count, TArray<FVector> Locations, bool Alert, bool scaleToDifficulty, DeepPathFinderSize pfSize) {
+}
+
+FTransform USpawningBlueprintLibrary::SnapToTerrain_AlignXWithNormal(UObject* WorldContextObject, const FVector& InLocation) {
+    return FTransform{};
 }
 
 TArray<FVector> USpawningBlueprintLibrary::GetSpawnPointsInRange(UObject* WorldContextObject, float distanceToPlayers, int32 spawnPointCount, DeepPathFinderSize pfSize) {

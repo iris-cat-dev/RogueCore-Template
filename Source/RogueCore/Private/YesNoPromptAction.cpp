@@ -7,7 +7,7 @@ UYesNoPromptAction* UYesNoPromptAction::PromptYesNo(UObject* WorldContext, FYesN
     return NULL;
 }
 
-UYesNoPromptAction* UYesNoPromptAction::PromptPurchase(UObject* WorldContext, FYesNoPromptSettings Prompt, const TMap<UResourceData*, int32>& Resources) {
+UYesNoPromptAction* UYesNoPromptAction::PromptPurchase(UObject* WorldContext, FYesNoPromptSettings Prompt) {
     return NULL;
 }
 

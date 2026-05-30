@@ -2,7 +2,7 @@
 
 UUseConditionGroup::UUseConditionGroup() {
     this->Invert = false;
-    this->Collection = NULL;
+    this->Collection = nullptr;
 }
 
 

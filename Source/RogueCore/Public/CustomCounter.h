@@ -4,6 +4,7 @@
 #include "CustomCounter.generated.h"
 
 class UObject;
+
 USTRUCT(BlueprintType)
 struct FCustomCounter {
     GENERATED_BODY()
@@ -11,6 +12,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FCustomCounterDelegate OnCount;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<UObject> Owner;
+    
     ROGUECORE_API FCustomCounter();
 };
+

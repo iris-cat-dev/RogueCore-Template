@@ -2,10 +2,10 @@
 #include "Templates/SubclassOf.h"
 
 UPushSatusEffectDamageBonusUpgrade::UPushSatusEffectDamageBonusUpgrade() {
-    this->StatusEffect = NULL;
+    this->StatusEffect = nullptr;
     this->Chance = 0.00f;
     this->IgnoreArmorHit = false;
-    this->Condition = NULL;
+    this->Condition = nullptr;
 }
 
 FUpgradeValues UPushSatusEffectDamageBonusUpgrade::GetUpgradedValue(TSubclassOf<AActor> Item, AFSDPlayerState* Player, TSubclassOf<UStatusEffect> NewStatusEffect) {

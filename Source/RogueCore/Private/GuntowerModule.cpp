@@ -1,24 +1,24 @@
 #include "GuntowerModule.h"
-#include "Components/SceneComponent.h"
-#include "Components/SkeletalMeshComponent.h"
-#include "Components/StaticMeshComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SkeletalMeshComponent -FallbackName=SkeletalMeshComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=StaticMeshComponent -FallbackName=StaticMeshComponent
 #include "GunTowerHealthComponent.h"
 #include "Net/UnrealNetwork.h"
 
 AGuntowerModule::AGuntowerModule(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->bNetLoadOnClient = false;
     this->RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("ModuleBase"));
-    this->ExposeWeakpointSound = NULL;
-    this->deathSound = NULL;
-    this->deathParticles = NULL;
-    this->IntroductionAnimation = NULL;
+    this->ExposeWeakpointSound = nullptr;
+    this->deathSound = nullptr;
+    this->deathParticles = nullptr;
+    this->IntroductionAnimation = nullptr;
     this->ArmorPiece1 = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Armor1"));
     this->ArmorPiece2 = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Armor2"));
     this->ArmorPiece3 = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Armor3"));
     this->ModuleMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("ModuleMesh"));
     this->GuntowerModuleHealth = CreateDefaultSubobject<UGunTowerHealthComponent>(TEXT("ModuleHealthComponent"));
-    this->OwningEvent = NULL;
-    this->ChildModule = NULL;
+    this->OwningEvent = nullptr;
+    this->ChildModule = nullptr;
     this->WeakpointsExposedTime = 5.00f;
     this->WeakpointsExposedTimeSolo = 12.00f;
     this->HideArmorTime = 7.50f;

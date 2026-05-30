@@ -1,25 +1,30 @@
 #include "FSDPlayerController.h"
+#include "DamageReplicator.h"
 #include "FSDCheatManager.h"
 #include "FSDWidgetEffectsComponent.h"
 #include "Net/UnrealNetwork.h"
 #include "Templates/SubclassOf.h"
 #include "TerrainLatejoinComponent.h"
 
-
 AFSDPlayerController::AFSDPlayerController(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->CheatClass = UFSDCheatManager::StaticClass();
     this->ClickEventKeys.AddDefaulted(1);
-    this->DebugEnemy = NULL;
+    this->DamageReplicator = CreateDefaultSubobject<UDamageReplicator>(TEXT("DamageReplicatorComponent"));
+    this->DebugEnemy = nullptr;
     this->DebugEnemySpeed = -1.00f;
     this->DebugEnemySpeedMod = -1.00f;
-    this->DebugEnemyLast = NULL;
+    this->DebugEnemyLast = nullptr;
     this->LateJoinComponent = CreateDefaultSubobject<UTerrainLatejoinComponent>(TEXT("TerrainLateJoin"));
     this->IsOnSpaceRig = false;
     this->ServerTravelDone = true;
     this->WidgetEffects = CreateDefaultSubobject<UFSDWidgetEffectsComponent>(TEXT("WidgetEffects"));
     this->SpacerigSpawnType = ESpacerigStartType::PlayerHub;
     this->bDetectGravityChanges = false;
-    this->bReceivedEndLevel = false;
+    this->bIsLoadingScreenFinished = false;
+    this->AbilityInputComponent = nullptr;
+}
+
+void AFSDPlayerController::UpdatePlayerProgress() {
 }
 
 void AFSDPlayerController::ToggleVoiceOn(bool Enabled) {
@@ -29,20 +34,20 @@ void AFSDPlayerController::ToggleVoiceOn(bool Enabled) {
 void AFSDPlayerController::StartLevelEndSequence(const bool ShowEndScreen) {
 }
 
-void AFSDPlayerController::SpawnHUDLocal(TSubclassOf<AHUD> hudClass) {
+void AFSDPlayerController::SpawnHUDLocal(TSubclassOf<AHUD> HUDClass) {
 }
 
 
 void AFSDPlayerController::ShowTutorialWidget(TSubclassOf<UTutorialContentWidget> TutorialWidget, bool ignoreQueue) {
 }
 
-void AFSDPlayerController::ShowTutorialHint(const FText& Text, const FText& Title, const FText& TaskText, UTexture2D* Image, float Duration) {
+void AFSDPlayerController::ShowTutorialHint(const FText& Text, const FText& Title, const FText& TaskText, UTexture2D* Image, float duration) {
 }
 
 void AFSDPlayerController::SetPlayerStart(AActor* Start) {
 }
 
-void AFSDPlayerController::SetAchievementProgressFromServer_Implementation(UFSDAchievement* AchievementToSet, float Progress) {
+void AFSDPlayerController::SetPlayersAllowedToPickSameClass_Implementation(const bool CanPickSameClass) {
 }
 
 void AFSDPlayerController::ServerSetUserHoldToRun_Implementation(bool Value) {
@@ -78,6 +83,9 @@ void AFSDPlayerController::Server_SetDebugEnemy_Implementation(ADeepPathfinderCh
 void AFSDPlayerController::Server_SetControllerReady_Implementation() {
 }
 
+void AFSDPlayerController::Server_RestartPlayerAtTransform_Implementation(const FTransform& Transform) {
+}
+
 void AFSDPlayerController::Server_ResetNamedCountdown_Implementation(const FName Name) {
 }
 
@@ -99,17 +107,15 @@ void AFSDPlayerController::Server_NewMessage_Implementation(const FString& Sende
 void AFSDPlayerController::Server_DrawProjectileDebugPath_Implementation(bool bDraw) {
 }
 
-void AFSDPlayerController::SendLevelUpStatistics(const int32 currentRank) {
+
+
+
+
+
+void AFSDPlayerController::OnSaveGameResourceChanged(const UResourceData* Resource, float previousAmount, float newAmount) {
 }
-
-
-
-
 
 void AFSDPlayerController::OnSaveGamePlayerProgressChanged(int32 Rank, int32 Stars) {
-}
-
-void AFSDPlayerController::OnSaveGameCreditsChanged(int32 Credits) {
 }
 
 void AFSDPlayerController::OnSaveGameCharacterProgressChanged(TSubclassOf<APlayerCharacter> CharacterClass, int32 Level, float Progress) {
@@ -118,13 +124,22 @@ void AFSDPlayerController::OnSaveGameCharacterProgressChanged(TSubclassOf<APlaye
 void AFSDPlayerController::OnRep_DebugEnemyLocation() {
 }
 
-void AFSDPlayerController::OnPlayerStateSelectedCharacterChanged(TSubclassOf<APlayerCharacter> CharacterClass) {
-}
-
 
 void AFSDPlayerController::OnLevelEnd_Implementation() {
 }
 
+
+void AFSDPlayerController::OnAboutToPlay_Implementation(const EAboutToPlayReason Reason, const float SecondsUntilPlay) {
+}
+
+
+void AFSDPlayerController::MarkLoadingScreenFinished() {
+}
+
+
+bool AFSDPlayerController::IsLoadingScreenFinished() const {
+    return false;
+}
 
 void AFSDPlayerController::HideTutorialHint(bool watched) {
 }
@@ -149,12 +164,8 @@ AFSDPlayerState* AFSDPlayerController::GetFSDPlayerState() const {
     return NULL;
 }
 
-bool AFSDPlayerController::GetEndLevelFlagSet() const {
-    return false;
-}
-
 EAbilityActivationMode AFSDPlayerController::GetAbilityActivationMode() {
-    return EAbilityActivationMode::Contextual;
+    return EAbilityActivationMode::Toggle;
 }
 
 void AFSDPlayerController::FlushRender() {
@@ -184,7 +195,7 @@ void AFSDPlayerController::ApplyLevelEndResultsAndNotifyServer() {
 
 void AFSDPlayerController::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const {
     Super::GetLifetimeReplicatedProps(OutLifetimeProps);
-
+    
     DOREPLIFETIME(AFSDPlayerController, DebugEnemy);
     DOREPLIFETIME(AFSDPlayerController, DebugEnemyLocation);
     DOREPLIFETIME(AFSDPlayerController, DebugEnemySpeed);

@@ -1,5 +1,0 @@
-#include "TXStageStartEvent_CaveGeneration_SpawnedUpgradeStations.h"
-
-FTXStageStartEvent_CaveGeneration_SpawnedUpgradeStations::FTXStageStartEvent_CaveGeneration_SpawnedUpgradeStations() {
-}
-

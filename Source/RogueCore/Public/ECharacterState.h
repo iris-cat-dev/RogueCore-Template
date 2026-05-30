@@ -29,3 +29,4 @@ enum class ECharacterState : uint8 {
     Suspended,
     Buried,
 };
+

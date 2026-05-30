@@ -1,10 +1,10 @@
 #include "FlyingEnemyDeepPathfinderCharacter.h"
 
 AFlyingEnemyDeepPathfinderCharacter::AFlyingEnemyDeepPathfinderCharacter(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->FrozenMaterial = NULL;
-    this->FrozenAsset = NULL;
-    this->FrozenDeathSound = NULL;
-    this->FrozenDeathParticles = NULL;
+    this->FrozenMaterial = nullptr;
+    this->FrozenAsset = nullptr;
+    this->FrozenDeathSound = nullptr;
+    this->FrozenDeathParticles = nullptr;
 }
 
 void AFlyingEnemyDeepPathfinderCharacter::TriggerFrozenRagdoll() {

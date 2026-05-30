@@ -29,3 +29,4 @@ enum class ECoilgunUpgrades : uint8 {
     EPrimaryBonusShotWidth,
     EShieldDelay,
 };
+

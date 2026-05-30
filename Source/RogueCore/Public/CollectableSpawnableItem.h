@@ -3,6 +3,7 @@
 #include "CollectableSpawnableItem.generated.h"
 
 class UCollectableResourceData;
+
 USTRUCT(BlueprintType)
 struct FCollectableSpawnableItem {
     GENERATED_BODY()
@@ -10,6 +11,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     UCollectableResourceData* Resource;
     
-    int32 amount;
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    int32 Amount;
+    
     ROGUECORE_API FCollectableSpawnableItem();
 };
+

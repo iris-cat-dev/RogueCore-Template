@@ -3,9 +3,9 @@
 #include "Templates/SubclassOf.h"
 
 AThrowableItem::AThrowableItem(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->ThrowableClass = NULL;
-    this->FPThrowMontage = NULL;
-    this->TPThrowMontage = NULL;
+    this->ThrowableClass = nullptr;
+    this->FPThrowMontage = nullptr;
+    this->TPThrowMontage = nullptr;
     this->ThrowVelocity = 0.00f;
     this->InheritOwnerVelocityScale = 0.00f;
     this->ThrowAngle = 0.00f;
@@ -13,8 +13,10 @@ AThrowableItem::AThrowableItem(const FObjectInitializer& ObjectInitializer) : Su
     this->CanThrowBeforeEquipAnimFinish = false;
     this->CooldownAfterEquip = 0.25f;
     this->ThrowDelay = 0.00f;
+    this->EquipLastAfterAfterThrow = false;
+    this->EquipLastDelay = 0.50f;
     this->CooldownLeft = 0.00f;
-    this->LoadoutItem = NULL;
+    this->LoadoutItem = nullptr;
 }
 
 bool AThrowableItem::StartThrow() {
@@ -29,7 +31,11 @@ void AThrowableItem::Server_Throw_Implementation(TSubclassOf<AThrowableActor> Ac
 
 
 
+
 void AThrowableItem::OnThrownActorDestroyed(AActor* Actor) {
+}
+
+void AThrowableItem::OnMontageEnded(UAnimMontage* InMontage, bool InWasInterrupted) {
 }
 
 void AThrowableItem::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const {

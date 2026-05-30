@@ -9,3 +9,4 @@ enum class EBoomerangState : uint8 {
     GoingBack,
     Targeting,
 };
+

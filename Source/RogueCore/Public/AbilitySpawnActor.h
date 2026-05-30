@@ -1,17 +1,34 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameFramework/Actor.h"
-#include "EAbilityAmountType.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
 #include "AbilitySpawnActor.generated.h"
 
 UCLASS(Blueprintable)
-class ROGUECORE_API AAbilitySpawnActor : public AActor {
+class AAbilitySpawnActor : public AActor {
     GENERATED_BODY()
 public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float amount;
-
+    float Amount;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float Lifetime;
-    EAbilityAmountType Type;
+    
+private:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    AActor* BlockReplicationToActor;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    bool bIsDamageEnabled;
+    
+public:
     AAbilitySpawnActor(const FObjectInitializer& ObjectInitializer);
+
+    UFUNCTION(BlueprintCallable)
+    void SetDamageEnabled(const bool IsEnabled);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsDamageEnabled() const;
+    
 };
+

@@ -1,6 +1,6 @@
 #include "SentryGun.h"
-#include "Components/SceneComponent.h"
-#include "Components/SkeletalMeshComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SkeletalMeshComponent -FallbackName=SkeletalMeshComponent
 #include "Net/UnrealNetwork.h"
 
 ASentryGun::ASentryGun(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
@@ -9,10 +9,10 @@ ASentryGun::ASentryGun(const FObjectInitializer& ObjectInitializer) : Super(Obje
     (*p_RemoteRole->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(this)) = ROLE_SimulatedProxy;
     this->RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("TurretLegs"));
     this->SentryGunMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("SentryGunMesh"));
-    this->ProjectileClass = NULL;
-    this->ShootingSound = NULL;
-    this->MuzzleFlash = NULL;
-    this->Tracer = NULL;
+    this->ProjectileClass = nullptr;
+    this->ShootingSound = nullptr;
+    this->MuzzleFlash = nullptr;
+    this->Tracer = nullptr;
     this->MinTracerDistance = 100.00f;
     this->AngleRestriction = 0.00f;
     this->Enabled = true;
@@ -25,18 +25,18 @@ ASentryGun::ASentryGun(const FObjectInitializer& ObjectInitializer) : Super(Obje
     this->IdleScanAngle = 120.00f;
     this->IdleScanSpeed = 1.00f;
     this->FinalShotFadeOut = 0.50f;
-    this->AudioOnTurn = NULL;
+    this->AudioOnTurn = nullptr;
     this->AmmoCount = 100;
     this->MaxAmmoCount = 100;
     this->Damage = 10.00f;
     this->TargetYaw = 0.00f;
     this->TargetPitch = 0.00f;
-    this->WeaponFire = NULL;
-    this->ShootingAudioComponent = NULL;
+    this->WeaponFire = nullptr;
+    this->ShootingAudioComponent = nullptr;
     this->SentryGunMesh->SetupAttachment(RootComponent);
 }
 
-void ASentryGun::UseAmmo(int32 amount) {
+void ASentryGun::UseAmmo(int32 Amount) {
 }
 
 

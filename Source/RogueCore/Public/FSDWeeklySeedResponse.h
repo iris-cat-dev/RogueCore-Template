@@ -11,5 +11,7 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString ExpirationTime;
+    
     ROGUECORE_API FFSDWeeklySeedResponse();
 };
+

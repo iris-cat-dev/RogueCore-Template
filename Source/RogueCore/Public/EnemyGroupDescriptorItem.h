@@ -3,6 +3,7 @@
 #include "EnemyGroupDescriptorItem.generated.h"
 
 class UEnemyDescriptor;
+
 USTRUCT(BlueprintType)
 struct FEnemyGroupDescriptorItem {
     GENERATED_BODY()
@@ -12,3 +13,4 @@ public:
     
     ROGUECORE_API FEnemyGroupDescriptorItem();
 };
+

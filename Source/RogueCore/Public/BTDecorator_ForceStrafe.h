@@ -8,4 +8,6 @@ class UBTDecorator_ForceStrafe : public UBTDecorator {
     GENERATED_BODY()
 public:
     UBTDecorator_ForceStrafe();
+
 };
+

@@ -1,10 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-
-#include "UObject/Object.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=RandomStream -FallbackName=RandomStream
 #include "DelegateDelegate.h"
 #include "EEnemyHealthScaling.h"
 #include "EMissionShoutID.h"
+#include "ERunDepth.h"
+#include "ERunType.h"
 #include "IntDelegateDelegate.h"
 #include "RunCreationParameters.h"
 #include "RunState.h"
@@ -14,14 +17,11 @@
 class AActor;
 class ADebrisDataActor;
 class UBXEAmmoUnlockManager;
-class UBXEDamageUnlockManager;
 class UBXEGameStateComponent;
 class UBXELogicUnlockManager;
 class UBXENegotiationManager;
 class UBXEUnlockBase;
-class UBXEUnlockRarity;
 class UBiome;
-class UFSDEventsHandler;
 class UReadyUpManager;
 class URiskVector;
 class URun;
@@ -39,10 +39,9 @@ public:
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FRunManagerStageDelegate, UStage*, Stage);
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FRunManagerRunDelegate, URun*, Run);
     DECLARE_DYNAMIC_MULTICAST_DELEGATE(FRunManagerDelegate);
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnChipsChangedSignature, int32, NumberOfPoints, int32, change);
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FOnChipsChangedSignature OnChipsChanged;
+    FDelegate OnRiftBossFightOver;
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FDelegate OnRewardTreeReset;
@@ -59,7 +58,7 @@ public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FDelegate OnExpeniteMined;
     
-public:
+protected:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FIntDelegate OnXpChanged;
     
@@ -72,7 +71,7 @@ public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FDelegate OnPotentExpeniteChanged;
     
-public:
+private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     UBXENegotiationManager* NegotiationManager;
     
@@ -89,13 +88,7 @@ public:
     UBXELogicUnlockManager* LogicUnlockManager;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    UBXEDamageUnlockManager* DamageUnlockManager;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     UBXEAmmoUnlockManager* AmmoUnlockManager;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    UFSDEventsHandler* EventsHandler;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
     UBXEGameStateComponent* GameStateComponent;
@@ -116,15 +109,6 @@ public:
     int32 ObjectiveRewardRegistered;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    TMap<FGuid, TSoftObjectPtr<UBXEUnlockBase>> Unlocks;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    TMap<FGuid, TSoftObjectPtr<UBXEUnlockRarity>> Rarities;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    FRandomStream UnlockRandomStream;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FRandomStream EquipmentRandomStream;
     
     UPROPERTY(EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
@@ -136,13 +120,14 @@ public:
     UFUNCTION(BlueprintCallable)
     void StartRun(const FRunCreationParameters& Parameters);
     
-public:
-    UFUNCTION(BlueprintCallable)
-    void SetRiskVectorsInBugReporter();
-    
-public:
     UFUNCTION(BlueprintCallable)
     void RemoveLevelUpBlocker(AActor* blocker);
+    
+    UFUNCTION(BlueprintCallable)
+    void RemoveAllAdditionalRiskVectors();
+    
+    UFUNCTION(BlueprintCallable)
+    void RemoveAdditionalRiskVector(URiskVector* RiskVector);
     
     UFUNCTION(BlueprintCallable)
     void PotentExpeniteDispensed();
@@ -150,7 +135,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void PotentExpeniteCollected();
     
-public:
+private:
     UFUNCTION(BlueprintCallable)
     void OnObjectivesChanged();
     
@@ -158,14 +143,20 @@ public:
     UFUNCTION(BlueprintCallable)
     bool MoveToNextStage();
     
+    UFUNCTION(BlueprintCallable)
+    void MoveToLastStage(const int32 Offset);
+    
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable, BlueprintPure=false, meta=(WorldContext="WorldContext"))
     void MissionShout(UObject* WorldContext, EMissionShoutID InShoutID) const;
+    
+    UFUNCTION(BlueprintCallable)
+    void MarkRiftBossFightOver();
     
     UFUNCTION(BlueprintCallable)
     void MarkActiveStageComplete();
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    bool IsStageComplete(int32 BranchIndex) const;
+    bool IsStageComplete(int32 branchIndex) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsSecondToLastStageActive() const;
@@ -204,9 +195,6 @@ public:
     bool HasPendingArtifactUpgrade() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    int32 GetXPToChipConversionRate() const;
-    
-    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetWaveIntervalMultiplier() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -225,7 +213,7 @@ public:
     FString GetStageSeedString() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    FText GetStageName(int32 BranchIndex) const;
+    FText GetStageName(int32 branchIndex) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     UStage* GetStageAtIndex(const int32 StageIndex) const;
@@ -270,12 +258,6 @@ public:
     int32 GetNumberOfCompletedStages() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    int32 GetNumberOfClaimableChips() const;
-    
-    UFUNCTION(BlueprintCallable, BlueprintPure)
-    int32 GetNumberOfChips() const;
-    
-    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetNextLevelXP() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -309,7 +291,7 @@ public:
     float GetCurrentLevelProgress() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    UBiome* GetBiomeFromStageID(int32 StageID) const;
+    UBiome* GetBiomeFromStageID(int32 stageID) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetArtifactsDispensed() const;
@@ -318,22 +300,34 @@ public:
     int32 GetArtifactsCollected() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    int32 GetActiveStageIndex() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UStageTemplateDifficulty* GetActiveStageDifficulty() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     UStage* GetActiveStage() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    ERunType GetActiveRunType() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     URunTemplate* GetActiveRunTemplate() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    FString GetActiveRunString() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FText GetActiveRunName() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    URun* GetActiveRun() const;
+    FGuid GetActiveRunId() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    UBiome* GetActiveBiome() const;
+    ERunDepth GetActiveRunDepth() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    URun* GetActiveRun() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     void GetAccumulatedObjectiveXP(int32& perPrimary) const;
@@ -342,16 +336,13 @@ public:
     void ClearRun();
     
     UFUNCTION(BlueprintCallable)
-    int32 ClaimAllClaimableChips();
-    
-    UFUNCTION(BlueprintCallable)
     void CheatPrintStages();
     
     UFUNCTION(BlueprintCallable)
     bool Cheat_DroneApplyUnlock(UBXEUnlockBase* InUnlock);
     
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
-    void BeginNegotiation(UUnlockCollectionTag* InCollectionTag, int32 Seed);
+    void BeginNegotiation(UUnlockCollectionTag* InCollectionTag, int32 OverrideSeed);
     
     UFUNCTION(BlueprintCallable)
     void ArtifactDispensed();
@@ -366,10 +357,7 @@ public:
     void AddLevelUpBlocker(AActor* blocker);
     
     UFUNCTION(BlueprintCallable)
-    int32 AddChips(int32 InAmount);
-    
-    UFUNCTION(BlueprintCallable)
-    void AddAdditionalRiskVector(URiskVector* RiskVector);
+    void AddAdditionalRiskVector(URiskVector* RiskVector, const bool IsActiveInSingleStage, const int32 StageIndexToActivate);
     
 };
 

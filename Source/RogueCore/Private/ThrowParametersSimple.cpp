@@ -1,7 +1,7 @@
 #include "ThrowParametersSimple.h"
 
 FThrowParametersSimple::FThrowParametersSimple() {
-    this->ThrownActorClass = NULL;
-    this->ThrowingCharacter = NULL;
+    this->ThrownActorClass = nullptr;
+    this->ThrowingCharacter = nullptr;
 }
 

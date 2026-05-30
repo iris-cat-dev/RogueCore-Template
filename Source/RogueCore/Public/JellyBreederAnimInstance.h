@@ -6,11 +6,13 @@
 UCLASS(Blueprintable, NonTransient)
 class UJellyBreederAnimInstance : public UFlyingBugAnimInstance {
     GENERATED_BODY()
-    
-
 public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     bool ReadyToSpawnEggs;
+    
+public:
+    UJellyBreederAnimInstance();
 
-    UJellyBreederAnimInstance(const FObjectInitializer& ObjectInitializer);
 };
+

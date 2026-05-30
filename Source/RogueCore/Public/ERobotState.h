@@ -8,3 +8,4 @@ enum class ERobotState : uint8 {
     Friendly,
     PoweredDown,
 };
+

@@ -8,4 +8,6 @@ class ARoomGenerationItem : public AGenerationItem {
     GENERATED_BODY()
 public:
     ARoomGenerationItem(const FObjectInitializer& ObjectInitializer);
+
 };
+

@@ -1,7 +1,7 @@
 #include "PillarSettings.h"
 
 UPillarSettings::UPillarSettings() {
-    this->Noise = NULL;
+    this->Noise = nullptr;
 }
 
 

@@ -14,3 +14,4 @@ enum class EBoscoUpgrades : uint8 {
     ReviveArmor,
     ReviveHealth,
 };
+

@@ -1,6 +1,6 @@
 #include "GuntowerWeakPoint.h"
-#include "Components/SceneComponent.h"
-#include "Components/StaticMeshComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=StaticMeshComponent -FallbackName=StaticMeshComponent
 #include "EnemyHealthComponent.h"
 #include "WeakpointGlowComponent.h"
 
@@ -10,9 +10,9 @@ AGuntowerWeakPoint::AGuntowerWeakPoint(const FObjectInitializer& ObjectInitializ
     this->Health = CreateDefaultSubobject<UEnemyHealthComponent>(TEXT("Health"));
     this->mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("StaticMesh"));
     this->HitGlow = CreateDefaultSubobject<UWeakpointGlowComponent>(TEXT("WeakpointGlow"));
-    this->DamageToParent = NULL;
-    this->deathParticles = NULL;
-    this->deathSound = NULL;
+    this->DamageToParent = nullptr;
+    this->deathParticles = nullptr;
+    this->deathSound = nullptr;
     this->mesh->SetupAttachment(RootComponent);
 }
 

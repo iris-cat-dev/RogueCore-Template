@@ -6,7 +6,7 @@ APlagueMeteorSpawner::APlagueMeteorSpawner(const FObjectInitializer& ObjectIniti
     this->EscortMinimumZSpawnDistFromPath = 600.00f;
     this->DropLocationHeightOffset = 0.00f;
     this->ImportantLocationRange = -1.00f;
-    this->MeteorActorClassLoaded = NULL;
+    this->MeteorActorClassLoaded = nullptr;
 }
 
 

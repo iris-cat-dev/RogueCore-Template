@@ -5,6 +5,7 @@
 
 class UStatusEffect;
 class UStatusEffectsComponent;
+
 USTRUCT(BlueprintType)
 struct FCoilgunAfflictionEntry {
     GENERATED_BODY()
@@ -14,5 +15,7 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
     UStatusEffectsComponent* Target;
+    
     ROGUECORE_API FCoilgunAfflictionEntry();
 };
+

@@ -10,3 +10,4 @@ enum class EGooGunUpgrades : uint8 {
     ChargeTime,
     ChargeShotCount,
 };
+

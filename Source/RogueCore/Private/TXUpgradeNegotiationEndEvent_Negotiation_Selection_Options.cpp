@@ -1,5 +1,0 @@
-#include "TXUpgradeNegotiationEndEvent_Negotiation_Selection_Options.h"
-
-FTXUpgradeNegotiationEndEvent_Negotiation_Selection_Options::FTXUpgradeNegotiationEndEvent_Negotiation_Selection_Options() {
-}
-

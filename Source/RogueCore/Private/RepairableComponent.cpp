@@ -2,7 +2,7 @@
 #include "Net/UnrealNetwork.h"
 
 URepairableComponent::URepairableComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->RequiresCarriedResource = NULL;
+    this->RequiresCarriedResource = nullptr;
     this->ResourcesRequired = 1;
     this->IsFullyRepaired = false;
 }

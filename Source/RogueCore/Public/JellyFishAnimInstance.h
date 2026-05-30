@@ -6,11 +6,16 @@
 UCLASS(Blueprintable, NonTransient)
 class UJellyFishAnimInstance : public UEnemyAnimInstance {
     GENERATED_BODY()
-    
 public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     float HorizontalAngle;
-
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     float VerticalSpeed;
-    UJellyFishAnimInstance(const FObjectInitializer& ObjectInitializer);
+    
+public:
+    UJellyFishAnimInstance();
+
 };
+

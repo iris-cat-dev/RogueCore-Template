@@ -11,3 +11,4 @@ enum class ELaserPointerTargetType : uint8 {
     EmbeddedGem,
     Other,
 };
+

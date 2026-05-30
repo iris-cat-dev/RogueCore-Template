@@ -7,3 +7,4 @@ enum class EBeltDrivenWeaponUpgrade : uint8 {
     BarrelSpinupTime,
     BarrelSpinDownTime,
 };
+

@@ -1,7 +1,7 @@
 #include "OnEventElementCondition.h"
 
 UOnEventElementCondition::UOnEventElementCondition() {
-    this->EventToCheck = NULL;
+    this->EventToCheck = nullptr;
 }
 
 

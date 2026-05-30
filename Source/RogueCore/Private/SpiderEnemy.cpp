@@ -6,12 +6,12 @@
 ASpiderEnemy::ASpiderEnemy(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->PawnStats = CreateDefaultSubobject<UPawnStatsComponent>(TEXT("PawnStats"));
     this->HitReactions = CreateDefaultSubobject<UHitReactionComponent>(TEXT("HitReactions"));
-    this->GoreMesh = NULL;
+    this->GoreMesh = nullptr;
     this->ApplyDifficultySpeedModifier = true;
     this->AttackDamageModifier = 1.00f;
     this->LimitRagdollSpeed = false;
     this->MaxRagdollSpeed = 1000.00f;
-    this->LookAtTarget = NULL;
+    this->LookAtTarget = nullptr;
 }
 
 void ASpiderEnemy::SetLookAtTarget(AActor* Target) {

@@ -8,3 +8,4 @@ enum class ETetherMessageDirection : uint8 {
     Backward,
     Both,
 };
+

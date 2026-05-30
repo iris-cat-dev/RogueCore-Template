@@ -1,9 +1,9 @@
 #include "AnimNotifyState_SpawnMesh.h"
 
 UAnimNotifyState_SpawnMesh::UAnimNotifyState_SpawnMesh() {
-    this->mesh = NULL;
+    this->mesh = nullptr;
     this->HasOverrideMaterial = false;
-    this->OverrideMaterial = NULL;
+    this->OverrideMaterial = nullptr;
     this->OverrideMaterialSlot = 0;
     this->UseFirstPersonComponent = false;
 }

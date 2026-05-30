@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Engine/DataAsset.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
 #include "RunTemplateStage.h"
 #include "RunStageLayout.generated.h"
 
@@ -12,4 +12,6 @@ public:
     TArray<FRunTemplateStage> Stages;
     
     URunStageLayout();
+
 };
+

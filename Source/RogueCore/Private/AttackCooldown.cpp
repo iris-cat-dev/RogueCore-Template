@@ -2,5 +2,6 @@
 
 FAttackCooldown::FAttackCooldown() {
     this->CoolDown = 0.00f;
+    this->AttackName = FName();
 }
 

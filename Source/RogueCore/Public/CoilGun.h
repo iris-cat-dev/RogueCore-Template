@@ -1,8 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-
-#include "Curves/CurveFloat.h"
-#include "Engine/NetSerialization.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=RuntimeFloatCurve -FallbackName=RuntimeFloatCurve
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Vector_NetQuantize -FallbackName=Vector_NetQuantize
 #include "BulletPathSegment.h"
 #include "ChargedWeapon.h"
 #include "CoilMaterial.h"
@@ -24,6 +25,7 @@ class UNiagaraSystem;
 class UPrimitiveComponent;
 class UStaticMesh;
 class UStatusEffect;
+
 UCLASS(Blueprintable)
 class ROGUECORE_API ACoilGun : public AChargedWeapon, public IStackingDamageNumberSource {
     GENERATED_BODY()
@@ -31,74 +33,203 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UDamageComponent* DamageComponent;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UDamageComponent* OverchargeDamageComponent;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UDamageComponent* WeaponBlastDamage;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UDamageComponent* ShotwaveBonusDamage;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UDamageComponent* MoleBonusDamage;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UNiagaraComponent* FullyChargedParticles;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UNiagaraComponent* FP_OverchargeIndicatorParticles;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UNiagaraComponent* TP_FullyChargedParticles;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UCoilgunTrailSpawner* TrailSpawner;
+    
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FContrailSettings TrailSettings;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UStaticMesh* ImpactMeshCarver;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UNiagaraSystem* N_ImpactParticles;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UStatusEffect> ChargeResistanceStatusEffect;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UStatusEffect> ChargeWeaknessStatusEffect;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<TSubclassOf<ACoilgunWeaponTrail>> TrailClasses;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UNiagaraSystem* CustomMuzzleFlash;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TSet<AActor*> HitActorCache;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName CoilParamName;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<FCoilMaterial> DynamicCoilMaterials;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FRuntimeFloatCurve CoilColorCurve;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<UStatusEffect*> RecordedAilments;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float MaxAfflictionTime;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float ShotWidth;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float BonusShotWidth;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float ImpactFearFactor;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float OverChargedShotMaxPower;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float MaxOverchargeTime;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float OverchargeTimeStep;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float BrokenShieldboostDuration;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float MinUndercharge;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float TriBustCancelTime;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float TriBurstShotPowerMultiplier;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float TriBurstAmmoMultiplier;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float TriBurstShotCarvingMultiplier;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 FirstDynamicIndex;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 LastDynamicIndex;
+    
+public:
     ACoilGun(const FObjectInitializer& ObjectInitializer);
+
+protected:
     UFUNCTION(BlueprintCallable)
     void UpdateAfflictions();
+    
+public:
+    UFUNCTION(BlueprintCallable)
     void SetDynamicMaterials();
+    
+protected:
     UFUNCTION(BlueprintCallable, Reliable, Server)
     void Server_ToggleCharingBonuses(bool Enabled);
-    void Server_SpawnTrail_Implementation(const FVector_NetQuantize& Location, const FRotator& Rotation, float HalfHeight, bool fireTrailEnabled);
-    void Server_SpawnGroundTrail_Implementation(const FVector_NetQuantize& Location, const FVector& Direction, float chargeMultiplier);
-    void Server_SetShotPower_Implementation(const float& Power);
-    void Server_RegisterPrimaryHit_Implementation(UPrimitiveComponent* Target, UFSDPhysicalMaterial* PhysMaterial, const FVector_NetQuantize& Origin, const FVector_NetQuantize& Location, int32 BoneIndex, FShotMultiplier Multiplier, int32 mole);
-    void Server_RegisterBonusHit_Implementation(AActor* Target);
-    void Server_RegisterBlastHit_Implementation(AActor* Target, const FVector_NetQuantize& Location, UPrimitiveComponent* comp);
-    void Server_HitTerrain_Implementation(const FVector_NetQuantize& Location, const FVector_NetQuantize& End, float maxCarveDepth);
-    void Server_FearTarget_Implementation(AActor* Target);
-    void Server_ClearAilments_Implementation();
+    
+    UFUNCTION(BlueprintCallable, Reliable, Server)
+    void Server_SpawnTrail(const FVector_NetQuantize& Location, const FRotator& Rotation, float HalfHeight, bool fireTrailEnabled);
+    
+    UFUNCTION(BlueprintCallable, Reliable, Server)
+    void Server_SpawnGroundTrail(const FVector_NetQuantize& Location, const FVector& Direction, float chargeMultiplier);
+    
+    UFUNCTION(BlueprintCallable, Reliable, Server)
+    void Server_SetShotPower(const float& Power);
+    
+    UFUNCTION(BlueprintCallable, Reliable, Server)
+    void Server_RegisterPrimaryHit(UPrimitiveComponent* Target, UFSDPhysicalMaterial* PhysMaterial, const FVector_NetQuantize& Origin, const FVector_NetQuantize& Location, int32 BoneIndex, FShotMultiplier Multiplier, int32 mole);
+    
+    UFUNCTION(BlueprintCallable, Reliable, Server)
+    void Server_RegisterBonusHit(AActor* Target);
+    
+    UFUNCTION(BlueprintCallable, Reliable, Server)
+    void Server_RegisterBlastHit(AActor* Target, const FVector_NetQuantize& Location, UPrimitiveComponent* comp);
+    
+    UFUNCTION(BlueprintCallable, Reliable, Server)
+    void Server_HitTerrain(const FVector_NetQuantize& Location, const FVector_NetQuantize& End, float maxCarveDepth);
+    
+    UFUNCTION(BlueprintCallable, Reliable, Server)
+    void Server_FearTarget(AActor* Target);
+    
+    UFUNCTION(BlueprintCallable, Reliable, Server)
+    void Server_ClearAilments();
+    
+    UFUNCTION(BlueprintCallable)
     void OnTriBurstCancled();
+    
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnShieldBrokenBoost();
+    
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnShieldBrokeBoostStopped();
+    
+    UFUNCTION(BlueprintCallable)
     void OnShieldBoostEnded();
+    
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnFireKill(AActor* Target);
+    
+    UFUNCTION(BlueprintCallable)
     void OnEnemyKilled(AActor* Target, UFSDPhysicalMaterial* PhysicalMaterial, bool wasDirectHit);
-    void OnDamageTarget(UHealthComponentBase* Health, float amount, UPrimitiveComponent* Component, UFSDPhysicalMaterial* PhysicalMaterial);
+    
+    UFUNCTION(BlueprintCallable)
+    void OnDamageTarget(UHealthComponentBase* Health, float Amount, UPrimitiveComponent* Component, UFSDPhysicalMaterial* PhysicalMaterial);
+    
+    UFUNCTION(BlueprintCallable)
     void OnCharacterShieldBroke(AActor* brokeChar);
+    
+public:
+    UFUNCTION(BlueprintCallable)
     void OnBulletPathComplete(const TArray<FBulletPathSegment>& Path);
+    
+protected:
     UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void All_ShowHit(const FVector_NetQuantize& Location, const FVector_NetQuantize& Rotation);
-    void All_ShieldBroken_Implementation();
-    void All_AdjustTrail_Implementation(ACoilgunWeaponTrail* Trail, float Length);
-    // StackingDamageNumberSource interface implementation
-    virtual float GetStackingTimeLimit() const override { return 0.0f; }
-    virtual int32 GetMaxCombinationsPerentry() const override { return 0; }
-    virtual EUpdateDamageNumberColor GetColorBehaviour() const override { return EUpdateDamageNumberColor::ENormal; }
+    
+    UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
+    void All_ShieldBroken();
+    
+    UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
+    void All_AdjustTrail(ACoilgunWeaponTrail* Trail, float Length);
+    
+
+    // Fix for true pure virtual functions not being implemented
+public:
+    UFUNCTION(BlueprintCallable)
+    virtual float GetStackingTimeLimit() const override PURE_VIRTUAL(GetStackingTimeLimit, return 0.0f;);
+    
+    UFUNCTION(BlueprintCallable)
+    virtual int32 GetMaxCombinationsPerentry() const override PURE_VIRTUAL(GetMaxCombinationsPerentry, return 0;);
+    
+    UFUNCTION(BlueprintCallable)
+    virtual EUpdateDamageNumberColor GetColorBehaviour() const override PURE_VIRTUAL(GetColorBehaviour, return EUpdateDamageNumberColor::ENormal;);
+    
 };
+

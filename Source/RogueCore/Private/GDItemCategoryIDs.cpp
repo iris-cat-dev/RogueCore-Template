@@ -1,13 +1,13 @@
 #include "GDItemCategoryIDs.h"
 
 FGDItemCategoryIDs::FGDItemCategoryIDs() {
-    this->OverclockID = NULL;
-    this->ItemSkinID = NULL;
-    this->VanityID = NULL;
-    this->PickaxePartID = NULL;
-    this->WeaponID = NULL;
-    this->CraftingID = NULL;
-    this->ForgeID = NULL;
-    this->BoscoSkinID = NULL;
+    this->OverclockID = nullptr;
+    this->ItemSkinID = nullptr;
+    this->VanityID = nullptr;
+    this->PickaxePartID = nullptr;
+    this->WeaponID = nullptr;
+    this->CraftingID = nullptr;
+    this->ForgeID = nullptr;
+    this->BoscoSkinID = nullptr;
 }
 

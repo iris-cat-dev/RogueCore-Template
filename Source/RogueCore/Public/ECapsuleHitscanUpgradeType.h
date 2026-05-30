@@ -7,3 +7,4 @@ enum class ECapsuleHitscanUpgradeType : uint8 {
     ShotWidth,
     PenetrateEnemies,
 };
+

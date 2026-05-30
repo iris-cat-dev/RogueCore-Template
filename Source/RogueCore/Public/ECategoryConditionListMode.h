@@ -7,3 +7,4 @@ enum class ECategoryConditionListMode : uint8 {
     Whitelist,
     Blacklist,
 };
+

@@ -2,7 +2,7 @@
 
 FRunMutatorOverrides::FRunMutatorOverrides() {
     this->PrimaryMutatorOverride = ERunItemOverrideType::None;
-    this->PrimaryMutator = NULL;
+    this->PrimaryMutator = nullptr;
     this->SecondaryMutatorsOverride = ERunListOverrideType::None;
     this->RiskVectorsOverride = ERunListOverrideType::None;
 }

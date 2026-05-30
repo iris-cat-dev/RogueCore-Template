@@ -1,7 +1,7 @@
 #include "EnemySpawnEffectsByKeyAnimNotify.h"
 
 UEnemySpawnEffectsByKeyAnimNotify::UEnemySpawnEffectsByKeyAnimNotify() {
-    this->EffectKey = NULL;
+    this->EffectKey = nullptr;
     this->Attached = false;
 }
 

@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameFramework/Actor.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
 #include "CoreRift.generated.h"
 
 class UCurveFloat;
@@ -9,49 +9,62 @@ class UInstancedStaticMeshComponent;
 class USceneComponent;
 class USplineComponent;
 class UTerrainPlacementComponent;
+
 UCLASS(Blueprintable)
 class ACoreRift : public AActor {
     GENERATED_BODY()
-
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_Seed, meta=(AllowPrivateAccess=true))
-    int32 Seed;
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USceneComponent* Root;
-
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USceneComponent* InitialRotationPoint;
-
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USceneComponent* InstancedSpikesRoot;
-
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     TArray<UInstancedStaticMeshComponent*> SpikeMeshes;
-
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USplineComponent* SpikeLocationSpline;
-
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UTerrainPlacementComponent* terrainPlacement;
-
+    
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    UCurveFloat* ScaleCurve;
+    UCurveVector* ScaleCurve;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UCurveFloat* AlphaCurve;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float ScaleUpInitialDelay;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float ScaleUpTime;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 BonesToSpawn;
-
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_Seed, meta=(AllowPrivateAccess=true))
+    int32 Seed;
+    
+public:
     ACoreRift(const FObjectInitializer& ObjectInitializer);
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent, meta=(AllowPrivateAccess=true))
+
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+
+    UFUNCTION(BlueprintCallable)
     void SpawnSpikes();
-
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent, meta=(AllowPrivateAccess=true))
+    
+    UFUNCTION(BlueprintCallable)
     void ScaleUp();
-
-    UFUNCTION()
+    
+protected:
+    UFUNCTION(BlueprintCallable)
     void OnRep_Seed();
+    
 };
+

@@ -1,6 +1,6 @@
 #include "FacilityTentacleHeadAnimInstance.h"
 
-UFacilityTentacleHeadAnimInstance::UFacilityTentacleHeadAnimInstance(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+UFacilityTentacleHeadAnimInstance::UFacilityTentacleHeadAnimInstance() {
     this->Searching = false;
     this->Melee = false;
     this->RangedAttack = false;

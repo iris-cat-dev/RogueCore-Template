@@ -5,6 +5,7 @@
 class AActor;
 class UEnemyComponent;
 class UEnemyHealthComponent;
+
 USTRUCT(BlueprintType)
 struct FBossFight {
     GENERATED_BODY()
@@ -14,6 +15,10 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<UEnemyComponent> EnemyComponent;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<UEnemyHealthComponent> HealthComponent;
+    
     ROGUECORE_API FBossFight();
 };
+

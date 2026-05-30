@@ -1,7 +1,7 @@
 #include "ExterminationReward.h"
 
 UExterminationReward::UExterminationReward() {
-    this->Resource = NULL;
+    this->Resource = nullptr;
     this->AwardSize = 1.00f;
 }
 

@@ -3,14 +3,14 @@
 
 AGem::AGem(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->usable = CreateDefaultSubobject<UCarriableInstantUsable>(TEXT("usable"));
-    this->ResourceType = NULL;
-    this->SpawnedByObjective = NULL;
+    this->ResourceType = nullptr;
+    this->SpawnedByObjective = nullptr;
     this->OverrideResourceAmount = -1.00f;
     this->ResourceAmount = 1.00f;
     this->hasBeenReleased = false;
 }
 
-void AGem::SetResourceAmount(float amount) {
+void AGem::SetResourceAmount(float Amount) {
 }
 
 void AGem::SetHasBeenReleased(bool NewHasBeenReleased) {

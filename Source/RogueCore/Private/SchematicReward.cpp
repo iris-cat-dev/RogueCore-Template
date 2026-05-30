@@ -2,7 +2,7 @@
 
 USchematicReward::USchematicReward() {
     this->SchematicType = ESchematicType::Overclock;
-    this->RewardedSchematic = NULL;
+    this->RewardedSchematic = nullptr;
 }
 
 

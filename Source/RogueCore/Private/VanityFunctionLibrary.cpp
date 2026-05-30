@@ -12,4 +12,7 @@ void UVanityFunctionLibrary::RandomizeAllRandomVanityLoadout(APlayerCharacter* c
 void UVanityFunctionLibrary::CopyPasteVanityLoadout(UObject* WorldContextObject, UPlayerCharacterID* PlayerId, int32 fromIndex, int32 toIndex) {
 }
 
+void UVanityFunctionLibrary::ApplyPlayerVanityToVanityCharacter(const APlayerCharacter* PlayerCharacterToCopyFrom, AVanityCharacter* VanityCharacterToApplyTo) {
+}
+
 

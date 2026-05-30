@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Engine/NetSerialization.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=UniqueNetIdRepl -FallbackName=UniqueNetIdRepl
 #include "InstantUsable.h"
 #include "UsersChangedDelegate.h"
 #include "OncePerPlayerInstantUsableComponent.generated.h"
@@ -8,20 +8,25 @@
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class ROGUECORE_API UOncePerPlayerInstantUsableComponent : public UInstantUsable {
     GENERATED_BODY()
-    
-
-
 public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FUsersChanged OnUsersChangedEvent;
     
- 
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, ReplicatedUsing=OnRep_Users, meta=(AllowPrivateAccess=true))
     TArray<FUniqueNetIdRepl> ExcludedUsers;
+    
+public:
     UOncePerPlayerInstantUsableComponent(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+
+protected:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnUsersChanged(const TArray<FUniqueNetIdRepl>& userList);
+    
     UFUNCTION(BlueprintCallable)
     void OnRep_Users();
+    
 };
+

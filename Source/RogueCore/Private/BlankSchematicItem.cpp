@@ -1,7 +1,7 @@
 #include "BlankSchematicItem.h"
 
 UBlankSchematicItem::UBlankSchematicItem() {
-    this->Icon = NULL;
+    this->Icon = nullptr;
 }
 
 

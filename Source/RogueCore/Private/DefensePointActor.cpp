@@ -6,8 +6,8 @@ ADefensePointActor::ADefensePointActor(const FObjectInitializer& ObjectInitializ
     this->bReplicates = true;
     const FProperty* p_RemoteRole = GetClass()->FindPropertyByName("RemoteRole");
     (*p_RemoteRole->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(this)) = ROLE_SimulatedProxy;
-    this->DefenseEvent = NULL;
-    this->ActiveDefenceEvent = NULL;
+    this->DefenseEvent = nullptr;
+    this->ActiveDefenceEvent = nullptr;
     this->DefendState = EDefendPointState::Idle;
     this->DefendPointUsable = CreateDefaultSubobject<USingleUsableComponent>(TEXT("DefendPointUsable"));
 }

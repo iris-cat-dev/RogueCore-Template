@@ -2,7 +2,7 @@
 #include "Net/UnrealNetwork.h"
 
 UGroundToAirComponent::UGroundToAirComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->CurrentMove = NULL;
+    this->CurrentMove = nullptr;
     this->WalkTime = 0.00f;
     this->WalkTimeMaxRandomOffset = 0.00f;
     this->WalkTimeMinRandomOffset = 0.00f;

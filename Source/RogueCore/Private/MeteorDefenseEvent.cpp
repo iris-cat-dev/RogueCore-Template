@@ -2,9 +2,9 @@
 #include "Net/UnrealNetwork.h"
 
 AMeteorDefenseEvent::AMeteorDefenseEvent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->Duration = 100.00f;
+    this->duration = 100.00f;
     this->InitialProgress = 30.00f;
-    this->meteor = NULL;
+    this->meteor = nullptr;
 }
 
 void AMeteorDefenseEvent::SetMeteor(APlagueMeteor* NewMeteor) {

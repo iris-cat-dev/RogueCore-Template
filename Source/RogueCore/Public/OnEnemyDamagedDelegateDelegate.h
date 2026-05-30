@@ -5,4 +5,6 @@
 class UFSDPhysicalMaterial;
 class UHealthComponentBase;
 class UPrimitiveComponent;
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_FourParams(FOnEnemyDamagedDelegate, UHealthComponentBase*, Health, float, amount, UPrimitiveComponent*, Component, UFSDPhysicalMaterial*, PhysicalMaterial);
+
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_FourParams(FOnEnemyDamagedDelegate, UHealthComponentBase*, Health, float, Amount, UPrimitiveComponent*, Component, UFSDPhysicalMaterial*, PhysicalMaterial);
+

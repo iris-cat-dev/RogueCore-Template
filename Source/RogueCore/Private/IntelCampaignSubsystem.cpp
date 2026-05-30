@@ -2,16 +2,19 @@
 #include "Templates/SubclassOf.h"
 
 UIntelCampaignSubsystem::UIntelCampaignSubsystem() {
-    this->GameInstance = NULL;
+    this->GameInstance = nullptr;
 }
 
 void UIntelCampaignSubsystem::SetIntelPoints(const int32 NewIntelPoints) {
 }
 
-void UIntelCampaignSubsystem::OnWorldChanged() {
+void UIntelCampaignSubsystem::ResetRecentIntelProgression() {
 }
 
-void UIntelCampaignSubsystem::OnLocalPlayerCharacterInitialized(APlayerCharacter* PlayerCharacter) {
+void UIntelCampaignSubsystem::ResetIntelCampaign() {
+}
+
+void UIntelCampaignSubsystem::OnWorldChanged() {
 }
 
 FIntelProgression UIntelCampaignSubsystem::GetRecentIntelProgression() const {
@@ -60,6 +63,9 @@ UIntelChallenge* UIntelCampaignSubsystem::FindActiveChallengeOfClass(const TSubc
 
 FText UIntelCampaignSubsystem::CreateChallengeDescription(const TSubclassOf<UIntelChallenge> ChallengeClass) const {
     return FText::GetEmpty();
+}
+
+void UIntelCampaignSubsystem::CompleteIntelCampaign() {
 }
 
 void UIntelCampaignSubsystem::ClaimObjective(UIntelObjective* Objective) {

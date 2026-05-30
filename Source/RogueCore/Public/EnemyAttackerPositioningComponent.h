@@ -8,4 +8,6 @@ class UEnemyAttackerPositioningComponent : public UAttackerPositioningComponent 
     GENERATED_BODY()
 public:
     UEnemyAttackerPositioningComponent(const FObjectInitializer& ObjectInitializer);
+
 };
+

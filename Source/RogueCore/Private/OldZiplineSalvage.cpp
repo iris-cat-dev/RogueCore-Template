@@ -1,7 +1,7 @@
 #include "OldZiplineSalvage.h"
 
 AOldZiplineSalvage::AOldZiplineSalvage(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->ZiplineProjectileClass = NULL;
+    this->ZiplineProjectileClass = nullptr;
 }
 
 void AOldZiplineSalvage::OnMatchStarted() {

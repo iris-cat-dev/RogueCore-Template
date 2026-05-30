@@ -1,9 +1,9 @@
 #include "AmbientBlasterAnimInstance.h"
 
 UAmbientBlasterAnimInstance::UAmbientBlasterAnimInstance() {
-    this->RechargeParticle = NULL;
-    this->SpawnedRechargeParticle = NULL;
-    this->Character = NULL;
+    this->RechargeParticle = nullptr;
+    this->SpawnedRechargeParticle = nullptr;
+    this->Character = nullptr;
 }
 
 void UAmbientBlasterAnimInstance::SpawnRechargeParticle() {

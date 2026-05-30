@@ -10,3 +10,4 @@ enum class EDetPackUpgrades : uint8 {
     ExtraFearRadius,
     ExtraStaggerRadius,
 };
+

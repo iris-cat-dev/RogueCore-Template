@@ -4,6 +4,7 @@
 #include "GameActivityMissionType.generated.h"
 
 class UStageTemplate;
+
 UCLASS(Blueprintable)
 class UGameActivityMissionType : public UGameActivityType {
     GENERATED_BODY()
@@ -12,4 +13,6 @@ public:
     TSoftObjectPtr<UStageTemplate> ActivityMission;
     
     UGameActivityMissionType();
+
 };
+

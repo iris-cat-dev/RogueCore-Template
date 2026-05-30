@@ -8,3 +8,4 @@ enum class EDecalImportance : uint8 {
     Normal,
     Low,
 };
+

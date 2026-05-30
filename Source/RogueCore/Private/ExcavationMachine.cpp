@@ -1,5 +1,5 @@
 #include "ExcavationMachine.h"
-#include "Components/SceneComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
 #include "Net/UnrealNetwork.h"
 
 AExcavationMachine::AExcavationMachine(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
@@ -33,6 +33,7 @@ void AExcavationMachine::SetExpenitePayout(float InPayout) {
 
 
 
+
 void AExcavationMachine::OnRep_VisualsEnabled() {
 }
 
@@ -43,6 +44,9 @@ void AExcavationMachine::OnRep_RemainingGemCount() {
 }
 
 void AExcavationMachine::OnRep_PredictedRewards() {
+}
+
+void AExcavationMachine::LastRewardDispensed_AttachmentChanged(bool Attached, FVector PrevScale) {
 }
 
 void AExcavationMachine::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const {

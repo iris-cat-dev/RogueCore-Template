@@ -8,3 +8,4 @@ enum class EArmorDamageType : uint8 {
     Dissolve,
     Beam,
 };
+

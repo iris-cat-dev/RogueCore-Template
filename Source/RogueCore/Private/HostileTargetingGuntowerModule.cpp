@@ -3,7 +3,7 @@
 
 AHostileTargetingGuntowerModule::AHostileTargetingGuntowerModule(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->TurretRotationSpeed = 0.00f;
-    this->TargetedActor = NULL;
+    this->TargetedActor = nullptr;
     this->TargetingRotationSpeed = 3.00f;
     this->TimeUntilForgetTarget = 3.00f;
     this->AlwaysUpdateAimRotation = true;

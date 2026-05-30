@@ -7,3 +7,4 @@ enum class EFrozenAfflictionType : uint8 {
     Frozen,
     Infected,
 };
+

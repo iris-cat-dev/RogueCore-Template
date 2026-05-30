@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Components/ActorComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
 #include "DelegateDelegate.h"
 #include "EAbilityActivationType.h"
 #include "EAbilityBlockedOn.h"
@@ -8,6 +8,8 @@
 #include "FloatDelegateDelegate.h"
 #include "IntDelegateDelegate.h"
 #include "AbilityComponent.generated.h"
+
+class AAbilityItem;
 class APlayerCharacter;
 class UAbilityData;
 class UDialogDataAsset;
@@ -36,6 +38,9 @@ public:
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FDelegate OnChargeConsumed;
+    
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FIntDelegate OnTempChargesChanged;
     
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -66,6 +71,9 @@ protected:
     int32 MaxCharges;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 TempCharges;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EAbilityBlockedOn AbilityBlockedOn;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -94,6 +102,9 @@ public:
 
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
 
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    AAbilityItem* TryGetAbilityItem() const;
+    
     UFUNCTION(BlueprintCallable)
     void SetRegenBlocked(bool IsBlocked);
     
@@ -138,6 +149,9 @@ public:
     bool GetIsEffectActive() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    float GetCoolDownRemainingPct() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetCharges() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -156,7 +170,7 @@ public:
     void DeactivateAbility();
     
     UFUNCTION(BlueprintCallable)
-    void ConsumeCharge(int32 amount);
+    void ConsumeCharge(int32 Amount);
     
 protected:
     UFUNCTION(BlueprintCallable, Client, Reliable)
@@ -166,6 +180,9 @@ protected:
     void Client_DecreaseCurrentCooldownByPercent(const float InPercent);
     
 public:
+    UFUNCTION(BlueprintCallable)
+    void AddCharges(int32 Amount);
+    
     UFUNCTION(BlueprintCallable)
     void ActivateAbility(bool ReleaseToDeactivate);
     

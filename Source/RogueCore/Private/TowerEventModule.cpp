@@ -1,7 +1,7 @@
 #include "TowerEventModule.h"
 #include "Particles/ParticleSystemComponent.h"
-#include "Components/SceneComponent.h"
-#include "Components/SkeletalMeshComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SkeletalMeshComponent -FallbackName=SkeletalMeshComponent
 #include "ArmorHealthDamageComponent.h"
 #include "EnemyHealthComponent.h"
 #include "Net/UnrealNetwork.h"
@@ -16,12 +16,12 @@ ATowerEventModule::ATowerEventModule(const FObjectInitializer& ObjectInitializer
     this->WeakpointGlow = CreateDefaultSubobject<UWeakpointGlowComponent>(TEXT("WeakpointGlowComponent"));
     this->SmokeParticles = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("SmokeParticlesComponent"));
     this->SmokeParticlesNS = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("SmokeParticlesNS"));
-    this->DestroyedMesh = NULL;
-    this->ExplosionSound = NULL;
-    this->ExplosionEffect = NULL;
-    this->PreviousModule = NULL;
-    this->NextModule = NULL;
-    this->ArmorMesh = NULL;
+    this->DestroyedMesh = nullptr;
+    this->ExplosionSound = nullptr;
+    this->ExplosionEffect = nullptr;
+    this->PreviousModule = nullptr;
+    this->NextModule = nullptr;
+    this->ArmorMesh = nullptr;
     this->ArmorPieces = 3;
     this->ArmorLifetime = 3.00f;
     this->ArmorPopForce = 300.00f;

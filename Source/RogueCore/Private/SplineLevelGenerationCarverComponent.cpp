@@ -1,8 +1,8 @@
 #include "SplineLevelGenerationCarverComponent.h"
 
 USplineLevelGenerationCarverComponent::USplineLevelGenerationCarverComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->TerrainType = NULL;
-    this->TerrainMaterial = NULL;
+    this->TerrainType = nullptr;
+    this->TerrainMaterial = nullptr;
     this->CarveRadius = 100.00f;
     this->ConvexExpensiveNoise = 0.00f;
     this->Filter = ECarveFilterType::ReplaceAll;

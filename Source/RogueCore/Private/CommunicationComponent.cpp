@@ -3,14 +3,14 @@
 
 UCommunicationComponent::UCommunicationComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->ShoutingEnabled = true;
-    this->ShoutWidgetType = NULL;
-    this->CharacterShouts = NULL;
+    this->ShoutWidgetType = nullptr;
+    this->CharacterShouts = nullptr;
     this->MinShoutDelay = 1.00f;
     this->CloseRangeShoutDistance = 1500.00f;
     this->bMissionControlPaused = false;
-    this->MissionControlAudioComponent = NULL;
-    this->Character = NULL;
-    this->LastShout = NULL;
+    this->MissionControlAudioComponent = nullptr;
+    this->Character = nullptr;
+    this->LastShout = nullptr;
 }
 
 void UCommunicationComponent::StopMissionControl(bool InClearQueue) {
@@ -22,7 +22,10 @@ void UCommunicationComponent::ShoutCustomOrDefault(UDialogDataAsset* CustomShout
 void UCommunicationComponent::ShoutCustomLocalOnly(UDialogDataAsset* NewShout) {
 }
 
-void UCommunicationComponent::ShoutCustomClosestDwarf(UObject* WorldContext, UDialogDataAsset* NewShout, FVector TargetLocation) {
+void UCommunicationComponent::ShoutCustomFurthestDwarf(UObject* WorldContext, UDialogDataAsset* NewShout, FVector TargetLocation, const float MinimumDistance, const AActor* ExcludedPlayer) {
+}
+
+void UCommunicationComponent::ShoutCustomClosestDwarf(UObject* WorldContext, UDialogDataAsset* NewShout, FVector TargetLocation, const AActor* ExcludedPlayer) {
 }
 
 void UCommunicationComponent::ShoutCustom(UDialogDataAsset* NewShout) {
@@ -35,6 +38,12 @@ void UCommunicationComponent::SetVoicePitchMultiplier(float InPitch) {
 }
 
 void UCommunicationComponent::SetMissionControlPaused(UObject* WorldContext, bool IsPaused) {
+}
+
+void UCommunicationComponent::ServerShoutCustomFurthestDwarf_Implementation(UDialogDataAsset* NewShout, const FVector& TargetLocation, const float MinimumDistance, const AActor* ExcludedPlayer) {
+}
+
+void UCommunicationComponent::ServerShoutCustomClosestDwarf_Implementation(UDialogDataAsset* NewShout, const FVector& TargetLocation, const AActor* ExcludedPlayer) {
 }
 
 void UCommunicationComponent::ServerShout_Implementation(UDialogDataAsset* NewShout, const FDialogVoiceSettings& InVoiceSettings) {
@@ -77,14 +86,14 @@ bool UCommunicationComponent::IsMissionControlSpeaking() const {
     return false;
 }
 
-float UCommunicationComponent::GetVoicePitchMultiplier() const {
-    return 0.0f;
+FDialogVoiceSettings UCommunicationComponent::GetVoiceSettings() const {
+    return FDialogVoiceSettings{};
 }
 
-void UCommunicationComponent::ClientShout_Implementation(APlayerCharacter* Sender, UDialogDataAsset* NewShout, int32 Index, const FDialogVoiceSettings& InVoiceSettings) {
+void UCommunicationComponent::ClientShout_Implementation(APlayerCharacter* Sender, UDialogDataAsset* NewShout, int32 Index, const FDialogTalkingTo& TalkingTo, const FDialogVoiceSettings& InVoiceSettings) {
 }
 
-void UCommunicationComponent::ClientMissionShout_Implementation(UDialogDataAsset* NewShout, int32 Index, bool bPriority) {
+void UCommunicationComponent::ClientMissionShout_Implementation(UDialogDataAsset* NewShout, int32 Index, bool bPriority, const FDialogTalkingTo& TalkingTo) {
 }
 
 

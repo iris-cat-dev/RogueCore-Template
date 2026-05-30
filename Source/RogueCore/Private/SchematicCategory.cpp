@@ -2,7 +2,7 @@
 
 USchematicCategory::USchematicCategory() {
     this->SchematicType = ESchematicType::Overclock;
-    this->RewardType = NULL;
+    this->RewardType = nullptr;
     this->SortOrder = 0;
 }
 

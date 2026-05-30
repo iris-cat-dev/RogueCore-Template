@@ -19,7 +19,7 @@ FKey UInputCaptureWidget::GetCurrentBinding() const {
     return FKey{};
 }
 
-bool UInputCaptureWidget::FindCurrentSettingsForKey(const FKey& InKey, FCustomKeySetting& OutSettings) {
+bool UInputCaptureWidget::FindCurrentSettingsForKey(const FKey& InKey, const int32 ActionGroup, FCustomKeySetting& OutSettings) {
     return false;
 }
 

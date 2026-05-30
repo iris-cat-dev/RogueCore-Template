@@ -3,16 +3,16 @@
 
 UResourceBank::UResourceBank(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->OpenForDeposit = true;
-    this->GameState = NULL;
-    this->ResourceFilter = NULL;
+    this->GameState = nullptr;
+    this->ResourceFilter = nullptr;
     this->DepositesPerSecond = 4.00f;
     this->DepositeAmount = 5.00f;
     this->CanGetStrict = false;
     this->AddToTeamInventory = true;
-    this->AudioBeginDepositing = NULL;
-    this->AudioDepositing = NULL;
-    this->AudioEndDepositing = NULL;
-    this->ShoutBeginDepositing = NULL;
+    this->AudioBeginDepositing = nullptr;
+    this->AudioDepositing = nullptr;
+    this->AudioEndDepositing = nullptr;
+    this->ShoutBeginDepositing = nullptr;
 }
 
 void UResourceBank::All_Depositing_Implementation(APlayerCharacter* Character) {

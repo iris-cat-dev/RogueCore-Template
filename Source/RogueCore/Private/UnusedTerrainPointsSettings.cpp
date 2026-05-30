@@ -3,6 +3,5 @@
 FUnusedTerrainPointsSettings::FUnusedTerrainPointsSettings() {
     this->PointsPerOwner = 0;
     this->AddTerrainPlacementBlockers = false;
-    this->PointType = EStaticSpawnPointSelectionType::Any;
 }
 

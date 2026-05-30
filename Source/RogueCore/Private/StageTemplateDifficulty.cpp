@@ -12,6 +12,7 @@ UStageTemplateDifficulty::UStageTemplateDifficulty() {
     this->EliteCommonCount = 0;
     this->DisruptiveEnemyCount = 0;
     this->SpecialEnemyCount = 0;
+    this->LevelTimeScale = 1.00f;
 }
 
 

@@ -1,5 +1,4 @@
 #include "FSDSplineLibrary.h"
-#include "Components/SplineComponent.h"
 
 UFSDSplineLibrary::UFSDSplineLibrary() {
 }

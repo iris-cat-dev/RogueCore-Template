@@ -6,3 +6,4 @@ UENUM(BlueprintType)
 enum class EModifyStatusEffectDamageUpgrade : uint8 {
     Duration,
 };
+

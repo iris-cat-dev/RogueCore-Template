@@ -1,9 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Runtime/Engine/Classes/Animation/AnimNotifies/AnimNotify.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=AnimNotify -FallbackName=AnimNotify
 #include "AnimNotify_TerrainFootStep.generated.h"
 
 class UFXSystemAsset;
+
 UCLASS(Blueprintable, CollapseCategories, MinimalAPI)
 class UAnimNotify_TerrainFootStep : public UAnimNotify {
     GENERATED_BODY()
@@ -11,6 +12,10 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UFXSystemAsset* ParticleTemplate;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName BoneName;
+    
     UAnimNotify_TerrainFootStep();
+
 };
+

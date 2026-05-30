@@ -2,8 +2,8 @@
 #include "Net/UnrealNetwork.h"
 
 AHeliumTank::AHeliumTank(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->PitchCurve = NULL;
-    this->Leader = NULL;
+    this->PitchCurve = nullptr;
+    this->Leader = nullptr;
 }
 
 void AHeliumTank::OnUsedBy(APlayerCharacter* User, EInputKeys Key) {

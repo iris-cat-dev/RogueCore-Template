@@ -16,3 +16,4 @@ enum class ESonyInputSettingsBools : uint8 {
     ControllerSpeakerFlare,
     ControllerSpeakerMineralCollection,
 };
+

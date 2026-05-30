@@ -1,7 +1,8 @@
 #include "PickaxeMeshInstance.h"
 
 FPickaxeMeshInstance::FPickaxeMeshInstance() {
-    this->FP_Mesh = NULL;
-    this->TP_Mesh = NULL;
+    this->FP_Mesh = nullptr;
+    this->TP_Mesh = nullptr;
+    this->MaterialOverride = nullptr;
 }
 

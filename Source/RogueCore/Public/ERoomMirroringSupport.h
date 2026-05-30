@@ -9,3 +9,4 @@ enum class ERoomMirroringSupport : uint8 {
     MirrorAroundY,
     MirrorBoth,
 };
+

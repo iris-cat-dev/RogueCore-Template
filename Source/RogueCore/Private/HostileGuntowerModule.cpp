@@ -1,6 +1,6 @@
 #include "HostileGuntowerModule.h"
 #include "Particles/ParticleSystemComponent.h"
-#include "Components/SkeletalMeshComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SkeletalMeshComponent -FallbackName=SkeletalMeshComponent
 #include "NiagaraComponent.h"
 #include "EnemyComponent.h"
 #include "Net/UnrealNetwork.h"

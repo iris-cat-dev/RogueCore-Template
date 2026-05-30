@@ -12,3 +12,4 @@ enum class ECharselectionCameraLocation : uint8 {
     Forge,
     Pickaxe,
 };
+

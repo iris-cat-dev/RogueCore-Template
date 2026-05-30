@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
 #include "VictoryPoseSave.generated.h"
 
 USTRUCT(BlueprintType)
@@ -9,10 +9,15 @@ struct FVictoryPoseSave {
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FGuid EquippedVictoryPose;
-
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FGuid> UnlockedVictoryPoses;
-
-    ROGUECORE_API FVictoryPoseSave();
- 
+    
+protected:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FGuid> EquippedVictoryPoses;
+    
+public:
+    ROGUECORE_API FVictoryPoseSave();
 };
+

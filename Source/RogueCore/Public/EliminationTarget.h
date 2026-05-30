@@ -3,6 +3,7 @@
 #include "EliminationTarget.generated.h"
 
 class AFSDPawn;
+
 USTRUCT(BlueprintType)
 struct FEliminationTarget {
     GENERATED_BODY()
@@ -12,3 +13,4 @@ public:
     
     ROGUECORE_API FEliminationTarget();
 };
+

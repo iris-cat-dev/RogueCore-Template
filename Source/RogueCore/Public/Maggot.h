@@ -4,14 +4,17 @@
 #include "Maggot.generated.h"
 
 class USimpleHealthComponent;
+
 UCLASS(Blueprintable)
 class AMaggot : public ADeepPathfinderCharacter {
     GENERATED_BODY()
-    
-
 public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USimpleHealthComponent* HealthComponent;
     
+public:
     AMaggot(const FObjectInitializer& ObjectInitializer);
+
 };
+

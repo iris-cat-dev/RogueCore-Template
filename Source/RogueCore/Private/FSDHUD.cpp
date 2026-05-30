@@ -3,10 +3,10 @@
 AFSDHUD::AFSDHUD(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->DebugDisplay.AddDefaulted(1);
     this->IsVisibleFlags = 0;
-    this->HUDWidget = NULL;
+    this->HUDWidget = nullptr;
 }
 
-bool AFSDHUD::ToggleHUDVisibility(EHUDVisibilityReason reason) {
+bool AFSDHUD::ToggleHUDVisibility(EHUDVisibilityReason Reason) {
     return false;
 }
 
@@ -14,14 +14,14 @@ bool AFSDHUD::ToggleHUDVisibility(EHUDVisibilityReason reason) {
 void AFSDHUD::SetHUDWidget(UFSDMainHUDWidget* InWidget) {
 }
 
-void AFSDHUD::SetHUDVisible(bool IsVisible, EHUDVisibilityReason reason) {
+void AFSDHUD::SetHUDVisible(bool IsVisible, EHUDVisibilityReason Reason) {
 }
 
 
 
 
 
-bool AFSDHUD::IsHUDVisibleFlagSet(EHUDVisibilityReason reason) const {
+bool AFSDHUD::IsHUDVisibleFlagSet(EHUDVisibilityReason Reason) const {
     return false;
 }
 

@@ -5,14 +5,14 @@ UBeamTrackingAttackComponent::UBeamTrackingAttackComponent(const FObjectInitiali
     this->TelegraphDuration = 1.00f;
     this->AttackDuration = 1.00f;
     this->TrackingSpeed = 5.00f;
-    this->HotRockMaterial = NULL;
+    this->HotRockMaterial = nullptr;
     this->CarveFrequency = 10.00f;
     this->TraceChannel = TraceTypeQuery1;
     this->IsAttacking = false;
-    this->ActorClassFilter = NULL;
-    this->InflictedStatusEffect = NULL;
+    this->ActorClassFilter = nullptr;
+    this->InflictedStatusEffect = nullptr;
     this->IsTelegraphFinished = false;
-    this->TargetedActor = NULL;
+    this->TargetedActor = nullptr;
 }
 
 void UBeamTrackingAttackComponent::StopAttackMulticast_Implementation() {

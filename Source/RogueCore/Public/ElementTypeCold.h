@@ -8,4 +8,6 @@ class UElementTypeCold : public UElementType {
     GENERATED_BODY()
 public:
     UElementTypeCold();
+
 };
+

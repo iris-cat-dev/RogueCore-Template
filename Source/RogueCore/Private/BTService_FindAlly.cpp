@@ -2,7 +2,7 @@
 
 UBTService_FindAlly::UBTService_FindAlly() {
     this->MaxSameTypeSupportingActors = 0;
-    this->Query = NULL;
+    this->Query = nullptr;
     this->Sorting = NoSorting;
     this->MaxRange = 0.00f;
     this->MustBeAlive = true;

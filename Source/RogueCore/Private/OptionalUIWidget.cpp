@@ -1,7 +1,7 @@
 #include "OptionalUIWidget.h"
 
 UOptionalUIWidget::UOptionalUIWidget() : UUserWidget(FObjectInitializer::Get()) {
-    this->Category = NULL;
+    this->Category = nullptr;
     this->VisibleFlag = ESlateVisibility::SelfHitTestInvisible;
     this->HiddenFlag = ESlateVisibility::Collapsed;
 }

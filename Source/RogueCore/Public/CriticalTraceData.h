@@ -8,3 +8,4 @@ struct FCriticalTraceData {
 public:
     ROGUECORE_API FCriticalTraceData();
 };
+

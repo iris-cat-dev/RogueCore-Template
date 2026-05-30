@@ -1,9 +1,9 @@
 #include "ProceduralSettings.h"
 
 UProceduralSettings::UProceduralSettings() {
-    this->MiningpodCalldownLocationDecoration = NULL;
-    this->DefaultBiome = NULL;
-    this->CaveGeneratorPLSClass = NULL;
+    this->MiningpodCalldownLocationDecoration = nullptr;
+    this->DefaultBiome = nullptr;
+    this->CaveGeneratorPLSClass = nullptr;
 }
 
 

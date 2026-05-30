@@ -1,9 +1,9 @@
 #include "TreasureSettings.h"
 
 UTreasureSettings::UTreasureSettings() {
-    this->CrateAquisitionSource = NULL;
-    this->LostPackAquisitionSource = NULL;
-    this->VanityChestAquisitionSource = NULL;
+    this->CrateAquisitionSource = nullptr;
+    this->LostPackAquisitionSource = nullptr;
+    this->VanityChestAquisitionSource = nullptr;
 }
 
 

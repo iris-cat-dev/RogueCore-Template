@@ -17,3 +17,4 @@ enum class ELineCutterProjectileUpgradeType : uint8 {
     Yawing,
     PlasmaTrail,
 };
+

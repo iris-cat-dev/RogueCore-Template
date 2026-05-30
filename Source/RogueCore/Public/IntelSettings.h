@@ -1,16 +1,20 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Engine/DataAsset.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
 #include "IntelSettings.generated.h"
 
 class UIntelObjective;
+
 UCLASS(Blueprintable)
 class UIntelSettings : public UDataAsset {
     GENERATED_BODY()
-    
 public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UIntelObjective*> IntelProgression;
     
+public:
     UIntelSettings();
+
 };
+

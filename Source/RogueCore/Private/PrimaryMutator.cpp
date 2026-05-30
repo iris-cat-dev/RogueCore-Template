@@ -1,10 +1,11 @@
 #include "PrimaryMutator.h"
 
 UPrimaryMutator::UPrimaryMutator() {
-    this->StageLogic = NULL;
+    this->StageLogic = nullptr;
     this->HazardBonus = 0.00f;
     this->ShowInUserInterface = true;
-    this->Icon = NULL;
+    this->Icon = nullptr;
+    this->CompletionStat = nullptr;
 }
 
 TArray<URiskVector*> UPrimaryMutator::GetRiskVectors() {

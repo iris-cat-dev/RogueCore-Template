@@ -9,3 +9,4 @@ enum class EInputKeys : uint8 {
     Mine,
     EInputKeys_MAX = 255 UMETA(Hidden),
 };
+

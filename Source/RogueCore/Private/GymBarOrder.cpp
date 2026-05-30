@@ -1,7 +1,7 @@
 #include "GymBarOrder.h"
 
 UGymBarOrder::UGymBarOrder() {
-    this->Drink = NULL;
+    this->Drink = nullptr;
     this->SetAmount = -1;
     this->RepsPerSet = -1;
 }

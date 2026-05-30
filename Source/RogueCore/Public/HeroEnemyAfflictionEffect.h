@@ -7,11 +7,13 @@
 UCLASS(Abstract, Blueprintable)
 class UHeroEnemyAfflictionEffect : public UAfflictionEffect {
     GENERATED_BODY()
-    
-
 public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FGameplayTag TagToAdd;
     
+public:
     UHeroEnemyAfflictionEffect();
+
 };
+

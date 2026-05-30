@@ -7,7 +7,7 @@ UChargedWeaponAnimInstance::UChargedWeaponAnimInstance() {
     this->ChargedownPlayRateSpeedChange = 3.00f;
     this->MinChargeupPlayRate = 1.00f;
     this->MaxChargeupPlayRate = 2.50f;
-    this->Weapon = NULL;
+    this->Weapon = nullptr;
 }
 
 

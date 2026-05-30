@@ -2,7 +2,8 @@
 
 UWindowWidget::UWindowWidget() : UUserWidget(FObjectInitializer::Get()) {
     this->bHandleCloseCommand = true;
-    this->bResolutionDownscaleWhenOpen = false;
+    this->LimitFrameRateWhenOpen = false;
+    this->ResolutionDownscaleMode = EWindowResolutionDownscaleMode::None;
 }
 
 
@@ -21,6 +22,9 @@ void UWindowWidget::ConsumeCommand() {
 }
 
 void UWindowWidget::CloseThisWindow() {
+}
+
+void UWindowWidget::CallOnShown() {
 }
 
 

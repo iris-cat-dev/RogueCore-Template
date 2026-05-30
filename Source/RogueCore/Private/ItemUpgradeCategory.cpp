@@ -1,7 +1,7 @@
 #include "ItemUpgradeCategory.h"
 
 UItemUpgradeCategory::UItemUpgradeCategory() {
-    this->CategoryIcon = NULL;
+    this->CategoryIcon = nullptr;
 }
 
 

@@ -8,3 +8,4 @@ enum class EFSDInputSource : uint8 {
     MouseAndKeyboard,
     Controller,
 };
+

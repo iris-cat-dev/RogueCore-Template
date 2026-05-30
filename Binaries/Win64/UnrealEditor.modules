@@ -1,0 +1,10 @@
+{
+	"BuildId": "43139311",
+	"Modules": 
+	{
+		"RogueCore": "UnrealEditor-RogueCore.dll",
+		"RogueCoreEngine": "UnrealEditor-RogueCoreEngine.dll",
+		"RogueCoreOnlineServices": "UnrealEditor-RogueCoreOnlineServices.dll",
+		"RogueCoreUtils": "UnrealEditor-RogueCoreUtils.dll"
+	}
+}

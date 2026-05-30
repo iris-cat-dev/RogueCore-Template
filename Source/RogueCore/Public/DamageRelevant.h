@@ -1,14 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/Interface.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Interface -FallbackName=Interface
 #include "DamageRelevant.generated.h"
 
 UINTERFACE(MinimalAPI)
 class UDamageRelevant : public UInterface {
-	GENERATED_BODY()
+    GENERATED_BODY()
 };
 
 class IDamageRelevant : public IInterface {
-	GENERATED_BODY()
+    GENERATED_BODY()
 public:
 };
+

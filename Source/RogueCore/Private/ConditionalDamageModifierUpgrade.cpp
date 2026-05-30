@@ -2,7 +2,7 @@
 #include "Templates/SubclassOf.h"
 
 UConditionalDamageModifierUpgrade::UConditionalDamageModifierUpgrade() {
-    this->Condition = NULL;
+    this->Condition = nullptr;
 }
 
 FUpgradeValues UConditionalDamageModifierUpgrade::GetUpgradedValue(TSubclassOf<AActor> Item, AFSDPlayerState* Player) {

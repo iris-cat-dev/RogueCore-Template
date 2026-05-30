@@ -6,8 +6,8 @@
 ATrackBuilderItem::ATrackBuilderItem(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->CrosshairAggregator = CreateDefaultSubobject<UCrosshairAggregator>(TEXT("CrosshairAggregator"));
     this->ObstructionType = EPlaceableObstructionType::Valid;
-    this->DefaultSegmentType = NULL;
-    this->NextSegment = NULL;
+    this->DefaultSegmentType = nullptr;
+    this->NextSegment = nullptr;
     this->bIsPlacingSegment = false;
 }
 

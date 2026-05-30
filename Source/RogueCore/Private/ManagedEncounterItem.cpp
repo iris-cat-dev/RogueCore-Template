@@ -1,7 +1,7 @@
 #include "ManagedEncounterItem.h"
 
 FManagedEncounterItem::FManagedEncounterItem() {
-    this->descriptor = NULL;
-    this->amount = 0;
+    this->descriptor = nullptr;
+    this->Amount = 0;
 }
 

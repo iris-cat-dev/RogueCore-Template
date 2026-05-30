@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Kismet/BlueprintFunctionLibrary.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
 #include "RunCreationParameters.h"
 #include "StageSeedParameters.h"
 #include "StageSeedLibrary.generated.h"
@@ -10,10 +10,18 @@ class ROGUECORE_API UStageSeedLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UStageSeedLibrary();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FString GetInvalidStageSeed();
     
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FStageSeedParameters DecodeStageSeed(const FString& SeedString);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FString CreateStageSeed(const FStageSeedParameters& Parameters);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FRunCreationParameters ApplyStageSeed(const FRunCreationParameters& CreationParameters, const FString& SeedString);
+    
 };
+

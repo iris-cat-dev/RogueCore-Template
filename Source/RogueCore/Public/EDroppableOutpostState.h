@@ -10,3 +10,4 @@ enum class EDroppableOutpostState : uint8 {
     PrepTakeoff,
     Departing,
 };
+

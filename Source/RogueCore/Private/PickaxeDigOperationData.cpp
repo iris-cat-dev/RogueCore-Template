@@ -3,6 +3,8 @@
 FPickaxeDigOperationData::FPickaxeDigOperationData() {
     this->OperationNumber = 0;
     this->DigSize = 0.00f;
-    this->Miner = NULL;
+    this->Miner = nullptr;
+    this->HitPos = FVector3f::ZeroVector;
+    this->Dir = FVector3f::ZeroVector;
 }
 

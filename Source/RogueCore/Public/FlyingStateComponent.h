@@ -8,4 +8,6 @@ class UFlyingStateComponent : public UCharacterStateComponent {
     GENERATED_BODY()
 public:
     UFlyingStateComponent(const FObjectInitializer& ObjectInitializer);
+
 };
+

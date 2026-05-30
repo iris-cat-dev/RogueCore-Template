@@ -3,6 +3,7 @@
 #include "RewardDispenserReward.generated.h"
 
 class UDataAsset;
+
 USTRUCT(BlueprintType)
 struct FRewardDispenserReward {
     GENERATED_BODY()
@@ -12,3 +13,4 @@ public:
     
     ROGUECORE_API FRewardDispenserReward();
 };
+

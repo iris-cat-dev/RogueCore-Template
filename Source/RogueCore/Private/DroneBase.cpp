@@ -1,5 +1,5 @@
 #include "DroneBase.h"
-#include "Runtime/Engine/Classes/Components/PointLightComponent.h"
+#include "Components/PointLightComponent.h"
 #include "Net/UnrealNetwork.h"
 
 ADroneBase::ADroneBase(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {

@@ -3,6 +3,7 @@
 #include "WidgetTextCounter.generated.h"
 
 class UTextBlock;
+
 USTRUCT(BlueprintType)
 struct FWidgetTextCounter {
     GENERATED_BODY()
@@ -12,3 +13,4 @@ public:
     
     ROGUECORE_API FWidgetTextCounter();
 };
+

@@ -4,6 +4,7 @@
 #include "PerkEffectDynamicDamageUpgrade.generated.h"
 
 class UDamageBonusBase;
+
 UCLASS(Blueprintable, EditInlineNew)
 class UPerkEffectDynamicDamageUpgrade : public UPerkEffect {
     GENERATED_BODY()
@@ -12,4 +13,6 @@ public:
     TArray<UDamageBonusBase*> DamageBonuses;
     
     UPerkEffectDynamicDamageUpgrade();
+
 };
+

@@ -5,18 +5,14 @@ ADrinkableActor::ADrinkableActor(const FObjectInitializer& ObjectInitializer) : 
     this->bReplicates = true;
     const FProperty* p_RemoteRole = GetClass()->FindPropertyByName("RemoteRole");
     (*p_RemoteRole->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(this)) = ROLE_SimulatedProxy;
-    this->DrinkableData = NULL;
+    this->DrinkableData = nullptr;
     this->Filled = false;
 }
 
 void ADrinkableActor::Pickup(APlayerCharacter* byCharacter) {
 }
 
-void ADrinkableActor::Fill() {
-}
 
-void ADrinkableActor::OnRep_DrinkableData() {
-}
 
 void ADrinkableActor::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const {
     Super::GetLifetimeReplicatedProps(OutLifetimeProps);

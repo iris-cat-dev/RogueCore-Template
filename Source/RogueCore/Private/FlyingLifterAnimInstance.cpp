@@ -1,6 +1,6 @@
 #include "FlyingLifterAnimInstance.h"
 
-UFlyingLifterAnimInstance::UFlyingLifterAnimInstance(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+UFlyingLifterAnimInstance::UFlyingLifterAnimInstance() {
     this->HasGrabbedPlayer = false;
     this->ToChaseLock = false;
     this->ChaseToWanderLock = false;

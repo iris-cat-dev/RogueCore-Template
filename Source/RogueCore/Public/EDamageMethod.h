@@ -7,3 +7,4 @@ enum class EDamageMethod : uint8 {
     Direct,
     Radial,
 };
+

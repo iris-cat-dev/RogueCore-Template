@@ -4,3 +4,4 @@
 #include "CameraModeChangedDelegate.generated.h"
 
 UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FCameraModeChanged, ECharacterCameraMode, newCameraMode, ECharacterCameraMode, OldCameraMode);
+

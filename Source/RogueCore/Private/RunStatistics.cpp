@@ -9,5 +9,6 @@ FRunStatistics::FRunStatistics() {
     this->TotalArtifactGiversSpawned = 0;
     this->PotentExpeniteCollected = 0;
     this->PotentExpeniteDispensed = 0;
+    this->CollectedExpeniteDiscount = 0.00f;
 }
 

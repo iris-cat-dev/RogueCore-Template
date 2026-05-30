@@ -8,8 +8,8 @@ ARockCrackerPod::ARockCrackerPod(const FObjectInitializer& ObjectInitializer) : 
     this->RepairUsable = CreateDefaultSubobject<UContinuousUsableComponent>(TEXT("RepairUsable"));
     this->DrainPerSecond = 0.00f;
     this->PodState = ERockCrackerstate::Init;
-    this->EndPointDrill = NULL;
-    this->InDangerDialogue = NULL;
+    this->EndPointDrill = nullptr;
+    this->InDangerDialogue = nullptr;
     this->LightsAreGreen = true;
     this->DrainImmunityTime = 3.00f;
     this->YellowLightsThreshold = 0.80f;

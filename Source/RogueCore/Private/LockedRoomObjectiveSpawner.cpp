@@ -2,8 +2,8 @@
 #include "Net/UnrealNetwork.h"
 
 ALockedRoomObjectiveSpawner::ALockedRoomObjectiveSpawner(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->Objective = NULL;
-    this->RoomInstance = NULL;
+    this->Objective = nullptr;
+    this->RoomInstance = nullptr;
 }
 
 void ALockedRoomObjectiveSpawner::SetLockedRoomObjective(UBXELockedRoomObjective* NewObjective) {

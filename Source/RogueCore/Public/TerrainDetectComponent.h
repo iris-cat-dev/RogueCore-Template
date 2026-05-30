@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-
-#include "Components/SceneComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
 #include "PointRemovedEventDelegate.h"
 #include "TerrainDetectInterface.h"
 #include "TerrainDetectComponent.generated.h"
@@ -15,15 +15,31 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool StartDetectOnBeginPlay;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool OnlyDetectOnServer;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool KillActorOnPointRemoved;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FVector ActiveDetectPos;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     int32 DetectorId;
+    
     UTerrainDetectComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void UpdateDetectLocation();
+    
+    UFUNCTION(BlueprintCallable)
     void StopDetect();
+    
+    UFUNCTION(BlueprintCallable)
     void StartDetect();
+    
+
     // Fix for true pure virtual functions not being implemented
 };
+

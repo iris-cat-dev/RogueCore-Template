@@ -11,9 +11,9 @@ AResourceChunk::AResourceChunk(const FObjectInitializer& ObjectInitializer) : Su
     this->CanBeCollected = false;
     this->InfoComponent = CreateDefaultSubobject<USimpleObjectInfoComponent>(TEXT("Info"));
     this->ResourceAmount = 0.00f;
-    this->PickupSound = NULL;
-    this->ResourceData = NULL;
-    this->SpawnedByObjective = NULL;
+    this->PickupSound = nullptr;
+    this->ResourceData = nullptr;
+    this->SpawnedByObjective = nullptr;
 }
 
 AResourceChunk* AResourceChunk::SpawnChunk(UObject* WorldContextObject, UResourceData* Data, float Size, FVector position) {

@@ -1,6 +1,6 @@
 #include "GymMinigameBaseWidget.h"
 
-UGymMinigameBaseWidget::UGymMinigameBaseWidget() {
+UGymMinigameBaseWidget::UGymMinigameBaseWidget() : UUserWidget(FObjectInitializer::Get()) {
 }
 
 

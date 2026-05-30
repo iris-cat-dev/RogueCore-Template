@@ -13,3 +13,4 @@ enum class EEscortMissionState : uint8 {
     VehicleDead,
     InGarage,
 };
+

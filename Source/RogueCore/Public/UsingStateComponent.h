@@ -8,4 +8,6 @@ class UUsingStateComponent : public UCharacterStateComponent {
     GENERATED_BODY()
 public:
     UUsingStateComponent(const FObjectInitializer& ObjectInitializer);
+
 };
+

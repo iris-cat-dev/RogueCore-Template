@@ -1,8 +1,8 @@
 #include "DifficultySetting.h"
 
 UDifficultySetting::UDifficultySetting() {
-    this->CampaignRequirement = NULL;
-    this->SelectedByDefaultCampaignRequirement = NULL;
+    this->CampaignRequirement = nullptr;
+    this->SelectedByDefaultCampaignRequirement = nullptr;
     this->EnvironmentalDamageModifier = 0.50f;
     this->ExtraLargeEnemyDamageResistance.AddDefaulted(4);
     this->ExtraLargeEnemyDamageResistanceB.AddDefaulted(4);
@@ -28,7 +28,7 @@ UDifficultySetting::UDifficultySetting() {
     this->ReviveHealthRatio = 0.40f;
 }
 
-bool UDifficultySetting::IsUnlocked(UObject* WorldContext) const {
+bool UDifficultySetting::IsUnLocked(UObject* WorldContext) const {
     return false;
 }
 

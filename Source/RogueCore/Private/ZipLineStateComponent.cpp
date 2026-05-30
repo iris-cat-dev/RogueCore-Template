@@ -20,18 +20,18 @@ UZipLineStateComponent::UZipLineStateComponent(const FObjectInitializer& ObjectI
     this->bCanActivateSpeedBoost = false;
     this->bShowSpeedBoostActivator = false;
     this->SpeedBoostActivationProgress = 0.00f;
-    this->AudioOnStart = NULL;
-    this->AudioOnDuring = NULL;
-    this->AudioOnChangingDirection = NULL;
-    this->AudioOnStop = NULL;
-    this->AudioOnSpeedBoostActivated = NULL;
-    this->ShoutStartUsing = NULL;
-    this->ShoutSpeedBoostActivated = NULL;
-    this->ZipLineProjectile = NULL;
+    this->AudioOnStart = nullptr;
+    this->AudioOnDuring = nullptr;
+    this->AudioOnChangingDirection = nullptr;
+    this->AudioOnStop = nullptr;
+    this->AudioOnSpeedBoostActivated = nullptr;
+    this->ShoutStartUsing = nullptr;
+    this->ShoutSpeedBoostActivated = nullptr;
+    this->ZipLineProjectile = nullptr;
     this->DamageBeforeFalling = 25.00f;
     this->FriendlyFireModifier = 0.50f;
     this->DamageResetTime = 2.00f;
-    this->AudioComponent = NULL;
+    this->AudioComponent = nullptr;
 }
 
 void UZipLineStateComponent::ServerSetSpeedBoostActivated_Implementation(bool InBoostActivated) {

@@ -8,4 +8,6 @@ class UInterpolatedFirstPersonStaticMeshComponent : public UFirstPersonStaticMes
     GENERATED_BODY()
 public:
     UInterpolatedFirstPersonStaticMeshComponent(const FObjectInitializer& ObjectInitializer);
+
 };
+

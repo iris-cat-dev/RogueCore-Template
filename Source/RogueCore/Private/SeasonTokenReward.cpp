@@ -1,7 +1,7 @@
 #include "SeasonTokenReward.h"
 
 USeasonTokenReward::USeasonTokenReward() {
-    this->amount = 0;
+    this->Amount = 0;
 }
 
 

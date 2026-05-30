@@ -3,6 +3,7 @@
 #include "WeaponHitCounterEffectItem.generated.h"
 
 class AActor;
+
 USTRUCT(BlueprintType)
 struct FWeaponHitCounterEffectItem {
     GENERATED_BODY()
@@ -12,3 +13,4 @@ public:
     
     ROGUECORE_API FWeaponHitCounterEffectItem();
 };
+

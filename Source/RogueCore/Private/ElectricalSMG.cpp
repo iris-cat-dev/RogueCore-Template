@@ -1,14 +1,14 @@
 #include "ElectricalSMG.h"
 
 AElectricalSMG::AElectricalSMG(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->AoEStatusEffect = NULL;
-    this->AoEParticle = NULL;
-    this->AoESound = NULL;
+    this->AoEStatusEffect = nullptr;
+    this->AoEParticle = nullptr;
+    this->AoESound = nullptr;
     this->AoEStatusEffectChance = 0.00f;
     this->AoEStatusEffectRange = 250.00f;
 }
 
-void AElectricalSMG::OnTargetDamaged(UHealthComponentBase* Health, float amount, UPrimitiveComponent* HitComponent, UFSDPhysicalMaterial* PhysicalMaterial) {
+void AElectricalSMG::OnTargetDamaged(UHealthComponentBase* Health, float Amount, UPrimitiveComponent* HitComponent, UFSDPhysicalMaterial* PhysicalMaterial) {
 }
 
 void AElectricalSMG::OnStatusEffectPushed(UHealthComponentBase* Health) {

@@ -8,4 +8,6 @@ class ROGUECORE_API UValidDependenciesStrategy : public UValidatorStrategy {
     GENERATED_BODY()
 public:
     UValidDependenciesStrategy();
+
 };
+

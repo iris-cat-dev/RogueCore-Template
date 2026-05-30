@@ -8,4 +8,6 @@ class ROGUECORE_API UBTTask_CarveChargeTelegraph : public UBTTaskNode {
     GENERATED_BODY()
 public:
     UBTTask_CarveChargeTelegraph();
+
 };
+

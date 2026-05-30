@@ -7,3 +7,4 @@ enum class EMaggotAnimationState : uint8 {
     Idle,
     Moving,
 };
+

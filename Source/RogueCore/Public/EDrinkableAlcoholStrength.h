@@ -11,3 +11,4 @@ enum class EDrinkableAlcoholStrength : uint8 {
     VeryStrong,
     InstantPassout,
 };
+

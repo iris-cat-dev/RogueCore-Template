@@ -8,16 +8,20 @@
 
 class AFSDPlayerState;
 class AItem;
+
 UCLASS(Blueprintable, EditInlineNew, MinimalAPI)
 class UFlameThrowerUpgrade : public UStandardItemUpgrade {
     GENERATED_BODY()
-    
-
 public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EFlameThrowerUpgradeType upgradeType;
     
+public:
     UFlameThrowerUpgrade();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FUpgradeValues GetUpgradedValue(TSubclassOf<AItem> Item, AFSDPlayerState* Player, EFlameThrowerUpgradeType NewUpgradeType);
+    
 };
+

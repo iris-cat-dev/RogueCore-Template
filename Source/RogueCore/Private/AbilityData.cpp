@@ -1,10 +1,15 @@
 #include "AbilityData.h"
 
 UAbilityData::UAbilityData() {
-    this->AbilityWidgetOverride = NULL;
-    this->PreviewImage = NULL;
-    this->AbilityFailedShout = NULL;
-    this->AbilityUpgrades = NULL;
+    this->ID = nullptr;
+    this->AbilityWidgetOverride = nullptr;
+    this->PreviewImage = nullptr;
+    this->AbilityFailedShout = nullptr;
+    this->AbilityUpgrades = nullptr;
+}
+
+TArray<UBXEUnlockBase*> UAbilityData::GetOwnedAbilityUpgrades(AFSDPlayerState* InPlayerState) const {
+    return TArray<UBXEUnlockBase*>();
 }
 
 

@@ -6,11 +6,13 @@
 UCLASS(Blueprintable, EditInlineNew, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class UFirstPersonPointLightComponent : public UPointLightComponent {
     GENERATED_BODY()
-
- 
+public:
+private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     bool CorrectionEnabled;
-
+    
 public:
     UFirstPersonPointLightComponent(const FObjectInitializer& ObjectInitializer);
+
 };
+

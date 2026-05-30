@@ -1,7 +1,7 @@
 #include "SeasonalEventEntryChance.h"
 
 FSeasonalEventEntryChance::FSeasonalEventEntryChance() {
-    this->SpecialEvent = NULL;
+    this->SpecialEvent = nullptr;
     this->SpawnChance = 0.00f;
 }
 

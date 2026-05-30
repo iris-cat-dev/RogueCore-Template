@@ -1,18 +1,23 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/Interface.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Interface -FallbackName=Interface
 #include "SpawnReleasedActor.generated.h"
 
 class AActor;
+
 UINTERFACE(Blueprintable)
-class ROGUECORE_API USpawnReleasedActor : public UInterface {
-	GENERATED_BODY()
+class USpawnReleasedActor : public UInterface {
+    GENERATED_BODY()
 };
-class ROGUECORE_API ISpawnReleasedActor : public IInterface {
-	GENERATED_BODY()
+
+class ISpawnReleasedActor : public IInterface {
+    GENERATED_BODY()
 public:
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     bool OnSpawnRelease_Released(AActor* From);
     
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     bool OnSpawnRelease_Attached(AActor* Parent);
+    
 };
+

@@ -11,4 +11,6 @@ public:
     bool IsAuraActive;
     
     UGuardianGloveAnimInstance();
+
 };
+

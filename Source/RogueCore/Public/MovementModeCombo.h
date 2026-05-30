@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/UnrealType.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=EMovementMode -FallbackName=EMovementMode
 #include "EMovementCustomMode.h"
 #include "MovementModeCombo.generated.h"
 
@@ -11,6 +11,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TEnumAsByte<EMovementMode> Mode;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TEnumAsByte<EMovementCustomMode> CustomMode;
+    
     ROGUECORE_API FMovementModeCombo();
 };
+

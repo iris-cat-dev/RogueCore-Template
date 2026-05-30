@@ -8,4 +8,6 @@ class UReloadTrickComponent : public UBXELogicUnlockComponent {
     GENERATED_BODY()
 public:
     UReloadTrickComponent(const FObjectInitializer& ObjectInitializer);
+
 };
+

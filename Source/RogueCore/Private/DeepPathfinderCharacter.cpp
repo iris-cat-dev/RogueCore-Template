@@ -1,5 +1,5 @@
 #include "DeepPathfinderCharacter.h"
-#include "Components/SkeletalMeshComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SkeletalMeshComponent -FallbackName=SkeletalMeshComponent
 #include "DeepPatherFinderCharacterAfflictionComponent.h"
 #include "DeepPathfinderMovement.h"
 #include "DeepPathfinderSceneComponent.h"
@@ -19,10 +19,10 @@ ADeepPathfinderCharacter::ADeepPathfinderCharacter(const FObjectInitializer& Obj
     this->IsStaggered = false;
     this->FrozenPauseLogic = false;
     this->MeshDecalIndex = 0;
-    this->CurrentStaggerAffliction = NULL;
+    this->CurrentStaggerAffliction = nullptr;
     this->AttackerRadius = 65.00f;
     this->AllowedInFormationChance = 0.75f;
-    this->AIPlayerControlComponentCache = NULL;
+    this->AIPlayerControlComponentCache = nullptr;
     this->mesh->SetupAttachment(RootComponent);
 }
 

@@ -3,13 +3,13 @@
 UUsableComponentBase::UUsableComponentBase(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->CallbackKeys = 1;
     this->UseCooldown = 0.00f;
-    this->AnimationSettings = NULL;
+    this->AnimationSettings = nullptr;
     this->Priority = 0;
-    this->RestrictToCollider = NULL;
+    this->RestrictToCollider = nullptr;
     this->UsableHidesPlaceables = true;
     this->IsRayTraceTriggered = true;
     this->ResetUsingOnCompletion = true;
-    this->AccessCondition = NULL;
+    this->AccessCondition = nullptr;
     this->IsClientPredictive = false;
     this->ThirdPersonWhileUsing = false;
     this->CapitalUseText = true;
@@ -19,6 +19,12 @@ void UUsableComponentBase::SetUseRestrictions(UUseConditionSet* Set) {
 }
 
 void UUsableComponentBase::SetRayTraceTriggered(bool rayTraceTriggered) {
+}
+
+void UUsableComponentBase::SetExtraGetAccessDeniedInformationFunction(const UUsableComponentBase::FUsableComponentAccessDeniedDelegate& Delegate) {
+}
+
+void UUsableComponentBase::SetExtraCanCharacterAccessFunction(const UUsableComponentBase::FUsableComponentCanAccessDelegate& Delegate) {
 }
 
 void UUsableComponentBase::SetAnimationSettings(UUseAnimationSetting* Settings) {
@@ -64,11 +70,19 @@ bool UUsableComponentBase::GetCapitalUseText() const {
     return false;
 }
 
+FUsableAccessDeniedInformation UUsableComponentBase::GetAccessDeniedInformation(const AActor* Character) const {
+    return FUsableAccessDeniedInformation{};
+}
+
 UAccessCondition* UUsableComponentBase::GetAccessCondition() const {
     return NULL;
 }
 
 void UUsableComponentBase::EndUse(APlayerCharacter* User) {
+}
+
+bool UUsableComponentBase::CanCharacterAccess(const AActor* Character) const {
+    return false;
 }
 
 void UUsableComponentBase::BeginUse(APlayerCharacter* User, EInputKeys Key) {

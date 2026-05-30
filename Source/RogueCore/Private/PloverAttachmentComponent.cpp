@@ -2,8 +2,8 @@
 #include "Net/UnrealNetwork.h"
 
 UPloverAttachmentComponent::UPloverAttachmentComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->AttachTarget = NULL;
-    this->AttachementSettings = NULL;
+    this->AttachTarget = nullptr;
+    this->AttachementSettings = nullptr;
     this->TargetAttachDistance = 0.00f;
     this->InterpSpeed = 10.00f;
 }

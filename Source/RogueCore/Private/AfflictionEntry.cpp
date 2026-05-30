@@ -1,6 +1,6 @@
 #include "AfflictionEntry.h"
 
 FAfflictionEntry::FAfflictionEntry() {
-    this->Affliction = NULL;
+    this->Affliction = nullptr;
 }
 

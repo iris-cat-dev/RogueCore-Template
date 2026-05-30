@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "BehaviorTree/BTDecorator.h"
-#include "BehaviorTree/BehaviorTreeTypes.h"
-
+//CROSS-MODULE INCLUDE V2: -ModuleName=AIModule -ObjectName=BlackboardKeySelector -FallbackName=BlackboardKeySelector
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "BTDecorator_CheckObstruction.generated.h"
 
 UCLASS(Blueprintable)
@@ -12,9 +12,19 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float Range;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool UseOwnerCenterMass;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FVector EyeLocationOffset;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName RangedSocket;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FBlackboardKeySelector TargetKey;
+    
     UBTDecorator_CheckObstruction();
+
 };
+

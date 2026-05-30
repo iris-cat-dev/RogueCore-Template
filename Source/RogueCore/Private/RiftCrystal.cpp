@@ -1,9 +1,9 @@
 #include "RiftCrystal.h"
 #include "Components/AudioComponent.h"
 #include "Components/CapsuleComponent.h"
-#include "Runtime/Engine/Classes/Components/PointLightComponent.h"
-#include "Components/SceneComponent.h"
-#include "Components/SkeletalMeshComponent.h"
+#include "Components/PointLightComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SkeletalMeshComponent -FallbackName=SkeletalMeshComponent
 #include "NiagaraComponent.h"
 #include "DamageComponent.h"
 #include "EnemyComponent.h"
@@ -41,23 +41,23 @@ ARiftCrystal::ARiftCrystal(const FObjectInitializer& ObjectInitializer) : Super(
     this->KnockBackDamge = CreateDefaultSubobject<UDamageComponent>(TEXT("KnockbackDamageComponent"));
     this->EndExplosionDamage = CreateDefaultSubobject<UDamageComponent>(TEXT("EndExplosionDamageComponent"));
     this->BeamTargetParamName = TEXT("Beam_EndPosition");
-    this->DeathRattle = NULL;
-    this->DroppedActorClass = NULL;
-    this->ExtractionPodClass = NULL;
-    this->ExtractionPodPositioning = NULL;
-    this->ExtractionPodCostCurve = NULL;
-    this->InvulnerableOverride = NULL;
-    this->WeakPointMaterial = NULL;
-    this->InitialBreakFreeSound = NULL;
-    this->BreakFreeSound = NULL;
-    this->ActivatedWarningSound = NULL;
-    this->BeamShootSound = NULL;
-    this->BeamImpactSound = NULL;
-    this->EmbeddedSound = NULL;
-    this->PushBackSound = NULL;
-    this->PushBackEffect = NULL;
-    this->BeamEffect = NULL;
-    this->BeamImpactEffect = NULL;
+    this->DeathRattle = nullptr;
+    this->DroppedActorClass = nullptr;
+    this->ExtractionPodClass = nullptr;
+    this->ExtractionPodPositioning = nullptr;
+    this->ExtractionPodCostCurve = nullptr;
+    this->InvulnerableOverride = nullptr;
+    this->WeakPointMaterial = nullptr;
+    this->InitialBreakFreeSound = nullptr;
+    this->BreakFreeSound = nullptr;
+    this->ActivatedWarningSound = nullptr;
+    this->BeamShootSound = nullptr;
+    this->BeamImpactSound = nullptr;
+    this->EmbeddedSound = nullptr;
+    this->PushBackSound = nullptr;
+    this->PushBackEffect = nullptr;
+    this->BeamEffect = nullptr;
+    this->BeamImpactEffect = nullptr;
     this->DeathDisplayTime = 3.00f;
     this->SafetyDistance = 0.00f;
     this->TargetFlightHeight = 0.00f;
@@ -106,9 +106,6 @@ void ARiftCrystal::ShowCallingEffects() const {
 void ARiftCrystal::SetState(TEnumAsByte<ERiftCrystalState> NewState) {
 }
 
-
-
-
 void ARiftCrystal::OnTerrainPointRemoved(USceneComponent* Point) {
 }
 
@@ -152,28 +149,8 @@ void ARiftCrystal::All_AddKnockBack_Implementation(FVector_NetQuantize Direction
 
 void ARiftCrystal::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const {
     Super::GetLifetimeReplicatedProps(OutLifetimeProps);
-
+    
     DOREPLIFETIME(ARiftCrystal, State);
-}
-
-bool ARiftCrystal::HasMatchingGameplayTag(FGameplayTag TagToCheck) const {
-    return GameplayTags.HasTag(TagToCheck);
-}
-
-bool ARiftCrystal::HasAnyMatchingGameplayTags(const FGameplayTagContainer& TagContainer) const {
-    return GameplayTags.HasAny(TagContainer);
-}
-
-bool ARiftCrystal::HasAllMatchingGameplayTags(const FGameplayTagContainer& TagContainer) const {
-    return GameplayTags.HasAll(TagContainer);
-}
-
-void ARiftCrystal::GetOwnedGameplayTags(FGameplayTagContainer& TagContainer) const {
-    TagContainer.AppendTags(GameplayTags);
-}
-
-FGameplayTagContainer ARiftCrystal::BP_GetOwnedGameplayTags() const {
-    return GameplayTags;
 }
 
 

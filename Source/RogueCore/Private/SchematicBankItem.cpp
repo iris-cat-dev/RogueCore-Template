@@ -1,7 +1,7 @@
 #include "SchematicBankItem.h"
 
 FSchematicBankItem::FSchematicBankItem() {
-    this->PricingTier = NULL;
-    this->Rarity = NULL;
+    this->PricingTier = nullptr;
+    this->Rarity = nullptr;
 }
 

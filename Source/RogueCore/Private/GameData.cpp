@@ -2,69 +2,78 @@
 #include "Templates/SubclassOf.h"
 
 UGameData::UGameData() {
-    this->PromotionRewardsSettings = NULL;
-    this->KPI_Settings = NULL;
-    this->PerkSettings = NULL;
-    this->AbilitySettings = NULL;
-    this->FsdEventsSettings = NULL;
-    this->GameActivitySettings = NULL;
-    this->DanceSettings = NULL;
-    this->AnimationSettings = NULL;
-    this->EnemySettings = NULL;
-    this->DamageSettings = NULL;
-    this->ZoneSettings = NULL;
-    this->TreasureSettings = NULL;
-    this->DrinkSettings = NULL;
-    this->UpgradeSettings = NULL;
-    this->SpawnSettings = NULL;
-    this->VanitySettings = NULL;
-    this->KeyBindingSettings = NULL;
-    this->BXESettings = NULL;
-    this->EncounterSettings = NULL;
-    this->ForgingSettings = NULL;
-    this->SchematicSettings = NULL;
-    this->SkinSettings = NULL;
-    this->SpecialEventSettings = NULL;
-    this->ProceduralSettings = NULL;
-    this->PickaxeSettings = NULL;
-    this->TagSettings = NULL;
-    this->ItemSettings = NULL;
-    this->DynamicIconSettings = NULL;
-    this->ShowroomSettings = NULL;
-    this->VictoryPoseSettings = NULL;
-    this->TutorialSettings = NULL;
-    this->LegacySettings = NULL;
-    this->EffectSettings = NULL;
-    this->AfflictionSettings = NULL;
-    this->DailyDealSettings = NULL;
-    this->TerrainMaterialSettings = NULL;
-    this->SaveGameSettings = NULL;
-    this->DamageNumberSettings = NULL;
-    this->IntelSettings = NULL;
-    this->MinersManual = NULL;
-    this->StatusEffects = NULL;
-    this->CharacterSettings = NULL;
-    this->Achievements = NULL;
-    this->StageSettings = NULL;
-    this->SeasonSettings = NULL;
-    this->InstancedNiagaraSettings = NULL;
-    this->RewardTreeSettings = NULL;
-    this->DefaultCharacterID = NULL;
-}
-
-void UGameData::LoadDefaultAssetsBlocking(UAsyncManager* AsyncManager) {
+    this->HUDVisibilitySettings = nullptr;
+    this->AscensionRewardsSettings = nullptr;
+    this->KPI_Settings = nullptr;
+    this->PerkSettings = nullptr;
+    this->AbilitySettings = nullptr;
+    this->FsdEventsSettings = nullptr;
+    this->GameActivitySettings = nullptr;
+    this->DanceSettings = nullptr;
+    this->AnimationSettings = nullptr;
+    this->EnemySettings = nullptr;
+    this->DamageSettings = nullptr;
+    this->ZoneSettings = nullptr;
+    this->TreasureSettings = nullptr;
+    this->DrinkSettings = nullptr;
+    this->UpgradeSettings = nullptr;
+    this->SpawnSettings = nullptr;
+    this->VanitySettings = nullptr;
+    this->KeyBindingSettings = nullptr;
+    this->BXESettings = nullptr;
+    this->EncounterSettings = nullptr;
+    this->ForgingSettings = nullptr;
+    this->SchematicSettings = nullptr;
+    this->SkinSettings = nullptr;
+    this->SpecialEventSettings = nullptr;
+    this->ProceduralSettings = nullptr;
+    this->PickaxeSettings = nullptr;
+    this->TagSettings = nullptr;
+    this->ItemSettings = nullptr;
+    this->DynamicIconSettings = nullptr;
+    this->ShowroomSettings = nullptr;
+    this->VictoryPoseSettings = nullptr;
+    this->TutorialSettings = nullptr;
+    this->LegacySettings = nullptr;
+    this->EffectSettings = nullptr;
+    this->AfflictionSettings = nullptr;
+    this->DailyDealSettings = nullptr;
+    this->TerrainMaterialSettings = nullptr;
+    this->SaveGameSettings = nullptr;
+    this->DamageNumberSettings = nullptr;
+    this->IntelSettings = nullptr;
+    this->MinersManual = nullptr;
+    this->StatusEffects = nullptr;
+    this->CharacterSettings = nullptr;
+    this->AchievementSettings = nullptr;
+    this->StageSettings = nullptr;
+    this->SeasonSettings = nullptr;
+    this->InstancedNiagaraSettings = nullptr;
+    this->RewardTreeSettings = nullptr;
+    this->DefaultCharacterID = nullptr;
+    this->CosmeticSheet1 = nullptr;
+    this->EntitlementSettings = nullptr;
+    this->CommunicationSettingsAsset = nullptr;
 }
 
 bool UGameData::IsCheatConsolesEnabled() const {
     return false;
 }
 
-TArray<UPlayerCharacterID*> UGameData::GetRankedHeroIDs() const {
-    return TArray<UPlayerCharacterID*>();
+FGVisibilityGroups UGameData::GetVisibilityGroups() const {
+    return FGVisibilityGroups{};
+}
+
+FGDTasks UGameData::GetTaskData() const {
+    return FGDTasks{};
 }
 
 FText UGameData::GetPlayerRankName(int32 Rank) const {
     return FText::GetEmpty();
+}
+
+TArray<UPlayerCharacterID*> UGameData::GetPlayerCharacterIds() const {
+    return TArray<UPlayerCharacterID*>();
 }
 
 UPlayerCharacterID* UGameData::GetPlayerCharacterID(const FGuid& ID) const {
@@ -83,8 +92,8 @@ FGDMissionStats UGameData::GetMissionStats() const {
     return FGDMissionStats{};
 }
 
-FGDMilestones UGameData::GetMileStonesData() const {
-    return FGDMilestones{};
+int32 UGameData::GetMaxNumberOfDeployments() const {
+    return 0;
 }
 
 UInventoryList* UGameData::GetInventoryList() const {
@@ -99,6 +108,10 @@ int32 UGameData::GetDifficultyIndex(UDifficultySetting* NewDifficulty) const {
     return 0;
 }
 
+FDeploymentSlotRequirement UGameData::GetDeploymentSlotCost(int32 InSlotIndex) const {
+    return FDeploymentSlotRequirement{};
+}
+
 UPlayerCharacterID* UGameData::GetDefaultCharacterID() const {
     return NULL;
 }
@@ -107,20 +120,24 @@ TSubclassOf<APlayerCharacter> UGameData::GetDefaultCharacter() const {
     return NULL;
 }
 
-FRetirementCostItem UGameData::GetCharacterRetirementCost(UObject* WorldContext, UPlayerCharacterID* ID) const {
-    return FRetirementCostItem{};
+bool UGameData::GetDefaultBioBoosterDecks(const UPlayerCharacterID* InCharacter, TArray<UBioBoosterDeck*>& OutDecks) const {
+    return false;
 }
 
-TArray<UHUDVisibilityGroup*> UGameData::GetAllVisibilityGroups() const {
+int32 UGameData::GetAscensionMeritCost(const int32 TimesAscended) const {
+    return 0;
+}
+
+TArray<UHUDVisibilityGroup*> UGameData::GetAllVisibilityGroups(bool InSorted) const {
     return TArray<UHUDVisibilityGroup*>();
+}
+
+TArray<UOpsComTaskAsset*> UGameData::GetAllTasks() const {
+    return TArray<UOpsComTaskAsset*>();
 }
 
 TArray<UMissionStat*> UGameData::GetAllMissionStats() const {
     return TArray<UMissionStat*>();
-}
-
-TArray<UMilestoneAsset*> UGameData::GetAllMilestones() const {
-    return TArray<UMilestoneAsset*>();
 }
 
 TArray<UMissionStat*> UGameData::GetAllInfirmaryStats() const {

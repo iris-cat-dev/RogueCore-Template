@@ -8,4 +8,6 @@ class UBTTask_BallisticMove : public UBTTask_BlackboardBase {
     GENERATED_BODY()
 public:
     UBTTask_BallisticMove();
+
 };
+

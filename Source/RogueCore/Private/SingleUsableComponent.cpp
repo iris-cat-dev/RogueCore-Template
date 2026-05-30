@@ -2,14 +2,15 @@
 #include "Net/UnrealNetwork.h"
 
 USingleUsableComponent::USingleUsableComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->AudioBeginUse = NULL;
-    this->AudioFailedUse = NULL;
-    this->AudioCompletedUse = NULL;
-    this->AudioProgress = NULL;
+    this->AudioBeginUse = nullptr;
+    this->AudioFailedUse = nullptr;
+    this->AudioCompletedUse = nullptr;
+    this->AudioProgress = nullptr;
     this->AudioProgressParam = TEXT("Progress");
-    this->BoscoLaserpointerShout = NULL;
+    this->AudioProgressCurve = nullptr;
+    this->BoscoLaserpointerShout = nullptr;
     this->CoopUse = true;
-    this->UseSpeedStat = NULL;
+    this->UseSpeedStat = nullptr;
     this->CoopUseMultiplier = 1.00f;
     this->usable = false;
     this->TurnOffAfterUse = false;
@@ -19,12 +20,15 @@ USingleUsableComponent::USingleUsableComponent(const FObjectInitializer& ObjectI
     this->Progress = 0.00f;
     this->DesiredProgress = 0.00f;
     this->userCount = 0;
-    this->AudioBeginUseInstance = NULL;
-    this->AudioProgressInstance = NULL;
+    this->AudioBeginUseInstance = nullptr;
+    this->AudioProgressInstance = nullptr;
     this->bAudioProgressPlaying = false;
 }
 
 void USingleUsableComponent::Use(APlayerCharacter* User, EInputKeys Key, float DeltaTime) {
+}
+
+void USingleUsableComponent::SetUseDuration(float aUseTime) {
 }
 
 void USingleUsableComponent::SetProgress(float Value) {
@@ -52,6 +56,7 @@ void USingleUsableComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty
     Super::GetLifetimeReplicatedProps(OutLifetimeProps);
     
     DOREPLIFETIME(USingleUsableComponent, usable);
+    DOREPLIFETIME(USingleUsableComponent, UseDuration);
     DOREPLIFETIME(USingleUsableComponent, DesiredProgress);
     DOREPLIFETIME(USingleUsableComponent, userCount);
 }

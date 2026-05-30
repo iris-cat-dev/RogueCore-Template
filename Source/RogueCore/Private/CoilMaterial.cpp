@@ -1,6 +1,6 @@
 #include "CoilMaterial.h"
 
 FCoilMaterial::FCoilMaterial() {
-    this->Material = NULL;
+    this->Material = nullptr;
 }
 

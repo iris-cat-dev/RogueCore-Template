@@ -8,4 +8,6 @@ class UCrosshairExtensionWidget : public UUserWidget {
     GENERATED_BODY()
 public:
     UCrosshairExtensionWidget();
+
 };
+

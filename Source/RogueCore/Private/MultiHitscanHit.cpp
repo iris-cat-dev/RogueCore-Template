@@ -7,5 +7,7 @@ FMultiHitscanHit::FMultiHitscanHit() {
     this->PlayImpactSound = false;
     this->SpawnDecal = false;
     this->CritRoll = 0.00f;
+    this->HitLocation = FVector::ZeroVector;
+    this->ImpactNormal = FVector::ZeroVector;
 }
 

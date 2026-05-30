@@ -1,7 +1,7 @@
 #include "ConsoleOptionsInSaveGame.h"
 
 FConsoleOptionsInSaveGame::FConsoleOptionsInSaveGame() {
-    this->AbilityActivationMode = EAbilityActivationMode::Contextual;
+    this->AbilityActivationMode = EAbilityActivationMode::Toggle;
     this->SaveGameOptionsValid = false;
     this->bTutorialHintsEnabled = false;
     this->bShowFPS = false;
@@ -15,6 +15,9 @@ FConsoleOptionsInSaveGame::FConsoleOptionsInSaveGame() {
     this->volumeMissionControl = 0.00f;
     this->volumeSFX = 0.00f;
     this->volumeMusic = 0.00f;
+    this->bDuckOnOmegaShout = false;
+    this->bUseVoiceChat = false;
+    this->bUsePushToTalk = false;
     this->bShowSubtitles = false;
     this->InvertMouse = false;
     this->PhotosensitiveMode = false;
@@ -37,14 +40,16 @@ FConsoleOptionsInSaveGame::FConsoleOptionsInSaveGame() {
     this->HDRColorGamma = 0.00f;
     this->ConsoleGraphicsMode = EConsoleGraphicsMode::Fidelity;
     this->SwapControllerThumbsticks = false;
-    this->FSDResolutionScale = 0.00f;
     this->UpscalingType = 0;
     this->AmdFsrMode = 0;
     this->AmdFsr2Mode = 0;
     this->NvidiaDlssMode = UDLSSMode::Off;
     this->AmdFsrSharpness = 0.00f;
     this->AmdFsr2Sharpness = 0.00f;
-    this->NvidiaDlssSharpness = 0.00f;
     this->FrameGenerationMode = UFSDStreamlineDLSSGMode::Off;
+    this->ControllerSettings = FControllerSettings();
+    this->HUDElements = FHUDElements();
+    this->Language = FString();
+    this->CharacterOptions = FCharacterOptions();
 }
 

@@ -1,7 +1,7 @@
 #include "FSDUserWidget.h"
 
 UFSDUserWidget::UFSDUserWidget() : UUserWidget(FObjectInitializer::Get()) {
-    this->Character = NULL;
+    this->Character = nullptr;
 }
 
 void UFSDUserWidget::SetOpacity(float alpha) {

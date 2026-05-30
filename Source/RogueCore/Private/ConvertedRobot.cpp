@@ -1,10 +1,10 @@
 #include "ConvertedRobot.h"
 #include "Components/AudioComponent.h"
-#include "Runtime/Engine/Classes/Components/PointLightComponent.h"
-#include "Components/SceneComponent.h"
-#include "Components/SkeletalMeshComponent.h"
+#include "Components/PointLightComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SkeletalMeshComponent -FallbackName=SkeletalMeshComponent
 #include "Components/SpotLightComponent.h"
-#include "Components/StaticMeshComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=StaticMeshComponent -FallbackName=StaticMeshComponent
 #include "DamageComponent.h"
 #include "EnemyComponent.h"
 #include "HitscanComponent.h"
@@ -29,12 +29,13 @@ AConvertedRobot::AConvertedRobot(const FObjectInitializer& ObjectInitializer) : 
     this->InnerShield = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("InnerShield"));
     this->OuterShield = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("OuterShieldLayer"));
     this->PulsatingSoundComp = CreateDefaultSubobject<UAudioComponent>(TEXT("PulsatingSoundComponent"));
-    this->LaserWarningSound = NULL;
+    this->LaserWarningSound = nullptr;
     this->Damage = CreateDefaultSubobject<UDamageComponent>(TEXT("DamageComponent"));
     this->ForceSit = false;
-    this->LaserSound = NULL;
-    this->LastPowerDownSound = NULL;
-    this->PowerUpSound = NULL;
+    this->LaserSound = nullptr;
+    this->LastPowerDownSound = nullptr;
+    this->PowerUpSound = nullptr;
+    this->IntroductionTime = 1.00f;
     this->IsIntroducing = false;
     this->IntroductionDone = false;
     this->IsGrowingShield = false;
@@ -53,27 +54,27 @@ AConvertedRobot::AConvertedRobot(const FObjectInitializer& ObjectInitializer) : 
     this->PerfectTrackingWhenEnemy = true;
     this->PerfectTrackingWhenFriendly = true;
     this->ReplaceBurstAttack = false;
-    this->GrenadeFireSound = NULL;
-    this->GrenadeFireParticle = NULL;
+    this->GrenadeFireSound = nullptr;
+    this->GrenadeFireParticle = nullptr;
     this->IsFiring = false;
     this->TurretSpinSpeed = 0.00f;
     this->SpawnParasiteNumer = 2;
     this->MaxParasiteSlots = 3;
     this->ChanceToSpawnParasite = 0.00f;
-    this->ParasiteClass = NULL;
+    this->ParasiteClass = nullptr;
     this->SpinTurret = false;
-    this->SpecialAttackProjectile = NULL;
-    this->FriendlyProjectile = NULL;
+    this->SpecialAttackProjectile = nullptr;
+    this->FriendlyProjectile = nullptr;
     this->HasLockedOn = false;
-    this->TargetingSound = NULL;
-    this->GrenadeShotAnimation = NULL;
+    this->TargetingSound = nullptr;
+    this->GrenadeShotAnimation = nullptr;
     this->LockOnTime = 0.50f;
-    this->ShootSound = NULL;
+    this->ShootSound = nullptr;
     this->ShootSoundFadeout = 0.20f;
-    this->ShootSoundInstance = NULL;
-    this->ShootSoundTail = NULL;
-    this->MuzzleEffect = NULL;
-    this->TracerEffect = NULL;
+    this->ShootSoundInstance = nullptr;
+    this->ShootSoundTail = nullptr;
+    this->MuzzleEffect = nullptr;
+    this->TracerEffect = nullptr;
     this->GunRange = 0.00f;
     this->FireRate = 0.00f;
     this->GrenadeFireRate = 0.00f;
@@ -87,8 +88,8 @@ AConvertedRobot::AConvertedRobot(const FObjectInitializer& ObjectInitializer) : 
     this->TeamState = ERobotState::Enemy;
     this->IsWalking = false;
     this->IsDoingSpecialAttack = false;
-    this->TurretRotation = NULL;
-    this->CurrentTarget = NULL;
+    this->TurretRotation = nullptr;
+    this->CurrentTarget = nullptr;
     this->InnerShield->SetupAttachment(ShieldRoot);
     this->LaserBeam->SetupAttachment(TurretMesh);
     this->LightCone->SetupAttachment(TurretMesh);

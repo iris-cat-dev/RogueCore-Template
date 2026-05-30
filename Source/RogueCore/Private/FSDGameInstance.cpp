@@ -1,68 +1,67 @@
 #include "FSDGameInstance.h"
+
+#include "EOnlineSessionType.h"
 #include "FSDSendToURL.h"
 #include "Templates/SubclassOf.h"
 
 UFSDGameInstance::UFSDGameInstance() {
-    this->GameDataClass = NULL;
+    this->IsSpawnPosMarkerVisible = true;
     this->ShowingReconnectScreen = false;
-    this->ProceduralSetup = NULL;
+    this->ProceduralSetup = nullptr;
     this->HasStartedAMission = false;
     this->CanPlayOnline = true;
     this->FirstTimeInFrontend = true;
     this->SessionFirstStartOnSpaceRig = true;
     this->ShowFirstCharacterSelector = true;
     this->ShowSaveWarning = true;
-    this->WorldViewTargetDummy = NULL;
-    this->MissionResultInfo = NULL;
-    this->LoaderSequencePlaying = false;
-    this->CharacterSelectionLastViewTarget = NULL;
-    this->HasSeenInfoScreen = false;
+    this->MissionResultInfo = nullptr;
     this->DEBUGRandomGlobalMissionSeedEnabled = false;
     this->DEBUGRandomGlobalMissionSeed = -1;
     this->DEBUGFixedGlobalMissionSeed = -1;
     this->DEBUGFixedPLSSeed = -1;
     this->CanCommunicateOnline = true;
-    this->FXTelemetry = NULL;
-    this->ForcedMachineEvent = NULL;
-    this->ForcedOtherEvent = NULL;
+    this->TelemetrySubsystem = nullptr;
+    this->ForcedMachineEvent = nullptr;
+    this->ForcedOtherEvent = nullptr;
     this->ShowMinerManualWorkInProgress = false;
+    this->TransitionMusicComponent = nullptr;
     this->LastDreadnaughtKillTime = -1.00f;
-    this->CharacterSelectionSwitcher = NULL;
     this->bGameSettingsChanged = false;
+    this->gameOwnerStatus = 0;
     this->ServerSearchActive = false;
     this->IsOnPressStartScreen = false;
-    this->HasSeenStartScreen = false;
-    this->ProceduralLevel = NULL;
-    this->IconGenerationManagerClass = NULL;
-    this->IconGenerationManager = NULL;
-    this->CampaignManager = NULL;
-    this->RunManager = NULL;
-    this->DesiredDifficulty = NULL;
-    this->SaveGame = NULL;
-    this->ShowCharacterSelectionWorld = false;
-    this->Viewer3DClass = NULL;
-    this->ShowLoaderWorld = false;
-    this->CharacterSelectionWorldActive = false;
+    this->bHasSeenStartScreen = false;
+    this->bHasSeenNarrativeVideo = false;
+    this->bHasSeenInfoScreen = false;
+    this->ProceduralLevel = nullptr;
+    this->IconGenerationManagerClass = nullptr;
+    this->IconGenerationManager = nullptr;
+    this->CampaignManager = nullptr;
+    this->RunManager = nullptr;
+    this->DesiredDifficulty = nullptr;
+    this->SaveGame = nullptr;
     this->MixerInteractivityEnabled = false;
-    this->LoaderWorldActive = false;
-    this->ResetHUDWhenReturning = false;
     this->MovieModeActive = false;
     this->MovieModeActiveInSpacerig = false;
     this->MovieModeStartAtOrigin = false;
     this->MovieModeStartWithCameraShake = false;
-    this->ActiveForgeSchematic = NULL;
-    this->FSDCloudLoadSave = NULL;
+    this->ActiveForgeSchematic = nullptr;
+    this->FSDCloudLoadSave = nullptr;
     this->SendToURL = CreateDefaultSubobject<UFSDSendToURL>(TEXT("FSDSendToURL"));
-    this->FriendsAndInvites = NULL;
+    this->FriendsAndInvites = nullptr;
     this->SessionStartTime = 0.00f;
     this->SessionStartTimestamp = 0;
     this->InKBytesPerSecond = 0.00f;
     this->OutKBytesPerSecond = 0.00f;
     this->PreSpawnNigaraParticles = true;
-    this->ControllerVibrationSubmix = NULL;
-    this->ControllerSpeakerSubmix = NULL;
+    this->ControllerVibrationSubmix = nullptr;
+    this->ControllerSpeakerSubmix = nullptr;
     this->ChatHasFocus = false;
-    this->TransitionMusicComponent = NULL;
+    this->bIsGameMarkedAsModded = false;
+    this->bIsNextRamrodSpawnInVrCryoBed = false;
+    this->OnlineSystem = nullptr;
+    this->NextActiveLoadingScreen = ELoadingScreenType::None;
+    this->ActiveLoadingScreen = ELoadingScreenType::None;
 }
 
 void UFSDGameInstance::UpdateGlobelMissionSeed() {
@@ -71,58 +70,31 @@ void UFSDGameInstance::UpdateGlobelMissionSeed() {
 void UFSDGameInstance::StopPhotographyInputProcessor() {
 }
 
-void UFSDGameInstance::StopPersonalAnalytics() {
-}
-
 void UFSDGameInstance::StartPhotographyInputProcessor() {
-}
-
-void UFSDGameInstance::StartPersonalAnalytics() {
 }
 
 AProceduralSetup* UFSDGameInstance::SpawnProcedural() {
     return NULL;
 }
 
-void UFSDGameInstance::ShowEndScreenLevel() {
+void UFSDGameInstance::ShowLoadingScreen(const ELoadingScreenType LoadingScreen) {
 }
 
-void UFSDGameInstance::SetViewer3DClass(TSubclassOf<AActor> NewClass, ECharselectionCameraLocation Location) {
+void UFSDGameInstance::SetServerSearchActive(const bool Active) {
 }
 
-void UFSDGameInstance::SetSteamServerJoinStatus(ESteamServerJoinStatus NewStatus) {
-}
-
-void UFSDGameInstance::SetSteamSearchRegion(ESteamSearchRegion NewRegion) {
-}
-
-void UFSDGameInstance::SetServerSearchOptions(const FFSDServerSearchOptions& Options) {
-}
-
-void UFSDGameInstance::SetServerSearchActive(bool Active) {
-}
-
-void UFSDGameInstance::SetProceduralMap(TSubclassOf<AProceduralSetup> procedural) {
+void UFSDGameInstance::SetPreviewingCharacterID(UWindowWidget* InPreviewWindow, UPlayerCharacterID* InPlayerCharacterID) {
 }
 
 void UFSDGameInstance::SetMinersManualNotification(EMinersManualSection Section, UObject* IdentifyingObject, FText Text) {
 }
 
-void UFSDGameInstance::SetLoaderWorldVisible(bool V, bool ResetHUD) {
-}
-
-void UFSDGameInstance::SetHasSeenInfoScreen() {
+void UFSDGameInstance::SetIsNextRamrodSpawnInVrCryoBed(const bool NewInVrCryoBed) {
 }
 
 void UFSDGameInstance::SetGlobalMissionSeed(int32 Seed) {
 }
 
-
-void UFSDGameInstance::SetCharacterSelectionWorldVisible(bool V, ECharselectionCameraLocation CameraLocation, bool ResetHUD, ECharacterSelectorItemStatus itemStatus) {
-}
-
-void UFSDGameInstance::SetCharacterSelectionSwitcher(ACharacterSelectionSwitcher* switcher) {
-}
 
 void UFSDGameInstance::SetBXEDroneInstance(ABXECompanionDrone* NewDrone) {
 }
@@ -130,22 +102,16 @@ void UFSDGameInstance::SetBXEDroneInstance(ABXECompanionDrone* NewDrone) {
 void UFSDGameInstance::SetBoscoInstance(ABosco* NewBosco) {
 }
 
-void UFSDGameInstance::SendSteamInfo() {
-}
-
-void UFSDGameInstance::ScheduleResetOfWorldsAndGameDataThenOpenLevel(FName LevelName) {
-}
-
 void UFSDGameInstance::RestoreCursors() {
-}
-
-void UFSDGameInstance::ResetViewer3DClass() {
 }
 
 void UFSDGameInstance::ResetSaveGame() {
 }
 
-void UFSDGameInstance::ResetAlwaysLoadedWorldsAndGameData() {
+void UFSDGameInstance::RequestReadyForJoinSessionMapTravel_Implementation() {
+}
+
+void UFSDGameInstance::RemoveGameOwnerStatus(EGameOwnerStatus StatusToRemove) {
 }
 
 void UFSDGameInstance::RemoveBXEDrone() {
@@ -157,16 +123,16 @@ void UFSDGameInstance::RemoveBosco() {
 void UFSDGameInstance::RemoveAllTemporaryBuff(APlayerController* PlayerController) {
 }
 
-void UFSDGameInstance::PreClientTravelCleanup(APlayerController* PlayerController) {
-}
-
-void UFSDGameInstance::PostInit(bool reload) {
-}
-
-void UFSDGameInstance::PairingUsePreviousProfile() {
+void UFSDGameInstance::PostInit() {
 }
 
 void UFSDGameInstance::PairingUseNewProfile() {
+}
+
+void UFSDGameInstance::OnOnlineSessionChanged(const EOnlineSessionStatus OldStatus, const EOnlineSessionStatus NewStatus) {
+}
+
+void UFSDGameInstance::OnLoginStatusChanged(EFSDLoginState NewState, const FString& resultString) {
 }
 
 
@@ -176,7 +142,23 @@ void UFSDGameInstance::OnGameStateSet(const AGameStateBase* GameStateBase) {
 void UFSDGameInstance::OnGameStateChanged(const FOnGameStateDelegate& OnNewStateSet, bool CallInstantlyIfAlreadySet) {
 }
 
+void UFSDGameInstance::MarkReadyForJoinSessionMapTravel() {
+}
+
+void UFSDGameInstance::MarkHasSeenStartScreen() {
+}
+
+void UFSDGameInstance::MarkHasSeenNarrativeVideo() {
+}
+
+void UFSDGameInstance::MarkHasSeenInfoScreen() {
+}
+
 void UFSDGameInstance::LoadSaveGame(UFSDSaveGame* toLoad) {
+}
+
+bool UFSDGameInstance::IsNextRamrodSpawnInVrCryoBed() const {
+    return false;
 }
 
 bool UFSDGameInstance::IsMutatorActive(TSubclassOf<UMutator> mutatorClass) const {
@@ -191,18 +173,23 @@ bool UFSDGameInstance::IsFreeBeerRewardActive() const {
     return false;
 }
 
-bool UFSDGameInstance::IsCharacterSelectionWorldVisible() const {
-    return false;
-}
-
 bool UFSDGameInstance::IsCampaignMission() {
     return false;
 }
 
-void UFSDGameInstance::HideEndScreenLevel() {
+bool UFSDGameInstance::HasSignedIn() {
+    return false;
 }
 
-bool UFSDGameInstance::HasSignedIn() {
+bool UFSDGameInstance::HasSeenStartScreen() const {
+    return false;
+}
+
+bool UFSDGameInstance::HasSeenNarrativeVideo() const {
+    return false;
+}
+
+bool UFSDGameInstance::HasSeenInfoScreen() const {
     return false;
 }
 
@@ -236,12 +223,16 @@ EOnlineSessionType UFSDGameInstance::GetSessionType() const {
     return EOnlineSessionType::Solo;
 }
 
-TArray<FOnlineSessionSearchResult> UFSDGameInstance::GetServersFriendsArePlaying(TArray<FOnlineSessionSearchResult> servers) {
-    return TArray<FOnlineSessionSearchResult>();
+TArray<FFSDBlueprintSessionResult> UFSDGameInstance::GetServersFriendsArePlaying(TArray<FFSDBlueprintSessionResult> servers) {
+    return TArray<FFSDBlueprintSessionResult>();
 }
 
 FString UFSDGameInstance::GetSeedString(UObject* WorldContextObject) {
     return TEXT("");
+}
+
+UPlayerCharacterID* UFSDGameInstance::GetPreviewedCharacterID() const {
+    return NULL;
 }
 
 TArray<UMutator*> UFSDGameInstance::GetMutators(TSubclassOf<UMutator> mutatorClass) const {
@@ -256,12 +247,12 @@ UIconGenerationManager* UFSDGameInstance::GetIconGenerationManager() const {
     return NULL;
 }
 
-bool UFSDGameInstance::GetHasSeenInfoScreen() {
-    return false;
-}
-
 int32 UFSDGameInstance::GetGlobalMissionSeed() const {
     return 0;
+}
+
+bool UFSDGameInstance::GetGameOwnerStatus(EGameOwnerStatus status) const {
+    return false;
 }
 
 UMutator* UFSDGameInstance::GetFirstMutator(TSubclassOf<UMutator> mutatorClass) const {
@@ -272,15 +263,22 @@ TArray<FNetworkConnectionInfo> UFSDGameInstance::GetConnectionInfo() {
     return TArray<FNetworkConnectionInfo>();
 }
 
-APlayerCharacter* UFSDGameInstance::GetCharacterSelectorCharacter() {
-    return NULL;
-}
-
 UStage* UFSDGameInstance::GetActiveStage() const {
     return NULL;
 }
 
+APlayerCharacter* UFSDGameInstance::GetActiveLocalPlayerCharacter() const {
+    return NULL;
+}
+
+ELoadingScreenType UFSDGameInstance::GetActiveLoadingScreen() const {
+    return ELoadingScreenType::None;
+}
+
 void UFSDGameInstance::GameUserSettingsChanged() {
+}
+
+void UFSDGameInstance::Cheat_SetSpawnPosMarkersVisible(bool visible) {
 }
 
 FText UFSDGameInstance::ChatState_UncommitedMessage() {
@@ -300,6 +298,9 @@ void UFSDGameInstance::ChangeSkinPreview(UItemSkin* PreviewSkin) {
 void UFSDGameInstance::CachePSOsOnCommand() {
 }
 
+void UFSDGameInstance::BroadcastLoaderRockAndStone(UPlayerCharacterID* PlayerCharacter, USoundBase* SaluteSound, const FDialogVoiceSettings& VoiceSettings) {
+}
+
 void UFSDGameInstance::BroadcastActiveStageChanged(UStage* NewActiveStage) {
 }
 
@@ -311,10 +312,8 @@ UHUDWarningWidget* UFSDGameInstance::AddWarningToHUD(TSubclassOf<UHUDWarningWidg
 void UFSDGameInstance::AddToFriendSessions(const FString& friendSessionId, const FString& friendName) {
 }
 
-void UFSDGameInstance::AddStatValue(const FString& Key, float Value) {
-}
 
-void UFSDGameInstance::AddStatCount(const FString& Key, int32 count) {
+void UFSDGameInstance::AddGameOwnerStatus(EGameOwnerStatus StatusToAdd) {
 }
 
 

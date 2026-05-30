@@ -8,3 +8,4 @@ enum class EIntoxicationState : uint8 {
     Intoxicated,
     PassOut,
 };
+

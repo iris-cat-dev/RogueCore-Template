@@ -1,19 +1,19 @@
 #include "GuardianAbilityItem.h"
 
 AGuardianAbilityItem::AGuardianAbilityItem(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->RequiredPerkToRepelEnemies = NULL;
-    this->QuickUseShout = NULL;
-    this->AuraShout = NULL;
-    this->SalvoActorClass = NULL;
-    this->AuraClass = NULL;
-    this->Item_QuickUseAnim = NULL;
-    this->Item_SecondaryQuickUseAnim = NULL;
-    this->Item_AuraUseAnim = NULL;
-    this->Item_SecondaryAuraUseAnim = NULL;
-    this->FP_QuickUseAnim = NULL;
-    this->TP_QuickUseAnim = NULL;
-    this->FP_AuraUseAnim = NULL;
-    this->TP_AuraUseAnim = NULL;
+    this->RequiredPerkToRepelEnemies = nullptr;
+    this->QuickUseShout = nullptr;
+    this->AuraShout = nullptr;
+    this->SalvoActorClass = nullptr;
+    this->AuraClass = nullptr;
+    this->Item_QuickUseAnim = nullptr;
+    this->Item_SecondaryQuickUseAnim = nullptr;
+    this->Item_AuraUseAnim = nullptr;
+    this->Item_SecondaryAuraUseAnim = nullptr;
+    this->FP_QuickUseAnim = nullptr;
+    this->TP_QuickUseAnim = nullptr;
+    this->FP_AuraUseAnim = nullptr;
+    this->TP_AuraUseAnim = nullptr;
     this->AruaDurationPerCharge = 4.00f;
 }
 

@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "MeshCellNoiseProperties.generated.h"
 
 USTRUCT(BlueprintType)
@@ -8,19 +8,20 @@ struct FMeshCellNoiseProperties {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FVector CellSize = FVector::ZeroVector;
-
+    FVector CellSize;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float CellOffsetFactor = 0.0f;
-
+    float CellOffsetFactor;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float InsideFraction = 0.0f;
-
+    float InsideFraction;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float Distance = 0.0f;
-
+    float Distance;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    int32 Seed = 0;
-
+    int32 Seed;
+    
+    ROGUECOREENGINE_API FMeshCellNoiseProperties();
 };
 

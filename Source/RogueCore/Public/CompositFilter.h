@@ -13,5 +13,8 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ECompositMode Mode;
+    
     UCompositFilter();
+
 };
+

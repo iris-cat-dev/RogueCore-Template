@@ -1,14 +1,14 @@
 #include "CarvedResourceCreator.h"
 
 UCarvedResourceCreator::UCarvedResourceCreator() {
-    this->Resource = NULL;
+    this->Resource = nullptr;
     this->ScaleToResourceDistribution = true;
-    this->Positioning = NULL;
+    this->Positioning = nullptr;
     this->ExpensiveNoise = 0.00f;
     this->CarveOffsetRadius = 0.00f;
-    this->SpawnAttachClass = NULL;
+    this->SpawnAttachClass = nullptr;
     this->AttachSpawnOffsetDistance = 0.00f;
-    this->TerrainMaterial = NULL;
+    this->TerrainMaterial = nullptr;
     this->Filter = ECarveFilterType::ReplaceAll;
     this->CarveCellSize = CarveOptionsCellSize::CARVE_CELL_SIZE_25;
 }

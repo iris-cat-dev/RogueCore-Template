@@ -2,7 +2,7 @@
 #include "Templates/SubclassOf.h"
 
 UPushDynamicStatusEffectDamageBonusUpgrade::UPushDynamicStatusEffectDamageBonusUpgrade() {
-    this->StatusEffectItem = NULL;
+    this->StatusEffectItem = nullptr;
 }
 
 FUpgradeValues UPushDynamicStatusEffectDamageBonusUpgrade::GetUpgradedValue(TSubclassOf<AActor> Item, AFSDPlayerState* Player, FName NewKey) {

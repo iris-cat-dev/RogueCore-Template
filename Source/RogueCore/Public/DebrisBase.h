@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Curves/CurveFloat.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=RuntimeFloatCurve -FallbackName=RuntimeFloatCurve
 #include "CSGTriangleMapper.h"
 #include "DebrisBase.generated.h"
 
@@ -20,7 +20,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FRuntimeFloatCurve InfluencerSizeCurve;
     
-public:
+private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UCurveFloat* CaveInfluenceCurve;
     
@@ -31,3 +31,4 @@ public:
     UDebrisBase();
 
 };
+

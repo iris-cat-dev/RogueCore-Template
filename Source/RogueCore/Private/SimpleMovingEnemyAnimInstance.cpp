@@ -1,6 +1,6 @@
 #include "SimpleMovingEnemyAnimInstance.h"
 
-USimpleMovingEnemyAnimInstance::USimpleMovingEnemyAnimInstance(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+USimpleMovingEnemyAnimInstance::USimpleMovingEnemyAnimInstance() {
     this->Speed = 0.00f;
     this->WalkCycleSpeed = 200.00f;
     this->StartMovingSpeed = 50.00f;
@@ -9,9 +9,6 @@ USimpleMovingEnemyAnimInstance::USimpleMovingEnemyAnimInstance(const FObjectInit
     this->WalkCyclePlayRate = 0.00f;
     this->MeshScale = 1.00f;
     this->IsMoving = false;
-}
-
-USimpleMovingEnemyAnimInstance::USimpleMovingEnemyAnimInstance() : USimpleMovingEnemyAnimInstance(FObjectInitializer::Get()) {
 }
 
 void USimpleMovingEnemyAnimInstance::SetMeshScale(float NewScale) {

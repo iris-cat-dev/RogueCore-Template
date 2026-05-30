@@ -1,5 +1,0 @@
-#include "TXArtifactNegotiationEndEvent_Negotiation_Selection_Options.h"
-
-FTXArtifactNegotiationEndEvent_Negotiation_Selection_Options::FTXArtifactNegotiationEndEvent_Negotiation_Selection_Options() {
-}
-

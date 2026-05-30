@@ -2,5 +2,6 @@
 
 FRandFloatIntervalItem::FRandFloatIntervalItem() {
     this->Weight = 0.00f;
+    this->Range = FRandRange();
 }
 

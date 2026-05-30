@@ -1,10 +1,9 @@
 #include "RegisterSessionInviteNotificationBlueprintCallProxy.h"
 
 URegisterSessionInviteNotificationBlueprintCallProxy::URegisterSessionInviteNotificationBlueprintCallProxy() {
-    this->WorldContextObject = NULL;
 }
 
-URegisterSessionInviteNotificationBlueprintCallProxy* URegisterSessionInviteNotificationBlueprintCallProxy::RegisterSessionInviteNotification(UObject* NewWorldContextObject) {
+URegisterSessionInviteNotificationBlueprintCallProxy* URegisterSessionInviteNotificationBlueprintCallProxy::RegisterSessionInviteNotification(UObject* WorldContextObject) {
     return NULL;
 }
 

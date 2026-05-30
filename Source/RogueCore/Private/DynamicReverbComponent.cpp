@@ -8,7 +8,7 @@ UDynamicReverbComponent::UDynamicReverbComponent(const FObjectInitializer& Objec
     this->Priority = 1.00f;
     this->TunnelAmbienceFadeIn = 0.00f;
     this->TunnelAmbienceFadeOut = 1.00f;
-    this->TunnelSoundInstance = NULL;
+    this->TunnelSoundInstance = nullptr;
 }
 
 void UDynamicReverbComponent::TunnelTimerTriggered() {

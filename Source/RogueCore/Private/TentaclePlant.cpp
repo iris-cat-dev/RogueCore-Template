@@ -6,8 +6,8 @@ ATentaclePlant::ATentaclePlant(const FObjectInitializer& ObjectInitializer) : Su
     this->AmountOfNodes = 4;
     this->MinimumDistance = 500.00f;
     this->MinDistanceBetweenNodes = 0.00f;
-    this->NodeType = NULL;
-    this->NodePositioning = NULL;
+    this->NodeType = nullptr;
+    this->NodePositioning = nullptr;
 }
 
 void ATentaclePlant::OnRep_IsVulnerable() {

@@ -8,3 +8,4 @@ enum class ESpawnSettings : uint8 {
     NoSpawning,
     SpawnAll,
 };
+

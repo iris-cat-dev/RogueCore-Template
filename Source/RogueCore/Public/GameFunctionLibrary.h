@@ -1,15 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Kismet/BlueprintFunctionLibrary.h"
-#include "Engine/NetSerialization.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=UniqueNetIdRepl -FallbackName=UniqueNetIdRepl
+#include "SeamlessTravelLevelEndState.h"
 #include "GameFunctionLibrary.generated.h"
 
 class ADeepCSGWorld;
 class AFSDGameMode;
 class AFSDGameModeSpaceRig;
 class AFSDGameState;
+class AFSDPlayerController;
 class AFSDWorldSettings;
 class APlayerCharacter;
+class UAbilityData;
 class UAsyncManager;
 class UAudioComponent;
 class UCampaignManager;
@@ -17,6 +20,8 @@ class UFSDGameInstance;
 class UFSDSaveGame;
 class UGameData;
 class UObject;
+class UPlayerCharacterData;
+class UPlayerCharacterID;
 class URunManager;
 class USoundBase;
 class UWindowManager;
@@ -44,6 +49,9 @@ public:
     static bool IsWorldTickEnabled(UObject* WorldContextObject);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    static bool IsWithEditor();
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static void IsTearingDown(UObject* caller, bool& NewIsTearingDown);
     
     UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
@@ -52,8 +60,17 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
     static bool IsPlayInEditor(UObject* WorldContextObject);
     
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContext"))
+    static bool IsGameMarkedModded(const UObject* WorldContext);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContext"))
+    static bool IsGameDetectedModded(const UObject* WorldContext);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="InWorldContext"))
+    static bool IsEditorOnlyWorld(const UObject* InWorldContext);
+    
     UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
-    static UWindowManager* GetWindowManager(UObject* WorldContextObject);
+    static UWindowManager* GetWindowManager(const UObject* WorldContextObject);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool GetUsePushToTalk();
@@ -77,7 +94,22 @@ public:
     static FString GetMajorProjectVersion();
     
     UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContext"))
-    static APlayerCharacter* GetLocalPlayerCharacter(UObject* WorldContext);
+    static AFSDPlayerController* GetLocalPlayerController(const UObject* WorldContext);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContext"))
+    static UPlayerCharacterID* GetLocalPlayerCharacterID(const UObject* WorldContext);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContext"))
+    static UPlayerCharacterData* GetLocalPlayerCharacterData(const UObject* WorldContext);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContext"))
+    static UAbilityData* GetLocalPlayerCharacterAbilityData(const UObject* WorldContext);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContext"))
+    static APlayerCharacter* GetLocalPlayerCharacter(const UObject* WorldContext);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContext"))
+    static FSeamlessTravelLevelEndState GetLastLevelEndState(const UObject* WorldContext);
     
     UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
     static float GetGlobalGravityZ(UObject* WorldContextObject);
@@ -98,7 +130,7 @@ public:
     static AFSDGameMode* GetFSDGameMode(UObject* WorldContextObject);
     
     UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
-    static UFSDGameInstance* GetFSDGameInstance(UObject* WorldContextObject);
+    static UFSDGameInstance* GetFSDGameInstance(const UObject* WorldContextObject);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static UGameData* GetFSDGameData();
@@ -117,6 +149,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
     static UAsyncManager* GetAsyncManager(UObject* WorldContextObject);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    static UAbilityData* GetAbilityDataFromCharacterID(const UPlayerCharacterID* InCharacterID);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool EqualEqual_UniqueNetId(const FUniqueNetIdRepl& IdA, const FUniqueNetIdRepl& IdB);

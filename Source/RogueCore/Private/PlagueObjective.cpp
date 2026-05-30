@@ -7,12 +7,12 @@ UPlagueObjective::UPlagueObjective(const FObjectInitializer& ObjectInitializer) 
     this->TargetPlagueAmount = -1;
     this->PercentageRequiredForCompletion = 0.50f;
     this->SpawningTowersCount = 2;
-    this->NodeKilledShout = NULL;
-    this->LastNodeKilledShout = NULL;
-    this->OverridePrimaryObjCompletedShout_SelfCompleted = NULL;
-    this->OverridePrimaryObjCompletedShout_SelfNotCompleted = NULL;
+    this->NodeKilledShout = nullptr;
+    this->LastNodeKilledShout = nullptr;
+    this->OverridePrimaryObjCompletedShout_SelfCompleted = nullptr;
+    this->OverridePrimaryObjCompletedShout_SelfNotCompleted = nullptr;
     this->AllPlagueCleaned = false;
-    this->PlagueController = NULL;
+    this->PlagueController = nullptr;
     this->ScriptedPlagueWaveWeight = 0.00f;
 }
 

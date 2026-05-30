@@ -3,17 +3,17 @@
 #include "Templates/SubclassOf.h"
 
 UPlayerHealthComponent::UPlayerHealthComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->FallingDamageClass = NULL;
-    this->OnHealedShout = NULL;
-    this->ArmorRegenCurve = NULL;
-    this->Character = NULL;
-    this->GenericImpactParticles = NULL;
-    this->ShieldLinkEffect = NULL;
-    this->DamageTakenMutator = NULL;
-    this->IronWillStatusEffect = NULL;
-    this->DodgeStatusEffectClass = NULL;
-    this->ShieldLinkInstance = NULL;
-    this->IronWillStatusEffectClass = NULL;
+    this->FallingDamageClass = nullptr;
+    this->OnHealedShout = nullptr;
+    this->ArmorRegenCurve = nullptr;
+    this->Character = nullptr;
+    this->GenericImpactParticles = nullptr;
+    this->ShieldLinkEffect = nullptr;
+    this->DamageTakenMutator = nullptr;
+    this->IronWillStatusEffect = nullptr;
+    this->DodgeStatusEffectClass = nullptr;
+    this->ShieldLinkInstance = nullptr;
+    this->IronWillStatusEffectClass = nullptr;
     this->MaxHealth = 100.00f;
     this->MaxArmor = 0.00f;
     this->ArmorDamageReduction = 0.50f;
@@ -32,7 +32,9 @@ UPlayerHealthComponent::UPlayerHealthComponent(const FObjectInitializer& ObjectI
     this->InvulnerabilityDuration = 0.25f;
     this->ReviveInvulnerabilityTime = 3.00f;
     this->HealthRegenTarget = 35.00f;
+    this->InvulnerabiltyTimeLeft = -1.00f;
     this->IronWillActive = false;
+    this->CauseOfDeathClass = nullptr;
 }
 
 void UPlayerHealthComponent::UpgradeShield(float CapacityAmount, float RegenAmount, float DegradationRate) {
@@ -52,7 +54,7 @@ UStatusEffect* UPlayerHealthComponent::SetIronWillStatusEffect(TSubclassOf<UStat
 void UPlayerHealthComponent::Server_TryActivateIronWill_Implementation() {
 }
 
-void UPlayerHealthComponent::Server_HealArmor_Implementation(float amount) {
+void UPlayerHealthComponent::Server_HealArmor_Implementation(float Amount) {
 }
 
 void UPlayerHealthComponent::ResetTimeSinceLastDamage() {
@@ -84,7 +86,7 @@ bool UPlayerHealthComponent::IsLocallyControlled() const {
     return false;
 }
 
-float UPlayerHealthComponent::HealWithoutShout(float amount) {
+float UPlayerHealthComponent::HealWithoutShout(float Amount) {
     return 0.0f;
 }
 
@@ -112,6 +114,10 @@ bool UPlayerHealthComponent::GetIronWillActive() const {
     return false;
 }
 
+float UPlayerHealthComponent::GetHealthRegenThreshold() const {
+    return 0.0f;
+}
+
 float UPlayerHealthComponent::GetHealthRegeneratingTargetRatio() const {
     return 0.0f;
 }
@@ -120,7 +126,13 @@ float UPlayerHealthComponent::GetBaseMaxHealth() const {
     return 0.0f;
 }
 
-void UPlayerHealthComponent::DamageArmor(float amount) {
+void UPlayerHealthComponent::DamageArmor(float Amount) {
+}
+
+void UPlayerHealthComponent::ClientNotifyDeath_Implementation(const FString& CauseOfDeath, const float SecondsSinceLastDamageTaken, const float SecondsSinceLastRevive) {
+}
+
+void UPlayerHealthComponent::Client_TemporaryHealthDamaged_Implementation(float Amount) {
 }
 
 void UPlayerHealthComponent::Client_SetHealthRegenerating_Implementation(bool isRegenerating) {
@@ -132,7 +144,7 @@ void UPlayerHealthComponent::Client_OnFriendlyFire_Implementation(AController* E
 void UPlayerHealthComponent::Client_HealthFullCannotHeal_Implementation() {
 }
 
-void UPlayerHealthComponent::Client_ArmorDamaged_Implementation(float amount) {
+void UPlayerHealthComponent::Client_ArmorDamaged_Implementation(float Amount) {
 }
 
 void UPlayerHealthComponent::Cheat_Revive_Implementation() {
@@ -153,6 +165,7 @@ void UPlayerHealthComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty
     DOREPLIFETIME(UPlayerHealthComponent, TemporaryHealth);
     DOREPLIFETIME(UPlayerHealthComponent, ArmorDamage);
     DOREPLIFETIME(UPlayerHealthComponent, TargetArmorDamage);
+    DOREPLIFETIME(UPlayerHealthComponent, InvulnerabiltyTimeLeft);
     DOREPLIFETIME(UPlayerHealthComponent, IronWillActive);
 }
 

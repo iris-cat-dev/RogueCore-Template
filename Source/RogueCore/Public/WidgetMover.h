@@ -3,6 +3,7 @@
 #include "WidgetMover.generated.h"
 
 class UWidget;
+
 USTRUCT(BlueprintType)
 struct FWidgetMover {
     GENERATED_BODY()
@@ -12,3 +13,4 @@ public:
     
     ROGUECORE_API FWidgetMover();
 };
+

@@ -1,8 +1,8 @@
 #include "UnlockVisualSettings.h"
 
 UUnlockVisualSettings::UUnlockVisualSettings() {
-    this->SelectedSound_Generic = NULL;
-    this->SelectedSound_Weapons = NULL;
+    this->SelectedSound_Generic = nullptr;
+    this->SelectedSound_Weapons = nullptr;
 }
 
 UTexture2D* UUnlockVisualSettings::GetFrame() const {

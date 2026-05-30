@@ -1,6 +1,7 @@
 #include "FSDGameMode.h"
 #include "CritterManager.h"
 #include "EnemySpawnManager.h"
+#include "FSDHUD.h"
 #include "FormationsManagerComponent.h"
 #include "KeepInsideWorld.h"
 #include "ObjectivesManager.h"
@@ -10,6 +11,7 @@
 #include "Templates/SubclassOf.h"
 
 AFSDGameMode::AFSDGameMode(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->HUDClass = AFSDHUD::StaticClass();
     this->bStartPlayersAsSpectators = true;
     this->bDelayedStart = true;
     this->GenerationStarted = false;
@@ -18,10 +20,11 @@ AFSDGameMode::AFSDGameMode(const FObjectInitializer& ObjectInitializer) : Super(
     this->ObjectivesManager = CreateDefaultSubobject<UObjectivesManager>(TEXT("ObjectivesManager"));
     this->KeepInsideWorld = CreateDefaultSubobject<UKeepInsideWorld>(TEXT("KeepInsideWorld"));
     this->MissionManager = CreateDefaultSubobject<UStageManager>(TEXT("MissionManager"));
-    this->EncounterManagerComponent = NULL;
+    this->EncounterManagerComponent = nullptr;
     this->CritterManager = CreateDefaultSubobject<UCritterManager>(TEXT("CritterManager"));
     this->StaticSpawnPointManager = CreateDefaultSubobject<UStaticSpawnPointManager>(TEXT("StaticSpawnPointManager"));
     this->FormationsManager = CreateDefaultSubobject<UFormationsManagerComponent>(TEXT("FormationsManager"));
+    this->UseDropPodLandingSkipSpots = false;
     this->PreventAllLatejoin = false;
     this->PreventLateJoinOnMissionStart = false;
     this->PlayerSpawnHeightOffset = 75.00f;
@@ -29,7 +32,8 @@ AFSDGameMode::AFSDGameMode(const FObjectInitializer& ObjectInitializer) : Super(
     this->UseNormalEncounters = true;
     this->UseStationaryEncounter = true;
     this->AllowSpecialEncounters = true;
-    this->CachedWaveManager = NULL;
+    this->CachedWaveManager = nullptr;
+    this->ItemLogicUnlockManager_Instance = nullptr;
     this->MissionWasAborted = false;
 }
 
@@ -40,11 +44,19 @@ void AFSDGameMode::StartGame() {
 void AFSDGameMode::SignalLevelEndToAll() {
 }
 
+void AFSDGameMode::SignalAboutToPlay(const EAboutToPlayReason Reason, const float SecondsUntilPlay, APlayerController* Player) {
+}
+
 void AFSDGameMode::SetForcedStationaryPool(const TArray<UEnemyDescriptor*>& pool) {
 }
 
 void AFSDGameMode::SetForcedEnemyPool(const TArray<UEnemyDescriptor*>& pool) {
 }
+
+void AFSDGameMode::ResetPlayerStageEndLocations() {
+}
+
+
 
 
 
@@ -56,8 +68,12 @@ void AFSDGameMode::SetForcedEnemyPool(const TArray<UEnemyDescriptor*>& pool) {
 void AFSDGameMode::OnControllerDestroyed(AActor* Controller) {
 }
 
+EAllDwarvesDownAction AFSDGameMode::NotifyAllDwarvesDown_Implementation() {
+    return EAllDwarvesDownAction::Default;
+}
 
-void AFSDGameMode::LoadMission(const FString& MapName, TSoftClassPtr<AFSDGameMode> optionalGameMode, bool ClearPlayerState) {
+
+void AFSDGameMode::LoadMission(const FString& mapName, TSoftClassPtr<AFSDGameMode> optionalGameMode, bool ClearPlayerState) {
 }
 
 void AFSDGameMode::HostAbortMission() {
@@ -85,31 +101,27 @@ TSubclassOf<AMolly> AFSDGameMode::GetMuleClass() const {
     return NULL;
 }
 
+TSoftClassPtr<ATeamTransport> AFSDGameMode::GetLastLevelEscapeDropPodClass() const {
+    return NULL;
+}
+
+TSoftClassPtr<ATeamTransport> AFSDGameMode::GetFirstLevelEntranceDropPodClass() const {
+    return NULL;
+}
+
+TSoftClassPtr<ATeamTransport> AFSDGameMode::GetExitElevatorFallbackClass() const {
+    return NULL;
+}
+
+TSoftClassPtr<ATeamTransport> AFSDGameMode::GetExitElevatorClass() const {
+    return NULL;
+}
+
+TSoftClassPtr<ATeamTransport> AFSDGameMode::GetEntranceElevatorClass() const {
+    return NULL;
+}
+
 UEncounterManager* AFSDGameMode::GetEncounterManager() const {
-    return NULL;
-}
-
-FSoftObjectPath AFSDGameMode::GetDropPodPath() const {
-    return FSoftObjectPath{};
-}
-
-FSoftObjectPath AFSDGameMode::GetDropPodEscapeSafePath() const {
-    return FSoftObjectPath{};
-}
-
-TSubclassOf<ATeamTransport> AFSDGameMode::GetDropPodEscapeSafeClass() const {
-    return NULL;
-}
-
-FSoftObjectPath AFSDGameMode::GetDropPodEscapePath() const {
-    return FSoftObjectPath{};
-}
-
-TSubclassOf<ATeamTransport> AFSDGameMode::GetDropPodEscapeClass() const {
-    return NULL;
-}
-
-TSubclassOf<ATeamTransport> AFSDGameMode::GetDropPodClass() const {
     return NULL;
 }
 
@@ -133,19 +145,17 @@ int32 AFSDGameMode::GetCurrentLevel() const {
     return 0;
 }
 
-bool AFSDGameMode::FSDSetPause(APlayerController* PC, EPauseReason pauseReason) {
-    return false;
+void AFSDGameMode::FSDSetPause(APlayerController* PC, EPauseReason pauseReason) {
 }
 
 bool AFSDGameMode::FSDKickPlayer(APlayerController* KickedPlayer, const FText& KickReason) {
     return false;
 }
 
-bool AFSDGameMode::FSDClearPause(EPauseReason pauseReason) {
-    return false;
+void AFSDGameMode::FSDClearPause(EPauseReason pauseReason) {
 }
 
-void AFSDGameMode::EndLevelAsSuccess() {
+void AFSDGameMode::EndLevelAsSuccess(const TArray<APlayerCharacter*>& PlayersThatEscaped) {
 }
 
 void AFSDGameMode::EndLevel() {
@@ -161,11 +171,7 @@ void AFSDGameMode::Debug_ShowPlayerSpheres() {
 void AFSDGameMode::CleanupActorsOfTypes(TArray<TSubclassOf<AActor>> Types, TArray<TSubclassOf<AActor>> dontRemoveTypes) {
 }
 
-bool AFSDGameMode::AllPlayersHaveSelectedCharacter() const {
-    return false;
-}
-
-bool AFSDGameMode::AllPlayersHaveGeneratedLevel() const {
+bool AFSDGameMode::ArePlayerCharactersReadyToStart() const {
     return false;
 }
 

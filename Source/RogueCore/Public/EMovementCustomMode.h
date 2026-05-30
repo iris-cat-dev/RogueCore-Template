@@ -11,3 +11,4 @@ enum EMovementCustomMode {
     MOVE_Custom_JetBoots,
     MOVE_Custom_Blitz,
 };
+

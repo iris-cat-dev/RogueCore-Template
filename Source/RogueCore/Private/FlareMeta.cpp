@@ -5,5 +5,7 @@ FFlareMeta::FFlareMeta() {
     this->Radius = 0.00f;
     this->InvRadius = 0.00f;
     this->Moving = false;
+    this->Actor = nullptr;
+    this->Pos = FVector::ZeroVector;
 }
 

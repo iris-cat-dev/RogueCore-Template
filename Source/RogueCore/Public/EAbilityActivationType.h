@@ -7,3 +7,4 @@ enum class EAbilityActivationType : uint8 {
     OnRelease,
     OnPress,
 };
+

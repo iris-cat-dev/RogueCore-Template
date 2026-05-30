@@ -1,7 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-
-#include "Curves/CurveFloat.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Quat -FallbackName=Quat
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=RuntimeFloatCurve -FallbackName=RuntimeFloatCurve
 #include "EInputKeys.h"
 #include "ERobotState.h"
 #include "EnemyDeepPathfinderCharacter.h"
@@ -33,154 +34,354 @@ class USoundBase;
 class USoundCue;
 class USpotLightComponent;
 class UStaticMeshComponent;
+
 UCLASS(Blueprintable)
 class AConvertedRobot : public AEnemyDeepPathfinderCharacter, public IWeaponFireOwner {
     GENERATED_BODY()
-    
-
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UEnemyComponent* EnemyComponent;
-
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UPawnStatsComponent* PawnStats;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UOutlineComponent* Outline;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UHitscanComponent* HitScan;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USingleUsableComponent* usable;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USceneComponent* TurretRoot;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USkeletalMeshComponent* TurretMesh;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UPointLightComponent* MuzzleFlash;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USpotLightComponent* SpotLight;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UStaticMeshComponent* LightCone;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UStaticMeshComponent* LaserBeam;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USceneComponent* ShieldRoot;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UStaticMeshComponent* InnerShield;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UStaticMeshComponent* OuterShield;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UAudioComponent* PulsatingSoundComp;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UAudioComponent* LaserWarningSound;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UDamageComponent* Damage;
+    
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FRobotStateChangedSig OnStateChanged;
+    
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FRobotShieldSwitchSig OnShieldChanged;
+    
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FIntroductionStarted OnIntroductionStart;
-
+    
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, Transient, meta=(AllowPrivateAccess=true))
     bool ForceSit;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USoundBase* LaserSound;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USoundBase* LastPowerDownSound;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USoundBase* PowerUpSound;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<UAudioComponent> LaserSoundComp;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float IntroductionTime;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, ReplicatedUsing=OnRep_IsIntroducting, meta=(AllowPrivateAccess=true))
     bool IsIntroducing;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, Transient, meta=(AllowPrivateAccess=true))
+    bool IntroductionDone;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, Transient, meta=(AllowPrivateAccess=true))
+    bool IsGrowingShield;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float AimDownwardsOffset;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float BigShieldScale;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float SmallShieldScale;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float ShieldGrowthRate;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float LerpExp;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float MinimumShieldSize;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, Transient, meta=(AllowPrivateAccess=true))
+    float TargetShieldSize;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float IdleRotationSpeed;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float LaserScaleRate;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float MaxSearchAngle;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool DoSpecialWhenEnemy;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool DoSpecialWhenFriendly;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool PerfectTrackingWhenEnemy;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool PerfectTrackingWhenFriendly;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     bool ReplaceBurstAttack;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    USoundBase* GrenadeFireSound;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UFXSystemAsset* GrenadeFireParticle;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, ReplicatedUsing=OnRep_IsFiring, meta=(AllowPrivateAccess=true))
     bool IsFiring;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float TurretSpinSpeed;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, Transient, meta=(AllowPrivateAccess=true))
+    TArray<AActor*> Parasites;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 SpawnParasiteNumer;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 MaxParasiteSlots;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float ChanceToSpawnParasite;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TSubclassOf<AParasiteEnemy> ParasiteClass;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, ReplicatedUsing=OnRep_SpinTurret, meta=(AllowPrivateAccess=true))
     bool SpinTurret;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TSubclassOf<AProjectile> SpecialAttackProjectile;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TSubclassOf<AProjectile> FriendlyProjectile;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, Transient, meta=(AllowPrivateAccess=true))
+    bool HasLockedOn;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    USoundBase* TargetingSound;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UAnimSequenceBase* GrenadeShotAnimation;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float LockOnTime;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    USoundCue* ShootSound;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float ShootSoundFadeout;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
     UAudioComponent* ShootSoundInstance;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    USoundCue* ShootSoundTail;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UFXSystemAsset* MuzzleEffect;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UFXSystemAsset* TracerEffect;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FRuntimeFloatCurve MuzzleLightCurve;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float GunRange;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float FireRate;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float GrenadeFireRate;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float BurstCooldown;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 MinBurst;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 MaxBurst;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float TurretLerpSpeed;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float DamageWhenFriendly;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float FriendlyFriendlyFireMultiplier;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, Transient, meta=(AllowPrivateAccess=true))
+    bool StartedSpecialAttack;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_TeamState, meta=(AllowPrivateAccess=true))
     ERobotState TeamState;
-
- 
-    bool IntroductionDone;
-    bool IsGrowingShield;
-    float AimDownwardsOffset;
-    float BigShieldScale;
-    float SmallShieldScale;
-    float ShieldGrowthRate;
-    float LerpExp;
-    float MinimumShieldSize;
-    float TargetShieldSize;
-    float IdleRotationSpeed;
-    float LaserScaleRate;
-    float MaxSearchAngle;
-    bool DoSpecialWhenEnemy;
-    bool DoSpecialWhenFriendly;
-    bool PerfectTrackingWhenEnemy;
-    bool PerfectTrackingWhenFriendly;
-    USoundBase* GrenadeFireSound;
-    UFXSystemAsset* GrenadeFireParticle;
-    float TurretSpinSpeed;
-    TArray<AActor*> Parasites;
-    int32 SpawnParasiteNumer;
-    int32 MaxParasiteSlots;
-    float ChanceToSpawnParasite;
-    TSubclassOf<AParasiteEnemy> ParasiteClass;
-    TSubclassOf<AProjectile> SpecialAttackProjectile;
-    TSubclassOf<AProjectile> FriendlyProjectile;
-    bool HasLockedOn;
-    USoundBase* TargetingSound;
-    UAnimSequenceBase* GrenadeShotAnimation;
-    float LockOnTime;
-    USoundCue* ShootSound;
-    float ShootSoundFadeout;
-    USoundCue* ShootSoundTail;
-    UFXSystemAsset* MuzzleEffect;
-    UFXSystemAsset* TracerEffect;
-    FRuntimeFloatCurve MuzzleLightCurve;
-    float GunRange;
-    float FireRate;
-    float GrenadeFireRate;
-    float BurstCooldown;
-    int32 MinBurst;
-    int32 MaxBurst;
-    float TurretLerpSpeed;
-    float DamageWhenFriendly;
-    float FriendlyFriendlyFireMultiplier;
-    bool StartedSpecialAttack;
-
- 
+    
+private:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, Transient, meta=(AllowPrivateAccess=true))
     bool IsWalking;
-    UStaticMeshComponent* TurretRotation;
-
-public:
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, ReplicatedUsing=OnRep_IsDoingSpecialAttack, meta=(AllowPrivateAccess=true))
     bool IsDoingSpecialAttack;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
+    UStaticMeshComponent* TurretRotation;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, ReplicatedUsing=OnRep_Target, meta=(AllowPrivateAccess=true))
     AActor* CurrentTarget;
+    
+public:
     AConvertedRobot(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+
+protected:
     UFUNCTION(BlueprintCallable)
     void UpdateGunsInsideTerrain();
+    
+public:
+    UFUNCTION(BlueprintCallable)
     void StartBossFight();
+    
+protected:
+    UFUNCTION(BlueprintCallable)
     void ParasiteDamaged(float aDamage);
+    
+    UFUNCTION(BlueprintCallable)
     void OnWeaponsFired(const FVector& aHitResult);
+    
+    UFUNCTION(BlueprintCallable)
     void OnUsed(APlayerCharacter* aUser, EInputKeys Key);
+    
+public:
+    UFUNCTION(BlueprintCallable)
     void OnSeePawn(APawn* aPawn);
-    UFUNCTION()
+    
+protected:
+    UFUNCTION(BlueprintCallable)
     void OnRep_TeamState();
-    UFUNCTION()
+    
+    UFUNCTION(BlueprintCallable)
     void OnRep_Target();
-    UFUNCTION()
+    
+    UFUNCTION(BlueprintCallable)
     void OnRep_SpinTurret();
-    UFUNCTION()
+    
+    UFUNCTION(BlueprintCallable)
     void OnRep_IsIntroducting();
-    UFUNCTION()
+    
+    UFUNCTION(BlueprintCallable)
     void OnRep_IsFiring();
-    UFUNCTION()
+    
+    UFUNCTION(BlueprintCallable)
     void OnRep_IsDoingSpecialAttack();
+    
+    UFUNCTION(BlueprintCallable)
     void OnParasiteDeath(AActor* aParasiteEnemy);
+    
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     ERobotState GetTeamState() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FVector GetPlayerMediumPoint() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<AActor*> GetParasites() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetHasPoweredDown() const;
+    
     UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void DestroyAttatchPoint(USceneComponent* aComponent);
-    void CannonEffects_Implementation();
- 
+    
+protected:
+    UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
+    void CannonEffects();
+    
+public:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BP_OnStateChanged(ERobotState NewTeamState);
-public:
+    
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BP_OnShieldChanged(bool isGrowing);
+    
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BP_OnInstroduce();
+    
+
     // Fix for true pure virtual functions not being implemented
-    APlayerCharacter* GetPlayerCharacter() const override PURE_VIRTUAL(GetPlayerCharacter, return NULL;);
-    FQuat GetMuzzleQuat() const override PURE_VIRTUAL(GetMuzzleQuat, return FQuat{};);
-    FVector GetMuzzleLocation() const override PURE_VIRTUAL(GetMuzzleLocation, return FVector{};);
-    bool GetIsLocallyControlled() const override PURE_VIRTUAL(GetIsLocallyControlled, return false;);
-    bool GetIsFirstPerson() const override PURE_VIRTUAL(GetIsFirstPerson, return false;);
+    UFUNCTION(BlueprintCallable)
+    virtual APlayerCharacter* GetPlayerCharacter() const override PURE_VIRTUAL(GetPlayerCharacter, return NULL;);
+    
+    UFUNCTION(BlueprintCallable)
+    virtual FQuat GetMuzzleQuat() const override PURE_VIRTUAL(GetMuzzleQuat, return FQuat{};);
+    
+    UFUNCTION(BlueprintCallable)
+    virtual FVector GetMuzzleLocation() const override PURE_VIRTUAL(GetMuzzleLocation, return FVector{};);
+    
+    UFUNCTION(BlueprintCallable)
+    virtual bool GetIsLocallyControlled() const override PURE_VIRTUAL(GetIsLocallyControlled, return false;);
+    
+    UFUNCTION(BlueprintCallable)
+    virtual bool GetIsFirstPerson() const override PURE_VIRTUAL(GetIsFirstPerson, return false;);
+    
 };
+

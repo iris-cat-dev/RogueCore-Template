@@ -2,6 +2,6 @@
 
 FPawnMaterialState::FPawnMaterialState() {
     this->MaterialMode = EPawnMaterialMode::Default;
-    this->OverrideMaterial = NULL;
+    this->OverrideMaterial = nullptr;
 }
 

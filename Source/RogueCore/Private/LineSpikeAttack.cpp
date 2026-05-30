@@ -2,16 +2,16 @@
 #include "Net/UnrealNetwork.h"
 
 ULineSpikeAttack::ULineSpikeAttack(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->TentacleMaterial = NULL;
-    this->ActiveMaterial = NULL;
-    this->TentacleImpactParticles = NULL;
-    this->StartWaveParticles = NULL;
-    this->TentacleImpactSound = NULL;
-    this->TentacleExitSound = NULL;
-    this->StartWaveSound = NULL;
-    this->Tentacles = NULL;
+    this->TentacleMaterial = nullptr;
+    this->ActiveMaterial = nullptr;
+    this->TentacleImpactParticles = nullptr;
+    this->StartWaveParticles = nullptr;
+    this->TentacleImpactSound = nullptr;
+    this->TentacleExitSound = nullptr;
+    this->StartWaveSound = nullptr;
+    this->Tentacles = nullptr;
     this->SequenceLoops = 1;
-    this->SpikeClass = NULL;
+    this->SpikeClass = nullptr;
     this->TentaclesBurried = false;
     this->MaxStepUpheight = 300.00f;
     this->firstSpikeDelay = 0.00f;

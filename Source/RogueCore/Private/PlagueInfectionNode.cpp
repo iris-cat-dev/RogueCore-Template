@@ -4,18 +4,18 @@
 
 APlagueInfectionNode::APlagueInfectionNode(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->HealthComponent = CreateDefaultSubobject<USimpleHealthComponent>(TEXT("HealthComponent"));
-    this->PlagueTerrainMaterial = NULL;
+    this->PlagueTerrainMaterial = nullptr;
     this->NodeInfluenceRadius = 500.00f;
     this->NumberOfDeathEffectParticles = 10;
     this->HealthPercentageToKill = 0.05f;
-    this->WormPodClass = NULL;
+    this->WormPodClass = nullptr;
     this->ImportantLocationRadius = 500.00f;
     this->MaxWormCount = 5;
     this->WormPodInterval = 0.30f;
     this->MinWormPodWave = 1;
     this->MaxWormPodWave = 5;
-    this->WormPodPositioning = NULL;
-    this->AvoidCost = NULL;
+    this->WormPodPositioning = nullptr;
+    this->AvoidCost = nullptr;
     this->WormSpawnTimeDeviation = 3.00f;
     this->PassiveWormSpawnTime = 30.00f;
     this->ActiveWormSpawnTime = 20.00f;

@@ -5,14 +5,21 @@
 
 class AHydraWeedHealer;
 class AHydraWeedShooter;
+
 UCLASS(Blueprintable)
 class AHydraWeedCore : public AEnemyPawn {
     GENERATED_BODY()
 public:
     AHydraWeedCore(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void WakupCore();
     
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnShooterKilled(AHydraWeedShooter* shooter);
+    
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnHealerKilled(AHydraWeedHealer* healer);
+    
 };
+

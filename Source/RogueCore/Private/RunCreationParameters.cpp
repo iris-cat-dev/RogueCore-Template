@@ -2,13 +2,18 @@
 
 FRunCreationParameters::FRunCreationParameters() {
     this->RunDepth = ERunDepth::None;
-    this->RunTemplate = NULL;
+    this->RunTemplate = nullptr;
     this->RunSeedOverride = 0;
+    this->StageSeedOverride = 0;
     this->ActiveStageOverride = 0;
-    this->BiomeOverride = NULL;
-    this->PlanetZoneOverride = NULL;
-    this->DifficultyOverride = NULL;
-    this->BossOverride = NULL;
-    this->DnaOverride = NULL;
+    this->BiomeOverride = nullptr;
+    this->PlanetZoneOverride = nullptr;
+    this->DifficultyOverride = nullptr;
+    this->BossOverride = nullptr;
+    this->DnaOverride = nullptr;
+    this->MutatorOverrides = FRunMutatorOverrides();
+    this->ObjectiveOverrides = FRunObjectiveOverrides();
+    this->CaveGeneratorOverride = nullptr;
+    this->DebrisActorOverride = nullptr;
 }
 

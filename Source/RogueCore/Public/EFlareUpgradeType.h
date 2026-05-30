@@ -8,3 +8,4 @@ enum class EFlareUpgradeType : uint8 {
     MaxFlares,
     ProductionTime,
 };
+

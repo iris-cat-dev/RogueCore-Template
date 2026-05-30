@@ -6,12 +6,13 @@
 UCLASS(Blueprintable, EditInlineNew)
 class USupplyPodMutator : public UMutator {
     GENERATED_BODY()
-    
-
-
 public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float CostModifier;
     
+public:
     USupplyPodMutator();
+
 };
+

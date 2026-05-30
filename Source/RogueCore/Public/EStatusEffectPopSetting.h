@@ -7,3 +7,4 @@ enum class EStatusEffectPopSetting : uint8 {
     Temporary,
     Permanent,
 };
+

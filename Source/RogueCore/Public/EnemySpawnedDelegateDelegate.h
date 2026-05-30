@@ -3,4 +3,6 @@
 #include "EnemySpawnedDelegateDelegate.generated.h"
 
 class APawn;
+
 UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_OneParam(FEnemySpawnedDelegate, APawn*, Enemy);
+

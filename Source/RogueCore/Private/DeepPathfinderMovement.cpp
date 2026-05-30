@@ -23,18 +23,19 @@ UDeepPathfinderMovement::UDeepPathfinderMovement(const FObjectInitializer& Objec
     this->AllowSlowTickRateWhenNotVisible = true;
     this->ForceAPathIfNoneFound = false;
     this->DrawServerPath = false;
+    this->DebugPrintSpeedDebugPrintSpeed = false;
     this->IsStrafingOverride = false;
-    this->CSGWorld = NULL;
-    this->MoveSettings = NULL;
-    this->targetActor = NULL;
+    this->CSGWorld = nullptr;
+    this->MoveSettings = nullptr;
+    this->targetActor = nullptr;
     this->CurrentPathIndex = 0;
     this->CurrentPathFraction = 0.00f;
-    this->DestinationActor = NULL;
+    this->DestinationActor = nullptr;
     this->AcceptanceRadius = 0.00f;
     this->OnlyPartPath = false;
     this->PauseMovementTime = 0.00f;
     this->MoveMode = EDeepMovementMode::Normal;
-    this->PawnStats = NULL;
+    this->PawnStats = nullptr;
     this->VerticalAngleSpeed = 0.00f;
     this->HorizontalAngleSpeed = 0.00f;
     this->VerticalAngleSpeedRaw = 0.00f;
@@ -230,6 +231,10 @@ FVector UDeepPathfinderMovement::FindPathfinderOffsetPoint(const FVector& Pos, c
 }
 
 bool UDeepPathfinderMovement::FindOrthogonalPointFromTarget(const FVector& Origin, const FVector& Target, float maxSampleDistance, float idealTargetDistance, FVector& outPos) {
+    return false;
+}
+
+bool UDeepPathfinderMovement::FindOrthogonalFlyingPointFromTarget(const FVector& Origin, const FVector& Target, float maxSampleDistance, float idealTargetDistance, FVector& outPos) {
     return false;
 }
 

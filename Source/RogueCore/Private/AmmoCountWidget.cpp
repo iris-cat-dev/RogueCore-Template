@@ -1,9 +1,9 @@
 #include "AmmoCountWidget.h"
 
 UAmmoCountWidget::UAmmoCountWidget() : UUserWidget(FObjectInitializer::Get()) {
-    this->Character = NULL;
-    this->Item = NULL;
-    this->Aggregator = NULL;
+    this->Character = nullptr;
+    this->Item = nullptr;
+    this->Aggregator = nullptr;
     this->ShowClipAndTotalAsOne = false;
     this->CountThreshold = -1;
 }

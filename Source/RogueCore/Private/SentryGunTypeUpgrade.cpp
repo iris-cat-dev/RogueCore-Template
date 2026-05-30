@@ -1,8 +1,8 @@
 #include "SentryGunTypeUpgrade.h"
 
 USentryGunTypeUpgrade::USentryGunTypeUpgrade() {
-    this->SentryGunType = NULL;
-    this->MarkerType = NULL;
+    this->SentryGunType = nullptr;
+    this->MarkerType = nullptr;
 }
 
 

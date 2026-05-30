@@ -5,7 +5,7 @@ UTwoFacetDynamicIcon::UTwoFacetDynamicIcon() {
     this->Primary1Texture_Contrast = 0.00f;
     this->Primary2Texture_BasePoint = 0.00f;
     this->Primary2Texture_Contrast = 0.00f;
-    this->PreviewInstance = NULL;
+    this->PreviewInstance = nullptr;
 }
 
 void UTwoFacetDynamicIcon::UpdatePreview() {

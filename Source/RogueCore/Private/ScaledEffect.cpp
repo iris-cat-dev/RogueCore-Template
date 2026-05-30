@@ -1,7 +1,7 @@
 #include "ScaledEffect.h"
 
 FScaledEffect::FScaledEffect() {
-    this->ParticleSystem = NULL;
+    this->ParticleSystem = nullptr;
     this->Scale = 0.00f;
 }
 

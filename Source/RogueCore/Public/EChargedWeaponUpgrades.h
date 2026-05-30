@@ -12,3 +12,4 @@ enum class EChargedWeaponUpgrades : uint8 {
     HeatPerChargedShot,
     HeatPerNormalShot,
 };
+

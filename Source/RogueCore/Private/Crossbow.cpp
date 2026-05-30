@@ -4,33 +4,33 @@
 
 ACrossbow::ACrossbow(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->FullDamageSpeed = 1000.00f;
-    this->DefaultArrow = NULL;
-    this->SpecialArrow = NULL;
+    this->DefaultArrow = nullptr;
+    this->SpecialArrow = nullptr;
     this->SpecialStatusEffectBonusTimeScale = 1.00f;
-    this->BattleFrenzyStatusEffect = NULL;
-    this->BasicSpawnableStuckProjectile = NULL;
+    this->BattleFrenzyStatusEffect = nullptr;
+    this->BasicSpawnableStuckProjectile = nullptr;
     this->SpecialAmmoMax = 0;
     this->SwitchTime = 0.10f;
     this->CanTrifork = false;
     this->IsDefaultArrowEquipped = true;
     this->RecallProgress = 0.00f;
-    this->AnimatedFPMesh = NULL;
-    this->AnimatedTPMesh = NULL;
+    this->AnimatedFPMesh = nullptr;
+    this->AnimatedTPMesh = nullptr;
     this->SwitchIsQueued = false;
     this->SwitchState = ECrossbowSwitchState::Normal;
     this->OutOfAmmoSwapDelay = 0.50f;
-    this->AnimatedArrowSpawnable = NULL;
+    this->AnimatedArrowSpawnable = nullptr;
     this->ExtraShotAngleDifference = 10.00f;
-    this->HoveringRecallable = NULL;
+    this->HoveringRecallable = nullptr;
     this->SwitchTimeCof = 1.00f;
-    this->TriforkArrowMesh = NULL;
-    this->QuintPackArrowMesh = NULL;
-    this->SwitchMontage = NULL;
-    this->SwitchMontage_TP = NULL;
-    this->CharacterSwitchMontage = NULL;
-    this->ReloadMontage = NULL;
-    this->ReloadMontage_TP = NULL;
-    this->CharacterReloadMontage = NULL;
+    this->TriforkArrowMesh = nullptr;
+    this->QuintPackArrowMesh = nullptr;
+    this->SwitchMontage = nullptr;
+    this->SwitchMontage_TP = nullptr;
+    this->CharacterSwitchMontage = nullptr;
+    this->ReloadMontage = nullptr;
+    this->ReloadMontage_TP = nullptr;
+    this->CharacterReloadMontage = nullptr;
 }
 
 
@@ -67,7 +67,7 @@ int32 ACrossbow::GetTotalArrowCount(bool InDefaultArrowCount) const {
     return 0;
 }
 
-float ACrossbow::GetSpecialArrowEffectDuration(const TSubclassOf<UStatusEffect>& Effect) const {
+float ACrossbow::GetSpecialArrowEffectDuration(const TSubclassOf<UStatusEffect>& effect) const {
     return 0.0f;
 }
 
@@ -81,10 +81,10 @@ void ACrossbow::DestroyActor(AActor* Actor) {
 void ACrossbow::Client_RefillSpecialAmmo_Implementation(float percentage) {
 }
 
-void ACrossbow::Client_CallAddSpecialAmmo_Implementation(const int32& amount) {
+void ACrossbow::Client_CallAddSpecialAmmo_Implementation(const int32& Amount) {
 }
 
-void ACrossbow::Client_CallAddDefaultAmmo_Implementation(const int32& amount) {
+void ACrossbow::Client_CallAddDefaultAmmo_Implementation(const int32& Amount) {
 }
 
 void ACrossbow::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const {

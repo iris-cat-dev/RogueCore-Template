@@ -1,8 +1,8 @@
 #include "BXEObjectivePickupActor.h"
 
 ABXEObjectivePickupActor::ABXEObjectivePickupActor(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->ScannerArea = NULL;
-    this->Objective = NULL;
+    this->ScannerArea = nullptr;
+    this->Objective = nullptr;
 }
 
 void ABXEObjectivePickupActor::RewardObtained() {

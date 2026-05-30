@@ -8,3 +8,4 @@ enum class EChargedProjectileUpgrades : uint8 {
     AoEDamageInFlight,
     PersistentExplosion,
 };
+

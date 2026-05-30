@@ -2,15 +2,15 @@
 #include "Net/UnrealNetwork.h"
 
 AChargedWeapon::AChargedWeapon(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->FP_OverheatAnim = NULL;
-    this->WeaponOverheatAnim = NULL;
-    this->FP_ChargeupMontage = NULL;
-    this->TP_ChargeupMontage = NULL;
-    this->ChargeupParticles = NULL;
-    this->ChargeupParticleInstance = NULL;
-    this->ChargeupFireMuzzleFlash = NULL;
-    this->NormalFiresound = NULL;
-    this->FullyChargedFireSound = NULL;
+    this->FP_OverheatAnim = nullptr;
+    this->WeaponOverheatAnim = nullptr;
+    this->FP_ChargeupMontage = nullptr;
+    this->TP_ChargeupMontage = nullptr;
+    this->ChargeupParticles = nullptr;
+    this->ChargeupParticleInstance = nullptr;
+    this->ChargeupFireMuzzleFlash = nullptr;
+    this->NormalFiresound = nullptr;
+    this->FullyChargedFireSound = nullptr;
     this->ChargeSpeed = 0.50f;
     this->Charging = false;
     this->ChargeProgress = 0.00f;

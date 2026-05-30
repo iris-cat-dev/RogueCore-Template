@@ -9,3 +9,4 @@ struct FSpiderAnimInstanceProxy : public FAnimInstanceProxy {
 public:
     ROGUECORE_API FSpiderAnimInstanceProxy();
 };
+

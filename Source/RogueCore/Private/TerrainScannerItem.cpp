@@ -1,6 +1,6 @@
 #include "TerrainScannerItem.h"
 #include "Components/SceneCaptureComponent2D.h"
-#include "Components/SceneComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
 #include "Net/UnrealNetwork.h"
 
 ATerrainScannerItem::ATerrainScannerItem(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
@@ -11,8 +11,8 @@ ATerrainScannerItem::ATerrainScannerItem(const FObjectInitializer& ObjectInitial
     this->DelayedTerrainScannerZoom = 0.00f;
     this->IsLookingAtMap = false;
     this->UpdateMapToolActors = false;
-    this->EndFP = NULL;
-    this->EndTP = NULL;
+    this->EndFP = nullptr;
+    this->EndTP = nullptr;
     this->TerrainScannerRoot = CreateDefaultSubobject<USceneComponent>(TEXT("TerrainScannerRoot"));
     this->TerrainScannerCapture = CreateDefaultSubobject<USceneCaptureComponent2D>(TEXT("TerrainScannerCapture"));
     this->TerrainScannerCapture->SetupAttachment(TerrainScannerRoot);

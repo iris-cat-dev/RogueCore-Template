@@ -1,6 +1,7 @@
 #include "ConditionalElementEvent.h"
 
 FConditionalElementEvent::FConditionalElementEvent() {
-    this->EventType = NULL;
+    this->EventType = nullptr;
+    this->Conditions = FElementConditionArray();
 }
 

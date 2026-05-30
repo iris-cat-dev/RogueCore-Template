@@ -9,3 +9,4 @@ enum class EBartenderAnim : uint8 {
     Salute,
     None,
 };
+

@@ -8,7 +8,7 @@ AJettyBootsArcadeActor::AJettyBootsArcadeActor(const FObjectInitializer& ObjectI
     (*p_RemoteRole->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(this)) = ROLE_SimulatedProxy;
     this->StartGameUsable = CreateDefaultSubobject<UJettyBootUsableComponent>(TEXT("StartGameUsable"));
     this->MaxDistanceToPlay = 200;
-    this->MaxDistanceComponent = NULL;
+    this->MaxDistanceComponent = nullptr;
 }
 
 void AJettyBootsArcadeActor::SetActivePlayer(APlayerCharacter* InPlayer) {

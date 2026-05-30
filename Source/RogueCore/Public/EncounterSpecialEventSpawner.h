@@ -7,10 +7,13 @@
 UCLASS(Blueprintable, EditInlineNew)
 class UEncounterSpecialEventSpawner : public USpecialEventSpawner {
     GENERATED_BODY()
-
+public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FEncounterSpecialItem Encounter;
-
+    
 public:
     UEncounterSpecialEventSpawner();
+
 };
+

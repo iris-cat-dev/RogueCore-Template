@@ -3,6 +3,7 @@
 UDialogDataAsset::UDialogDataAsset() {
     this->Enabled = true;
     this->AudioOnly = false;
+    this->OverrideAudioOnlyAttenuation = nullptr;
     this->SelectUsingWeight = false;
     this->ShoutDelay = 0.00f;
     this->ShoutCoolDown = 2.00f;

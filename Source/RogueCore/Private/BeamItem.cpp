@@ -8,7 +8,7 @@ ABeamItem::ABeamItem(const FObjectInitializer& ObjectInitializer) : Super(Object
     this->TP_BeamEffect = CreateDefaultSubobject<UFirstPersonNiagaraComponent>(TEXT("TP_Beam"));
     this->ValidTargetImpactEffect = CreateDefaultSubobject<UNiagaraComponent>(TEXT("ValidImpactEffect"));
     this->InvalidTargetImpactEffect = CreateDefaultSubobject<UNiagaraComponent>(TEXT("InvalidImpactEffect"));
-    this->EndBeamAnim = NULL;
+    this->EndBeamAnim = nullptr;
     this->Interval = 0.50f;
     this->CostInterval = 1.00f;
     this->IsBeamActive = false;

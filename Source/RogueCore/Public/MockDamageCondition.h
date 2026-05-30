@@ -8,4 +8,6 @@ class UMockDamageCondition : public UDamageCondition {
     GENERATED_BODY()
 public:
     UMockDamageCondition();
+
 };
+

@@ -1,8 +1,8 @@
 #include "PermanentItemUpgradeReward.h"
 
 UPermanentItemUpgradeReward::UPermanentItemUpgradeReward() {
-    this->Item = NULL;
-    this->upgrade = NULL;
+    this->Item = nullptr;
+    this->upgrade = nullptr;
 }
 
 

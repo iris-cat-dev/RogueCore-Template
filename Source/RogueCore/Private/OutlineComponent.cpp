@@ -36,7 +36,7 @@ void UOutlineComponent::OnItemUnequipped(AItem* Item) {
 void UOutlineComponent::OnItemEquipped(AItem* Item) {
 }
 
-void UOutlineComponent::LockOutline() {
+void UOutlineComponent::LockOutline(const EOutline LockToOutline) {
 }
 
 void UOutlineComponent::EnableActivateOnHoldTab() {

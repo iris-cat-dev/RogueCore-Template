@@ -10,4 +10,6 @@ enum class EOutline : uint8 {
     OL_ENEMY,
     OL_ITEM,
     OL_UPGRADESTATION,
+    OL_CRIT_DART,
 };
+

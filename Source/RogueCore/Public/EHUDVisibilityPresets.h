@@ -9,3 +9,4 @@ enum class EHUDVisibilityPresets : uint8 {
     Minimal,
     AllHidden,
 };
+

@@ -6,11 +6,13 @@
 UCLASS(Blueprintable, EditInlineNew)
 class UCompositeTargetValidator : public UTargetValidator {
     GENERATED_BODY()
-    
-
+public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     TArray<UTargetValidator*> TargetValidators;
-
+    
+public:
     UCompositeTargetValidator();
 
 };
+

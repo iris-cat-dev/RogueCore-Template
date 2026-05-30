@@ -13,6 +13,9 @@ void UContingencyPlanUnlockComponent::SetUsed(bool NewValue) {
 
 
 
+void UContingencyPlanUnlockComponent::OnOwnerStateChanced(ECharacterState State) {
+}
+
 void UContingencyPlanUnlockComponent::OnOwnerRevived() {
 }
 

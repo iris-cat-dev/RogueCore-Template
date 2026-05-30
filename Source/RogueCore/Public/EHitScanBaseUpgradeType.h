@@ -4,8 +4,8 @@
 
 UENUM(BlueprintType)
 enum class EHitScanBaseUpgradeType : uint8 {
-    MaxVerticalSpread,
-    MaxHorizontalSpread,
+    MinimumVerticalSpread,
+    MinimumHorizontalSpread,
     MaxPenetrations,
     WeaponAccuracySpreadMultiplier,
     SpreadPerShot,
@@ -19,3 +19,4 @@ enum class EHitScanBaseUpgradeType : uint8 {
     RicochetBehaviourPawnsOnly,
     RicochetBehaviourNotPawns,
 };
+

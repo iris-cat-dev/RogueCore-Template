@@ -8,3 +8,4 @@ enum class ECoilgunTraceEffect : uint8 {
     EDamage,
     EFear,
 };
+

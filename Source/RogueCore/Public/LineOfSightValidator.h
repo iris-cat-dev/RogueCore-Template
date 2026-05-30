@@ -8,4 +8,6 @@ class ULineOfSightValidator : public UTargetValidator {
     GENERATED_BODY()
 public:
     ULineOfSightValidator();
+
 };
+

@@ -4,25 +4,27 @@
 #include "ChangeElementCondition.generated.h"
 
 UCLASS(Blueprintable, EditInlineNew)
-class ROGUECORE_API UChangeElementCondition : public UElementCondition
-{
+class UChangeElementCondition : public UElementCondition {
     GENERATED_BODY()
-
+public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float ChangeThreshold;
-
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool CompareToAbsolute;
-
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool MultiplyWithResistance;
-
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool IgnoreTriggerFromDecay;
-
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool AlsoCheckTransferElement;
-
+    
 public:
     UChangeElementCondition();
+
 };
+

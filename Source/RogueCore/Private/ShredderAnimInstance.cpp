@@ -1,8 +1,6 @@
 #include "ShredderAnimInstance.h"
 
-UShredderAnimInstance::UShredderAnimInstance(const FObjectInitializer& ObjectInitializer)
-    : Super(ObjectInitializer)
-{
+UShredderAnimInstance::UShredderAnimInstance() {
     this->InFoldoutRange = false;
     this->InSpinRange = false;
 }

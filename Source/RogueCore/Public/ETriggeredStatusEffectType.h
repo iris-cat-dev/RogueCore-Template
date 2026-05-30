@@ -8,3 +8,4 @@ enum class ETriggeredStatusEffectType : uint8 {
     GrapplingHookReleased,
     NONE,
 };
+

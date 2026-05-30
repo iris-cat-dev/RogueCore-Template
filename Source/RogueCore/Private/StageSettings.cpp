@@ -1,7 +1,7 @@
 #include "StageSettings.h"
 
 UStageSettings::UStageSettings() {
-    this->StageNames = NULL;
+    this->StageNames = nullptr;
 }
 
 

@@ -7,3 +7,4 @@ enum class EPerkHUDActivationLocation : uint8 {
     Main,
     Down,
 };
+

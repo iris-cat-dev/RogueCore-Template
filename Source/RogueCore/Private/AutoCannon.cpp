@@ -10,7 +10,7 @@ AAutoCannon::AAutoCannon(const FObjectInitializer& ObjectInitializer) : Super(Ob
     this->StatusEffectAtFullROF = false;
     this->FireTimeOffsetForMaxRateOfFireBonus = -0.50f;
     this->StartLoopingSoundAt = 1.00f;
-    this->StatusAtFullROF = NULL;
+    this->StatusAtFullROF = nullptr;
     this->CurrentFireTime = 0.00f;
 }
 

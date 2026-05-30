@@ -1,14 +1,14 @@
 #include "TentaclePlantNode.h"
-#include "Components/SceneComponent.h"
-#include "Components/StaticMeshComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=StaticMeshComponent -FallbackName=StaticMeshComponent
 #include "Net/UnrealNetwork.h"
 
 ATentaclePlantNode::ATentaclePlantNode(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("Root"));
     this->mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("mesh"));
-    this->TentacleCableType = NULL;
-    this->TentacleCable = NULL;
-    this->TentaclePlant = NULL;
+    this->TentacleCableType = nullptr;
+    this->TentacleCable = nullptr;
+    this->TentaclePlant = nullptr;
     this->TentacleIndex = -1;
     this->mesh->SetupAttachment(RootComponent);
 }

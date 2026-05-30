@@ -5,5 +5,6 @@ FNetDamageInstance::FNetDamageInstance() {
     this->ArmorDamage = 0.00f;
     this->WeakpointMultiplier = 0.00f;
     this->Notify = false;
+    this->ElementParams = FElementParams();
 }
 

@@ -1,7 +1,7 @@
 #include "ThrowableHammer.h"
 
 AThrowableHammer::AThrowableHammer(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->ThrownHammer = NULL;
+    this->ThrownHammer = nullptr;
     this->HoldingUse = false;
 }
 

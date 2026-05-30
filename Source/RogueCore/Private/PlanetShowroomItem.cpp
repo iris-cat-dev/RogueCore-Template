@@ -1,13 +1,13 @@
 #include "PlanetShowroomItem.h"
 
 APlanetShowroomItem::APlanetShowroomItem(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->NoHoverMaterial = NULL;
-    this->HoverMaterial = NULL;
-    this->NoHoverWhenLockedMaterial = NULL;
-    this->HoverWhenLockedMaterial = NULL;
-    this->NoHoverWhenUnavailableMaterial = NULL;
-    this->HoverWhenUnavailableMaterial = NULL;
-    this->PlanetMeshComp = NULL;
+    this->NoHoverMaterial = nullptr;
+    this->HoverMaterial = nullptr;
+    this->NoHoverWhenLockedMaterial = nullptr;
+    this->HoverWhenLockedMaterial = nullptr;
+    this->NoHoverWhenUnavailableMaterial = nullptr;
+    this->HoverWhenUnavailableMaterial = nullptr;
+    this->PlanetMeshComp = nullptr;
     this->SelectedDeptht = ERunDepth::Depth1;
 }
 

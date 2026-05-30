@@ -1,6 +1,6 @@
 #include "FuelLineEndPoint.h"
-#include "Components/SceneComponent.h"
-#include "Components/StaticMeshComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=StaticMeshComponent -FallbackName=StaticMeshComponent
 #include "FuelLineConnectPoint.h"
 #include "Net/UnrealNetwork.h"
 
@@ -8,7 +8,7 @@ AFuelLineEndPoint::AFuelLineEndPoint(const FObjectInitializer& ObjectInitializer
     this->RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("RootComponent"));
     this->ConnectPoint = CreateDefaultSubobject<UFuelLineConnectPoint>(TEXT("ConnectPoint"));
     this->StaticMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("StaticMesh"));
-    this->AllowedSegment = NULL;
+    this->AllowedSegment = nullptr;
     this->OpenForConnection = true;
     this->ConnectPoint->SetupAttachment(RootComponent);
     this->StaticMesh->SetupAttachment(RootComponent);

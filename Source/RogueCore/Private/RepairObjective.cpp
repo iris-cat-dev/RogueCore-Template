@@ -4,8 +4,8 @@
 URepairObjective::URepairObjective(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->RepairedObjectives = 0;
     this->ObjectivesToRepair = 3;
-    this->RepairObjectiveResource = NULL;
-    this->Positioning = NULL;
+    this->RepairObjectiveResource = nullptr;
+    this->Positioning = nullptr;
     this->RepairResourcesPerActor = 25;
     this->RepairResourceDistanceFromActor = 2000.00f;
     this->MinRepairObjectiveDistanceToLandingZone = 1000.00f;

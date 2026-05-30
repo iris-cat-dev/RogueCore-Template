@@ -8,4 +8,6 @@ class UElementEventTypeBase : public UElementEventType {
     GENERATED_BODY()
 public:
     UElementEventTypeBase();
+
 };
+

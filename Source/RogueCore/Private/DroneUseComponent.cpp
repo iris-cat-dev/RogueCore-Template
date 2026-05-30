@@ -2,8 +2,8 @@
 #include "Net/UnrealNetwork.h"
 
 UDroneUseComponent::UDroneUseComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->BoscoLaserpointerShout = NULL;
-    this->UseSpeedStat = NULL;
+    this->BoscoLaserpointerShout = nullptr;
+    this->UseSpeedStat = nullptr;
     this->Progress = 0.00f;
     this->UseDuration = 0.00f;
     this->ResetOnFail = false;

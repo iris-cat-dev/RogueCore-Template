@@ -5,6 +5,7 @@
 #include "CaveItemsMutator.generated.h"
 
 class UDebrisItemComponent;
+
 UCLASS(Blueprintable, EditInlineNew)
 class UCaveItemsMutator : public UMutator {
     GENERATED_BODY()
@@ -13,4 +14,6 @@ public:
     TSubclassOf<UDebrisItemComponent> Item;
     
     UCaveItemsMutator();
+
 };
+

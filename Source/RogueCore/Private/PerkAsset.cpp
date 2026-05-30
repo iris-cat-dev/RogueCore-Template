@@ -2,11 +2,11 @@
 #include "Templates/SubclassOf.h"
 
 UPerkAsset::UPerkAsset() {
-    this->Icon = NULL;
+    this->Icon = nullptr;
     this->PlayerRequiredLevel = 0;
     this->EnhancementPointCost = 0;
     this->MaxUseCharges = -1;
-    this->ShoutOnUseCharge = NULL;
+    this->ShoutOnUseCharge = nullptr;
     this->CoolDownBetweenUse = 0.00f;
     this->bIsHighlighted = false;
 }
@@ -48,6 +48,10 @@ TSubclassOf<UPerkHUDIconWidget> UPerkAsset::GetHudIconWidgetClass() const {
 
 TArray<TSubclassOf<UPerkActivationWidget>> UPerkAsset::GetHudActivationWidgets(EPerkHUDActivationLocation Location) const {
     return TArray<TSubclassOf<UPerkActivationWidget>>();
+}
+
+FText UPerkAsset::GetDescriptionAt(int32 InIndex) const {
+    return FText::GetEmpty();
 }
 
 FText UPerkAsset::GetDescription() const {

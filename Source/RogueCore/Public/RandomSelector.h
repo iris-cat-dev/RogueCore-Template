@@ -6,12 +6,16 @@
 UCLASS(Blueprintable, EditInlineNew)
 class URandomSelector : public URoomFeature {
     GENERATED_BODY()
-    
-
 public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 min;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 max;
+    
+public:
     URandomSelector();
+
 };
+

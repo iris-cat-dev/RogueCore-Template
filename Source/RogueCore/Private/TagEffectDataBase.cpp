@@ -1,8 +1,8 @@
 #include "TagEffectDataBase.h"
 
 FTagEffectDataBase::FTagEffectDataBase() {
-    this->Target = NULL;
-    this->Weapon = NULL;
-    this->Character = NULL;
+    this->Target = nullptr;
+    this->Weapon = nullptr;
+    this->Character = nullptr;
 }
 

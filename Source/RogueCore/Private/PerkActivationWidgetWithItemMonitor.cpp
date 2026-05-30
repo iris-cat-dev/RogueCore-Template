@@ -1,8 +1,8 @@
 #include "PerkActivationWidgetWithItemMonitor.h"
 
 UPerkActivationWidgetWithItemMonitor::UPerkActivationWidgetWithItemMonitor() {
-    this->ItemToMonitor = NULL;
-    this->ActiveItem = NULL;
+    this->ItemToMonitor = nullptr;
+    this->ActiveItem = nullptr;
 }
 
 void UPerkActivationWidgetWithItemMonitor::OnStopMonitoring_Implementation() {

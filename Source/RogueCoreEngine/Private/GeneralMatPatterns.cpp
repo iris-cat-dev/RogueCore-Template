@@ -2,6 +2,7 @@
 
 FGeneralMatPatterns::FGeneralMatPatterns() {
     this->PatternType = EGeneralPattern::SrcSpecific;
-    this->PatternMaterial = NULL;
+    this->PatternMaterial = nullptr;
+    this->ReplaceWith = FGeneralMatProperties();
 }
 

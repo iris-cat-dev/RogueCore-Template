@@ -1,9 +1,9 @@
 #include "DebrisBase.h"
 
 UDebrisBase::UDebrisBase() {
-    this->CaveInfluencer = NULL;
-    this->CaveInfluenceCurve = NULL;
-    this->CaveInflunceSizeCurve = NULL;
+    this->CaveInfluencer = nullptr;
+    this->CaveInfluenceCurve = nullptr;
+    this->CaveInflunceSizeCurve = nullptr;
 }
 
 

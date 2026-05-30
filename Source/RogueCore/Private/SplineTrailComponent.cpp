@@ -10,7 +10,7 @@ USplineTrailComponent::USplineTrailComponent(const FObjectInitializer& ObjectIni
     this->VerticalOffset = 10.00f;
     this->HeadBobbingLength = 50.00f;
     this->HeadBobbingSpeed = 4.00f;
-    this->Spline = NULL;
+    this->Spline = nullptr;
     this->Seed = 0;
 }
 

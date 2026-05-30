@@ -6,7 +6,7 @@ AThrowableActor::AThrowableActor(const FObjectInitializer& ObjectInitializer) : 
     this->bReplicates = true;
     const FProperty* p_RemoteRole = GetClass()->FindPropertyByName("RemoteRole");
     (*p_RemoteRole->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(this)) = ROLE_SimulatedProxy;
-    this->ImpactGroundSound = NULL;
+    this->ImpactGroundSound = nullptr;
     this->Movement = CreateDefaultSubobject<UProjectileMovementComponent>(TEXT("ProjectileMovement"));
     this->IsMoving = true;
     this->IgnoreFellOutOfWorld = false;

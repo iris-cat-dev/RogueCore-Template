@@ -1,7 +1,8 @@
 #include "RewinderKnobIdle.h"
 
 FRewinderKnobIdle::FRewinderKnobIdle() {
-    this->Animation = NULL;
+    this->Animation = nullptr;
     this->Enabled = false;
+    this->SpinDegrees = FRuntimeFloatCurve();
 }
 

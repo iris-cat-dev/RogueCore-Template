@@ -8,3 +8,4 @@ enum class EPlasmaCarbineUpgrades : uint8 {
     RemoveShieldOnOverheat,
     RemoveShieldOnReload,
 };
+

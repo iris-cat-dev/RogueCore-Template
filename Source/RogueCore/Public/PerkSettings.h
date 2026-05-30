@@ -1,25 +1,40 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "PerkArray.h"
 #include "PerkSettings.generated.h"
 
 class UPerkAsset;
-class UPlayerCharacterID;
+
 USTRUCT(BlueprintType)
 struct FPerkSettings {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TMap<UPlayerCharacterID*, FPerkArray> ClassPerks;
-    
     UPerkAsset* IronWill;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UPerkAsset* DashPerk;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UPerkAsset* ShieldLink;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UPerkAsset* Bezerk;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UPerkAsset* JumpBoots;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UPerkAsset* DownedBomb;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UPerkAsset* FieldMedic;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UPerkAsset* HeightenedSenses;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UPerkAsset* HoverBoots;
+    
     ROGUECORE_API FPerkSettings();
 };
+

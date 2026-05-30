@@ -2,7 +2,7 @@
 #include "Net/UnrealNetwork.h"
 
 ARecallableItem::ARecallableItem(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->ItemType = NULL;
+    this->ItemType = nullptr;
 }
 
 void ARecallableItem::ServerSpawnItem_Implementation(const FVector& Location, const FRotator& Rotation) {

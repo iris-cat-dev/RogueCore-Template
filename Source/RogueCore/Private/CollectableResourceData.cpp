@@ -2,8 +2,8 @@
 
 UCollectableResourceData::UCollectableResourceData() {
     this->ScaleToRoomResourceMultiplier = false;
-    this->ResourceCreator = NULL;
-    this->Positioning = NULL;
+    this->ResourceCreator = nullptr;
+    this->Positioning = nullptr;
     this->Rarity = 0.00f;
     this->InfluenceRadius = 250.00f;
     this->UseTerrainPlacement = false;

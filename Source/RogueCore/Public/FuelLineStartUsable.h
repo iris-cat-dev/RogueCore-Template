@@ -8,4 +8,6 @@ class ROGUECORE_API UFuelLineStartUsable : public UTrackBuilderUsable {
     GENERATED_BODY()
 public:
     UFuelLineStartUsable(const FObjectInitializer& ObjectInitializer);
+
 };
+

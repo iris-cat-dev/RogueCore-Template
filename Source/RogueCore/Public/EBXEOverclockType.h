@@ -2,9 +2,10 @@
 #include "CoreMinimal.h"
 #include "EBXEOverclockType.generated.h"
 
-UENUM()
-enum class EBXEOverclockType : int32 {
+UENUM(BlueprintType)
+enum class EBXEOverclockType : uint8 {
     None,
     Safe,
     Any,
 };
+

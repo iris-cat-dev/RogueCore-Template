@@ -2,14 +2,15 @@
 #include "Net/UnrealNetwork.h"
 
 UGrabberComponent::UGrabberComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->GrabLoopSoundInstance = NULL;
-    this->BeginGrabedSound = NULL;
-    this->GrabedLoopSound = NULL;
-    this->EndGrabedSound = NULL;
-    this->BeginGrabbedShout = NULL;
-    this->EndGrabbedShout = NULL;
-    this->AttentionGrabbedShout = NULL;
-    this->CurrentlyGrabbed = NULL;
+    this->GrabLoopSoundInstance = nullptr;
+    this->BeginGrabedSound = nullptr;
+    this->GrabedLoopSound = nullptr;
+    this->EndGrabedSound = nullptr;
+    this->BeginGrabbedShout = nullptr;
+    this->EndGrabbedShout = nullptr;
+    this->AttentionGrabbedShout = nullptr;
+    this->CurrentlyGrabbed = nullptr;
+    this->GrabFollowInterpolationSpeed = 12.50f;
     this->GrabTime = 0.00f;
     this->CarryCooldown = 12.00f;
     this->RevivedGravePeriod = 5.00f;
@@ -19,6 +20,7 @@ UGrabberComponent::UGrabberComponent(const FObjectInitializer& ObjectInitializer
     this->ManualGrabTime = false;
     this->CanPlayerShoot = false;
     this->HeightenSensesImmune = false;
+    this->CanGrabbedTargetDieWhileGrabbed = true;
     this->NeedsPathToTarget = true;
 }
 

@@ -2,15 +2,15 @@
 #include "Templates/SubclassOf.h"
 
 UMissionStat::UMissionStat() {
-    this->Category = NULL;
-    this->StatAchievement = NULL;
+    this->Category = nullptr;
+    this->StatAchievement = nullptr;
     this->MissionStatType = EMissionStatType::Float;
     this->DoNotShowInMissionStatView = false;
     this->ShowAllValuesCombined = true;
     this->ShowHighestValue = true;
 }
 
-float UMissionStat::SetStatValue(UObject* WorldContext, APlayerCharacter* Character, float amount) {
+float UMissionStat::SetStatValue(UObject* WorldContext, APlayerCharacter* Character, float Amount) {
     return 0.0f;
 }
 
@@ -18,7 +18,7 @@ FText UMissionStat::MissionStatToText(EMissionStatType StatType, float Value) {
     return FText::GetEmpty();
 }
 
-void UMissionStat::Increment(UObject* WorldContext, UMissionStat* Stat, TSubclassOf<APlayerCharacter> CharacterClass, float amount) {
+void UMissionStat::Increment(UObject* WorldContext, UMissionStat* Stat, TSubclassOf<APlayerCharacter> CharacterClass, float Amount) {
 }
 
 float UMissionStat::GetStatMinCount(UObject* WorldContext) {

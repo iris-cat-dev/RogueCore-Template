@@ -8,4 +8,6 @@ class AAmbientBlaster : public AProjectileWeapon {
     GENERATED_BODY()
 public:
     AAmbientBlaster(const FObjectInitializer& ObjectInitializer);
+
 };
+

@@ -8,3 +8,4 @@ enum class EFriendOnlineStatusEnum : uint8 {
     Offline,
     Away,
 };
+

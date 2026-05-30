@@ -3,7 +3,7 @@
 UProjectileAttackBaseComponent::UProjectileAttackBaseComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->SocketName = TEXT("RangedAttack");
     this->RotationHandling = EProjectileAttackRotationType::NoTarget_ActorForward;
-    this->FinalValidationCheck = NULL;
+    this->FinalValidationCheck = nullptr;
     this->ProjectilesIgnoreEachOther = false;
 }
 

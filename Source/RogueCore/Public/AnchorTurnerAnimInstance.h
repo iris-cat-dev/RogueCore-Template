@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Animation/AnimInstance.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=AnimInstance -FallbackName=AnimInstance
 #include "AnchorTurnerAnimInstance.generated.h"
 
 UCLASS(Blueprintable, NonTransient)
@@ -10,8 +10,16 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     float ModuleRotation;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     float Percent;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     float TurnSpeed;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     bool IsFinished;
+    
     UAnchorTurnerAnimInstance();
+
 };
+

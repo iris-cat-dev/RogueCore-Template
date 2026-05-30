@@ -8,4 +8,6 @@ class UShotpowerDamageBonus : public UDamageBonusBase {
     GENERATED_BODY()
 public:
     UShotpowerDamageBonus();
+
 };
+

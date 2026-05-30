@@ -1,7 +1,7 @@
 #include "StayAwayFromWallsComponent.h"
 
 UStayAwayFromWallsComponent::UStayAwayFromWallsComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->GameState = NULL;
+    this->GameState = nullptr;
     this->MaxSpeed = 100.00f;
     this->Acceleration = 10.00f;
     this->BackAcceleration = 20.00f;

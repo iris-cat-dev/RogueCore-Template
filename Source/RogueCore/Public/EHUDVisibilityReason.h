@@ -11,3 +11,4 @@ enum class EHUDVisibilityReason : uint8 {
     Photography = 8,
     WindowOpen = 16,
 };
+

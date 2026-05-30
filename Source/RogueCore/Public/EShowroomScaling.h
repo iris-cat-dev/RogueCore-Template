@@ -10,3 +10,4 @@ enum class EShowroomScaling : uint8 {
     EnemyBig,
     EnemyHuge,
 };
+

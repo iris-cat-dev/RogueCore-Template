@@ -5,16 +5,20 @@
 
 class UCarriableComponent;
 class UCarriableInstantUsable;
+
 UCLASS(Blueprintable)
 class ADorrettaHead : public ACarriableItem {
     GENERATED_BODY()
-    
-
 public:
-
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UCarriableInstantUsable* usable;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UCarriableComponent* CarriableComponent;
+    
+public:
     ADorrettaHead(const FObjectInitializer& ObjectInitializer);
+
 };
+

@@ -8,3 +8,4 @@ struct FPathCell {
 public:
     ROGUECORE_API FPathCell();
 };
+

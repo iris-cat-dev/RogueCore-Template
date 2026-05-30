@@ -1,7 +1,7 @@
 #include "VanityCollectionReward.h"
 
 UVanityCollectionReward::UVanityCollectionReward() {
-    this->OptionalCharacterID = NULL;
+    this->OptionalCharacterID = nullptr;
     this->UseContextAsTargetCharacter = false;
 }
 

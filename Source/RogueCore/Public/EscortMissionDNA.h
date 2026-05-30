@@ -11,4 +11,6 @@ public:
     int32 RefuelLocations;
     
     UEscortMissionDNA();
+
 };
+

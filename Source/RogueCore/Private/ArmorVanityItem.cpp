@@ -5,7 +5,7 @@ UArmorVanityItem::UArmorVanityItem() {
     this->CropBeard = false;
     this->ArmorThickness = 0.00f;
     this->CanOnlyUseDefaultArmorMaterial = false;
-    this->DefaultArmorMaterial = NULL;
+    this->DefaultArmorMaterial = nullptr;
 }
 
 void UArmorVanityItem::PreviewArmor(AFSDPlayerState* PlayerState, bool Show, bool useDefaultArmorMaterial) const {

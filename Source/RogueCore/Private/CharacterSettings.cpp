@@ -1,13 +1,13 @@
 #include "CharacterSettings.h"
 
 UCharacterSettings::UCharacterSettings() {
-    this->BoscoID = NULL;
-    this->DefaultCharacterID = NULL;
-    this->DefaultEditorCharacterID = NULL;
-    this->ThrowItemAnimSettings = NULL;
-    this->AutoReloadShout = NULL;
-    this->TeleportPositioning = NULL;
-    this->TeleportPlacement = NULL;
+    this->BoscoID = nullptr;
+    this->DefaultCharacterID = nullptr;
+    this->DefaultEditorCharacterID = nullptr;
+    this->ThrowItemAnimSettings = nullptr;
+    this->AutoReloadShout = nullptr;
+    this->TeleportPositioning = nullptr;
+    this->TeleportPlacement = nullptr;
 }
 
 UPlayerCharacterID* UCharacterSettings::GetPlayerCharacterID(const FGuid& ID) const {

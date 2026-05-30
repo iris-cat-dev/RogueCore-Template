@@ -5,6 +5,7 @@
 
 class IBossFightInterface;
 class UBossFightInterface;
+
 UCLASS(Abstract, Blueprintable, EditInlineNew)
 class UBossFightWidget : public UUserWidget {
     GENERATED_BODY()
@@ -13,4 +14,6 @@ public:
     TScriptInterface<IBossFightInterface> BossFight;
     
     UBossFightWidget();
+
 };
+

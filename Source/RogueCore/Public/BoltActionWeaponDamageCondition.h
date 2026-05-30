@@ -7,11 +7,13 @@
 UCLASS(Blueprintable, EditInlineNew)
 class UBoltActionWeaponDamageCondition : public UDamageCondition {
     GENERATED_BODY()
-    
-
 public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EBoltActionWeaponConditions WeaponCondition;
     
+public:
     UBoltActionWeaponDamageCondition();
+
 };
+

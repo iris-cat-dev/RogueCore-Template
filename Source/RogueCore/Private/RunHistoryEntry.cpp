@@ -1,6 +1,9 @@
 #include "RunHistoryEntry.h"
 
 FRunHistoryEntry::FRunHistoryEntry() {
-    this->RunIndex = 0;
+    this->SharedInfo = FSharedRunData();
+    this->RunInfo = FRunHistoryRunInfo();
+    this->Characters = FRunHistoryCharacterData();
+    this->DamageCollection = FRunHistoryDamageData();
 }
 

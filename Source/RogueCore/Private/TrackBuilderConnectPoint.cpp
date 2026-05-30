@@ -2,7 +2,7 @@
 #include "Net/UnrealNetwork.h"
 
 UTrackBuilderConnectPoint::UTrackBuilderConnectPoint(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->ConnectType = NULL;
+    this->ConnectType = nullptr;
     this->MaxConnections = 1;
     this->MaxConnectRadius = 150.00f;
     this->ConnectDistance = 0.00f;
@@ -27,7 +27,7 @@ bool UTrackBuilderConnectPoint::Connect(ATrackBuilderSegment* InSegment) {
     return false;
 }
 
-bool UTrackBuilderConnectPoint::CanConnectWith(ATrackBuilderSegment* InSegment, const FTransform& FromWorldTransform) {
+bool UTrackBuilderConnectPoint::CanConnectWith_Implementation(ATrackBuilderSegment* InSegment, const FTransform& FromWorldTransform) {
     return false;
 }
 

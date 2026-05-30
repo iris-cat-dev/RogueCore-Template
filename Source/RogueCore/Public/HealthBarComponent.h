@@ -8,4 +8,6 @@ class UHealthBarComponent : public UWidgetComponentCustomMaterial {
     GENERATED_BODY()
 public:
     UHealthBarComponent(const FObjectInitializer& ObjectInitializer);
+
 };
+

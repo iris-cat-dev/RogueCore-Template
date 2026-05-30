@@ -1,7 +1,7 @@
 #include "SubRoomFeature.h"
 
 USubRoomFeature::USubRoomFeature() {
-    this->RoomGenerator = NULL;
+    this->RoomGenerator = nullptr;
     this->Scale = 0.00f;
 }
 

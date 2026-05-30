@@ -4,19 +4,22 @@
 #include "Templates/SubclassOf.h"
 #include "ProjectileAbilityUpgrade.generated.h"
 
-class AProjectileBase;
+class AProjectile;
 class UDamageBonusBase;
-class UWeaponTagBase;
+
 UCLASS(Blueprintable, EditInlineNew)
 class UProjectileAbilityUpgrade : public UAbilityUpgrade {
     GENERATED_BODY()
-    
-
 public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TSubclassOf<AProjectileBase> ProjectileClass;
+    TSubclassOf<AProjectile> ProjectileClass;
     
-    UWeaponTagBase* DamageTag;
-    UDamageBonusBase* Damage;
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UDamageBonusBase* DamageScaling;
+    
+public:
     UProjectileAbilityUpgrade();
+
 };
+

@@ -2,7 +2,7 @@
 #include "Net/UnrealNetwork.h"
 
 AFakePhysicsProjectile::AFakePhysicsProjectile(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->MoveSettings = NULL;
+    this->MoveSettings = nullptr;
     this->InitialSpeed = 1000.00f;
     this->DampOmega = 50.00f;
     this->SyncTime = 0.00f;

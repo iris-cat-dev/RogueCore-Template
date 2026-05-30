@@ -6,7 +6,7 @@ UCoilGunAnimInstance::UCoilGunAnimInstance() {
     this->MaxExtention = -7.00f;
     this->HandleExtend = 0.00f;
     this->MaxCoilSpeed = 15.00f;
-    this->CoilGun = NULL;
+    this->CoilGun = nullptr;
 }
 
 float UCoilGunAnimInstance::GetCoilSpeed(int32 Index) const {

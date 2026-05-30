@@ -8,4 +8,6 @@ class AStateDrivenDroneController : public ADroneControllerBase {
     GENERATED_BODY()
 public:
     AStateDrivenDroneController(const FObjectInitializer& ObjectInitializer);
+
 };
+

@@ -1,7 +1,8 @@
 #include "CoilgunWeaponTrail.h"
 #include "Components/CapsuleComponent.h"
-#include "Components/SceneComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
 #include "NiagaraComponent.h"
+#include "Components/CapsuleComponent.h"
 #include "Net/UnrealNetwork.h"
 
 ACoilgunWeaponTrail::ACoilgunWeaponTrail(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
@@ -12,8 +13,8 @@ ACoilgunWeaponTrail::ACoilgunWeaponTrail(const FObjectInitializer& ObjectInitial
     this->ParticleTrailOffset = 0.00f;
     this->TrailHalgLength = 0.00f;
     this->SpawnFireTrail = false;
-    this->FireEffect = NULL;
-    this->ElectricEffect = NULL;
+    this->FireEffect = nullptr;
+    this->ElectricEffect = nullptr;
     this->Collision->SetupAttachment(RootComponent);
     this->Trail->SetupAttachment(RootComponent);
 }

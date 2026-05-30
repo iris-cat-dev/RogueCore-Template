@@ -1,11 +1,11 @@
 #include "IconGenerationManager.h"
 
 UIconGenerationManager::UIconGenerationManager() {
-    this->GeneratorInst = NULL;
-    this->PickaxeGeneratorInst = NULL;
-    this->WeaponGeneratorInst = NULL;
-    this->LatestGeneratedTexture = NULL;
-    this->ActiveIconGenerator = NULL;
+    this->GeneratorInst = nullptr;
+    this->PickaxeGeneratorInst = nullptr;
+    this->WeaponGeneratorInst = nullptr;
+    this->LatestGeneratedTexture = nullptr;
+    this->ActiveIconGenerator = nullptr;
 }
 
 void UIconGenerationManager::GenerateWeaponIcon_Async(UIconGenerationManager* manager, UItemSkin* Item, bool inShowCloseUp, UPlayerCharacterID* Character, UTextureRenderTarget2D*& Icon, FLatentActionInfo LatentInfo) {

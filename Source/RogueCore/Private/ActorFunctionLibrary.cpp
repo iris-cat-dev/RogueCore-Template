@@ -83,10 +83,6 @@ bool UActorFunctionLibrary::HasActorBegunPlay(const AActor* Actor) {
     return false;
 }
 
-int32 UActorFunctionLibrary::GetTotalHeroLevels(UObject* WorldContextObject, UPlayerCharacterID* characterID) {
-    return 0;
-}
-
 FGuid UActorFunctionLibrary::GetSaveGameIDFromCharacterID(UPlayerCharacterID* characterID) {
     return FGuid{};
 }
@@ -103,6 +99,14 @@ TArray<APlayerCharacter*> UActorFunctionLibrary::GetPlayerCharactersThatAreAlive
     return TArray<APlayerCharacter*>();
 }
 
+TArray<APlayerCharacter*> UActorFunctionLibrary::GetPlayerCharactersNotBurried(const UObject* Context) {
+    return TArray<APlayerCharacter*>();
+}
+
+TArray<APlayerCharacter*> UActorFunctionLibrary::GetPlayerCharactersLeavingInDropPod(const UObject* WorldContext) {
+    return TArray<APlayerCharacter*>();
+}
+
 APlayerCharacter* UActorFunctionLibrary::GetLocalPlayerCharacter(const UObject* WorldContext) {
     return NULL;
 }
@@ -115,11 +119,7 @@ float UActorFunctionLibrary::GetHeroXP(UObject* WorldContextObject, UPlayerChara
     return 0.0f;
 }
 
-FText UActorFunctionLibrary::GetHeroSwitchToMessage(TSubclassOf<APlayerCharacter> playerClass) {
-    return FText::GetEmpty();
-}
-
-FString UActorFunctionLibrary::GetHeroSourceName(TSubclassOf<APlayerCharacter> playerClass) {
+FString UActorFunctionLibrary::GetHeroSourceName(TSubclassOf<APlayerCharacter> PlayerClass) {
     return TEXT("");
 }
 
@@ -127,7 +127,7 @@ float UActorFunctionLibrary::GetHeroProgress(UObject* WorldContextObject, UPlaye
     return 0.0f;
 }
 
-FText UActorFunctionLibrary::GetHeroName(TSubclassOf<APlayerCharacter> playerClass) {
+FText UActorFunctionLibrary::GetHeroName(TSubclassOf<APlayerCharacter> PlayerClass) {
     return FText::GetEmpty();
 }
 
@@ -139,23 +139,15 @@ UInventoryList* UActorFunctionLibrary::GetHeroInventoryList() {
     return NULL;
 }
 
-FHeroInfo UActorFunctionLibrary::GetHeroInfo(TSubclassOf<APlayerCharacter> playerClass) {
+FHeroInfo UActorFunctionLibrary::GetHeroInfo(TSubclassOf<APlayerCharacter> PlayerClass) {
     return FHeroInfo{};
 }
 
-UTexture2D* UActorFunctionLibrary::GetHeroImageSmall(TSubclassOf<APlayerCharacter> playerClass) {
+UTexture2D* UActorFunctionLibrary::GetHeroImageSmall(TSubclassOf<APlayerCharacter> PlayerClass) {
     return NULL;
 }
 
-UTexture2D* UActorFunctionLibrary::GetHeroImageFullSize(TSubclassOf<APlayerCharacter> playerClass) {
-    return NULL;
-}
-
-UTexture2D* UActorFunctionLibrary::GetHeroImage(TSubclassOf<APlayerCharacter> playerClass) {
-    return NULL;
-}
-
-FLinearColor UActorFunctionLibrary::GetHeroColor(TSubclassOf<APlayerCharacter> playerClass) {
+FLinearColor UActorFunctionLibrary::GetHeroColor(TSubclassOf<APlayerCharacter> PlayerClass) {
     return FLinearColor{};
 }
 
@@ -179,20 +171,20 @@ UPlayerCharacterID* UActorFunctionLibrary::GetCharacterIDFromCharacter(APlayerCh
     return NULL;
 }
 
-UPlayerCharacterID* UActorFunctionLibrary::GetCharacterID(TSubclassOf<APlayerCharacter> playerClass) {
+UPlayerCharacterID* UActorFunctionLibrary::GetCharacterID(TSubclassOf<APlayerCharacter> PlayerClass) {
     return NULL;
-}
-
-TArray<AFSDPlayerState*> UActorFunctionLibrary::GetAllPlayerStates(const UObject* WorldContext) {
-    return TArray<AFSDPlayerState*>();
-}
-
-TArray<APlayerCharacter*> UActorFunctionLibrary::GetAllPlayerCharacters(const UObject* WorldContext) {
-    return TArray<APlayerCharacter*>();
 }
 
 FVector UActorFunctionLibrary::GetActorTargetCenter(const AActor* targetActor) {
     return FVector{};
+}
+
+TArray<AFSDPlayerState*> UActorFunctionLibrary::GetActivePlayerStates(const UObject* WorldContext) {
+    return TArray<AFSDPlayerState*>();
+}
+
+TArray<APlayerCharacter*> UActorFunctionLibrary::GetActivePlayerCharacters(const UObject* WorldContext) {
+    return TArray<APlayerCharacter*>();
 }
 
 void UActorFunctionLibrary::FSDRemoveBlendable(UPostProcessComponent* PostProcessComponent, TScriptInterface<IBlendableInterface> InBlendableObject) {
@@ -240,7 +232,7 @@ FVector UActorFunctionLibrary::FindCharacterTeleportLocation(UObject* WorldConte
     return FVector{};
 }
 
-void UActorFunctionLibrary::FadeMaterials(const UObject* WorldContextObject, UMeshComponent* mesh, float Duration) {
+void UActorFunctionLibrary::FadeMaterials(const UObject* WorldContextObject, const UMeshComponent* mesh, float duration) {
 }
 
 float UActorFunctionLibrary::EvaluateRuntimeCurve(UObject* WorldContextObject, const FRuntimeFloatCurve& Curve, float Time) {
@@ -251,14 +243,14 @@ bool UActorFunctionLibrary::DoesActorHaveEnemyId(const AActor* Actor, const UEne
     return false;
 }
 
-void UActorFunctionLibrary::DissolveMaterials(const UObject* WorldContextObject, UMeshComponent* mesh, float Duration) {
+void UActorFunctionLibrary::DissolveMaterials(const UObject* WorldContextObject, const UMeshComponent* mesh, float duration) {
 }
 
 TArray<UMaterialInstanceDynamic*> UActorFunctionLibrary::CreateDynamicMaterialInstances(UMeshComponent* mesh) {
     return TArray<UMaterialInstanceDynamic*>();
 }
 
-float UActorFunctionLibrary::AddHeroXP(UObject* WorldContextObject, UPlayerCharacterID* characterID, float amount) {
+float UActorFunctionLibrary::AddHeroXP(UObject* WorldContextObject, UPlayerCharacterID* characterID, float Amount) {
     return 0.0f;
 }
 

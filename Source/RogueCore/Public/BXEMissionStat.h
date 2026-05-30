@@ -8,4 +8,6 @@ class UBXEMissionStat : public UMissionStat {
     GENERATED_BODY()
 public:
     UBXEMissionStat();
+
 };
+

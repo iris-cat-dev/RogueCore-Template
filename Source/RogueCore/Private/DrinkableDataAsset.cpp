@@ -5,19 +5,26 @@ UDrinkableDataAsset::UDrinkableDataAsset() {
     this->Cost_Sets = -1;
     this->Cost_Reps = -1;
     this->IsSpecialBeer = false;
-    this->AccessCondition = NULL;
+    this->AccessCondition = nullptr;
     this->RequiredPlayerRank = 0;
     this->ParticipatesInFreeBeerEvent = false;
     this->AlcoholStrength = EDrinkableAlcoholStrength::Regular;
-    this->SpecialEdition = NULL;
-    this->RequiredDLC = NULL;
+    this->SpecialEdition = nullptr;
+    this->RequiredDLC = nullptr;
     this->bPlayFireworks = false;
-    this->StatConsumed = NULL;
-    this->StatRoundOrdered = NULL;
-    this->OrderShout = NULL;
-    this->OrderCheeringShout = NULL;
-    this->DrinkSaluteShout = NULL;
-    this->buff = NULL;
+    this->StatConsumed = nullptr;
+    this->StatRoundOrdered = nullptr;
+    this->OrderShout = nullptr;
+    this->OrderCheeringShout = nullptr;
+    this->DrinkSaluteShout = nullptr;
+    this->OmegaShout = nullptr;
+    this->buff = nullptr;
+    this->ExerciseQuests = nullptr;
+    this->ExerciseDifficulty = EExerciseDifficulty::PickDifficulty;
+    this->BeerCategory = 0;
+}
+
+void UDrinkableDataAsset::UnlockDrink(UFSDSaveGame* SaveGame) const {
 }
 
 bool UDrinkableDataAsset::TryUnlockSpecialDrinks(UObject* WorldContext) {
@@ -39,7 +46,7 @@ bool UDrinkableDataAsset::MustBeUnlocked() const {
     return false;
 }
 
-bool UDrinkableDataAsset::IsUnlocked(UObject* WorldContext) const {
+bool UDrinkableDataAsset::IsUnLocked(UObject* WorldContext) const {
     return false;
 }
 
@@ -57,6 +64,10 @@ UDrinkableDataAsset* UDrinkableDataAsset::GetSpecialEdition(UObject* WorldContex
 
 UTexture2D* UDrinkableDataAsset::GetDrinkableIcon() const {
     return NULL;
+}
+
+int32 UDrinkableDataAsset::GetCalorieCost() {
+    return 0;
 }
 
 bool UDrinkableDataAsset::AreSpecialDrinksUnlocked(UObject* WorldContext) {

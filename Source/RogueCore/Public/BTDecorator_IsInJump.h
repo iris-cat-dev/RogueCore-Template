@@ -8,4 +8,6 @@ class ROGUECORE_API UBTDecorator_IsInJump : public UBTDecorator {
     GENERATED_BODY()
 public:
     UBTDecorator_IsInJump();
+
 };
+

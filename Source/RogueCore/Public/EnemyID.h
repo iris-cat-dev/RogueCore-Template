@@ -8,4 +8,6 @@ class ROGUECORE_API UEnemyID : public USavableDataAsset {
     GENERATED_BODY()
 public:
     UEnemyID();
+
 };
+

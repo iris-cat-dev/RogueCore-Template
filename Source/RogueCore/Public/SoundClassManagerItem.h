@@ -8,3 +8,4 @@ struct FSoundClassManagerItem {
 public:
     ROGUECORE_API FSoundClassManagerItem();
 };
+

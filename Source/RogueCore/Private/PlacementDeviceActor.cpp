@@ -2,9 +2,9 @@
 
 APlacementDeviceActor::APlacementDeviceActor(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->DefaultRadius = 1000.00f;
-    this->RadiusStat = NULL;
+    this->RadiusStat = nullptr;
     this->DefaultLifetime = 10.00f;
-    this->LifetimeStat = NULL;
+    this->LifetimeStat = nullptr;
 }
 
 

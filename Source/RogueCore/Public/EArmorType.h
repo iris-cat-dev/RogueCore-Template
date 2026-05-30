@@ -8,3 +8,4 @@ enum class EArmorType : uint8 {
     Heavy,
     Unbreakable,
 };
+

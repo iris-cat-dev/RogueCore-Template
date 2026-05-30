@@ -1,7 +1,7 @@
 #include "PatrolBotAnimInstance.h"
 
-UPatrolBotAnimInstance::UPatrolBotAnimInstance(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->PatrolBot = NULL;
+UPatrolBotAnimInstance::UPatrolBotAnimInstance() {
+    this->PatrolBot = nullptr;
     this->Tilt = 0.00f;
     this->Rolling = false;
     this->NotRolling = false;

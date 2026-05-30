@@ -11,4 +11,6 @@ public:
     float NoiseRange;
     
     UDetailNoise();
+
 };
+

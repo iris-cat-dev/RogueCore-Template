@@ -1,6 +1,7 @@
 #include "JettyBootsScore.h"
 
 FJettyBootsScore::FJettyBootsScore() {
-    this->score = 0;
+    this->Score = 0;
+    this->PlayerName = FString();
 }
 

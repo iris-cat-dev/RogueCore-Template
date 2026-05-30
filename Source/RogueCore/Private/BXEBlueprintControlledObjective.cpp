@@ -2,7 +2,7 @@
 #include "Net/UnrealNetwork.h"
 
 UBXEBlueprintControlledObjective::UBXEBlueprintControlledObjective(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->DBAAvoidCostCurve = NULL;
+    this->DBAAvoidCostCurve = nullptr;
     this->BaseExpenitePayout = 150.00f;
     this->SeenRange = 2000.00f;
     this->SeenUpdateRateSeconds = 5.00f;

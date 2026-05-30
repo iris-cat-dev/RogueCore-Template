@@ -4,3 +4,4 @@
 #include "ChangeVacuumStateDelegateDelegate.generated.h"
 
 UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FChangeVacuumStateDelegate, EVacuumState, State);
+

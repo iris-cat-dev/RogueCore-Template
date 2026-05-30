@@ -1,9 +1,8 @@
 #include "ProjectileAbilityUpgrade.h"
 
 UProjectileAbilityUpgrade::UProjectileAbilityUpgrade() {
-    this->ProjectileClass = NULL;
-    this->DamageTag = NULL;
-    this->Damage = NULL;
+    this->ProjectileClass = nullptr;
+    this->DamageScaling = nullptr;
 }
 
 

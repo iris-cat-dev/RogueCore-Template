@@ -1,8 +1,8 @@
 #include "CrossbowStuckProjectileEffectElectric.h"
 
 UCrossbowStuckProjectileEffectElectric::UCrossbowStuckProjectileEffectElectric(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->PlasmaBeamClass = NULL;
-    this->ElectrocutionActorClass = NULL;
+    this->PlasmaBeamClass = nullptr;
+    this->ElectrocutionActorClass = nullptr;
     this->PlasmaLineMaxRange = 1000.00f;
 }
 

@@ -4,6 +4,7 @@
 #include "LineSegmentCarver.generated.h"
 
 class ULineSegmentCarverComponent;
+
 UCLASS(Blueprintable)
 class ALineSegmentCarver : public AGenerationItem {
     GENERATED_BODY()
@@ -12,4 +13,6 @@ public:
     ULineSegmentCarverComponent* LineComponent;
     
     ALineSegmentCarver(const FObjectInitializer& ObjectInitializer);
+
 };
+

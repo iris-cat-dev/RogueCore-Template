@@ -8,4 +8,6 @@ class AFlareGun : public AAmmoDrivenWeapon {
     GENERATED_BODY()
 public:
     AFlareGun(const FObjectInitializer& ObjectInitializer);
+
 };
+

@@ -1,8 +1,8 @@
 #include "CampaignMission.h"
 
 UCampaignMission::UCampaignMission() {
-    this->PlanetZone = NULL;
-    this->MissionCompleteShout = NULL;
+    this->PlanetZone = nullptr;
+    this->MissionCompleteShout = nullptr;
     this->OverrideMutators = false;
     this->MutatorOverride = ECampaignMutators::NotAllowed;
 }

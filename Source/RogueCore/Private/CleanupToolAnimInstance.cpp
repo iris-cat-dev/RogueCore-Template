@@ -2,7 +2,7 @@
 
 UCleanupToolAnimInstance::UCleanupToolAnimInstance() {
     this->isUsing = false;
-    this->CleaningTool = NULL;
+    this->CleaningTool = nullptr;
 }
 
 

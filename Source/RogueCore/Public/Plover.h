@@ -8,4 +8,6 @@ class ROGUECORE_API APlover : public AFlyingEnemyDeepPathfinderCharacter {
     GENERATED_BODY()
 public:
     APlover(const FObjectInitializer& ObjectInitializer);
+
 };
+

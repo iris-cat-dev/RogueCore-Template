@@ -3,7 +3,7 @@
 UDotStatusEffectItem::UDotStatusEffectItem() {
     this->OverrideDamageImpulse = false;
     this->ChangeElementValueAtMax = true;
-    this->DamageImpulseOverride = NULL;
+    this->DamageImpulseOverride = nullptr;
 }
 
 

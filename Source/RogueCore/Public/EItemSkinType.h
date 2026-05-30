@@ -7,3 +7,4 @@ enum class EItemSkinType : uint8 {
     PaintJob,
     Framework,
 };
+

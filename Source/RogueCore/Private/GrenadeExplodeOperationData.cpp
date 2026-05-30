@@ -10,5 +10,7 @@ FGrenadeExplodeOperationData::FGrenadeExplodeOperationData() {
     this->UseBulletBurntMaterial = false;
     this->DissolvePlatforms = false;
     this->OverrideBurntMaterialHandle = 0;
+    this->HitPos = FVector3f::ZeroVector;
+    this->Normal = FVector3f::ZeroVector;
 }
 

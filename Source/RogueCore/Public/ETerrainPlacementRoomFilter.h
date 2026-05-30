@@ -8,3 +8,4 @@ enum class ETerrainPlacementRoomFilter : uint8 {
     WhiteList,
     BlackList,
 };
+

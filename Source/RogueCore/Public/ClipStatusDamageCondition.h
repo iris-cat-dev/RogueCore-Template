@@ -6,12 +6,19 @@
 UCLASS(Blueprintable, EditInlineNew)
 class UClipStatusDamageCondition : public UDamageCondition {
     GENERATED_BODY()
-
+public:
+protected:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FString BulletAmountName;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 BulletAmount;
-
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool CountBulletsLeft;
-
+    
 public:
     UClipStatusDamageCondition();
+
 };
+

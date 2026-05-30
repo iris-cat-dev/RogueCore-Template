@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Subsystems/GameInstanceSubsystem.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=GameInstanceSubsystem -FallbackName=GameInstanceSubsystem
 #include "FSDChatMessage.h"
 #include "NewMessageSigDelegate.h"
 #include "MessagingSubSystem.generated.h"
@@ -13,10 +13,18 @@ public:
     FNewMessageSig OnNewMessage;
     
     UMessagingSubSystem();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FString MessageSenderIdAsString(const FFSDChatMessage& Msg);
+    
     UFUNCTION(BlueprintCallable)
     static float MessageAge(const FFSDChatMessage& Msg);
+    
+    UFUNCTION(BlueprintCallable)
     void LatestMessages(int32 Num, bool resetAge, TArray<FFSDChatMessage>& OutMessages);
+    
+    UFUNCTION(BlueprintCallable)
     void ClearMessages();
+    
 };
+

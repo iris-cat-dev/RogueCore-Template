@@ -1,6 +1,6 @@
 #include "RuntimeSpawnedDebris.h"
 
 FRuntimeSpawnedDebris::FRuntimeSpawnedDebris() {
-    this->DebrisMesh = NULL;
+    this->DebrisMesh = nullptr;
 }
 

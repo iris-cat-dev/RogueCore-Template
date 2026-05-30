@@ -1,7 +1,5 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "TXCurrentStage.h"
-#include "TXOngoingGameevents.h"
 #include "TXRunInfo.generated.h"
 
 USTRUCT(BlueprintType)
@@ -9,11 +7,23 @@ struct FTXRunInfo {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    int32 Duration;
+    FString run_name;
     
-    int32 team_level;
-    int32 completed_stages;
-    FTXCurrentStage current_stage;
-    FTXOngoingGameevents ongoing_gameevents;
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 run_depth;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 run_length;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 run_complexity;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FString run_mutator;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float hazard_bonus;
+    
     ROGUECORE_API FTXRunInfo();
 };
+

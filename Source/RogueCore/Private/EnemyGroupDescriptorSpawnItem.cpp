@@ -1,7 +1,7 @@
 #include "EnemyGroupDescriptorSpawnItem.h"
 
 FEnemyGroupDescriptorSpawnItem::FEnemyGroupDescriptorSpawnItem() {
-    this->Enemy = NULL;
+    this->Enemy = nullptr;
     this->count = 0;
 }
 

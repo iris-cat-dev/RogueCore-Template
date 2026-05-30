@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Curves/CurveFloat.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=RuntimeFloatCurve -FallbackName=RuntimeFloatCurve
 #include "WaveDifficultyRanges.generated.h"
 
 USTRUCT(BlueprintType)
@@ -10,6 +10,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool Used;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FRuntimeFloatCurve OverTimeInterval;
+    
     ROGUECORE_API FWaveDifficultyRanges();
 };
+

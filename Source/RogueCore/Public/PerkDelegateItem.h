@@ -1,9 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/Object.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "PerkDelegateItem.generated.h"
 
 class UPerkAsset;
+
 UCLASS(Blueprintable)
 class ROGUECORE_API UPerkDelegateItem : public UObject {
     GENERATED_BODY()
@@ -14,7 +15,14 @@ public:
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FPerkClaimedDelegate OnPerkClaimed;
+    
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FPerkHighlightedDelegate OnPerkHighlighted;
+    
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FPerkIntDelegate OnChargesUsedChanged;
+    
     UPerkDelegateItem();
+
 };
+

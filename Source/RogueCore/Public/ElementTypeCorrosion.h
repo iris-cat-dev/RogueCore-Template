@@ -8,4 +8,6 @@ class UElementTypeCorrosion : public UElementType {
     GENERATED_BODY()
 public:
     UElementTypeCorrosion();
+
 };
+

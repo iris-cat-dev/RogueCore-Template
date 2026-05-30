@@ -8,4 +8,6 @@ class UElementEventTypeElectrocuted : public UElementEventTypeBase {
     GENERATED_BODY()
 public:
     UElementEventTypeElectrocuted();
+
 };
+

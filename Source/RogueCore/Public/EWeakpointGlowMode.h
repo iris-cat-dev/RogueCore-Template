@@ -7,3 +7,4 @@ enum class EWeakpointGlowMode : uint8 {
     Set,
     Additive,
 };
+

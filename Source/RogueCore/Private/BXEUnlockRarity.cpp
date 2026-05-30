@@ -1,9 +1,9 @@
 #include "BXEUnlockRarity.h"
 
 UBXEUnlockRarity::UBXEUnlockRarity() {
-    this->WeaponAttributes = 0;
-    this->OverclockType = EBXEOverclockType::None;
-    this->VisualSettings = NULL;
+    this->RarityType = EUnlockRarityType::Undefined;
+    this->VisualSettings = nullptr;
+    this->AttributeCount = 0;
 }
 
 

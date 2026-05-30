@@ -3,4 +3,6 @@
 #include "InventoryComponentItemChangeDelegate.generated.h"
 
 class AItem;
+
 UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FInventoryComponentItemChange, AItem*, OldItem, AItem*, NewItem);
+

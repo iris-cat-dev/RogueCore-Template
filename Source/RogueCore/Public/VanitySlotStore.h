@@ -3,6 +3,7 @@
 #include "VanitySlotStore.generated.h"
 
 class UVanityItem;
+
 USTRUCT(BlueprintType)
 struct FVanitySlotStore {
     GENERATED_BODY()
@@ -12,3 +13,4 @@ public:
     
     ROGUECORE_API FVanitySlotStore();
 };
+

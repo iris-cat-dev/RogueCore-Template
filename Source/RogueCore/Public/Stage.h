@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/Object.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "EStageType.h"
 #include "GMMutatorItem.h"
 #include "ObjectiveMissionIcon.h"
@@ -25,11 +25,11 @@ class ROGUECORE_API UStage : public UObject {
 public:
     DECLARE_DYNAMIC_MULTICAST_DELEGATE(FStageDelegate);
     
-public:
+protected:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FStageDelegate OnStageSetupChangedDelegate;
     
-public:
+private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     int32 RunSeed;
     
@@ -130,3 +130,4 @@ public:
     bool AreStagesEqual(const UStage* Other) const;
     
 };
+

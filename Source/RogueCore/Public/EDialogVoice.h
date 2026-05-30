@@ -7,3 +7,4 @@ enum class EDialogVoice : uint8 {
     Voice01,
     Voice02,
 };
+

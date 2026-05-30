@@ -8,4 +8,6 @@ enum class EProjectileLauncherBaseUpgradeType : uint8 {
     HorizontalSpread,
     TransferVelocityFromCharacter,
     ArcStartAngle,
+    SpreadPerShot,
 };
+

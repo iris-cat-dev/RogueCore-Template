@@ -4,7 +4,7 @@
 UCharacterSightComponent::UCharacterSightComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->TargetMaxDistance = 10000.00f;
     this->TraceChannel = ECC_GameTraceChannel3;
-    this->Character = NULL;
+    this->Character = nullptr;
     this->TargetTime = 0.00f;
 }
 

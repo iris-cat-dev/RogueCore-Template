@@ -6,11 +6,13 @@
 UCLASS(Blueprintable, EditInlineNew)
 class UPureTextReward : public UUnlockReward {
     GENERATED_BODY()
-    
-
 public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FText Text;
     
+public:
     UPureTextReward();
+
 };
+

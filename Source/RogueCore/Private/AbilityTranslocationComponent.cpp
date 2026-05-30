@@ -2,7 +2,7 @@
 #include "Net/UnrealNetwork.h"
 
 UAbilityTranslocationComponent::UAbilityTranslocationComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->EntityToSwap = NULL;
+    this->EntityToSwap = nullptr;
     this->ConeWidth = 50.00f;
     this->ConeRange = 1000.00f;
 }

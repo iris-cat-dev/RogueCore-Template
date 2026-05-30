@@ -8,4 +8,6 @@ class UUpgradableItemComponent : public UUpgradableGearComponent {
     GENERATED_BODY()
 public:
     UUpgradableItemComponent(const FObjectInitializer& ObjectInitializer);
+
 };
+

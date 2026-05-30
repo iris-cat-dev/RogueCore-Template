@@ -2,7 +2,7 @@
 
 UWeaponImpactComponent::UWeaponImpactComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->DebugText = false;
-    this->ActiveMesh = NULL;
+    this->ActiveMesh = nullptr;
     this->TrackAcceleration = false;
     this->TrackVelocity = true;
     this->TriggerHighAccelAt = 0.00f;

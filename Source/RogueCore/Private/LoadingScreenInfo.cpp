@@ -1,6 +1,7 @@
 #include "LoadingScreenInfo.h"
 
 FLoadingScreenInfo::FLoadingScreenInfo() {
-    this->World = EAlwaysLoadedWorlds::CharacterViewer;
+    this->LevelSequence = nullptr;
+    this->World = nullptr;
 }
 

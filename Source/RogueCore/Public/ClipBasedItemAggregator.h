@@ -14,23 +14,52 @@ public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAmountChangedSignature OnClipCountChanged;
     
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAmountChangedSignature OnClipCapacityChanged;
+    
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAmountChangedSignature OnReserveCountChanged;
+    
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAmountChangedSignature OnReserveCapacityChanged;
+    
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAmountChangedSignature OnTotalCountChanged;
+    
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FReloadTimeLeftSignature OnReloadTimeChanged;
+    
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FReloadCompleteSignature OnReloadComplete;
+    
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FReloadStartedSignature OnReloadStarted;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool ShowTotalAmount;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool ShowClipAndTotalAsOne;
+    
     UClipBasedItemAggregator(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void ReloadStarted();
+    
+    UFUNCTION(BlueprintCallable)
     void ReloadComplete();
+    
     UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetReserveCount() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetReserveCapacity() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetClipCount() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetClipCapacity() const;
+    
 };
+

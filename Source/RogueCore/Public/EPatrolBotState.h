@@ -8,3 +8,4 @@ enum class EPatrolBotState : uint8 {
     Flying,
     Disabled,
 };
+

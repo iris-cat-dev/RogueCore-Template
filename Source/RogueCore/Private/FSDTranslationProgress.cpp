@@ -2,5 +2,6 @@
 
 FFSDTranslationProgress::FFSDTranslationProgress() {
     this->TranslatedPercent = 0;
+    this->CodeName = FString();
 }
 

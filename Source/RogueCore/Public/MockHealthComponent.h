@@ -4,6 +4,7 @@
 #include "MockHealthComponent.generated.h"
 
 class UDamageTag;
+
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class UMockHealthComponent : public UHealthComponentBase {
     GENERATED_BODY()
@@ -12,4 +13,6 @@ public:
     TArray<UDamageTag*> TagsTaken;
     
     UMockHealthComponent(const FObjectInitializer& ObjectInitializer);
+
 };
+

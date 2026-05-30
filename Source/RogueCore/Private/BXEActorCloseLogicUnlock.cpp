@@ -21,7 +21,7 @@ float UBXEActorCloseLogicUnlock::GetTotalModifierValueAdditive() const {
     return 0.0f;
 }
 
-TArray<AActor*> UBXEActorCloseLogicUnlock::GetRelevantActors() const {
+TArray<AActor*> UBXEActorCloseLogicUnlock::GetRelevantActors_Implementation() const {
     return TArray<AActor*>();
 }
 
@@ -29,7 +29,7 @@ int32 UBXEActorCloseLogicUnlock::GetNumActorsInRange() const {
     return 0;
 }
 
-float UBXEActorCloseLogicUnlock::GetMaxRadius() const {
+float UBXEActorCloseLogicUnlock::GetMaxRadius_Implementation() const {
     return 0.0f;
 }
 

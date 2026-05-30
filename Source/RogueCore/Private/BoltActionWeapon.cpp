@@ -3,9 +3,9 @@
 #include "Net/UnrealNetwork.h"
 
 ABoltActionWeapon::ABoltActionWeapon(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->DamageComponent = NULL;
+    this->DamageComponent = nullptr;
     this->HitscanComponent = CreateDefaultSubobject<UHitscanComponent>(TEXT("HitscanComponent"));
-    this->FocusedHitSTE = NULL;
+    this->FocusedHitSTE = nullptr;
     this->RequireWeakspotForFocusedHitSTE = true;
     this->IsNoGravityOnFocusEnabled = false;
     this->NoGravityOnFocusDuration = 1.00f;
@@ -16,10 +16,10 @@ ABoltActionWeapon::ABoltActionWeapon(const FObjectInitializer& ObjectInitializer
     this->ChargeSpeed = 0.50f;
     this->ChargeAmmoCost = 2.00f;
     this->ChargeRecoilMult = 2.00f;
-    this->ZoomedInAudio = NULL;
-    this->ChargedShotTrailParticles = NULL;
-    this->ButtonDownFireSound = NULL;
-    this->ChargedShotFireSound = NULL;
+    this->ZoomedInAudio = nullptr;
+    this->ChargedShotTrailParticles = nullptr;
+    this->ButtonDownFireSound = nullptr;
+    this->ChargedShotFireSound = nullptr;
     this->ChargedFoVChange = 15.00f;
     this->ChargedFoVFadeSpeed = 60.00f;
     this->MinCharge = 0.25f;
@@ -55,7 +55,7 @@ void ABoltActionWeapon::OnTimerElapsed() {
 void ABoltActionWeapon::OnTargetKilled(AActor* Target, UFSDPhysicalMaterial* PhysicalMaterial, bool wasDirectHit) {
 }
 
-void ABoltActionWeapon::OnTargetDamaged(UHealthComponentBase* Health, float amount, UPrimitiveComponent* HitComponent, UFSDPhysicalMaterial* PhysicalMaterial) {
+void ABoltActionWeapon::OnTargetDamaged(UHealthComponentBase* Health, float Amount, UPrimitiveComponent* HitComponent, UFSDPhysicalMaterial* PhysicalMaterial) {
 }
 
 void ABoltActionWeapon::OnShotPowerSet() {

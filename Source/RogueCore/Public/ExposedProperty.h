@@ -8,3 +8,4 @@ struct FExposedProperty {
 public:
     ROGUECORE_API FExposedProperty();
 };
+

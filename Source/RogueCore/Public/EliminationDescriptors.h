@@ -3,6 +3,7 @@
 #include "EliminationDescriptors.generated.h"
 
 class UEnemyDescriptor;
+
 USTRUCT(BlueprintType)
 struct FEliminationDescriptors {
     GENERATED_BODY()
@@ -12,3 +13,4 @@ public:
     
     ROGUECORE_API FEliminationDescriptors();
 };
+

@@ -1,7 +1,7 @@
 #include "BarleySpawnItem.h"
 
 FBarleySpawnItem::FBarleySpawnItem() {
-    this->Resource = NULL;
+    this->Resource = nullptr;
     this->Weight = 0.00f;
 }
 

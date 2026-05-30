@@ -8,3 +8,4 @@ struct FBulletPathSegment {
 public:
     ROGUECORE_API FBulletPathSegment();
 };
+

@@ -1,7 +1,7 @@
 #include "FacilityHackingPodAnimInstance.h"
 
 UFacilityHackingPodAnimInstance::UFacilityHackingPodAnimInstance() {
-    this->SaluteTarget = NULL;
+    this->SaluteTarget = nullptr;
     this->IsHacking = false;
     this->PodState = EHackingPodState::EClosed;
     this->RadarDishAngle = 0.00f;

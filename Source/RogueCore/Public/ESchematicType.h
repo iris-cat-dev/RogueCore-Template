@@ -9,3 +9,4 @@ enum class ESchematicType : uint8 {
     Resource,
     Blank,
 };
+

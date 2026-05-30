@@ -1,7 +1,7 @@
 #include "AmmoDrivenWeaponAnimInstance.h"
 
 UAmmoDrivenWeaponAnimInstance::UAmmoDrivenWeaponAnimInstance() {
-    this->Weapon = NULL;
+    this->Weapon = nullptr;
     this->IsFiring = false;
     this->ClipFullPercentage = 0.00f;
     this->overheated = false;

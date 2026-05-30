@@ -8,9 +8,14 @@ struct ROGUECORE_API FWeaponOverviewAttribute {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FText IconType;
+    FString IconType;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FWeaponOverviewAttributeEntryData BaseEntry;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FWeaponOverviewAttributeEntryData> BonusEntries;
+    
     FWeaponOverviewAttribute();
 };
+

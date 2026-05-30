@@ -24,4 +24,6 @@ enum class EHUDVisibilityGroups : uint8 {
     ExpeniteBar,
     Unlocks,
     PostEntrance,
+    PlayerAbility,
 };
+

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-
-#include "UObject/Object.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Color -FallbackName=Color
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "ResourceAddedSignatureDelegate.h"
 #include "ResourceChangedSignatureDelegate.h"
 #include "ResourceFullSignatureDelegate.h"
@@ -9,44 +9,81 @@
 
 class UCappedResource;
 class UResourceData;
+
 UCLASS(Blueprintable)
 class UCappedResource : public UObject {
     GENERATED_BODY()
-    
-
 public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FResourceChangedSignature OnChanged;
     
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FResourceAddedSignature OnIncreased;
+    
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FResourceFullSignature OnFull;
- 
+    
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, meta=(AllowPrivateAccess=true))
     UResourceData* Data;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_CurrentAmount, meta=(AllowPrivateAccess=true))
     float CurrentAmount;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, meta=(AllowPrivateAccess=true))
     float MaxAmount;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, meta=(AllowPrivateAccess=true))
     float TotalCollected;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_FullFlag, meta=(AllowPrivateAccess=true))
     int32 FullFlag;
+    
+public:
     UCappedResource();
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+
     UFUNCTION(BlueprintCallable)
     float TransferAll(UCappedResource* Receiver);
-    float Transfer(float amount, UCappedResource* Receiver);
-    UFUNCTION()
+    
+    UFUNCTION(BlueprintCallable)
+    float Transfer(float Amount, UCappedResource* Receiver);
+    
+protected:
+    UFUNCTION(BlueprintCallable)
     void OnRep_FullFlag(int32 OldValue);
-    UFUNCTION()
+    
+    UFUNCTION(BlueprintCallable)
     void OnRep_CurrentAmount(float OldAmount);
+    
     UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContext"))
     bool IsObjectiveResource(UObject* WorldContext, bool& IsCompleted) const;
+    
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsFull() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsEmpty() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsCraftingResource() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FText GetTitle() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FColor GetColor() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetCapacityPct() const;
-    float Deduct(float amount);
-    float Add(float amount);
+    
+    UFUNCTION(BlueprintCallable)
+    float Deduct(float Amount);
+    
+    UFUNCTION(BlueprintCallable)
+    float Add(float Amount);
+    
 };
+

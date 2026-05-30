@@ -7,11 +7,13 @@
 UCLASS(Blueprintable, EditInlineNew)
 class UNegotiationRarityModifierMutator : public UMutator {
     GENERATED_BODY()
-    
-
 public:
+private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FRarityWeightItem> RarityLevelItems;
     
+public:
     UNegotiationRarityModifierMutator();
+
 };
+

@@ -1,8 +1,8 @@
 #include "ArmorMaterialVanityItem.h"
 
 UArmorMaterialVanityItem::UArmorMaterialVanityItem() {
-    this->DynamicIcon = NULL;
-    this->LockedToArmor = NULL;
+    this->DynamicIcon = nullptr;
+    this->LockedToArmor = nullptr;
 }
 
 UMaterialInstanceConstant* UArmorMaterialVanityItem::SetArmorMaterialToTwoSided(UMaterialInstance* Parent) {

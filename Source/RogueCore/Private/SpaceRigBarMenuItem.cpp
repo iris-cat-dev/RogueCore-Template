@@ -1,7 +1,7 @@
 #include "SpaceRigBarMenuItem.h"
 
 USpaceRigBarMenuItem::USpaceRigBarMenuItem() {
-    this->Drink = NULL;
+    this->Drink = nullptr;
     this->SpecialEditionSelected = false;
 }
 

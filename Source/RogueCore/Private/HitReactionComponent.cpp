@@ -4,13 +4,13 @@ UHitReactionComponent::UHitReactionComponent(const FObjectInitializer& ObjectIni
     this->FirstHitReactBlendIn = 0.10f;
     this->OverrideHitReactBlendIn = 0.05f;
     this->AllowHitReactions = true;
-    this->SkeletalMesh = NULL;
+    this->SkeletalMesh = nullptr;
 }
 
 void UHitReactionComponent::PlayHitReaction() {
 }
 
-void UHitReactionComponent::OnDamageTaken(float amount) {
+void UHitReactionComponent::OnDamageTaken(float Amount) {
 }
 
 

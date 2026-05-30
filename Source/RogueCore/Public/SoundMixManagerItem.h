@@ -3,6 +3,7 @@
 #include "SoundMixManagerItem.generated.h"
 
 class USoundMix;
+
 USTRUCT(BlueprintType)
 struct FSoundMixManagerItem {
     GENERATED_BODY()
@@ -12,3 +13,4 @@ public:
     
     ROGUECORE_API FSoundMixManagerItem();
 };
+

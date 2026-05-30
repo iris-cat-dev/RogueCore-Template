@@ -9,17 +9,24 @@ class UFSDPhysicalMaterial;
 class UHealthComponentBase;
 class UPrimitiveComponent;
 class UStatusEffect;
+
 UCLASS(Blueprintable)
 class AAutoShotgun : public AMultiHitscanWeapon {
     GENERATED_BODY()
-    
-
 public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UStatusEffect> CQCKillBuff;
     
+public:
     AAutoShotgun(const FObjectInitializer& ObjectInitializer);
+
+protected:
     UFUNCTION(BlueprintCallable)
     void OnTargetKilled(AActor* Target, UFSDPhysicalMaterial* PhysicalMaterial, bool wasDirectHit);
-    void OnTargetDamaged(UHealthComponentBase* Health, float amount, UPrimitiveComponent* HitComponent, UFSDPhysicalMaterial* PhysicalMaterial);
+    
+    UFUNCTION(BlueprintCallable)
+    void OnTargetDamaged(UHealthComponentBase* Health, float Amount, UPrimitiveComponent* HitComponent, UFSDPhysicalMaterial* PhysicalMaterial);
+    
 };
+

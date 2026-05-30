@@ -3,6 +3,7 @@
 #include "ListenerEntry.generated.h"
 
 class UActorComponent;
+
 USTRUCT(BlueprintType)
 struct FListenerEntry {
     GENERATED_BODY()
@@ -12,3 +13,4 @@ public:
     
     ROGUECORE_API FListenerEntry();
 };
+

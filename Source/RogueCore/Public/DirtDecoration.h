@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameFramework/Actor.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
 #include "DirtQueryResult.h"
 #include "DirtDecoration.generated.h"
 
@@ -9,7 +9,9 @@ class ADirtDecoration : public AActor {
     GENERATED_BODY()
 public:
     ADirtDecoration(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveDirtQueryResult(const FDirtQueryResult& InQueryResult);
     
 };
+

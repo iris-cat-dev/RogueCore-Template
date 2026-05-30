@@ -19,7 +19,7 @@ ADetPack::ADetPack(const FObjectInitializer& ObjectInitializer) : Super(ObjectIn
     this->Explosion = CreateDefaultSubobject<UExplosionComponent>(TEXT("Explosion"));
     this->UseComp = CreateDefaultSubobject<USingleUsableComponent>(TEXT("UseComp"));
     this->SimpleHealth = CreateDefaultSubobject<USimpleHealthComponent>(TEXT("SimpleHealth"));
-    this->Detonator = NULL;
+    this->Detonator = nullptr;
     this->HasExploded = false;
     this->IsMoving = true;
     this->ExplodesOnDeath = false;

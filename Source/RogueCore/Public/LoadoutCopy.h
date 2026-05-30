@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "CharacterPerksSave.h"
+#include "CharacterEnhancementsSave.h"
 #include "CharacterVanityLoadout.h"
 #include "ItemLoadout.h"
 #include "UpgradeLoadout.h"
@@ -13,8 +13,15 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FItemLoadout ItemLoadout;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FUpgradeLoadout UpgradeLoadout;
-    FCharacterPerksSave PerkLoadout;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FCharacterEnhancementsSave PerkLoadout;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FCharacterVanityLoadout VanityLoadout;
+    
     ROGUECORE_API FLoadoutCopy();
 };
+

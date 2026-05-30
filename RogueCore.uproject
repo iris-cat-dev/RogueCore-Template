@@ -1,337 +1,49 @@
 {
 	"FileVersion": 3,
 	"EngineAssociation": "5.6",
-	"Category": "Games",
-	"Description": "RogueCore - Deep Rock Galactic inspired co-op game",
+	"Category": "",
+	"Description": "",
 	"Modules": [
-		{
-			"Name": "RogueCoreEngine",
-			"Type": "Runtime",
-			"LoadingPhase": "PostConfigInit"
-		},
 		{
 			"Name": "RogueCore",
 			"Type": "Runtime",
-			"LoadingPhase": "Default",
-			"AdditionalDependencies": [
-				"Engine",
-				"UMG",
-				"CoreUObject",
-				"AIModule",
-				"Slate",
-				"SlateCore",
-				"DiscordSDK"
-			]
+			"LoadingPhase": "Default"
+		},
+		{
+			"Name": "RogueCoreUtils",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		},
+		{
+			"Name": "RogueCoreOnlineServices",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		},
+		{
+			"Name": "RogueCoreEngine",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
 		}
 	],
 	"Plugins": [
-		{
-			"Name": "BasicUI",
-			"Enabled": true
-		},
-		{
-			"Name": "DiscordSDK",
-			"Enabled": true
-		},
-		{
-			"Name": "AnalyticsBlueprintLibrary",
-			"Enabled": true
-		},
-		{
-			"Name": "OnlineSubsystem",
-			"Enabled": true
-		},
-		{
-			"Name": "OnlineSubsystemSteam",
-			"Enabled": true
-		},
-		{
-			"Name": "Paper2D",
-			"Enabled": false
-		},
-		{
-			"Name": "LocationServicesBPLibrary",
-			"Enabled": false
-		},
-		{
-			"Name": "AndroidDeviceProfileSelector",
-			"Enabled": false
-		},
-		{
-			"Name": "IOSDeviceProfileSelector",
-			"Enabled": false
-		},
-		{
-			"Name": "LinuxDeviceProfileSelector",
-			"Enabled": false
-		},
-		{
-			"Name": "AndroidMedia",
-			"Enabled": false
-		},
-		{
-			"Name": "MobilePatchingUtils",
-			"Enabled": false
-		},
-		{
-			"Name": "OnlineSubsystemIOS",
-			"Enabled": false
-		},
-		{
-			"Name": "OnlineSubsystemGooglePlay",
-			"Enabled": false
-		},
-		{
-			"Name": "CustomMeshComponent",
-			"Enabled": false
-		},
-		{
-			"Name": "ProceduralMeshComponent",
-			"Enabled": false
-		},
-		{
-			"Name": "ArchVisCharacter",
-			"Enabled": false
-		},
-		{
-			"Name": "MobileLauncherProfileWizard",
-			"Enabled": false
-		},
-		{
-			"Name": "AndroidMoviePlayer",
-			"Enabled": false
-		},
-		{
-			"Name": "WindowsMoviePlayer",
-			"Enabled": true
-		},
-		{
-			"Name": "AppleMoviePlayer",
-			"Enabled": false
-		},
-		{
-			"Name": "CodeLiteSourceCodeAccess",
-			"Enabled": false
-		},
-		{
-			"Name": "XCodeSourceCodeAccess",
-			"Enabled": false
-		},
-		{
-			"Name": "GitSourceControl",
-			"Enabled": false
-		},
-		{
-			"Name": "SubversionSourceControl",
-			"Enabled": false
-		},
-		{
-			"Name": "GameplayTagsEditor",
-			"Enabled": true
-		},
-		{
-			"Name": "AndroidPermission",
-			"Enabled": false
-		},
-		{
-			"Name": "AppleARKit",
-			"Enabled": false
-		},
-		{
-			"Name": "GoogleCloudMessaging",
-			"Enabled": false
-		},
-		{
-			"Name": "KDevelopSourceCodeAccess",
-			"Enabled": false
-		},
-		{
-			"Name": "WebBrowserWidget",
-			"Enabled": false
-		},
-		{
-			"Name": "MfMedia",
-			"Enabled": true
-		},
-		{
-			"Name": "Spatialization",
-			"Enabled": true
-		},
-		{
-			"Name": "Synthesis",
-			"Enabled": true
-		},
-		{
-			"Name": "Niagara",
-			"Enabled": true
-		},
-		{
-			"Name": "EditorScriptingUtilities",
-			"Enabled": true
-		},
-		{
-			"Name": "SteamSockets",
-			"Enabled": true
-		},
-		{
-			"Name": "PS5_Mock",
-			"Enabled": false
-		},
-		{
-			"Name": "FSDRawInput",
-			"Enabled": true
-		},
-		{
-			"Name": "AppleImageUtils",
-			"Enabled": false
-		},
-		{
-			"Name": "ChaosClothEditor",
-			"Enabled": false
-		},
-		{
-			"Name": "ChaosEditor",
-			"Enabled": false
-		},
-		{
-			"Name": "ChaosSolverPlugin",
-			"Enabled": false
-		},
-		{
-			"Name": "EnvironmentQueryEditor",
-			"Enabled": false
-		},
-		{
-			"Name": "GooglePAD",
-			"Enabled": false
-		},
-		{
-			"Name": "TraceSourceFilters",
-			"Enabled": true
-		},
-		{
-			"Name": "OpenXRHandTracking",
-			"Enabled": false,
-			"SupportedTargetPlatforms": [
-				"Win32",
-				"Win64",
-				"Linux",
-				"HoloLens",
-				"Android"
-			]
-		},
-		{
-			"Name": "MacGraphicsSwitching",
-			"Enabled": false
-		},
-		{
-			"Name": "MotoSynth",
-			"Enabled": false
-		},
-		{
-			"Name": "PlasticSourceControl",
-			"Enabled": false
-		},
-		{
-			"Name": "SlateInsights",
-			"Enabled": true
-		},
-		{
-			"Name": "SpeedTreeImporter",
-			"Enabled": false
-		},
-		{
-			"Name": "XGEController",
-			"Enabled": false
-		},
-		{
-			"Name": "DLSS",
-			"Enabled": true,
-			"MarketplaceURL": "https://www.unrealengine.com/marketplace/en-US/product/nvidia-dlss"
-		},
-		{
-			"Name": "ControlRig",
-			"Enabled": true
-		},
-		{
-			"Name": "TemplateSequence",
-			"Enabled": true
-		},
-		{
-			"Name": "FullBodyIK",
-			"Enabled": true
-		},
 		{
 			"Name": "AudioModulation",
 			"Enabled": true
 		},
 		{
-			"Name": "BugReporter",
+			"Name": "BinkMedia",
 			"Enabled": true
 		},
 		{
-			"Name": "AnimationPreviewTool",
-			"Enabled": true
-		},
-		{
-			"Name": "GameLauncher",
-			"Enabled": true
-		},
-		{
-			"Name": "FSR3",
+			"Name": "ModelingToolsEditorMode",
 			"Enabled": true,
-			"SupportedTargetPlatforms": [
-				"Win64"
+			"TargetAllowList": [
+				"Editor"
 			]
 		},
 		{
-			"Name": "NIS",
-			"Enabled": true,
-			"MarketplaceURL": "https://www.unrealengine.com/marketplace/en-US/product/nvidia-dlss"
-		},
-		{
-			"Name": "StreamlineDLSSG",
-			"Enabled": true,
-			"MarketplaceURL": "https://www.unrealengine.com/marketplace/en-US/product/nvidia-dlss"
-		},
-		{
-			"Name": "Streamline",
-			"Enabled": true,
-			"MarketplaceURL": "https://www.unrealengine.com/marketplace/en-US/product/nvidia-dlss"
-		},
-		{
-			"Name": "StreamlineCore",
-			"Enabled": true,
-			"MarketplaceURL": "https://www.unrealengine.com/marketplace/en-US/product/nvidia-dlss"
-		},
-		{
-			"Name": "StreamlineDeepDVC",
-			"Enabled": true,
-			"MarketplaceURL": "https://www.unrealengine.com/marketplace/en-US/product/nvidia-dlss"
-		},
-		{
-			"Name": "DLSSMoviePipelineSupport",
-			"Enabled": true,
-			"MarketplaceURL": "https://www.unrealengine.com/marketplace/en-US/product/nvidia-dlss"
-		},
-		{
-			"Name": "StreamlineReflex",
-			"Enabled": true,
-			"MarketplaceURL": "https://www.unrealengine.com/marketplace/en-US/product/nvidia-dlss"
-		},
-		{
-			"Name": "FunctionalTestingEditor",
+			"Name": "TemplateSequence",
 			"Enabled": true
 		}
-	],
-	"TargetPlatforms": [
-		"Windows",
-		"PS4",
-		"PS5",
-		"Sony",
-		"WinGDK",
-		"XboxOneGDK",
-		"XSX",
-		"WindowsNoEditor"
 	]
 }

@@ -2,11 +2,8 @@
 #include "Net/UnrealNetwork.h"
 
 UEquipItemAbility::UEquipItemAbility(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->ItemToEquip = NULL;
+    this->ItemToEquip = nullptr;
     this->EquipOnDeactivate = false;
-}
-
-void UEquipItemAbility::OnRep_ItemInstance() {
 }
 
 void UEquipItemAbility::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const {

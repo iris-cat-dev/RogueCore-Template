@@ -1,7 +1,7 @@
 #include "SpawnLogSubsystem.h"
 
 USpawnLogSubsystem::USpawnLogSubsystem() {
-    this->CurrentLogger = NULL;
+    this->CurrentLogger = nullptr;
 }
 
 

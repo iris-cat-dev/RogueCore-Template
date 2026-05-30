@@ -1,7 +1,7 @@
 #include "RunHistoryManager.h"
 
 URunHistoryManager::URunHistoryManager() {
-    this->CharacterBuildDataUtil = NULL;
+    this->CharacterBuildDataUtil = nullptr;
     this->HasSavedRecentRun = false;
 }
 

@@ -9,3 +9,4 @@ enum class ETerminatorShoutState : uint8 {
     EDeath,
     EAttacking,
 };
+

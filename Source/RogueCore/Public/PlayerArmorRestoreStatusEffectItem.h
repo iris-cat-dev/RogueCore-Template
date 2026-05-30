@@ -7,11 +7,13 @@
 UCLASS(Blueprintable, EditInlineNew)
 class UPlayerArmorRestoreStatusEffectItem : public UStatusEffectItem {
     GENERATED_BODY()
-    
-
 public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FRandRange ChangeAmount;
     
+public:
     UPlayerArmorRestoreStatusEffectItem();
+
 };
+

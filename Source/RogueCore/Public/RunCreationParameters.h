@@ -29,6 +29,9 @@ public:
     int32 RunSeedOverride;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 StageSeedOverride;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 ActiveStageOverride;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -60,3 +63,4 @@ public:
     
     ROGUECORE_API FRunCreationParameters();
 };
+

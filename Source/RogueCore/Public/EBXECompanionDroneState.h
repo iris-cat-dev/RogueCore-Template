@@ -20,3 +20,4 @@ enum class EBXECompanionDroneState : uint8 {
     TakeoffToFollow,
     TakeoffToDeposit,
 };
+

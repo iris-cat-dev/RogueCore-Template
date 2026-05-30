@@ -1,7 +1,7 @@
 #include "EncounterSpecialItem.h"
 
 FEncounterSpecialItem::FEncounterSpecialItem() {
-    this->Enemy = NULL;
+    this->Enemy = nullptr;
     this->BaseChance = 0.00f;
     this->CanSpawnInDeepDive = false;
 }

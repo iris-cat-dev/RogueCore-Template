@@ -8,3 +8,4 @@ enum class EPointVisibility : uint8 {
     BehindPlanet,
     OutOfScreen,
 };
+

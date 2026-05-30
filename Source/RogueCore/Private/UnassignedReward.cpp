@@ -1,7 +1,7 @@
 #include "UnassignedReward.h"
 
 FUnassignedReward::FUnassignedReward() {
-    this->Reward = NULL;
+    this->Reward = nullptr;
     this->Index = 0;
 }
 

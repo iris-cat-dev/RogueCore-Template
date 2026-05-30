@@ -8,4 +8,6 @@ class UCriticalHitCondition : public UDamageCondition {
     GENERATED_BODY()
 public:
     UCriticalHitCondition();
+
 };
+

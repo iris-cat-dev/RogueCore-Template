@@ -5,6 +5,7 @@
 
 class UPlayerCharacterID;
 class UVanityItem;
+
 UCLASS(Abstract, Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class UVanityItemRewarder : public UTreasureRewarder {
     GENERATED_BODY()
@@ -12,6 +13,10 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     UVanityItem* GivenVanityItem;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     UPlayerCharacterID* GivenCharacterID;
+    
     UVanityItemRewarder(const FObjectInitializer& ObjectInitializer);
+
 };
+

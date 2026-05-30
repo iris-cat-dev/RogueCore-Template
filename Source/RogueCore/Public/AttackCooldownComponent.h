@@ -1,24 +1,31 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Components/ActorComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
 #include "AttackCooldown.h"
 #include "AttackCooldownComponent.generated.h"
 
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class ROGUECORE_API UAttackCooldownComponent : public UActorComponent {
     GENERATED_BODY()
-    
-
 public:
- 
+private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FAttackCooldown> AttackCooldowns;
     
+public:
     UAttackCooldownComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void SetCooldown(const FName& AttackName, float cooldownSeconds);
+    
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsAttackOffCooldown(const FName& AttackName) const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsAnyAttackOffCooldown() const;
+    
+    UFUNCTION(BlueprintCallable)
     void AttackUsed(const FName& Name);
+    
 };
+

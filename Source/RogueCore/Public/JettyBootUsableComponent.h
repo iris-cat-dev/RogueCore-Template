@@ -5,16 +5,20 @@
 
 class APlayerCharacter;
 class UMissionStat;
+
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class ROGUECORE_API UJettyBootUsableComponent : public USingleUsableComponent {
     GENERATED_BODY()
-    
-
 public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 CreditPrice;
     
+public:
     UJettyBootUsableComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     bool DeductCredits(APlayerCharacter* User, UMissionStat* InCreditCounter);
+    
 };
+

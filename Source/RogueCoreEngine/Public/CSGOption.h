@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "CSGOption.generated.h"
 
 USTRUCT(BlueprintType)
@@ -9,15 +9,16 @@ struct ROGUECOREENGINE_API FCSGOption {
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName Key;
-
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    int32 IntValue = 0;
-
+    int32 IntValue;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float FloatValue = 0.0f;
-
+    float FloatValue;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FVector VectorValue = FVector::ZeroVector;
-
+    FVector VectorValue;
+    
+    FCSGOption();
 };
 

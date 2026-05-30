@@ -5,10 +5,10 @@ AJetBootsBoxSpawner::AJetBootsBoxSpawner(const FObjectInitializer& ObjectInitial
     const FProperty* p_RemoteRole = GetClass()->FindPropertyByName("RemoteRole");
     (*p_RemoteRole->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(this)) = ROLE_SimulatedProxy;
     this->MaxSpawnLocationTries = 10;
-    this->DebrisPositioning = NULL;
-    this->terrainPlacement = NULL;
-    this->JetBootsBoxInstance = NULL;
-    this->JetBootsBoxClassLoaded = NULL;
+    this->DebrisPositioning = nullptr;
+    this->terrainPlacement = nullptr;
+    this->JetBootsBoxInstance = nullptr;
+    this->JetBootsBoxClassLoaded = nullptr;
 }
 
 

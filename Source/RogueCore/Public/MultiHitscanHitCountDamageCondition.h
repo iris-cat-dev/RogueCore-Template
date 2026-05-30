@@ -6,11 +6,16 @@
 UCLASS(Blueprintable, EditInlineNew)
 class UMultiHitscanHitCountDamageCondition : public UDamageCondition {
     GENERATED_BODY()
-    
-
 public:
+protected:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FString RequiredHitCountName;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 RequiredHitCount;
     
+public:
     UMultiHitscanHitCountDamageCondition();
+
 };
+

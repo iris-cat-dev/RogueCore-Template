@@ -5,24 +5,35 @@
 
 class UHealthComponent;
 class USimpleObjectInfoComponent;
+
 UCLASS(Abstract, Blueprintable)
 class ROGUECORE_API AMULE : public ADeepPathfinderCharacter {
     GENERATED_BODY()
-    
-
 public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UHealthComponent* HealthComponent;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USimpleObjectInfoComponent* ObjectInfo;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_IsDown, meta=(AllowPrivateAccess=true))
     bool IsDown;
+    
+public:
     AMULE(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+
     UFUNCTION(BlueprintCallable)
     void SetIsDown(bool NewIsDown);
+    
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void SetControlledByDropShip(bool Control);
-    UFUNCTION()
+    
+protected:
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnRep_IsDown();
+    
 };
+

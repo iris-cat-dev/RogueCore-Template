@@ -7,8 +7,8 @@ UMissionDNA::UMissionDNA() {
     this->XpPerStage = 200;
     this->XpPerStageNumberMultiplier = 0.50f;
     this->ExtraStageTime = 0.00f;
-    this->Complexity = NULL;
-    this->Duration = NULL;
+    this->Complexity = nullptr;
+    this->duration = nullptr;
 }
 
 float UMissionDNA::GetDurationHazardBonus() const {

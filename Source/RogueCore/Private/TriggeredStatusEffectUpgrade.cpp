@@ -2,10 +2,10 @@
 #include "Templates/SubclassOf.h"
 
 UTriggeredStatusEffectUpgrade::UTriggeredStatusEffectUpgrade() {
-    this->StatusEffect = NULL;
+    this->StatusEffect = nullptr;
     this->upgradeType = ETriggeredStatusEffectType::ShieldDestroyed;
     this->AoERange = 0.00f;
-    this->OwnerEffect = NULL;
+    this->OwnerEffect = nullptr;
 }
 
 void UTriggeredStatusEffectUpgrade::OnEffectShouldTrigger(AActor* PlayerCharacter) {

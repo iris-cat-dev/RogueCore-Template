@@ -1,18 +1,21 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Engine/DataAsset.h"
-#include "SystemSettings.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
+#include "NiagaraSystemSettings.h"
 #include "InstancedNiagaraSettings.generated.h"
 
 class UNiagaraSystem;
+
 UCLASS(Blueprintable)
 class UInstancedNiagaraSettings : public UDataAsset {
     GENERATED_BODY()
-    
-
 public:
-    //UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    //TMap<UNiagaraSystem*, FRogueSystemSettings> SystemSettings;
+protected:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TMap<UNiagaraSystem*, FNiagaraSystemSettings> SystemSettings;
     
+public:
     UInstancedNiagaraSettings();
+
 };
+

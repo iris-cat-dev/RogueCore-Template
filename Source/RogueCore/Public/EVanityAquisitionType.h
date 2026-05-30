@@ -9,3 +9,4 @@ enum class EVanityAquisitionType : uint8 {
     Schematic,
     Treasure,
 };
+

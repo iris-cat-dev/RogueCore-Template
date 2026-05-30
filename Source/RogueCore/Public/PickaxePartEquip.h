@@ -1,13 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/Interface.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Interface -FallbackName=Interface
 #include "PickaxePartEquip.generated.h"
 
 UINTERFACE()
-class ROGUECORE_API UPickaxePartEquip : public UInterface {
-	GENERATED_BODY()
+class UPickaxePartEquip : public UInterface {
+    GENERATED_BODY()
 };
-class ROGUECORE_API IPickaxePartEquip : public IInterface {
-	GENERATED_BODY()
+
+class IPickaxePartEquip : public IInterface {
+    GENERATED_BODY()
 public:
 };
+

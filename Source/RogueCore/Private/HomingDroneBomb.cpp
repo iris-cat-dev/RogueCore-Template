@@ -4,7 +4,7 @@
 
 AHomingDroneBomb::AHomingDroneBomb(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->Health = CreateDefaultSubobject<UEnemyHealthComponent>(TEXT("Health"));
-    this->ArmingSound = NULL;
+    this->ArmingSound = nullptr;
     this->HomingUpdateInterval = 3.00f;
     this->TargetSearchInterval = 0.50f;
     this->ArmTime = 2.00f;

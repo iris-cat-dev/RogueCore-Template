@@ -27,4 +27,6 @@ protected:
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnHover();
+    
 };
+

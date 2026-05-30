@@ -8,3 +8,4 @@ enum class EIndicatorMode : uint8 {
     EFlashing,
     EOff,
 };
+

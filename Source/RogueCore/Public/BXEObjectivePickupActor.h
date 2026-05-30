@@ -5,6 +5,7 @@
 
 class UBXEObjectiveLostDronesTreasure;
 class UTerrainScannerStaticMesh;
+
 UCLASS(Blueprintable)
 class ABXEObjectivePickupActor : public AFSDPhysicsActor {
     GENERATED_BODY()
@@ -14,7 +15,11 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
     UBXEObjectiveLostDronesTreasure* Objective;
+    
     ABXEObjectivePickupActor(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void RewardObtained();
+    
 };
+

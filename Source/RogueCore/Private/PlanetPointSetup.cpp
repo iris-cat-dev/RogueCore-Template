@@ -1,8 +1,8 @@
 #include "PlanetPointSetup.h"
 
 FPlanetPointSetup::FPlanetPointSetup() {
-    this->Biome = NULL;
-    this->MeshComponent = NULL;
-    this->NamePoint = NULL;
+    this->Biome = nullptr;
+    this->MeshComponent = nullptr;
+    this->NamePoint = nullptr;
 }
 

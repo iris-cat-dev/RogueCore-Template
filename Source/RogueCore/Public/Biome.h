@@ -1,15 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-
-#include "Engine/DataAsset.h"
-#include "Runtime/Engine/Classes/Sound/ReverbSettings.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Color -FallbackName=Color
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=SoftObjectPath -FallbackName=SoftObjectPath
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ReverbSettings -FallbackName=ReverbSettings
 #include "BiomeEnemyEntry.h"
 #include "BiomeNoiseItem.h"
 #include "HeatSource.h"
-#include "LoadingScreenInfo.h"
 #include "RandRange.h"
 #include "ResourceSpawner.h"
-#include "Templates/SubclassOf.h"
 #include "Biome.generated.h"
 
 class AActor;
@@ -31,12 +30,12 @@ class USoundCue;
 class UTerrainMaterial;
 class UTexture2D;
 class UTunnelSetting;
-class UUserWidget;
 
 UCLASS(Blueprintable)
 class ROGUECORE_API UBiome : public UDataAsset {
     GENERATED_BODY()
 public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FText BiomeName;
     
@@ -51,9 +50,6 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 BiomeIndex;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FString BiomeAnalyticsIndex;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool IsTutorialBiome;
@@ -78,9 +74,6 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftObjectPtr<UTexture2D> BiomeMissionBar;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TSoftClassPtr<UUserWidget> BiomeMapWidget;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FHeatSource BiomeHeatSource;
@@ -122,7 +115,7 @@ public:
     TArray<FBiomeNoiseItem> RoomNoises;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    UMissionStat* MissionCompleted;
+    UMissionStat* CompletedStat;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UFloodFillSettings* CeilingNoise;
@@ -209,12 +202,6 @@ public:
     TSoftObjectPtr<USoundCue> TunnelAmbience;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FLoadingScreenInfo BiomeLoaderLevelSequence;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FString BiomeLoaderLevelName;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FText> Quotes;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -257,9 +244,6 @@ public:
     UTexture2D* GetBiomeMissionBar() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    TSubclassOf<UUserWidget> GetBiomeMapWidget() const;
-    
-    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<FSoftObjectPath> GetBiomeMapAssetList() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -273,9 +257,6 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     UTexture2D* GetBiomeIcon() const;
-    
-    UFUNCTION(BlueprintCallable, BlueprintPure)
-    FString GetBiomeAnalyticsIndex() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     UFXSystemAsset* GetAtmosphericParticles() const;

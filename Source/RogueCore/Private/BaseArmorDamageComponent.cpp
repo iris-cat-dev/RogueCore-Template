@@ -2,7 +2,7 @@
 
 UBaseArmorDamageComponent::UBaseArmorDamageComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->ArmorDamageEnabled = true;
-    this->mesh = NULL;
+    this->mesh = nullptr;
 }
 
 

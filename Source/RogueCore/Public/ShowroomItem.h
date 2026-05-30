@@ -1,9 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameFramework/Actor.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
 #include "ShowroomItem.generated.h"
 
 class AShowroomStage;
+
 UCLASS(Abstract, Blueprintable)
 class AShowroomItem : public AActor {
     GENERATED_BODY()
@@ -12,4 +13,6 @@ public:
     TSoftClassPtr<AShowroomStage> ShowroomStage;
     
     AShowroomItem(const FObjectInitializer& ObjectInitializer);
+
 };
+

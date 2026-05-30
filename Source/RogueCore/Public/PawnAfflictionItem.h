@@ -3,6 +3,7 @@
 #include "PawnAfflictionItem.generated.h"
 
 class UAfflictionEffect;
+
 USTRUCT(BlueprintType)
 struct FPawnAfflictionItem {
     GENERATED_BODY()
@@ -12,3 +13,4 @@ public:
     
     ROGUECORE_API FPawnAfflictionItem();
 };
+

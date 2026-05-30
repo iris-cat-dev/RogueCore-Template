@@ -7,14 +7,14 @@ USTRUCT(BlueprintType)
 struct FMissionStatSave {
     GENERATED_BODY()
 public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FMissionStatCounter> Counters;
-
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bCharacterLevelUpFixed;
-    bool bBoughtVanityItemsFixed;
-    bool bBoughtEquipmentUpgradesFixed;
-    bool bCampaignsCompletedFixed;
-    bool WeaponUpgradesFixed;
+    
+public:
     ROGUECORE_API FMissionStatSave();
- 
 };
+

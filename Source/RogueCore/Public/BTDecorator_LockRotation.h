@@ -8,4 +8,6 @@ class ROGUECORE_API UBTDecorator_LockRotation : public UBTDecorator {
     GENERATED_BODY()
 public:
     UBTDecorator_LockRotation();
+
 };
+

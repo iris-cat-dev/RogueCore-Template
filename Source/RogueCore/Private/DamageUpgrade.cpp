@@ -3,11 +3,12 @@
 
 UDamageUpgrade::UDamageUpgrade() {
     this->upgradeType = EDamageUpgrade::Damage;
-    this->DamageComponentType = EDamageComponentType::Primary;
-    this->RequiredClass = NULL;
+    this->DamageType = nullptr;
+    this->DamageMethod = EDamageMethod::Direct;
+    this->RequiredClass = nullptr;
 }
 
-FUpgradeValues UDamageUpgrade::GetUpgradedValue(TSubclassOf<AActor> Item, TSubclassOf<AActor> upgradedItem, AFSDPlayerState* Player, EDamageUpgrade NewUpgradeType, EDamageComponentType NewDamageComponentType) {
+FUpgradeValues UDamageUpgrade::GetUpgradedValue(const TSubclassOf<AActor> Item, const TSubclassOf<AActor> upgradedItem, AFSDPlayerState* Player, const EDamageUpgrade NewUpgradeType, const UDamageAsset* DamageAsset, const UDamageClass* NewDamageType, const EDamageMethod NewDamageMethod) {
     return FUpgradeValues{};
 }
 

@@ -2,5 +2,6 @@
 
 FFacilityGeneratorEnounter::FFacilityGeneratorEnounter() {
     this->Difficulty = 0.00f;
+    this->Diversity = FRandInterval();
 }
 

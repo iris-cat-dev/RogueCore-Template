@@ -4,6 +4,7 @@
 
 class IBlendableInterface;
 class UBlendableInterface;
+
 USTRUCT(BlueprintType)
 struct FPostProcessingBlendable {
     GENERATED_BODY()
@@ -13,3 +14,4 @@ public:
     
     ROGUECORE_API FPostProcessingBlendable();
 };
+

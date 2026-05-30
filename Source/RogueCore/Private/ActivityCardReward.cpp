@@ -1,7 +1,7 @@
 #include "ActivityCardReward.h"
 
 UActivityCardReward::UActivityCardReward() {
-    this->Activity = NULL;
+    this->Activity = nullptr;
 }
 
 

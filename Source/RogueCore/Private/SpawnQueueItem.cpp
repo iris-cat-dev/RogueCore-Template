@@ -1,6 +1,8 @@
 #include "SpawnQueueItem.h"
 
 FSpawnQueueItem::FSpawnQueueItem() {
-    this->Enemy = NULL;
+    this->Enemy = nullptr;
+    this->EnemyClass = nullptr;
+    this->Callback = FEnemySpawnedDelegate();
 }
 

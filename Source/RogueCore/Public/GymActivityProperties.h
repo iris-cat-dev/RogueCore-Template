@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Engine/DataAsset.h"
-#include "EGymDifficulty.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
 #include "GymActivityProperties.generated.h"
 
 class UAnimSequence;
 class UGymActivityStats;
 class UResourceData;
-class USoundCue;
+class USoundBase;
 class UTexture2D;
+
 UCLASS(Blueprintable)
 class UGymActivityProperties : public UDataAsset {
     GENERATED_BODY()
@@ -16,27 +16,61 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UAnimSequence* AnimStart;
     
-    UAnimSequence* AnimIdleUp;
-    UAnimSequence* AnimIdleDown;
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UAnimSequence* AnimGoingUp;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UAnimSequence* AnimGoingDown;
-    UAnimSequence* AnimFailUp;
-    UAnimSequence* AnimFailDown;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UAnimSequence* AnimEnd;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UAnimSequence* AnimAdditiveStruggleUp;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UAnimSequence* AnimAdditiveStruggleDown;
-    USoundCue* PointSound;
-    USoundCue* SuccessSound;
-    USoundCue* FailSound;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    USoundBase* PointSound;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    USoundBase* SuccessSound;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    USoundBase* FailSound;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UResourceData* CurrencyType;
-    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
-    EGymDifficulty BaseDifficulty;
-    EGymDifficulty MaxDifficulty;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 BaseDifficulty;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 MaxDifficulty;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UTexture2D* GymIcon;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FString> GymName;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UTexture2D* GymIconRAW;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool SingleMotion;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool ConstantSpeed;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool AlternativeVersion;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UGymActivityStats* GymActivityStats;
+    
     UGymActivityProperties();
+
 };
+

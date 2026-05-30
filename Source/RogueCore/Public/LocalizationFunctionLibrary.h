@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Kismet/BlueprintFunctionLibrary.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
 #include "LocalizedLanguageInfo.h"
 #include "LocalizationFunctionLibrary.generated.h"
 
@@ -9,7 +9,9 @@ class ULocalizationFunctionLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     ULocalizationFunctionLibrary();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static TArray<FLocalizedLanguageInfo> GetLocalizedLanguages();
     
 };
+

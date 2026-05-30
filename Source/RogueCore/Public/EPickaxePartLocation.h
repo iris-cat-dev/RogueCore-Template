@@ -13,3 +13,4 @@ enum class EPickaxePartLocation : uint8 {
     Material,
     Count,
 };
+

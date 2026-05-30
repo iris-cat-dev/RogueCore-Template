@@ -1,7 +1,7 @@
 #include "SDFSingleChildBase.h"
 
 USDFSingleChildBase::USDFSingleChildBase() {
-    this->Child = NULL;
+    this->Child = nullptr;
 }
 
 

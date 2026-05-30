@@ -1,8 +1,8 @@
 #include "OverclockShematicItem.h"
 
 UOverclockShematicItem::UOverclockShematicItem() {
-    this->OwningItem = NULL;
-    this->Overclock = NULL;
+    this->OwningItem = nullptr;
+    this->Overclock = nullptr;
 }
 
 UUpgradableGearComponent* UOverclockShematicItem::GetOwningGearComponent() const {

@@ -7,3 +7,4 @@ enum class ERunHistoryNetMessageDataType : uint8 {
     DamageData,
     RunHistory,
 };
+

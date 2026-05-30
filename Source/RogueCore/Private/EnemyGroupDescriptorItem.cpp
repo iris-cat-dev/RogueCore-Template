@@ -1,6 +1,6 @@
 #include "EnemyGroupDescriptorItem.h"
 
 FEnemyGroupDescriptorItem::FEnemyGroupDescriptorItem() {
-    this->EnemyDescriptor = NULL;
+    this->EnemyDescriptor = nullptr;
 }
 

@@ -9,3 +9,4 @@ enum class EVacuumState : uint8 {
     EFalling,
     EDead,
 };
+

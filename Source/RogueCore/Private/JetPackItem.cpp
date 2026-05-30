@@ -3,7 +3,7 @@
 
 AJetPackItem::AJetPackItem(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->ActiveTime = 0.00f;
-    this->VerticalAccelerationCurve = NULL;
+    this->VerticalAccelerationCurve = nullptr;
     this->VerticalAcceleration = 25.00f;
     this->MaxVerticalSpeed = 300.00f;
     this->MaxHorizontalSpeed = 300.00f;
@@ -12,21 +12,13 @@ AJetPackItem::AJetPackItem(const FObjectInitializer& ObjectInitializer) : Super(
     this->RechargeDuration = 10.00f;
     this->Fuel = 1.00f;
     this->Active = false;
-    this->CharacterMovement = NULL;
+    this->CharacterMovement = nullptr;
 }
 
 void AJetPackItem::Server_StopThruster_Implementation() {
 }
 
-bool AJetPackItem::Server_StopThruster_Validate() {
-    return true;
-}
-
 void AJetPackItem::Server_StartThruster_Implementation() {
-}
-
-bool AJetPackItem::Server_StartThruster_Validate() {
-    return true;
 }
 
 void AJetPackItem::OnRep_Fuel(float OldFuel) {

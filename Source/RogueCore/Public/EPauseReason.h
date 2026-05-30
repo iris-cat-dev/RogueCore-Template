@@ -7,4 +7,6 @@ enum class EPauseReason : uint8 {
     Invalid,
     MenuActive,
     ReconnectController,
+    Negotiation = 4,
 };
+

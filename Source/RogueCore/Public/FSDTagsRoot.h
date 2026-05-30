@@ -11,6 +11,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FFSDTagsAttitude Attitude;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FFSDTagsSurfaceProperties SurfaceProperties;
+    
     ROGUECORE_API FFSDTagsRoot();
 };
+

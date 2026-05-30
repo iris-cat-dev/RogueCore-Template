@@ -2,6 +2,6 @@
 
 FBinaryMatProperties::FBinaryMatProperties() {
     this->Result = EBinaryComb::Empty;
-    this->Material = NULL;
+    this->Material = nullptr;
 }
 

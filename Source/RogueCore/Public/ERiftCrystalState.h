@@ -13,3 +13,4 @@ enum ERiftCrystalState {
     DeathDisplay,
     Dead,
 };
+

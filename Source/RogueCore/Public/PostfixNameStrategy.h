@@ -8,4 +8,6 @@ class ROGUECORE_API UPostfixNameStrategy : public USimpleNameStrategy {
     GENERATED_BODY()
 public:
     UPostfixNameStrategy();
+
 };
+

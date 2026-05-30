@@ -1,11 +1,11 @@
 #include "TunnelSettings.h"
 
 UTunnelSettings::UTunnelSettings() {
-    this->Material = NULL;
-    this->PathfinderNoise = NULL;
-    this->CielingNoise = NULL;
-    this->WallNoise = NULL;
-    this->FloorNoise = NULL;
+    this->Material = nullptr;
+    this->PathfinderNoise = nullptr;
+    this->CielingNoise = nullptr;
+    this->WallNoise = nullptr;
+    this->FloorNoise = nullptr;
 }
 
 

@@ -3,7 +3,7 @@
 
 AResourcePouch::AResourcePouch(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->usable = CreateDefaultSubobject<UCarriableInstantUsable>(TEXT("usable"));
-    this->ImpactGroundSound = NULL;
+    this->ImpactGroundSound = nullptr;
 }
 
 void AResourcePouch::ActorWasHit(AActor* SelfActor, AActor* OtherActor, FVector NormalImpulse, const FHitResult& Hit) {

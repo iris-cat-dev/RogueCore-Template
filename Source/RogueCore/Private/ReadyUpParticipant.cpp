@@ -2,5 +2,6 @@
 
 FReadyUpParticipant::FReadyUpParticipant() {
     this->bIsReady = false;
+    this->PlayerState = nullptr;
 }
 

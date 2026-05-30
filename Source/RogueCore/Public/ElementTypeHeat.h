@@ -8,4 +8,6 @@ class UElementTypeHeat : public UElementType {
     GENERATED_BODY()
 public:
     UElementTypeHeat();
+
 };
+

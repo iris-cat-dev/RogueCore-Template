@@ -1,11 +1,14 @@
 #include "RunTemplate.h"
 
 URunTemplate::URunTemplate() {
+    this->Type = ERunType::Default;
     this->IsUnlockedFromStart = false;
-    this->DefaultStageTemplate = NULL;
+    this->DefaultStageTemplate = nullptr;
+    this->DeepCoreBiome = nullptr;
+    this->StagesLeftWhenDeepCoreStarts = 1;
     this->TutorialDepth = ERunDepth::None;
-    this->TutorialDNA = NULL;
-    this->TutorialMutator = NULL;
+    this->TutorialDNA = nullptr;
+    this->TutorialMutator = nullptr;
     this->HazardBonusDepth1 = 1.00f;
     this->HazardBonusDepth2 = 1.00f;
     this->HazardBonusDepth3 = 1.00f;
@@ -14,22 +17,22 @@ URunTemplate::URunTemplate() {
     this->LevelTimeScaleDepth2 = 1.00f;
     this->LevelTimeScaleDepth3 = 1.00f;
     this->LevelTimeScaleDepth4 = 1.00f;
-    this->BaseDifficultyDepth1 = NULL;
-    this->BaseDifficultyDepth2 = NULL;
-    this->BaseDifficultyDepth3 = NULL;
-    this->BaseDifficultyDepth4 = NULL;
-    this->StageLayoutForDepth1 = NULL;
-    this->StageLayoutForDepth2 = NULL;
-    this->StageLayoutForDepth3 = NULL;
-    this->StageLayoutForDepth4 = NULL;
-    this->CompletedRunStatDepth1 = NULL;
-    this->CompletedRunStatDepth2 = NULL;
-    this->CompletedRunStatDepth3 = NULL;
-    this->CompletedRunStatDepth4 = NULL;
+    this->BaseDifficultyDepth1 = nullptr;
+    this->BaseDifficultyDepth2 = nullptr;
+    this->BaseDifficultyDepth3 = nullptr;
+    this->BaseDifficultyDepth4 = nullptr;
+    this->StageLayoutForDepth1 = nullptr;
+    this->StageLayoutForDepth2 = nullptr;
+    this->StageLayoutForDepth3 = nullptr;
+    this->StageLayoutForDepth4 = nullptr;
 }
 
 TArray<FSecondaryObjective> URunTemplate::GetSecondaryObjectivesForDepth(const ERunDepth Depth) const {
     return TArray<FSecondaryObjective>();
+}
+
+ERunType URunTemplate::GetRunType() const {
+    return ERunType::Default;
 }
 
 TArray<FPrimaryObjective> URunTemplate::GetPrimaryObjectivesForDepth(const ERunDepth Depth) const {
@@ -40,20 +43,12 @@ float URunTemplate::GetLevelTimeScalingForDepth(const ERunDepth Depth) const {
     return 0.0f;
 }
 
-FObjectiveMissionIcon URunTemplate::GetIconForDepth(const ERunDepth Depth) const {
-    return FObjectiveMissionIcon{};
-}
-
 float URunTemplate::GetHazardBonusForDepth(const ERunDepth Depth) const {
     return 0.0f;
 }
 
 TArray<FExpeniteObjective> URunTemplate::GetExpeniteObjectivesForDepth(const ERunDepth Depth) const {
     return TArray<FExpeniteObjective>();
-}
-
-UMissionStat* URunTemplate::GetCompletedRunStatForDepth(const ERunDepth Depth) const {
-    return NULL;
 }
 
 UDifficultySetting* URunTemplate::GetBaseDifficultyForDepth(const ERunDepth Depth) const {

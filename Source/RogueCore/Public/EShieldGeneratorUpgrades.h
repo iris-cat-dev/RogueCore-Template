@@ -11,3 +11,4 @@ enum class EShieldGeneratorUpgrades : uint8 {
     RechargeCount,
     PushStatusEffect,
 };
+

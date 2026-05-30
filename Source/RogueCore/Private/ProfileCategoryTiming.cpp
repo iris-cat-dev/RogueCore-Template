@@ -2,5 +2,6 @@
 
 FProfileCategoryTiming::FProfileCategoryTiming() {
     this->CategoryTime = 0.00f;
+    this->CategoryName = FString();
 }
 

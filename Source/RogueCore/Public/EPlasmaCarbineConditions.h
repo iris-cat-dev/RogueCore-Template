@@ -6,3 +6,4 @@ UENUM(BlueprintType)
 enum class EPlasmaCarbineConditions : uint8 {
     ShieldRemovedOnReload,
 };
+

@@ -2,10 +2,10 @@
 #include "Templates/SubclassOf.h"
 
 UUpgradableGearComponent::UUpgradableGearComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->ItemData = NULL;
-    this->IconLine = NULL;
-    this->IconBG = NULL;
-    this->IconDetailed = NULL;
+    this->ItemData = nullptr;
+    this->IconLine = nullptr;
+    this->IconBG = nullptr;
+    this->IconDetailed = nullptr;
     this->CreditCost = 0;
     this->RequiredCharacterLevel = 0;
 }
@@ -169,9 +169,6 @@ TArray<UItemUpgrade*> UUpgradableGearComponent::GetAllUpgrades() const {
 }
 
 void UUpgradableGearComponent::ClearEquippedUpgrade(TSubclassOf<AActor> itemClass, int32 tierIndex, AFSDPlayerState* Player) {
-}
-
-void UUpgradableGearComponent::CheckMasteryUnlocks(UItemID* ItemID, AFSDPlayerController* Player) {
 }
 
 bool UUpgradableGearComponent::CanAffordUpgrade(UObject* WorldContextObject, UItemUpgrade* upgrade) {

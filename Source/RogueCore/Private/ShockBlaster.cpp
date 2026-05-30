@@ -3,9 +3,9 @@
 
 AShockBlaster::AShockBlaster(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->HitscanComponent = CreateDefaultSubobject<UHitscanComponent>(TEXT("HitscanComponent"));
-    this->ImpactEffect = NULL;
-    this->BeamEffect = NULL;
-    this->ImpactSound = NULL;
+    this->ImpactEffect = nullptr;
+    this->BeamEffect = nullptr;
+    this->ImpactSound = nullptr;
     this->BounceDelay = 0.15f;
     this->RicochetRange = 500.00f;
     this->AmmoCostPerBounce = 30.00f;

@@ -13,3 +13,4 @@ enum class ECryoSprayUpgrades : uint8 {
     LongReach,
     SprayWidth,
 };
+

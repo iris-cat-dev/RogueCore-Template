@@ -7,7 +7,7 @@ UDownedStateComponent::UDownedStateComponent(const FObjectInitializer& ObjectIni
     this->TerrainRemovedFallThreshold = 5.00f;
     this->DownedBombActive = false;
     this->PlayIntroSequence = true;
-    this->DownedBombDamage = NULL;
+    this->DownedBombDamage = nullptr;
 }
 
 void UDownedStateComponent::TriggerDownedBombDamage() {

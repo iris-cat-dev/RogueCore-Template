@@ -2,7 +2,7 @@
 #include "HitReactionComponent.h"
 
 ATerminatorEnemy::ATerminatorEnemy(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->FlairAnimation = NULL;
+    this->FlairAnimation = nullptr;
     this->MinFlairAnimCooldown = 1.00f;
     this->MaxFlairAnimationCooldown = 2.00f;
     this->HitReactions = CreateDefaultSubobject<UHitReactionComponent>(TEXT("HitReactions"));

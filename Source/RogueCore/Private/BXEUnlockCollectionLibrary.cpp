@@ -3,7 +3,7 @@
 UBXEUnlockCollectionLibrary::UBXEUnlockCollectionLibrary() {
 }
 
-TArray<FBXEUnlockInstance> UBXEUnlockCollectionLibrary::PickRandomUnlocksFromTag(UObject* WorldContextObject, UUnlockCollectionTag* InTag, int32 InCount, FRandomStream& InRandomStream, const ERarityWeightType RarityWeightOverride) {
+TArray<FBXEUnlockInstance> UBXEUnlockCollectionLibrary::PickRandomUnlocksFromTag(UObject* WorldContextObject, UUnlockCollectionTag* InTag, int32 InCount, const TArray<UBXEUnlockBase*>& ExcludedUnlocks, const ERarityWeightType RarityWeightOverride) {
     return TArray<FBXEUnlockInstance>();
 }
 

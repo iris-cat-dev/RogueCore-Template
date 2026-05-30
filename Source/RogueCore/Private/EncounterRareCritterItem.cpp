@@ -1,7 +1,7 @@
 #include "EncounterRareCritterItem.h"
 
 FEncounterRareCritterItem::FEncounterRareCritterItem() {
-    this->Critter = NULL;
+    this->Critter = nullptr;
     this->Chance = 0.00f;
 }
 

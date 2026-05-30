@@ -8,4 +8,6 @@ class ROGUECORE_API USimpleNameStrategy : public UValidatorStrategy {
     GENERATED_BODY()
 public:
     USimpleNameStrategy();
+
 };
+

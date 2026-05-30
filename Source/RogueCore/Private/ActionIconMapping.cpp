@@ -1,7 +1,8 @@
 #include "ActionIconMapping.h"
 
 FActionIconMapping::FActionIconMapping() {
-    this->Icon = NULL;
+    this->Icon = nullptr;
     this->DoNotTint = false;
+    this->ActionKey = FKey();
 }
 

@@ -8,3 +8,4 @@ enum class ETagConditionType : uint8 {
     HasAny,
     HasNone,
 };
+

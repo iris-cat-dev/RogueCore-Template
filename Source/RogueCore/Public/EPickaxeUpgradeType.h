@@ -11,3 +11,4 @@ enum class EPickaxeUpgradeType : uint8 {
     EnablePowerAttack,
     PowerAttackCoolDown,
 };
+

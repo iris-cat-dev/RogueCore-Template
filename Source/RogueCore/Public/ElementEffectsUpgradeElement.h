@@ -1,11 +1,20 @@
 #pragma once
 #include "CoreMinimal.h"
-
+#include "ItemUpgradeElement.h"
 #include "ElementEffectsUpgradeElement.generated.h"
 
+class UElementType;
+
 UCLASS(Blueprintable, EditInlineNew)
-class ROGUECORE_API UElementEffectsUpgradeElement : public UObject {
+class UElementEffectsUpgradeElement : public UItemUpgradeElement {
     GENERATED_BODY()
 public:
-    UElementEffectsUpgradeElement(const FObjectInitializer& ObjectInitializer);
+protected:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UElementType* ElementType;
+    
+public:
+    UElementEffectsUpgradeElement();
+
 };
+

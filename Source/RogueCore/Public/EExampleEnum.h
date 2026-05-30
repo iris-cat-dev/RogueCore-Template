@@ -7,3 +7,4 @@ enum class EExampleEnum : uint8 {
     FirstName,
     SecondName,
 };
+

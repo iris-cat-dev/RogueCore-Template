@@ -1,7 +1,9 @@
 #include "EquippedVanity.h"
 
 FEquippedVanity::FEquippedVanity() {
-    this->SelectedArmorMaterial = NULL;
+    this->SelectedArmorMaterial = nullptr;
     this->UsingSlevedArmor = false;
+    this->DoesArmorPaintApplyToUndersuit = false;
+    this->DoesArmorPaintApplyToGauntlets = false;
 }
 

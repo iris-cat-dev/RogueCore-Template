@@ -1,5 +1,5 @@
 #include "PickaxeItem.h"
-#include "Components/SceneComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
 #include "Net/UnrealNetwork.h"
 #include "WeaponTagContainerComponent.h"
 
@@ -11,12 +11,12 @@ APickaxeItem::APickaxeItem(const FObjectInitializer& ObjectInitializer) : Super(
     this->TP_Root = CreateDefaultSubobject<USceneComponent>(TEXT("TP_Root"));
     this->FP_Scale = CreateDefaultSubobject<USceneComponent>(TEXT("FP_Scale"));
     this->TP_Scale = CreateDefaultSubobject<USceneComponent>(TEXT("TP_Scale"));
-    this->FPAnimInstance = NULL;
-    this->TPAnimInstance = NULL;
-    this->FP_EquipAnimation = NULL;
-    this->TP_EquipAnimation = NULL;
+    this->FPAnimInstance = nullptr;
+    this->TPAnimInstance = nullptr;
+    this->FP_EquipAnimation = nullptr;
+    this->TP_EquipAnimation = nullptr;
     this->EquipDuration = 0.25f;
-    this->CharacterAnimationSet = NULL;
+    this->CharacterAnimationSet = nullptr;
     this->WeaponTags = CreateDefaultSubobject<UWeaponTagContainerComponent>(TEXT("WeaponTagsComponent"));
     this->SpecialCooldown = 30.00f;
     this->SpecialCooldownRemaining = 0.00f;
@@ -26,15 +26,15 @@ APickaxeItem::APickaxeItem(const FObjectInitializer& ObjectInitializer) : Super(
     this->ExtraDamageRangeForAnimation = 50.00f;
     this->MiningRange = 300.00f;
     this->DamageRadius = 50.00f;
-    this->OnDamageEnemySlowdownEffect = NULL;
-    this->AttackExcertionShout = NULL;
-    this->AttackHitSound = NULL;
-    this->MiningSound = NULL;
-    this->MineRumble = NULL;
-    this->PartialMineRumble = NULL;
-    this->DamageRumble = NULL;
-    this->HitDamage = NULL;
-    this->SpecialDamage = NULL;
+    this->OnDamageEnemySlowdownEffect = nullptr;
+    this->AttackExcertionShout = nullptr;
+    this->AttackHitSound = nullptr;
+    this->MiningSound = nullptr;
+    this->MineRumble = nullptr;
+    this->PartialMineRumble = nullptr;
+    this->DamageRumble = nullptr;
+    this->HitDamage = nullptr;
+    this->SpecialDamage = nullptr;
     this->GeneralImpactAudioVolume = 1.00f;
     this->HitCooldown = 1.00f;
     this->MiningDuration = 1.00f;
@@ -42,16 +42,16 @@ APickaxeItem::APickaxeItem(const FObjectInitializer& ObjectInitializer) : Super(
     this->BlockParticlesScaleFP = 1.00f;
     this->BlockParticlesScaleTP = 1.00f;
     this->State = EPickaxeState::Equipping;
-    this->PowerAttackRefreshedSound = NULL;
+    this->PowerAttackRefreshedSound = nullptr;
     this->PreventQMining = true;
     this->QMiningExpectedDelay = 0.67f;
     this->QMiningInitialDelay = 0.45f;
     this->QMiningReducedPlayRatePct = 1.00f;
     this->QMiningLastHitTime = 0.00f;
     this->CanBezerk = false;
-    this->BezerkStatusEffect = NULL;
+    this->BezerkStatusEffect = nullptr;
     this->PowerAttackEnabled = true;
-    this->EquippedMaterial = NULL;
+    this->EquippedMaterial = nullptr;
     this->FP_Root->SetupAttachment(RootComponent);
     this->FP_Scale->SetupAttachment(FP_Root);
     this->TP_Root->SetupAttachment(RootComponent);
@@ -89,7 +89,7 @@ void APickaxeItem::Server_DamageTarget_Implementation(UPrimitiveComponent* Targe
 void APickaxeItem::RefreshSpecialCooldown() {
 }
 
-void APickaxeItem::OnSpecialHitTarget(UHealthComponentBase* Health, float amount, UPrimitiveComponent* Component, UFSDPhysicalMaterial* PhysicalMaterial) {
+void APickaxeItem::OnSpecialHitTarget(UHealthComponentBase* Health, float Amount, UPrimitiveComponent* Component, UFSDPhysicalMaterial* PhysicalMaterial) {
 }
 
 void APickaxeItem::OnRep_State(EPickaxeState oldState) {

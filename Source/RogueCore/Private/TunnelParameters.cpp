@@ -1,7 +1,7 @@
 #include "TunnelParameters.h"
 
 UTunnelParameters::UTunnelParameters() {
-    this->PathfinderNoise = NULL;
+    this->PathfinderNoise = nullptr;
     this->PathZStraightnessScale = 0.00f;
     this->PathDirectionPenalty = 0.00f;
     this->PathEntranceAnglePenalty = 0.00f;

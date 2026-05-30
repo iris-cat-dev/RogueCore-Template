@@ -6,3 +6,4 @@ UENUM(BlueprintType)
 enum class ESingleUsableUpgradeType : uint8 {
     UseDuration,
 };
+

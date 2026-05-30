@@ -3,15 +3,19 @@
 #include "ZipLineConnectorHandler.generated.h"
 
 class AZipLineConnector;
+
 USTRUCT(BlueprintType)
 struct FZipLineConnectorHandler {
     GENERATED_BODY()
-    
-
 public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftClassPtr<AZipLineConnector> ConnectorClass;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     AZipLineConnector* Connector;
+    
+public:
     ROGUECORE_API FZipLineConnectorHandler();
 };
+

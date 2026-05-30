@@ -2,10 +2,10 @@
 
 UCoolDownItemAggregator::UCoolDownItemAggregator(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->CooldownDuration = 2.00f;
-    this->AudioCoolDownFinished = NULL;
+    this->AudioCoolDownFinished = nullptr;
     this->CooldownRemaining = 0.00f;
     this->CoolDownIsPaused = false;
-    this->Item = NULL;
+    this->Item = nullptr;
 }
 
 void UCoolDownItemAggregator::SetPaused(bool IsPaused) {

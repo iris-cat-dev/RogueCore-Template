@@ -2,7 +2,7 @@
 
 UBoneParticlesAfflictionEffect::UBoneParticlesAfflictionEffect() {
     this->Particles.AddDefaulted(5);
-    this->Sound = NULL;
+    this->Sound = nullptr;
 }
 
 

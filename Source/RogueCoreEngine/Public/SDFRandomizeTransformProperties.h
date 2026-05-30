@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-
-
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Box -FallbackName=Box
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "SDFRandomizeTransformProperties.generated.h"
 
 USTRUCT(BlueprintType)
@@ -10,39 +10,40 @@ struct FSDFRandomizeTransformProperties {
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FBox Translation;
-
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float RotationMinZ = 0.0f;
-
+    float RotationMinZ;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float RotationMaxZ = 0.0f;
-
+    float RotationMaxZ;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float RotationMinY = 0.0f;
-
+    float RotationMinY;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float RotationMaxY = 0.0f;
-
+    float RotationMaxY;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float RotationMinX = 0.0f;
-
+    float RotationMinX;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float RotationMaxX = 0.0f;
-
+    float RotationMaxX;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FVector ScaleMin = FVector::ZeroVector;
-
+    FVector ScaleMin;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FVector ScaleMax = FVector::ZeroVector;
-
+    FVector ScaleMax;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    bool ScaleAxesIndependent = false;
-
+    bool ScaleAxesIndependent;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    bool DisableRandomize = false;
-
+    bool DisableRandomize;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    int32 Seed = 0;
-
+    int32 Seed;
+    
+    ROGUECOREENGINE_API FSDFRandomizeTransformProperties();
 };
 

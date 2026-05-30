@@ -1,7 +1,7 @@
 #include "StickyFlameSpawner.h"
 
 UStickyFlameSpawner::UStickyFlameSpawner(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->StickyFlameActor = NULL;
+    this->StickyFlameActor = nullptr;
     this->FlameLifetime = 2.00f;
     this->StickyFlameIntervals = 2.00f;
     this->StickyMaxSpawnPerSecond = 50.00f;

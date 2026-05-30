@@ -7,4 +7,6 @@ enum class ESaveSlotChangeProcedure : uint8 {
     NewSave,
     Load,
     Save,
+    FromCloud,
 };
+

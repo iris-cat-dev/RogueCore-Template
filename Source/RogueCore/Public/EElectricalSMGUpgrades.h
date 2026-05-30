@@ -8,3 +8,4 @@ enum class EElectricalSMGUpgrades : uint8 {
     PlasmaBeam,
     TurretEMPDischarge,
 };
+

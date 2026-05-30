@@ -9,3 +9,4 @@ enum class EGuntowerModuleState : uint8 {
     EVulnerable,
     EDestoyed,
 };
+

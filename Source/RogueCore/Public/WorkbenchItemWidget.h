@@ -1,35 +1,60 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Blueprint/UserWidget.h"
+#include "BXEUnlockInstance.h"
 #include "ItemSlotIndex.h"
+#include "WorkbenchUpgradeWidget.h"
 #include "WorkbenchItemWidget.generated.h"
 
+class UBXEAttributeUnlock;
+class UBXEUnlockBase;
+class UBXEUnlockRarity;
 class UItemData;
-class UItemUpgrade;
 class UObject;
+class UUnlockCollectionTag;
 class UWorkbenchItemWidget;
+
 UCLASS(Abstract, Blueprintable, EditInlineNew)
-class ROGUECORE_API UWorkbenchItemWidget : public UUserWidget {
+class ROGUECORE_API UWorkbenchItemWidget : public UWorkbenchUpgradeWidget {
     GENERATED_BODY()
-    
 public:
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FWorkbenchItemDelegate, UWorkbenchItemWidget*, InWidget);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FWorkbenchItemDelegate, UWorkbenchItemWidget*, InWidget, UBXEAttributeUnlock*, SelectedUpgrade);
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FWorkbenchItemDelegate OnItemUpgradeSelected;
- 
+    
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FItemSlotIndex UnlockSlot;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 ChoiceCount;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UUnlockCollectionTag* WorkbenchCollectionTag;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FBXEUnlockInstance UnlockInstance;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UItemData* ItemData;
-    TArray<UItemUpgrade*> ItemUpgrades;
-    TArray<UItemUpgrade*> OwnedIndices;
-    TArray<UItemUpgrade*> AvailableIndices;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UBXEUnlockBase* ItemUnlock;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UBXEUnlockRarity* Rarity;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<UBXEAttributeUnlock*> OwnedIndices;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<UBXEAttributeUnlock*> AvailableIndices;
+    
+public:
     UWorkbenchItemWidget();
+
     UFUNCTION(BlueprintCallable)
     bool SelectItemUpgrade(UObject* InUpgrade);
-    void Refresh();
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    void ReceiveRefresh();
-    void InitializeForUse();
+    
 };
+

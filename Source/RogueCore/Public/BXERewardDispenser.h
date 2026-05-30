@@ -9,7 +9,9 @@ class ABXERewardDispenser : public AGenericRewardDispenser {
     GENERATED_BODY()
 public:
     ABXERewardDispenser(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void SetSelectedReward(FRewardDispenserReward InReward);
     
 };
+

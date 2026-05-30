@@ -3,34 +3,29 @@
 
 UFSDSaveGame::UFSDSaveGame() {
     this->VersionNumber = 0;
-    this->bMilestoneResetShown = false;
-    this->bYearTwoGiftClaimed = false;
-    this->bSeenClosedAlphaVideo = false;
+    this->IsThirdRiskVectorUnlocked = false;
     this->SaveCreatedInPatch = 1;
-    this->PerkPoints = 0;
-    this->HasRecievedDiscordReward = false;
+    this->bSeenWelcomeToEarlyAccess = false;
+    this->HasReceivedDiscordReward = false;
     this->Faction = EFSDFaction::NoFaction;
-    this->Credits = 0;
-    this->ReclaimerPoints = 0;
-    this->ReclaimerPointLevel = 0;
-    this->CurrentReclaimerPoints = 0;
-    this->LastBoughtDailyDealSeed = 0;
-    this->bIgnoreRandomLoadout = false;
-    this->LastCollectedCommunityRewardPeriodID = 0;
+    this->TotalLevelsGained = 0;
+    this->NeedsLevelsGainedFixup = true;
+    this->LastBoughtDailyDealSeed = -1;
+    this->LastUsedWeeklyRunSeed = -1;
     this->FirstRejoinAttempt = false;
-    this->bHasOpenedDeepDiveTerminal = false;
+    this->bIsShowingStatsInEscapeMenu = false;
+    this->bHaveShownInitialMissionShoutNotification = false;
+    this->RunThatMustBeRatedDepth = ERunDepth::None;
     this->FirstSession = true;
-    this->HasCompletedTutorial = false;
     this->HasPlayedTutorial = false;
     this->ShowHowToRestartTutorialPrompt = false;
     this->HasPlayedIntroMessage = false;
-    this->HasSentSteamInfo = false;
     this->HasClaimedSteamGroupLoot = false;
-    this->IsBoscoAllowed = true;
+    this->bIsCooperEnabled = true;
     this->HasJoinedXboxClub = false;
-    this->HasSeenAnalyticsPopUp = false;
-    this->AllowAnalyticsTracking = true;
-    this->AllowPersonalAnalyticsTracking = true;
+    this->AllowGameplayAnalyticsTracking = true;
+    this->bShowStartupScreenWhenBootingGame = true;
+    this->bShowNarrativeVideoWhenBootingGame = true;
     this->Index = -1;
     this->TotalPlayTimeSeconds = 0.00f;
     this->userIdx = 0;
@@ -38,13 +33,18 @@ UFSDSaveGame::UFSDSaveGame() {
     this->SaveToDiskCounter = 0;
     this->BackupSaveIndex = 0;
     this->ExternalBackupSaveIndex = 0;
-    this->NumberOfGamesPlayed = 0;
-    this->LastPlayedCharacter = NULL;
-    this->ShowInfoScreen = true;
-    this->FSDGameInstance = NULL;
+    this->LastPlayedCharacter = nullptr;
+    this->bIgnoreRandomLoadout = false;
+    this->bIsMutatedRunsUnlocked = false;
+    this->FSDGameInstance = nullptr;
+    this->SaveInProgress = false;
 }
 
-bool UFSDSaveGame::TrySellResource(UResourceData* Resource, int32 amount, int32& Price) {
+bool UFSDSaveGame::UnlockToMinersManual(FGuid ObjectId, bool& OutNewEntry, EUnlockRarityType Rarity) {
+    return false;
+}
+
+bool UFSDSaveGame::TrySellResource(UResourceData* Resource, int32 Amount, int32& Price) {
     return false;
 }
 
@@ -52,15 +52,15 @@ bool UFSDSaveGame::TryDeductResources(const TMap<UResourceData*, int32>& NewReso
     return false;
 }
 
-bool UFSDSaveGame::TryDeductReclaimerPoints(int32 amount) {
+bool UFSDSaveGame::TryBuyResource(UResourceData* Resource, int32 Amount, int32& Price) {
     return false;
 }
 
-bool UFSDSaveGame::TryDeductCredits(int32 amount) {
+bool UFSDSaveGame::ShowStartupScreenWhenBootingGame() const {
     return false;
 }
 
-bool UFSDSaveGame::TryBuyResource(UResourceData* Resource, int32 amount, int32& Price) {
+bool UFSDSaveGame::ShowNarrativeVideoWhenBootingGame() const {
     return false;
 }
 
@@ -80,8 +80,16 @@ void UFSDSaveGame::SetSonyInputSettingFloat(UObject* WorldContext, ESonyInputSet
 void UFSDSaveGame::SetSonyInputSettingBool(ESonyInputSettingsBools Setting, bool NewValue) {
 }
 
-bool UFSDSaveGame::SetPersonalAnalytics(bool State) {
-    return false;
+void UFSDSaveGame::SetShowStartupScreenWhenBootingGame(const bool NewShow) {
+}
+
+void UFSDSaveGame::SetShowNarrativeVideoWhenBootingGame(const bool NewShow) {
+}
+
+void UFSDSaveGame::SetRunThatMustBeRated(const ERunDepth RunDepth, const FGuid& RunId) {
+}
+
+void UFSDSaveGame::SetIsShowingStatsInEscapeMenu(const bool NewShowing) {
 }
 
 void UFSDSaveGame::SetIndexAndName(int32 NewIndex, const FString& NewName) {
@@ -90,13 +98,16 @@ void UFSDSaveGame::SetIndexAndName(int32 NewIndex, const FString& NewName) {
 void UFSDSaveGame::SetIgnoreRandomLoadout(bool inIgnoreRandomLoadout) {
 }
 
-void UFSDSaveGame::SetHasSentSteamInfo() {
+void UFSDSaveGame::SetHaveShownInitialMissionShoutNotification(const bool NewHaveShown) {
 }
 
 void UFSDSaveGame::SetHasJoinedXboxClub() {
 }
 
 void UFSDSaveGame::SetHasClaimSteamGroupLoot() {
+}
+
+void UFSDSaveGame::SetGameplayAnalytics(bool State) {
 }
 
 void UFSDSaveGame::SetFaction(EFSDFaction newFaction, bool Reasign) {
@@ -111,19 +122,13 @@ void UFSDSaveGame::SetEquippedItem(EItemCategory Category, UPlayerCharacterID* P
 void UFSDSaveGame::SetDiscordReward(bool State) {
 }
 
-void UFSDSaveGame::SetCurrentReclaimerPoints(int32 amount) {
+void UFSDSaveGame::SetCooperEnabled(const bool IsAllowed) {
 }
 
 void UFSDSaveGame::SetCharacterLoadout(UPlayerCharacterID* characterID, int32 loadoutNumber) {
 }
 
-void UFSDSaveGame::SetBoscoAllowed(bool aIsBoscoAllowed) {
-}
-
-void UFSDSaveGame::SetBioBoosterDecks(UPlayerCharacterID* characterID, const TArray<UBioBoosterDeck*>& InBoosterDecks) {
-}
-
-bool UFSDSaveGame::SetAnonymousAnalytics(bool State) {
+bool UFSDSaveGame::SetBioBoosterDecks(UPlayerCharacterID* characterID, const TArray<FLoadedBoosterDeckItem>& InBoosterDecks) {
     return false;
 }
 
@@ -132,10 +137,6 @@ void UFSDSaveGame::SaveToDisk() {
 
 bool UFSDSaveGame::SaveSlotToDisk(UFSDSaveGame* SaveSlot, const FString& slotName, int32 NewUserIdx) {
     return false;
-}
-
-int32 UFSDSaveGame::RetireCharacter(UPlayerCharacterID* characterID) {
-    return 0;
 }
 
 void UFSDSaveGame::ResetTutorials() {
@@ -150,7 +151,7 @@ void UFSDSaveGame::ResetSonyMotionSettings() {
 void UFSDSaveGame::ResetSonyDualSenseSettings() {
 }
 
-void UFSDSaveGame::ResetRejoinSessionId() {
+void UFSDSaveGame::ResetRejoinRunId() {
 }
 
 void UFSDSaveGame::RejoinAttempted() {
@@ -159,21 +160,27 @@ void UFSDSaveGame::RejoinAttempted() {
 void UFSDSaveGame::RefreshLoadoutFromCharacter(UPlayerCharacterID* characterID) {
 }
 
-bool UFSDSaveGame::RecievedDiscordReward() {
+bool UFSDSaveGame::ReceivedDiscordReward() {
     return false;
 }
 
-FString UFSDSaveGame::PromotedClassesString() {
-    return TEXT("");
+void UFSDSaveGame::MarkWelcomeMessageSeen() {
 }
 
-void UFSDSaveGame::MarkRetirementRewardScreenSeen(UPlayerCharacterID* characterID) {
+void UFSDSaveGame::MarkRunDepthRated(const ERunDepth RunDepth) {
 }
 
 void UFSDSaveGame::MarkFirstSchematicMessageSeen() {
 }
 
+void UFSDSaveGame::MarkAscensionRewardScreenSeen(UPlayerCharacterID* characterID) {
+}
+
 void UFSDSaveGame::LevelUpCharacter(UObject* WorldContext, UPlayerCharacterID* characterID) {
+}
+
+bool UFSDSaveGame::IsShowingStatsInEscapeMenu() const {
+    return false;
 }
 
 bool UFSDSaveGame::IsObsolete() const {
@@ -184,27 +191,35 @@ bool UFSDSaveGame::IsInMinersManual(FGuid ObjectId) const {
     return false;
 }
 
-bool UFSDSaveGame::IsFirstRejoinAttempt() {
+bool UFSDSaveGame::IsFirstRejoinAttempt() const {
     return false;
 }
 
-bool UFSDSaveGame::HasSeenRetirementRewardScreen() const {
+bool UFSDSaveGame::IsCooperEnabled() const {
     return false;
 }
 
-bool UFSDSaveGame::HasReclaimerPoints(int32 amount) const {
+bool UFSDSaveGame::IsCharacterEligibleForAscension(const UPlayerCharacterID* characterID) const {
     return false;
 }
 
-bool UFSDSaveGame::HasCredits(int32 amount) const {
+bool UFSDSaveGame::HaveShownInitialMissionShoutNotification() const {
     return false;
 }
 
-bool UFSDSaveGame::HasCharacterRetired(UPlayerCharacterID* characterID) const {
+bool UFSDSaveGame::HaveRejoinRunId() const {
     return false;
 }
 
-bool UFSDSaveGame::HasCharacterCompletedRetirementCampaign(UPlayerCharacterID* characterID) const {
+bool UFSDSaveGame::HasSeenAscensionRewardScreen() const {
+    return false;
+}
+
+bool UFSDSaveGame::HasPendingAscensionGifts() const {
+    return false;
+}
+
+bool UFSDSaveGame::HasCharacterAscended(UPlayerCharacterID* characterID) const {
     return false;
 }
 
@@ -212,15 +227,23 @@ bool UFSDSaveGame::HasBackupWithMoreProgress(UFSDGameInstance* GameInstance) {
     return false;
 }
 
-bool UFSDSaveGame::HasAnyCharacterRetired() const {
+bool UFSDSaveGame::HasAnyCharacterAscended() const {
     return false;
 }
 
-int32 UFSDSaveGame::GetTotalGamesPlayed() {
+bool UFSDSaveGame::HasAnotherCharacterBioBoosterDeckEquipped(const UPlayerCharacterID* InCharacterID) const {
+    return false;
+}
+
+int32 UFSDSaveGame::GetUnlockPickedCount(const UBXEUnlockBase* Unlock) const {
     return 0;
 }
 
-int32 UFSDSaveGame::GetTotalCharacterXP() const {
+int32 UFSDSaveGame::GetTimesAscendedForCharacter(const UPlayerCharacterID* InID) const {
+    return 0;
+}
+
+int32 UFSDSaveGame::GetTieredUnlockPickCount(const UBXEUnlockTieredGeneric* Unlock, EUnlockRarityType Rarity) const {
     return 0;
 }
 
@@ -248,6 +271,18 @@ FString UFSDSaveGame::GetSlotLoadedFrom() const {
     return TEXT("");
 }
 
+FString UFSDSaveGame::GetSlotIndexName(int32 NewUserIdx) {
+    return TEXT("");
+}
+
+FString UFSDSaveGame::GetSlotIndex() const {
+    return TEXT("");
+}
+
+bool UFSDSaveGame::GetShowWelcomeMessage() const {
+    return false;
+}
+
 int32 UFSDSaveGame::GetSelectedLoadoutIndex(UPlayerCharacterID* characterID) const {
     return 0;
 }
@@ -256,11 +291,19 @@ FString UFSDSaveGame::GetSaveSlotName(int32 NewUserIdx) {
     return TEXT("");
 }
 
-int32 UFSDSaveGame::GetResourceSellingPrice(UResourceData* Resource, int32 amount) const {
+ERunDepth UFSDSaveGame::GetRunThatMustBeRatedDepth() const {
+    return ERunDepth::None;
+}
+
+FGuid UFSDSaveGame::GetRunThatMustBeRated() const {
+    return FGuid{};
+}
+
+int32 UFSDSaveGame::GetResourceSellingPrice(UResourceData* Resource, int32 Amount) const {
     return 0;
 }
 
-int32 UFSDSaveGame::GetResourceBuyingPrice(UResourceData* Resource, int32 amount) const {
+int32 UFSDSaveGame::GetResourceBuyingPrice(UResourceData* Resource, int32 Amount) const {
     return 0;
 }
 
@@ -272,40 +315,23 @@ int32 UFSDSaveGame::GetRequiredXPForLevel(int32 Level) const {
     return 0;
 }
 
-FString UFSDSaveGame::GetRejoinSessionId() {
-    return TEXT("");
-}
-
-int32 UFSDSaveGame::GetReclaimerPoints() const {
-    return 0;
-}
-
-int32 UFSDSaveGame::GetReclaimerPointLevel() const {
-    return 0;
-}
-
-int32 UFSDSaveGame::GetPurchasableItemCount() const {
-    return 0;
-}
-
-int32 UFSDSaveGame::GetPlayerRetirementRank() const {
-    return 0;
+FGuid UFSDSaveGame::GetRejoinRunId() const {
+    return FGuid{};
 }
 
 int32 UFSDSaveGame::GetPlayerRank() const {
     return 0;
 }
 
-int32 UFSDSaveGame::GetPerkPoints() const {
+int32 UFSDSaveGame::GetPlayerAscensionRank() const {
     return 0;
+}
+
+void UFSDSaveGame::GetPendingAscensionGifts(TArray<FClaimableRewardEntry>& OutRewards, UPlayerCharacterID* OptionalID) const {
 }
 
 FString UFSDSaveGame::GetName() {
     return TEXT("");
-}
-
-int32 UFSDSaveGame::GetMaxSaveSlots() {
-    return 0;
 }
 
 int32 UFSDSaveGame::GetMainSaves(UFSDGameInstance* GameInstance, TArray<UFSDSaveGame*>& outMainSaves) {
@@ -314,10 +340,6 @@ int32 UFSDSaveGame::GetMainSaves(UFSDGameInstance* GameInstance, TArray<UFSDSave
 
 int32 UFSDSaveGame::GetIndex() {
     return 0;
-}
-
-bool UFSDSaveGame::GetHasSentSteamInfo() {
-    return false;
 }
 
 bool UFSDSaveGame::GetHasClaimedSteamGroupLoot() {
@@ -336,28 +358,16 @@ TSubclassOf<AActor> UFSDSaveGame::GetEquippedItem(EItemCategory Category, UPlaye
     return NULL;
 }
 
-int32 UFSDSaveGame::GetCurrentReclaimerPoints() const {
-    return 0;
-}
-
-int32 UFSDSaveGame::GetCredits() const {
-    return 0;
-}
-
 int32 UFSDSaveGame::GetClassXP(UPlayerCharacterID* characterID) const {
     return 0;
 }
 
-int32 UFSDSaveGame::GetClassLevel(UPlayerCharacterID* characterID) const {
+int32 UFSDSaveGame::GetClassLevel(const UPlayerCharacterID* characterID) const {
     return 0;
 }
 
-int32 UFSDSaveGame::GetCharacterRetirementCount(const FGuid& PlayerId) const {
+int32 UFSDSaveGame::GetCharacterAscensionCount(const FGuid& PlayerId) const {
     return 0;
-}
-
-bool UFSDSaveGame::GetBoscoAllowed() const {
-    return false;
 }
 
 TArray<UBioBoosterDeck*> UFSDSaveGame::GetBioBoosterDecks(UPlayerCharacterID* characterID) const {
@@ -368,47 +378,60 @@ int32 UFSDSaveGame::GetAvailableUserSlotIndex(UFSDGameInstance* GameInstance) {
     return 0;
 }
 
+TSet<UBioBoosterDeck*> UFSDSaveGame::GetAscendedCharactersBioBoosterDecks() const {
+    return TSet<UBioBoosterDeck*>();
+}
+
 TArray<UFSDSaveGame*> UFSDSaveGame::GetAllSavesFromDisk(UFSDGameInstance* GameInstance) {
     return TArray<UFSDSaveGame*>();
 }
 
+TArray<UPlayerCharacterID*> UFSDSaveGame::GetAllAscendedCharacterIDs() const {
+    return TArray<UPlayerCharacterID*>();
+}
+
 void UFSDSaveGame::FixNamingOfMainSave(UFSDSaveGame* mainsave) {
+}
+
+bool UFSDSaveGame::DoesItMakeSenseToRateLastRun() const {
+    return false;
 }
 
 bool UFSDSaveGame::DeleteFromDisk(UFSDGameInstance* GameInstance, const FString& slotName, int32 NewUserIdx) {
     return false;
 }
 
-bool UFSDSaveGame::DeductPerkPoints(int32 amount) {
+void UFSDSaveGame::ClearRatedRunDepths() {
+}
+
+void UFSDSaveGame::CheckAscensionAchievementProgress(UObject* WorldContext, bool IsRetroactive) {
+}
+
+bool UFSDSaveGame::ChangeBioBoosterDeck(UPlayerCharacterID* InCharacterID, const FLoadedBoosterDeckItem& InBoosterDeck) {
     return false;
 }
 
-void UFSDSaveGame::ClaimEnhancementPerk(UPerkAsset* PerkAsset) {
-}
-
-void UFSDSaveGame::CheckPromotionAchievementProgress(UObject* WorldContext, bool IsRetroactive) {
+bool UFSDSaveGame::CanChangeBioBoosterDeck(UPlayerCharacterID* characterID, UBioBoosterDeck* DeckToChange) const {
+    return false;
 }
 
 bool UFSDSaveGame::CanAfford(const TMap<UResourceData*, int32>& NewResources) const {
     return false;
 }
 
-int32 UFSDSaveGame::AddReclaimerPoints(int32 amount) {
-    return 0;
+FString UFSDSaveGame::AscendedClassesString() {
+    return TEXT("");
 }
 
-void UFSDSaveGame::AddPerkPoints(int32 amount) {
-}
-
-void UFSDSaveGame::AddGamePlayed() {
-}
-
-int32 UFSDSaveGame::AddCredits(int32 amount) {
-    return 0;
+bool UFSDSaveGame::AllowGameplayAnalytics() const {
+    return false;
 }
 
 int32 UFSDSaveGame::AddClassXP(UObject* WorldContext, UPlayerCharacterID* characterID, int32 XP) {
     return 0;
+}
+
+void UFSDSaveGame::AddClaimedReward(URewardPool* Reward) {
 }
 
 

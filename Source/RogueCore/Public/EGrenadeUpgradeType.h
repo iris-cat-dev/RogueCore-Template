@@ -7,3 +7,4 @@ enum class EGrenadeUpgradeType : uint8 {
     MaxGrenades,
     FuseTime,
 };
+

@@ -2,12 +2,12 @@
 #include "Templates/SubclassOf.h"
 
 UEnemySpawnManager::UEnemySpawnManager(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->SpawnEffects = NULL;
+    this->SpawnEffects = nullptr;
     this->MaxActiveEnemies = 0;
     this->MaxActiveSwarmers = 80;
     this->MaxActiveCritters = 40;
     this->MaxDistanceBeforeCleanup = 0.00f;
-    this->ProceduralSetup = NULL;
+    this->ProceduralSetup = nullptr;
     this->bDestroyingAllEnemies = false;
 }
 

@@ -1,6 +1,6 @@
 #include "RewardDispenserReward.h"
 
 FRewardDispenserReward::FRewardDispenserReward() {
-    this->Reward = NULL;
+    this->Reward = nullptr;
 }
 

@@ -1,35 +1,56 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Kismet/BlueprintFunctionLibrary.h"
-#include "GameFramework/PlayerInput.h"
-#include "GameFramework/PlayerInput.h"
-#include "InputCoreTypes.h"
-#include "Input/Events.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=InputActionKeyMapping -FallbackName=InputActionKeyMapping
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=InputAxisKeyMapping -FallbackName=InputAxisKeyMapping
+//CROSS-MODULE INCLUDE V2: -ModuleName=InputCore -ObjectName=Key -FallbackName=Key
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=KeyEvent -FallbackName=KeyEvent
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=PointerEvent -FallbackName=PointerEvent
 #include "EFSDInputSource.h"
 #include "InputDisplay.h"
 #include "InputFunctionLibrary.generated.h"
 
 class APlayerController;
 class UTexture2D;
+
 UCLASS(Blueprintable)
 class UInputFunctionLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UInputFunctionLibrary();
-    UFUNCTION(BlueprintCallable)
-    static void SetMouseSmoothingOn(bool smoothingOn);
+
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    static bool IsMouseEventAction(const FPointerEvent& MouseEvent, const FName& ActionName, bool IgnoreCustomBindings);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    static bool IsMouseSmoothingOn();
-    static bool IsMouseEventAction(const FPointerEvent& MouseEvent, const FName& ActionName, bool IgnoreCustomBindings);
     static bool IsKeyEventActionAny(const FKeyEvent& KeyEvent, TArray<FName> ActionNames, bool IgnoreCustomBindings);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsKeyEventAction(const FKeyEvent& KeyEvent, FName ActionName, bool IgnoreCustomBindings);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsInputActionDown(const APlayerController* InPlayerController, FName InActionName);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsAxisMappedToDirectional(FName InActionName, FKey Key, int32 Direction, bool IgnoreCustomBindings);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsAnyInputActionDown(const APlayerController* InPlayerController, const TArray<FName>& InActionNames);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsActionMappedTo(FName InActionName, FKey Key, bool IgnoreCustomBindings);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool GetAxisMapping(FName InActionName, int32 Axis, bool InGamepadKeys, FInputAxisKeyMapping& OutResult);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool GetActionMapping(FName InActionName, bool InGamepadKeys, FInputActionKeyMapping& OutResult);
-    static bool FindInputDisplay(const APlayerController* PlayerController, FName InputName, EFSDInputSource InputSource, int32 LayoutIndex, FInputDisplay& OutInputDisplay);
+    
+    UFUNCTION(BlueprintCallable)
+    static bool FindInputDisplay(const FName InputName, const EFSDInputSource InputSource, const int32 Axis, FInputDisplay& OutInputDisplay);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static UTexture2D* FindActionIcon(FName InActionName, bool InGamepadKeys);
+    
 };
+

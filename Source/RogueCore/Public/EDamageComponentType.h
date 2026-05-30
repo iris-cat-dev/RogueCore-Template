@@ -11,3 +11,4 @@ enum class EDamageComponentType : uint8 {
     Quinary,
     Any,
 };
+

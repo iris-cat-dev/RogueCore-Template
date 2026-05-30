@@ -2,8 +2,8 @@
 
 UBXEUnlockCollection::UBXEUnlockCollection() {
     this->RarityWeightType = ERarityWeightType::Default;
+    this->NegotiationCompleteStat = nullptr;
     this->AddDroneUnlocks = false;
-    this->LockTelemetryIdentifier = false;
 }
 
 void UBXEUnlockCollection::GetSkipRewards(TArray<UBXEUnlockBase*>& OutSkipRewards) const {

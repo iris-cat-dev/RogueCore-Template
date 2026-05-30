@@ -1,6 +1,8 @@
 #include "RichIconRow.h"
 
 FRichIconRow::FRichIconRow() {
-    this->Icon = NULL;
+    this->Icon = nullptr;
+    this->IconTint = FLinearColor::White;
+    this->ToolTip = FText::GetEmpty();
 }
 

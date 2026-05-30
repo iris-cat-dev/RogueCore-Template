@@ -1,7 +1,7 @@
 #include "WarningVoteOptionAction.h"
 
 UWarningVoteOptionAction::UWarningVoteOptionAction() {
-    this->RiskVector = NULL;
+    this->RiskVector = nullptr;
 }
 
 URiskVector* UWarningVoteOptionAction::GetRiskVector() const {

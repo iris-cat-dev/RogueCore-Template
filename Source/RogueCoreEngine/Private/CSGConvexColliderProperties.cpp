@@ -1,6 +1,6 @@
 #include "CSGConvexColliderProperties.h"
 
 FCSGConvexColliderProperties::FCSGConvexColliderProperties() {
-    this->collider = NULL;
+    this->collider = nullptr;
 }
 

@@ -3,15 +3,14 @@
 UWeaponFireComponent::UWeaponFireComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->MinSpreadWhenMoving = 0.00f;
     this->MinSpreadWhenSprinting = 0.00f;
-    this->MinSpread = 0.00f;
     this->MaxSpread = 5.00f;
     this->VerticalSpreadMultiplier = 1.00f;
     this->HorizontalSpredMultiplier = 1.00f;
-    this->MaxVerticalSpread = 0.00f;
-    this->MaxHorizontalSpread = 0.00f;
     this->SpreadRecoveryPerSecond = 5.00f;
     this->SpreadPerShot = 2.00f;
     this->UseDynamicSpread = false;
+    this->MinimumVerticalSpread = 0.00f;
+    this->MinimumHorizontalSpread = 0.00f;
 }
 
 void UWeaponFireComponent::StopFire() {

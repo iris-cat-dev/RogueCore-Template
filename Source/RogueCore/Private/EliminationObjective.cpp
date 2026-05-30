@@ -3,8 +3,8 @@
 
 UEliminationObjective::UEliminationObjective(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->ObjectCount = 0;
-    this->Positioning = NULL;
-    this->CaveInfluencer = NULL;
+    this->Positioning = nullptr;
+    this->CaveInfluencer = nullptr;
     this->DebrisRadius = 1500.00f;
     this->EnemiesKilled = 0;
     this->EnemiesToKill = 0;

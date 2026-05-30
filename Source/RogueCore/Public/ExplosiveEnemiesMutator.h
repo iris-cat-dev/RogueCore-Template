@@ -8,4 +8,6 @@ class UExplosiveEnemiesMutator : public UMutator {
     GENERATED_BODY()
 public:
     UExplosiveEnemiesMutator();
+
 };
+

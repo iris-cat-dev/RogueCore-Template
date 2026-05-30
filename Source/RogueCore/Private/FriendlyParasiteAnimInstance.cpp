@@ -1,6 +1,6 @@
 #include "FriendlyParasiteAnimInstance.h"
 
-UFriendlyParasiteAnimInstance::UFriendlyParasiteAnimInstance(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+UFriendlyParasiteAnimInstance::UFriendlyParasiteAnimInstance() {
     this->InFoldoutRange = false;
     this->InSpinRange = false;
 }

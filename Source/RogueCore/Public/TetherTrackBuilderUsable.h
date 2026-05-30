@@ -8,4 +8,6 @@ class UTetherTrackBuilderUsable : public UTrackBuilderUsable {
     GENERATED_BODY()
 public:
     UTetherTrackBuilderUsable(const FObjectInitializer& ObjectInitializer);
+
 };
+

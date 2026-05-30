@@ -1,6 +1,6 @@
 #include "CoilgunAfflictionEntry.h"
 
 FCoilgunAfflictionEntry::FCoilgunAfflictionEntry() {
-    this->Target = NULL;
+    this->Target = nullptr;
 }
 

@@ -10,3 +10,4 @@ enum class EFrozenBitsSize : uint8 {
     Large,
     Huge,
 };
+

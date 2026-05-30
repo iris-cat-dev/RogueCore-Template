@@ -4,14 +4,17 @@
 #include "AnimatedObjectAfflictionComponent.generated.h"
 
 class USkeletalMeshComponent;
+
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class UAnimatedObjectAfflictionComponent : public UPawnAfflictionComponent {
     GENERATED_BODY()
-    
-
 public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USkeletalMeshComponent* mesh;
     
+public:
     UAnimatedObjectAfflictionComponent(const FObjectInitializer& ObjectInitializer);
+
 };
+

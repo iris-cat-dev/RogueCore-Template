@@ -3,6 +3,7 @@
 #include "PerkArray.generated.h"
 
 class UPerkAsset;
+
 USTRUCT(BlueprintType)
 struct FPerkArray {
     GENERATED_BODY()
@@ -12,3 +13,4 @@ public:
     
     ROGUECORE_API FPerkArray();
 };
+

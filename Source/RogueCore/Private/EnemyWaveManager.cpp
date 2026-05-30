@@ -7,12 +7,14 @@ UEnemyWaveManager::UEnemyWaveManager(const FObjectInitializer& ObjectInitializer
     this->spawnRadiusFromSpawnPoint = 300.00f;
     this->ScriptedWavesEnabled = true;
     this->NormalWavesEnabled = false;
-    this->RiftSpawnDistance = 2000.00f;
+    this->RiftSpawnDistance = 3000.00f;
+    this->RiftOptimalSpawnDistance = 2000.00f;
+    this->RiftMinSpawnDistance = 200.00f;
     this->RiftsAreOpen = false;
     this->RiftSpawnCount = 3;
     this->RiftsArePermanentAndAlwaysActive = false;
-    this->GameMode = NULL;
-    this->SpawnManager = NULL;
+    this->GameMode = nullptr;
+    this->SpawnManager = nullptr;
 }
 
 UEnemyWaveController* UEnemyWaveManager::TriggerWave(TSubclassOf<UEnemyWaveController> waveClass) {
@@ -30,6 +32,13 @@ void UEnemyWaveManager::StopAllSecretWaves() {
 }
 
 void UEnemyWaveManager::SpawnScriptedWave() {
+}
+
+void UEnemyWaveManager::SpawnRifts_Async(FLatentActionInfo LatentInfo, const FVector& InQueryLocation, const FRiftSpawnOverrides Overrides) {
+}
+
+TArray<FVector> UEnemyWaveManager::SpawnRifts(const FVector& InQueryLocation, const FRiftSpawnOverrides Overrides) {
+    return TArray<FVector>();
 }
 
 void UEnemyWaveManager::SetAllWavesAreBlocked(const bool allWavesAreBlocked) {

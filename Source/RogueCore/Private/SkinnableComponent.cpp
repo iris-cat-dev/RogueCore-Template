@@ -1,8 +1,8 @@
 #include "SkinnableComponent.h"
 
 USkinnableComponent::USkinnableComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->EquippedSkinColor = NULL;
-    this->EquippedSkinMesh = NULL;
+    this->EquippedSkinColor = nullptr;
+    this->EquippedSkinMesh = nullptr;
 }
 
 void USkinnableComponent::UpdateSkin(AFSDPlayerState* Player) {

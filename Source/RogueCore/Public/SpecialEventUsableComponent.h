@@ -8,4 +8,6 @@ class USpecialEventUsableComponent : public USingleUsableComponent {
     GENERATED_BODY()
 public:
     USpecialEventUsableComponent(const FObjectInitializer& ObjectInitializer);
+
 };
+

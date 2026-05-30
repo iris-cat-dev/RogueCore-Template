@@ -16,3 +16,4 @@ enum class EBoltActionRifleUpgrades : uint8 {
     AimedShotAmmoCost,
     AimBot,
 };
+

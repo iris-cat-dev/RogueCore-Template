@@ -1,4 +1,5 @@
 #include "CoreSpawnEnemyBase.h"
+#include "Perception/PawnSensingComponent.h"
 #include "DeathFXComponent.h"
 #include "EnemyComponent.h"
 #include "HitReactionComponent.h"
@@ -11,6 +12,7 @@ ACoreSpawnEnemyBase::ACoreSpawnEnemyBase(const FObjectInitializer& ObjectInitial
     this->MaxRagdollSpeed = 1000.00f;
     this->PawnStats = CreateDefaultSubobject<UPawnStatsComponent>(TEXT("PawnStats"));
     this->HitReactions = CreateDefaultSubobject<UHitReactionComponent>(TEXT("HitReactions"));
+    this->PawnSensing = CreateDefaultSubobject<UPawnSensingComponent>(TEXT("PawnSensing"));
     this->Enemy = CreateDefaultSubobject<UEnemyComponent>(TEXT("Enemy"));
     this->Outline = CreateDefaultSubobject<UOutlineComponent>(TEXT("Outline"));
     this->PawnAlert = CreateDefaultSubobject<UPawnAlertComponent>(TEXT("PawnAlert"));

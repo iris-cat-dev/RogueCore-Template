@@ -1,25 +1,33 @@
 #include "AbilityItem.h"
+#include "Net/UnrealNetwork.h"
 
 AAbilityItem::AAbilityItem(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->AttachSocket = TEXT("Dwarf_Gauntlet_ArmL22Socket");
-    this->Item_EquipAnimation = NULL;
-    this->FP_EquipAnimation = NULL;
-    this->TP_EquipAnimation = NULL;
-    this->FP_ActivationAnimation = NULL;
-    this->TP_ActivationAnimation = NULL;
-    this->FP_IdleAnimation = NULL;
-    this->TP_IdleAnimation = NULL;
+    this->Item_EquipAnimation = nullptr;
+    this->Item_EquipUnavailable = nullptr;
+    this->Item_Reactivation = nullptr;
+    this->FP_EquipAnimation = nullptr;
+    this->FP_EquipUnavailable = nullptr;
+    this->TP_EquipAnimation = nullptr;
+    this->TP_EquipUnavailable = nullptr;
+    this->FP_ActivationAnimation = nullptr;
+    this->TP_ActivationAnimation = nullptr;
     this->UnEquipTime = -1.00f;
     this->ActivationDelay = 0.00f;
     this->EquipCost = 1;
     this->EquipDuration = 0.25f;
-    this->CharacterAnimationSet = NULL;
-    this->UpperBodyCharacterAnimationSet = NULL;
+    this->CharacterAnimationSet = nullptr;
+    this->UpperBodyCharacterAnimationSet = nullptr;
     this->ActivationType = EItemActivationType::Immediate;
     this->DeactivateOnUnequip = false;
     this->UnEquipOnActivation = true;
-    this->FPSuitMesh = NULL;
-    this->TPSuitMesh = NULL;
+    this->InactiveAndEquippedLastFrame = false;
+    this->PlayNoEquipAnimWhenUnavailable = false;
+    this->FPSuitMesh = nullptr;
+    this->TPSuitMesh = nullptr;
+}
+
+void AAbilityItem::ServerTriggerAbilityUpgrades_Implementation() {
 }
 
 
@@ -46,6 +54,18 @@ USkeletalMeshComponent* AAbilityItem::GetFPMesh() const {
     return NULL;
 }
 
+UAbilityComponent* AAbilityItem::GetAbility() const {
+    return NULL;
+}
+
 void AAbilityItem::AnimFinished(UAnimMontage* Montage, bool interrupted) {
 }
+
+void AAbilityItem::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const {
+    Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+    
+    DOREPLIFETIME(AAbilityItem, OnActivationSpawnActorUpgrades);
+    DOREPLIFETIME(AAbilityItem, OnActivationProjectiles);
+}
+
 

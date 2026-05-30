@@ -1,9 +1,9 @@
 #include "IntelChallengeForStat.h"
 
 UIntelChallengeForStat::UIntelChallengeForStat() {
-    this->RequiredStat = NULL;
+    this->RequiredStat = nullptr;
     this->RequiredAmount = 1;
-    this->RequiredZone = NULL;
+    this->RequiredZone = nullptr;
     this->RequireMutator = false;
 }
 

@@ -1,11 +1,11 @@
 #include "TerminatorShoutComponent.h"
 
 UTerminatorShoutComponent::UTerminatorShoutComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->TalkLight = NULL;
+    this->TalkLight = nullptr;
     this->MaxRadius = 100.00f;
     this->MaxIntensity = 10000.00f;
-    this->OwnerMesh = NULL;
-    this->ShoutInstance = NULL;
+    this->OwnerMesh = nullptr;
+    this->ShoutInstance = nullptr;
 }
 
 void UTerminatorShoutComponent::SetShoutState(ETerminatorShoutState State, float delayShout) {

@@ -8,4 +8,6 @@ class UElementEventTypePoisoned : public UElementEventTypeBase {
     GENERATED_BODY()
 public:
     UElementEventTypePoisoned();
+
 };
+

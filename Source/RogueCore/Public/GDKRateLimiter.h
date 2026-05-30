@@ -1,9 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Subsystems/GameInstanceSubsystem.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=GameInstanceSubsystem -FallbackName=GameInstanceSubsystem
 #include "GDKRateLimiter.generated.h"
 
 class UFSDRateLimiter;
+
 UCLASS(Blueprintable)
 class UGDKRateLimiter : public UGameInstanceSubsystem {
     GENERATED_BODY()
@@ -12,4 +13,6 @@ public:
     UFSDRateLimiter* Handler;
     
     UGDKRateLimiter();
+
 };
+

@@ -8,4 +8,6 @@ class UCarriableInstantUsable : public UInstantUsable {
     GENERATED_BODY()
 public:
     UCarriableInstantUsable(const FObjectInitializer& ObjectInitializer);
+
 };
+

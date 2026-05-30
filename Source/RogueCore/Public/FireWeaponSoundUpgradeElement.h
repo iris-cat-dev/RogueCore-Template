@@ -4,13 +4,17 @@
 #include "FireWeaponSoundUpgradeElement.generated.h"
 
 class USoundCue;
+
 UCLASS(Blueprintable, EditInlineNew)
 class UFireWeaponSoundUpgradeElement : public UItemUpgradeElement {
     GENERATED_BODY()
-
+public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftObjectPtr<USoundCue> FireSound;
-
+    
 public:
     UFireWeaponSoundUpgradeElement();
+
 };
+

@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Engine/DataAsset.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
 #include "CharacterShouts.h"
 #include "CharacterShoutsData.generated.h"
 
@@ -12,4 +12,6 @@ public:
     FCharacterShouts Shouts;
     
     UCharacterShoutsData();
+
 };
+

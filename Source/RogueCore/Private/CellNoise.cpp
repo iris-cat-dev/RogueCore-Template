@@ -5,5 +5,6 @@ FCellNoise::FCellNoise() {
     this->NumValues = 0;
     this->MinCellValue = 0;
     this->MaxCellValue = 0;
+    this->CellSize = FVector::ZeroVector;
 }
 

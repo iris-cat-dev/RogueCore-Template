@@ -3,6 +3,7 @@
 #include "DebrisVeinResource.generated.h"
 
 class UDebrisVeinComponent;
+
 USTRUCT(BlueprintType)
 struct FDebrisVeinResource {
     GENERATED_BODY()
@@ -12,3 +13,4 @@ public:
     
     ROGUECORE_API FDebrisVeinResource();
 };
+

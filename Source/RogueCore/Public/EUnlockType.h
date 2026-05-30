@@ -4,6 +4,7 @@
 
 UENUM(BlueprintType)
 enum class EUnlockType : uint8 {
+    None,
     Upgrade,
     BioBooster,
     Artifact,
@@ -12,4 +13,6 @@ enum class EUnlockType : uint8 {
     Equipment,
     Throwables,
     Grenades,
+    Attribute,
 };
+

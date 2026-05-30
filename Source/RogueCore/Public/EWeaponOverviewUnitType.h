@@ -8,3 +8,4 @@ enum class EWeaponOverviewUnitType : uint8 {
     Percentage,
     Second,
 };
+

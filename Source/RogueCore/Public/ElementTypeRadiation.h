@@ -8,4 +8,6 @@ class UElementTypeRadiation : public UElementType {
     GENERATED_BODY()
 public:
     UElementTypeRadiation();
+
 };
+

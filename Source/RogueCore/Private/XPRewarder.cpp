@@ -1,7 +1,7 @@
 #include "XPRewarder.h"
 
 AXPRewarder::AXPRewarder(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->RewardObjective = NULL;
+    this->RewardObjective = nullptr;
     this->XRange = 0.00f;
     this->YRange = 0.00f;
     this->SpawnDelay = 0.03f;

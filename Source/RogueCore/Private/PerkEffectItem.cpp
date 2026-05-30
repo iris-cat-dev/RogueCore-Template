@@ -1,8 +1,9 @@
 #include "PerkEffectItem.h"
 
 FPerkEffectItem::FPerkEffectItem() {
-    this->Action = NULL;
-    this->Effect = NULL;
+    this->Action = nullptr;
+    this->effect = nullptr;
     this->Value = 0.00f;
+    this->Text = FText::GetEmpty();
 }
 

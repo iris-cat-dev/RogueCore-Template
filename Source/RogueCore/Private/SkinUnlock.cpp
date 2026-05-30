@@ -1,9 +1,9 @@
 #include "SkinUnlock.h"
 
 USkinUnlock::USkinUnlock() {
-    this->OptionalItemID = NULL;
-    this->OptionalCharacterID = NULL;
-    this->Skin = NULL;
+    this->OptionalItemID = nullptr;
+    this->OptionalCharacterID = nullptr;
+    this->Skin = nullptr;
 }
 
 

@@ -2,18 +2,16 @@ using UnrealBuildTool;
 
 public class RogueCore : ModuleRules {
     public RogueCore(ReadOnlyTargetRules Target) : base(Target) {
-        // UE 5.6+ build settings
-        DefaultBuildSettings = BuildSettingsVersion.V5;
         PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
         bLegacyPublicIncludePaths = false;
         ShadowVariableWarningLevel = WarningLevel.Warning;
-
+        
         PublicDependencyModuleNames.AddRange(new string[] {
             "AIModule",
             "AnimGraphRuntime",
             "AnimationSharing",
-            "AudioMixer",
-            "BasicUI",
+            "AudioModulation",
+            "BinkMediaPlayer",
             "Core",
             "CoreUObject",
             "DLSSBlueprint",
@@ -31,6 +29,8 @@ public class RogueCore : ModuleRules {
             "OnlineSubsystemUtils",
             "PhysicsCore",
             "RogueCoreEngine",
+            "RogueCoreOnlineServices",
+            "RogueCoreUtils",
             "Slate",
             "SlateCore",
             "TemplateSequence",

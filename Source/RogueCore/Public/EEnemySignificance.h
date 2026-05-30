@@ -9,3 +9,4 @@ enum class EEnemySignificance : uint8 {
     Critical,
     Critter,
 };
+

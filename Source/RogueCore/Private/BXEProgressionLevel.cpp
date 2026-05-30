@@ -2,6 +2,6 @@
 
 FBXEProgressionLevel::FBXEProgressionLevel() {
     this->RequiredXP = 0;
-    this->CollectionTag = NULL;
+    this->CollectionTag = nullptr;
 }
 

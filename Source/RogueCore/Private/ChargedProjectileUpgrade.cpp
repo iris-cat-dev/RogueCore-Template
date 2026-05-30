@@ -3,7 +3,7 @@
 
 UChargedProjectileUpgrade::UChargedProjectileUpgrade() {
     this->upgradeType = EChargedProjectileUpgrades::ExplodesOnDamage;
-    this->ProjectileClass = NULL;
+    this->ProjectileClass = nullptr;
 }
 
 FUpgradeValues UChargedProjectileUpgrade::GetUpgradedValue(TSubclassOf<AItem> Item, TSubclassOf<AActor> upgradedActor, AFSDPlayerState* Player, EChargedProjectileUpgrades NewUpgradeType) {

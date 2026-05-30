@@ -4,5 +4,6 @@ FDelayedActorSwitchData::FDelayedActorSwitchData() {
     this->IsActive = false;
     this->IsExternalActor = false;
     this->IsUnEquipCalled = false;
+    this->Actor = nullptr;
 }
 

@@ -1,7 +1,7 @@
 #include "DataTerminalDoorColliderData.h"
 
 FDataTerminalDoorColliderData::FDataTerminalDoorColliderData() {
-    this->DoorCollider = NULL;
-    this->RepairCollider = NULL;
+    this->DoorCollider = nullptr;
+    this->RepairCollider = nullptr;
 }
 

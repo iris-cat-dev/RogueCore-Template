@@ -3,6 +3,7 @@
 #include "ConstructionGenerationGroup.generated.h"
 
 class AStructureActor;
+
 USTRUCT(BlueprintType)
 struct FConstructionGenerationGroup {
     GENERATED_BODY()
@@ -12,3 +13,4 @@ public:
     
     ROGUECORE_API FConstructionGenerationGroup();
 };
+

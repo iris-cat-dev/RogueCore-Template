@@ -8,3 +8,4 @@ enum class EPiplelineConnectorAnimationState : uint8 {
     Assembling,
     Assembled,
 };
+

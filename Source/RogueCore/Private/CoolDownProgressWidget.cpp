@@ -1,6 +1,7 @@
 #include "CoolDownProgressWidget.h"
 
 UCoolDownProgressWidget::UCoolDownProgressWidget() : UUserWidget(FObjectInitializer::Get()) {
+    this->ProgressDoneAtNumber = 1.00f;
     this->bIsFinished = false;
 }
 

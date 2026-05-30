@@ -13,11 +13,11 @@ ACoilGun::ACoilGun(const FObjectInitializer& ObjectInitializer) : Super(ObjectIn
     this->FP_OverchargeIndicatorParticles = CreateDefaultSubobject<UNiagaraComponent>(TEXT("FP_OverchargeIndicatorParticles"));
     this->TP_FullyChargedParticles = CreateDefaultSubobject<UNiagaraComponent>(TEXT("TP_FullchargeParticles"));
     this->TrailSpawner = CreateDefaultSubobject<UCoilgunTrailSpawner>(TEXT("TrailSpawner"));
-    this->ImpactMeshCarver = NULL;
-    this->N_ImpactParticles = NULL;
-    this->ChargeResistanceStatusEffect = NULL;
-    this->ChargeWeaknessStatusEffect = NULL;
-    this->CustomMuzzleFlash = NULL;
+    this->ImpactMeshCarver = nullptr;
+    this->N_ImpactParticles = nullptr;
+    this->ChargeResistanceStatusEffect = nullptr;
+    this->ChargeWeaknessStatusEffect = nullptr;
+    this->CustomMuzzleFlash = nullptr;
     this->MaxAfflictionTime = 20.00f;
     this->ShotWidth = 15.00f;
     this->BonusShotWidth = 0.00f;
@@ -86,7 +86,7 @@ void ACoilGun::OnShieldBoostEnded() {
 void ACoilGun::OnEnemyKilled(AActor* Target, UFSDPhysicalMaterial* PhysicalMaterial, bool wasDirectHit) {
 }
 
-void ACoilGun::OnDamageTarget(UHealthComponentBase* Health, float amount, UPrimitiveComponent* Component, UFSDPhysicalMaterial* PhysicalMaterial) {
+void ACoilGun::OnDamageTarget(UHealthComponentBase* Health, float Amount, UPrimitiveComponent* Component, UFSDPhysicalMaterial* PhysicalMaterial) {
 }
 
 void ACoilGun::OnCharacterShieldBroke(AActor* brokeChar) {

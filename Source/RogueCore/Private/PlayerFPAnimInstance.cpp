@@ -8,14 +8,14 @@ UPlayerFPAnimInstance::UPlayerFPAnimInstance() {
     this->WeaponSwayAlpha = 1.00f;
     this->WeaponSwayToApply = 0.00f;
     this->HeadOnlyMode = false;
-    this->FP_Idle = NULL;
-    this->FP_Walk = NULL;
-    this->FP_Sprint = NULL;
-    this->FP_JumpStart = NULL;
-    this->FP_JumpLoop = NULL;
-    this->FP_JumpLand = NULL;
-    this->FP_JumpLand_Aim = NULL;
-    this->FP_Downed = NULL;
+    this->FP_Idle = nullptr;
+    this->FP_Walk = nullptr;
+    this->FP_Sprint = nullptr;
+    this->FP_JumpStart = nullptr;
+    this->FP_JumpLoop = nullptr;
+    this->FP_JumpLand = nullptr;
+    this->FP_JumpLand_Aim = nullptr;
+    this->FP_Downed = nullptr;
 }
 
 

@@ -8,4 +8,6 @@ class AHolidayThrowableItem : public AThrowableItem {
     GENERATED_BODY()
 public:
     AHolidayThrowableItem(const FObjectInitializer& ObjectInitializer);
+
 };
+

@@ -10,3 +10,4 @@ enum class EExtractorState : uint8 {
     Idle,
     Mining,
 };
+

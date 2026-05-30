@@ -1,8 +1,8 @@
 #include "ProjectileThrowerAttack.h"
 
 UProjectileThrowerAttack::UProjectileThrowerAttack(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->ThrowerMesh = NULL;
-    this->ThrowerAnimInstance = NULL;
+    this->ThrowerMesh = nullptr;
+    this->ThrowerAnimInstance = nullptr;
     this->RotateToTarget = false;
 }
 

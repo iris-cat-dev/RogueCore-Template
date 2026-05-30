@@ -3,16 +3,19 @@
 #include "AudioWithCooldown.generated.h"
 
 class USoundCue;
+
 USTRUCT(BlueprintType)
 struct FAudioWithCooldown {
     GENERATED_BODY()
-    
-
 public:
-    ROGUECORE_API FAudioWithCooldown();
- 
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USoundCue* Audio;
-
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float CoolDown;
+    
+public:
+    ROGUECORE_API FAudioWithCooldown();
 };
+

@@ -8,4 +8,6 @@ class UZipLineUsable : public UInstantUsable {
     GENERATED_BODY()
 public:
     UZipLineUsable(const FObjectInitializer& ObjectInitializer);
+
 };
+

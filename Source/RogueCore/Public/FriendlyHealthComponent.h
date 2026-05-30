@@ -4,19 +4,32 @@
 #include "FriendlyHealthComponent.generated.h"
 
 class UFXSystemAsset;
+
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class UFriendlyHealthComponent : public UHealthComponent {
     GENERATED_BODY()
-    
 public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float MaxHealth;
     
-    float FriendlyFireModifier;
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float NeutralDamageModifier;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float BigHitDamageModifier;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float BigHitDamageReductionThreshold;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UFXSystemAsset* GenericImpactParticles;
+    
+public:
     UFriendlyHealthComponent(const FObjectInitializer& ObjectInitializer);
+
+
     virtual float GetMaxHealth() const override;
+    
 };
+

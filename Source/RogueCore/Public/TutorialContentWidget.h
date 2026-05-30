@@ -4,6 +4,7 @@
 #include "TutorialContentWidget.generated.h"
 
 class UTutorialContentWidget;
+
 UCLASS(Blueprintable, EditInlineNew)
 class UTutorialContentWidget : public UFSDUserWidget {
     GENERATED_BODY()
@@ -12,8 +13,14 @@ public:
     
     UPROPERTY(BlueprintAssignable, BlueprintCallable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnTutorialFinished OnTutorialFinished;
+    
     UTutorialContentWidget();
+
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnShown();
+    
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnRemoveWidget();
+    
 };
+

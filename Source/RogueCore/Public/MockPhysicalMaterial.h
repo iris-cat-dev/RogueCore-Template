@@ -8,4 +8,6 @@ class UMockPhysicalMaterial : public UFSDPhysicalMaterial {
     GENERATED_BODY()
 public:
     UMockPhysicalMaterial();
+
 };
+

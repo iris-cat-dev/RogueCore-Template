@@ -1,12 +1,12 @@
 #include "DamageComponent.h"
 
 UDamageComponent::UDamageComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->DamageImpulse = NULL;
+    this->DamageImpulse = nullptr;
     this->Damage = 5.00f;
     this->armorDamageMultiplier = 1.00f;
     this->ArmorPenetration = 0.00f;
     this->ShattersArmor = false;
-    this->DamageClass = NULL;
+    this->DamageClass = nullptr;
     this->ArmorDamageType = EArmorDamageType::Normal;
     this->WeakpointDamageMultiplier = 1.00f;
     this->FrozenDamageBonusScale = 1.00f;
@@ -20,7 +20,7 @@ UDamageComponent::UDamageComponent(const FObjectInitializer& ObjectInitializer) 
     this->RadialDamage = 5.00f;
     this->NoFriendlyFireFromRadial = false;
     this->IgnoreOwnerFromRadial = true;
-    this->RadialDamageClass = NULL;
+    this->RadialDamageClass = nullptr;
     this->MinDamagePct = 0.25f;
     this->DamageRadius = 100.00f;
     this->MaxDamageRadius = 50.00f;

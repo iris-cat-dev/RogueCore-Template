@@ -9,5 +9,7 @@ enum class EVolumeType : uint8 {
     SFX,
     Music,
     VoiceChat,
+    VoiceChatInput,
     MissionControl,
 };
+

@@ -8,3 +8,4 @@ enum class ENVidiaReflexMode : uint8 {
     Enabled,
     EnabledWithBoost,
 };
+

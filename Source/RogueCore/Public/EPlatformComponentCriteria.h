@@ -9,3 +9,4 @@ enum class EPlatformComponentCriteria : uint8 {
     ClientOnly,
     OwningClientOnly,
 };
+

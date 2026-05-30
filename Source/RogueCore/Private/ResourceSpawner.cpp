@@ -1,7 +1,8 @@
 #include "ResourceSpawner.h"
 
 FResourceSpawner::FResourceSpawner() {
-    this->Resource = NULL;
-    this->SpawnChanceMutator = NULL;
+    this->Resource = nullptr;
+    this->SpawnChanceMutator = nullptr;
+    this->AmountToSpawn = FRandFloatInterval();
 }
 

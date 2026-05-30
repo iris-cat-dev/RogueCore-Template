@@ -6,3 +6,4 @@ UENUM(BlueprintType)
 enum class EItemNotificationType : uint8 {
     NewOverclock,
 };
+

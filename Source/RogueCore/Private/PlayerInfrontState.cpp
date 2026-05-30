@@ -2,5 +2,6 @@
 
 FPlayerInfrontState::FPlayerInfrontState() {
     this->inFront = false;
+    this->Player = nullptr;
 }
 

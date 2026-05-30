@@ -6,10 +6,10 @@ ARivalBomb::ARivalBomb(const FObjectInitializer& ObjectInitializer) : Super(Obje
     this->NodeHackTime = 14.00f;
     this->NumNodesToHack = 3;
     this->bDataCellPickedUp = false;
-    this->DataCell = NULL;
-    this->RivalBomb = NULL;
-    this->NodePositioning = NULL;
-    this->NodeCostCurve = NULL;
+    this->DataCell = nullptr;
+    this->RivalBomb = nullptr;
+    this->NodePositioning = nullptr;
+    this->NodeCostCurve = nullptr;
 }
 
 void ARivalBomb::UpdateNodesOnStart() {

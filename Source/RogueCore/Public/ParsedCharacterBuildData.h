@@ -7,6 +7,7 @@
 
 class APlayerCharacter;
 class UPerkAsset;
+
 USTRUCT(BlueprintType)
 struct ROGUECORE_API FParsedCharacterBuildData {
     GENERATED_BODY()
@@ -14,10 +15,21 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString PlayerName;
     
-    int32 PlayerIndex;
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 PlayerId;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<APlayerCharacter> PlayerCharacterClass;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FBXEUnlockInstance> UnlockRecords;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FUnlockableItemData> Items;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UPerkAsset*> Enhancements;
+    
     FParsedCharacterBuildData();
 };
+

@@ -1,5 +1,5 @@
 #include "VaultObjectiveActor.h"
-#include "Components/SceneComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
 
 AVaultObjectiveActor::AVaultObjectiveActor(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->bReplicates = true;

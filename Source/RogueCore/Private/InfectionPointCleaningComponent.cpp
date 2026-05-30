@@ -4,7 +4,7 @@
 UInfectionPointCleaningComponent::UInfectionPointCleaningComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->bIsInitialized = false;
     this->bHasBeenReplicated = false;
-    this->CleanedParticles = NULL;
+    this->CleanedParticles = nullptr;
     this->particleScale = 1.00f;
     this->outerLayerCleaned = false;
 }

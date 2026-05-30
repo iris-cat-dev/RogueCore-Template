@@ -1,11 +1,11 @@
 #include "DamageClass.h"
 
 UDamageClass::UDamageClass() {
-    this->ResistanceStat = NULL;
-    this->IndicatorImage = NULL;
-    this->DamageShout = NULL;
-    this->DefaultDamageImpulse = NULL;
-    this->ElementType = NULL;
+    this->ResistanceStat = nullptr;
+    this->IndicatorImage = nullptr;
+    this->DamageShout = nullptr;
+    this->DefaultDamageImpulse = nullptr;
+    this->ElementType = nullptr;
     this->RagdollScale = 1.00f;
     this->BypassesShield = false;
     this->IgnoreDifficultyScaling = false;
@@ -13,6 +13,7 @@ UDamageClass::UDamageClass() {
     this->IgnoresWeakpointBonus = false;
     this->IgnoresArmorModifiers = false;
     this->AffectedByCriticalHits = true;
+    this->DisallowDamageNumbers = false;
 }
 
 

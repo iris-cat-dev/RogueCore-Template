@@ -1,15 +1,17 @@
 #include "PlayerCharacterData.h"
 
 UPlayerCharacterData::UPlayerCharacterData() {
-    this->characterID = NULL;
+    this->characterID = nullptr;
+    this->AbilityData = nullptr;
+    this->Gender = ECharacterGender::Neutral;
 }
 
 FDialogVoiceSettings UPlayerCharacterData::GetVoiceSettings() const {
     return FDialogVoiceSettings{};
 }
 
-FText UPlayerCharacterData::GetSwitchToMessage() const {
-    return FText::GetEmpty();
+bool UPlayerCharacterData::GetUseFeminineVanityAssets() const {
+    return false;
 }
 
 UTexture2D* UPlayerCharacterData::GetSmallIconSimplified() const {
@@ -50,6 +52,10 @@ UTexture2D* UPlayerCharacterData::GetFullSizeImage() const {
 
 FLinearColor UPlayerCharacterData::GetColor() const {
     return FLinearColor{};
+}
+
+UClassAnimationSet* UPlayerCharacterData::GetClassAnimationSet() const {
+    return NULL;
 }
 
 

@@ -1,6 +1,7 @@
 #include "ProjectilePoolItem.h"
 
 FProjectilePoolItem::FProjectilePoolItem() {
-    this->ProjectileClass = NULL;
+    this->ProjectileClass = nullptr;
+    this->Projectile = nullptr;
 }
 

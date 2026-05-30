@@ -1,7 +1,7 @@
 #include "ApplyElementalEffectTypeStatusEffectItem.h"
 
 UApplyElementalEffectTypeStatusEffectItem::UApplyElementalEffectTypeStatusEffectItem() {
-    this->ElementalType = NULL;
+    this->ElementalType = nullptr;
 }
 
 void UApplyElementalEffectTypeStatusEffectItem::OnItemUnequipped(AItem* Item) {

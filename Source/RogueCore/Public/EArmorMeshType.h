@@ -10,3 +10,4 @@ enum class EArmorMeshType : uint8 {
     Sleeveless = 4,
     SleevelessBeardCompatible = 8,
 };
+

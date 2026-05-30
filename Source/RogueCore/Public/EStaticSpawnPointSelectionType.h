@@ -7,4 +7,6 @@ enum class EStaticSpawnPointSelectionType : uint8 {
     Any,
     Small,
     Large,
+    Tiny,
 };
+

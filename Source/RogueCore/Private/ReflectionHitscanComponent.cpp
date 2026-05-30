@@ -1,7 +1,7 @@
 #include "ReflectionHitscanComponent.h"
 
 UReflectionHitscanComponent::UReflectionHitscanComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->PlatformTerrainType = NULL;
+    this->PlatformTerrainType = nullptr;
     this->bPlayImpactSound = true;
     this->bShowImpactOnReflections = false;
     this->bDamageOnReflections = false;

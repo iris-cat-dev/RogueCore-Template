@@ -3,7 +3,7 @@
 
 UPilotingStateComponent::UPilotingStateComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->StateId = 13;
-    this->Vehicle = NULL;
+    this->Vehicle = nullptr;
 }
 
 void UPilotingStateComponent::Server_MoveRight_Implementation(float Value) {

@@ -1,8 +1,8 @@
 #include "ActorContextWidget.h"
 
 UActorContextWidget::UActorContextWidget() : UUserWidget(FObjectInitializer::Get()) {
-    this->ContextActor = NULL;
-    this->ContextPrimitive = NULL;
+    this->ContextActor = nullptr;
+    this->ContextPrimitive = nullptr;
 }
 
 void UActorContextWidget::Update(UPrimitiveComponent* InContextPrimitive) {

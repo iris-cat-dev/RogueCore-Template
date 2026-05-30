@@ -3,5 +3,7 @@
 FCurve2DAppearance::FCurve2DAppearance() {
     this->Thickness = 0.00f;
     this->OutlineThickness = 0.00f;
+    this->Tint = FLinearColor::White;
+    this->OutlineTint = FLinearColor::White;
 }
 

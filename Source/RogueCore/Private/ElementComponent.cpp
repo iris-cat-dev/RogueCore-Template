@@ -3,8 +3,15 @@
 
 UElementComponent::UElementComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->bAutoActivate = true;
-    this->CachedPawnStatComponent = NULL;
-    this->CachedStatusEffectsComponent = NULL;
+    this->HasResistanceWhenInvulnerable = false;
+    this->ResistanceWhenInvulnerable = 0.00f;
+    this->RadiationBoilSizeMultiplier = 1.00f;
+    this->CachedPawnStatComponent = nullptr;
+    this->CachedStatusEffectsComponent = nullptr;
+}
+
+float UElementComponent::TrySetElementValueToMax(UElementType* ElementType, AActor* InSource, bool MarkReplicateDirty) {
+    return 0.0f;
 }
 
 bool UElementComponent::TryPushElementSource(UElementType* ElementType, AActor* Target, float Value, EElementSourceIntensity Intensity) {

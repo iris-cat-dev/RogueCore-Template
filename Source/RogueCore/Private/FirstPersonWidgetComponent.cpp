@@ -2,8 +2,8 @@
 
 UFirstPersonWidgetComponent::UFirstPersonWidgetComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->DepthPriorityGroup = SDPG_Foreground;
-    this->MeshMaterialInstance = NULL;
-    this->MeshComponent = NULL;
+    this->MeshMaterialInstance = nullptr;
+    this->MeshComponent = nullptr;
 }
 
 

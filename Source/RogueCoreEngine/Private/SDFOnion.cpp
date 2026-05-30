@@ -1,7 +1,7 @@
 #include "SDFOnion.h"
 
 USDFOnion::USDFOnion() {
-    this->Argument = NULL;
+    this->Argument = nullptr;
 }
 
 

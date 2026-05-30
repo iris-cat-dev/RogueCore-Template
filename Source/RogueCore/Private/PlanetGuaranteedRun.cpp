@@ -2,13 +2,13 @@
 
 FPlanetGuaranteedRun::FPlanetGuaranteedRun() {
     this->RunDepth = ERunDepth::None;
-    this->Run = NULL;
-    this->Biome = NULL;
-    this->PlanetZone = NULL;
-    this->Duration = NULL;
-    this->Complexity = NULL;
-    this->DNA = NULL;
-    this->Mutator = NULL;
+    this->Run = nullptr;
+    this->Biome = nullptr;
+    this->PlanetZone = nullptr;
+    this->duration = nullptr;
+    this->Complexity = nullptr;
+    this->DNA = nullptr;
+    this->Mutator = nullptr;
     this->UseRandomMutator = false;
 }
 

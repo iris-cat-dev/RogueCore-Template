@@ -6,6 +6,7 @@
 class UInstantUsable;
 class USceneComponent;
 class UWidgetComponent;
+
 USTRUCT(BlueprintType)
 struct FEscortMuleExtractorSlot {
     GENERATED_BODY()
@@ -15,9 +16,16 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, NotReplicated, Transient, meta=(AllowPrivateAccess=true))
     EEscortExtractorState LastState;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
     USceneComponent* AttachPoint;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
     UInstantUsable* usable;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
     UWidgetComponent* Widget;
+    
     ROGUECORE_API FEscortMuleExtractorSlot();
 };
+

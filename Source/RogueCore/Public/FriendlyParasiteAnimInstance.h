@@ -10,6 +10,10 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool InFoldoutRange;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool InSpinRange;
-    UFriendlyParasiteAnimInstance(const FObjectInitializer& ObjectInitializer);
+    
+    UFriendlyParasiteAnimInstance();
+
 };
+

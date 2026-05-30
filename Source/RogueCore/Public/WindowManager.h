@@ -1,11 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Components/ActorComponent.h"
-#include "UObject/UnrealType.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=UMG -ObjectName=ESlateVisibility -FallbackName=ESlateVisibility
 #include "Templates/SubclassOf.h"
 #include "WindowManagerDelegateDelegate.h"
 #include "WindowManager.generated.h"
-
 
 class APawn;
 class USoundBase;
@@ -21,7 +20,8 @@ public:
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FWindowManagerDelegate OnLastWindowClosed;
-
+    
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USoundBase* AudioWindowOpen;
     
@@ -33,9 +33,6 @@ public:
     
     UPROPERTY(EditAnywhere, Export, Transient, meta=(AllowPrivateAccess=true))
     TMap<TSubclassOf<UUserWidget>, TWeakObjectPtr<UUserWidget>> WidgetSingletonCache;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    bool ResolutionDownscaleActive;
     
 public:
     UWindowManager(const FObjectInitializer& ObjectInitializer);
@@ -60,13 +57,14 @@ public:
     
     UFUNCTION(BlueprintCallable)
     UWindowWidget* OpenSingleUseWindow(TSubclassOf<UWindowWidget> WindowClass, int32 ZOrder);
-
+    
+protected:
     UFUNCTION(BlueprintCallable)
     void OnPossessedPawnChanged(APawn* OldPawn, APawn* NewPawn);
     
 public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    bool IsWindowOpen(UWindowWidget* Window) const;
+    bool IsWindowOpen(const UWindowWidget* Window) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsTopWindow(UWindowWidget* Window) const;
@@ -82,6 +80,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     UWindowWidget* CreateWindowFromClass(TSubclassOf<UWindowWidget> WindowClass, int32 ZOrder);
+    
+    UFUNCTION(BlueprintCallable)
+    void CloseWindowClass(TSubclassOf<UWindowWidget> InWindowClass, bool InAllInstances);
     
     UFUNCTION(BlueprintCallable)
     void CloseWindow(UWindowWidget* Window);
@@ -101,3 +102,4 @@ public:
     bool AnyWindowsOpen() const;
     
 };
+

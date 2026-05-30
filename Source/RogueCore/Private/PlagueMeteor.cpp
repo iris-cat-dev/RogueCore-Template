@@ -1,6 +1,6 @@
 #include "PlagueMeteor.h"
-#include "Components/SceneComponent.h"
-#include "Components/StaticMeshComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=StaticMeshComponent -FallbackName=StaticMeshComponent
 #include "DamageComponent.h"
 #include "Net/UnrealNetwork.h"
 #include "TerrainPlacementComponent.h"
@@ -13,17 +13,17 @@ APlagueMeteor::APlagueMeteor(const FObjectInitializer& ObjectInitializer) : Supe
     this->ImpactDamage = CreateDefaultSubobject<UDamageComponent>(TEXT("ImpactDamgage"));
     this->ManuallyTargeted = false;
     this->CrackStage = 0;
-    this->DropzoneIndicatorClass = NULL;
-    this->DropZoneIndicator = NULL;
-    this->Positioning = NULL;
+    this->DropzoneIndicatorClass = nullptr;
+    this->DropZoneIndicator = nullptr;
+    this->Positioning = nullptr;
     this->IndicatorTime = 5.00f;
     this->VisualsTime = 10.00f;
     this->NearImpactTime = 0.00f;
     this->LastAudioTime = 0.00f;
     this->LocationVariance = 1000.00f;
-    this->RockCrackerPod = NULL;
-    this->RockCrackerIndicator = NULL;
-    this->RockCrackerPodPositioning = NULL;
+    this->RockCrackerPod = nullptr;
+    this->RockCrackerIndicator = nullptr;
+    this->RockCrackerPodPositioning = nullptr;
     this->MeteorMesh->SetupAttachment(RootComponent);
     this->terrainPlacement->SetupAttachment(RootComponent);
 }
@@ -75,7 +75,7 @@ int32 APlagueMeteor::GetNumActivePods() const {
 
 
 
-void APlagueMeteor::DropRockCrackerPods(int32 amount, float MinRadius, float maRadius, AProceduralSetup* setup) {
+void APlagueMeteor::DropRockCrackerPods(int32 Amount, float MinRadius, float maRadius, AProceduralSetup* setup) {
 }
 
 

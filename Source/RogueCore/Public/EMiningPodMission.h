@@ -8,3 +8,4 @@ enum class EMiningPodMission : uint8 {
     Extraction,
     DropFromSpacerig,
 };
+

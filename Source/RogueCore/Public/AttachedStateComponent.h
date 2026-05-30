@@ -10,8 +10,15 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool DisableHeadLightOnEnter;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool EnableHeadLightOnExit;
- 
+    
+protected:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float MaxPitch;
+    
+public:
     UAttachedStateComponent(const FObjectInitializer& ObjectInitializer);
+
 };
+

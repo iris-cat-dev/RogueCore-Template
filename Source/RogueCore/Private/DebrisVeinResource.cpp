@@ -1,6 +1,6 @@
 #include "DebrisVeinResource.h"
 
 FDebrisVeinResource::FDebrisVeinResource() {
-    this->Debris = NULL;
+    this->Debris = nullptr;
 }
 

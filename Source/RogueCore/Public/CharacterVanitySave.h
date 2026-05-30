@@ -1,23 +1,33 @@
 #pragma once
 #include "CoreMinimal.h"
-
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
 #include "CharacterVanityLoadout.h"
 #include "EVanitySlot.h"
 #include "CharacterVanitySave.generated.h"
 
 class UVanityItem;
+
 USTRUCT(BlueprintType)
 struct FCharacterVanitySave {
     GENERATED_BODY()
 public:
+private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FCharacterVanityLoadout> Loadouts;
-
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FCharacterVanityLoadout RandomVanityLoadout;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FGuid> UnLockedVanityItemIDs;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UVanityItem*> UnLockedVanityItems;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<EVanitySlot, FGuid> NewVanityItems;
-
+    
+public:
     ROGUECORE_API FCharacterVanitySave();
- 
 };
+

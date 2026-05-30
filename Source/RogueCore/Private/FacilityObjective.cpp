@@ -7,10 +7,10 @@ UFacilityObjective::UFacilityObjective(const FObjectInitializer& ObjectInitializ
     this->ObjectivesStage = 0;
     this->EncounterDifficulty = 10.00f;
     this->MinimumTurretEncounters = 0;
-    this->mainFacility = NULL;
+    this->mainFacility = nullptr;
     this->MainFacilityRoom = -1;
     this->HasRemovedMainShield = false;
-    this->GoalResource = NULL;
+    this->GoalResource = nullptr;
     this->AmountRequired = 1.00f;
     this->AmountCollected = 0.00f;
     this->GeneratorsActivated = 0;
@@ -40,7 +40,7 @@ AActor* UFacilityObjective::PlaceObjectInRoom(AProceduralSetup* setup, const FRo
     return NULL;
 }
 
-void UFacilityObjective::OnResourceChanged(UCappedResource* Resource, float amount) {
+void UFacilityObjective::OnResourceChanged(UCappedResource* Resource, float Amount) {
 }
 
 void UFacilityObjective::OnRep_ObjectivesStage() {

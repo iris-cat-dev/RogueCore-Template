@@ -1,9 +1,10 @@
 #include "EnemyComponent.h"
 
 UEnemyComponent::UEnemyComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->Family = NULL;
-    this->KillShout = NULL;
-    this->EnemyID = NULL;
+    this->Family = nullptr;
+    this->KillShout = nullptr;
+    this->EnemyID = nullptr;
+    this->KillStat = nullptr;
 }
 
 UEnemyID* UEnemyComponent::GetID() const {

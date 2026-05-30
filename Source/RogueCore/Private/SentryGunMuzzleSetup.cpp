@@ -1,6 +1,7 @@
 #include "SentryGunMuzzleSetup.h"
 
 FSentryGunMuzzleSetup::FSentryGunMuzzleSetup() {
-    this->FireMontage = NULL;
+    this->FireMontage = nullptr;
+    this->SocketName = FName();
 }
 

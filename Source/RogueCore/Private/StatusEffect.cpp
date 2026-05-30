@@ -2,17 +2,17 @@
 #include "Templates/SubclassOf.h"
 
 UStatusEffect::UStatusEffect() {
-    this->DurationModifier = NULL;
-    this->PawnAffliction = NULL;
+    this->DurationModifier = nullptr;
+    this->PawnAffliction = nullptr;
     this->MaxResistance = 1.00f;
-    this->DamageClass = NULL;
-    this->ExclusiveKey = NULL;
+    this->DamageClass = nullptr;
+    this->ExclusiveKey = nullptr;
     this->PopSetting = EStatusEffectPopSetting::Temporary;
     this->TriggerTwiceOnPush = false;
     this->CanStack = false;
     this->MaxStack = 10;
     this->RemoveAllStacksAfterDuration = false;
-    this->Duration = -1.00f;
+    this->duration = -1.00f;
     this->RestartDurationOnApply = true;
     this->ApplyDurationAfterPop = false;
     this->RemoveOnDeath = true;

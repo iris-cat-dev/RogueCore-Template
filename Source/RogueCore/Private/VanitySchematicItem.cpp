@@ -1,7 +1,7 @@
 #include "VanitySchematicItem.h"
 
 UVanitySchematicItem::UVanitySchematicItem() {
-    this->Item = NULL;
+    this->Item = nullptr;
 }
 
 UVanityItem* UVanitySchematicItem::GetVanityItem() {

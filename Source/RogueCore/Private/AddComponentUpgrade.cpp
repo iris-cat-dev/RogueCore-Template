@@ -2,7 +2,7 @@
 #include "Templates/SubclassOf.h"
 
 UAddComponentUpgrade::UAddComponentUpgrade() {
-    this->ComponentClass = NULL;
+    this->ComponentClass = nullptr;
     this->ServerOnly = true;
 }
 

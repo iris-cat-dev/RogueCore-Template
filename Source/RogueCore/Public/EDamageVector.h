@@ -9,3 +9,4 @@ enum class EDamageVector : uint8 {
     Explosion,
     DamageOverTime,
 };
+

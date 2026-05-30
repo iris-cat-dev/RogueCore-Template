@@ -9,3 +9,4 @@ enum class EImpactDecalSize : uint8 {
     Large,
     None,
 };
+

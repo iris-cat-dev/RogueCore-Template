@@ -1,8 +1,8 @@
 #include "BXEProgressionSettings.h"
 
 UBXEProgressionSettings::UBXEProgressionSettings() {
-    this->StartInventory = NULL;
-    this->SoloDroneCollection = NULL;
+    this->StartInventory = nullptr;
+    this->SoloDroneCollection = nullptr;
 }
 
 

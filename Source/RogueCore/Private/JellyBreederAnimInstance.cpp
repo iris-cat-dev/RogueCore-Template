@@ -1,6 +1,6 @@
 #include "JellyBreederAnimInstance.h"
 
-UJellyBreederAnimInstance::UJellyBreederAnimInstance(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+UJellyBreederAnimInstance::UJellyBreederAnimInstance() {
     this->ReadyToSpawnEggs = false;
 }
 

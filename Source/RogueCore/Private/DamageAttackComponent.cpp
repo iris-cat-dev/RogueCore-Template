@@ -1,8 +1,8 @@
 #include "DamageAttackComponent.h"
 
 UDamageAttackComponent::UDamageAttackComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->AttackDamage = NULL;
-    this->Damage = NULL;
+    this->AttackDamage = nullptr;
+    this->Damage = nullptr;
 }
 
 

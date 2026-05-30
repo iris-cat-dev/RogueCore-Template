@@ -7,12 +7,13 @@
 UCLASS(Blueprintable, EditInlineNew)
 class UDirectDamageCondition : public UDamageCondition {
     GENERATED_BODY()
-    
-
 public:
-
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EDirectDamageConditionEnum Type;
     
+public:
     UDirectDamageCondition();
+
 };
+

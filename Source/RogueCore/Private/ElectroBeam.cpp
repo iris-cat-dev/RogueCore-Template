@@ -1,7 +1,7 @@
 #include "ElectroBeam.h"
 #include "Components/AudioComponent.h"
 #include "Components/CapsuleComponent.h"
-#include "Components/SceneComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
 #include "NiagaraComponent.h"
 #include "Net/UnrealNetwork.h"
 
@@ -13,8 +13,8 @@ AElectroBeam::AElectroBeam(const FObjectInitializer& ObjectInitializer) : Super(
     this->RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("Root"));
     this->collider = CreateDefaultSubobject<UCapsuleComponent>(TEXT("collider"));
     this->SceneRoot = (USceneComponent*)RootComponent;
-    this->DelaySource = NULL;
-    this->DelayTarget = NULL;
+    this->DelaySource = nullptr;
+    this->DelayTarget = nullptr;
     this->BeamEffectNS = CreateDefaultSubobject<UNiagaraComponent>(TEXT("BeamEffectNS"));
     this->ZappSound = CreateDefaultSubobject<UAudioComponent>(TEXT("ZappSound"));
     this->MaxLitTime = 0.00f;

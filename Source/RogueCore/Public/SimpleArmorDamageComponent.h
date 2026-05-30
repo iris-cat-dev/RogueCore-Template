@@ -9,20 +9,28 @@
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class USimpleArmorDamageComponent : public UBaseArmorDamageComponent {
     GENERATED_BODY()
-    
-
 public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSimpleArmorRadialDamagedDelegate OnRadialArmorPartsDestroyedEvent;
     
- 
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float ArmorStrength;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<FName, FDestructableBodypartItem> PhysBoneToArmor;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, ReplicatedUsing=OnRep_ArmorDamageInfo, meta=(AllowPrivateAccess=true))
     FArmorDamageInfo ArmorDamageInfo;
+    
+public:
     USimpleArmorDamageComponent(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+
+protected:
     UFUNCTION(BlueprintCallable)
     void OnRep_ArmorDamageInfo(FArmorDamageInfo OldArmorDamageInfo);
+    
 };
+

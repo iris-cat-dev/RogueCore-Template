@@ -8,4 +8,6 @@ class UNoPlayerHasThisUnlockCondition : public UBXEUnlockConditionBase {
     GENERATED_BODY()
 public:
     UNoPlayerHasThisUnlockCondition();
+
 };
+

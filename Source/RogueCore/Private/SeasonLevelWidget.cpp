@@ -5,7 +5,7 @@ USeasonLevelWidget::USeasonLevelWidget() : UUserWidget(FObjectInitializer::Get()
     this->SeasonLevel = 0;
     this->IsNormalClaimed = false;
     this->IsSpecialClaimed = false;
-    this->IsUnlocked = false;
+    this->IsUnLocked = false;
     this->IsLastInRow = false;
 }
 

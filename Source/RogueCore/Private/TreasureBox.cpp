@@ -1,6 +1,6 @@
 #include "TreasureBox.h"
-#include "Components/SkeletalMeshComponent.h"
-#include "Components/StaticMeshComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SkeletalMeshComponent -FallbackName=SkeletalMeshComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=StaticMeshComponent -FallbackName=StaticMeshComponent
 #include "Net/UnrealNetwork.h"
 #include "RepairableComponent.h"
 #include "RepairableUsable.h"
@@ -15,10 +15,10 @@ ATreasureBox::ATreasureBox(const FObjectInitializer& ObjectInitializer) : Super(
     this->MiddlePlane = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("MiddlePlane"));
     this->BoxMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("BoxMesh"));
     this->CollectActivationDelay = 5.00f;
-    this->OpenBoxAnim = NULL;
+    this->OpenBoxAnim = nullptr;
     this->DelayToOpenAfterRepair = 2.00f;
-    this->ResourceClass = NULL;
-    this->boxRewarder = NULL;
+    this->ResourceClass = nullptr;
+    this->boxRewarder = nullptr;
     this->HologramRotationSpeed = 10.00f;
     this->ItemsInserted = 0;
     this->IsTreasureAvailable = false;

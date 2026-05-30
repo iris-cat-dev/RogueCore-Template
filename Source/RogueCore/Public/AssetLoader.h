@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Subsystems/GameInstanceSubsystem.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=GameInstanceSubsystem -FallbackName=GameInstanceSubsystem
 #include "AssetLoader.generated.h"
 
 UCLASS(Blueprintable)
@@ -8,4 +8,6 @@ class ROGUECORE_API UAssetLoader : public UGameInstanceSubsystem {
     GENERATED_BODY()
 public:
     UAssetLoader();
+
 };
+

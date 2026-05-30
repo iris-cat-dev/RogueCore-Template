@@ -8,3 +8,4 @@ enum class ECampaignMutators : int32 {
     Allowed,
     Preffered,
 };
+

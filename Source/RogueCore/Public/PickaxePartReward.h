@@ -4,13 +4,20 @@
 #include "PickaxePartReward.generated.h"
 
 class UPickaxePart;
+
 UCLASS(Blueprintable, EditInlineNew)
 class UPickaxePartReward : public UUnlockReward {
     GENERATED_BODY()
-    
 public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UPickaxePart* PicaxePart;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool UnlockedPerClass;
+    
+public:
     UPickaxePartReward();
+
 };
+

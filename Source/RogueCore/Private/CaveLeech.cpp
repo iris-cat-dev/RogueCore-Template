@@ -1,6 +1,6 @@
 #include "CaveLeech.h"
-#include "Components/SceneComponent.h"
-#include "Components/SkeletalMeshComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SkeletalMeshComponent -FallbackName=SkeletalMeshComponent
 #include "GrabberComponent.h"
 #include "Net/UnrealNetwork.h"
 
@@ -24,15 +24,18 @@ ACaveLeech::ACaveLeech(const FObjectInitializer& ObjectInitializer) : Super(Obje
     this->TentacleAttachOffset = 40.00f;
     this->BiteDistance = 100.00f;
     this->RevivedGracePeriod = 10.00f;
-    this->CaveLeechSenseAffliction = NULL;
+    this->CaveLeechSenseAffliction = nullptr;
     this->StateTime = 0.00f;
     this->State = ECaveLeechState::Idle;
-    this->HealthTarget = NULL;
+    this->HealthTarget = nullptr;
     this->TentacleHead = CreateDefaultSubobject<USceneComponent>(TEXT("TentacleHead"));
     this->SkeletalMesh->SetupAttachment(RootComponent);
 }
 
 void ACaveLeech::UnImmobilize() {
+}
+
+void ACaveLeech::ReleaseBind() {
 }
 
 void ACaveLeech::OnRep_State() {
@@ -56,7 +59,10 @@ AActor* ACaveLeech::GetCurrentTarget() {
 void ACaveLeech::Died(UHealthComponentBase* HealthComponent) {
 }
 
-void ACaveLeech::Damaged(float amount) {
+void ACaveLeech::Damaged(float Amount) {
+}
+
+void ACaveLeech::Client_ReleaseBind_Implementation() {
 }
 
 

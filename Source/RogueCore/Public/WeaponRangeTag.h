@@ -8,4 +8,6 @@ class UWeaponRangeTag : public UWeaponTagBase {
     GENERATED_BODY()
 public:
     UWeaponRangeTag();
+
 };
+

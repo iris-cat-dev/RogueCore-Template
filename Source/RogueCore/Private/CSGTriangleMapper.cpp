@@ -2,8 +2,8 @@
 
 UCSGTriangleMapper::UCSGTriangleMapper() {
     this->Enabled = true;
-    this->AttachToMaterial = NULL;
-    this->BannedMaterial = NULL;
+    this->AttachToMaterial = nullptr;
+    this->BannedMaterial = nullptr;
     this->CellCategories = 3;
     this->DensityInM2 = 1.00f;
     this->MinVerticalAngle = 0.00f;

@@ -4,6 +4,7 @@
 #include "CustomUsable.generated.h"
 
 class UUsableComponentBase;
+
 USTRUCT(BlueprintType)
 struct FCustomUsable {
     GENERATED_BODY()
@@ -13,5 +14,7 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ECustomUsableType TerminationType;
+    
     ROGUECORE_API FCustomUsable();
 };
+

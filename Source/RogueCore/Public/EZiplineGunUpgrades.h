@@ -9,3 +9,4 @@ enum class EZiplineGunUpgrades : uint8 {
     MovementSpeed,
     FallDamageReduction,
 };
+

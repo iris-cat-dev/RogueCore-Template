@@ -19,6 +19,10 @@ bool UGameFunctionLibrary::IsWorldTickEnabled(UObject* WorldContextObject) {
     return false;
 }
 
+bool UGameFunctionLibrary::IsWithEditor() {
+    return false;
+}
+
 void UGameFunctionLibrary::IsTearingDown(UObject* caller, bool& NewIsTearingDown) {
 }
 
@@ -30,7 +34,19 @@ bool UGameFunctionLibrary::IsPlayInEditor(UObject* WorldContextObject) {
     return false;
 }
 
-UWindowManager* UGameFunctionLibrary::GetWindowManager(UObject* WorldContextObject) {
+bool UGameFunctionLibrary::IsGameMarkedModded(const UObject* WorldContext) {
+    return false;
+}
+
+bool UGameFunctionLibrary::IsGameDetectedModded(const UObject* WorldContext) {
+    return false;
+}
+
+bool UGameFunctionLibrary::IsEditorOnlyWorld(const UObject* InWorldContext) {
+    return false;
+}
+
+UWindowManager* UGameFunctionLibrary::GetWindowManager(const UObject* WorldContextObject) {
     return NULL;
 }
 
@@ -62,8 +78,28 @@ FString UGameFunctionLibrary::GetMajorProjectVersion() {
     return TEXT("");
 }
 
-APlayerCharacter* UGameFunctionLibrary::GetLocalPlayerCharacter(UObject* WorldContext) {
+AFSDPlayerController* UGameFunctionLibrary::GetLocalPlayerController(const UObject* WorldContext) {
     return NULL;
+}
+
+UPlayerCharacterID* UGameFunctionLibrary::GetLocalPlayerCharacterID(const UObject* WorldContext) {
+    return NULL;
+}
+
+UPlayerCharacterData* UGameFunctionLibrary::GetLocalPlayerCharacterData(const UObject* WorldContext) {
+    return NULL;
+}
+
+UAbilityData* UGameFunctionLibrary::GetLocalPlayerCharacterAbilityData(const UObject* WorldContext) {
+    return NULL;
+}
+
+APlayerCharacter* UGameFunctionLibrary::GetLocalPlayerCharacter(const UObject* WorldContext) {
+    return NULL;
+}
+
+FSeamlessTravelLevelEndState UGameFunctionLibrary::GetLastLevelEndState(const UObject* WorldContext) {
+    return FSeamlessTravelLevelEndState{};
 }
 
 float UGameFunctionLibrary::GetGlobalGravityZ(UObject* WorldContextObject) {
@@ -90,7 +126,7 @@ AFSDGameMode* UGameFunctionLibrary::GetFSDGameMode(UObject* WorldContextObject) 
     return NULL;
 }
 
-UFSDGameInstance* UGameFunctionLibrary::GetFSDGameInstance(UObject* WorldContextObject) {
+UFSDGameInstance* UGameFunctionLibrary::GetFSDGameInstance(const UObject* WorldContextObject) {
     return NULL;
 }
 
@@ -115,6 +151,10 @@ UCampaignManager* UGameFunctionLibrary::GetCampaingManager(UObject* WorldContext
 }
 
 UAsyncManager* UGameFunctionLibrary::GetAsyncManager(UObject* WorldContextObject) {
+    return NULL;
+}
+
+UAbilityData* UGameFunctionLibrary::GetAbilityDataFromCharacterID(const UPlayerCharacterID* InCharacterID) {
     return NULL;
 }
 

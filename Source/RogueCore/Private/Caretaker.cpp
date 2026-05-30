@@ -1,6 +1,6 @@
 #include "Caretaker.h"
-#include "Components/SceneComponent.h"
-#include "Components/SkeletalMeshComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SkeletalMeshComponent -FallbackName=SkeletalMeshComponent
 #include "EnemyHealthComponent.h"
 #include "HealthDamageTracker.h"
 #include "Net/UnrealNetwork.h"
@@ -15,7 +15,7 @@ ACaretaker::ACaretaker(const FObjectInitializer& ObjectInitializer) : Super(Obje
     this->DamageTracker = CreateDefaultSubobject<UHealthDamageTracker>(TEXT("DamageTracker"));
     this->Health = CreateDefaultSubobject<UEnemyHealthComponent>(TEXT("Health"));
     this->PawnStats = CreateDefaultSubobject<UPawnStatsComponent>(TEXT("PawnStats"));
-    this->CurrentAction = NULL;
+    this->CurrentAction = nullptr;
     this->CurrentStage = -1;
     this->TargetRotationRate = 0;
     this->RotationRates.AddDefaulted(5);
@@ -53,7 +53,7 @@ void ACaretaker::OnRep_CurrentStage() {
 
 
 
-void ACaretaker::OnDamageTaken(float amount) {
+void ACaretaker::OnDamageTaken(float Amount) {
 }
 
 bool ACaretaker::IsAwake() const {

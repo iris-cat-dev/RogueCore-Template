@@ -7,3 +7,4 @@ enum class EObjectiveFailReason : uint8 {
     None,
     SpawnFail,
 };
+

@@ -8,4 +8,6 @@ enum class ECharacterIconType : uint8 {
     CharacterSelectorIcon,
     SmallHeroIcon,
     HeroFullSizeImage,
+    AbilityIcon,
 };
+

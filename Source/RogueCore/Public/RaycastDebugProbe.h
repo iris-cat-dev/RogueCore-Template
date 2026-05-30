@@ -1,9 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameFramework/Actor.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
 #include "RaycastDebugProbe.generated.h"
 
 class UTerrainType;
+
 UCLASS(Blueprintable)
 class ARaycastDebugProbe : public AActor {
     GENERATED_BODY()
@@ -12,4 +13,6 @@ public:
     UTerrainType* TerrainType;
     
     ARaycastDebugProbe(const FObjectInitializer& ObjectInitializer);
+
 };
+

@@ -4,6 +4,7 @@
 #include "LineSegmentFiller.generated.h"
 
 class ULineSegmentFillerComponent;
+
 UCLASS(Blueprintable)
 class ALineSegmentFiller : public AGenerationItem {
     GENERATED_BODY()
@@ -12,4 +13,6 @@ public:
     ULineSegmentFillerComponent* LineComponent;
     
     ALineSegmentFiller(const FObjectInitializer& ObjectInitializer);
+
 };
+

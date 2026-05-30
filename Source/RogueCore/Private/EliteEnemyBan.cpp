@@ -1,6 +1,7 @@
 #include "EliteEnemyBan.h"
 
 FEliteEnemyBan::FEliteEnemyBan() {
-    this->Template = NULL;
+    this->Template = nullptr;
+    this->AffectedPlayerCount = FInt32Interval();
 }
 

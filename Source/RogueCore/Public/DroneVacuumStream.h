@@ -5,6 +5,7 @@
 
 class AFoamPuddle;
 class USceneComponent;
+
 UCLASS(Blueprintable)
 class ADroneVacuumStream : public ADroneStream {
     GENERATED_BODY()
@@ -14,7 +15,11 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<AFoamPuddle*> PuddlesInside;
+    
     ADroneVacuumStream(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, Reliable, Server)
     void Server_StartVacuumingPuddle(AFoamPuddle* puddle);
+    
 };
+

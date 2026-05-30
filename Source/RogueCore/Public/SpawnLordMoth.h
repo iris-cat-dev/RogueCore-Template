@@ -8,4 +8,6 @@ class ROGUECORE_API ASpawnLordMoth : public ACoreSpawnEnemyBase {
     GENERATED_BODY()
 public:
     ASpawnLordMoth(const FObjectInitializer& ObjectInitializer);
+
 };
+

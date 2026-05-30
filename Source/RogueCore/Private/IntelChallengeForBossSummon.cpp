@@ -5,7 +5,7 @@ UIntelChallengeForBossSummon::UIntelChallengeForBossSummon() {
     this->RequiredRunDepth = ERunDepth::None;
 }
 
-void UIntelChallengeForBossSummon::OnBossSummoned(AActor* boss) {
+void UIntelChallengeForBossSummon::OnBossSummoned(AActor* Boss) {
 }
 
 

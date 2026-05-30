@@ -1,5 +1,5 @@
 #include "RessuplyPod.h"
-#include "Components/SceneComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
 #include "DamageComponent.h"
 #include "Net/UnrealNetwork.h"
 #include "Templates/SubclassOf.h"
@@ -14,15 +14,15 @@ ARessuplyPod::ARessuplyPod(const FObjectInitializer& ObjectInitializer) : Super(
     this->DropHeight = 3500.00f;
     this->DropDelay = 0.00f;
     this->MissionShoutDelay = 2.00f;
-    this->ShoutDialogOrderAccepted = NULL;
-    this->DialogOrderAccepted = NULL;
-    this->DialogPodArrived = NULL;
-    this->CurrentMissionShout = NULL;
+    this->ShoutDialogOrderAccepted = nullptr;
+    this->DialogOrderAccepted = nullptr;
+    this->DialogPodArrived = nullptr;
+    this->CurrentMissionShout = nullptr;
     this->State = ERessuplyPodState::ReadyToDrop;
     this->TargetDropTime = 0.00f;
     this->ServerDropProgress = 0.00f;
-    this->DropCurve = NULL;
-    this->PlayerSpawnPoint = NULL;
+    this->DropCurve = nullptr;
+    this->PlayerSpawnPoint = nullptr;
     this->CloseToImpactDistance = 150.00f;
 }
 
@@ -39,7 +39,7 @@ void ARessuplyPod::OnRep_State(ERessuplyPodState oldState) {
 
 
 
-AActor* ARessuplyPod::DropToTarget(UObject* WorldContextObject, TSubclassOf<ARessuplyPod> podClass, const FVector& Location, AActor* Requester) {
+AActor* ARessuplyPod::DropToTarget(UObject* WorldContextObject, TSubclassOf<ARessuplyPod> podClass, const FVector& Location, AActor* requester) {
     return NULL;
 }
 

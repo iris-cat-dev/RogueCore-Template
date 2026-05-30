@@ -1,7 +1,7 @@
 #include "GuntowerActivationPlatform.h"
 #include "Components/CapsuleComponent.h"
-#include "Components/SceneComponent.h"
-#include "Components/StaticMeshComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=StaticMeshComponent -FallbackName=StaticMeshComponent
 #include "Net/UnrealNetwork.h"
 
 AGuntowerActivationPlatform::AGuntowerActivationPlatform(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
@@ -9,7 +9,7 @@ AGuntowerActivationPlatform::AGuntowerActivationPlatform(const FObjectInitialize
     this->Root = (USceneComponent*)RootComponent;
     this->STMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("STMesh"));
     this->Trigger = CreateDefaultSubobject<UCapsuleComponent>(TEXT("Trigger"));
-    this->AssignedModule = NULL;
+    this->AssignedModule = nullptr;
     this->DoneAt = 5.00f;
     this->DisabledTime = 12.00f;
     this->playersInside = 0;

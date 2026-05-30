@@ -8,7 +8,6 @@ enum class EDamageUpgrade : uint8 {
     WeakpointDamageMultiplier,
     StaggerChance,
     StaggerDuration,
-    RadialDamage,
     RadialRange,
     ArmorDamageMultiplier,
     FearFactor,
@@ -21,3 +20,4 @@ enum class EDamageUpgrade : uint8 {
     BaseDamageMultiplier,
     Num,
 };
+

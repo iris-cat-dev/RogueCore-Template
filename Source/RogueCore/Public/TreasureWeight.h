@@ -4,6 +4,7 @@
 #include "TreasureWeight.generated.h"
 
 class UTreasureRewarder;
+
 USTRUCT(BlueprintType)
 struct FTreasureWeight {
     GENERATED_BODY()
@@ -11,6 +12,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float Weight;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UTreasureRewarder> RewarderClass;
+    
     ROGUECORE_API FTreasureWeight();
 };
+

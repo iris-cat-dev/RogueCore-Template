@@ -8,3 +8,4 @@ enum class EWeaponOverviewModifierType : uint8 {
     Multiplicative,
     Unique,
 };
+

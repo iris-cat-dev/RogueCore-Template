@@ -8,4 +8,6 @@ class UChaseIfTargetSurvived : public UStandardExitStrategy {
     GENERATED_BODY()
 public:
     UChaseIfTargetSurvived();
+
 };
+

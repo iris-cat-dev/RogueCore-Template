@@ -1,10 +1,11 @@
 #include "PlayerCharacter.h"
 #include "Camera/CameraComponent.h"
-#include "Runtime/Engine/Classes/Components/PointLightComponent.h"
-#include "Components/SceneComponent.h"
+#include "Components/PointLightComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
 #include "GameFramework/SpringArmComponent.h"
 #include "Components/WidgetInteractionComponent.h"
 #include "AccessCollectionComponent.h"
+#include "AchievementComponent.h"
 #include "ActorTrackingComponent.h"
 #include "BXEStatCounterComponent.h"
 #include "BoosterDeckContainerComponent.h"
@@ -38,13 +39,172 @@
 #include "StatusEffectsComponent.h"
 #include "Templates/SubclassOf.h"
 #include "UpgradeContainerComponent.h"
-#include "WeaponTagBonusesComponent.h"
+#include "Camera/CameraComponent.h"
+#include "Components/WidgetInteractionComponent.h"
+#include "GameFramework/SpringArmComponent.h"
 
 APlayerCharacter::APlayerCharacter(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer.SetDefaultSubobjectClass<UPlayerMovementComponent>(TEXT("CharMoveComp"))) {
-
+    this->AudioDownCameraStatic = nullptr;
+    this->AudioComponent_DownCameraStatic = nullptr;
+    this->HeightenedSenseComponent = nullptr;
+    this->ZipLineStateComponent = nullptr;
+    this->BoundPerkActivationW = nullptr;
+    this->PerkActivationTimer = -1.00f;
+    this->IsCloseToFlare = false;
+    this->GrabbedByClass = nullptr;
+    this->bIsBeingBittenByCaveLeech = false;
+    this->WidgetInteraction = CreateDefaultSubobject<UWidgetInteractionComponent>(TEXT("WidgetInteraction"));
+    this->EquipLaserpointerHoldDuration = 0.33f;
+    this->IsPressingMovementInputKey = false;
+    this->characterID = nullptr;
+    this->FPMesh = CreateDefaultSubobject<UFirstPersonSkeletalMeshComponent>(TEXT("FPMesh"));
+    this->FirstPersonCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("FirstPersonCamera"));
+    this->FirstPersonRoot = CreateDefaultSubobject<USceneComponent>(TEXT("FPRoot"));
+    this->ActorTracking = CreateDefaultSubobject<UActorTrackingComponent>(TEXT("ActorTracking"));
+    this->IntoxicationComponent = nullptr;
+    this->MissionStatsCollector = CreateDefaultSubobject<UMissionStatsCollector>(TEXT("MissionStatsCollector"));
+    this->ThirdPersonSpringArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("ThirdPersonSpringArm"));
+    this->ThirdPersonCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("ThirdPersonCamera"));
+    this->ThirdPersonLight = CreateDefaultSubobject<UPointLightComponent>(TEXT("ThirdPersonLight"));
+    this->FollowSpringArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("FollowSpringArm"));
+    this->DamageNumberAggregator = CreateDefaultSubobject<UDamageNumberAggregator>(TEXT("DamageNumberAggregatorComponent"));
+    this->FollowCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("FollowCamera"));
+    this->GymCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("GymCamera"));
+    this->PerkComponent = CreateDefaultSubobject<UPerkComponent>(TEXT("CharacterPerkContainerComponent"));
+    this->PlayerCheatComponent = CreateDefaultSubobject<UFSDPlayerCheatComponent>(TEXT("PlayerCheatComponent"));
+    this->GymSpringArm = nullptr;
+    this->DownCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("DownCamera"));
+    this->CameraController = CreateDefaultSubobject<UCharacterCameraController>(TEXT("CameraController"));
+    this->HealthComponent = CreateDefaultSubobject<UPlayerHealthComponent>(TEXT("Health"));
+    this->SightComponent = CreateDefaultSubobject<UCharacterSightComponent>(TEXT("SightComponent"));
+    this->InventoryComponent = CreateDefaultSubobject<UInventoryComponent>(TEXT("inventory"));
+    this->UseComponentNew = CreateDefaultSubobject<UCharacterUseComponent>(TEXT("UseComponentNew"));
+    this->UsableComponent = CreateDefaultSubobject<USingleUsableComponent>(TEXT("UsableComponent"));
+    this->OutlineComponent = CreateDefaultSubobject<UOutlineComponent>(TEXT("OutlineComponent"));
+    this->RecoilComponent = CreateDefaultSubobject<UCharacterRecoilComponent>(TEXT("RecoilComponent"));
+    this->StatusEffectsComponent = CreateDefaultSubobject<UStatusEffectsComponent>(TEXT("StatusEffects"));
+    this->PawnStatsComponent = CreateDefaultSubobject<UPawnStatsComponent>(TEXT("PawnStats"));
+    this->PawnAfflictionComponent = CreateDefaultSubobject<UPlayerAfflictionComponent>(TEXT("PawnAfflictions"));
+    this->PlayerInfoComponent = CreateDefaultSubobject<UPlayerInfoComponent>(TEXT("PlayerInfoComponent"));
+    this->AttackerPositioningComponent = CreateDefaultSubobject<UPlayerAttackPositionComponent>(TEXT("AttackerPositioning"));
+    this->CommunicationComponent = CreateDefaultSubobject<UCommunicationComponent>(TEXT("Communication"));
+    this->ElementComponent = CreateDefaultSubobject<UElementComponent>(TEXT("ElementComponent"));
+    this->ReactiveTerrainTracker = CreateDefaultSubobject<UPlayerReactiveTerrainTrackerComponent>(TEXT("TerrainTracker"));
+    this->TrackGrindUsableComponent = CreateDefaultSubobject<UInstantUsable>(TEXT("TrackGrindUsable"));
+    this->StatCounterComponent = CreateDefaultSubobject<UBXEStatCounterComponent>(TEXT("StatCounterComponent"));
+    this->AbilityComponent = nullptr;
+    this->PlayerAmbienceSoundComponent = CreateDefaultSubobject<UPlayerAmbienceSoundComponent>(TEXT("PlayerAmbienceSoundComponent"));
+    this->PlayerEvents = CreateDefaultSubobject<UPlayerEventsComponent>(TEXT("PlayerEventsComponent"));
+    this->CrosshairExtensionComponent = CreateDefaultSubobject<UCrosshairExtensionComponent>(TEXT("CrosshairExtensionComponent"));
+    this->AccessCollectionComponent = CreateDefaultSubobject<UAccessCollectionComponent>(TEXT("AccessCollectionComponent"));
+    this->BioBoosterDecksComponent = CreateDefaultSubobject<UBoosterDeckContainerComponent>(TEXT("BioBoosterDecksComponent"));
+    this->UpgradeContainerComponent = CreateDefaultSubobject<UUpgradeContainerComponent>(TEXT("UpgradeContainer"));
+    this->AchievementComponent = CreateDefaultSubobject<UAchievementComponent>(TEXT("AchievementComponent"));
+    this->RunningSpeed = 0.00f;
+    this->RunBoost = 0.00f;
+    this->RunBoostChargeTime = 0.00f;
+    this->RunBoostActivationSound = nullptr;
+    this->RunBoostParticles = nullptr;
+    this->RunBoostAffliction = nullptr;
+    this->HangingPhysicsAsset = nullptr;
+    this->HangingSimulationBlend = 1.00f;
+    this->IsPlayableCharacter = true;
+    this->SprintSoundComponent = nullptr;
+    this->SprintSound = nullptr;
+    this->SprintSound_Female = nullptr;
+    this->DownedCameraMinPitch = -75.00f;
+    this->DownedCameraMaxPitch = 0.00f;
+    this->TurnToFaceScannerAngularSpeed = 180.00f;
+    this->Turn180Time = 0.50f;
+    this->CarryingMovementSpeedPenalty = 0.50f;
+    this->CarryingMaxFallVelocity = 1200.00f;
+    this->MaxThrowProgress = 1.00f;
+    this->MaxThrowHoldDuration = 2.00f;
+    this->CarryingThrowMinForce = 100.00f;
+    this->CarryingThrowMaxForce = 600.00f;
+    this->PlayerVelocityToThrowFactor = 0.00f;
+    this->CarryingThrowingStatusEffect = nullptr;
+    this->ThrowCarriableProgress = 0.00f;
+    this->ActiveCharacterState = nullptr;
+    this->IsInDropPod = false;
+    this->IsInEscapePod = false;
+    this->ButtonMemoryDuration = 0.25f;
+    this->IsRunning = false;
+    this->SprintingEnabled = true;
+    this->CanDash = false;
+    this->DashInputWindow = 0.30f;
+    this->DashFowardMovementMinRequirement = 0.90f;
+    this->DashRightMovementMaxRequirement = 0.10f;
+    this->DashControllerMinValueRequired = 0.50f;
+    this->DashCooldown = 1.00f;
+    this->DashStatusEffect = nullptr;
+    this->StandingStillActivationTime = 0.00f;
+    this->StandingStillMaxVelocity = 1.00f;
+    this->ForwardInput = 0.00f;
+    this->RightInput = 0.00f;
+    this->ControllerForwardInput = 0.00f;
+    this->ControllerRightInput = 0.00f;
+    this->StoppedRunningTime = -1.00f;
+    this->ShoutPressedTime = -1.00f;
+    this->bIsUsingItemPressed = false;
+    this->bIsUsingPressed = false;
+    this->UsingDelay = 0.00f;
+    this->bIsWorkingout = false;
+    this->IsStandingStill = false;
+    this->HeadLightOn = true;
+    this->isUsing = false;
+    this->JumpPressedTime = 0.00f;
+    this->CanMove = true;
+    this->CanAim = true;
+    this->CanUseItem = true;
+    this->CanChangeItems = true;
+    this->CanMine = true;
+    this->CanSalute = true;
+    this->IsStandingDown = false;
+    this->InDanceRange = false;
+    this->IsDancing = false;
+    this->CanUseUsables = true;
+    this->DanceStartTime = 0.00f;
+    this->HappyFeetAchievement = nullptr;
+    this->DanceMove = 0;
+    this->CameraMode = ECharacterCameraMode::FirstPerson;
+    this->bShouldSpawnAnimEffects = true;
+    this->IdleTime = 0.00f;
+    this->FPDrinkSalute = nullptr;
+    this->TPDrinkSalute = nullptr;
+    this->CurrentSaluteMontage = nullptr;
+    this->bIsShowroomCharacter = false;
+    this->bIsShowroomZoomedIn = false;
+    this->bForceNormalAnimationsInShowroom = false;
+    this->BlockTrackGrindOnLanded = false;
+    this->RadarMaterialInstance = nullptr;
+    this->RadarMaterialAngleParameterIndex = 0;
+    this->FallbackPhysicalMaterial = nullptr;
+    this->ClientReady = false;
+    this->NextCharacterState = nullptr;
+    this->PlayerIsLeavingInDroppod = false;
+    this->CanInstantRevive = false;
+    this->CharacterVanity = CreateDefaultSubobject<UCharacterVanityComponent>(TEXT("CharacterVanity"));
+    this->OnLandedAttachTo = nullptr;
+    this->StageEndLocation = EPlayerStageEndLocation::Unknown;
+    this->TrackedPerksThatAreUpdating = 0;
+    this->ActorTracking->SetupAttachment(RootComponent);
+    this->DownCamera->SetupAttachment(RootComponent);
+    this->FPMesh->SetupAttachment(FirstPersonRoot);
+    this->FirstPersonCamera->SetupAttachment(FPMesh);
+    this->FirstPersonRoot->SetupAttachment(RootComponent);
+    this->FollowCamera->SetupAttachment(FollowSpringArm);
+    this->FollowSpringArm->SetupAttachment(RootComponent);
+    this->ThirdPersonCamera->SetupAttachment(ThirdPersonSpringArm);
+    this->ThirdPersonLight->SetupAttachment(RootComponent);
+    this->ThirdPersonSpringArm->SetupAttachment(RootComponent);
+    this->WidgetInteraction->SetupAttachment(FirstPersonCamera);
 }
 
 void APlayerCharacter::UseZipLine(AZipLineProjectile* ZipLine, const FVector& Start, const FVector& End) {
+}
+
+void APlayerCharacter::UpdateAbilityHoldDuration() {
 }
 
 void APlayerCharacter::Unparalyze() {
@@ -96,34 +256,45 @@ UAudioComponent* APlayerCharacter::SpawnSound2D(USoundBase* Sound, float Priorit
     return NULL;
 }
 
+void APlayerCharacter::SpaceRigOpacityChange(float Opacity) {
+}
+
 void APlayerCharacter::ShowSimpleHoldProgress(APlayerController* PlayerController, const FText& InDescription, float InProgress) {
 }
+
 
 void APlayerCharacter::SetStandingDown(bool standingDown) {
 }
 
+void APlayerCharacter::SetSprintingEnabled(bool Enabled) {
+}
+
+
 void APlayerCharacter::SetRadarMaterialInstance(UMaterialInstanceDynamic* matInstance) {
 }
 
-void APlayerCharacter::SetPlayerResource(UResourceData* Resource, float amount) {
+void APlayerCharacter::SetPlayerResource(UResourceData* Resource, float Amount) {
 }
 
-void APlayerCharacter::SetOutsideShieldGenerator(AShieldGeneratorActor* Shield) {
+void APlayerCharacter::SetOutsideShieldGenerator(AGeneratorItemActor* Shield) {
 }
 
-void APlayerCharacter::SetIsCharacterSelectionModel() {
+void APlayerCharacter::SetIsShowroomZoomedIn(const bool IsZoomedIn) {
+}
+
+void APlayerCharacter::SetIsShowroomCharacter() {
 }
 
 void APlayerCharacter::SetInstantUsables_Implementation(bool Value) {
 }
 
-void APlayerCharacter::SetInsideShieldGenerator(AShieldGeneratorActor* Shield) {
-}
-
-void APlayerCharacter::SetInCharacterSelectionWorld() {
+void APlayerCharacter::SetInsideShieldGenerator(AGeneratorItemActor* Shield) {
 }
 
 void APlayerCharacter::SetHeadLight_Implementation(bool On) {
+}
+
+void APlayerCharacter::SetForceNormalAnimationsInShowroom(const bool Force) {
 }
 
 void APlayerCharacter::SetFallbackPhysicalMaterial(UFSDPhysicalMaterial* PhysMat) {
@@ -142,6 +313,12 @@ void APlayerCharacter::Server_TriggerDash_Implementation() {
 }
 
 void APlayerCharacter::Server_TestGenerationDesync_Implementation() {
+}
+
+void APlayerCharacter::Server_TeleportToPlayer_Implementation(APlayerCharacter* InPlayerToTeleport, int32 InTarget) {
+}
+
+void APlayerCharacter::Server_TeleportPlayerTo_Implementation(int32 InPlayerIndexToTeleport, APlayerCharacter* InTarget) {
 }
 
 void APlayerCharacter::Server_StartSalute_Implementation(UAnimMontage* startSalute) {
@@ -207,10 +384,13 @@ void APlayerCharacter::Server_CheatGodMode_Implementation() {
 void APlayerCharacter::Server_CheatFlyMode_Implementation(bool Active) {
 }
 
+void APlayerCharacter::Server_CheatFlareInfiniteDuration_Implementation(bool Enabled) {
+}
+
 void APlayerCharacter::Server_CheatDebugFastMode_Implementation(bool fast) {
 }
 
-void APlayerCharacter::Server_CheatAddAllResourcesToInventory_Implementation(float amount) {
+void APlayerCharacter::Server_CheatAddAllResourcesToInventory_Implementation(float Amount) {
 }
 
 void APlayerCharacter::Server_CancelThrowingCarriable_Implementation() {
@@ -240,26 +420,27 @@ void APlayerCharacter::ReviveProgress(float Progress) {
 void APlayerCharacter::RevivePlayer() {
 }
 
-void APlayerCharacter::RequestChangeInGravityScale_Implementation(float newGravityScale) {
+void APlayerCharacter::RequestChangeInGravityScale_Implementation(float newGravityScale, bool pushFallingState) {
 }
 
 void APlayerCharacter::RemoveRunningBoostEffects(TArray<TSubclassOf<UStatusEffect>> effects) {
 }
 
-void APlayerCharacter::RemoveRunningBoostEffect(TSubclassOf<UStatusEffect> Effect) {
+void APlayerCharacter::RemoveRunningBoostEffect(TSubclassOf<UStatusEffect> effect) {
 }
 
 void APlayerCharacter::RemoveCloseFlare() {
 }
 
-void APlayerCharacter::RejectInvite() {
-}
 
 
 
 
 void APlayerCharacter::QuickUseGeneral(const int32 Index) {
 }
+
+
+
 
 
 void APlayerCharacter::PilotVehicle(AActor* Vehicle) {
@@ -272,9 +453,6 @@ void APlayerCharacter::OpenChat() {
 }
 
 void APlayerCharacter::OnResourceFull(UCappedResource* Resource) {
-}
-
-void APlayerCharacter::OnRep_UniqueRunID() {
 }
 
 void APlayerCharacter::OnRep_IsStandingDown() {
@@ -295,10 +473,13 @@ void APlayerCharacter::OnRep_DanceMove() {
 void APlayerCharacter::OnRep_CharacterState(UCharacterStateComponent* oldState) {
 }
 
-//void APlayerCharacter::OnPlayerStateChanged(const APlayerCharacter::FOnPlayerStateDelegate& OnNewStateSet, bool CallInstantlyIfAlreadySet) {
-//}
+void APlayerCharacter::OnPlayerStateChanged(const APlayerCharacter::FOnPlayerStateDelegate& OnNewStateSet, bool CallInstantlyIfAlreadySet) {
+}
 
 void APlayerCharacter::OnItemEquipped(AItem* Item) {
+}
+
+void APlayerCharacter::OnInventoryItemsLoaded() {
 }
 
 void APlayerCharacter::OnCharacterUsed(APlayerCharacter* User, EInputKeys Key) {
@@ -346,6 +527,14 @@ bool APlayerCharacter::IsSuspended() const {
 }
 
 bool APlayerCharacter::IsStateActive(ECharacterState State) const {
+    return false;
+}
+
+bool APlayerCharacter::IsShowroomZoomedIn() const {
+    return false;
+}
+
+bool APlayerCharacter::IsShowroomCharacter() const {
     return false;
 }
 
@@ -411,9 +600,6 @@ void APlayerCharacter::InvalidateTeleport_Implementation() {
 void APlayerCharacter::InstantRevive(APlayerCharacter* ReviveTarget, EInputKeys Key) {
 }
 
-void APlayerCharacter::IgnoreInvite() {
-}
-
 bool APlayerCharacter::HasBeenRevived() const {
     return false;
 }
@@ -428,6 +614,10 @@ UPlayerTPAnimInstance* APlayerCharacter::GetTPAnimInstance() const {
 
 float APlayerCharacter::GetTimeSinceLastRevival() const {
     return 0.0f;
+}
+
+EPlayerStageEndLocation APlayerCharacter::GetStageEndLocation() const {
+    return EPlayerStageEndLocation::Unknown;
 }
 
 ECharacterState APlayerCharacter::GetPreviousState() const {
@@ -458,10 +648,6 @@ UInventoryList* APlayerCharacter::GetInventoryList() const {
     return NULL;
 }
 
-FText APlayerCharacter::GetHeroSwitchToMessage() const {
-    return FText::GetEmpty();
-}
-
 FText APlayerCharacter::GetHeroName() const {
     return FText::GetEmpty();
 }
@@ -476,6 +662,14 @@ UTexture2D* APlayerCharacter::GetHeroIcon() const {
 
 FLinearColor APlayerCharacter::GetHeroColor() const {
     return FLinearColor{};
+}
+
+TArray<USkeletalMeshComponent*> APlayerCharacter::GetGauntletThirdPersonMeshes_Implementation() const {
+    return TArray<USkeletalMeshComponent*>();
+}
+
+TArray<USkeletalMeshComponent*> APlayerCharacter::GetGauntletFirstPersonMeshes_Implementation() const {
+    return TArray<USkeletalMeshComponent*>();
 }
 
 UPlayerFPAnimInstance* APlayerCharacter::GetFPAnimInstance() const {
@@ -542,8 +736,8 @@ FVector APlayerCharacter::GetActorGroundLocation() const {
     return FVector{};
 }
 
-TArray<AShieldGeneratorActor*> APlayerCharacter::GetActiveShieldGenerators() {
-    return TArray<AShieldGeneratorActor*>();
+TArray<AGeneratorItemActor*> APlayerCharacter::GetActiveShieldGenerators() {
+    return TArray<AGeneratorItemActor*>();
 }
 
 UPlayerAnimInstance* APlayerCharacter::GetActiveAnimInstance() const {
@@ -556,6 +750,10 @@ UAbilityData* APlayerCharacter::GetAbilityData(APlayerCharacter* InCharacter) {
 
 UAbilityComponent* APlayerCharacter::GetAbilityComponent() const {
     return NULL;
+}
+
+bool APlayerCharacter::ForceNormalAnimationsInShowroom() const {
+    return false;
 }
 
 void APlayerCharacter::ForceIsPressingMovementInputKey() {
@@ -615,7 +813,7 @@ void APlayerCharacter::AnnounceSchematicCollected(USchematic* InSchematic) {
 void APlayerCharacter::All_StartSalute_Implementation(UAnimMontage* saluteMontage) {
 }
 
-void APlayerCharacter::All_ShowImpactEffects_Implementation(UFXSystemAsset* Particles, FVector_NetQuantize Location, FVector_NetQuantizeNormal Orientation) const {
+void APlayerCharacter::All_ShowImpactEffects_Implementation(UFXSystemAsset* Particles, FVector_NetQuantize Location, FVector_NetQuantizeNormal orientation) const {
 }
 
 void APlayerCharacter::All_ShowFieldMedicInstantReviveEffects_Implementation() {
@@ -627,13 +825,16 @@ void APlayerCharacter::All_PlayCompletedUseMontage_Implementation(UUseAnimationS
 void APlayerCharacter::All_OnCharacterUsedAirJump_Implementation(APlayerCharacter* InPlayer) {
 }
 
+void APlayerCharacter::All_CheatFlareInfiniteDuration_Implementation(bool Enabled) {
+}
+
 void APlayerCharacter::AddRunningBoostEffects(TArray<TSubclassOf<UStatusEffect>> effects) {
 }
 
-void APlayerCharacter::AddRunningBoostEffect(TSubclassOf<UStatusEffect> Effect) {
+void APlayerCharacter::AddRunningBoostEffect(TSubclassOf<UStatusEffect> effect) {
 }
 
-void APlayerCharacter::AddPlayerResource(UResourceData* Resource, float amount) {
+void APlayerCharacter::AddPlayerResource(UResourceData* Resource, float Amount) {
 }
 
 void APlayerCharacter::AddImpulseToActor(AFSDPhysicsActor* Target, FVector_NetQuantize Impulse, FVector_NetQuantize Location, FVector_NetQuantize AngularImpulse) {
@@ -651,12 +852,9 @@ void APlayerCharacter::AddCloseFlare() {
 void APlayerCharacter::AcknowledgeCharacterState_Implementation(ECharacterState eState) {
 }
 
-void APlayerCharacter::AcceptInvite() {
-}
-
 void APlayerCharacter::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const {
     Super::GetLifetimeReplicatedProps(OutLifetimeProps);
-
+    
     DOREPLIFETIME(APlayerCharacter, IsCloseToFlare);
     DOREPLIFETIME(APlayerCharacter, IsPressingMovementInputKey);
     DOREPLIFETIME(APlayerCharacter, ActiveCharacterState);
@@ -668,8 +866,7 @@ void APlayerCharacter::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& Out
     DOREPLIFETIME(APlayerCharacter, IsDancing);
     DOREPLIFETIME(APlayerCharacter, DanceMove);
     DOREPLIFETIME(APlayerCharacter, PlayerIsLeavingInDroppod);
-    DOREPLIFETIME(APlayerCharacter, UniqueRunID);
+    DOREPLIFETIME(APlayerCharacter, StageEndLocation);
 }
-
 
 

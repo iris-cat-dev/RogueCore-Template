@@ -1,7 +1,7 @@
 #include "SpawnTriggerFeature.h"
 
 USpawnTriggerFeature::USpawnTriggerFeature() {
-    this->TriggerClass = NULL;
+    this->TriggerClass = nullptr;
 }
 
 

@@ -1,7 +1,7 @@
 #include "PitchedUsers.h"
 
 FPitchedUsers::FPitchedUsers() {
-    this->Player = NULL;
+    this->Player = nullptr;
     this->Timer = 0.00f;
 }
 

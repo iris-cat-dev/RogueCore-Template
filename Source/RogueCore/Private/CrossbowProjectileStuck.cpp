@@ -3,7 +3,18 @@
 #include "Net/UnrealNetwork.h"
 
 ACrossbowProjectileStuck::ACrossbowProjectileStuck(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-
+    this->RootComponent = CreateDefaultSubobject<USphereComponent>(TEXT("Root"));
+    this->BansheePulseEnabled = false;
+    this->StuckProjectileEffect = ECrossbowStuckType::Default;
+    this->RecallComponent = nullptr;
+    this->BansheeComponent = nullptr;
+    this->IsPlayingElectricRangeEffect = true;
+    this->AppliedEffect = nullptr;
+    this->StatusEffectTime = 0.00f;
+    this->AttachmentRoot = (USphereComponent*)RootComponent;
+    this->BansheePulseComponent = nullptr;
+    this->LaserCollider = nullptr;
+    this->BaseProjectile = nullptr;
 }
 
 void ACrossbowProjectileStuck::UsableChanged(bool CanUse) {

@@ -10,6 +10,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FWaveDifficultyRanges SpawnRateRanges;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FWaveDifficultyRanges DifficultyRanges;
+    
     ROGUECORE_API FWaveDifficultyController();
 };
+

@@ -1,13 +1,13 @@
 #include "PickaxeSetReward.h"
 
 UPickaxeSetReward::UPickaxeSetReward() {
-    this->BladeFront = NULL;
-    this->OptionalBladeBack = NULL;
-    this->Pommel = NULL;
-    this->Handle = NULL;
-    this->Shaft = NULL;
-    this->Head = NULL;
-    this->Material = NULL;
+    this->BladeFront = nullptr;
+    this->OptionalBladeBack = nullptr;
+    this->Pommel = nullptr;
+    this->Handle = nullptr;
+    this->Shaft = nullptr;
+    this->Head = nullptr;
+    this->Material = nullptr;
 }
 
 

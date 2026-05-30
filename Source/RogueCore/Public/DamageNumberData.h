@@ -8,3 +8,4 @@ struct FDamageNumberData {
 public:
     ROGUECORE_API FDamageNumberData();
 };
+

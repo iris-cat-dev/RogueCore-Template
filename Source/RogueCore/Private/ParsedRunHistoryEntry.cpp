@@ -1,6 +1,7 @@
 #include "ParsedRunHistoryEntry.h"
 
 FParsedRunHistoryEntry::FParsedRunHistoryEntry() {
-    this->TargetTemplate = NULL;
+    this->RunInfo = FParsedRunHistoryRunInfo();
+    this->SharedInfo = FSharedRunData();
 }
 

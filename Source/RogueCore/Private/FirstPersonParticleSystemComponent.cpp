@@ -1,5 +1,5 @@
 #include "FirstPersonParticleSystemComponent.h"
-#include "UObject/UnrealType.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=EFirstPersonPrimitiveType -FallbackName=EFirstPersonPrimitiveType
 
 UFirstPersonParticleSystemComponent::UFirstPersonParticleSystemComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->FirstPersonPrimitiveType = EFirstPersonPrimitiveType::FirstPerson;

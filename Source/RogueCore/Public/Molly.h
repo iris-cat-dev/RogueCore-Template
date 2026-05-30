@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "DelegateDelegate.h"
 #include "MULE.h"
 #include "Molly.generated.h"
@@ -10,39 +10,59 @@ class UDialogDataAsset;
 class UNiagaraSystem;
 class UOutlineComponent;
 class UResourceBank;
+
 UCLASS(Abstract, Blueprintable)
 class ROGUECORE_API AMolly : public AMULE {
     GENERATED_BODY()
-    
-
 public:
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCalledByDelegate, APlayerCharacter*, InPlayer);
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FCalledByDelegate OnCalledByChanged;
- 
+    
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UResourceBank* ResourceBank;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UOutlineComponent* OutlineComponent;
+    
     UPROPERTY(BlueprintAssignable, BlueprintCallable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FDelegate OnReachedDropShip;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float ShowButtonDelay;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, ReplicatedUsing=OnRep_CalledBy, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<APlayerCharacter> CalledBy;
+    
+public:
     AMolly(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+
     UFUNCTION(BlueprintCallable)
     void SetOpenForDeposit(bool Open);
+    
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable, BlueprintImplementableEvent)
     void SetGotoDropShip(const FVector& Location);
+    
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void SetCalledBy(APlayerCharacter* InPlayer);
-    UFUNCTION()
+    
+protected:
+    UFUNCTION(BlueprintCallable)
     void OnRep_CalledBy();
+    
+public:
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     UDialogDataAsset* GetCallingShout() const;
+    
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void EnableButton();
-    void AddTrayEffect(UNiagaraSystem* Effect, int32 numberOfTraysAffected);
+    
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    void AddTrayEffect(UNiagaraSystem* effect, int32 numberOfTraysAffected);
+    
 };
+

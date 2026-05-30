@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "BoneControllers/AnimNode_SkeletalControlBase.h"
-#include "Animation/BoneReference.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BoneReference -FallbackName=BoneReference
 #include "AnimNode_Tentacle.generated.h"
 
 USTRUCT(BlueprintType)
@@ -13,3 +13,4 @@ public:
     
     FAnimNode_Tentacle();
 };
+

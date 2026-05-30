@@ -8,4 +8,6 @@ class UPawnFrozenUniqueAfflictionEffect : public UAfflictionEffect {
     GENERATED_BODY()
 public:
     UPawnFrozenUniqueAfflictionEffect();
+
 };
+

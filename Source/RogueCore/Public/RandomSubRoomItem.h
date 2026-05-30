@@ -5,16 +5,23 @@
 #include "RandomSubRoomItem.generated.h"
 
 class URoomGeneratorGroup;
+
 UCLASS(Blueprintable)
 class ARandomSubRoomItem : public AGenerationItem {
     GENERATED_BODY()
-    
-
 public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     URoomGeneratorGroup* RoomGroup;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FGameplayTagQuery TagQuery;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 Layer;
+    
+public:
     ARandomSubRoomItem(const FObjectInitializer& ObjectInitializer);
+
 };
+

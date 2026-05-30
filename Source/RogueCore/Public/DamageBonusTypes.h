@@ -8,3 +8,4 @@ struct FDamageBonusTypes {
 public:
     ROGUECORE_API FDamageBonusTypes();
 };
+

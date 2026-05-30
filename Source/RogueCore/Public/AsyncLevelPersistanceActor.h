@@ -1,9 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameFramework/Actor.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
 #include "AsyncLevelPersistanceActor.generated.h"
 
 class UObject;
+
 UCLASS(Blueprintable)
 class AAsyncLevelPersistanceActor : public AActor {
     GENERATED_BODY()
@@ -12,4 +13,6 @@ public:
     TArray<UObject*> References;
     
     AAsyncLevelPersistanceActor(const FObjectInitializer& ObjectInitializer);
+
 };
+

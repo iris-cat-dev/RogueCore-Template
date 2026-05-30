@@ -1,10 +1,10 @@
 #include "GrenadeAnimationSet.h"
 
 UGrenadeAnimationSet::UGrenadeAnimationSet() {
-    this->FP_EquipAnimation = NULL;
-    this->TP_EquipAnimation = NULL;
-    this->FP_ThrowAnimation = NULL;
-    this->TP_ThrowAnimation = NULL;
+    this->FP_EquipAnimation = nullptr;
+    this->TP_EquipAnimation = nullptr;
+    this->FP_ThrowAnimation = nullptr;
+    this->TP_ThrowAnimation = nullptr;
 }
 
 

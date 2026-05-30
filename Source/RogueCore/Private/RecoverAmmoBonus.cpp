@@ -1,7 +1,7 @@
 #include "RecoverAmmoBonus.h"
 
 URecoverAmmoBonus::URecoverAmmoBonus() {
-    this->amount = 1;
+    this->Amount = 1;
 }
 
 

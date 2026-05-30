@@ -17,9 +17,9 @@ AProceduralSetup::AProceduralSetup(const FObjectInitializer& ObjectInitializer) 
     this->ShowItemNoisePattern = false;
     this->Seed = -1;
     this->UseRandomSeed = true;
-    this->ForcedMachineEvent = NULL;
-    this->ForcedTreasure = NULL;
-    this->ForcedOtherEvent = NULL;
+    this->ForcedMachineEvent = nullptr;
+    this->ForcedTreasure = nullptr;
+    this->ForcedOtherEvent = nullptr;
     this->NoisyPathfinder = CreateDefaultSubobject<UNoisyPathfinderComponent>(TEXT("NoisyPathfinder"));
     this->ProceduralTunnel = CreateDefaultSubobject<UProceduralTunnelComponent>(TEXT("ProceduralTunnel"));
     this->Encounters = CreateDefaultSubobject<UPLSEncounterComponent>(TEXT("Encounters"));
@@ -27,17 +27,17 @@ AProceduralSetup::AProceduralSetup(const FObjectInitializer& ObjectInitializer) 
     this->Veins = CreateDefaultSubobject<UProceduralVeinsComponent>(TEXT("ProceduralVeins"));
     this->Resources = CreateDefaultSubobject<UProceduralResources>(TEXT("ProceduralResources"));
     this->ObjectColliders = CreateDefaultSubobject<UProceduralObjectColliders>(TEXT("ObjectColliders"));
-    this->CSGWorld = NULL;
-    this->PathfinderNoise = NULL;
-    this->MissionDNA = NULL;
+    this->CSGWorld = nullptr;
+    this->PathfinderNoise = nullptr;
+    this->MissionDNA = nullptr;
     this->SpawnSettings = ESpawnSettings::Normal;
     this->CanSpawnSpecialEvents = true;
     this->ShouldCarveTunnels = true;
-    this->Biome = NULL;
+    this->Biome = nullptr;
     this->missionLength = 0.00f;
     this->CaveDepth = 0.00f;
-    this->PostProcessActor = NULL;
-    this->SpecialEvent = NULL;
+    this->PostProcessActor = nullptr;
+    this->SpecialEvent = nullptr;
     this->IsInitialized = false;
     this->CurrentRoomPass = 0;
     this->Pass1Completed = false;
@@ -59,6 +59,12 @@ void AProceduralSetup::SpawnTunnelDecoration() {
 void AProceduralSetup::SpawnSpecialEvents() {
 }
 
+void AProceduralSetup::SpawnPostConstructionActors_Async(FLatentActionInfo LatentInfo) {
+}
+
+void AProceduralSetup::SpawnPostConstructionActors() {
+}
+
 void AProceduralSetup::SpawnObjectiveEncounter() {
 }
 
@@ -77,6 +83,12 @@ void AProceduralSetup::SpawnItems_Async(AProceduralSetup* setup, FLatentActionIn
 void AProceduralSetup::SpawnItems() {
 }
 
+void AProceduralSetup::SpawnFinalPostConstructionActors_Async(FLatentActionInfo LatentInfo) {
+}
+
+void AProceduralSetup::SpawnFinalPostConstructionActors() {
+}
+
 void AProceduralSetup::SpawnEncounters() {
 }
 
@@ -92,12 +104,6 @@ void AProceduralSetup::SpawnConstructions_Async(FLatentActionInfo LatentInfo) {
 void AProceduralSetup::SpawnConstructions() {
 }
 
-void AProceduralSetup::SpawnConstructionRequiringActors_Async(FLatentActionInfo LatentInfo) {
-}
-
-void AProceduralSetup::SpawnConstructionRequiringActors() {
-}
-
 void AProceduralSetup::SetSeed(int32 NewSeed) {
 }
 
@@ -108,10 +114,10 @@ void AProceduralSetup::RemoveBLockedEntrances() {
 
 
 
-void AProceduralSetup::LoadLevelDecoration(FLatentActionInfo LatentInfo, bool DoAsyncLoading) {
+void AProceduralSetup::LoadPostConstructionActors(FLatentActionInfo LatentInfo, bool DoAsyncLoading) {
 }
 
-void AProceduralSetup::LoadConstructionRequiringActors(FLatentActionInfo LatentInfo, bool DoAsyncLoading) {
+void AProceduralSetup::LoadLevelDecoration(FLatentActionInfo LatentInfo, bool DoAsyncLoading) {
 }
 
 void AProceduralSetup::LoadConstructionGroups(FLatentActionInfo LatentInfo, bool DoAsyncLoading) {
@@ -134,6 +140,10 @@ TArray<FTerrainPlacementDebugGroup> AProceduralSetup::GetTerrainPlacementDebug()
 
 int32 AProceduralSetup::GetRoomIndexFromPosition(const FVector& position) const {
     return 0;
+}
+
+TArray<FRoomNode> AProceduralSetup::GetNonPostCarvedRooms() const {
+    return TArray<FRoomNode>();
 }
 
 UMissionDNA* AProceduralSetup::GetMissionDNA() const {
@@ -188,6 +198,9 @@ int32 AProceduralSetup::CreateItemDepths() {
 }
 
 void AProceduralSetup::CreateGeneratedInfluenceSet() {
+}
+
+void AProceduralSetup::CopyBiomeRockMaterialParametersToCollection(UMaterialParameterCollection* toCollection) {
 }
 
 int32 AProceduralSetup::ConnectRoomIds(int32 fromID, int32 toID, bool hasDirt, UTunnelParameters* tunnelParameterOverride) {

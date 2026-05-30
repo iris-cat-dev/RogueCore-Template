@@ -13,22 +13,10 @@ ALineCutter::ALineCutter(const FObjectInitializer& ObjectInitializer) : Super(Ob
 void ALineCutter::Server_StopRotatingProjectile_Implementation() {
 }
 
-bool ALineCutter::Server_StopRotatingProjectile_Validate() {
-    return true;
-}
-
 void ALineCutter::Server_ReverseLastProjectile_Implementation() {
 }
 
-bool ALineCutter::Server_ReverseLastProjectile_Validate() {
-    return true;
-}
-
 void ALineCutter::Server_DestroyOldProjectile_Implementation() {
-}
-
-bool ALineCutter::Server_DestroyOldProjectile_Validate() {
-    return true;
 }
 
 void ALineCutter::OnRep_LastProjectile() const {

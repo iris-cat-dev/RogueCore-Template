@@ -3,13 +3,13 @@
 #include "Templates/SubclassOf.h"
 
 UInventoryComponent::UInventoryComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->InventoryList = NULL;
-    this->ThrownGrenadeClass = NULL;
+    this->InventoryList = nullptr;
+    this->ThrownGrenadeClass = nullptr;
     this->GrenadeSlotIndex = 4;
-    this->AmmoBagClass = NULL;
-    this->flareClass = NULL;
-    this->OutOfFlaresSound = NULL;
-    this->OutOfFlaresShout = NULL;
+    this->AmmoBagClass = nullptr;
+    this->flareClass = nullptr;
+    this->OutOfFlaresSound = nullptr;
+    this->OutOfFlaresShout = nullptr;
     this->FlareAngle = 0.00f;
     this->FlareCooldown = 0.00f;
     this->FlareProductionTime = 0.00f;
@@ -18,14 +18,18 @@ UInventoryComponent::UInventoryComponent(const FObjectInitializer& ObjectInitial
     this->Flares = 0;
     this->FlareCooldownRemaining = 0.00f;
     this->bItemsLoaded = false;
-    this->MiningItem = NULL;
-    this->GrenadeItem = NULL;
-    this->LaserPointerItem = NULL;
-    this->TerrainScannerItem = NULL;
-    this->ResupplyItem = NULL;
-    this->RecallableSentryGunItem = NULL;
-    this->AmmoBag = NULL;
+    this->MiningItem = nullptr;
+    this->GrenadeItem = nullptr;
+    this->LaserPointerItem = nullptr;
+    this->TerrainScannerItem = nullptr;
+    this->ResupplyItem = nullptr;
+    this->RecallableSentryGunItem = nullptr;
+    this->AmmoBag = nullptr;
     this->ItemSlots.AddDefaulted(5);
+    this->SpawnAmmoBagOnInit = true;
+}
+
+void UInventoryComponent::ThrowItem(FVector Force, bool PlayMontage) {
 }
 
 void UInventoryComponent::SwapItems(AItem* A, AItem* B) {
@@ -77,8 +81,12 @@ bool UInventoryComponent::HasDrink() const {
     return false;
 }
 
-AItem* UInventoryComponent::GetSlotItem(const FItemSlotIndex& Slot) {
+AItem* UInventoryComponent::GetSlotItem(const FItemSlotIndex& Slot) const {
     return NULL;
+}
+
+int32 UInventoryComponent::GetSlotCount() {
+    return 0;
 }
 
 ARecallableSentryGunItem* UInventoryComponent::GetRecallableSentryGunItem() const {
@@ -109,11 +117,23 @@ AItem* UInventoryComponent::GetFirstItem() const {
     return NULL;
 }
 
+TArray<int32> UInventoryComponent::GetEquippedSlotIndices(bool InIncludeGrenades, bool InIncludeAmmoBags) const {
+    return TArray<int32>();
+}
+
+UItemID* UInventoryComponent::GetEquippedItemID() const {
+    return NULL;
+}
+
 AItem* UInventoryComponent::GetEquippedItem() const {
     return NULL;
 }
 
-AItem* UInventoryComponent::GetCurrentItemInSlot(int32 SlotIndex) {
+AItem* UInventoryComponent::GetCurrentItemInSlot(int32 SlotIndex) const {
+    return NULL;
+}
+
+UItemID* UInventoryComponent::GetCurrentItemIDInSlot(int32 SlotIndex) const {
     return NULL;
 }
 
@@ -161,12 +181,10 @@ void UInventoryComponent::AddItemClass(TSubclassOf<AItem> itemClass) {
 
 void UInventoryComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const {
     Super::GetLifetimeReplicatedProps(OutLifetimeProps);
-
+    
     DOREPLIFETIME(UInventoryComponent, flareClass);
     DOREPLIFETIME(UInventoryComponent, AmmoBag);
     DOREPLIFETIME(UInventoryComponent, ItemSlots);
 }
-
-
 
 

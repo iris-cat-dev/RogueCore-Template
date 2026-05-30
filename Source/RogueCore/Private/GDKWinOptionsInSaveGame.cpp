@@ -18,7 +18,8 @@ FGDKWinOptionsInSaveGame::FGDKWinOptionsInSaveGame() {
     this->PostProcessingQuality = 0;
     this->EffectsQuality = 0;
     this->ViewDistanceQuality = 0;
-    this->PreventLatejoinCharacterDuplication = false;
     this->UseDefaultAudioOutputDevice = false;
+    this->LocalGameServerName = FString();
+    this->CurrentAudioOutputDeviceId = FString();
 }
 

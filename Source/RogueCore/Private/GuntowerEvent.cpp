@@ -1,11 +1,11 @@
 #include "GuntowerEvent.h"
-#include "Components/SkeletalMeshComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SkeletalMeshComponent -FallbackName=SkeletalMeshComponent
 #include "Net/UnrealNetwork.h"
 
 AGuntowerEvent::AGuntowerEvent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->Root = NULL;
+    this->Root = nullptr;
     this->BaseMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("TowerBase"));
-    this->EndExplosionDamage = NULL;
+    this->EndExplosionDamage = nullptr;
     this->TowerExplodeDelay = 3.00f;
     this->DelayBetweenExplosions = 0.50f;
     this->ActiveHostileModules = 0;

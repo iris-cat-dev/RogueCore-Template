@@ -7,3 +7,4 @@ enum class EInputInteraction : uint8 {
     Press,
     Hold,
 };
+

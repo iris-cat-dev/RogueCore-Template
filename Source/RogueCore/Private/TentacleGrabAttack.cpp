@@ -1,7 +1,7 @@
 #include "TentacleGrabAttack.h"
 
 UTentacleGrabAttack::UTentacleGrabAttack(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->HeadMesh = NULL;
+    this->HeadMesh = nullptr;
 }
 
 bool UTentacleGrabAttack::IsHeadNearTerrain() const {

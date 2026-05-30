@@ -8,4 +8,6 @@ class UPerkEffectCooldown : public UPerkEffect {
     GENERATED_BODY()
 public:
     UPerkEffectCooldown();
+
 };
+

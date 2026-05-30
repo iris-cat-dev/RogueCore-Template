@@ -4,6 +4,7 @@
 #include "SkinColorVanityItem.generated.h"
 
 class UMaterialInterface;
+
 UCLASS(Blueprintable, EditInlineNew)
 class USkinColorVanityItem : public UVanityItem {
     GENERATED_BODY()
@@ -12,4 +13,6 @@ public:
     TSoftObjectPtr<UMaterialInterface> Material;
     
     USkinColorVanityItem();
+
 };
+

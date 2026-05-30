@@ -1,10 +1,10 @@
 #include "CSGModulatedSDFInstance.h"
 
 UCSGModulatedSDFInstance::UCSGModulatedSDFInstance() {
-    this->CSGSDFInstanceRoot = NULL;
-    this->CurrentBakeConfig = NULL;
-    this->CSGSDFModulatedInstanceRoot = NULL;
-    this->CurrentModulatedBakeConfig = NULL;
+    this->CSGSDFInstanceRoot = nullptr;
+    this->CurrentBakeConfig = nullptr;
+    this->CSGSDFModulatedInstanceRoot = nullptr;
+    this->CurrentModulatedBakeConfig = nullptr;
 }
 
 

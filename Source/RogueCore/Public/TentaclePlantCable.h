@@ -8,4 +8,6 @@ class ATentaclePlantCable : public ASplineCableActor {
     GENERATED_BODY()
 public:
     ATentaclePlantCable(const FObjectInitializer& ObjectInitializer);
+
 };
+

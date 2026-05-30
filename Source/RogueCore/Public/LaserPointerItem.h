@@ -1,7 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-
-
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Transform -FallbackName=Transform
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=HitResult -FallbackName=HitResult
 #include "GameplayTagContainer.h"
 #include "AnimatedItem.h"
 #include "ELaserPointerMarkerType.h"
@@ -20,58 +22,102 @@ class UPrimitiveComponent;
 class USceneComponent;
 class UTerrainMaterial;
 class UTexture2D;
+
 UCLASS(Abstract, Blueprintable)
 class ALaserPointerItem : public AAnimatedItem {
     GENERATED_BODY()
-    
-
 public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FMarkerPlacedDelegate OnMarkerPlaced;
     
- 
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<ALaserPointerMarker> MarkerType;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<ALaserPointerMarker> SecondaryMarkerType;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<ALaserPointerMarker> ActiveMarker;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FGameplayTagContainer enemyTags;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<ALaserPointerWaypoint> WaypointType;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 MaxWaypoints;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<ALaserPointerWaypoint*> Waypoints;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     int32 NextWaypointIndex;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float MarkerLifeTime;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UDialogDataAsset* DefaultLookAtShout;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UDialogDataAsset* DefaultEnemyShout;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USceneComponent* PointerComponent;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FHitResult LookAtHit;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, Transient, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<UObjectInfoComponent> LookAtInfo;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<UTerrainMaterial> LookAtTerrainMaterial;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FLaserPointerData LookAtData;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     float LookAtDistance;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     UDialogDataAsset* LookAtShout;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     UDialogDataAsset* MissionControlLookAtShout;
+    
+public:
     ALaserPointerItem(const FObjectInitializer& ObjectInitializer);
+
+protected:
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     void UnlockToMinersManual(UObject* WorldContextObject, FGuid ObjectId);
+    
+public:
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void ToggleLaserVisible(bool aVisible);
-    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
+    
+protected:
+    UFUNCTION(BlueprintCallable, Reliable, Server)
     void ServerPlaceMarker(FVector Location, AActor* Actor, UPrimitiveComponent* Cmponent, UTerrainMaterial* TerrainMaterial, ELaserPointerMarkerType eMarkerType);
-    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
+    
+    UFUNCTION(BlueprintCallable, Reliable, Server)
     void Server_SecondaryUse();
- 
-    UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
-    void RevealTerrainScannerMeshesForMarkedActorInternal(AActor* InActor);
- 
-    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
-    void RevealTerrainScannerMeshesForMarkedActor(AActor* InActor);
+    
+    UFUNCTION(BlueprintCallable, Reliable, Server)
+    void Server_AddTerrainScannerMeshesToAlwaysShow(AActor* InActor);
+    
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnPointOfInterest(AActor* targetActor, FVector TargetLocation, UTexture2D* TargetIcon);
+    
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent, BlueprintPure)
     void GetPointTransform(FTransform& PointTransform);
+    
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FVector GetActiveMarkerLocation() const;
+    
 };
+

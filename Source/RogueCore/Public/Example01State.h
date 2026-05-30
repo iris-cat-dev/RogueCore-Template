@@ -8,3 +8,4 @@ struct FExample01State {
 public:
     ROGUECORE_API FExample01State();
 };
+

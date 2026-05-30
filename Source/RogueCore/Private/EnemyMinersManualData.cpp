@@ -1,8 +1,8 @@
 #include "EnemyMinersManualData.h"
 
 UEnemyMinersManualData::UEnemyMinersManualData() {
-    this->EnemyID = NULL;
-    this->Family = EEnemyFamily::Glyphid;
+    this->EnemyID = nullptr;
+    this->Family = EEnemyFamily::CoreSpawn;
     this->EnemyType = EEnemyType::Ground;
     this->ArmorType = EArmorType::Light;
     this->AlwaysUnlocked = false;

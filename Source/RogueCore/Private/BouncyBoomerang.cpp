@@ -1,11 +1,11 @@
 #include "BouncyBoomerang.h"
-#include "Components/SceneComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
 #include "Net/UnrealNetwork.h"
 
 ABouncyBoomerang::ABouncyBoomerang(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("Root"));
     this->Root = (USceneComponent*)RootComponent;
-    this->Damage = NULL;
+    this->Damage = nullptr;
     this->BouncesLeft = 9;
     this->ConeRange = 2000.00f;
     this->ConeWidth = 50.00f;
@@ -22,16 +22,16 @@ ABouncyBoomerang::ABouncyBoomerang(const FObjectInitializer& ObjectInitializer) 
     this->HitPlayerRange = 50.00f;
     this->CatchSoundRange = 50.00f;
     this->HitTerrainRange = 175.00f;
-    this->EnemyHitNiagaraSystem = NULL;
-    this->EnemyHitParticleSystem = NULL;
-    this->ImpactSound = NULL;
-    this->ReturnCatchSound = NULL;
-    this->ThrowBoomerangSound = NULL;
-    this->MeshPivot = NULL;
-    this->YawPivot = NULL;
+    this->EnemyHitNiagaraSystem = nullptr;
+    this->EnemyHitParticleSystem = nullptr;
+    this->ImpactSound = nullptr;
+    this->ReturnCatchSound = nullptr;
+    this->ThrowBoomerangSound = nullptr;
+    this->MeshPivot = nullptr;
+    this->YawPivot = nullptr;
     this->MeshRotationRate = 1750.00f;
-    this->TargetEnemy = NULL;
-    this->PredictedNextEnemy = NULL;
+    this->TargetEnemy = nullptr;
+    this->PredictedNextEnemy = nullptr;
     this->RandomSeed = 0;
     this->State = EBoomerangState::None;
 }

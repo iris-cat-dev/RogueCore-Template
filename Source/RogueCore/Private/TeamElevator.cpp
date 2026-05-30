@@ -1,14 +1,15 @@
 #include "TeamElevator.h"
-#include "Components/SceneComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
 #include "Net/UnrealNetwork.h"
 #include "Templates/SubclassOf.h"
 
 ATeamElevator::ATeamElevator(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->ElevatorCableInstance = NULL;
+    this->ElevatorCableInstance = nullptr;
     this->MovingPlatformRoot = CreateDefaultSubobject<USceneComponent>(TEXT("MovingPlatformRoot"));
-    this->GearsAnimInstance = NULL;
-    this->ElevatorCableClass = NULL;
-    this->NextStage = NULL;
+    this->GearsAnimInstance = nullptr;
+    this->ElevatorCableClass = nullptr;
+    this->NextStage = nullptr;
+    this->NextStageNumber = 0;
     this->Type = ETeamElevatorType::Unknown;
     this->MovingPlatformRoot->SetupAttachment(RootComponent);
 }
@@ -22,8 +23,7 @@ void ATeamElevator::SpawnElevatorCable(const FTransform& Start, const TArray<FTr
 void ATeamElevator::Receive_SetIsMoving_Implementation(bool Moving) {
 }
 
-void ATeamElevator::OnRepNextLevelName() {
-}
+
 
 void ATeamElevator::InitializeNextLevel(const int32 NextStageIndex) {
 }
@@ -59,7 +59,7 @@ FTransform ATeamElevator::FindTeamElevatorSpawnTransform(AProceduralSetup* setup
 void ATeamElevator::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const {
     Super::GetLifetimeReplicatedProps(OutLifetimeProps);
     
-    DOREPLIFETIME(ATeamElevator, NextLevelName);
+    DOREPLIFETIME(ATeamElevator, NextStageNumber);
     DOREPLIFETIME(ATeamElevator, NextLevelRiskVectors);
 }
 

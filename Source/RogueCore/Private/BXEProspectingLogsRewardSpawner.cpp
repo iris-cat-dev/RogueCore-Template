@@ -1,13 +1,13 @@
 #include "BXEProspectingLogsRewardSpawner.h"
 
 ABXEProspectingLogsRewardSpawner::ABXEProspectingLogsRewardSpawner(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->terrainPlacement = NULL;
-    this->DebrisPositioning = NULL;
-    this->CostCurve = NULL;
+    this->terrainPlacement = nullptr;
+    this->DebrisPositioning = nullptr;
+    this->CostCurve = nullptr;
     this->DebrisPartsToSpawn = 1;
     this->MaxSpawnLocationTries = 10;
-    this->RewardInstance = NULL;
-    this->Objective = NULL;
+    this->RewardInstance = nullptr;
+    this->Objective = nullptr;
 }
 
 void ABXEProspectingLogsRewardSpawner::SpawnRewardInstance() {

@@ -31,6 +31,10 @@ UStage* URun::GetStageAtIndex(const int32 StageIndex) const {
     return NULL;
 }
 
+ERunType URun::GetRunType() const {
+    return ERunType::Default;
+}
+
 int32 URun::GetRunSeed() const {
     return 0;
 }
@@ -43,8 +47,20 @@ UPrimaryMutator* URun::GetRunMutator() const {
     return NULL;
 }
 
+UMissionDNA* URun::GetRunDNA() const {
+    return NULL;
+}
+
+UBiome* URun::GetRunBiome() const {
+    return NULL;
+}
+
 UPlanetZone* URun::GetPlanetZone() const {
     return NULL;
+}
+
+TArray<FRunPickedRiskVector> URun::GetPickedRiskVectors() const {
+    return TArray<FRunPickedRiskVector>();
 }
 
 int32 URun::GetNumberOfStages() const {
@@ -59,16 +75,32 @@ TArray<int32> URun::GetNextStageIndexes(int32 StageIndex) const {
     return TArray<int32>();
 }
 
+FObjectiveMissionIcon URun::GetIconWithBlood() const {
+    return FObjectiveMissionIcon{};
+}
+
+FObjectiveMissionIcon URun::GetIcon() const {
+    return FObjectiveMissionIcon{};
+}
+
 float URun::GetHazardBonus() const {
     return 0.0f;
 }
 
-UMissionDNA* URun::GetDNA() const {
-    return NULL;
-}
-
 ERunDepth URun::GetDepth() const {
     return ERunDepth::None;
+}
+
+TArray<int32> URun::GetCompletedStageIndexes() const {
+    return TArray<int32>();
+}
+
+int32 URun::GetAmountOfStages() const {
+    return 0;
+}
+
+int32 URun::GetAmountOfComplexity() const {
+    return 0;
 }
 
 TArray<UStage*> URun::GetAllStages() const {
@@ -85,6 +117,10 @@ UPrimaryMutator* URun::GetActivePrimaryMutator() const {
 
 UDifficultySetting* URun::GetActiveDifficulty() const {
     return NULL;
+}
+
+FRunPickedRiskVector URun::FindPickedRiskVectorForStage(const int32 StageIndex) const {
+    return FRunPickedRiskVector{};
 }
 
 

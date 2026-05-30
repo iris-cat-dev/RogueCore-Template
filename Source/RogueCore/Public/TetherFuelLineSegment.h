@@ -8,4 +8,6 @@ class ATetherFuelLineSegment : public AFuelLineSegment {
     GENERATED_BODY()
 public:
     ATetherFuelLineSegment(const FObjectInitializer& ObjectInitializer);
+
 };
+

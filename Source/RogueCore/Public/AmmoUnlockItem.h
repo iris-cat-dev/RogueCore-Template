@@ -8,3 +8,4 @@ struct FAmmoUnlockItem {
 public:
     ROGUECORE_API FAmmoUnlockItem();
 };
+

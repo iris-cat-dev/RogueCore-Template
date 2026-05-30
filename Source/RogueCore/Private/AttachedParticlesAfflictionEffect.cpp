@@ -1,7 +1,7 @@
 #include "AttachedParticlesAfflictionEffect.h"
 
 UAttachedParticlesAfflictionEffect::UAttachedParticlesAfflictionEffect() {
-    this->ParticleEffect = NULL;
+    this->ParticleEffect = nullptr;
     this->ParticleEffects.AddDefaulted(5);
     this->Socket = EAfflictionSocket::CenterMass;
     this->ScaleToActor = true;

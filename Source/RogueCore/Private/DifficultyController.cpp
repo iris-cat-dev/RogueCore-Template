@@ -2,8 +2,8 @@
 #include "Net/UnrealNetwork.h"
 
 UDifficultyController::UDifficultyController(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->DifficultyManager = NULL;
-    this->StageDifficultyProgression = NULL;
+    this->DifficultyManager = nullptr;
+    this->StageDifficultyProgression = nullptr;
     this->SoonNewDifficultyTime = 20.00f;
     this->EnemyCountModifierUsed = false;
     this->CurrentDifficulty = 0;
@@ -13,6 +13,9 @@ UDifficultyController::UDifficultyController(const FObjectInitializer& ObjectIni
 }
 
 void UDifficultyController::TriggerNewDifficulty_Server(const FBXEDifficultyPoint& Difficulty) {
+}
+
+void UDifficultyController::ToggleStageProgressionWarnings(bool suggestExtraction) {
 }
 
 void UDifficultyController::Server_IncrementDifficulty_Implementation() {

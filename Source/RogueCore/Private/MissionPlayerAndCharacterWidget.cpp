@@ -4,7 +4,7 @@ UMissionPlayerAndCharacterWidget::UMissionPlayerAndCharacterWidget() : UUserWidg
 }
 
 
-void UMissionPlayerAndCharacterWidget::StepCounter(float TimeScale, bool& CounterFinished) {
+void UMissionPlayerAndCharacterWidget::StepCounter(float timescale, bool& CounterFinished) {
 }
 
 

@@ -2,7 +2,7 @@
 #include "Net/UnrealNetwork.h"
 
 UDataDepositObjective::UDataDepositObjective(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->DebrisPositioning = NULL;
+    this->DebrisPositioning = nullptr;
     this->Complete = false;
 }
 

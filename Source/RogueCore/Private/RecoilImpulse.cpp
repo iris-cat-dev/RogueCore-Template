@@ -2,5 +2,6 @@
 
 FRecoilImpulse::FRecoilImpulse() {
     this->Rotation = 0.00f;
+    this->Impulse = FVector2D::ZeroVector;
 }
 

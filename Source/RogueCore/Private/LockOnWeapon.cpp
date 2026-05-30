@@ -2,7 +2,7 @@
 #include "Net/UnrealNetwork.h"
 
 ALockOnWeapon::ALockOnWeapon(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->AimTarget = NULL;
+    this->AimTarget = nullptr;
     this->LockOnDamageMultiplier = 1.00f;
     this->ShotsPerTarget = 2;
     this->MaxTargets = 4;
@@ -17,16 +17,16 @@ ALockOnWeapon::ALockOnWeapon(const FObjectInitializer& ObjectInitializer) : Supe
     this->MaxLockOnDuration = -1.00f;
     this->bLockOnControlsSentryGun = false;
     this->bSentryGunShootsOnLockedShot = false;
-    this->TrackingWidgetClass = NULL;
-    this->LockOnBeamClass = NULL;
-    this->AoeActorClass = NULL;
+    this->TrackingWidgetClass = nullptr;
+    this->LockOnBeamClass = nullptr;
+    this->AoeActorClass = nullptr;
     this->AoeHitCountThreshhold = 0;
     this->UseLockOnTargetStatusEffect = false;
-    this->LockOnTargetStatusEffect = NULL;
+    this->LockOnTargetStatusEffect = nullptr;
     this->PushStatusEffectEveryXLock = 1;
     this->LockOnCount = 0;
-    this->DamageComponent = NULL;
-    this->HitscanComponent = NULL;
+    this->DamageComponent = nullptr;
+    this->HitscanComponent = nullptr;
     this->ChargeSpeed = 0.50f;
     this->SlowMovementAtCharge = 0.50f;
     this->FearEnabled = false;
@@ -48,74 +48,34 @@ void ALockOnWeapon::UpdateRifleEye() {
 void ALockOnWeapon::Server_TriggerAoe_Implementation(FVector Location) {
 }
 
-bool ALockOnWeapon::Server_TriggerAoe_Validate(FVector Location) {
-    return true;
-}
-
 void ALockOnWeapon::Server_SetTotalLockCount_Implementation(int32 totalLockCount) {
-}
-
-bool ALockOnWeapon::Server_SetTotalLockCount_Validate(int32 totalLockCount) {
-    return true;
 }
 
 void ALockOnWeapon::Server_SetLockCount_Implementation(const FLockCounter& LockCounter) {
 }
 
-bool ALockOnWeapon::Server_SetLockCount_Validate(const FLockCounter& LockCounter) {
-    return true;
-}
-
 void ALockOnWeapon::Server_SetIsMovementSlowed_Implementation(bool bisMovementSlowed) {
-}
-
-bool ALockOnWeapon::Server_SetIsMovementSlowed_Validate(bool bisMovementSlowed) {
-    return true;
 }
 
 void ALockOnWeapon::Server_SetIsLatestShotLockedOn_Implementation(bool bisShotLockedOn) {
 }
 
-bool ALockOnWeapon::Server_SetIsLatestShotLockedOn_Validate(bool bisShotLockedOn) {
-    return true;
-}
-
 void ALockOnWeapon::Server_SetIsChargingShot_Implementation(bool bisCharging) {
-}
-
-bool ALockOnWeapon::Server_SetIsChargingShot_Validate(bool bisCharging) {
-    return true;
 }
 
 void ALockOnWeapon::Server_PushStatusEffect_Implementation(AActor* Target) {
 }
 
-bool ALockOnWeapon::Server_PushStatusEffect_Validate(AActor* Target) {
-    return true;
-}
-
 void ALockOnWeapon::Server_PopStatusEffect_Implementation(AActor* Target) {
-}
-
-bool ALockOnWeapon::Server_PopStatusEffect_Validate(AActor* Target) {
-    return true;
 }
 
 void ALockOnWeapon::Server_FiringComplete_Implementation(int32 ShotsFired) {
 }
 
-bool ALockOnWeapon::Server_FiringComplete_Validate(int32 ShotsFired) {
-    return true;
-}
-
 void ALockOnWeapon::RefundAmmo_Implementation() {
 }
 
-void ALockOnWeapon::OnRep_AimTarget() {
-}
 
-void ALockOnWeapon::OnMovementSlowed(bool isSlowed) {
-}
 
 void ALockOnWeapon::OnHitDeadTarget() {
 }

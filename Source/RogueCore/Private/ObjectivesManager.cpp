@@ -1,14 +1,14 @@
 #include "ObjectivesManager.h"
 
 UObjectivesManager::UObjectivesManager(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->Objective = NULL;
+    this->Objective = nullptr;
     this->CompletionRequirement = 100.00f;
     this->ObjectivesInitialized = false;
     this->ObjectivesStarted = false;
     this->bCheatObjectivesCompleted = false;
 }
 
-bool UObjectivesManager::ReturnObjectivesCompleted(bool& hasRequiredSecondary, UDialogDataAsset*& OverridePrimaryObjCompletedShout) const {
+bool UObjectivesManager::ReturnObjectivesCompleted(bool& hasRequiredSecondary) const {
     return false;
 }
 

@@ -1,5 +1,5 @@
 #include "ConnectCableObjectiveActor.h"
-#include "Components/SceneComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
 #include "Net/UnrealNetwork.h"
 #include "SpawnActorWithDebrisPosComponent.h"
 
@@ -8,11 +8,13 @@ AConnectCableObjectiveActor::AConnectCableObjectiveActor(const FObjectInitialize
     const FProperty* p_RemoteRole = GetClass()->FindPropertyByName("RemoteRole");
     (*p_RemoteRole->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(this)) = ROLE_SimulatedProxy;
     this->RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("RootComponent"));
-    this->GeneratorActorToSpawn = NULL;
-    this->DebrisPositioning = NULL;
+    this->GeneratorActorToSpawn = nullptr;
+    this->DebrisPositioning = nullptr;
     this->NumAllowedChecks = 30;
-    this->SocketActorToSpawnClass = NULL;
-    this->MaxFailedSpawns = 3;
+    this->GeneratorMinDistance = 1500.00f;
+    this->GeneratorMaxDistance = 5000.00f;
+    this->SocketActorToSpawnClass = nullptr;
+    this->MaxFailedSpawns = 5;
     this->Root = (USceneComponent*)RootComponent;
     this->ChildActorContainer = CreateDefaultSubobject<USceneComponent>(TEXT("ChildActorContainer"));
     this->GeneratorSpawnCenter = CreateDefaultSubobject<USceneComponent>(TEXT("GeneratorSpawnCenter"));

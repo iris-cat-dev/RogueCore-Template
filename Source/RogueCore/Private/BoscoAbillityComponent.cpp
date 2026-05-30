@@ -1,9 +1,9 @@
 #include "BoscoAbillityComponent.h"
 
 UBoscoAbillityComponent::UBoscoAbillityComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->ProjectileClass = NULL;
-    this->StreamClass = NULL;
-    this->AbilityData = NULL;
+    this->ProjectileClass = nullptr;
+    this->StreamClass = nullptr;
+    this->AbilityData = nullptr;
     this->InitializeAtBeginPlay = false;
 }
 

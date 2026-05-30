@@ -8,3 +8,4 @@ enum class EPatrolBotControlState : uint8 {
     Disabled,
     Hacked,
 };
+

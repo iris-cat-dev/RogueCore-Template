@@ -5,10 +5,7 @@ AFSDGameModeSpaceRig::AFSDGameModeSpaceRig(const FObjectInitializer& ObjectIniti
     this->StartedSession = false;
 }
 
-void AFSDGameModeSpaceRig::OnMissionStartedFromSpacerig() {
-}
-
-AActor* AFSDGameModeSpaceRig::GetFreeSpawnOfType(ESpacerigStartType aType, AFSDPlayerController* aController) {
+ASpacerigStart* AFSDGameModeSpaceRig::GetFreeSpawnOfType(ESpacerigStartType aType, AFSDPlayerController* aController) {
     return NULL;
 }
 

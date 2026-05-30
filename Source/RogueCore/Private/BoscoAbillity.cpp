@@ -1,13 +1,13 @@
 #include "BoscoAbillity.h"
 
 UBoscoAbillity::UBoscoAbillity() {
-    this->AbillityAnimation = NULL;
-    this->VoiceOnUse = NULL;
+    this->AbillityAnimation = nullptr;
+    this->VoiceOnUse = nullptr;
     this->TargetType = EBoscoAbillityTargetPreference::Self;
-    this->ExitStrategy = NULL;
+    this->ExitStrategy = nullptr;
     this->CoolDown = 0.00f;
     this->WindUp = 0.00f;
-    this->Duration = 0.00f;
+    this->duration = 0.00f;
     this->Range = 0.00f;
     this->RechargeTime = 0.00f;
     this->MaxCharges = -1;

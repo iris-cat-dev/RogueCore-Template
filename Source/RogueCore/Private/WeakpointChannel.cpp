@@ -1,8 +1,8 @@
 #include "WeakpointChannel.h"
 
 FWeakpointChannel::FWeakpointChannel() {
-    this->WeakPointMaterial = NULL;
+    this->WeakPointMaterial = nullptr;
     this->BoneIndex = 0;
-    this->Mid = NULL;
+    this->Mid = nullptr;
 }
 

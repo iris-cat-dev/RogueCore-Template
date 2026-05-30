@@ -5,10 +5,10 @@ AFacilityTentacle::AFacilityTentacle(const FObjectInitializer& ObjectInitializer
     this->SwaySpeed = 50.00f;
     this->Extended = false;
     this->TentacleState = EFacilityTentacleState::Idle;
-    this->HeadMesh = NULL;
+    this->HeadMesh = nullptr;
 }
 
-void AFacilityTentacle::PlayHitReaction(float amount) {
+void AFacilityTentacle::PlayHitReaction(float Amount) {
 }
 
 

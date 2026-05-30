@@ -2,8 +2,8 @@
 #include "Templates/SubclassOf.h"
 
 UCampaignManager::UCampaignManager() {
-    this->MainCampaign = NULL;
-    this->ActiveCampaign = NULL;
+    this->MainCampaign = nullptr;
+    this->ActiveCampaign = nullptr;
     this->NumFailedRequests = 0;
     this->WeeklyBackendDataValid = false;
     this->WeeklyBackendSeed = -1;
@@ -26,11 +26,11 @@ bool UCampaignManager::IsInCampaignMission(AFSDPlayerController* Player) const {
     return false;
 }
 
-bool UCampaignManager::IsCampaignRestrictionsMet(UObject* WorldContextObject, UStage* Mission, UDifficultySetting* optionalDifficulty) const {
+bool UCampaignManager::IsCampaignRestrictionsMet(UObject* WorldContextObject, UStage* mission, UDifficultySetting* optionalDifficulty) const {
     return false;
 }
 
-bool UCampaignManager::IsCampaignMission(UObject* WorldContextObject, UStage* Mission) const {
+bool UCampaignManager::IsCampaignMission(UObject* WorldContextObject, UStage* mission) const {
     return false;
 }
 

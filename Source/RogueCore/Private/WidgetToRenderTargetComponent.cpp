@@ -1,21 +1,21 @@
 #include "WidgetToRenderTargetComponent.h"
 
 UWidgetToRenderTargetComponent::UWidgetToRenderTargetComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->WidgetClass = NULL;
+    this->WidgetClass = nullptr;
     this->bManuallyRedraw = false;
     this->bRedrawRequested = true;
     this->RedrawTime = 0.00f;
     this->LastWidgetRenderTime = 0.00f;
     this->bWindowFocusable = true;
     this->bDrawAtDesiredSize = false;
-    this->BaseMaterial = NULL;
-    this->OwnerPlayer = NULL;
+    this->BaseMaterial = nullptr;
+    this->OwnerPlayer = nullptr;
     this->OpacityFromTexture = 1.00f;
     this->bIsTwoSided = false;
     this->TickWhenOffscreen = false;
-    this->Widget = NULL;
-    this->RenderTarget = NULL;
-    this->MaterialInstance = NULL;
+    this->Widget = nullptr;
+    this->RenderTarget = nullptr;
+    this->MaterialInstance = nullptr;
     this->bEditTimeUsable = false;
 }
 

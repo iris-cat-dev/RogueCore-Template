@@ -1,9 +1,9 @@
 #include "ControllerIconSettings.h"
 
 UControllerIconSettings::UControllerIconSettings() {
-    this->Xbox_KeyIcons.AddDefaulted(20);
-    this->Playstation_KeyIcons.AddDefaulted(20);
-    this->Playstation5_KeyIcons.AddDefaulted(20);
+    this->Xbox_KeyIcons.AddDefaulted(21);
+    this->Playstation_KeyIcons.AddDefaulted(21);
+    this->Playstation5_KeyIcons.AddDefaulted(21);
     this->MouseKeyboard_KeyIcons.AddDefaulted(58);
 }
 

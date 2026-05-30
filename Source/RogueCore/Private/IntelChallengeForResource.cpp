@@ -1,9 +1,9 @@
 #include "IntelChallengeForResource.h"
 
 UIntelChallengeForResource::UIntelChallengeForResource() {
-    this->RequiredResource = NULL;
+    this->RequiredResource = nullptr;
     this->RequiredAmount = 1;
-    this->RequiredZone = NULL;
+    this->RequiredZone = nullptr;
     this->RequireMutator = false;
     this->AllowCollectionOverMultipleRuns = true;
     this->CanTeammatesDeposit = true;

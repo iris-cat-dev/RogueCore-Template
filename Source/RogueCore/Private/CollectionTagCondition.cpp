@@ -1,7 +1,7 @@
 #include "CollectionTagCondition.h"
 
 UCollectionTagCondition::UCollectionTagCondition() {
-    this->CollectionCondition = NULL;
+    this->CollectionCondition = nullptr;
     this->Comparison = ERarityComparision::Equals;
 }
 

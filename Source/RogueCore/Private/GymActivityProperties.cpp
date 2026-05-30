@@ -1,27 +1,24 @@
 #include "GymActivityProperties.h"
 
 UGymActivityProperties::UGymActivityProperties() {
-    this->AnimStart = NULL;
-    this->AnimIdleUp = NULL;
-    this->AnimIdleDown = NULL;
-    this->AnimGoingUp = NULL;
-    this->AnimGoingDown = NULL;
-    this->AnimFailUp = NULL;
-    this->AnimFailDown = NULL;
-    this->AnimEnd = NULL;
-    this->AnimAdditiveStruggleUp = NULL;
-    this->AnimAdditiveStruggleDown = NULL;
-    this->PointSound = NULL;
-    this->SuccessSound = NULL;
-    this->FailSound = NULL;
-    this->CurrencyType = NULL;
-    this->BaseDifficulty = EGymDifficulty::Normal;
-    this->MaxDifficulty = EGymDifficulty::Karl;
-    this->GymIcon = NULL;
-    this->GymIconRAW = NULL;
+    this->AnimStart = nullptr;
+    this->AnimGoingUp = nullptr;
+    this->AnimGoingDown = nullptr;
+    this->AnimEnd = nullptr;
+    this->AnimAdditiveStruggleUp = nullptr;
+    this->AnimAdditiveStruggleDown = nullptr;
+    this->PointSound = nullptr;
+    this->SuccessSound = nullptr;
+    this->FailSound = nullptr;
+    this->CurrencyType = nullptr;
+    this->BaseDifficulty = 50;
+    this->MaxDifficulty = 10;
+    this->GymIcon = nullptr;
+    this->GymIconRAW = nullptr;
     this->SingleMotion = false;
+    this->ConstantSpeed = true;
     this->AlternativeVersion = false;
-    this->GymActivityStats = NULL;
+    this->GymActivityStats = nullptr;
 }
 
 

@@ -1,7 +1,7 @@
 #include "NeedleSprayer.h"
-#include "Runtime/Engine/Classes/Components/PointLightComponent.h"
-#include "Components/SceneComponent.h"
-#include "Components/SkeletalMeshComponent.h"
+#include "Components/PointLightComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SkeletalMeshComponent -FallbackName=SkeletalMeshComponent
 #include "NiagaraComponent.h"
 #include "HitscanComponent.h"
 
@@ -15,9 +15,9 @@ ANeedleSprayer::ANeedleSprayer(const FObjectInitializer& ObjectInitializer) : Su
     this->MuzzleFlashParticleSys = CreateDefaultSubobject<UNiagaraComponent>(TEXT("MuzzleFlashNiagara"));
     this->ImpactParticleComponent = CreateDefaultSubobject<UNiagaraComponent>(TEXT("ImpactNiagara"));
     this->ShotOriginPivot = CreateDefaultSubobject<USceneComponent>(TEXT("ShotOriginPivot"));
-    this->HitscanComponent = NULL;
-    this->SoundEnd = NULL;
-    this->ReloadAnimation = NULL;
+    this->HitscanComponent = nullptr;
+    this->SoundEnd = nullptr;
+    this->ReloadAnimation = nullptr;
     this->MaxRotations = 15;
     this->LinesPerRotation = 18;
     this->DeployDelay = 0.50f;

@@ -2,7 +2,7 @@
 #include "Net/UnrealNetwork.h"
 
 UCompositeArmorComponent::UCompositeArmorComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->BreakParticle = NULL;
+    this->BreakParticle = nullptr;
     this->AffectedByAmorBreak = true;
 }
 

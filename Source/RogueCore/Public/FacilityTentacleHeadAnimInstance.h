@@ -6,13 +6,19 @@
 UCLASS(Blueprintable, NonTransient)
 class UFacilityTentacleHeadAnimInstance : public UEnemyAnimInstance {
     GENERATED_BODY()
-    
-
 public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     bool Searching;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     bool Melee;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     bool RangedAttack;
-    UFacilityTentacleHeadAnimInstance(const FObjectInitializer& ObjectInitializer);
+    
+public:
+    UFacilityTentacleHeadAnimInstance();
+
 };
+

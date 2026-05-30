@@ -1,24 +1,38 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/Interface.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Interface -FallbackName=Interface
 #include "EventParticipant.generated.h"
 
 class AGameEvent;
+
 UINTERFACE(Blueprintable)
-class ROGUECORE_API UEventParticipant : public UInterface {
-	GENERATED_BODY()
+class UEventParticipant : public UInterface {
+    GENERATED_BODY()
 };
-class ROGUECORE_API IEventParticipant : public IInterface {
-	GENERATED_BODY()
+
+class IEventParticipant : public IInterface {
+    GENERATED_BODY()
 public:
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     bool SetupEvent(AGameEvent* GameEvent);
     
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void OnEventTriggered();
+    
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void OnEventProgress(float Progress);
+    
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnEventOpened();
+    
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void OnEventFinished(bool eventSuccess);
+    
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     bool AdvanceOneObjective();
+    
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     bool AddEventProgress(float Progress);
+    
 };
+

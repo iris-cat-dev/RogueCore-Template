@@ -1,20 +1,24 @@
 #pragma once
 #include "CoreMinimal.h"
-
-#include "UObject/Interface.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Interface -FallbackName=Interface
 #include "EMinersManualSection.h"
 #include "EMinersManualSinglePage.h"
 #include "MinersManualHandler.generated.h"
 
 UINTERFACE(Blueprintable)
-class ROGUECORE_API UMinersManualHandler : public UInterface {
-	GENERATED_BODY()
+class UMinersManualHandler : public UInterface {
+    GENERATED_BODY()
 };
-class ROGUECORE_API IMinersManualHandler : public IInterface {
-	GENERATED_BODY()
+
+class IMinersManualHandler : public IInterface {
+    GENERATED_BODY()
 public:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OpenMinersManualPage(EMinersManualSinglePage page);
     
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OpenMinersManualFromID(EMinersManualSection Section, const FGuid& ID);
+    
 };
+

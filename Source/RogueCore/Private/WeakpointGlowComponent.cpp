@@ -4,7 +4,7 @@ UWeakpointGlowComponent::UWeakpointGlowComponent(const FObjectInitializer& Objec
     this->EmissiveParam = TEXT("Dynamic Emissive Multiplier");
     this->CurveMultiplier = 1.00f;
     this->Mode = EWeakpointGlowMode::Set;
-    this->WeakPointMaterial = NULL;
+    this->WeakPointMaterial = nullptr;
     this->AddFirstChannelAutomatically = true;
     this->ReplaceMatIndex = 0;
 }
@@ -13,10 +13,10 @@ bool UWeakpointGlowComponent::StopLoopingGlow(int32 aGlowID, bool aFade) {
     return false;
 }
 
-void UWeakpointGlowComponent::ShowBodypartHit(float amount, float BaseAmount, const FDamageData& DamageData) {
+void UWeakpointGlowComponent::ShowBodypartHit(float Amount, float BaseAmount, const FDamageData& DamageData) {
 }
 
-void UWeakpointGlowComponent::SetUpWeakPointGlowOnMeshByBone(const USkeletalMeshComponent*& mesh, int32 MaterialIndex, FName bone, UHealthComponentBase* HealthComponent) {
+void UWeakpointGlowComponent::SetUpWeakPointGlowOnMeshByBone(const USkeletalMeshComponent* mesh, int32 MaterialIndex, FName bone, UHealthComponentBase* HealthComponent) {
 }
 
 int32 UWeakpointGlowComponent::SetUpWeakPointGlowOnMesh(UMeshComponent* mesh, int32 MaterialIndex, UFSDPhysicalMaterial* PhysicalMaterial, UHealthComponentBase* HealthComponent) {

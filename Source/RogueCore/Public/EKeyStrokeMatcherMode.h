@@ -7,3 +7,4 @@ enum class EKeyStrokeMatcherMode : uint8 {
     Sequence,
     Simultaneous,
 };
+

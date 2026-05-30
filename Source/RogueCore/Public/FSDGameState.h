@@ -1,27 +1,23 @@
 #pragma once
 #include "CoreMinimal.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=EEndPlayReason -FallbackName=EEndPlayReason
 #include "GameFramework/GameState.h"
-#include "Engine/LatentActionManager.h"
-#include "Engine/NetSerialization.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=LatentActionInfo -FallbackName=LatentActionInfo
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Vector_NetQuantize -FallbackName=Vector_NetQuantize
+#include "GameplayTagContainer.h"
+#include "ActorDelegateDelegate.h"
 #include "BoolDelegateDelegate.h"
-#include "BoscoReviveCounterChangedDelegate.h"
-#include "CountDownStartedDelegate.h"
-#include "CountdownDelegate.h"
-#include "CurrentLeaderChangedDelegate.h"
 #include "DelegateDelegate.h"
 #include "DelegateEventDelegate.h"
-#include "DifficultyDelegateDelegate.h"
 #include "EWaveControllerType.h"
-#include "EnemyKilledDelegateDelegate.h"
 #include "FSDChatMessage.h"
 #include "FSDLocalizedChatMessage.h"
 #include "FloatDelegateDelegate.h"
+#include "InactivePlayer.h"
 #include "Int32DelegateEventDelegate.h"
+#include "LateJoinState.h"
 #include "NamedCountdownInt.h"
-#include "ObjectivesDelegateDelegate.h"
-#include "PlayerCharacterDelegateDelegate.h"
 #include "PlayerControllerLevelEndState.h"
-#include "PlayerDelegateDelegate.h"
 #include "ReplicatedObjectives.h"
 #include "ScaledEffect.h"
 #include "FSDGameState.generated.h"
@@ -29,6 +25,7 @@
 class AActor;
 class ADeepCSGWorld;
 class AFSDGameState;
+class AFSDPlayerController;
 class AFSDPlayerState;
 class AGameStats;
 class APlayerCharacter;
@@ -45,7 +42,6 @@ class UFSDEvent;
 class UGemProximityTracker;
 class UObject;
 class UObjective;
-class UPlayerCharacterID;
 class UPlayerProximityTracker;
 class UPrimitiveComponent;
 class UResourceData;
@@ -60,7 +56,18 @@ UCLASS(Blueprintable)
 class ROGUECORE_API AFSDGameState : public AGameState {
     GENERATED_BODY()
 public:
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerDelegate, AFSDPlayerState*, PlayerState);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerCharacterDelegate, APlayerCharacter*, PlayerCharacter);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FObjectivesDelegate, UObjective*, Objective);
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FNamedCountdownDelegate, const FNamedCountdownInt&, Countdown);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FLateJoinStateChanged, const FLateJoinState&, NewLateJoinState);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGameEventCompletedDelegate, FText, GameEventName);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FEnemyKilledDelegate, const FGameplayTagContainer&, enemyTags, AActor*, killedEnemy);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDifficultyDelegate, UDifficultySetting*, Setting);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCurrentLeaderChanged, const APlayerState*, PlayerState);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCountDownStarted, const FText&, countdownText);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCountdown, int32, SecondsLeft);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FBoscoReviveCounterChanged, int32, RevivesLeft);
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FInt32DelegateEvent OnMissionTimeUpdated;
@@ -99,6 +106,15 @@ public:
     FBoolDelegate OnIsWaveActiveChanged;
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FActorDelegate OnSpawnedBossChanged;
+    
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FDelegate OnHaveTriggeredBossChanged;
+    
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FDelegate OnHaveDefeatedBossChanged;
+    
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FFloatDelegate OnLevelLifeTimeUpdated;
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -106,9 +122,6 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, Transient, meta=(AllowPrivateAccess=true))
     ATeamTransport* EscapePod;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, ReplicatedUsing=OnRep_FSDSessionID, meta=(AllowPrivateAccess=true))
-    FString FSDSessionID;
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FBoscoReviveCounterChanged OnBoscoReviveCounterChanged;
@@ -146,9 +159,6 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     AProceduralSetup* ProceduralSetup;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    bool DelayLateJoin;
-    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
     UPrimitiveComponent* FakeMovementBase;
     
@@ -156,17 +166,23 @@ public:
     FFloatDelegate OnLevelTimeDilationChanged;
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FDelegate OnPlayerCharactersChangedDelegate;
+    
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FDelegate OnAbilityUsageBlocked;
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FDelegate OnAbilityUsageUnblocked;
     
-
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, Transient, meta=(AllowPrivateAccess=true))
-    TArray<UObject*> RoundEndBlockers;
+protected:
+    UPROPERTY(EditAnywhere, Replicated, Transient, meta=(AllowPrivateAccess=true))
+    TArray<TWeakObjectPtr<UObject>> RoundEndBlockers;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, ReplicatedUsing=OnRep_IsAbilityUsageBlocked, meta=(AllowPrivateAccess=true))
     TArray<AActor*> AbilityUsageBlockers;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, ReplicatedUsing=OnRep_IsAbilityUsageOverrideEnabled, meta=(AllowPrivateAccess=true))
+    bool IsAbilityUsageOverrideEnabled;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float ResourceAmountPenalty;
@@ -237,8 +253,8 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool IsInMidstation;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    bool PlayerMadeItToDropPod;
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    bool bPlayersHaveReachedDroppod;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, ReplicatedUsing=OnRep_ActivePlayerCharacters, meta=(AllowPrivateAccess=true))
     TArray<APlayerCharacter*> ActivePlayerCharacters;
@@ -259,7 +275,7 @@ public:
     TArray<EWaveControllerType> ActiveWaveTypes;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_IsWaveActive, meta=(AllowPrivateAccess=true))
-    bool IsWaveActive;
+    bool bIsWaveActive;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool RememberDifficulty;
@@ -279,14 +295,11 @@ public:
     UPROPERTY(EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     uint32 MissionStartTime;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, Transient, meta=(AllowPrivateAccess=true))
-    bool PreventLatejoinCharacterDuplication;
-    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, ReplicatedUsing=OnRep_CountdownRemaining, meta=(AllowPrivateAccess=true))
     int32 CountdownRemaining;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, ReplicatedUsing=OnRep_CountdownText, meta=(AllowPrivateAccess=true))
-    FText CountdownText;
+    FText countdownText;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool CanCarryOverResources;
@@ -294,17 +307,45 @@ public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FCurrentLeaderChanged SessionLeaderChanged;
     
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FLateJoinStateChanged OnLateJoinStateChanged;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     APlayerState* CurrentPlayerSessionLeader;
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FNamedCountdownDelegate OnNamedCountdownChanged;
     
+private:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TArray<APlayerCharacter*> ValidActivePlayerCharacters;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, Transient, meta=(AllowPrivateAccess=true))
+    TArray<APlayerCharacter*> LoadingScreenCharacters;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, Transient, meta=(AllowPrivateAccess=true))
+    TArray<FInactivePlayer> InactivePlayers;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, ReplicatedUsing=OnSpawnedBossReplicated, meta=(AllowPrivateAccess=true))
+    TWeakObjectPtr<AActor> SpawnedBoss;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, ReplicatedUsing=OnTriggeredBossReplicated, meta=(AllowPrivateAccess=true))
+    bool bHaveTriggeredBoss;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, ReplicatedUsing=OnDefeatedBossReplicated, meta=(AllowPrivateAccess=true))
+    bool bHaveDefeatedBoss;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, ReplicatedUsing=OnRepEndLevelState, meta=(AllowPrivateAccess=true))
     FPlayerControllerLevelEndState LevelEndState;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, ReplicatedUsing=OnRepNamedCountdowns, meta=(AllowPrivateAccess=true))
     TArray<FNamedCountdownInt> NamedCountdowns;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, Transient, meta=(AllowPrivateAccess=true))
+    bool bArePlayersAllowedToPickSameClass;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, ReplicatedUsing=OnRep_LateJoinState, meta=(AllowPrivateAccess=true))
+    FLateJoinState LateJoinState;
     
 public:
     AFSDGameState(const FObjectInitializer& ObjectInitializer);
@@ -318,27 +359,45 @@ public:
     void UnblockAbilityUsage(AActor* blocker);
     
     UFUNCTION(BlueprintCallable)
-    void StartCountdown(int32 Duration, const FText& countdownName);
+    void StartCountdown(int32 duration, const FText& countdownName);
+    
+    UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
+    void SetupLoadingScreenCharacters();
     
     UFUNCTION(BlueprintCallable)
-    void SetPreventLatejoinCharacterDuplication(bool prevent);
+    void SetSpawnedBoss(AActor* NewSpawnedBoss);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void SetPlayersHaveReachedDroppod(bool newHasPlayerReached);
+    
+    UFUNCTION(BlueprintCallable)
+    void SetPlayersAllowedToPickSameClass(const bool CanPickSameClass);
     
     UFUNCTION(BlueprintCallable, Reliable, Server)
     void SetLevelTimeDilation(float newTimeDilation);
     
     UFUNCTION(BlueprintCallable)
-    void SetCurrentDifficulty(UDifficultySetting* Setting, bool updateSessionSettings);
+    void SetLateJoinState(const FLateJoinState& NewState);
     
-
+    UFUNCTION(BlueprintCallable)
+    void SetHaveTriggeredBoss(const bool NewHaveTriggeredBoss);
+    
+    UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
+    void SetHaveDefeatedBoss(const bool NewHaveDefeatedBoss);
+    
+    UFUNCTION(BlueprintCallable)
+    void SetCurrentDifficulty(UDifficultySetting* Setting);
+    
+protected:
     UFUNCTION(BlueprintCallable)
     void ReplicateLeveLifeTime(AFSDPlayerState* InPlayerState);
     
 public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void RemoveRoundEndBlocker(UObject* blocker);
+    
+    UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
+    void RemoveAllAbilityBlockers();
     
     UFUNCTION(BlueprintCallable)
     void PostLocalizedGameMessage(const FText& Msg, const TArray<FText>& Arguments);
@@ -348,12 +407,18 @@ public:
     
 private:
     UFUNCTION(BlueprintCallable)
+    void OnTriggeredBossReplicated();
+    
+    UFUNCTION(BlueprintCallable)
+    void OnSpawnedBossReplicated();
+    
+    UFUNCTION(BlueprintCallable)
     void OnRepNamedCountdowns(const TArray<FNamedCountdownInt>& PreviousCountdowns);
     
     UFUNCTION(BlueprintCallable)
     void OnRepEndLevelState();
     
-
+protected:
     UFUNCTION(BlueprintCallable)
     void OnRep_NextWaveLevelTime();
     
@@ -363,6 +428,11 @@ private:
     UFUNCTION(BlueprintCallable)
     void OnRep_LevelTimeDilation();
     
+private:
+    UFUNCTION(BlueprintCallable)
+    void OnRep_LateJoinState();
+    
+protected:
     UFUNCTION(BlueprintCallable)
     void OnRep_LastLeveLifeTime();
     
@@ -370,13 +440,13 @@ private:
     void OnRep_IsWaveActive();
     
     UFUNCTION(BlueprintCallable)
+    void OnRep_IsAbilityUsageOverrideEnabled();
+    
+    UFUNCTION(BlueprintCallable)
     void OnRep_IsAbilityUsageBlocked(TArray<AActor*> oldBlockers);
     
     UFUNCTION(BlueprintCallable)
     void OnRep_HostilePressure();
-    
-    UFUNCTION(BlueprintCallable)
-    void OnRep_FSDSessionID();
     
     UFUNCTION(BlueprintCallable)
     void OnRep_CurrentDifficultySetting();
@@ -396,9 +466,30 @@ private:
     UFUNCTION(BlueprintCallable)
     void OnRep_ActivePlayerCharacters();
     
+private:
+    UFUNCTION(BlueprintCallable)
+    void OnPlayerCharacterEndPlay(AActor* PlayerCharacterActor, TEnumAsByte<EEndPlayReason::Type> EndPlayReason);
+    
+    UFUNCTION(BlueprintCallable)
+    void OnPlayerCharacterDestroyed(AActor* PlayerCharacterActor);
+    
+    UFUNCTION(BlueprintCallable)
+    void OnDefeatedBossReplicated();
+    
 public:
     UFUNCTION(BlueprintCallable)
     void OnAbilityBlockerFreed(AActor* DestroyedActor);
+    
+protected:
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    void NotifyIsWaveActiveChanged();
+    
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    void NotifyActiveWaveTypesChanged();
+    
+public:
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsWaveActive() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsTutorialMission() const;
@@ -419,6 +510,9 @@ public:
     void HostDisbandedTeam();
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool HaveTriggeredBoss() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool HaveStageSuccess() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -437,18 +531,21 @@ public:
     bool HaveReplicatedEndOfRunState() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    int32 HaveActiveWave() const;
+    bool HaveLoadingScreenCharacters() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool HaveDefeatedBoss() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool HasObjectivesReplicated() const;
     
-
+protected:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void HandleSeamlessTravelEvent();
     
 public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    AFSDPlayerState* GetServerPlayerState();
+    AActor* GetSpawnedBoss() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<UObjective*> GetSecondaryObjectives() const;
@@ -459,14 +556,11 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     UObjective* GetPrimaryObjective() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
-    bool GetPreventLatejoinCharacterDuplication() const;
-    
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable, BlueprintPure)
     bool GetPlayersHaveReachedDroppod() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent, BlueprintPure)
-    TArray<UPlayerCharacterID*> GetPlayableCharacterIDs();
+    UFUNCTION(BlueprintCallable, BlueprintPure=false)
+    TArray<AFSDPlayerController*> GetPlayerControllers() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<UObjective*> GetObjectives() const;
@@ -475,7 +569,7 @@ public:
     float GetNextWaveLevelTime() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    TArray<AFSDPlayerState*> GetNetworkSortedPlayerArray();
+    TArray<AFSDPlayerState*> GetNetworkSortedPlayerArray() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetMissionTime() const;
@@ -484,10 +578,22 @@ public:
     int32 GetMissionStartTime() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    TArray<APlayerCharacter*> GetLoadingScreenCharacters() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetLevelTimeDilation() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    float GetLevelLifeTimeForRedFraction() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    float GetLevelLifeTimeForRedDifficulty() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetLevelLifeTime() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    FLateJoinState GetLateJoinState() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetHostilePressure() const;
@@ -525,14 +631,20 @@ public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void BlockAbilityUsage(AActor* blocker);
     
-    UFUNCTION(BlueprintCallable, NetMulticast, Unreliable)
-    void All_SpawnScaledEffectAt(FScaledEffect Effect, FVector_NetQuantize Location);
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool ArePlayersAllowedToPickSameClass() const;
     
     UFUNCTION(BlueprintCallable, NetMulticast, Unreliable)
-    void All_SpawnScaledEffectAndCueAt(FScaledEffect Effect, USoundCue* Audio, FVector_NetQuantize Location);
+    void All_SpawnScaledEffectAt(FScaledEffect effect, FVector_NetQuantize Location);
+    
+    UFUNCTION(BlueprintCallable, NetMulticast, Unreliable)
+    void All_SpawnScaledEffectAndCueAt(FScaledEffect effect, USoundCue* Audio, FVector_NetQuantize Location);
     
     UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void All_ServerQuit();
+    
+    UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
+    void All_OnTeamResourceCollected(UResourceData* Resource, const float Amount);
     
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable, NetMulticast, Reliable)
     void All_InvalidateMovementAbilities();

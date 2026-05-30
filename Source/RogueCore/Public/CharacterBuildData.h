@@ -1,6 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
+#include "CharacterServerBuildData.h"
 #include "UnlockableTypeData.h"
 #include "CharacterBuildData.generated.h"
 
@@ -11,9 +12,18 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString PlayerName;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FGuid PlayerCharacterID;
-    int32 PlayerIndex;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 PlayerId;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FUnlockableTypeData> UnlockRecords;
-    TArray<FGuid> Enhancements;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FCharacterServerBuildData ServerBuildData;
+    
     FCharacterBuildData();
 };
+

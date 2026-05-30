@@ -12,3 +12,4 @@ enum class EEnemyHealthScaling : uint8 {
     ExtraLargeEnemyD,
     NoScaling = 3,
 };
+

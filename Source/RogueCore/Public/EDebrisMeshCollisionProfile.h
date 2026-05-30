@@ -8,3 +8,4 @@ enum class EDebrisMeshCollisionProfile : uint8 {
     HitOnly,
     HitAndCollide,
 };
+

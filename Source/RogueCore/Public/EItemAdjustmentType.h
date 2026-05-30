@@ -9,3 +9,4 @@ enum class EItemAdjustmentType : uint8 {
     Wall,
     Floor,
 };
+

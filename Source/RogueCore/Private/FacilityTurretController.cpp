@@ -1,4 +1,7 @@
 #include "FacilityTurretController.h"
+
+#include "Perception/AIPerceptionComponent.h"
+#include "Perception/AIPerceptionTypes.h"
 #include "Perception/AIPerceptionComponent.h"
 
 AFacilityTurretController::AFacilityTurretController(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {

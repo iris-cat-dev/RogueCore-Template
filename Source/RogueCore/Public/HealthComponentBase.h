@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-
-#include "Components/ActorComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
 #include "BodypartHitSigDelegate.h"
 #include "DamageRelevant.h"
 #include "DamageSigDelegate.h"
@@ -52,7 +52,10 @@ public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FCanTakeDamageDelegate OnCanTakeDamageChanged;
     
-public:
+protected:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float FriendlyFireModifier;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool ShowLaserPointMarkerWhenDead;
     
@@ -84,13 +87,16 @@ public:
     void Kill(AActor* DamageCauser);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    bool IsDead() const;
+    bool IsInvulnerable() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    bool IsAlive() const;
+    virtual bool IsDead() const override;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    virtual bool IsAlive() const override;
     
     UFUNCTION(BlueprintCallable)
-    float Heal(float amount);
+    float Heal(float Amount);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetShowHealthBar() const;
@@ -105,7 +111,7 @@ public:
     FVector GetHealthBarWorldOffset() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    float GetHealth() const;
+    virtual float GetHealth() const override;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     UFXSystemAsset* GetGenericImpactParticles() const;
@@ -116,7 +122,14 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool CanTakeDamageFrom(UDamageClass* DamageClass) const;
     
+
+    virtual AActor* GetOwner() const override PURE_VIRTUAL(GetOwner, return NULL;);
+    
+    UFUNCTION(BlueprintCallable)
+    virtual float GetMaxHealth() const override PURE_VIRTUAL(GetMaxHealth, return 0.0f;);
+    
+    UFUNCTION(BlueprintCallable)
+    virtual EHealthbarType GetHealthbarType() const override PURE_VIRTUAL(GetHealthbarType, return EHealthbarType::None;);
     
 };
-
 

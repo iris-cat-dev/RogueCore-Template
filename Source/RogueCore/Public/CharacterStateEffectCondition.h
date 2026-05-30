@@ -7,11 +7,13 @@
 UCLASS(Blueprintable, EditInlineNew)
 class UCharacterStateEffectCondition : public UEffectTriggerCondition {
     GENERATED_BODY()
-    
-
+public:
+private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ECharacterState TargetState;
-
+    
+public:
     UCharacterStateEffectCondition();
 
 };
+

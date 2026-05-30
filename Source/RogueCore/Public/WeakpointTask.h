@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Curves/RichCurve.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=RichCurve -FallbackName=RichCurve
 #include "WeakpointTask.generated.h"
 
 USTRUCT(BlueprintType)
@@ -10,6 +10,9 @@ public:
     UPROPERTY(EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FRichCurve GrowCurve;
     
+    UPROPERTY(EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FRichCurve FadeCurve;
+    
     ROGUECORE_API FWeakpointTask();
 };
+

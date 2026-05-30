@@ -4,6 +4,7 @@
 
 UENUM(BlueprintType)
 enum class EEnemyFamily : uint8 {
+    CoreSpawn,
     Glyphid,
     Mactera,
     Naedocyte,
@@ -16,4 +17,10 @@ enum class EEnemyFamily : uint8 {
     Unknown,
     RivalTech,
     Lithophage,
+    Native,
+    Rafkan,
+    Krizzok,
+    Gatekeeper,
+    Shatterclaw,
 };
+

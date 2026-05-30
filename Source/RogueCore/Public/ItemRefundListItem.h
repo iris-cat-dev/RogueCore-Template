@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
 #include "ItemRefundResourceItem.h"
 #include "ItemRefundListItem.generated.h"
 
@@ -11,7 +11,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString Name;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<FGuid, FItemRefundResourceItem> Resources;
-    float CreditCost;
+    
     ROGUECORE_API FItemRefundListItem();
 };
+

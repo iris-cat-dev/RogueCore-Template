@@ -3,6 +3,10 @@
 UDrinkSettings::UDrinkSettings() {
 }
 
+TArray<FName> UDrinkSettings::GetBeerCategoryNames(UObject* WorldContext) {
+    return TArray<FName>();
+}
+
 TArray<UDrinkableDataAsset*> UDrinkSettings::GetBarDrinkables(UObject* WorldContext, bool IncludeDailySpecial, bool includeNotUnlocked, bool includePlayerRankTooLow) {
     return TArray<UDrinkableDataAsset*>();
 }

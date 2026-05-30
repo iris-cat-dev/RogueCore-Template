@@ -7,3 +7,4 @@ enum class EItemActivationType : uint8 {
     Immediate,
     Manual,
 };
+

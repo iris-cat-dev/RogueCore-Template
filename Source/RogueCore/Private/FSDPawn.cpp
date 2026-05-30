@@ -1,5 +1,5 @@
 #include "FSDPawn.h"
-#include "UObject/UnrealType.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=EAutoPossessAI -FallbackName=EAutoPossessAI
 #include "ElementComponent.h"
 #include "Net/UnrealNetwork.h"
 #include "StatusEffectsComponent.h"
@@ -8,14 +8,14 @@ AFSDPawn::AFSDPawn(const FObjectInitializer& ObjectInitializer) : Super(ObjectIn
     this->AutoPossessAI = EAutoPossessAI::PlacedInWorldOrSpawned;
     this->StatusEffects = CreateDefaultSubobject<UStatusEffectsComponent>(TEXT("StatusEffects"));
     this->element = CreateDefaultSubobject<UElementComponent>(TEXT("element"));
-    this->SpawnedFromDescriptor = NULL;
+    this->SpawnedFromDescriptor = nullptr;
     this->IsFrozen = false;
     this->CanFlee = true;
     this->MaxColdSlowdown = 0.25f;
     this->MaxElectricSlowdown = 0.80f;
     this->FleeInsteadOfBackingOff = false;
     this->IsFleeing = false;
-    this->PawnStatsInstance = NULL;
+    this->PawnStatsInstance = nullptr;
 }
 
 void AFSDPawn::UnFreeze() {

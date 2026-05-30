@@ -3,11 +3,11 @@
 
 ABeltDrivenWeapon::ABeltDrivenWeapon(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->HasAutomaticFire = true;
-    this->BarrelAudio = NULL;
-    this->BarrelSound = NULL;
+    this->BarrelAudio = nullptr;
+    this->BarrelSound = nullptr;
     this->BarrelFadeIn = 0.10f;
     this->BarrelFadeOut = 0.10f;
-    this->BarrelPitchCurve = NULL;
+    this->BarrelPitchCurve = nullptr;
     this->BarrelSpinUpTime = 1.00f;
     this->BarrelSpinDownTime = 1.00f;
     this->CurrentSpinRate = 0.00f;

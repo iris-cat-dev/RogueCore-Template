@@ -1,15 +1,15 @@
 #include "SimpleObjectInfoComponent.h"
 
 USimpleObjectInfoComponent::USimpleObjectInfoComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->LookAtShout = NULL;
+    this->LookAtShout = nullptr;
     this->bHasMissionControlLookAtShout = false;
-    this->MissionControlLookAtShout = NULL;
-    this->LookAtShoutOverride = NULL;
-    this->Icon = NULL;
-    this->IconOverride = NULL;
+    this->MissionControlLookAtShout = nullptr;
+    this->LookAtShoutOverride = nullptr;
+    this->Icon = nullptr;
+    this->IconOverride = nullptr;
     this->bIsPingableByLaserpointer = false;
-    this->ContextWidgetClass = NULL;
-    this->ContextWidget = NULL;
+    this->ContextWidgetClass = nullptr;
+    this->ContextWidget = nullptr;
 }
 
 void USimpleObjectInfoComponent::SetInGameName_Implementation(const FString& GameName) {

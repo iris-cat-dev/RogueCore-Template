@@ -6,16 +6,16 @@
 AFulgorVomiter::AFulgorVomiter(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->HitReactions = CreateDefaultSubobject<UHitReactionComponent>(TEXT("HitReactions"));
     this->Outline = CreateDefaultSubobject<UOutlineComponent>(TEXT("Outline"));
-    this->VomitProjectile = NULL;
-    this->VomitMontage = NULL;
+    this->VomitProjectile = nullptr;
+    this->VomitMontage = nullptr;
     this->LerpSpeed = 1.00f;
     this->Range = 2500.00f;
     this->Angle = 90.00f;
     this->VomitInterval = 5.00f;
     this->VomitIntervalReductionForFirstShot = -2.00f;
     this->ShowDebugCone = false;
-    this->ConeOrigin = NULL;
-    this->Target = NULL;
+    this->ConeOrigin = nullptr;
+    this->Target = nullptr;
 }
 
 void AFulgorVomiter::Vomit() {

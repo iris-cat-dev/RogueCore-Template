@@ -14,3 +14,4 @@ enum class EHolidayType : uint8 {
     Xmas,
     OneOffEvent,
 };
+

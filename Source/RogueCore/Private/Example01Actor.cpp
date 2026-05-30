@@ -1,6 +1,6 @@
 #include "Example01Actor.h"
-#include "Components/SceneComponent.h"
-#include "Components/StaticMeshComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=StaticMeshComponent -FallbackName=StaticMeshComponent
 #include "Example01ActorComponent.h"
 #include "Net/UnrealNetwork.h"
 
@@ -11,7 +11,7 @@ AExample01Actor::AExample01Actor(const FObjectInitializer& ObjectInitializer) : 
     this->RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("DefaultRootComponent"));
     this->StaticMeshComponent = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("StaticMeshComponent"));
     this->ExampleComponent = CreateDefaultSubobject<UExample01ActorComponent>(TEXT("ExampleComponent"));
-    this->mesh = NULL;
+    this->mesh = nullptr;
     this->StaticMeshComponent->SetupAttachment(RootComponent);
 }
 

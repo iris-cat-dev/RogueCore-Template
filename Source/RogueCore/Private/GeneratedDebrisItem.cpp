@@ -1,7 +1,7 @@
 #include "GeneratedDebrisItem.h"
 
 FGeneratedDebrisItem::FGeneratedDebrisItem() {
-    this->Debris = NULL;
-    this->Influencer = NULL;
+    this->Debris = nullptr;
+    this->Influencer = nullptr;
 }
 

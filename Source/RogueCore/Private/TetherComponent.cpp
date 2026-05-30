@@ -2,9 +2,9 @@
 #include "Net/UnrealNetwork.h"
 
 UTetherComponent::UTetherComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->TetherMesh = NULL;
+    this->TetherMesh = nullptr;
     this->AutoSetup = false;
-    this->ForwardConnection = NULL;
+    this->ForwardConnection = nullptr;
     this->ConnectionDistance = 800.00f;
     this->ConnectionMode = ETetherConnectionMode::Both;
     this->ConnectionPriority = 0;

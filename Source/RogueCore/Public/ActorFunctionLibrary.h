@@ -1,8 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-
-#include "Kismet/BlueprintFunctionLibrary.h"
-#include "Curves/CurveFloat.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=LinearColor -FallbackName=LinearColor
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=RuntimeFloatCurve -FallbackName=RuntimeFloatCurve
 #include "GameplayTagContainer.h"
 #include "ECharacterState.h"
 #include "HeroInfo.h"
@@ -108,9 +110,6 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool HasActorBegunPlay(const AActor* Actor);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
-    static int32 GetTotalHeroLevels(UObject* WorldContextObject, UPlayerCharacterID* characterID);
-    
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FGuid GetSaveGameIDFromCharacterID(UPlayerCharacterID* characterID);
     
@@ -123,6 +122,12 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static TArray<APlayerCharacter*> GetPlayerCharactersThatAreAlive(const UObject* Context);
     
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    static TArray<APlayerCharacter*> GetPlayerCharactersNotBurried(const UObject* Context);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContext"))
+    static TArray<APlayerCharacter*> GetPlayerCharactersLeavingInDropPod(const UObject* WorldContext);
+    
     UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContext"))
     static APlayerCharacter* GetLocalPlayerCharacter(const UObject* WorldContext);
     
@@ -133,16 +138,13 @@ public:
     static float GetHeroXP(UObject* WorldContextObject, UPlayerCharacterID* characterID);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    static FText GetHeroSwitchToMessage(TSubclassOf<APlayerCharacter> playerClass);
-    
-    UFUNCTION(BlueprintCallable, BlueprintPure)
-    static FString GetHeroSourceName(TSubclassOf<APlayerCharacter> playerClass);
+    static FString GetHeroSourceName(TSubclassOf<APlayerCharacter> PlayerClass);
     
     UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
     static float GetHeroProgress(UObject* WorldContextObject, UPlayerCharacterID* characterID);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    static FText GetHeroName(TSubclassOf<APlayerCharacter> playerClass);
+    static FText GetHeroName(TSubclassOf<APlayerCharacter> PlayerClass);
     
     UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
     static int32 GetHeroLevel(const UObject* WorldContextObject, UPlayerCharacterID* characterID);
@@ -151,19 +153,13 @@ public:
     static UInventoryList* GetHeroInventoryList();
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    static FHeroInfo GetHeroInfo(TSubclassOf<APlayerCharacter> playerClass);
+    static FHeroInfo GetHeroInfo(TSubclassOf<APlayerCharacter> PlayerClass);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    static UTexture2D* GetHeroImageSmall(TSubclassOf<APlayerCharacter> playerClass);
+    static UTexture2D* GetHeroImageSmall(TSubclassOf<APlayerCharacter> PlayerClass);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    static UTexture2D* GetHeroImageFullSize(TSubclassOf<APlayerCharacter> playerClass);
-    
-    UFUNCTION(BlueprintCallable, BlueprintPure)
-    static UTexture2D* GetHeroImage(TSubclassOf<APlayerCharacter> playerClass);
-    
-    UFUNCTION(BlueprintCallable, BlueprintPure)
-    static FLinearColor GetHeroColor(TSubclassOf<APlayerCharacter> playerClass);
+    static FLinearColor GetHeroColor(TSubclassOf<APlayerCharacter> PlayerClass);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static UEnemyID* GetEnemyId(const AActor* Actor);
@@ -181,16 +177,16 @@ public:
     static UPlayerCharacterID* GetCharacterIDFromCharacter(APlayerCharacter* Character);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    static UPlayerCharacterID* GetCharacterID(TSubclassOf<APlayerCharacter> playerClass);
-    
-    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContext"))
-    static TArray<AFSDPlayerState*> GetAllPlayerStates(const UObject* WorldContext);
-    
-    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContext"))
-    static TArray<APlayerCharacter*> GetAllPlayerCharacters(const UObject* WorldContext);
+    static UPlayerCharacterID* GetCharacterID(TSubclassOf<APlayerCharacter> PlayerClass);
     
     UFUNCTION(BlueprintCallable)
     static FVector GetActorTargetCenter(const AActor* targetActor);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContext"))
+    static TArray<AFSDPlayerState*> GetActivePlayerStates(const UObject* WorldContext);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContext"))
+    static TArray<APlayerCharacter*> GetActivePlayerCharacters(const UObject* WorldContext);
     
     UFUNCTION(BlueprintCallable)
     static void FSDRemoveBlendable(UPostProcessComponent* PostProcessComponent, TScriptInterface<IBlendableInterface> InBlendableObject);
@@ -229,7 +225,7 @@ public:
     static FVector FindCharacterTeleportLocation(UObject* WorldContextObject, const FVector& closeToLocation, float desiredDistance);
     
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
-    static void FadeMaterials(const UObject* WorldContextObject, UMeshComponent* mesh, float Duration);
+    static void FadeMaterials(const UObject* WorldContextObject, const UMeshComponent* mesh, float duration);
     
     UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
     static float EvaluateRuntimeCurve(UObject* WorldContextObject, const FRuntimeFloatCurve& Curve, float Time);
@@ -238,13 +234,13 @@ public:
     static bool DoesActorHaveEnemyId(const AActor* Actor, const UEnemyID* EnemyID);
     
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
-    static void DissolveMaterials(const UObject* WorldContextObject, UMeshComponent* mesh, float Duration);
+    static void DissolveMaterials(const UObject* WorldContextObject, const UMeshComponent* mesh, float duration);
     
     UFUNCTION(BlueprintCallable)
     static TArray<UMaterialInstanceDynamic*> CreateDynamicMaterialInstances(UMeshComponent* mesh);
     
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
-    static float AddHeroXP(UObject* WorldContextObject, UPlayerCharacterID* characterID, float amount);
+    static float AddHeroXP(UObject* WorldContextObject, UPlayerCharacterID* characterID, float Amount);
     
     UFUNCTION(BlueprintCallable)
     static void AddEnemyKill(APlayerCharacter* Instigator, UEnemyComponent* EnemyComponent, AFSDGameState* GameState);

@@ -1,10 +1,11 @@
 #include "BXECompanionDrone.h"
 #include "Components/AudioComponent.h"
-#include "Components/SceneComponent.h"
-#include "Components/SkeletalMeshComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SkeletalMeshComponent -FallbackName=SkeletalMeshComponent
 #include "Components/SplineComponent.h"
 #include "Net/UnrealNetwork.h"
 #include "ResourceBank.h"
+#include "Components/SplineComponent.h"
 
 ABXECompanionDrone::ABXECompanionDrone(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->ArmSpline = CreateDefaultSubobject<USplineComponent>(TEXT("ArmSplineComponent"));
@@ -15,17 +16,17 @@ ABXECompanionDrone::ABXECompanionDrone(const FObjectInitializer& ObjectInitializ
     this->CableHeadMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("TentacleHeadMesh"));
     this->GrindingAudio = CreateDefaultSubobject<UAudioComponent>(TEXT("GrindingAudioComponent"));
     this->HackingAudio = CreateDefaultSubobject<UAudioComponent>(TEXT("HackingSound"));
-    this->PlayerNegotiationSphere = NULL;
-    this->RewardCollectionTag = NULL;
-    this->ArtifactCollectionTag = NULL;
-    this->PotentExpeniteCollectionTag = NULL;
-    this->DestinationMarkerClass = NULL;
-    this->DestinationMarker = NULL;
-    this->TentacleHeadMesh = NULL;
-    this->SaluteAnim = NULL;
-    this->CallResponseCue = NULL;
-    this->CableConnectCue = NULL;
-    this->ArmSegment = NULL;
+    this->PlayerNegotiationSphere = nullptr;
+    this->RewardCollectionTag = nullptr;
+    this->ArtifactCollectionTag = nullptr;
+    this->PotentExpeniteCollectionTag = nullptr;
+    this->DestinationMarkerClass = nullptr;
+    this->DestinationMarker = nullptr;
+    this->TentacleHeadMesh = nullptr;
+    this->SaluteAnim = nullptr;
+    this->CallResponseCue = nullptr;
+    this->CableConnectCue = nullptr;
+    this->ArmSegment = nullptr;
     this->CableRange = 200.00f;
     this->CableExtensionTime = 2.00f;
     this->MaxArmLength = 4000.00f;
@@ -41,8 +42,8 @@ ABXECompanionDrone::ABXECompanionDrone(const FObjectInitializer& ObjectInitializ
     this->PrintAudioParams = false;
     this->BlockLevelUpWhileDispensing = true;
     this->BeingDepositedTo = false;
-    this->ShoutUpgradesWaiting = NULL;
-    this->ShoutUpgradesLastActivation = NULL;
+    this->ShoutUpgradesWaiting = nullptr;
+    this->ShoutUpgradesLastActivation = nullptr;
     this->MinTimeBetweenConsecutiveShouts = 0.00f;
     this->TimeOfLastShout = 0.00f;
     this->ArmExtensionNoise->SetupAttachment(mesh);
@@ -65,7 +66,7 @@ void ABXECompanionDrone::SetPlayerNegotiationSphere(UPlayersNegotiationSphere* S
 
 
 
-void ABXECompanionDrone::OnResourceAdded(UCappedResource* Resource, float amount) {
+void ABXECompanionDrone::OnResourceAdded(UCappedResource* Resource, float Amount) {
 }
 
 void ABXECompanionDrone::OnRep_TrayOpen() {

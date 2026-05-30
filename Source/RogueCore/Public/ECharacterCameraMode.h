@@ -12,4 +12,6 @@ enum class ECharacterCameraMode : uint8 {
     PhotographyMode,
     FirstPersonHeadOnly,
     Gym,
+    FollowExternal,
 };
+

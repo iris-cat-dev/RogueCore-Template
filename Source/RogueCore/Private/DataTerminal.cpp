@@ -1,6 +1,6 @@
 #include "DataTerminal.h"
-#include "Components/SceneComponent.h"
-#include "Runtime/UMG/Public/Components/WidgetComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
+#include "Components/WidgetComponent.h"
 #include "Net/UnrealNetwork.h"
 #include "SingleUsableComponent.h"
 
@@ -15,7 +15,7 @@ ADataTerminal::ADataTerminal(const FObjectInitializer& ObjectInitializer) : Supe
     this->MinNumberTextLength = 2;
     this->MinBaseTextVariations = 1;
     this->MaxBaseTextVariations = 3;
-    this->AnimationSettings = NULL;
+    this->AnimationSettings = nullptr;
     this->UseDuration = 2.00f;
     this->MatchCountRequirement = 4;
     this->Root = (USceneComponent*)RootComponent;
@@ -30,6 +30,9 @@ ADataTerminal::ADataTerminal(const FObjectInitializer& ObjectInitializer) : Supe
 void ADataTerminal::Server_ActivateTerminal_Implementation() {
 }
 
+void ADataTerminal::OnUnhoveredUsable(APlayerCharacter* Character, UUsableComponentBase* usable) {
+}
+
 void ADataTerminal::OnRep_RandomSeed() {
 }
 
@@ -37,6 +40,9 @@ void ADataTerminal::OnRep_HasBeenActivated() {
 }
 
 void ADataTerminal::OnRep_ActiveBoxes(TArray<int32> PrevBoxes) {
+}
+
+void ADataTerminal::OnHoveredUsable(APlayerCharacter* Character, UUsableComponentBase* usable) {
 }
 
 void ADataTerminal::OnCharacterUsed(APlayerCharacter* User, EInputKeys Key) {

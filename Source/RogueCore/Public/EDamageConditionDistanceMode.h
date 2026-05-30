@@ -8,3 +8,4 @@ enum class EDamageConditionDistanceMode : uint8 {
     FromCauser,
     FromDamageLocation,
 };
+

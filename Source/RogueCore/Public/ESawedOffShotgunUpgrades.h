@@ -8,3 +8,4 @@ enum class ESawedOffShotgunUpgrades : uint8 {
     ShockWave = 2,
     ShotgunJump,
 };
+

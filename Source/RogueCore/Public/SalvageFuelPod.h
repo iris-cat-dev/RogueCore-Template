@@ -8,4 +8,6 @@ class ASalvageFuelPod : public ARessuplyPod {
     GENERATED_BODY()
 public:
     ASalvageFuelPod(const FObjectInitializer& ObjectInitializer);
+
 };
+

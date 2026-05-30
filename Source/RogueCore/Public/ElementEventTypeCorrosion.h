@@ -8,4 +8,6 @@ class UElementEventTypeCorrosion : public UElementEventTypeBase {
     GENERATED_BODY()
 public:
     UElementEventTypeCorrosion();
+
 };
+

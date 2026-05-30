@@ -7,3 +7,4 @@ enum class ELineCutterUpgradeType : uint8 {
     ReverseDirection,
     ExplodeLastProjectile,
 };
+

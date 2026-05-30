@@ -1,7 +1,8 @@
 #include "LineCutterProjectile.h"
 #include "Particles/ParticleSystemComponent.h"
-#include "Components/SceneComponent.h"
 #include "NiagaraComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
+
 #include "DamageComponent.h"
 #include "Net/UnrealNetwork.h"
 
@@ -16,18 +17,18 @@ ALineCutterProjectile::ALineCutterProjectile(const FObjectInitializer& ObjectIni
     this->EletricDecalSize = EImpactDecalSize::Small;
     this->ImpactDecalSize = EImpactDecalSize::Small;
     this->LineRoot = CreateDefaultSubobject<USceneComponent>(TEXT("LineRoot"));
-    this->LeftSphere = NULL;
-    this->RightSphere = NULL;
-    this->LeftSphere2 = NULL;
-    this->RightSphere2 = NULL;
-    this->LeftSphere3 = NULL;
-    this->RightSphere3 = NULL;
-    this->BeamParticle = NULL;
-    this->BeamParticle2 = NULL;
-    this->BeamParticle3 = NULL;
-    this->BeamParticle1NS = NULL;
-    this->BeamParticle2NS = NULL;
-    this->BeamParticle3NS = NULL;
+    this->LeftSphere = nullptr;
+    this->RightSphere = nullptr;
+    this->LeftSphere2 = nullptr;
+    this->RightSphere2 = nullptr;
+    this->LeftSphere3 = nullptr;
+    this->RightSphere3 = nullptr;
+    this->BeamParticle = nullptr;
+    this->BeamParticle2 = nullptr;
+    this->BeamParticle3 = nullptr;
+    this->BeamParticle1NS = nullptr;
+    this->BeamParticle2NS = nullptr;
+    this->BeamParticle3NS = nullptr;
     this->LeftHitParticles = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("LeftImpact"));
     this->RightHitParticles = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("RightImpact"));
     this->LeftHitParticlesNS = CreateDefaultSubobject<UNiagaraComponent>(TEXT("LeftImpactNS"));

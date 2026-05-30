@@ -6,5 +6,9 @@ FDamageLoggingItem::FDamageLoggingItem() {
     this->Timestamp = 0.00f;
     this->CritLevel = 0;
     this->WeakpointHit = false;
+    this->Instigator = FString();
+    this->Causer = FString();
+    this->CauserOwner = FString();
+    this->Target = FString();
 }
 

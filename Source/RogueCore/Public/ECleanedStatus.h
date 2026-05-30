@@ -7,3 +7,4 @@ enum ECleanedStatus {
     EInfected,
     EVacuumed,
 };
+

@@ -4,6 +4,7 @@
 #include "PickaxePartRewarder.generated.h"
 
 class UPickaxePart;
+
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class UPickaxePartRewarder : public UTreasureRewarder {
     GENERATED_BODY()
@@ -12,4 +13,6 @@ public:
     UPickaxePart* PickaxePart;
     
     UPickaxePartRewarder(const FObjectInitializer& ObjectInitializer);
+
 };
+

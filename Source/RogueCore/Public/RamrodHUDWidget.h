@@ -8,4 +8,6 @@ class URamrodHUDWidget : public UBaseHUDWidget {
     GENERATED_BODY()
 public:
     URamrodHUDWidget();
+
 };
+

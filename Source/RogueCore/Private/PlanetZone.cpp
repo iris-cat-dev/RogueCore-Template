@@ -8,7 +8,7 @@ UBiome* UPlanetZone::PickBiome(FRandomStream& Random) const {
     return NULL;
 }
 
-bool UPlanetZone::IsUnlocked(const UFSDSaveGame* SaveGame) const {
+bool UPlanetZone::IsUnLocked(const UFSDSaveGame* SaveGame) const {
     return false;
 }
 

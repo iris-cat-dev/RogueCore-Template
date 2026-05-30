@@ -1,16 +1,20 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/Object.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "RoomFeature.generated.h"
 
 class URoomFeature;
+
 UCLASS(Blueprintable, DefaultToInstanced, EditInlineNew)
 class URoomFeature : public UObject {
     GENERATED_BODY()
-    
 public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     TArray<URoomFeature*> RoomFeatures;
     
+public:
     URoomFeature();
+
 };
+

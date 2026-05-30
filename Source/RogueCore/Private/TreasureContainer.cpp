@@ -1,18 +1,20 @@
 #include "TreasureContainer.h"
-#include "Components/SceneComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
 #include "Net/UnrealNetwork.h"
 #include "OncePerPlayerInstantUsableComponent.h"
 
 ATreasureContainer::ATreasureContainer(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bAlwaysRelevant = true;
     this->bReplicates = true;
     const FProperty* p_RemoteRole = GetClass()->FindPropertyByName("RemoteRole");
     (*p_RemoteRole->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(this)) = ROLE_SimulatedProxy;
     this->RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("Root"));
     this->Root = (USceneComponent*)RootComponent;
     this->CollectUsable = CreateDefaultSubobject<UOncePerPlayerInstantUsableComponent>(TEXT("CollectUsable"));
-    this->AquisitionSource = NULL;
-    this->LastJoiner = NULL;
-    this->TreasureRewarder = NULL;
+    this->AquisitionSource = nullptr;
+    this->LastJoiner = nullptr;
+    this->OpenedStat = nullptr;
+    this->TreasureRewarder = nullptr;
     this->ShouldActivateCollectUsable = true;
     this->PreventLatejoiners = false;
 }

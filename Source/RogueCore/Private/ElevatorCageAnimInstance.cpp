@@ -2,9 +2,10 @@
 
 UElevatorCageAnimInstance::UElevatorCageAnimInstance() {
     this->CageOpen = false;
+    this->NextCageOpen = false;
 }
 
-void UElevatorCageAnimInstance::SetIsOpen(bool Open) {
+void UElevatorCageAnimInstance::SetIsOpen(const bool Open) {
 }
 
 

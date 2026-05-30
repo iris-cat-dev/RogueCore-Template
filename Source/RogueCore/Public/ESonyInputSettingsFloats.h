@@ -11,3 +11,4 @@ enum class ESonyInputSettingsFloats : uint8 {
     TouchPadTerrainScannerYSensitivity,
     TouchPadTerrainScannerZoomSensitivity,
 };
+

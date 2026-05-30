@@ -1,7 +1,7 @@
 #include "PawnStatEntry.h"
 
 FPawnStatEntry::FPawnStatEntry() {
-    this->PawnStat = NULL;
+    this->PawnStat = nullptr;
     this->Value = 0.00f;
 }
 
